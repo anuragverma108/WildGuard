@@ -528,7 +528,36 @@ body {
   font-weight: var(--fw-500);
 }
 
+/*-----------------------------------*\
+  #Learn more about us
+\*-----------------------------------*/
 
+.section-lmas{
+  display: none;
+  width:800px;
+  margin-left: 400px;
+  position:relative;
+  top: -100px;
+  background-color: azure;
+  border-radius: 10px;
+}
+
+.lmas-btn{
+  display: flex;
+  gap:7px;
+}
+.testimonial-btn{
+  width:150px;
+  color:white;
+  background-color:black;
+  border-radius: 10px;
+}
+.event-btn{
+  width:150px;
+  color:white;
+  background-color:black;
+  border-radius: 10px;
+}
 
 
 
