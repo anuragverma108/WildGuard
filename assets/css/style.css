@@ -282,7 +282,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 }
 
 .logo {
@@ -490,7 +490,6 @@ body {
 
 .tab-nav {
   display: flex;
-  flex-wrap: wrap;
   gap: 15px;
   margin-block: 25px 35px;
 }

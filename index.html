@@ -41,11 +41,11 @@
         <a href="#" class="logo">WildGuard</a>
       </h1>
 
-      <select name="language" class="lang-switch">
+      <select name="language" id="language-select" class="lang-switch">
 
         <option value="english">English</option>
-        <option value="french">French</option>
-        <option value="spanish">Spanish</option>
+        <option value="german">German</option>
+        <option value="russian">Russian</option>
 
       </select>
 
@@ -65,7 +65,7 @@
 
           <li>
             <a href="#home" class="navbar-link" data-nav-link>
-              <span>Home</span>
+              <span data-localized="nav_home">Home</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -73,7 +73,7 @@
 
           <li>
             <a href="#about" class="navbar-link" data-nav-link>
-              <span>About</span>
+              <span data-localized="nav_about">About</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -81,7 +81,7 @@
 
           <li>
             <a href="#service" class="navbar-link" data-nav-link>
-              <span>Service</span>
+              <span data-localized="nav_service">Service</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -89,7 +89,7 @@
 
           <li>
             <a href="#donate" class="navbar-link" data-nav-link>
-              <span>Donate</span>
+              <span data-localized="nav_donate">Donate</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -97,7 +97,7 @@
 
           <li>
             <a href="#event" class="navbar-link" data-nav-link>
-              <span>Event</span>
+              <span data-localized="nav_event">Event</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -105,7 +105,7 @@
 
           <li>
             <a href="#" class="navbar-link" data-nav-link>
-              <span>Contact</span>
+              <span data-localized="nav_contact">Contact</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -122,7 +122,7 @@
         </button>
 
         <button class="btn btn-primary">
-          <span>Donation</span>
+          <span data-localized="donation_button">Donation</span>
 
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         </button>
@@ -157,19 +157,19 @@ id="btn-back-to-top"
           <p class="section-subtitle">
             <img src="./assets/images/subtitle-img-white.png" width="32" height="7" alt="Wavy line">
 
-            <span>Welcome to WildGuard</span>
+            <span data-localized="home_welcome">Welcome to WildGuard</span>
           </p>
 
-          <h2 class="h1 hero-title">
+          <h2 class="h1 hero-title" data-localized="home_title">
             Give Love for Saving <strong>World Animals</strong>
           </h2>
 
-          <p class="hero-text">
+          <p class="hero-text" data-localized="home_moto">
             Defending Wildlife, One Paw at a Time
           </p>
 
           <button class="btn btn-primary">
-            <span>Donation</span>
+            <span data-localized="donation_button">Donation</span>
 
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
           </button>
@@ -196,9 +196,9 @@ id="btn-back-to-top"
               </div>
 
               <div>
-                <h3 class="h4 item-title">Safe Shelter</h3>
+                <h3 class="h4 item-title" data-localized="home_shelter_h">Safe Shelter</h3>
 
-                <p class="item-text">
+                <p class="item-text" data-localized="home_shelter_p">
                   Sit amet consecte adiscine
                   eiusm temor ultrices.
                 </p>
@@ -211,9 +211,9 @@ id="btn-back-to-top"
               </div>
 
               <div>
-                <h3 class="h4 item-title">Safe Water</h3>
+                <h3 class="h4 item-title" data-localized="home_water_h">Safe Water</h3>
 
-                <p class="item-text">
+                <p class="item-text" data-localized="home_water_p">
                   Sit amet consecte adiscine
                   eiusm temor ultrices.
                 </p>
@@ -226,9 +226,9 @@ id="btn-back-to-top"
               </div>
 
               <div>
-                <h3 class="h4 item-title">Ecology Save</h3>
+                <h3 class="h4 item-title" data-localized="home_ecology_h">Ecology Save</h3>
 
-                <p class="item-text">
+                <p class="item-text" data-localized="home_ecology_p">
                   Sit amet consecte adiscine
                   eiusm temor ultrices.
                 </p>
@@ -241,9 +241,9 @@ id="btn-back-to-top"
               </div>
 
               <div>
-                <h3 class="h4 item-title">Environment</h3>
+                <h3 class="h4 item-title" data-localized="home_environment_h">Environment</h3>
 
-                <p class="item-text">
+                <p class="item-text" data-localized="home_environment_p">
                   Sit amet consecte adiscine
                   eiusm temor ultrices.
                 </p>
@@ -268,7 +268,7 @@ id="btn-back-to-top"
 
           <div class="about-banner">
 
-            <h2 class="deco-title">About Us</h2>
+            <h2 class="deco-title" data-localized="about_deco">About Us</h2>
 
             <img src="./assets/images/deco-img.png" width="58" height="261" alt="" class="deco-img">
 
@@ -299,32 +299,32 @@ id="btn-back-to-top"
             <p class="section-subtitle">
               <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
 
-              <span>Why Choose Us</span>
+              <span data-localized="about_why_h">Why Choose Us</span>
             </p>
 
-            <h2 class="h2 section-title">
+            <h2 class="h2 section-title" data-localized="about_why_p">
               Rise Your Hand to Save <strong>World Animals Life</strong>
             </h2>
 
             <ul class="tab-nav">
 
               <li>
-                <button class="tab-btn active">Our Mission</button>
+                <button class="tab-btn active" data-localized="about_why_mission_h">Our Mission</button>
               </li>
 
               <li>
-                <button class="tab-btn">Our Vision</button>
+                <button class="tab-btn" data-localized="about_why_vision_h">Our Vision</button>
               </li>
 
               <li>
-                <button class="tab-btn">Next Plan</button>
+                <button class="tab-btn" data-localized="about_why_plan_h">Next Plan</button>
               </li>
 
             </ul>
 
             <div class="tab-content">
 
-              <p class="section-text">
+              <p class="section-text" data-localized="about_why_mission_p">
                 But I must explain to you how all this mistaken denouncing pleasure and praising pain was born and I
                 will give you a
                 complete account of the system expoundmaster
@@ -337,7 +337,7 @@ id="btn-back-to-top"
                     <ion-icon name="checkmark-circle"></ion-icon>
                   </div>
 
-                  <p class="tab-text">Charity For Foods</p>
+                  <p class="tab-text" data-localized="about_charity_food">Charity For Foods</p>
                 </li>
 
                 <li class="tab-item">
@@ -345,7 +345,7 @@ id="btn-back-to-top"
                     <ion-icon name="checkmark-circle"></ion-icon>
                   </div>
 
-                  <p class="tab-text">Charity For Education</p>
+                  <p class="tab-text" data-localized="about_charity_education">Charity For Education</p>
                 </li>
 
                 <li class="tab-item">
@@ -353,7 +353,7 @@ id="btn-back-to-top"
                     <ion-icon name="checkmark-circle"></ion-icon>
                   </div>
 
-                  <p class="tab-text">Charity For Water</p>
+                  <p class="tab-text" data-localized="about_charity_water">Charity For Water</p>
                 </li>
 
                 <li class="tab-item">
@@ -361,13 +361,13 @@ id="btn-back-to-top"
                     <ion-icon name="checkmark-circle"></ion-icon>
                   </div>
 
-                  <p class="tab-text">Charity For Medical</p>
+                  <p class="tab-text" data-localized="about_charity_medical">Charity For Medical</p>
                 </li>
 
               </ul>
 
               <button class="btn btn-secondary">
-                <span>Learn More Us</span>
+                <span data-localized="about_more">Learn More Us</span>
 
                 <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
               </button>
@@ -391,10 +391,10 @@ id="btn-back-to-top"
         <div class="container">
 
           <div class="cta-content">
-            <h2 class="h2 section-title">324+ Trusted Global Partners</h2>
+            <h2 class="h2 section-title" data-localized="partners">324+ Trusted Global Partners</h2>
 
             <button class="btn btn-outline">
-              <span>Become a Partner</span>
+              <span data-localized="become_partner">Become a Partner</span>
 
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
             </button>
@@ -422,10 +422,10 @@ id="btn-back-to-top"
           <p class="section-subtitle">
             <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
 
-            <span>What We Do</span>
+            <span data-localized="service_h">What We Do</span>
           </p>
 
-          <h2 class="h2 section-title">
+          <h2 class="h2 section-title" data-localized="service_p">
             We Work Differently to <strong>keep The World Safe</strong>
           </h2>
 
@@ -438,15 +438,15 @@ id="btn-back-to-top"
                   <ion-icon name="leaf-outline"></ion-icon>
                 </div>
 
-                <h3 class="h3 card-title">Save Nature</h3>
+                <h3 class="h3 card-title" data-localized="service_card_nature_h">Save Nature</h3>
 
-                <p class="card-text">
+                <p class="card-text" data-localized="service_card_nature_p">
                   Tempor incididunt ut labores
                   dolore magna suspene
                 </p>
 
                 <a href="#" class="btn-link">
-                  <span>Read More</span>
+                  <span data-localized="read_more">Read More</span>
 
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </a>
@@ -461,15 +461,15 @@ id="btn-back-to-top"
                   <ion-icon name="earth-outline"></ion-icon>
                 </div>
 
-                <h3 class="h3 card-title">Save Ecology</h3>
+                <h3 class="h3 card-title" data-localized="service_card_ecology_h">Save Ecology</h3>
 
-                <p class="card-text">
+                <p class="card-text" data-localized="service_card_ecology_p">
                   Tempor incididunt ut labores
                   dolore magna suspene
                 </p>
 
                 <a href="#" class="btn-link">
-                  <span>Read More</span>
+                  <span data-localized="read_more">Read More</span>
 
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </a>
@@ -484,15 +484,15 @@ id="btn-back-to-top"
                   <ion-icon name="flower-outline"></ion-icon>
                 </div>
 
-                <h3 class="h3 card-title">Tree Plantation</h3>
+                <h3 class="h3 card-title" data-localized="service_card_trees_h">Tree Plantation</h3>
 
-                <p class="card-text">
+                <p class="card-text" data-localized="service_card_trees_p">
                   Tempor incididunt ut labores
                   dolore magna suspene
                 </p>
 
                 <a href="#" class="btn-link">
-                  <span>Read More</span>
+                  <span data-localized="read_more">Read More</span>
 
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </a>
@@ -507,15 +507,15 @@ id="btn-back-to-top"
                   <ion-icon name="boat-outline"></ion-icon>
                 </div>
 
-                <h3 class="h3 card-title">Clear Ocean</h3>
+                <h3 class="h3 card-title" data-localized="service_card_ocean_h">Clear Ocean</h3>
 
-                <p class="card-text">
+                <p class="card-text" data-localized="service_card_ocean_p">
                   Tempor incididunt ut labores
                   dolore magna suspene
                 </p>
 
                 <a href="#" class="btn-link">
-                  <span>Read More</span>
+                  <span data-localized="read_more">Read More</span>
 
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </a>
@@ -553,7 +553,7 @@ id="btn-back-to-top"
 
                   <div class="progress-wrapper">
                     <p class="progress-text">
-                      <span>Raised</span>
+                      <span data-localized="donate_raised">Raised</span>
 
                       <data value="256">$256</data>
                     </p>
@@ -565,24 +565,24 @@ id="btn-back-to-top"
                     <div class="progress"></div>
                   </div>
 
-                  <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
+                  <h3 class="h3 card-title" data-localized="donate_hand">Raise Hand To Save Animals</h3>
 
                   <div class="card-wrapper">
 
                     <p class="card-wrapper-text">
-                      <span>Goal</span>
+                      <span data-localized="donate_goal">Goal</span>
 
                       <data class="green" value="34562">$34562</data>
                     </p>
 
                     <p class="card-wrapper-text">
-                      <span>Raise</span>
+                      <span data-localized="donate_raised">Raise</span>
 
                       <data class="yellow" value="562">$562</data>
                     </p>
 
                     <p class="card-wrapper-text">
-                      <span>To Go</span>
+                      <span data-localized="donate_togo">To Go</span>
 
                       <data class="cyan" value="864">$864</data>
                     </p>
@@ -590,7 +590,7 @@ id="btn-back-to-top"
                   </div>
 
                   <button class="btn btn-secondary">
-                    <span>Donation</span>
+                    <span data-localized="donate_action">Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                   </button>
@@ -612,7 +612,7 @@ id="btn-back-to-top"
 
                   <div class="progress-wrapper">
                     <p class="progress-text">
-                      <span>Raised</span>
+                      <span data-localized="donate_raised">Raised</span>
 
                       <data value="256">$256</data>
                     </p>
@@ -624,24 +624,24 @@ id="btn-back-to-top"
                     <div class="progress"></div>
                   </div>
 
-                  <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
+                  <h3 class="h3 card-title" data-localized="donate_hand">Raise Hand To Save Animals</h3>
 
                   <div class="card-wrapper">
 
                     <p class="card-wrapper-text">
-                      <span>Goal</span>
+                      <span data-localized="donate_goal">Goal</span>
 
                       <data class="green" value="34562">$34562</data>
                     </p>
 
                     <p class="card-wrapper-text">
-                      <span>Raise</span>
+                      <span data-localized="donate_raised">Raise</span>
 
                       <data class="yellow" value="562">$562</data>
                     </p>
 
                     <p class="card-wrapper-text">
-                      <span>To Go</span>
+                      <span data-localized="donate_togo">To Go</span>
 
                       <data class="cyan" value="864">$864</data>
                     </p>
@@ -649,7 +649,7 @@ id="btn-back-to-top"
                   </div>
 
                   <button class="btn btn-secondary">
-                    <span>Donation</span>
+                    <span data-localized="donate_action">Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                   </button>
@@ -671,7 +671,7 @@ id="btn-back-to-top"
 
                   <div class="progress-wrapper">
                     <p class="progress-text">
-                      <span>Raised</span>
+                      <span data-localized="donate_raised">Raised</span>
 
                       <data value="256">$256</data>
                     </p>
@@ -683,24 +683,24 @@ id="btn-back-to-top"
                     <div class="progress"></div>
                   </div>
 
-                  <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
+                  <h3 class="h3 card-title" data-localized="donate_hand">Raise Hand To Save Animals</h3>
 
                   <div class="card-wrapper">
 
                     <p class="card-wrapper-text">
-                      <span>Goal</span>
+                      <span data-localized="donate_goal">Goal</span>
 
                       <data class="green" value="34562">$34562</data>
                     </p>
 
                     <p class="card-wrapper-text">
-                      <span>Raise</span>
+                      <span data-localized="donate_raised">Raise</span>
 
                       <data class="yellow" value="562">$562</data>
                     </p>
 
                     <p class="card-wrapper-text">
-                      <span>To Go</span>
+                      <span data-localized="donate_togo">To Go</span>
 
                       <data class="cyan" value="864">$864</data>
                     </p>
@@ -708,7 +708,7 @@ id="btn-back-to-top"
                   </div>
 
                   <button class="btn btn-secondary">
-                    <span>Donation</span>
+                    <span data-localized="donate_action">Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                   </button>
@@ -730,7 +730,7 @@ id="btn-back-to-top"
 
                   <div class="progress-wrapper">
                     <p class="progress-text">
-                      <span>Raised</span>
+                      <span data-localized="donate_raised">Raised</span>
 
                       <data value="256">$256</data>
                     </p>
@@ -742,24 +742,24 @@ id="btn-back-to-top"
                     <div class="progress"></div>
                   </div>
 
-                  <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
+                  <h3 class="h3 card-title" data-localized="donate_hand">Raise Hand To Save Animals</h3>
 
                   <div class="card-wrapper">
 
                     <p class="card-wrapper-text">
-                      <span>Goal</span>
+                      <span data-localized="donate_goal">Goal</span>
 
                       <data class="green" value="34562">$34562</data>
                     </p>
 
                     <p class="card-wrapper-text">
-                      <span>Raise</span>
+                      <span data-localized="donate_raised">Raise</span>
 
                       <data class="yellow" value="562">$562</data>
                     </p>
 
                     <p class="card-wrapper-text">
-                      <span>To Go</span>
+                      <span data-localized="donate_togo">To Go</span>
 
                       <data class="cyan" value="864">$864</data>
                     </p>
@@ -767,7 +767,7 @@ id="btn-back-to-top"
                   </div>
 
                   <button class="btn btn-secondary">
-                    <span>Donation</span>
+                    <span data-localized="donate_action">Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                   </button>
@@ -797,10 +797,10 @@ id="btn-back-to-top"
           <p class="section-subtitle">
             <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
 
-            <span>Our Testimonials</span>
+            <span data-localized="testimonials_h">Our Testimonials</span>
           </p>
 
-          <h2 class="h2 section-title">
+          <h2 class="h2 section-title" data-localized="testimonials_p">
             What People Say About <strong>Our Organization</strong>
           </h2>
 
@@ -811,7 +811,7 @@ id="btn-back-to-top"
             </figure>
 
             <div>
-              <blockquote class="testi-text">
+              <blockquote class="testi-text" data-localized="testimonial_content">
                 Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem
                 aperiam eaquesa
                 quae abillo inventore veritatis quasi architecto beatae vitae dicta sunt explicabo enimpsam voluptatem
@@ -900,12 +900,12 @@ id="btn-back-to-top"
           <p class="section-subtitle">
             <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
 
-            <span>Event & Program</span>
+            <span data-localized="events_h">Event & Program</span>
 
             <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
           </p>
 
-          <h2 class="h2 section-title">
+          <h2 class="h2 section-title" data-localized="events_p">
             Our Most Popular Causes For <strong>Building Fund</strong>
           </h2>
 
@@ -915,7 +915,7 @@ id="btn-back-to-top"
               <div class="event-card">
 
                 <time class="card-time" datetime="01-05">
-                  <span class="month">Jan</span>
+                  <span class="month" data-localized="events_month_1">Jan</span>
 
                   <span class="date">05</span>
                 </time>
@@ -923,17 +923,17 @@ id="btn-back-to-top"
                 <div class="wrapper">
 
                   <div class="card-content">
-                    <p class="card-subtitle">Ocean Water</p>
+                    <p class="card-subtitle" data-localized="event_1_i">Ocean Water</p>
 
-                    <h3 class="card-title">Far from the countries Vokalia and Consonantia 2022</h3>
+                    <h3 class="card-title" data-localized="event_1_h">Far from the countries Vokalia and Consonantia 2022</h3>
 
-                    <p class="card-text">
+                    <p class="card-text" data-localized="event_1_p">
                       Sit amet consectetur adipiscing elit sed do eiusmod tempor
                     </p>
                   </div>
 
                   <button class="btn btn-white">
-                    <span>View Events</span>
+                    <span data-localized="events_view">View Events</span>
 
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                   </button>
@@ -947,7 +947,7 @@ id="btn-back-to-top"
               <div class="event-card">
 
                 <time class="card-time" datetime="02-23">
-                  <span class="month">Feb</span>
+                  <span class="month" data-localized="events_month_2">Feb</span>
 
                   <span class="date">23</span>
                 </time>
@@ -955,17 +955,17 @@ id="btn-back-to-top"
                 <div class="wrapper">
 
                   <div class="card-content">
-                    <p class="card-subtitle">Ocean Water</p>
+                    <p class="card-subtitle" data-localized="event_1_i">Ocean Water</p>
 
-                    <h3 class="card-title">Far from the countries Vokalia and Consonantia 2022</h3>
+                    <h3 class="card-title" data-localized="event_1_h">Far from the countries Vokalia and Consonantia 2022</h3>
 
-                    <p class="card-text">
+                    <p class="card-text" data-localized="event_1_p">
                       Sit amet consectetur adipiscing elit sed do eiusmod tempor
                     </p>
                   </div>
 
                   <button class="btn btn-white">
-                    <span>View Events</span>
+                    <span data-localized="events_view">View Events</span>
 
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                   </button>
@@ -979,7 +979,7 @@ id="btn-back-to-top"
               <div class="event-card">
 
                 <time class="card-time" datetime="03-27">
-                  <span class="month">Mar</span>
+                  <span class="month" data-localized="events_month_3">Mar</span>
 
                   <span class="date">27</span>
                 </time>
@@ -987,17 +987,17 @@ id="btn-back-to-top"
                 <div class="wrapper">
 
                   <div class="card-content">
-                    <p class="card-subtitle">Ocean Water</p>
+                    <p class="card-subtitle" data-localized="event_1_i">Ocean Water</p>
 
-                    <h3 class="card-title">Far from the countries Vokalia and Consonantia 2022</h3>
+                    <h3 class="card-title" data-localized="event_1_h">Far from the countries Vokalia and Consonantia 2022</h3>
 
-                    <p class="card-text">
+                    <p class="card-text" data-localized="event_1_p">
                       Sit amet consectetur adipiscing elit sed do eiusmod tempor
                     </p>
                   </div>
 
                   <button class="btn btn-white">
-                    <span>View Events</span>
+                    <span data-localized="events_view">View Events</span>
 
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                   </button>
@@ -1010,7 +1010,7 @@ id="btn-back-to-top"
           </ul>
 
           <button class="btn btn-secondary">
-            <span>Learn More Us</span>
+            <span data-localized="about_more">Learn More Us</span>
 
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
           </button>
@@ -1096,17 +1096,17 @@ id="btn-back-to-top"
       <ul class="footer-list">
 
         <li>
-          <a href="#" class="footer-link">Terms of use</a>
+          <a href="#" class="footer-link" data-localized="legal_tou">Terms of use</a>
         </li>
 
         <li>
-          <a href="#" class="footer-link">Privacy & Policy</a>
+          <a href="#" class="footer-link" data-localized="legal_pp">Privacy & Policy</a>
         </li>
 
       </ul>
 
       <p class="copyright">
-        Copyright 2024 <a href="#" class="copyright-link">Anurag Bytes</a>. All Rights Reserved.
+        Copyright 2024 <a href="#" class="copyright-link">Anurag Bytes</a>. <span data-localized="legal_rights">All Rights Reserved.</span>
       </p>
 
     </div>
@@ -1120,7 +1120,7 @@ id="btn-back-to-top"
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
-
+  <script src="./assets/js/localization.js"></script>
   <!-- 
     - ionicon link
   -->
