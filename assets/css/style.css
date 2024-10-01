@@ -836,7 +836,34 @@ body {
 
 .event .btn-secondary { margin-inline: auto; }
 
+/* --------------------------------
+  NEWS
+  -----------------------------------
+*/
+#news-container {
+  padding: 20px;
+}
 
+.article {
+  background-color: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article h2 {
+  margin: 0 0 10px;
+}
+
+.article p {
+  margin: 0 0 10px;
+}
+
+.article a {
+  text-decoration: none;
+  color: #4CAF50;
+}
 
 
 
