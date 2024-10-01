@@ -145,7 +145,10 @@ body {
 
 ::-webkit-scrollbar-thumb { background-color: var(--pistachio); }
 
-
+.cards{
+  transition: var(--transition-2);
+  background-color: aqua;
+}
 
 
 
@@ -846,7 +849,7 @@ body {
 
 .insta-post-link {
   position: relative;
-  background-color: var(--eerie-black-1);
+ 
   overflow: hidden;
 }
 
@@ -882,7 +885,10 @@ body {
   min-width: 90%;
   scroll-snap-align: center;
 }
-
+.insta-post{
+  display: flex;
+  flex-direction: row;
+}
 
 
 

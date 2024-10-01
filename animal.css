@@ -1,0 +1,21 @@
+.gallery{
+  display: flex;
+ flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+  gap: 20px; /* Add space between the images */
+  padding: 20px;
+  
+}
+.gallery .image{
+  max-width: 20vmax;
+  width: 40px; 
+  height: 20vmax; 
+  object-fit: cover; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; 
+}
+.gallery .image:hover {
+  transform: scale(1.05); 
+}
