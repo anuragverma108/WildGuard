@@ -42,7 +42,7 @@
   --fs-5: 2.4rem;
   --fs-6: 2.2rem;
   --fs-7: 2rem;
-  --fs-8: 1.8rem;
+  --fs-8: 2rem;
   --fs-9: 1.5rem;
   --fs-10: 1.4rem;
 
@@ -191,7 +191,7 @@ body {
   background-color: var(--btn-bg, var(--pistachio));
   color: var(--white);
   font-weight: var(--fw-600);
-  padding: 12px 32px;
+  padding: 12px 30px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -282,7 +282,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  gap: 58px;
 }
 
 .logo {
@@ -1163,12 +1163,87 @@ body {
   .header-action {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 80px;
   }
 
+  .search-bar {
+    margin:0;
+    padding:0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:50%;
+    left:50%;
+    position: relative;
+    border: 3px white solid;
+    transition-duration: 0.04s;
+    transition: ease-in;
+    border-radius: 8px;
+
+  }
+    .textbox {
+        width: 0;
+        padding: 0;
+        margin: 0;
+        border: none;
+        line-height: 12px;
+        font-size: 20px;
+        height: 32px;
+        background-color: transparent;
+        outline: none;
+        height: 100%;
+        float:inline-start;
+        text-decoration: white;
+        transition-duration: 0.5s;
+        transition: ease-out;
+    }
+
+  .search-btn p {
+    margin: 10px;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 800;
+  }
+  
+  .search-bar:hover > .textbox {
+    color: white;
+    padding: 0px 10px 0px 10px;
+    width: 100%;
+    transition-duration: 0.5s;
+  }
+  
+  .search-bar:hover > .search-btn {
+    border-left: 2px white solid;
+    transition-duration: 0.4s;
+  }
+  
+  .search-btn:hover {
+    background-color: transparent;
+    transition-duration: 0.4s;
+  }
+  .search-btn:hover > p {
+    color: white;
+    transition-duration: 0.4s;
+  }
+  
+  
   .search-btn {
-    color: var(--white);
+    color: var(white);
     font-size: 2.6rem;
+    background-color: transparent;
+    padding: 0px 0px 0px 0px;
+    margin: 0;
+    height: 45px;
+    width:fit-content;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    text-decoration: none;
+    height: 100%;
+    transition-duration: 0.4s;
   }
 
   .search-btn ion-icon { --ionicon-stroke-width: 50px; }
@@ -1327,7 +1402,7 @@ body {
    */
 
   .container {
-    max-width: 1400px;
+    max-width: 1350x;
     width: 100%;
     margin-inline: auto;
     padding-inline: 30px;
@@ -1476,7 +1551,9 @@ body {
 }
 
 .container {
-  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
   text-align: center;
-  margin-top: 50px; /* Space from the top */
+  margin-top: 15px; /* Space from the top */
 }
