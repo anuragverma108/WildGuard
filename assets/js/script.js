@@ -72,3 +72,40 @@ function backToTop() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+const apiKey = `d1df68819c67613829c5b5a8596405e4`;  // Replace with your Mediastack API key
+const newsContainer = document.getElementById('news-container');
+
+async function fetchNews() {
+    try {
+        const response = await fetch(`https://api.mediastack.com/v1/news?access_key=${apiKey}&keywords=animal&limit=3`);
+        const data = await response.json();
+        console.log(data);
+        if (data.data.length === 0) {
+            newsContainer.innerHTML = '<p>No news articles found.</p>';
+        } else {
+            displayNews(data.data);
+        }
+    } catch (error) {
+        newsContainer.innerHTML = `<p>Failed to fetch news: ${error.message}</p>`;
+    }
+}
+
+function displayNews(articles) {
+    newsContainer.innerHTML = '';  // Clear the container
+
+    articles.forEach(article => {
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article');
+
+        articleElement.innerHTML = `
+            <h2>${article.title}</h2>
+            <p>${article.description || 'No description available.'}</p>
+            <a href="${article.url}" target="_blank">Read more</a>
+        `;
+
+        newsContainer.appendChild(articleElement);
+    });
+}
+
+fetchNews();
