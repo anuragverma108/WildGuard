@@ -1440,6 +1440,7 @@ body {
 
   .insta-post-item { min-width: 20%; }
 
+  
 
 
   /**
@@ -1480,3 +1481,59 @@ body {
   text-align: center;
   margin-top: 50px; /* Space from the top */
 }
+
+
+
+.faq {
+  padding: var(--section-padding); /* Adjust based on your design */
+}
+
+.faq-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+.faq-card {
+  background-color: #27ae60; /* Change background to green */
+  border: 1px solid #27ae60; /* Darker green border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the card */
+  margin-bottom: 20px; /* Space between cards */
+  transition: transform 0.3s, box-shadow 0.3s; /* Animation on hover */
+  color: white; /* Change text color to white for contrast */
+}
+
+.faq-card:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.faq-question {
+  font-size: 1.2rem; /* Font size for the question */
+  color: white; /* Change color to white */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.faq-answer {
+  display: none; /* Initially hide answers */
+  padding-top: 10px; /* Space above the answer */
+  color: #e0e0e0; /* Light gray for answer text for better readability */
+}
+
+.btn-secondary {
+  margin-top: 20px; /* Space above the button */
+  background-color: #27ae60; /* Button color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding inside the button */
+  border-radius: 5px; /* Rounded corners for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.btn-secondary:hover {
+  background-color: #27ae60; /* Darker green on hover */
+}
+
+
+
