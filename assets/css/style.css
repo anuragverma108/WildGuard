@@ -883,8 +883,19 @@ body {
   scroll-snap-align: center;
 }
 
+/*-----------------------------------*\
+  #Button
+\*-----------------------------------*/
 
+.btn:hover {
+  background-color: var(--pistachio);
+  color: aliceblue;
+  box-shadow: #27ae60 5px 5px 5px;
+}
 
+.event-card:hover {
+  box-shadow: var(--pistachio)3px 3px 3px;
+}
 
 
 /*-----------------------------------*\
@@ -1462,8 +1473,8 @@ body {
   background-color: #27ae60; /* Nature-inspired green */
   color: white;
   border: none;
-  border-radius: 50%;
-  padding: 15px;
+  border-radius: 100%;
+  padding: 20px;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s, transform 0.3s;
@@ -1478,5 +1489,7 @@ body {
 .container {
   padding: 20px;
   text-align: center;
-  margin-top: 50px; /* Space from the top */
+  margin-top: 20px; /* Space from the top */
 }
+
+
