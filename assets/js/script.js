@@ -51,7 +51,7 @@ window.addEventListener("scroll", function () {
 const searchIcon = document.getElementById("searchIcon");
 const searchBar = document.getElementById("searchBar");
 const searchInput = document.getElementById("searchInput");
-const searchableElements = document.querySelectorAll("h2, p"); // Search within headings and paragraphs
+const searchableElements = document.querySelectorAll("h2, p,div"); // Search within headings and paragraphs
 
 // Elements for navigating between matches
 const nextMatchBtn = document.getElementById("nextMatch");
