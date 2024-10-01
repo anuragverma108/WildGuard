@@ -314,7 +314,7 @@ body {
 
 .navbar.active {
   transform: translateY(-100%);
-  visibility: visible;
+  visibility: visible; 
   transition: 0.5s var(--cubic-out);
 }
 
