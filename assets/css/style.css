@@ -365,9 +365,113 @@ body {
 
 .navbar-link:is(:hover, :focus) { background-color: var(--pistachio); }
 
+/* Login functionality and Login popup form styling */
+.popup {
+  display: none; 
+  position: fixed;
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease; 
+}
 
+.popup-content {
+  background-color: var(--white); 
+  border-radius: 10px;
+  padding: 30px; 
+  max-width: 500px; 
+  width: 90%;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
 
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
+.tab-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 10px;
+  padding: 10px 15px;
+  color: var(--eerie-black-1);
+  transition: color 0.2s;
+}
+
+.tab-button.active {
+  color: var(--pistachio); 
+  border-bottom: 2px solid var(--pistachio); 
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-left:-20px;
+}
+
+.form-container input {
+  margin: 10px 0;
+  padding: 12px; 
+  border: 1px solid var(--silver-chalice);
+  border-radius: 5px;
+  width: 130%; 
+  max-width: 400px; 
+  font-size: 16px; 
+  transition: border-color 0.3s; 
+}
+
+.form-container input:focus {
+  border-color: var(--pistachio); 
+  outline: none; 
+}
+
+.form-container button {
+  background-color: var(--pistachio); 
+  color: var(--white);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; 
+  font-size: 16px; 
+  margin-top: 10px;
+  width: 130%; 
+  max-width: 400px; 
+}
+
+.form-container button:hover {
+  background-color: var(--eerie-black-2); 
+  transform: translateY(-2px); 
+}
+
+.close-button {
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--eerie-black-2);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.btn-login {
+  background-color: var(--pistachio); 
+  color: var(--white);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
 /*-----------------------------------*\
   #HERO
@@ -1451,4 +1555,98 @@ body {
     width: auto;
   }
 
+}
+
+/* Scroll To Top btn */
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #27ae60; /* Nature-inspired green */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 24px; /* Larger icon */
+}
+
+#btn-back-to-top:hover {
+  background-color: #2ecc71; /* Lighter green on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.container {
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px; /* Space from the top */
+}
+/**
+* Search-bar
+*/
+.search-bar {
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+  background-color: var(--baby-powder); /* Light background matching page theme */
+  border: 1px solid var(--pistachio); /* Border to match the pistachio theme */
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between input and buttons */
+  z-index: 10;
+}
+
+/* Remove default outline for the search input */
+.search-bar input:focus {
+  outline: none; /* Removes the default black outline */
+  border-color: var(--pistachio); /* Optionally, add a custom border color on focus */
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Optional: Add a subtle shadow to show focus */
+}
+
+.search-bar input {
+  width: 150px; /* Compact width */
+  padding: 5px;
+  font-size: 1.4rem;
+  color: var(--eerie-black-2); /* Dark text inside the input */
+  background-color: var(--white); /* Light background inside input */
+  border: 1px solid var(--pistachio); /* Border around input field */
+  border-radius: 3px;
+}
+
+.search-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Small space between buttons */
+}
+
+#matchCounter {
+  color: var(--pistachio); /* Match counter in pistachio color */
+  font-size: 1.2rem;
+}
+
+#prevMatch, #nextMatch, #clearSearch, #closeSearch {
+  background-color: var(--pistachio); /* Button background */
+  color: var(--white); /* Button text color */
+  border: none;
+  padding: 5px;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#prevMatch:hover, #nextMatch:hover, #clearSearch:hover, #closeSearch:hover {
+  background-color: var(--granite-gray); /* Darker hover effect for buttons */
+}
+
+/* Update highlight color to match page design */
+.highlight {
+  background-color: var(--pistachio); /* Use pistachio for the highlight */
+  color: var(--white); /* White text on highlighted elements */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
