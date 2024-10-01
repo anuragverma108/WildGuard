@@ -25,6 +25,89 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
     rel="stylesheet">
+    <style>
+  
+h1, p{
+  text-align: center;
+}
+label{
+  display:block;
+  margin:1em 0 .2em;
+}
+/* single-line text, checkbox, and button */
+input, select, textarea{
+  display:block;
+  width:100%;
+  padding:.3em;
+  font-size:20px;
+  background-color:#fbfbfb;
+  border:solid 1px #1faa26;
+  resize:vertical;
+}
+textarea{
+  min-height:180px;
+}
+select{
+  color:indigo;
+}
+option{
+  color:blue;
+  background: rgb(165, 255, 192);
+}
+input[type=checkbox]{
+  display:inline;
+  width:auto;
+  color:red;
+}
+
+input[type=submit]{
+  background:rgb(143, 239, 170);
+  margin:1em 0 0;
+  color:white;
+  border:none;
+  border-radius:8px;
+  transition:all .3s ease-out;
+}
+
+input:focus,
+input:hover,
+select:focus,
+select:hover,
+textarea:focus,
+textarea:hover{
+  background: lavenderBlush;
+}
+
+/* hover and focus states */
+input[type=submit]:hover,
+input[type=submit]:focus{
+  background: lightgreen;
+  outline:none;
+}
+
+@media screen and (min-width:600px) {
+  /*  make the form 2 columns */
+  form:after{
+    content:'';
+    display:block;
+    clear:both;
+  }
+  .column{
+    width:50%;
+    padding:1em;
+    float:left;
+  }
+}
+
+
+
+
+
+
+
+
+
+    </style>
 </head>
 
 <body>
@@ -1072,7 +1155,40 @@
 
     </article>
   </main>
-
+  <form action="#" method="post">
+    <center>
+    <h1 style="font-size: 500%;text-shadow: 10px 5px 10px green;">Contact Us</h1>
+    <h2 style="font-size: 300%;">visit now:- <u> www.a****.com</u></h2>
+    </center>
+    <p>Please take a moment to get in touch, we will get back to you shortly.</p>
+  
+    <div class="column">
+      <label for="the-name">Your Name</label>
+      <input type="text" name="name" id="the-name">
+  
+      <label for="the-email">Email Address</label>
+      <input type="email" name="email" id="the-email">
+  
+      <label for="the-phone">Phone Number</label>
+      <input type="tel" name="phone" id="the-phone">
+  
+      <label for="the-reason">How can we help you?</label>
+      <select name="reason" id="the-reason">
+      <option value="">Choose one</option>
+      <option value="web">**********</option>
+      <option value="video">****************</option>
+      <option value="3d">****************************</option>
+    </select>
+    </div>
+    <div class="column">
+      <label for="the-message">Message</label>
+      <textarea name="message" id="the-message"></textarea>
+      <label>
+      <input type="checkbox" name="newsletter" value="yes">
+      </label>
+      <input type="submit" value="Send Message">
+    </div>
+  </form>
 
 
 
