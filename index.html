@@ -115,19 +115,31 @@
       </nav>
 
       <div class="header-action">
-
-        <button class="search-btn" aria-label="Search">
+        <button class="search-btn" aria-label="Search" id="searchIcon">
           <ion-icon name="search-outline"></ion-icon>
         </button>
-
+      
+        <!-- Search input field -->
+        <div class="search-bar" id="searchBar" style="display:none;">
+          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+          
+          <!-- Match counter and navigation buttons -->
+          <div class="search-nav-buttons">
+            <span id="matchCounter" style="display: none;">0/0</span>
+            <button id="prevMatch" style="display:none;">&#x25B2;</button> <!-- Up arrow -->
+            <button id="nextMatch" style="display:none;">&#x25BC;</button> <!-- Down arrow -->
+            <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
+          </div>
+        </div>
+      
         <button class="btn btn-primary">
           <span>Donation</span>
-
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         </button>
-
       </div>
-
+      
+      
+      
     </div>
   </header>
 
