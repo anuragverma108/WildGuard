@@ -1473,6 +1473,72 @@ body {
 }
 
 .container {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
+}
+/**
+* Search-bar
+*/
+.search-bar {
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+  background-color: var(--baby-powder); /* Light background matching page theme */
+  border: 1px solid var(--pistachio); /* Border to match the pistachio theme */
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between input and buttons */
+  z-index: 10;
+}
+
+/* Remove default outline for the search input */
+.search-bar input:focus {
+  outline: none; /* Removes the default black outline */
+  border-color: var(--pistachio); /* Optionally, add a custom border color on focus */
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Optional: Add a subtle shadow to show focus */
+}
+
+.search-bar input {
+  width: 150px; /* Compact width */
+  padding: 5px;
+  font-size: 1.4rem;
+  color: var(--eerie-black-2); /* Dark text inside the input */
+  background-color: var(--white); /* Light background inside input */
+  border: 1px solid var(--pistachio); /* Border around input field */
+  border-radius: 3px;
+}
+
+.search-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Small space between buttons */
+}
+
+#matchCounter {
+  color: var(--pistachio); /* Match counter in pistachio color */
+  font-size: 1.2rem;
+}
+
+#prevMatch, #nextMatch, #clearSearch, #closeSearch {
+  background-color: var(--pistachio); /* Button background */
+  color: var(--white); /* Button text color */
+  border: none;
+  padding: 5px;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#prevMatch:hover, #nextMatch:hover, #clearSearch:hover, #closeSearch:hover {
+  background-color: var(--granite-gray); /* Darker hover effect for buttons */
+}
+
+/* Update highlight color to match page design */
+.highlight {
+  background-color: var(--pistachio); /* Use pistachio for the highlight */
+  color: var(--white); /* White text on highlighted elements */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
