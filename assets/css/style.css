@@ -77,7 +77,6 @@
 
 
 
-
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -1451,4 +1450,70 @@ body {
     width: auto;
   }
 
+}
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--light-gray);
+  border-radius: var(--radius-circle);
+  padding: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#theme-toggle:hover {
+  background-color: var(--roman-silver);
+}
+
+#theme-icon {
+  font-size: 24px;
+  color: var(--oxford-blue);
+}
+
+
+.dark {
+
+  --medium-turquoise: hsl(206, 95%, 8%);
+  --silver-chalice: hsl(0, 0%, 5%);
+  --eerie-black-1: hsl(220, 95%, 8%);
+  --eerie-black-2: hsl(260, 89%, 11%);
+  --eerie-black-3: hsl(228, 93%, 5%);
+  --raisin-black: hsl(220, 46%, 95%);
+  --granite-gray: hsl(0, 0%, 87%);
+  --light-gray: hsl(177, 83%, 95%);
+
+  --black: hsl(253, 100%, 19%);
+  --jet: hsl(231, 93%, 6%);
+  --background-color: var(--eerie-black-1);
+  --text-color: var(--light-gray);
+  --header-background: var(--black);
+  --link-color: var(--medium-turquoise);
+}
+
+/* Body styles */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color); 
+}
+
+.header {
+  background-color: var(--header-background);
+}
+
+.navbar-link {
+  color: var(--link-color); 
+}
+p{
+  color: var(--light-gray) !important;
+}
+.btn {
+  background-color: var(--link-color);
+  color: var(--text-color); 
+}
+h2{
+  color: var(--text-color) !important; 
+}
+h3{
+  color: var(--text-color) !important; 
 }
