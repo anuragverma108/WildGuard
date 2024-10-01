@@ -1546,3 +1546,32 @@ body {
   color: var(--white); /* White text on highlighted elements */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
+
+/* Google Translate widget styling */
+#google_translate_element {
+  margin-left: 20px;
+}
+
+#google_translate_element select {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  background-color: var(--pistachio);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Optional - Hide the Google "Powered by" branding (not recommended but possible) */
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+#google_translate_element img, #google_translate_element a{
+  display: none;
+}

@@ -8,6 +8,10 @@
   <title>WildGuard - Give Love for Saving World Animals</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+  <!-- Google Translate script -->
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <!-- 
     - favicon
   -->
@@ -41,13 +45,8 @@
         <a href="#" class="logo">WildGuard</a>
       </h1>
 
-      <select name="language" class="lang-switch">
+      <div id="google_translate_element"></div> <!-- Google Translate widget -->
 
-        <option value="english">English</option>
-        <option value="french">French</option>
-        <option value="spanish">Spanish</option>
-
-      </select>
 
       <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
         <ion-icon name="menu-outline"></ion-icon>
@@ -119,11 +118,11 @@
         <button class="search-btn" aria-label="Search" id="searchIcon">
           <ion-icon name="search-outline"></ion-icon>
         </button>
-      
+
         <!-- Search input field -->
         <div class="search-bar" id="searchBar" style="display:none;">
           <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
-          
+
           <!-- Match counter and navigation buttons -->
           <div class="search-nav-buttons">
             <span id="matchCounter" style="display: none;">0/0</span>
@@ -132,25 +131,22 @@
             <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
           </div>
         </div>
-      
+
         <button class="btn btn-primary">
           <span>Donation</span>
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         </button>
       </div>
-      
-      
-      
+
+
+
     </div>
   </header>
 
-<!-- Scroll To Top Btn -->
-<button
-type="button"
-id="btn-back-to-top"
->
-<i class="fas fa-leaf"></i>
-</button>
+  <!-- Scroll To Top Btn -->
+  <button type="button" id="btn-back-to-top">
+    <i class="fas fa-leaf"></i>
+  </button>
 
 
 
