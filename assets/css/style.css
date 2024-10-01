@@ -497,15 +497,27 @@ body {
 
 .tab-btn {
   background-color: var(--platinum);
-  color: var(--granite-gray);
+  color: var(--);
   font-size: var(--fs-8);
   font-weight: var(--fw-500);
   padding: 10px 32px;
+  transition: background-color 0.2s ease-in-out;
+  
+  
+}
+
+.tab-btn:hover {
+  background-color: var(--bright-yellow-crayola); /* define hover color */
+  cursor: pointer; /* add pointer cursor on hover */
 }
 
 .tab-btn.active {
   background-color: var(--pistachio);
-  color: var(--white);
+  color: var(--granite-gray);
+}
+.tab-btn.active:hover{
+   background-color: var(--bright-yellow-crayola); /* define hover color */
+  cursor: pointer;
 }
 
 .tab-list { margin-block: 25px 50px; }
