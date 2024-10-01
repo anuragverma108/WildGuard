@@ -256,7 +256,6 @@ body {
   left: 0;
   width: 100%;
   background-color: transparent;
-  padding-block: 18px;
   z-index: 4;
 }
 
@@ -1346,8 +1345,6 @@ body {
   .navbar > .logo,
   .navbar-link > ion-icon { display: none; }
 
-  .header { padding-block: 25px; }
-
   .lang-switch {
     position: relative;
     display: block;
@@ -1478,5 +1475,4 @@ body {
 .container {
   padding: 20px;
   text-align: center;
-  margin-top: 50px; /* Space from the top */
 }
