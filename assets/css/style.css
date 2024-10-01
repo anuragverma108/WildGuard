@@ -145,9 +145,92 @@ body {
 
 ::-webkit-scrollbar-thumb { background-color: var(--pistachio); }
 
+#moving-div {
+  margin-top: 10vh;
+  position: absolute;
+  bottom: -60%;
+  white-space: nowrap;
+  width: 100%;
+  padding: 1.2vw;
+  overflow: hidden;
+}
+
+#moving-div .move {
+  display: flex; 
+  animation-name: mobe;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#moving-div .move img {
+  height: 5vw; 
+  margin: 0 5vw;
+}
 
 
+#moving-div {
+  display: flex;
+  gap: 0;
+}
 
+@keyframes mobe {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#blur-left {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(to right, #eae4e44e, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#blur-right {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(to right, transparent, #eae4e44e);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+@keyframes mobe {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+#blur-left {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(to right, #eae4e44e, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#blur-right {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(to right, transparent, #eae4e44e);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
 
 /*-----------------------------------*\
   #REUSED STYLE
