@@ -319,71 +319,52 @@ id="btn-back-to-top"
             </h2>
 
             <ul class="tab-nav">
-
               <li>
-                <button class="tab-btn active">Our Mission</button>
+                <button class="tab-btn active" onclick="setActiveTab(this, 'mission')">Our Mission</button>
               </li>
-
               <li>
-                <button class="tab-btn">Our Vision</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'vision')">Our Vision</button>
               </li>
-
               <li>
-                <button class="tab-btn">Next Plan</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'plan')">Next Plan</button>
               </li>
-
             </ul>
 
-            <div class="tab-content">
-
+            <div class="tab-content" id="tab-content">
               <p class="section-text">
-                But I must explain to you how all this mistaken denouncing pleasure and praising pain was born and I
-                will give you a
-                complete account of the system expoundmaster
+                But I must explain to you how all this mistaken denouncing pleasure and praising pain was born and I will give you a complete account of the system expoundmaster.
               </p>
-
+          
               <ul class="tab-list">
-
                 <li class="tab-item">
                   <div class="item-icon">
                     <ion-icon name="checkmark-circle"></ion-icon>
                   </div>
-
                   <p class="tab-text">Charity For Foods</p>
                 </li>
-
+          
                 <li class="tab-item">
                   <div class="item-icon">
                     <ion-icon name="checkmark-circle"></ion-icon>
                   </div>
-
                   <p class="tab-text">Charity For Education</p>
                 </li>
-
+          
                 <li class="tab-item">
                   <div class="item-icon">
                     <ion-icon name="checkmark-circle"></ion-icon>
                   </div>
-
                   <p class="tab-text">Charity For Water</p>
                 </li>
-
+          
                 <li class="tab-item">
                   <div class="item-icon">
                     <ion-icon name="checkmark-circle"></ion-icon>
                   </div>
-
                   <p class="tab-text">Charity For Medical</p>
                 </li>
-
               </ul>
-
-              <button class="btn btn-secondary">
-                <span>Learn More Us</span>
-
-                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-              </button>
-
+            
             </div>
 
           </div>
@@ -1138,7 +1119,55 @@ id="btn-back-to-top"
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+     function setActiveTab(selectedButton, contentKey) {
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(button => button.classList.remove('active'));
 
+    selectedButton.classList.add('active');
+
+    const content = {
+      mission: `
+        <p class="section-text">
+          Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
+        </p>
+        <ul class="tab-list">
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Foods</p></li>
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Education</p></li>
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Water</p></li>
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
+        </ul>
+      `,
+      vision: `
+        <p class="section-text">
+          Our vision is to create a world where all animals are treated with compassion and respect.
+        </p>
+        <ul class="tab-list">
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Awareness</p></li>
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Protect Wildlife</p></li>
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
+        </ul>
+      `,
+      plan: `
+        <p class="section-text">
+          Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
+        </p>
+        <ul class="tab-list">
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Expand Rescue Operations</p></li>
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Funding</p></li>
+          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Partner with Local Groups</p></li>
+        </ul>
+      `
+      
+    };
+
+    document.getElementById('tab-content').innerHTML = content[contentKey] + `
+        <button class="btn btn-secondary">
+          <span>Learn More Us</span>
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+        </button>
+      `;  }
+  </script>
 </body>
 
 </html>
