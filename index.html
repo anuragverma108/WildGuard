@@ -25,6 +25,99 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
     rel="stylesheet">
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    #chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        height: 560px;
+        right: 20px;
+        width: 300px;
+        z-index: 999;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    #chatbot-header {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    #chatbot-messages {
+        height: 200px;
+        overflow-y: auto;
+        padding: 10px;
+    }
+    .message {
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        border-radius: 20px;
+        max-width: 80%;
+    }
+    .bot-message {
+        background-color: #e0e0e0;
+        align-self: flex-start;
+    }
+    .user-message {
+        background-color: #4CAF50;
+        color: white;
+        align-self: flex-end;
+        margin-left: auto;
+    }
+    #chatbot-options {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .option-btn {
+        margin-bottom: 5px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .option-btn:hover {
+        background-color: #e0e0e0;
+    }
+    #chatbot-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    </style>
 </head>
 
 <body>
@@ -168,6 +261,16 @@
         </div>
       </section>
 
+      <button id="chatbot-toggle"><ion-icon name="chatbubble-outline"></ion-icon></button>
+      <div id="chatbot-container" style="display: none;">
+          <div id="chatbot-header">
+              <span>WildGuard Bot</span>
+              <button id="close-btn">&times;</button>
+          </div>
+          <div id="chatbot-messages"></div>
+          <div id="chatbot-options"></div>
+      </div>
+  
 
 
 
@@ -1103,13 +1206,106 @@
     </div>
   </footer>
 
+<script>
+     const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const closeBtn = document.getElementById('close-btn');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotOptions = document.getElementById('chatbot-options');
 
+        const chatOptions = {
+            initial: [
+                { id: 'donate', text: 'How to Donate' },
+                { id: 'volunteer', text: 'Volunteer Opportunities' },
+                { id: 'animals', text: 'Learn About Animals' },
+                { id: 'conservation', text: 'Conservation Efforts' },
+                { id: 'events', text: 'Upcoming Events' },
+            ],
+            animals: [
+                { id: 'elephant', text: 'Elephants' },
+                { id: 'tiger', text: 'Tigers' },
+                { id: 'panda', text: 'Giant Pandas' },
+                { id: 'whale', text: 'Whales' },
+                { id: 'back', text: 'Back to Main Menu' },
+            ]
+        };
 
+        const chatResponses = {
+            donate: "To donate, visit our 'Donate' page. We accept various payment methods. Every donation helps our conservation efforts!",
+            volunteer: "We have various volunteer opportunities available. Visit our 'Get Involved' page for current openings and application procedures.",
+            conservation: "Our conservation efforts span across various ecosystems worldwide. Check out our 'Projects' page for detailed information.",
+            events: "We regularly organize events such as fundraisers and educational workshops. Visit our 'Events' page for a full calendar.",
+            elephant: "Elephants are the largest land mammals, known for their intelligence and complex social structures. Our projects focus on habitat protection.",
+            tiger: "Tigers are the largest cat species. Our conservation efforts include anti-poaching measures and corridor preservation.",
+            panda: "Giant pandas are native to China and crucial to bamboo forest ecosystems. Our work includes habitat restoration and breeding programs.",
+            whale: "Whales play a crucial role in ocean ecosystems. We focus on protecting marine habitats and advocating for sustainable fishing practices."
+        };
 
+        let currentStage = 'initial';
 
-  <!-- 
-    - custom js link
-  -->
+        function toggleChatbot() {
+            chatbotContainer.style.display = chatbotContainer.style.display === 'none' ? 'block' : 'none';
+            if (chatbotContainer.style.display === 'block') {
+                renderOptions();
+            }
+        }
+
+        function closeChatbot() {
+            chatbotContainer.style.display = 'none';
+        }
+
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function renderOptions() {
+            chatbotOptions.innerHTML = '';
+            chatOptions[currentStage].forEach(option => {
+                const button = document.createElement('button');
+                button.classList.add('option-btn');
+                button.textContent = option.text;
+                button.onclick = () => handleOptionSelect(option.id);
+                chatbotOptions.appendChild(button);
+            });
+        }
+
+        function handleOptionSelect(optionId) {
+            chatbotOptions.style.display = 'none';
+            if (optionId === 'back') {
+                currentStage = 'initial';
+                addMessage("What else would you like to know?", false);
+                renderOptions();
+            } else if (optionId === 'animals') {
+                currentStage = 'animals';
+                addMessage("Which animal would you like to learn about?", false);
+                renderOptions();
+            } else {
+                const response = chatResponses[optionId] || "I'm sorry, I don't have information about that right now.";
+                addMessage(response, false);
+                if (currentStage !== 'initial') {
+                    currentStage = 'initial';
+                }
+                setTimeout(() => {
+                    addMessage("Is there anything else you'd like to know?", false);
+                    renderOptions();
+                }, 1000);
+            }
+            chatbotOptions.style.display = 'flex';
+        }
+
+        chatbotToggle.onclick = toggleChatbot;
+        closeBtn.onclick = closeChatbot;
+
+        // Initial bot message
+        addMessage("Hello! How can I assist you today?", false);
+        renderOptions();
+</script>
+
   <script src="./assets/js/script.js"></script>
 
   <!-- 
