@@ -1476,9 +1476,9 @@ body {
 }
 
 .container {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
-  margin-top: 50px; /* Space from the top */
+  margin-top: 10px; /* Space from the top */
 }
 /**
 * Search-bar
