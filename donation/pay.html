@@ -1,0 +1,222 @@
+<style>
+  .form-basin {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 40px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #e6e6e6;
+    border-radius: 8px;
+    margin-top: 100px;
+}
+  body {
+    background-color: #1a1a1a;
+  }
+  .form-basin form {
+    margin: auto;
+    max-width: 600px;
+  }
+
+  .form-basin label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .form-basin input,
+  .form-basin textarea,
+  .form-basin select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    font-family: inherit;
+    background-color: #333333;
+    border: 1px solid #4d4d4d;
+    border-radius: 4px;
+    color: #e6e6e6;
+    box-sizing: border-box;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+
+  .form-basin input:focus,
+  .form-basin textarea:focus,
+  .form-basin select:focus {
+    border-color: #28a745;
+    background-color: #262626;
+    outline: none;
+  }
+
+  .form-basin button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .form-basin button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+  }
+
+  .form-basin ::placeholder {
+    font-family: inherit;
+    color: #999999;
+  }
+
+  .form-basin input[type="checkbox"] {
+    margin-right: 8px;
+    width: auto;
+  }
+
+  .form-basin fieldset {
+    border: 1px solid #4d4d4d;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+  }
+
+  .form-basin legend {
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: 1em;
+    color: #b3b3b3;
+  }
+
+  .form-basin input[type="radio"] {
+    margin-right: 8px;
+    margin-top: 4px;
+    width: auto;
+    cursor: pointer;
+  }
+
+  .form-basin .radio-label {
+    display: inline-block;
+    margin-right: 15px;
+    cursor: pointer;
+    color: #b3b3b3;
+  }
+
+  .form-basin .radio-group {
+    margin-bottom: 16px;
+  }
+
+  .form-basin .donation-type {
+    margin-bottom: 16px;
+  }
+
+  .form-basin .donation-type span {
+    font-weight: 500;
+    margin-right: 10px;
+    color: #e6e6e6;
+  }
+
+  .form-basin input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+
+  .form-basin input[type="number"]::-webkit-inner-spin-button,
+  .form-basin input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .form-basin .form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .form-basin .form-check-input {
+    margin-top: 14px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  .form-basin .form-check-label {
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  /* Wildlife-themed additions */
+  body {
+    background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+  }
+
+  .form-basin button {
+    background-color: #4caf50; /* Nature-inspired green */
+  }
+
+  .form-basin button:hover {
+    background-color: #45a049; /* Darker green */
+  }
+</style>
+
+<body>
+  <div class="form-basin">
+    <form id="donationForm" action="" method="POST">
+        <label for="donorName">Donor Name:</label>
+        <input type="text" id="donorName" name="donorName" placeholder="Your Full Name" required />
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
+      
+        <label for="donationAmount">Donation Amount:</label>
+        <input type="number" id="donationAmount" name="donationAmount" placeholder="Amount in USD" min="1" required />
+      
+        <label for="message">Message (Optional):</label>
+        <textarea id="message" name="message" placeholder="Leave a message"></textarea>
+      
+        <div class="donation-type">
+          <span>Donation Type:</span>
+          <label for="oneTime">
+            <input type="radio" id="oneTime" name="donationType" value="One Time" checked="" />
+            One Time
+          </label>
+          <label for="recurring">
+            <input type="radio" id="recurring" name="donationType" value="Recurring" />
+            Recurring
+          </label>
+        </div>
+      
+        <button type="submit">DONATE NOW</button>
+      </form>
+      
+      <script>
+        document.getElementById('donationForm').addEventListener('submit', function (e) {
+          e.preventDefault(); // Prevent form submission
+      
+          // Collect donation details
+          const donorName = document.getElementById('donorName').value;
+          const email = document.getElementById('email').value;
+          const donationAmount = document.getElementById('donationAmount').value;
+          const donationType = document.querySelector('input[name="donationType"]:checked').value;
+          const message = document.getElementById('message').value || "No message";
+      
+          // Confirm donation details
+          const confirmation = confirm(`
+            Please confirm your donation details:
+            Name: ${donorName}
+            Email: ${email}
+            Donation Amount: $${donationAmount}
+            Donation Type: ${donationType}
+            Message: ${message}
+          `);
+      
+          // If user confirms, show thank you message and redirect to home
+          if (confirmation) {
+            alert('Thank you for your generous donation, ' + donorName + '!');
+            
+            // Simulate form submission or redirect to home
+            window.location.href = '/'; // Change '/' to your homepage URL if necessary
+          }
+        });
+      </script>
+      
+  </div>
+</body>
