@@ -110,9 +110,9 @@ const ourMission = document.getElementById("ourMission");
 const ourVision = document.getElementById("ourVision");
 const nextPlan = document.getElementById("nextPlan");
 
-// sectionText1.style.display = "block";
-// sectionText2.style.display = "none";
-// sectionText3.style.display = "none";
+sectionText1.style.display = "block";
+sectionText2.style.display = "none";
+sectionText3.style.display = "none";
 
 function our_mission(){
   ourMission.classList.add("active");
@@ -166,7 +166,7 @@ function scrollFunction() {
 }
 
 // Scroll to top
-// mybutton.addEventListener("click", backToTop);
+mybutton.addEventListener("click", backToTop);
 
 function backToTop() {
     document.body.scrollTop = 0; // For Safari
