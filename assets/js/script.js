@@ -258,3 +258,14 @@ function hideNavigationButtons() {
   clearSearchBtn.style.display = "none";
   matchCounter.style.display = "none";
 }
+
+function toggleAnswer(element) {
+  const answer = element.nextElementSibling;
+
+  // Toggle the answer display
+  if (answer.style.display === "block") {
+      answer.style.display = "none";
+  } else {
+      answer.style.display = "block";
+  }
+}
