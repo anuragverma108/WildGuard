@@ -1358,10 +1358,24 @@ body {
     background-color: transparent;
     border: none;
     color: var(--white);
-    font: inherit;
     font-size: var(--fs-8);
     font-weight: var(--fw-600);
+    transition: var(--transition-2); /* Smooth transition */
+    background: none; /* No background */
   }
+  
+  .lang-switch:is(:hover, :focus) {
+    background: none; /* No background on hover or focus */
+    outline: none; /* Removes default outline */
+    color: var(--primary-color); /* Optional color change on focus or hover */
+  }
+  
+  .lang-switch-group:hover .lang-switch:not(:hover) {
+    color: var(--white-60); /* Dim color of select box when it's not hovered */
+  }
+  
+
+
 
   .lang-switch option { color: var(--eerie-black-1); }
 
