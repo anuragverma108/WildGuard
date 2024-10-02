@@ -174,6 +174,7 @@ body {
   font-family: var(--ff, var(--ff-roboto));
   font-weight: var(--fw-600);
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
 }
@@ -266,6 +267,7 @@ body {
 
 .section-text {
   line-height: 2;
+  max-width: 840px;
 }
 
 .img-cover {
@@ -673,6 +675,21 @@ body {
 .btn-link span { text-decoration: underline; }
 
 
+/*-----------------------------------*\
+  #About Content
+\*-----------------------------------*/
+
+
+.about-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2;
+}
+
+
+
 
 
 
@@ -881,6 +898,7 @@ body {
 
 .event .section-title {
   text-align: center;
+  justify-content: center;
   margin-block: 15px 50px;
 }
 
@@ -1611,22 +1629,33 @@ body {
   bottom: 20px;
   right: 20px;
   display: none;
-  background-color: #27ae60; /* Nature-inspired green */
+  background: linear-gradient(45deg, #27ae60, #2ecc71); 
   color: white;
   border: none;
-  border-radius: 50%;
-  padding: 15px;
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-  transition: background-color 0.3s, transform 0.3s;
-  font-size: 24px; /* Larger icon */
-  z-index:1;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  font-size: 20px; 
+  z-index: 100;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
 }
 
 #btn-back-to-top:hover {
-  background-color: #2ecc71; /* Lighter green on hover */
-  transform: scale(1.1); /* Slightly enlarge on hover */
+  background: linear-gradient(45deg, #2ecc71, #1abc9c); 
+  transform: scale(1.1); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
 }
+
+#btn-back-to-top:active {
+  transform: scale(0.95); 
+  background: #27ae60;
+}
+
 
 .container {
   padding: 10px;

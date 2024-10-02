@@ -47,6 +47,15 @@ window.addEventListener("scroll", function () {
 
 
 
+window.onload = function() {
+  // Auto scroll to the top every 10 seconds
+  setInterval(function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 10000); // Adjust the time as needed
+};
+
+
+
 
 /**
  * adding functionality to about section
