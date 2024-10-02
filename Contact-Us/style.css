@@ -1,10 +1,9 @@
 :root {
-  /*colors*/
+  /* colors */
   --eerie-black-1: hsl(0, 0%, 13%);
   --white: hsl(0, 0%, 100%);
-
-  /*typography*/
-  --ff-oswald: "Oswald", sans-serif;
+  --primary-color: #28a745;
+  --secondary-color: #218838;
 }
 
 * {
@@ -15,13 +14,9 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background: linear-gradient(135deg, #8fd3f4, #84fab0); /* Gradient background */
   padding: 20px;
-}
-
-.lang-switch,
-.header-action {
-  display: none;
+  min-height: 100vh;
 }
 
 .header {
@@ -53,11 +48,11 @@ body {
 
 .contact-container {
   max-width: 600px;
-  margin: 60px auto;
-  background-color: white;
+  margin: 100px auto; /* More margin for the fixed header */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
   padding: 30px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  border-radius: 10px;
 }
 
 h1 {
@@ -93,6 +88,7 @@ textarea {
   border-radius: 5px;
   font-size: 1rem;
   color: #333;
+  background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
 }
 
 textarea {
@@ -107,7 +103,7 @@ textarea {
 .submit-btn {
   width: 100%;
   padding: 12px;
-  background-color: #28a745;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 5px;
@@ -117,7 +113,7 @@ textarea {
 }
 
 .submit-btn:hover {
-  background-color: #218838;
+  background-color: var(--secondary-color);
 }
 
 /* Modal (Thank You Pop-up) */
@@ -155,7 +151,7 @@ textarea {
 .custom-back-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #28a745; /* Green background */
+  background-color: var(--primary-color); /* Green background */
   color: white; /* White text */
   text-decoration: none; /* Remove underline */
   border-radius: 5px; /* Rounded corners */
@@ -165,9 +161,41 @@ textarea {
 }
 
 .custom-back-button:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: var(--secondary-color); /* Darker green on hover */
 }
 
+/* Footer Styles */
+.footer {
+  background-color: var(--eerie-black-1);
+  color: white;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.footer-links a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright p {
+  margin: 0;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -180,5 +208,12 @@ textarea {
   }
   .modal-content {
     margin: 20% auto;
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links {
+    margin-bottom: 10px;
   }
 }
