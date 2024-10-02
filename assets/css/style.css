@@ -612,6 +612,12 @@ body {
   padding: 10px 32px;
 }
 
+.tab-btn:hover{
+  background-color: var(--sonic-silver);
+  color: var(--baby-powder);
+  transition: background-color 0.2s var(--cubic-in), color 0.2s var(--cubic-in);
+}
+
 .tab-btn.active {
   background-color: var(--pistachio);
   color: var(--white);
