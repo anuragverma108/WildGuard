@@ -1,0 +1,103 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f3;
+    color: #2e7d32;
+}
+
+header { background: rgb(18,77,69);
+    background: linear-gradient(90deg, rgba(18,77,69,1) 0%, rgba(3,255,229,1) 50%, rgba(255,255,255,1) 100%); 
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+    color: black;
+}
+
+.intro {
+    padding: 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 2px solid #388e3c;
+    font-size: 1.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.services {
+    padding: 2rem;
+}
+
+.services h2, .why-us h2 {
+    font-size: 2.5rem;
+    color: #1b5e20;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.service-item {
+    margin-bottom: 2rem;
+    background-color: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    color: #2e7d32;
+    margin-bottom: 0.5rem;
+}
+
+.why-us {
+    padding: 2rem;
+    background-color: #c8e6c9;
+    margin-top: 2rem;
+    border-top: 2px solid #388e3c;
+}
+
+.why-us ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+.why-us ul li {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: #388e3c;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 1.1rem;
+}
+
+/* Go Back Button Styling */
+.go-back {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.go-back button {
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.go-back button:hover {
+    background-color: #2e7d32;
+}
