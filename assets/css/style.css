@@ -775,6 +775,24 @@ body {
 
 
 
+.become_partner {
+  display: inline-flex; /* Use flex for alignment */
+  align-items: center; /* Center the icon with text */
+  padding: 10px 20px; /* Padding around the link */
+  text-decoration: none; /* Remove underline from link */
+  color: #333; /* Text color */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+.become_partner:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+.become_partner ion-icon {
+  margin-left: 8px; /* Space between text and icon */
+}
+
 
 /*-----------------------------------*\
   #EVENT
