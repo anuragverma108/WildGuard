@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeModal = document.querySelector(".close-btn");
 
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent actual form submission for now
+    e.preventDefault(); 
 
     let isValid = true;
 
-    // Clear previous error messages
+    
     nameError.textContent = "";
     emailError.textContent = "";
     messageError.textContent = "";
@@ -31,24 +31,24 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
-    // Validate email (basic regex check)
+  
     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     if (!email.value.match(emailPattern)) {
       emailError.textContent = "Please enter a valid email";
       isValid = false;
     }
 
-    // Validate message
+    
     if (message.value.trim() === "") {
       messageError.textContent = "Message is required";
       isValid = false;
     }
 
-    // If all fields are valid, show thank you pop-up
+    
     if (isValid) {
       modal.style.display = "block";
 
-      // Clear the form after submission
+     
       form.reset();
 
       setTimeout(() => {
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Close the modal when the user clicks on the close button
+  
   closeModal.addEventListener("click", function () {
     modal.style.display = "none";
     window.location.pathname = "../index.html";
