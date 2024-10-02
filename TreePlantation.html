@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree Plantation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+
+      header {
+        background-color: #2e7d32;
+        color: white;
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 3rem;
+      }
+
+      header p {
+        font-size: 1.5rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        text-decoration: none;
+        margin: 10px;
+        border-radius: 5px;
+      }
+
+      .cta-button:hover {
+        background-color: #388e3c;
+      }
+
+      section {
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
+
+      .impact-stats {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+      }
+
+      .stat {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat h3 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      form label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      form button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      form button:hover {
+        background-color: #388e3c;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <h1>Join Our Tree Plantation Mission</h1>
+      <p>Help us create a greener, healthier planet.</p>
+      <a href="#get-involved" class="cta-button">Get Involved</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>Why Tree Plantation Matters</h2>
+      <p>
+        Tree plantation plays a vital role in reducing our carbon footprint,
+        improving air quality, preserving biodiversity, and providing habitats
+        for wildlife.
+      </p>
+    </section>
+
+    <!-- Our Impact Section -->
+    <section id="impact">
+      <h2>Our Impact</h2>
+      <div class="impact-stats">
+        <div class="stat">
+          <h3>10,000+</h3>
+          <p>Trees Planted</p>
+        </div>
+        <div class="stat">
+          <h3>50+</h3>
+          <p>Communities Involved</p>
+        </div>
+        <div class="stat">
+          <h3>500+</h3>
+          <p>Volunteers</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How You Can Help Section -->
+    <section id="get-involved">
+      <h2>How You Can Help</h2>
+      <p>
+        You can join us as a volunteer or support us by donating to our tree
+        plantation drives.
+      </p>
+      <a href="#volunteer" class="cta-button">Sign Up as Volunteer</a>
+      <a href="#donate" class="cta-button">Donate Now</a>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <form action="/submit-form" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
