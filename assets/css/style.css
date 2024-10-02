@@ -1468,11 +1468,15 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s, transform 0.3s;
   font-size: 24px; /* Larger icon */
+  z-index:100;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5), 0 0 20px rgba(76, 175, 80, 0.4); /* Green glow */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover */
 }
 
 #btn-back-to-top:hover {
   background-color: #2ecc71; /* Lighter green on hover */
   transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 0 20px rgba(76, 175, 80, 1), 0 0 30px rgba(76, 175, 80, 0.7);/* Brighten glow on hover */
 }
 
 .container {
