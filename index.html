@@ -11,8 +11,8 @@
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-
+  <!-- <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml"> -->
+  
   <!-- 
     - custom css link
   -->
@@ -26,6 +26,70 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
     rel="stylesheet">
+
+
+    <style>
+      /* Footer Styles */
+      .footer {
+        background-color: #2c3e50;
+        padding: 40px 0;
+        color: #ffffff;
+        text-align: center;
+      }
+  
+      .footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+  
+      .footer-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+  
+      .footer-list li {
+        display: inline-block;
+      }
+  
+      .footer-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+  
+      .footer-link:hover {
+        color: #f39c12;
+      }
+  
+      .copyright {
+        font-size: 14px;
+        margin-top: 15px;
+      }
+  
+      .copyright-link {
+        color: #f39c12;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+  
+      .copyright-link:hover {
+        color: #e74c3c;
+      }
+  
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .footer-list {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
 </head>
 
 <body>
