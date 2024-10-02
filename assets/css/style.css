@@ -1713,3 +1713,37 @@ body {
   color: #000; /* Change this to your preferred text color on hover */
   border-radius: 5px; /* Optional: adds rounded corners */
 }
+
+/* Updating the styling of Why Choose Us? Section */
+
+.about-content{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-content{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-btn {
+  background-color: var(--pistachio);
+  color: var(--baby-powder);
+}
+
+.tab-btn:is(:hover, :focus) {
+  background-color: var(--platinum);
+  color: (var(--platinum));
+}
+
+.section-text{
+  padding: 10px 100px;
+}
+
+#ourMission{
+  outline: none;
+}

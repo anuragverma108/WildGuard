@@ -258,3 +258,6 @@ function hideNavigationButtons() {
   clearSearchBtn.style.display = "none";
   matchCounter.style.display = "none";
 }
+
+// Our mission button is active when page is loaded
+document.getElementById('ourMission').focus();
