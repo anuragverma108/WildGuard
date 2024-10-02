@@ -655,11 +655,18 @@ body {
   font-size: var(--fs-8);
   font-weight: var(--fw-600);
   margin-block-start: 15px;
+  transition: font-size 0.2s ease; /* Smooth transition */
 }
 
-.btn-link span {
-  text-decoration: underline;
+
+.btn-link:hover {
+  font-size: calc(var(--fs-8) * 0.9); /* Shrink text size by 10% on hover */
 }
+.btn-link span { text-decoration: underline; }
+
+
+
+
 
 /*-----------------------------------*\
   #DONATE
@@ -826,9 +833,31 @@ body {
 }
 
 .partner-logo:is(:hover, :focus) .color,
-.partner-logo .gray {
-  display: block;
+
+.partner-logo .gray { display: block; }
+
+
+
+
+.become_partner {
+  display: inline-flex; /* Use flex for alignment */
+  align-items: center; /* Center the icon with text */
+  padding: 10px 20px; /* Padding around the link */
+  text-decoration: none; /* Remove underline from link */
+  color: #333; /* Text color */
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Smooth transitions */
 }
+
+.become_partner:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+.become_partner ion-icon {
+  margin-left: 8px; /* Space between text and icon */
+}
+
+
 
 /*-----------------------------------*\
   #EVENT
@@ -1411,10 +1440,24 @@ body {
     background-color: transparent;
     border: none;
     color: var(--white);
-    font: inherit;
     font-size: var(--fs-8);
     font-weight: var(--fw-600);
+    transition: var(--transition-2); /* Smooth transition */
+    background: none; /* No background */
   }
+  
+  .lang-switch:is(:hover, :focus) {
+    background: none; /* No background on hover or focus */
+    outline: none; /* Removes default outline */
+    color: var(--primary-color); /* Optional color change on focus or hover */
+  }
+  
+  .lang-switch-group:hover .lang-switch:not(:hover) {
+    color: var(--white-60); /* Dim color of select box when it's not hovered */
+  }
+  
+
+
 
   .lang-switch option {
     color: var(--eerie-black-1);
