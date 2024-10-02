@@ -615,8 +615,12 @@ body {
   font-size: var(--fs-8);
   font-weight: var(--fw-600);
   margin-block-start: 15px;
+  transition: font-size 0.2s ease; /* Smooth transition */
 }
 
+.btn-link:hover {
+  font-size: calc(var(--fs-8) * 0.9); /* Shrink text size by 10% on hover */
+}
 .btn-link span { text-decoration: underline; }
 
 
