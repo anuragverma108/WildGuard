@@ -52,6 +52,7 @@ git checkout -b feature/new-feature
 Make your changes, whether it’s fixing a bug, adding a feature, or updating documentation.
 
 ### Step 5: Commit Your Changes
+
 bash
 git add .
 git commit -m "Brief description of the changes"
@@ -78,7 +79,3 @@ Comment on the issue to let others know you're working on it.
 Wait for a maintainer to assign the issue to you before starting work.
 
 ## Mission Accomplised 🚀
-
-Get 4 Pull Requests Merged successfully to complete the quest of Hacktoberfest 2024.
-Get digital badges, rewards, certificates and more. 
-Keep Contributing to Open-Source!
