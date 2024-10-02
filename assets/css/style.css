@@ -1647,3 +1647,18 @@ body {
   color: var(--white); /* White text on highlighted elements */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
+
+/* Added Box in Navbar Links like Home, About, Services, etc. */
+.navbar-link {
+  position: relative;
+  padding: 10px 15px; /* Add padding for the box effect */
+  text-decoration: none;
+  color: white; /* Default text color set to white */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-link:hover {
+  background-color: #f0f0f0; /* Change this to your preferred background color */
+  color: #000; /* Change this to your preferred text color on hover */
+  border-radius: 5px; /* Optional: adds rounded corners */
+}
