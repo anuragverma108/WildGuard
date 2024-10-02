@@ -52,46 +52,20 @@ window.addEventListener("scroll", function () {
  * adding functionality to about section
  */
 
-const sectionText1 = document.getElementById("section-text-1");
-const sectionText2 = document.getElementById("section-text-2");
-const sectionText3 = document.getElementById("section-text-3");
-const ourMission = document.getElementById("ourMission");
-const ourVision = document.getElementById("ourVision");
-const nextPlan = document.getElementById("nextPlan");
+  function showContent(id) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.section-text');
 
-sectionText1.style.display = "block";
-sectionText2.style.display = "none";
-sectionText3.style.display = "none";
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
 
-function our_mission(){
-  ourMission.classList.add("active");
-  ourMission.classList.remove("active");
-  ourMission.classList.remove("active");
-
-  sectionText1.style.display = "block";
-  sectionText2.style.display = "none";
-  sectionText3.style.display = "none";
-}
-
-function our_vision(){
-  ourVision.classList.add("active");
-  ourVision.classList.remove("active");
-  ourVision.classList.remove("active");
-
-  sectionText1.style.display = "none";
-  sectionText2.style.display = "block";
-  sectionText3.style.display = "none";
-}
-
-function next_plan(){
-  nextPlan.classList.add("active");
-  nextPlan.classList.remove("active");
-  nextPlan.classList.remove("active");
-
-  sectionText1.style.display = "none";
-  sectionText2.style.display = "none";
-  sectionText3.style.display = "block";
-}
+            document.querySelector(`button[onclick="showContent('${id}')"]`).classList.add('active');
+            
+            // Add a small delay to ensure smooth transition
+            setTimeout(() => {
+                document.getElementById(id).classList.add('active');
+            }, 50);
+        }
 
 
 // Scroll To Top Button
@@ -258,3 +232,56 @@ function hideNavigationButtons() {
   clearSearchBtn.style.display = "none";
   matchCounter.style.display = "none";
 }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const eventModal = document.getElementById('eventModal');
+    const closeModalButton = document.querySelector('.modal .close');
+    const eventTitle = document.getElementById('eventTitle');
+    const eventDate = document.getElementById('eventDate');
+    const eventDescription = document.getElementById('eventDescription');
+
+    // List of events (replace this with dynamic data if needed)
+    const events = [
+      {
+        title: 'Far from the countries Vokalia and Consonantia 2022',
+        date: 'January 05, 2024',
+        description: 'Sit amet consectetur adipiscing elit sed do eiusmod tempor.',
+      },
+      {
+        title: 'Far from the countries Vokalia and Consonantia 2022',
+        date: 'February 23, 2024',
+        description: 'Sit amet consectetur adipiscing elit sed do eiusmod tempor.',
+      },
+      {
+        title: 'Far from the countries Vokalia and Consonantia 2022',
+        date: 'March 27, 2024',
+        description: 'Sit amet consectetur adipiscing elit sed do eiusmod tempor.',
+      },
+    ];
+
+    // Add event listeners to each "View Events" button
+    const viewEventButtons = document.querySelectorAll('.view-event-btn');
+    viewEventButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        // Set the modal content dynamically
+        eventTitle.innerText = events[index].title;
+        eventDate.innerText = events[index].date;
+        eventDescription.innerText = events[index].description;
+
+        // Display the modal
+        eventModal.style.display = 'flex';
+      });
+    });
+
+    // Close the modal when the close button is clicked
+    closeModalButton.addEventListener('click', () => {
+      eventModal.style.display = 'none';
+    });
+
+    // Close the modal when clicking outside of the modal content
+    window.addEventListener('click', (event) => {
+      if (event.target == eventModal) {
+        eventModal.style.display = 'none';
+      }
+    });
+  });
