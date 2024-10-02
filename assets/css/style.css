@@ -536,8 +536,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: var(--pistachio);
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -557,7 +556,7 @@ body {
 
 .prev-btn:hover,
 .next-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
 }
 .spot-circles {
   display: flex;
@@ -568,8 +567,8 @@ body {
 }
 
 .circle {
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -580,7 +579,7 @@ body {
 }
 
 .spot-circles span[index="1"] {
-  background-color: #000;
+  background-color: var(--pistachio_50);
 }
 
 .about .section-subtitle {
@@ -1179,7 +1178,7 @@ body {
   {
    display: flex;
   }
-  
+
   /* .deco-title {
     left: 0% !important;
   } */
