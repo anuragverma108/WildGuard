@@ -191,10 +191,10 @@ let matchedElements = []; // To store matched elements
 let currentMatchIndex = 0; // To keep track of the current match
 
 // Toggle search input visibility when clicking the search icon
-// searchIcon.addEventListener("click", function () {
-//   searchBar.style.display = searchBar.style.display === "block" ? "none" : "flex";
-//   searchInput.focus();
-// });
+searchIcon.addEventListener("click", function () {
+  searchBar.style.display = searchBar.style.display === "block" ? "none" : "flex";
+  searchInput.focus();
+});
 
 // Close search bar when ESC key is pressed
 document.addEventListener("keydown", function(event) {
