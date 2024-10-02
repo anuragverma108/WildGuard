@@ -76,7 +76,7 @@ Locate the `index.html` file in the project folder and open it in your preferred
 
 Simply open `index.html` in your browser, and the WildGuard website will be up and running!
 
-## How You Can Contribute 💡
+## How You Can Contribute :bulb:
 
 **WildGuard** provides several ways for individuals, groups, and organizations to get involved in our mission of protecting animals and the environment.
 
