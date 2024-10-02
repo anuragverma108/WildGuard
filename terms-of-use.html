@@ -9,11 +9,8 @@
 
     /* Modify Bootstrap components with the base color and its shades */
     body {
-      background-color: #f5f5f5;  /* Light background */
-    }
-
-    .h2, h3, p {
-      color: #333;  /* Darker text for better readability */
+     background-color: #f5f5f5;  /* Light background */
+     color: #333;
     }
 
     .h2 {
@@ -37,6 +34,23 @@
       padding: 20px;
       border-radius: 5px;
     }
+    body.dark.mode{
+      background-color: #333;
+      color: #f5f5f5;
+    }
+
+    .dark-mode .h2{
+      border-bottom: 1px solid #2ecc71;
+    }
+
+    .dark-mode.container{
+      border: 1px solid #444;
+    }
+
+    .btn-toggle{
+      cursor: pointer;
+    }
+
   </style>
 </head>
 <body>
@@ -66,6 +80,15 @@
       </div>
     </div>
   </div>
+
+
+  <script>
+    const toggleModeButton =document.getElementById('toggleMode');
+    toggleModeButton.addEventListener('click',function(){
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
