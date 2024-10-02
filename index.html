@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WildGuard - Give Love for Saving World Animals</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <!-- 
     - favicon
@@ -103,7 +104,7 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link" data-nav-link>
+            <a href="/Contact-Us/index.html" class="navbar-link" data-nav-link>
               <span>Contact</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -115,21 +116,41 @@
       </nav>
 
       <div class="header-action">
-
-        <button class="search-btn" aria-label="Search">
+        <button class="search-btn" aria-label="Search" id="searchIcon">
           <ion-icon name="search-outline"></ion-icon>
         </button>
-
+      
+        <!-- Search input field -->
+        <div class="search-bar" id="searchBar" style="display:none;">
+          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+          
+          <!-- Match counter and navigation buttons -->
+          <div class="search-nav-buttons">
+            <span id="matchCounter" style="display: none;">0/0</span>
+            <button id="prevMatch" style="display:none;">&#x25B2;</button> <!-- Up arrow -->
+            <button id="nextMatch" style="display:none;">&#x25BC;</button> <!-- Down arrow -->
+            <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
+          </div>
+        </div>
+      
         <button class="btn btn-primary">
           <span>Donation</span>
-
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         </button>
-
       </div>
-
+      
+      
+      
     </div>
   </header>
+
+<!-- Scroll To Top Btn -->
+<button
+type="button"
+id="btn-back-to-top"
+>
+<i class="fas fa-leaf"></i>
+</button>
 
 
 
@@ -1098,11 +1119,11 @@
       <ul class="footer-list">
 
         <li>
-          <a href="#" class="footer-link">Terms of use</a>
+          <a href="./terms-of-use.html" class="footer-link">Terms of use</a>
         </li>
 
         <li>
-          <a href="#" class="footer-link">Privacy & Policy</a>
+          <a href="./privacy-policy.html" class="footer-link">Privacy & Policy</a>
         </li>
 
       </ul>
