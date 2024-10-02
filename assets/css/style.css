@@ -1522,6 +1522,7 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s, transform 0.3s;
   font-size: 24px; /* Larger icon */
+  z-index:1;
 }
 
 #btn-back-to-top:hover {
