@@ -497,14 +497,25 @@ body {
 }
 
 .tab-btn {
-  background-color: var(--platinum);
-  color: var(--granite-gray);
+  background-color: var(--granite-gray); 
+  color: var(--white); 
   font-size: var(--fs-8);
   font-weight: var(--fw-500);
   padding: 10px 32px;
+  transition: background-color 0.3s ease; 
+}
+
+.tab-btn:hover {
+  background-color: var(--pistachio); 
+  color: var(--white); 
 }
 
 .tab-btn.active {
+  background-color: var(--granite-gray);
+  color: var(--white);
+}
+
+.tab-btn.active:hover {
   background-color: var(--pistachio);
   color: var(--white);
 }
@@ -552,7 +563,13 @@ body {
   margin-block-end: 25px;
 }
 
-.cta .btn-outline { margin-inline: auto; }
+.cta .btn-outline { 
+  margin-inline: auto;
+ }
+ .cta .btn-outline:hover
+ {
+   background-color:#9acb5d ;
+ }
 
 .cta-banner { background-color: var(--light-gray); }
 
