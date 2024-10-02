@@ -7,6 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WildGuard - Give Love for Saving World Animals</title>
 
+  <!-- Google Translate script -->
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <!-- 
     - favicon
   -->
@@ -45,13 +49,8 @@
         <a href="#" class="logo">WildGuard</a>
       </h1>
 
-      <select name="language" class="lang-switch">
+      <div id="google_translate_element"></div> <!-- Google Translate widget -->
 
-        <option value="english">English</option>
-        <option value="french">French</option>
-        <option value="spanish">Spanish</option>
-
-      </select>
 
       <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
         <ion-icon name="menu-outline"></ion-icon>
@@ -125,6 +124,19 @@
           <ion-icon name="search-outline"></ion-icon>
         </button>
 
+        <!-- Search input field -->
+        <div class="search-bar" id="searchBar" style="display:none;">
+          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+
+          <!-- Match counter and navigation buttons -->
+          <div class="search-nav-buttons">
+            <span id="matchCounter" style="display: none;">0/0</span>
+            <button id="prevMatch" style="display:none;">&#x25B2;</button> <!-- Up arrow -->
+            <button id="nextMatch" style="display:none;">&#x25BC;</button> <!-- Down arrow -->
+            <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
+          </div>
+        </div>
+
         <button class="btn btn-primary">
           <span>Donation</span>
 
@@ -133,8 +145,15 @@
 
       </div>
 
+
+
     </div>
   </header>
+
+  <!-- Scroll To Top Btn -->
+  <button type="button" id="btn-back-to-top">
+    <i class="fas fa-leaf"></i>
+  </button>
 
 
 
@@ -305,20 +324,20 @@
             <ul class="tab-nav">
 
               <li>
-                <button class="tab-btn active">Our Mission</button>
+                <button class="tab-btn active" onclick="setActiveTab(this, 'mission')">Our Mission</button>
               </li>
 
               <li>
-                <button class="tab-btn">Our Vision</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'vision')">Our Vision</button>
               </li>
 
               <li>
-                <button class="tab-btn">Next Plan</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'plan')">Next Plan</button>
               </li>
 
             </ul>
 
-            <div class="tab-content">
+            <div class="tab-content" id="tab-content">
 
               <p class="section-text">
                 But I must explain to you how all this mistaken denouncing pleasure and praising pain was born and I
@@ -362,11 +381,6 @@
 
               </ul>
 
-              <button class="btn btn-secondary">
-                <span>Learn More Us</span>
-
-                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-              </button>
 
             </div>
 
@@ -1143,7 +1157,55 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  <script>
+    function setActiveTab(selectedButton, contentKey) {
+   const buttons = document.querySelectorAll('.tab-btn');
+   buttons.forEach(button => button.classList.remove('active'));
 
+   selectedButton.classList.add('active');
+
+   const content = {
+     mission: `
+       <p class="section-text">
+         Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
+       </p>
+       <ul class="tab-list">
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Foods</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Education</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Water</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
+       </ul>
+     `,
+     vision: `
+       <p class="section-text">
+         Our vision is to create a world where all animals are treated with compassion and respect.
+       </p>
+       <ul class="tab-list">
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Awareness</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Protect Wildlife</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
+       </ul>
+     `,
+     plan: `
+       <p class="section-text">
+         Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
+       </p>
+       <ul class="tab-list">
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Expand Rescue Operations</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Funding</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Partner with Local Groups</p></li>
+       </ul>
+     `
+
+   };
+
+   document.getElementById('tab-content').innerHTML = content[contentKey] + `
+       <button class="btn btn-secondary">
+         <span>Learn More Us</span>
+         <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+       </button>
+     `;  }
+ </script>
   <!-- 
     - ionicon link
   -->
