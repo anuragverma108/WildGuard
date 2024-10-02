@@ -46,7 +46,27 @@ window.addEventListener("scroll", function () {
 });
 
 
+// Adding dark mode functionality 
+function darkMode() {
+  const darkmodeBtn = document.querySelector('.darkmode');
+  const icon = darkmodeBtn.querySelector('i'); // Select the icon inside the button
 
+  darkmodeBtn.addEventListener('click', () => {
+      const body = document.querySelector('body');
+      body.classList.toggle('enabled');  // Toggles dark mode on and off
+
+      // Change the icon based on dark mode state
+      if (body.classList.contains('enabled')) {
+          icon.classList.remove('ri-sun-fill'); 
+          icon.classList.add('ri-moon-fill');   
+      } else {
+          icon.classList.remove('ri-moon-fill'); 
+          icon.classList.add('ri-sun-fill');  
+      }
+  });
+}
+
+darkMode();
 
 /**
  * adding functionality to about section

@@ -367,6 +367,19 @@ body {
 .navbar-link:is(:hover, :focus) { background-color: var(--pistachio); }
 
 
+.darkmode{
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+body.enabled {
+  background-color: #121212;
+  color: #ffffff;
+  p, h2{
+    color: #fff;
+  }
+}
 
 
 
