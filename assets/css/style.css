@@ -509,14 +509,11 @@ body {
 .deco-img {
   position: absolute;
   top: -40px;
-  left: 0;
+  transform: translate(80%, -16%); 
   z-index: -1;
 }
 
-.about-img {
-  max-width: max-content;
-  margin-block-end: 30px;
-}
+
 .banner-imgs {
   display: grid;
   scale: calc(100px / 100%);
@@ -556,7 +553,7 @@ body {
 
 .prev-btn:hover,
 .next-btn:hover {
-  /* background-color: rgba(0, 0, 0, 0.8); */
+  color: var(--black);
 }
 .spot-circles {
   display: flex;
@@ -602,12 +599,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;
- height: 100%;  
- width: 100%;  
- overflow: hidden; 
- opacity: 0;
- visibility: hidden;
- transition: opacity 0.5s ease, visibility 0.5s ease;
+  height: 100%;  
+  width: 100%;  
+  overflow: hidden; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .banner-carousel-frame.active
@@ -1277,7 +1274,7 @@ body {
 
   .deco-title {
     top: 10%;
-    /* left: calc(100% + 40px); */
+    left: calc(100% + 40px);
   }
 
   .about-img {
