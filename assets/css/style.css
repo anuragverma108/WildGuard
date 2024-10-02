@@ -344,7 +344,7 @@ body {
 .navbar.active {
   transform: translateY(-100%);
 
-  visibility: visible; 
+  visibility: visible;
 
   visibility: visible;
   width: 100vw;
@@ -517,23 +517,20 @@ body {
   max-width: max-content;
   margin-block-end: 30px;
 }
-.banner-imgs
-{
+.banner-imgs {
   display: grid;
-  scale: calc(100px/100%);
+  scale: calc(100px / 100%);
 }
-.banner-img-container
-{
+.banner-img-container {
   display: flex;
 }
-.about-img
-{
+.about-img {
   object-fit: contain;
   border-radius: 8px;
 }
 
-
-.prev-btn, .next-btn {
+.prev-btn,
+.next-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -550,27 +547,25 @@ body {
 
 .prev-btn {
   left: calc(-1 * min(32px, 8vw));
-
 }
 
 .next-btn {
   right: calc(-1 * min(32px, 8vw));
 }
 
-.prev-btn:hover, .next-btn:hover {
+.prev-btn:hover,
+.next-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
-.spot-circles{
+.spot-circles {
   display: flex;
   width: 70vw;
   margin: auto;
   justify-content: center;
   gap: 5px;
-
 }
 
-.circle
-{
+.circle {
   height: 15px;
   width: 15px;
   border-radius: 50%;
@@ -582,8 +577,7 @@ body {
   margin-top: 20px;
 }
 
-.spot-circles span[index="1"]
-{
+.spot-circles span[index="1"] {
   background-color: #000;
 }
 
@@ -727,15 +721,12 @@ body {
   transition: font-size 0.2s ease; /* Smooth transition */
 }
 
-
 .btn-link:hover {
   font-size: calc(var(--fs-8) * 0.9); /* Shrink text size by 10% on hover */
 }
-.btn-link span { text-decoration: underline; }
-
-
-
-
+.btn-link span {
+  text-decoration: underline;
+}
 
 /*-----------------------------------*\
   #DONATE
@@ -902,11 +893,9 @@ body {
 }
 
 .partner-logo:is(:hover, :focus) .color,
-
-.partner-logo .gray { display: block; }
-
-
-
+.partner-logo .gray {
+  display: block;
+}
 
 .become_partner {
   display: inline-flex; /* Use flex for alignment */
@@ -921,12 +910,9 @@ body {
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-
 .become_partner ion-icon {
   margin-left: 8px; /* Space between text and icon */
 }
-
-
 
 /*-----------------------------------*\
   #EVENT
@@ -1362,7 +1348,7 @@ body {
 
   .about .container {
     display: grid;
-    grid-template-columns: 1fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     align-items: flex-start;
     gap: 120px;
   }
@@ -1371,46 +1357,48 @@ body {
     margin-block-end: 0;
   }
 
-  .banner-img-cont-1
-  {
+  .banner-img-cont-1 {
     grid-area: tiger;
     align-items: end;
   }
-  .banner-img-cont-2
-  {
+  .banner-img-cont-2 {
     grid-area: elephant;
     align-items: end;
     justify-content: start;
   }
-  .banner-img-cont-2 .about-img
-  {
+  .banner-img-cont-2 .about-img {
     height: 16vw;
     width: auto;
   }
 
-  .banner-img-cont-3
-  {
+  .banner-img-cont-3 {
     grid-area: panda;
     align-items: start;
   }
-  .banner-img-cont-4
-  {
+  .banner-img-cont-4 {
     grid-area: deer;
     align-items: start;
   }
-  .banner-imgs
-  {
+  .banner-imgs {
     display: grid;
     grid-template: 16vw 4vw 16vw/ 4vw 16vw 16vw 2vw;
     gap: 2vmin;
-    grid-template-areas: 
-    ". tiger elephant ."
-    ". tiger deer deer"
-    "panda panda deer deer"
-    ;
+    grid-template-areas:
+      ". tiger elephant ."
+      ". tiger deer deer"
+      "panda panda deer deer";
     position: relative;
   }
-  
+
+  .prev-btn,
+  .next-btn,
+  .spot-circles {
+    display: none;
+  }
+  .banner-img-container {
+    opacity: 1;
+    visibility: visible;
+  }
   /**
    * CTA
    */
@@ -1537,19 +1525,16 @@ body {
     transition: var(--transition-2); /* Smooth transition */
     background: none; /* No background */
   }
-  
+
   .lang-switch:is(:hover, :focus) {
     background: none; /* No background on hover or focus */
     outline: none; /* Removes default outline */
     color: var(--primary-color); /* Optional color change on focus or hover */
   }
-  
+
   .lang-switch-group:hover .lang-switch:not(:hover) {
     color: var(--white-60); /* Dim color of select box when it's not hovered */
   }
-  
-
-
 
   .lang-switch option {
     color: var(--eerie-black-1);
@@ -1661,7 +1646,7 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s, transform 0.3s;
   font-size: 24px; /* Larger icon */
-  z-index:1;
+  z-index: 1;
 }
 
 #btn-back-to-top:hover {
@@ -1681,7 +1666,9 @@ body {
   top: 50%;
   right: 20%;
   transform: translateY(-50%);
-  background-color: var(--baby-powder); /* Light background matching page theme */
+  background-color: var(
+    --baby-powder
+  ); /* Light background matching page theme */
   border: 1px solid var(--pistachio); /* Border to match the pistachio theme */
   border-radius: 5px;
   padding: 5px;
@@ -1694,7 +1681,9 @@ body {
 /* Remove default outline for the search input */
 .search-bar input:focus {
   outline: none; /* Removes the default black outline */
-  border-color: var(--pistachio); /* Optionally, add a custom border color on focus */
+  border-color: var(
+    --pistachio
+  ); /* Optionally, add a custom border color on focus */
   box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Optional: Add a subtle shadow to show focus */
 }
 
@@ -1719,7 +1708,10 @@ body {
   font-size: 1.2rem;
 }
 
-#prevMatch, #nextMatch, #clearSearch, #closeSearch {
+#prevMatch,
+#nextMatch,
+#clearSearch,
+#closeSearch {
   background-color: var(--pistachio); /* Button background */
   color: var(--white); /* Button text color */
   border: none;
@@ -1729,7 +1721,10 @@ body {
   cursor: pointer;
 }
 
-#prevMatch:hover, #nextMatch:hover, #clearSearch:hover, #closeSearch:hover {
+#prevMatch:hover,
+#nextMatch:hover,
+#clearSearch:hover,
+#closeSearch:hover {
   background-color: var(--granite-gray); /* Darker hover effect for buttons */
 }
 
