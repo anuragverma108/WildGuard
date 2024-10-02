@@ -457,6 +457,7 @@ body {
   position: relative;
   max-width: max-content;
   margin-block-end: 30px;
+  margin: auto;
 }
 
 .deco-title {
@@ -478,13 +479,120 @@ body {
 .deco-img {
   position: absolute;
   top: -40px;
-  left: 0;
+  transform: translate(80%, -16%); 
   z-index: -1;
 }
 
+.banner-imgs {
+  display: grid;
+  scale: calc(100px / 100%);
+}
+
+.banner-img-container {
+  display: flex;
+}
+
 .about-img {
-  max-width: max-content;
-  margin-block-end: 30px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--pistachio);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: var(--fs-8);
+  border-radius: 8px;
+  margin: 0 -6%;
+}
+
+.prev-btn {
+  left: calc(-1 * min(32px, 8vw));
+}
+
+.next-btn {
+  right: calc(-1 * min(32px, 8vw));
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: var(--black);
+}
+.spot-circles {
+  display: flex;
+  width: 70vw;
+  margin: auto;
+  justify-content: center;
+  gap: 5px;
+}
+
+.circle {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 1px solid #00000077;
+  margin-top: 20px;
+}
+
+.spot-circles span[index="1"] {
+  background-color: var(--pistachio_50);
+}
+
+
+.banner-carousel
+{
+  display: flex;
+  gap: 2vmin;
+  scale: calc(100px/100%);
+  width: 80%;
+  height: 50vh;
+  margin: auto;
+  position: relative;
+}
+
+.banner-carousel-frame
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;  
+  width: 100%;  
+  overflow: hidden; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.banner-carousel-frame.active
+{
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.banner-carousel-frame.hidden
+{
+  opacity: 0;
+  z-index: 0;
+  visibility: hidden;
+}
+
+.banner-img-cont-1
+{
+  opacity: 1;
+  visibility: visible;
 }
 
 .about .section-subtitle { margin-block-end: 10px; }
