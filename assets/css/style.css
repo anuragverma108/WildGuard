@@ -284,7 +284,6 @@ body {
   left: 0;
   width: 100vw;
   background-color: transparent;
-  padding-block: 18px;
   z-index: 4;
 }
 
@@ -1402,10 +1401,6 @@ body {
     display: none;
   }
 
-  .header {
-    padding-block: 25px;
-  }
-
   .lang-switch {
     position: relative;
     display: block;
@@ -1537,7 +1532,6 @@ body {
 .container {
   padding: 10px;
   text-align: center;
-  margin-top: 10px; /* Space from the top */
 }
 /**
 * Search-bar
