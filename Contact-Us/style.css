@@ -1,9 +1,14 @@
 :root {
-  /*colors*/
+  /* Colors */
   --eerie-black-1: hsl(0, 0%, 13%);
   --white: hsl(0, 0%, 100%);
+  --green: #28a745;
+  --dark-green: #218838;
+  --gray-light: #f5f5f5;
+  --gray-dark: #333;
+  --gray-medium: #555;
 
-  /*typography*/
+  /* Typography */
   --ff-oswald: "Oswald", sans-serif;
 }
 
@@ -15,7 +20,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background-color: var(--gray-light);
   padding: 20px;
 }
 
@@ -49,12 +54,17 @@ body {
   text-decoration: none;
   margin: 1.5rem;
   margin-top: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--green); /* Change logo color on hover */
 }
 
 .contact-container {
   max-width: 600px;
   margin: 60px auto;
-  background-color: white;
+  background-color: var(--white);
   padding: 30px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -64,13 +74,13 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 2rem;
-  color: #333;
+  color: var(--gray-dark);
 }
 
 p {
   text-align: center;
   margin-bottom: 40px;
-  color: #555;
+  color: var(--gray-medium);
 }
 
 .form-group {
@@ -81,7 +91,7 @@ label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
-  color: #333;
+  color: var(--gray-dark);
 }
 
 input[type="text"],
@@ -92,7 +102,14 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  color: #333;
+  color: var(--gray-dark);
+  transition: border-color 0.3s ease; /* Add transition for better UX */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--green); /* Highlight border on focus */
 }
 
 textarea {
@@ -107,17 +124,18 @@ textarea {
 .submit-btn {
   width: 100%;
   padding: 12px;
-  background-color: #28a745;
-  color: white;
+  background-color: var(--green);
+  color: var(--white);
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth hover effects */
 }
 
 .submit-btn:hover {
-  background-color: #218838;
+  background-color: var(--dark-green);
+  transform: scale(1.02); /* Slightly enlarge button on hover */
 }
 
 /* Modal (Thank You Pop-up) */
@@ -136,7 +154,7 @@ textarea {
   position: relative;
   margin: 15% auto;
   padding: 20px;
-  background-color: white;
+  background-color: var(--white);
   width: 80%;
   max-width: 400px;
   text-align: center;
@@ -155,19 +173,19 @@ textarea {
 .custom-back-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #28a745; /* Green background */
-  color: white; /* White text */
+  background-color: var(--green); /* Green background */
+  color: var(--white); /* White text */
   text-decoration: none; /* Remove underline */
   border-radius: 5px; /* Rounded corners */
   font-size: 16px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
 }
 
 .custom-back-button:hover {
-  background-color: #218838; /* Darker green on hover */
+  background-color: var(--dark-green); /* Darker green on hover */
+  transform: scale(1.02); /* Slightly enlarge button on hover */
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -175,9 +193,11 @@ textarea {
     margin: 70px auto;
     padding: 20px;
   }
+
   .logo {
     font-size: 1.5rem;
   }
+
   .modal-content {
     margin: 20% auto;
   }
