@@ -428,12 +428,13 @@ body {
   line-height: 1.2;
 }
 
-.hero-text {
+#hero-text {
   font-family: var(--ff-inter);
   font-size: var(--fs-8);
   letter-spacing: -1px;
   max-width: 50ch;
   margin-block-end: 30px;
+  margin-left: 15rem;
 }
 
 /*-----------------------------------*\
