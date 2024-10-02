@@ -45,6 +45,55 @@ window.addEventListener("scroll", function () {
     : header.classList.remove("active");
 });
 
+
+
+
+/**
+ * adding functionality to about section
+ */
+
+const sectionText1 = document.getElementById("section-text-1");
+const sectionText2 = document.getElementById("section-text-2");
+const sectionText3 = document.getElementById("section-text-3");
+const ourMission = document.getElementById("ourMission");
+const ourVision = document.getElementById("ourVision");
+const nextPlan = document.getElementById("nextPlan");
+
+sectionText1.style.display = "block";
+sectionText2.style.display = "none";
+sectionText3.style.display = "none";
+
+function our_mission(){
+  ourMission.classList.add("active");
+  ourMission.classList.remove("active");
+  ourMission.classList.remove("active");
+
+  sectionText1.style.display = "block";
+  sectionText2.style.display = "none";
+  sectionText3.style.display = "none";
+}
+
+function our_vision(){
+  ourVision.classList.add("active");
+  ourVision.classList.remove("active");
+  ourVision.classList.remove("active");
+
+  sectionText1.style.display = "none";
+  sectionText2.style.display = "block";
+  sectionText3.style.display = "none";
+}
+
+function next_plan(){
+  nextPlan.classList.add("active");
+  nextPlan.classList.remove("active");
+  nextPlan.classList.remove("active");
+
+  sectionText1.style.display = "none";
+  sectionText2.style.display = "none";
+  sectionText3.style.display = "block";
+}
+
+
 // Scroll To Top Button
 // Get the button
 let mybutton = document.getElementById("btn-back-to-top");
