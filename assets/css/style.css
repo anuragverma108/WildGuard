@@ -1549,8 +1549,17 @@ body {
    */
 
   .footer .container {
-    margin-inline: 30px;
-    width: auto;
+    /* margin-inline: 30px;
+    width: auto; */
+    display: flex;
+    flex-direction: column;
+  }
+  .footer .container ul li a{
+    font-size: larger;
+  }
+
+  .footer .container p{
+    font-size: larger;
   }
 }
 
