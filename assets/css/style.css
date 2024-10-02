@@ -968,18 +968,20 @@ body {
   padding-block: 40px;
 }
 
-.container {
-  max-width: 1200px;
-  margin-inline: 15px auto;
-  padding: 20px;
-}
-
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  padding: 0 20px; 
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; 
+}
+
 
 .footer-list {
   display: flex;
