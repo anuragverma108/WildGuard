@@ -215,6 +215,11 @@ body {
   transition: var(--transition-2);
 }
 
+#center{
+  align-items: center;
+  margin: 0 auto;
+}
+
 .btn ion-icon {
   --ionicon-stroke-width: 55px;
   font-size: 1.8rem;
@@ -417,9 +422,9 @@ body {
 }
 
 .hero .section-subtitle {
-  --color: var(--white);
+  /* --color: var(--white);
   --ff: var(--ff-inter);
-  --fs: var(--fs-7);
+  --fs: var(--fs-7); */
 }
 
 .hero-title {
@@ -434,6 +439,9 @@ body {
   letter-spacing: -1px;
   max-width: 50ch;
   margin-block-end: 30px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*-----------------------------------*\
@@ -991,6 +999,49 @@ body {
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
+
+.footer-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;           /* Remove padding */
+  margin: 20px;            /* Remove margin */
+  text-align: center;   /* Center the list */
+}
+
+.footer-list li {
+  margin: 0 30px;       /* Space between each list item */
+}
+
+.footer-link {
+  text-decoration: none; /* Remove underline */
+  color: #333;          /* Set text color */
+  font-weight: bold;    /* Make text bold */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition effect for color and transform */
+}
+
+.footer-link:hover {
+  color: #007bff;       /* Change color on hover */
+  transform: translateY(-3px); /* Lift the link slightly on hover */
+}
+
+.social-icons {
+  display: flex;           /* Use flexbox for alignment */
+  justify-content: center; /* Center the icons */
+  margin-top: 10px;       /* Space above the icons */
+}
+
+.social-link {
+  text-decoration: none; /* Remove underline */
+  color: #555;          /* Set icon color */
+  margin: 0 10px;      /* Space between icons */
+  font-size: 28px;     /* Icon size */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transition effect for color and transform */
+}
+
+.social-link:hover {
+  color: #007bff;       /* Change color on hover */
+  transform: scale(1.2); /* Scale up the icon on hover */
+}
+
 
 .footer {
   background-color: var(--raisin-black);
