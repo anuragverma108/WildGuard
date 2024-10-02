@@ -15,6 +15,7 @@
   --granite-gray: hsl(0, 0%, 38%);
   --sonic-silver: hsl(0, 0%, 47%);
   --pistachio_50: hsla(86, 45%, 54%, 0.5);
+  --pistachio_dark: hsl(86, 38%, 34%);
   --baby-powder: hsl(86, 41%, 97%);
   --light-gray: hsl(0, 0%, 80%);
   --pistachio: hsl(86, 45%, 54%);
@@ -501,11 +502,21 @@ body {
   font-size: var(--fs-8);
   font-weight: var(--fw-500);
   padding: 10px 32px;
+  transition: background-color 0.2s var(--cubic-in), color 0.2s var(--cubic-in);
+}
+
+.tab-btn:hover{
+  background-color: var(--sonic-silver);
+  color: var(--baby-powder);
 }
 
 .tab-btn.active {
   background-color: var(--pistachio);
   color: var(--white);
+}
+
+.tab-btn.active:hover{
+  background-color: var(--pistachio_dark);
 }
 
 .tab-list { margin-block: 25px 50px; }
