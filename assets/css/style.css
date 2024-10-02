@@ -488,6 +488,7 @@ body {
   position: relative;
   max-width: max-content;
   margin-block-end: 30px;
+  margin: auto;
 }
 
 .deco-title {
