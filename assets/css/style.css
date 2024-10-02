@@ -531,6 +531,62 @@ body {
   object-fit: contain;
   border-radius: 8px;
 }
+
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: var(--fs-8);
+  border-radius: 8px;
+  margin: 0 -6%;
+}
+
+.prev-btn {
+  left: calc(-1 * min(32px, 8vw));
+
+}
+
+.next-btn {
+  right: calc(-1 * min(32px, 8vw));
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.spot-circles{
+  display: flex;
+  width: 70vw;
+  margin: auto;
+  justify-content: center;
+  gap: 5px;
+
+}
+
+.circle
+{
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 1px solid #00000077;
+  margin-top: 20px;
+}
+
+.spot-circles span[index="1"]
+{
+  background-color: #000;
+}
+
 .about .section-subtitle {
   margin-block-end: 10px;
 }
