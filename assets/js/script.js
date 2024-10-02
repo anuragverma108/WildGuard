@@ -73,6 +73,20 @@ function backToTop() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+document.querySelectorAll('.faq-item h3').forEach(item => {
+  item.addEventListener('click', () => {
+    const parent = item.parentElement;
+    const isActive = parent.classList.contains('active');
+    
+    // Remove active class from all items
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+    
+    // Toggle the clicked item
+    if (!isActive) {
+      parent.classList.add('active');
+    }
+  });
+});
 /**
 *search-bar with functionality
  */

@@ -1478,8 +1478,46 @@ body {
 .container {
   padding: 10px;
   text-align: center;
-  margin-top: 10px; /* Space from the top */
+  margin-top: 50px; /* Space from the top */
 }
+
+
+.faq {
+  padding: var(--section-padding);
+  background-color: var(--cultured);
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--light-gray);
+  padding-bottom: 15px;
+}
+
+.faq-item:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
+
+.faq-item h3 {
+  cursor: pointer; /* Indicate that it can be interacted with */
+  transition: color var(--transition-1);
+}
+
+.faq-item h3:hover {
+  color: var(--medium-turquoise); /* Change color on hover */
+}
+
+.faq-item p {
+  display: none; /* Initially hide the answers */
+}
+
+.faq-item.active p {
+  display: block; /* Show answer when the item is active */
+}
+.h2.section-title {
+  margin-bottom: 20px; /* Adjust the value as needed for more or less space */
+}
+
+
 /**
 * Search-bar
 */
