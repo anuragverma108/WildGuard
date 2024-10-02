@@ -258,3 +258,22 @@ function hideNavigationButtons() {
   clearSearchBtn.style.display = "none";
   matchCounter.style.display = "none";
 }
+
+
+// Google Translate Element Initialization
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    includedLanguages: 'en,fr,es' // Supported languages
+  }, 'google_translate_element');
+}
+
+// Wait for the page to fully load before initializing Google Translate
+window.addEventListener('load', function() {
+  googleTranslateElementInit();
+});
+
+
+
+
+
+
