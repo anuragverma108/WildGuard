@@ -1171,6 +1171,15 @@ body {
     --fs-4: 4.1rem;
   }
 
+  .prev-btn, .next-btn
+  {
+    display: block;
+  }
+  .spot-circles
+  {
+   display: flex;
+  }
+  
   /* .deco-title {
     left: 0% !important;
   } */
