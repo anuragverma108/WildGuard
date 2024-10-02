@@ -1,14 +1,26 @@
-name: 'Auto Assign Issue Author'
+name: Issue assignment
 
 on:
   issues:
-    types: [opened, reopened]
+    types: [opened]
 
 jobs:
-  assign-author:
+  auto-assign:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
-      - name: 'Assign issue author'
-        uses: actions-ecosystem/action-assign-to-author@v1
+      - name: 'Auto-assign issue creator'
+        uses: pozil/auto-assign-issue@v2
         with:
-          github-token: '${{ secrets.GITHUB_TOKEN }}'
+          script: |
+            const issue = context.payload.issue;
+            const assignee = issue.user.login;
+            const { github, context } = require('@actions/github');
+
+            // Assign the issue to the creator
+            await github.issues.addAssignees({
+              ...context.repo,
+              issue_number: issue.number,
+              assignees: [assignee],
+            });
