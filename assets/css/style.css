@@ -343,8 +343,12 @@ body {
 
 .navbar.active {
   transform: translateY(-100%);
+
+  visibility: visible; 
+
   visibility: visible;
   width: 100vw;
+
   transition: 0.5s var(--cubic-out);
 }
 
