@@ -52,7 +52,6 @@ git checkout -b feature/new-feature
 Make your changes, whether it’s fixing a bug, adding a feature, or updating documentation.
 
 ### Step 5: Commit Your Changes
-
 bash
 git add .
 git commit -m "Brief description of the changes"
