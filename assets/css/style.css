@@ -1453,3 +1453,126 @@ body {
   }
 
 }
+
+/* Scroll To Top btn */
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #27ae60; /* Nature-inspired green */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 24px; /* Larger icon */
+}
+
+#btn-back-to-top:hover {
+  background-color: #2ecc71; /* Lighter green on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.container {
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px; /* Space from the top */
+}
+/**
+* Search-bar
+*/
+.search-bar {
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%);
+  background-color: var(--baby-powder); /* Light background matching page theme */
+  border: 1px solid var(--pistachio); /* Border to match the pistachio theme */
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between input and buttons */
+  z-index: 10;
+}
+
+/* Remove default outline for the search input */
+.search-bar input:focus {
+  outline: none; /* Removes the default black outline */
+  border-color: var(--pistachio); /* Optionally, add a custom border color on focus */
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Optional: Add a subtle shadow to show focus */
+}
+
+.search-bar input {
+  width: 150px; /* Compact width */
+  padding: 5px;
+  font-size: 1.4rem;
+  color: var(--eerie-black-2); /* Dark text inside the input */
+  background-color: var(--white); /* Light background inside input */
+  border: 1px solid var(--pistachio); /* Border around input field */
+  border-radius: 3px;
+}
+
+.search-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Small space between buttons */
+}
+
+#matchCounter {
+  color: var(--pistachio); /* Match counter in pistachio color */
+  font-size: 1.2rem;
+}
+
+#prevMatch, #nextMatch, #clearSearch, #closeSearch {
+  background-color: var(--pistachio); /* Button background */
+  color: var(--white); /* Button text color */
+  border: none;
+  padding: 5px;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#prevMatch:hover, #nextMatch:hover, #clearSearch:hover, #closeSearch:hover {
+  background-color: var(--granite-gray); /* Darker hover effect for buttons */
+}
+
+/* Update highlight color to match page design */
+.highlight {
+  background-color: var(--pistachio); /* Use pistachio for the highlight */
+  color: var(--white); /* White text on highlighted elements */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Google Translate widget styling */
+#google_translate_element {
+  margin-left: 20px;
+}
+
+#google_translate_element select {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  background-color: var(--pistachio);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Optional - Hide the Google "Powered by" branding (not recommended but possible) */
+.goog-logo-link {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+#google_translate_element img, #google_translate_element a{
+  display: none;
+}
