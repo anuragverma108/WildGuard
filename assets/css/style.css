@@ -517,7 +517,20 @@ body {
   max-width: max-content;
   margin-block-end: 30px;
 }
-
+.banner-imgs
+{
+  display: grid;
+  scale: calc(100px/100%);
+}
+.banner-img-container
+{
+  display: flex;
+}
+.about-img
+{
+  object-fit: contain;
+  border-radius: 8px;
+}
 .about .section-subtitle {
   margin-block-end: 10px;
 }
@@ -1291,23 +1304,6 @@ body {
    * ABOUT
    */
 
-  .banner-col {
-    width: 50%;
-  }
-
-  .about-img {
-    max-width: 100%;
-  }
-
-  .about-img-2 {
-    min-width: 120%;
-    margin-inline-start: -20%;
-  }
-
-  .about-img-3 {
-    max-width: 90%;
-  }
-
   .about .container {
     display: grid;
     grid-template-columns: 1fr 0.8fr;
@@ -1319,6 +1315,46 @@ body {
     margin-block-end: 0;
   }
 
+  .banner-img-cont-1
+  {
+    grid-area: tiger;
+    align-items: end;
+  }
+  .banner-img-cont-2
+  {
+    grid-area: elephant;
+    align-items: end;
+    justify-content: start;
+  }
+  .banner-img-cont-2 .about-img
+  {
+    height: 16vw;
+    width: auto;
+  }
+
+  .banner-img-cont-3
+  {
+    grid-area: panda;
+    align-items: start;
+  }
+  .banner-img-cont-4
+  {
+    grid-area: deer;
+    align-items: start;
+  }
+  .banner-imgs
+  {
+    display: grid;
+    grid-template: 16vw 4vw 16vw/ 4vw 16vw 16vw 2vw;
+    gap: 2vmin;
+    grid-template-areas: 
+    ". tiger elephant ."
+    ". tiger deer deer"
+    "panda panda deer deer"
+    ;
+    position: relative;
+  }
+  
   /**
    * CTA
    */
