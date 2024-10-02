@@ -1,6 +1,57 @@
 'use strict';
 
 
+// Login Functionality
+document.addEventListener('DOMContentLoaded', () => {
+  // Get the popup element
+  const popup = document.getElementById('popup');
+
+  // Get the icon element to open the popup
+  const openPopup = document.getElementById('openPopup');
+
+  // Get the close button element
+  const closePopup = document.getElementById('closePopup');
+
+  // Function to open the popup
+  openPopup.addEventListener('click', () => {
+      popup.style.display = 'flex'; // Show the popup
+  });
+
+  // Function to close the popup
+  closePopup.addEventListener('click', () => {
+      popup.style.display = 'none'; // Hide the popup
+  });
+
+  // Close the popup when clicking outside the popup content
+  window.addEventListener('click', (event) => {
+      if (event.target === popup) {
+          popup.style.display = 'none'; // Hide the popup
+      }
+  });
+
+  // Optional: Switch between login and signup forms
+  const loginTab = document.getElementById('loginTab');
+  const signupTab = document.getElementById('signupTab');
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
+
+  // Event listener for login tab
+  loginTab.addEventListener('click', () => {
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginForm.style.display = 'block';
+      signupForm.style.display = 'none';
+  });
+
+  // Event listener for signup tab
+  signupTab.addEventListener('click', () => {
+      signupTab.classList.add('active');
+      loginTab.classList.remove('active');
+      loginForm.style.display = 'none';
+      signupForm.style.display = 'block';
+  });
+});
+
 
 /**
  * navbar toggle
@@ -59,9 +110,9 @@ const ourMission = document.getElementById("ourMission");
 const ourVision = document.getElementById("ourVision");
 const nextPlan = document.getElementById("nextPlan");
 
-sectionText1.style.display = "block";
-sectionText2.style.display = "none";
-sectionText3.style.display = "none";
+// sectionText1.style.display = "block";
+// sectionText2.style.display = "none";
+// sectionText3.style.display = "none";
 
 function our_mission(){
   ourMission.classList.add("active");
@@ -115,7 +166,7 @@ function scrollFunction() {
 }
 
 // Scroll to top
-mybutton.addEventListener("click", backToTop);
+// mybutton.addEventListener("click", backToTop);
 
 function backToTop() {
     document.body.scrollTop = 0; // For Safari
@@ -140,10 +191,10 @@ let matchedElements = []; // To store matched elements
 let currentMatchIndex = 0; // To keep track of the current match
 
 // Toggle search input visibility when clicking the search icon
-searchIcon.addEventListener("click", function () {
-  searchBar.style.display = searchBar.style.display === "block" ? "none" : "flex";
-  searchInput.focus();
-});
+// searchIcon.addEventListener("click", function () {
+//   searchBar.style.display = searchBar.style.display === "block" ? "none" : "flex";
+//   searchInput.focus();
+// });
 
 // Close search bar when ESC key is pressed
 document.addEventListener("keydown", function(event) {
@@ -258,3 +309,4 @@ function hideNavigationButtons() {
   clearSearchBtn.style.display = "none";
   matchCounter.style.display = "none";
 }
+
