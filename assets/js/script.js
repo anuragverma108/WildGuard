@@ -281,13 +281,14 @@ function next()
 }
 
 function prev() {
-  currItem.style.display = "none";
+  currItem.classList.remove('active');
+  currItem.classList.add('hidden');
   if(currItem.previousElementSibling && currItem.previousElementSibling.tagName != "BUTTON")
       currItem = currItem.previousElementSibling;
   else
       currItem = cover.children[n-2];
-  currItem.style.display = "block";
-
+  currItem.classList.remove("hidden");
+  currItem.classList.add("active");
   updateDot(currItem.getAttribute('index'));
 }
 
