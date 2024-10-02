@@ -1584,3 +1584,54 @@ body {
   color: var(--white); /* White text on highlighted elements */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
+
+.newsletter {
+  background-color: #f9f9f9;
+  padding: var(--section-padding);
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.newsletter h2 {
+  margin-bottom: 10px;
+}
+
+.newsletter-text {
+  font-size: 1.5rem; /* Make the text bigger */
+  line-height: 1.6; /* Increase the line height for better readability */
+  font-weight: bold; /* Make it bolder for emphasis */
+  text-align: center; /* Center the text within the container */
+  margin-bottom: 20px; /* Add some space between the text and the form */
+  color: #2ecc71; /* Use your preferred color code */
+}
+
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-input {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.btn-primary {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #28b065;
+}
