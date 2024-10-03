@@ -259,6 +259,15 @@ body {
   background-color: transparent;
   padding-block: 18px;
   z-index: 4;
+  /* reducing height of the navbar */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0; /* Reduce padding to decrease height */
 }
 
 .header::after {
@@ -311,6 +320,12 @@ body {
   z-index: 1;
   visibility: hidden;
   transition: 0.25s var(--cubic-in);
+  padding: 10px 0; /* reducing height of the navbar */
+}
+
+/* reducing height of the navbar */
+.logo, .navbar-list, .header-action {
+  line-height: 1; /* Ensure the content takes less vertical space */
 }
 
 .navbar.active {
@@ -419,12 +434,22 @@ body {
 .features-list {
   display: grid;
   gap: 30px;
+  /*left align */
+  list-style: none;
+  padding: 10px;
 }
 
 .features-item {
   display: flex;
   align-items: flex-start;
   gap: 25px;
+/*left align */
+  text-align: left;
+}
+
+/*left align */
+.item-text {
+  text-align: left;
 }
 
 .features-item .item-icon {
@@ -1390,7 +1415,9 @@ body {
 
   .navbar-list:hover .navbar-link:not(:hover) { color: var(--white-60); }
 
-
+  .navbar-link.active span {
+    text-decoration: underline;
+  }
 
   /**
    * HERO
