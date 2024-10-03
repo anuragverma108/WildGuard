@@ -1,0 +1,19 @@
+{
+  "name": "wildguard",
+  "version": "1.0.0",
+  "description": "**Give love to save the world's animals and protect our shared planet.**  \r WildGuard is a website dedicated to preserving and nurturing the beauty of the natural world by supporting animal welfare and ecological conservation efforts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "node": "^22.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
