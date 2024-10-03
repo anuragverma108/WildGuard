@@ -1696,14 +1696,15 @@ body {
 /* Scroll To Top btn */
 #btn-back-to-top {
   position: fixed;
+  z-index: 10;
   bottom: 20px;
   right: 20px;
-  display: none;
   background-color: #27ae60; /* Nature-inspired green */
   color: white;
   border: none;
   border-radius: 50%;
-  padding: 15px;
+  width: 50px;
+  height:50px;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s, transform 0.3s;
