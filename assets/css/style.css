@@ -506,9 +506,10 @@ body {
 
 .hero-text {
   font-family: var(--ff-inter);
-  font-size: var(--fs-8);
-  letter-spacing: -1px;
-  max-width: 50ch;
+  text-align: center;
+  font-size: var(--fs-4);
+  /* letter-spacing: -1px; */
+  /* max-width: 50ch; */
   margin-block-end: 30px;
 }
 
