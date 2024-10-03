@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildGuard - Terms of Use</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+
+    /* Modify Bootstrap components with the base color and its shades */
+    body {
+      background-color: #f5f5f5;  /* Light background */
+    }
+
+    .h2, h3, p {
+      color: #333;  /* Darker text for better readability */
+    }
+
+    .h2 {
+      border-bottom: 1px solid #2ecc71;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .h3 {
+      margin-bottom: 10px;
+    }
+
+    .text-justify {
+      text-align: justify;
+      line-height: 1.5;
+    }  /* Adjust line height for better readability */
+
+    /* Optional: Style other Bootstrap components as needed */
+    .container {
+      border: 1px solid #ddd;  /* Subtle border */
+      padding: 10px;
+      border-radius: 5px;
+    }
+    form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+
+
+         <!-- Back Button -->
+         <a href="javascript:history.back()" class="btn btn-outline-success mb-4">← Back</a>
+
+        <h2 class="h2 text-center mb-4">Contact</h2>
+          <h3 class="h3">We’re happy to help. Fill out the form and we’ll get back to you.</h3>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" placeholder="Your mobile number" required pattern="[0-9]{10}">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <p id="formResponse" style="color:black;"></p>
+    </div>
+
+      <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting and reloading the page
+
+            // Gather the form data
+            const name = document.getElementById("name").value;
+            const mobile = document.getElementById("mobile").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Simple validation (if needed)
+            if (name && mobile && email && message) {
+                // Show a success message
+                document.getElementById("formResponse").textContent = "Thank you, " + name + ". Your message has been received!";
+
+                // Reset the form
+                document.getElementById("contactForm").reset();
+            } else {
+                document.getElementById("formResponse").textContent = "Please fill in all the fields.";
+            }
+        });
+    </script>
+      </div>
+    </div>
+  </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
