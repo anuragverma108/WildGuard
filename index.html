@@ -6,7 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WildGuard - Give Love for Saving World Animals</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Google Translate script -->
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <!-- 
     - favicon
@@ -26,7 +29,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="./Events-Data/modal.css">
 </head>
 
 <body>
@@ -42,13 +44,8 @@
         <a href="#" class="logo">WildGuard</a>
       </h1>
 
-      <select name="language" class="lang-switch">
+      <div id="google_translate_element"></div> <!-- Google Translate widget -->
 
-        <option value="english">English</option>
-        <option value="french">French</option>
-        <option value="spanish">Spanish</option>
-
-      </select>
 
       <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
         <ion-icon name="menu-outline"></ion-icon>
@@ -105,7 +102,7 @@
           </li>
 
           <li>
-            <a href="/Contact-Us/index.html" class="navbar-link" data-nav-link>
+            <a href="#" class="navbar-link" data-nav-link>
               <span>Contact</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -117,14 +114,15 @@
       </nav>
 
       <div class="header-action">
-        <button class="search-btn" aria-label="Search" id="searchIcon">
+
+        <button class="search-btn" aria-label="Search">
           <ion-icon name="search-outline"></ion-icon>
         </button>
-      
+
         <!-- Search input field -->
         <div class="search-bar" id="searchBar" style="display:none;">
           <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
-          
+
           <!-- Match counter and navigation buttons -->
           <div class="search-nav-buttons">
             <span id="matchCounter" style="display: none;">0/0</span>
@@ -133,25 +131,24 @@
             <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
           </div>
         </div>
-      
+
         <button class="btn btn-primary">
           <span>Donation</span>
+
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         </button>
+
       </div>
-      
-      
-      
+
+
+
     </div>
   </header>
 
-<!-- Scroll To Top Btn -->
-<button
-type="button"
-id="btn-back-to-top"
->
-<i class="fas fa-leaf"></i>
-</button>
+  <!-- Scroll To Top Btn -->
+  <button type="button" id="btn-back-to-top">
+    <i class="fas fa-leaf"></i>
+  </button>
 
 
 
@@ -322,20 +319,20 @@ id="btn-back-to-top"
             <ul class="tab-nav">
 
               <li>
-                <button class="tab-btn active">Our Mission</button>
+                <button class="tab-btn active" onclick="setActiveTab(this, 'mission')">Our Mission</button>
               </li>
 
               <li>
-                <button class="tab-btn">Our Vision</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'vision')">Our Vision</button>
               </li>
 
               <li>
-                <button class="tab-btn">Next Plan</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'plan')">Next Plan</button>
               </li>
 
             </ul>
 
-            <div class="tab-content">
+            <div class="tab-content" id="tab-content">
 
               <p class="section-text">
                 But I must explain to you how all this mistaken denouncing pleasure and praising pain was born and I
@@ -379,11 +376,6 @@ id="btn-back-to-top"
 
               </ul>
 
-              <button class="btn btn-secondary">
-                <span>Learn More Us</span>
-
-                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-              </button>
 
             </div>
 
@@ -399,6 +391,7 @@ id="btn-back-to-top"
       <!-- 
         - #CTA
       -->
+
       <section class="section cta">
         <div class="container">
 
@@ -407,6 +400,7 @@ id="btn-back-to-top"
 
             <button class="btn btn-outline" id="partnerButton">
               <span>Become a Partner</span>
+
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
             </button>
           </div>
@@ -943,7 +937,7 @@ id="btn-back-to-top"
                     </p>
                   </div>
 
-                  <button class="btn btn-white view-event-btn" id="viewEvent1">
+                  <button class="btn btn-white">
                     <span>View Events</span>
 
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
@@ -975,7 +969,7 @@ id="btn-back-to-top"
                     </p>
                   </div>
 
-                  <button class="btn btn-white view-event-btn" id="viewEvent2">
+                  <button class="btn btn-white">
                     <span>View Events</span>
 
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
@@ -1007,7 +1001,7 @@ id="btn-back-to-top"
                     </p>
                   </div>
 
-                  <button class="btn btn-white view-event-btn" id="viewEvent3">
+                  <button class="btn btn-white">
                     <span>View Events</span>
 
                     <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
@@ -1029,37 +1023,6 @@ id="btn-back-to-top"
         </div>
       </section>
 
-      <div id="eventModal" class="modal">
-        <div class="modal-content">
-          <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2 id="eventTitle">Event Title 3</h2>
-            <p id="eventDate">March 27, 2024</p>
-          </div>
-          <div class="modal-body">
-            <!-- <img src="./assets/images/event-image.jpg" alt="Event Image" style="width:100%; height:auto; margin-bottom: 20px;"> -->
-            <p id="eventDescription">Join us for a memorable day dedicated to conservation efforts focusing on marine life. This event will feature talks from renowned experts, interactive exhibits, and much more. Don't miss this opportunity to contribute to a great cause!</p>
-            <p><strong>Location:</strong> Coastal Marine Center, Bay Area</p>
-            <!-- Embedded Google Maps iframe for location -->
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8977552820395!2d-122.08424958469287!3d37.421999979824664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5efa53e47%3A0x97f5e2f74fd231e8!2sGoogleplex!5e0!3m2!1sen!2sus!4v1596425069474!5m2!1sen!2sus"
-              width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            <h3>Contact Details</h3>
-            <p><strong>Email:</strong> contact@event.org</p>
-            <p><strong>Phone:</strong> +123 456 7890</p>
-            <div>
-              <h3>Share This Event</h3>
-              <a href="#" class="social-link">Facebook</a>
-              <a href="#" class="social-link">Twitter</a>
-              <a href="#" class="social-link">LinkedIn</a>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button onclick="modal.style.display='none'" class="btn btn-primary">Close</button>
-          </div>
-        </div>
-      </div>
-      
 
 
 
@@ -1156,15 +1119,62 @@ id="btn-back-to-top"
 
 
 
-  <script src="./Become-a-Partner/script.js"></script>
-  <script src="./Events-Data/modal-scripts.js"></script>
+
 
   <!-- 
-    - custom js linky
+    - custom js link
   -->
+  <script src="./Become-a-Partner/script.js"></script>
   <script src="./assets/js/script.js"></script>
+  <script>
+    function setActiveTab(selectedButton, contentKey) {
+   const buttons = document.querySelectorAll('.tab-btn');
+   buttons.forEach(button => button.classList.remove('active'));
 
+   selectedButton.classList.add('active');
 
+   const content = {
+     mission: `
+       <p class="section-text">
+         Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
+       </p>
+       <ul class="tab-list">
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Foods</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Education</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Water</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
+       </ul>
+     `,
+     vision: `
+       <p class="section-text">
+         Our vision is to create a world where all animals are treated with compassion and respect.
+       </p>
+       <ul class="tab-list">
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Awareness</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Protect Wildlife</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
+       </ul>
+     `,
+     plan: `
+       <p class="section-text">
+         Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
+       </p>
+       <ul class="tab-list">
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Expand Rescue Operations</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Funding</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Partner with Local Groups</p></li>
+       </ul>
+     `
+
+   };
+
+   document.getElementById('tab-content').innerHTML = content[contentKey] + `
+       <button class="btn btn-secondary">
+         <span>Learn More Us</span>
+         <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+       </button>
+     `;  }
+ </script>
   <!-- 
     - ionicon link
   -->
