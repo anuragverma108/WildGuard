@@ -50,6 +50,25 @@ body {
   margin: 1.5rem;
   margin-top: 2.5rem;
 }
+.suggestions-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  display: none; /* Initially hidden */
+  max-height: 200px; /* Limit height */
+  overflow-y: auto; /* Scroll if too many suggestions */
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0; /* Highlight on hover */
+}
+
 
 .contact-container {
   max-width: 600px;

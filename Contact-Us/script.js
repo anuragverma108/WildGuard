@@ -11,6 +11,62 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("thankYouModal");
   const closeModal = document.querySelector(".close-btn");
 
+  // Search functionality
+  const searchInput = document.getElementById('searchInput');
+  const suggestionsDropdown = document.getElementById('suggestions');
+
+  // Sample data for demonstration; replace with your own API or local storage data
+  const recentSearches = JSON.parse(localStorage.getItem('recentSearches')) || [];
+  const popularSearches = ["JavaScript", "Python", "React", "Node.js"]; // Example popular searches
+
+  function fetchSuggestions(query) {
+    // Combine recent and popular searches
+    const allSuggestions = [...recentSearches, ...popularSearches]
+      .filter(suggestion => suggestion.toLowerCase().includes(query.toLowerCase()))
+      .slice(0, 5); // Limit suggestions to 5
+
+    return allSuggestions;
+  }
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value;
+    if (query.length > 0) {
+      const suggestions = fetchSuggestions(query);
+      displaySuggestions(suggestions);
+    } else {
+      suggestionsDropdown.style.display = 'none';
+    }
+  });
+
+  function displaySuggestions(suggestions) {
+    suggestionsDropdown.innerHTML = ''; // Clear previous suggestions
+    if (suggestions.length > 0) {
+      suggestionsDropdown.style.display = 'block';
+      suggestions.forEach(suggestion => {
+        const suggestionItem = document.createElement('div');
+        suggestionItem.classList.add('suggestion-item');
+        suggestionItem.textContent = suggestion;
+        suggestionItem.onclick = () => selectSuggestion(suggestion);
+        suggestionsDropdown.appendChild(suggestionItem);
+      });
+    } else {
+      suggestionsDropdown.style.display = 'none'; // Hide if no suggestions
+    }
+  }
+
+  function selectSuggestion(suggestion) {
+    searchInput.value = suggestion; // Set the search bar value
+    suggestionsDropdown.style.display = 'none'; // Hide dropdown
+    saveRecentSearch(suggestion); // Save to local storage
+  }
+
+  function saveRecentSearch(suggestion) {
+    if (!recentSearches.includes(suggestion)) {
+      recentSearches.push(suggestion);
+      localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+    }
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault(); // Prevent actual form submission for now
 
@@ -52,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
       form.reset();
 
       setTimeout(() => {
-        window.location.pathname = "../index.html";
+        modal.style.display = "none"; // Close modal after 2 seconds
       }, 2000);
     }
   });
@@ -60,6 +116,5 @@ document.addEventListener("DOMContentLoaded", function () {
   // Close the modal when the user clicks on the close button
   closeModal.addEventListener("click", function () {
     modal.style.display = "none";
-    window.location.pathname = "../index.html";
   });
 });

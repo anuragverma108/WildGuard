@@ -1,0 +1,15 @@
+/* Example styles for dark mode */
+body.dark-theme {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+.header.dark-theme {
+  background-color: #1e1e1e; /* Dark header */
+}
+
+.footer.dark-theme {
+  background-color: #1e1e1e; /* Dark footer */
+}
+
+/* Add additional styles for other elements as needed */
