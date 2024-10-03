@@ -259,6 +259,9 @@ function hideNavigationButtons() {
   matchCounter.style.display = "none";
 }
 
+// Dynamically update the year in the footer
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
 
 // Google Translate Element Initialization
 function googleTranslateElementInit() {
