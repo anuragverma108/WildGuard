@@ -2093,3 +2093,12 @@ body {
 #google_translate_element img, #google_translate_element a{
   display: none;
 }
+.button-container {
+  display: flex;
+  justify-content: center; /* Align buttons in the center */
+  gap: 10px; /* Add some space between buttons */
+}
+.highlighted {
+  background-color: rgb(184, 184, 182);
+  font-weight: bold;
+}
