@@ -624,6 +624,16 @@ body {
   margin-block-start: 15px;
 }
 
+
+.btn-link {
+  transition: font-size 0.3s ease;
+}
+
+.btn-link:hover {
+  font-size: calc(var(--fs-8) * 0.9); 
+}
+
+
 .btn-link span { text-decoration: underline; }
 
 
