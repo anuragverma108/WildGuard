@@ -21,9 +21,17 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!-- ANIMATE ON SCROLL CDNs
+     -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <!-- 
     - google font link
   -->
+
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -161,7 +169,7 @@
         - #HERO
       -->
 
-      <section class="hero" id="home">
+      <section data-aos="fade-up" class="hero" id="home">
         <div class="container">
 
           <p class="section-subtitle">
@@ -273,7 +281,7 @@
         - #ABOUT
       -->
 
-      <section class="section about" id="about">
+      <section data-aos="flip-right" class="section about" id="about">
         <div class="container">
 
           <div class="about-banner">
@@ -392,7 +400,7 @@
         - #CTA
       -->
 
-      <section class="section cta">
+      <section data-aos="flip-left" class="section cta">
         <div class="container">
 
           <div class="cta-content">
@@ -421,7 +429,7 @@
         - #SERVICE
       -->
 
-      <section class="section service" id="service" style="background-image: url('./assets/images/service-map.png')">
+      <section data-aos="zoom-out-left" class="section service" id="service" style="background-image: url('./assets/images/service-map.png')">
         <div class="container">
 
           <p class="section-subtitle">
@@ -436,7 +444,7 @@
 
           <ul class="service-list">
 
-            <li>
+            <li data-aos="flip-up">
               <div class="service-card">
 
                 <div class="card-icon">
@@ -459,7 +467,7 @@
               </div>
             </li>
 
-            <li>
+            <li data-aos="flip-up">
               <div class="service-card">
 
                 <div class="card-icon">
@@ -480,9 +488,9 @@
                 </a>
 
               </div>
-            </li>
+            </li data-aos="flip-up">
 
-            <li>
+            <li data-aos="flip-up">
               <div class="service-card">
 
                 <div class="card-icon">
@@ -505,7 +513,7 @@
               </div>
             </li>
 
-            <li>
+            <li data-aos="flip-up">
               <div class="service-card">
 
                 <div class="card-icon">
@@ -546,7 +554,7 @@
 
           <ul class="donate-list">
 
-            <li>
+            <li data-aos="fade-right">
               <div class="donate-card">
 
                 <figure class="card-banner">
@@ -605,7 +613,7 @@
               </div>
             </li>
 
-            <li>
+            <li data-aos="fade-left">
               <div class="donate-card">
 
                 <figure class="card-banner">
@@ -664,7 +672,7 @@
               </div>
             </li>
 
-            <li>
+            <li  data-aos="fade-right">
               <div class="donate-card">
 
                 <figure class="card-banner">
@@ -723,7 +731,7 @@
               </div>
             </li>
 
-            <li>
+            <li  data-aos="fade-left">
               <div class="donate-card">
 
                 <figure class="card-banner">
@@ -795,7 +803,7 @@
         - #TESTIMONIALS
       -->
 
-      <section class="testi">
+      <section  data-aos="flip-up" class="testi">
 
         <div class="testi-content">
 
@@ -916,7 +924,7 @@
 
           <ul class="event-list">
 
-            <li>
+            <li  data-aos="fade-right">
               <div class="event-card">
 
                 <time class="card-time" datetime="01-05">
@@ -948,7 +956,7 @@
               </div>
             </li>
 
-            <li>
+            <li  data-aos="fade-left">
               <div class="event-card">
 
                 <time class="card-time" datetime="02-23">
@@ -980,7 +988,7 @@
               </div>
             </li>
 
-            <li>
+            <li  data-aos="fade-right">
               <div class="event-card">
 
                 <time class="card-time" datetime="03-27">
@@ -1127,13 +1135,13 @@
   <script src="./assets/js/script.js"></script>
   <script>
     function setActiveTab(selectedButton, contentKey) {
-   const buttons = document.querySelectorAll('.tab-btn');
-   buttons.forEach(button => button.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(button => button.classList.remove('active'));
 
-   selectedButton.classList.add('active');
+      selectedButton.classList.add('active');
 
-   const content = {
-     mission: `
+      const content = {
+        mission: `
        <p class="section-text">
          Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
        </p>
@@ -1144,7 +1152,7 @@
          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
        </ul>
      `,
-     vision: `
+        vision: `
        <p class="section-text">
          Our vision is to create a world where all animals are treated with compassion and respect.
        </p>
@@ -1154,7 +1162,7 @@
          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
        </ul>
      `,
-     plan: `
+        plan: `
        <p class="section-text">
          Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
        </p>
@@ -1165,15 +1173,16 @@
        </ul>
      `
 
-   };
+      };
 
-   document.getElementById('tab-content').innerHTML = content[contentKey] + `
+      document.getElementById('tab-content').innerHTML = content[contentKey] + `
        <button class="btn btn-secondary">
          <span>Learn More Us</span>
          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
        </button>
-     `;  }
- </script>
+     `;
+    }
+  </script>
   <!-- 
     - ionicon link
   -->
