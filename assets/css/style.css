@@ -2093,3 +2093,119 @@ body {
 #google_translate_element img, #google_translate_element a{
   display: none;
 }
+
+
+
+/* Base Styles */
+html, body {
+  height: 100%; /* Full height for body */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Base font */
+  display: flex; /* Enable flexbox on body */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.footer {
+  background-color: #000000; /* Change background to black */
+  color: #ffffff; /* White text */
+  padding: 40px 20px; /* Padding for space */
+  text-align: center; /* Center the text */
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+.footer .container {
+  max-width: 1200px; /* Container max width */
+  margin: 0 auto; /* Center container */
+  display: flex; /* Flexbox for layout */
+  flex-direction: column; /* Stack sections vertically */
+  justify-content: space-between; /* Space between sections */
+}
+
+.footer-sections {
+  display: flex; /* Flex layout for sections */
+  justify-content: space-around; /* Evenly space sections */
+  align-items: flex-start; /* Align items to top */
+  flex-wrap: wrap; /* Wrap on smaller screens */
+  margin-bottom: 20px; /* Space below sections */
+}
+
+.footer-section {
+  flex: 1; /* Allow sections to grow */
+  min-width: 200px; /* Minimum width for responsiveness */
+  margin: 20px; /* Space between sections */
+  text-align: center; /* Center align text */
+}
+
+.footer-heading {
+  font-size: 1.5rem; /* Larger heading font */
+  margin-bottom: 10px; /* Space below heading */
+  color: #00aaff; /* Accent color for headings */
+  font-weight: bold; /* Bold headings */
+}
+
+.social-links,
+.contact-links,
+.footer-list {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+}
+
+.footer-link {
+  color: #ffffff; /* White links */
+  text-decoration: none; /* Remove underline */
+  display: flex; /* Flexbox for icons */
+  align-items: center; /* Center icons vertically */
+  justify-content: center; /* Center text */
+  padding: 10px 0; /* Padding for links */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-link i {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 1rem; /* Keep icon size the same */
+}
+
+.footer-link:hover {
+  color: #00aaff; /* Light blue on hover */
+}
+
+/* Copyright Section */
+.copyright-section {
+  border-top: 1px solid #444; /* Top border for separation */
+  padding: 20px 0; /* Padding for copyright */
+  text-align: center; /* Center align */
+}
+
+.copyright {
+  margin: 0; /* Remove margin */
+  font-size: 0.875rem; /* Small font */
+}
+
+.copyright-link {
+  color: #ffffff; /* White link */
+  text-decoration: none; /* Remove underline */
+}
+
+.copyright-link:hover {
+  color: #00aaff; /* Light blue on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-sections {
+    flex-direction: column; /* Stack sections on mobile */
+    align-items: center; /* Center align */
+  }
+
+  .footer-section {
+    margin: 10px 0; /* Adjust spacing on mobile */
+  }
+
+  .footer-heading {
+    font-size: 1.25rem; /* Slightly smaller heading on mobile */
+  }
+
+  .footer-link {
+    font-size: 1rem; /* Keep font size consistent */
+  }
+}
