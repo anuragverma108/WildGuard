@@ -344,7 +344,7 @@ body {
 .navbar.active {
   transform: translateY(-100%);
 
-  visibility: visible; 
+  visibility: visible;
 
   visibility: visible;
   width: 100vw;
@@ -658,15 +658,12 @@ body {
   transition: font-size 0.2s ease; /* Smooth transition */
 }
 
-
 .btn-link:hover {
   font-size: calc(var(--fs-8) * 0.9); /* Shrink text size by 10% on hover */
 }
-.btn-link span { text-decoration: underline; }
-
-
-
-
+.btn-link span {
+  text-decoration: underline;
+}
 
 /*-----------------------------------*\
   #DONATE
@@ -833,11 +830,9 @@ body {
 }
 
 .partner-logo:is(:hover, :focus) .color,
-
-.partner-logo .gray { display: block; }
-
-
-
+.partner-logo .gray {
+  display: block;
+}
 
 .become_partner {
   display: inline-flex; /* Use flex for alignment */
@@ -852,12 +847,9 @@ body {
   transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-
 .become_partner ion-icon {
   margin-left: 8px; /* Space between text and icon */
 }
-
-
 
 /*-----------------------------------*\
   #EVENT
@@ -1445,19 +1437,16 @@ body {
     transition: var(--transition-2); /* Smooth transition */
     background: none; /* No background */
   }
-  
+
   .lang-switch:is(:hover, :focus) {
     background: none; /* No background on hover or focus */
     outline: none; /* Removes default outline */
     color: var(--primary-color); /* Optional color change on focus or hover */
   }
-  
+
   .lang-switch-group:hover .lang-switch:not(:hover) {
     color: var(--white-60); /* Dim color of select box when it's not hovered */
   }
-  
-
-
 
   .lang-switch option {
     color: var(--eerie-black-1);
@@ -1564,12 +1553,12 @@ body {
   color: white;
   border: none;
   border-radius: 50%;
-  padding: 15px;
+  padding: 15px; /*23px*/
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   transition: background-color 0.3s, transform 0.3s;
   font-size: 24px; /* Larger icon */
-  z-index:1;
+  z-index: 100;
 }
 
 #btn-back-to-top:hover {
@@ -1589,7 +1578,9 @@ body {
   top: 50%;
   right: 20%;
   transform: translateY(-50%);
-  background-color: var(--baby-powder); /* Light background matching page theme */
+  background-color: var(
+    --baby-powder
+  ); /* Light background matching page theme */
   border: 1px solid var(--pistachio); /* Border to match the pistachio theme */
   border-radius: 5px;
   padding: 5px;
@@ -1602,7 +1593,9 @@ body {
 /* Remove default outline for the search input */
 .search-bar input:focus {
   outline: none; /* Removes the default black outline */
-  border-color: var(--pistachio); /* Optionally, add a custom border color on focus */
+  border-color: var(
+    --pistachio
+  ); /* Optionally, add a custom border color on focus */
   box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Optional: Add a subtle shadow to show focus */
 }
 
@@ -1627,7 +1620,10 @@ body {
   font-size: 1.2rem;
 }
 
-#prevMatch, #nextMatch, #clearSearch, #closeSearch {
+#prevMatch,
+#nextMatch,
+#clearSearch,
+#closeSearch {
   background-color: var(--pistachio); /* Button background */
   color: var(--white); /* Button text color */
   border: none;
@@ -1637,7 +1633,10 @@ body {
   cursor: pointer;
 }
 
-#prevMatch:hover, #nextMatch:hover, #clearSearch:hover, #closeSearch:hover {
+#prevMatch:hover,
+#nextMatch:hover,
+#clearSearch:hover,
+#closeSearch:hover {
   background-color: var(--granite-gray); /* Darker hover effect for buttons */
 }
 
