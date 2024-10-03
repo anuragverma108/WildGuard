@@ -443,6 +443,14 @@ body {
   font-size: var(--fs-9);
 }
 
+.features-item .item-icon:hover{
+    width: 6rem;
+}
+
+.item-text:hover{
+  opacity: 1 !important;
+}
+
 
 
 
