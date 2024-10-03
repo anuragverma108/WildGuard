@@ -73,6 +73,39 @@ function backToTop() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+//code to change the misison/vison/plan section.
+let section_text_data = "Our mission is to help conserve nature, create a safe environment for the growth of local flora anf faunas which are at a steep decline due to urbanization."
+                
+function set_section_value(value){
+  const sectionData = document.getElementById("section_text");
+  sectionData.innerHTML = section_text_data;
+  if(value == 'vision'){
+    section_text_data = "Our Vision is that through awareness generated we are able to protect species that are on the brink of extinction and others whose numbers are declining.";
+    sectionData.innerHTML = section_text_data;
+    document.getElementById("vision").classList.add('active');
+    document.getElementById("mission").classList.remove('active');
+    document.getElementById("plan").classList.remove('active');
+
+  }
+  if(value == 'mission'){
+    section_text_data = "Our mission is to help conserve nature, create a safe environment for the growth of local flora anf faunas which are at a steep decline due to urbanization.";  
+    sectionData.innerHTML = section_text_data;
+    document.getElementById("mission").classList.add('active');
+    document.getElementById("vision").classList.remove('active');
+    document.getElementById("plan").classList.remove('active');
+
+  }
+  if(value == 'plan'){
+    section_text_data = "Our plan is to create awareness, provide a protal for people to come together to donate or volunteer to fulfil our mission";
+    sectionData.innerHTML = section_text_data;
+    document.getElementById("plan").classList.add('active');
+    document.getElementById("mission").classList.remove('active');
+    document.getElementById("vision").classList.remove('active');
+
+  }
+
+} 
+
 /**
 *search-bar with functionality
  */
