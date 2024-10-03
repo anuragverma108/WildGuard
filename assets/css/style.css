@@ -524,8 +524,12 @@ body {
   padding-block-start: 0;
   background-color: var(--eerie-black-1);
 }
+.features .container{
+  margin: 0;
+}
 
 .features-list {
+  place-content: center;
   display: grid;
   gap: 30px;
 }
