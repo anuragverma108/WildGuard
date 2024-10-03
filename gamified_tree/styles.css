@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.score,
+.badges {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #4caf50;
+    width: 50%;
+    border-radius: 10px;
+    background-color: #e8f5e9;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.badge {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ff9800;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #fff3e0;
+}
