@@ -204,7 +204,7 @@ body {
   font-size: 1.8rem;
 }
 
-.btn:not(btn-outline)::after {
+.btn:not(.btn-outline)::after {
   content: "";
   position: absolute;
   inset: 0;
