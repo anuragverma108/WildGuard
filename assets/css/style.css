@@ -1575,7 +1575,13 @@ body {
 
   .section-title { line-height: 1.2; }
 
-
+  .container1{
+    max-width: 1400px;
+    width: 100%;
+    margin-inline: auto;
+    align-items: center;
+    padding-inline: 30px;
+  }
 
   /**
    * HEADER
