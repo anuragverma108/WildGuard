@@ -615,6 +615,10 @@ body {
   margin-inline: auto;
 }
 
+.cta .btn-outline:hover {
+  background-color: #9acb5d;
+}
+
 .cta-banner {
   background-color: var(--light-gray);
 }
