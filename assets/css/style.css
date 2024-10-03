@@ -851,6 +851,23 @@ body {
   #INSTA POST
 \*-----------------------------------*/
 
+#marquee{
+  display: flex;
+  width: 100%;
+  height:40vh ;
+  background-color: var(--light-gray);
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.insta-post{
+  animation-name:animate ;
+  animation-duration:9.1s;
+  animation-timing-function: linear;
+  animation-iteration-count:infinite;
+}
+
 .insta-post-link {
   position: relative;
   background-color: var(--eerie-black-1);
@@ -886,8 +903,25 @@ body {
 .insta-post-list::-webkit-scrollbar { display: none; }
 
 .insta-post-item {
-  min-width: 90%;
+  width: 50vh;
+  height : 50vh ;
   scroll-snap-align: center;
+}
+.insta-post-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+@keyframes animate {
+  from{
+      -webkit-transform:translateX(0%);
+              transform:translateX(0%);
+  }
+  to{
+      -webkit-transform:translateX(-100%);
+              transform:translateX(-100%);
+  }
 }
 
 
