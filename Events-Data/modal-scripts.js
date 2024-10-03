@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     span.onclick = function() {
-      modal.style.display = "none";
+    eventModal.classList.remove('show-modal');
     }
 
     window.onclick = function(event) {
       if (event.target == modal) {
-        modal.style.display = "none";
+    eventModal.classList.remove('show-modal');
       }
     }
 
@@ -37,6 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
         date.innerHTML = 'March 27, 2024';
         description.innerHTML = 'Details about Event 3...';
       }
-      modal.style.display = "block";
+    eventModal.classList.add('show-modal');
     }
   });

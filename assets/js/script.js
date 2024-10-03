@@ -93,7 +93,16 @@ function next_plan(){
   sectionText3.style.display = "block";
 }
 
+ function showContent(id) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = document.querySelectorAll('.section-text');
 
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            document.querySelector(`button[onclick="showContent('${id}')"]`).classList.add('active');
+            document.getElementById(id).classList.add('active');
+        }
 // Scroll To Top Button
 // Get the button
 let mybutton = document.getElementById("btn-back-to-top");
@@ -258,3 +267,38 @@ function hideNavigationButtons() {
   clearSearchBtn.style.display = "none";
   matchCounter.style.display = "none";
 }
+// document.addEventListener('DOMContentLoaded', () => {
+//   const eventModal = document.getElementById('eventModal');
+//   const closeModalButton = document.querySelector('.modal .close');
+//   const eventTitle = document.getElementById('eventTitle');
+//   const eventDate = document.getElementById('eventDate');
+//   const eventDescription = document.getElementById('eventDescription');
+
+//   // ... (rest of your existing code)
+
+//   // Add event listeners to each "View Events" button
+//   const viewEventButtons = document.querySelectorAll('.view-event-btn');
+//   viewEventButtons.forEach((button, index) => {
+//     button.addEventListener('click', () => {
+//       // Set the modal content dynamically
+//       eventTitle.innerText = events[index].title;
+//       eventDate.innerText = events[index].date;
+//       eventDescription.innerText = events[index].description;
+
+//       // Display the modal using the CSS class
+//       eventModal.classList.add('show-modal');
+//     });
+//   });
+
+//   // Close the modal when the close button is clicked
+//   closeModalButton.addEventListener('click', () => {
+//     eventModal.classList.remove('show-modal');
+//   });
+
+//   // Close the modal when clicking outside of the modal content
+//   window.addEventListener('click', (event) => {
+//     if (event.target == eventModal) {
+//       eventModal.classList.remove('show-modal');
+//     }
+//   });
+// });

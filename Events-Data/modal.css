@@ -8,6 +8,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     overflow-y: auto;
+    align-items: center;
+    justify-self: center;
   }
 
   .modal-content {
