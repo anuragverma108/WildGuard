@@ -1,6 +1,52 @@
 'use strict';
 
+// Login
+const popup = document.getElementById('popup');
 
+// Get the icon element to open the popup
+const openPopup = document.getElementById('openPopup');
+
+// Get the close button element
+const closePopup = document.getElementById('closePopup');
+
+// Function to open the popup
+openPopup.addEventListener('click', () => {
+    popup.style.display = 'flex'; // Show the popup
+});
+
+// Function to close the popup
+closePopup.addEventListener('click', () => {
+    popup.style.display = 'none'; // Hide the popup
+});
+
+// Close the popup when clicking outside the popup content
+window.addEventListener('click', (event) => {
+    if (event.target === popup) {
+        popup.style.display = 'none'; // Hide the popup
+    }
+});
+
+// Optional: Switch between login and signup forms
+const loginTab = document.getElementById('loginTab');
+const signupTab = document.getElementById('signupTab');
+const loginForm = document.getElementById('loginForm');
+const signupForm = document.getElementById('signupForm');
+
+// Event listener for login tab
+loginTab.addEventListener('click', () => {
+    loginTab.classList.add('active');
+    signupTab.classList.remove('active');
+    loginForm.style.display = 'block';
+    signupForm.style.display = 'none';
+});
+
+// Event listener for signup tab
+signupTab.addEventListener('click', () => {
+    signupTab.classList.add('active');
+    loginTab.classList.remove('active');
+    loginForm.style.display = 'none';
+    signupForm.style.display = 'block';
+});
 
 /**
  * navbar toggle
