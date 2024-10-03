@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
 :root {
   /**
    * colors
@@ -181,10 +176,6 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.container {
-  text-align: center; /* Align the text inside the container */
 }
 
 .h1,
@@ -542,12 +533,6 @@ body {
   padding: 10px 32px;
 }
 
-.tab-btn:hover{
-  background-color: var(--sonic-silver);
-  color: var(--baby-powder);
-  transition: background-color 0.2s var(--cubic-in), color 0.2s var(--cubic-in);
-}
-
 .tab-btn.active {
   background-color: var(--pistachio);
   color: var(--white);
@@ -596,6 +581,22 @@ body {
 
 .cta .btn-outline {
   margin-inline: auto;
+}
+
+.cta .btn-outline {
+  margin-inline: auto;
+  background-color: transparent;
+  border: 2px solid #6e913e;
+  color: #fffff7;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta .btn-outline:hover {
+  background-color: #6e913e;
+  color: white;
 }
 
 .cta-banner {
@@ -1621,35 +1622,3 @@ body {
   color: var(--white); /* White text on highlighted elements */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
-<<<<<<< Updated upstream
-
-/* Google Translate widget styling */
-#google_translate_element {
-  margin-left: 20px;
-}
-
-#google_translate_element select {
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  width: 200px;
-  background-color: var(--pistachio);
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-/* Optional - Hide the Google "Powered by" branding (not recommended but possible) */
-.goog-logo-link {
-  display: none !important;
-}
-
-.goog-te-gadget {
-  font-size: 0 !important;
-}
-
-#google_translate_element img, #google_translate_element a{
-  display: none;
-}
-=======
->>>>>>> Stashed changes
