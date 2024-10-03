@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById('eventModal');
     var span = document.getElementsByClassName("close")[0];
+    var closeModalButton = document.getElementsByClassName("close-modal-btn")[0];
 
     document.querySelectorAll('.view-event-btn').forEach(function(button) {
       button.onclick = function() {
@@ -11,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     span.onclick = function() {
       modal.style.display = "none";
+    }
+
+    if (closeModalButton) {
+      closeModalButton.onclick = function() {
+        modal.style.display = "none";
+      }
     }
 
     window.onclick = function(event) {
