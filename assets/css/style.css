@@ -488,14 +488,21 @@ body {
   color: var(--white);
   min-height: 700px;
   padding-block: 120px 60px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .hero .section-subtitle {
   --color: var(--white);
   --ff: var(--ff-inter);
   --fs: var(--fs-7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Add some gap between the image and text */
 }
 
 .hero-title {
@@ -510,10 +517,22 @@ body {
   letter-spacing: -1px;
   max-width: 50ch;
   margin-block-end: 30px;
+  text-align: center;
 }
 
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
 
 /*-----------------------------------*\
