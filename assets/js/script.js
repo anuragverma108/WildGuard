@@ -98,6 +98,9 @@ function next_plan(){
 // Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
+// Animate on scroll 
+  AOS.init();
+
 // Show button on scroll
 window.onscroll = function () {
     scrollFunction();
