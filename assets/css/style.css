@@ -1815,3 +1815,6 @@ body {
 #google_translate_element img, #google_translate_element a{
   display: none;
 }
+.email-input{
+  color: rgb(208, 208, 208);
+}
