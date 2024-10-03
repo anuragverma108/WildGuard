@@ -1,6 +1,4 @@
-'use strict';
-
-
+"use strict";
 
 /**
  * navbar toggle
@@ -30,10 +28,6 @@ for (let i = 0; i < navbarLinks.length; i++) {
   });
 }
 
-
-
-
-
 /**
  * header active when window scrolled down
  */
@@ -41,12 +35,10 @@ for (let i = 0; i < navbarLinks.length; i++) {
 const header = document.querySelector("[data-header]");
 
 window.addEventListener("scroll", function () {
-  window.scrollY >= 50 ? header.classList.add("active")
+  window.scrollY >= 50
+    ? header.classList.add("active")
     : header.classList.remove("active");
 });
-
-
-
 
 /**
  * adding functionality to about section
@@ -63,7 +55,7 @@ sectionText1.style.display = "block";
 sectionText2.style.display = "none";
 sectionText3.style.display = "none";
 
-function our_mission(){
+function our_mission() {
   ourMission.classList.add("active");
   ourMission.classList.remove("active");
   ourMission.classList.remove("active");
@@ -73,7 +65,7 @@ function our_mission(){
   sectionText3.style.display = "none";
 }
 
-function our_vision(){
+function our_vision() {
   ourVision.classList.add("active");
   ourVision.classList.remove("active");
   ourVision.classList.remove("active");
@@ -83,7 +75,7 @@ function our_vision(){
   sectionText3.style.display = "none";
 }
 
-function next_plan(){
+function next_plan() {
   nextPlan.classList.add("active");
   nextPlan.classList.remove("active");
   nextPlan.classList.remove("active");
@@ -93,37 +85,33 @@ function next_plan(){
   sectionText3.style.display = "block";
 }
 
-
 // Scroll To Top Button
 // Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
 // Show button on scroll
 window.onscroll = function () {
-    scrollFunction();
+  scrollFunction();
 };
 
 function scrollFunction() {
-    if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-    ) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
 }
 
 // Scroll to top
 mybutton.addEventListener("click", backToTop);
 
 function backToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 /**
-*search-bar with functionality
+ *search-bar with functionality
  */
 const searchIcon = document.getElementById("searchIcon");
 const searchBar = document.getElementById("searchBar");
@@ -141,19 +129,20 @@ let currentMatchIndex = 0; // To keep track of the current match
 
 // Toggle search input visibility when clicking the search icon
 searchIcon.addEventListener("click", function () {
-  searchBar.style.display = searchBar.style.display === "block" ? "none" : "flex";
+  searchBar.style.display =
+    searchBar.style.display === "block" ? "none" : "flex";
   searchInput.focus();
 });
 
 // Close search bar when ESC key is pressed
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     closeSearchBar();
   }
 });
 
 // Close search bar when clicked outside
-document.addEventListener("click", function(event) {
+document.addEventListener("click", function (event) {
   if (!searchBar.contains(event.target) && !searchIcon.contains(event.target)) {
     closeSearchBar();
   }
@@ -172,13 +161,13 @@ searchInput.addEventListener("input", function (event) {
   currentMatchIndex = 0; // Reset current match index
 
   // Reset previously highlighted elements
-  searchableElements.forEach(element => {
+  searchableElements.forEach((element) => {
     element.classList.remove("highlight");
   });
 
   if (query) {
     // Find all matches
-    searchableElements.forEach(element => {
+    searchableElements.forEach((element) => {
       const text = element.textContent.toLowerCase();
       if (text.includes(query)) {
         matchedElements.push(element); // Add match to array
@@ -203,7 +192,7 @@ searchInput.addEventListener("input", function (event) {
 // Highlight the current match
 function highlightMatch(index) {
   // Clear previous highlights
-  searchableElements.forEach(element => {
+  searchableElements.forEach((element) => {
     element.classList.remove("highlight");
   });
 
@@ -224,7 +213,8 @@ nextMatchBtn.addEventListener("click", function () {
 // Navigate to previous match
 prevMatchBtn.addEventListener("click", function () {
   if (matchedElements.length > 0) {
-    currentMatchIndex = (currentMatchIndex - 1 + matchedElements.length) % matchedElements.length; // Loop through matches
+    currentMatchIndex =
+      (currentMatchIndex - 1 + matchedElements.length) % matchedElements.length; // Loop through matches
     highlightMatch(currentMatchIndex);
     updateMatchCounter();
   }
@@ -235,12 +225,16 @@ clearSearchBtn.addEventListener("click", function () {
   searchInput.value = ""; // Clear the input
   hideNavigationButtons(); // Hide navigation buttons
   matchedElements = []; // Clear matches
-  searchableElements.forEach(element => element.classList.remove("highlight")); // Remove highlights
+  searchableElements.forEach((element) =>
+    element.classList.remove("highlight")
+  ); // Remove highlights
 });
 
 // Update match counter (e.g., "1/3")
 function updateMatchCounter() {
-  matchCounter.textContent = `${currentMatchIndex + 1}/${matchedElements.length}`;
+  matchCounter.textContent = `${currentMatchIndex + 1}/${
+    matchedElements.length
+  }`;
 }
 
 // Show navigation buttons and match counter
@@ -262,21 +256,17 @@ function hideNavigationButtons() {
 // Dynamically update the year in the footer
 document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-
 // Google Translate Element Initialization
 function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    includedLanguages: 'en,fr,es' // Supported languages
-  }, 'google_translate_element');
+  new google.translate.TranslateElement(
+    {
+      includedLanguages: "en,fr,es", // Supported languages
+    },
+    "google_translate_element"
+  );
 }
 
 // Wait for the page to fully load before initializing Google Translate
-window.addEventListener('load', function() {
+window.addEventListener("load", function () {
   googleTranslateElementInit();
 });
-
-
-
-
-
-
