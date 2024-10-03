@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>WildGuard - Give Love for Saving World Animals</title>
 
   <!-- Google Translate script -->
@@ -20,6 +21,11 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- 
+    - fontawesome icon link
+  -->
+  <script src="https://kit.fontawesome.com/418b80718b.js" crossorigin="anonymous"></script>
 
   <!-- 
     - google font link
@@ -108,8 +114,16 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link" data-nav-link>
+            <a href="./Contact.html" class="navbar-link" data-nav-link>
               <span>Contact</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="login.html" class="navbar-link" data-nav-link>
+              <span>Login/Register</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -143,6 +157,35 @@
 
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         </button>
+        <!-- Login -->
+        <div id="openPopup" class="user-icon">
+          <i class="fas fa-user"></i>
+      </div>
+  
+      <!-- Popup -->
+      <div id="popup" class="popup">
+          <div class="popup-content">
+              <span class="close-button" id="closePopup">&times;</span>
+              <div class="tabs">
+                  <button class="tab-button active" id="loginTab">Login</button>
+                  <button class="tab-button" id="signupTab">Signup</button>
+              </div>
+              <div class="form-container">
+                  <form id="loginForm">
+                      <input type="email" placeholder="Email" required />
+                      <input type="password" placeholder="Password" required />
+                      <button type="submit">Login</button>
+                  </form>
+                  <form id="signupForm" style="display: none;">
+                      <input type="text" placeholder="Username" required />
+                      <input type="email" placeholder="Email" required />
+                      <input type="password" placeholder="Password" required />
+                      <button type="submit">Signup</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  
 
       </div>
 
@@ -153,7 +196,7 @@
 
   <!-- Scroll To Top Btn -->
   <button type="button" id="btn-back-to-top">
-    <i class="fas fa-leaf"></i>
+    <i class="fa-solid fa-leaf"></i>
   </button>
 
 
@@ -288,24 +331,62 @@
 
             <img src="./assets/images/deco-img.png" width="58" height="261" alt="" class="deco-img">
 
-            <div class="banner-row">
+            <div class="banner-imgs banner-carousel">
+                   <!-- Previous button -->
+              <button class="prev-btn">&#10094;</button>
 
-              <div class="banner-col">
-                <img src="./assets/images/about-banner-1.jpg" width="315" height="380" loading="lazy" alt="Tiger"
-                  class="about-img w-100">
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-1" index=1>
+                  <img
+                    src="./assets/images/about-banner-1.jpg"
+                    width="315"
+                    height="380"
+                    loading="lazy"
+                    alt="Tiger"
+                    class="about-img w-100"
+                  />
+                </div>
+                <div class="banner-img-container banner-carousel-frame banner-img-cont-2" index=2>
+                  <img
+                  src="./assets/images/about-banner-3.jpg"
+                  width="250"
+                  height="277"
+                  loading="lazy"
+                  alt="Elephant"
+                  class="about-img w-100"
+                />
+                </div>
 
-                <img src="./assets/images/about-banner-2.jpg" width="386" height="250" loading="lazy" alt="Panda"
-                  class="about-img about-img-2 w-100">
-              </div>
+                <div class="banner-img-container banner-carousel-frame banner-img-cont-3" index=3>
+                  <img
+                  src="./assets/images/about-banner-2.jpg"
+                  width="386"
+                  height="250"
+                  loading="lazy"
+                  alt="Panda"
+                  class="about-img w-100"
+                />
+                  </div>
 
-              <div class="banner-col">
-                <img src="./assets/images/about-banner-3.jpg" width="250" height="277" loading="lazy" alt="Elephant"
-                  class="about-img about-img-3 w-100">
+                  <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
+                  <img
+                    src="./assets/images/about-banner-4.jpg"
+                    width="315"
+                    height="380"
+                    loading="lazy"
+                    alt="Deer"
+                    class="about-img w-100"
+                  />
+                  </div>
+                  
+                  <!-- Next button -->
+                  <button class="next-btn">&#10095;</button>
+            </div>
 
-                <img src="./assets/images/about-banner-4.jpg" width="315" height="380" loading="lazy" alt="Deer"
-                  class="about-img w-100">
-              </div>
-
+            <div class="spot-circles">
+              <span class="circle" index="1"></span>
+              <span class="circle" index="2"></span>
+              <span class="circle" index="3"></span>
+              <span class="circle" index="4"></span>
             </div>
 
           </div>
@@ -319,7 +400,7 @@
             </p>
 
             <h2 class="h2 section-title">
-              Rise Your Hand to Save <strong>World Animals Life</strong>
+              Raise Your Hand to Save <strong>World Animals Life</strong>
             </h2>
 
             <ul class="tab-nav">
@@ -1198,8 +1279,10 @@
   <!-- 
     - custom js link
   -->
+
   <script src="./Become-a-Partner/script.js"></script>
   <script src="./Events-Data/modal-scripts.js"></script>
+
   <script src="./assets/js/script.js"></script>
   <script>
     function setActiveTab(selectedButton, contentKey) {
