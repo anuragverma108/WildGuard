@@ -83,11 +83,11 @@ You can run WildGuard on your local machine by following these steps:
    cd wildguard
 2. **Open the Project**
 
-Locate the `index.html` file in the project folder and open it in your preferred web browser.
+Use your favorite code editor, like Visual Studio Code, Sublime Text, Atom, you name it.
 
 3. **Run the Project**
 
-Simply open `index.html` in your browser, and the WildGuard website will be up and running!
+Simply run `npm run dev` in your terminal, and the WildGuard website will be up and running!
 
 ## How You Can Contribute :bulb:
 

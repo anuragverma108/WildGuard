@@ -32,8 +32,6 @@ for (let i = 0; i < navbarLinks.length; i++) {
 
 
 
-
-
 /**
  * header active when window scrolled down
  */
@@ -274,9 +272,3 @@ function googleTranslateElementInit() {
 window.addEventListener('load', function() {
   googleTranslateElementInit();
 });
-
-
-
-
-
-

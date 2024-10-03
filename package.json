@@ -1,0 +1,24 @@
+{
+  "name": "wildguard",
+  "version": "1.0.0",
+  "description": "Platform dedicated to protecting the beauty of our planet by supporting animal welfare and ecological conservation efforts.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuragverma108/WildGuard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuragverma108/WildGuard/issues"
+  },
+  "homepage": "https://github.com/anuragverma108/WildGuard#readme",
+  "devDependencies": {
+    "vite": "^5.4.8"
+  }
+}
