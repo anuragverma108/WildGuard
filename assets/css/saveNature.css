@@ -87,7 +87,8 @@ body {
   .footer-content {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     padding: 20px 0;
   }
   
@@ -199,6 +200,33 @@ body {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
+
+  /* scroll to top  */
+  #scrollToTopBtn {
+    position: fixed;
+      top: 90%; 
+      right: 20px;
+      color: white;
+      background-color: hsl(86, 45%, 54%); 
+      padding: 0; 
+      padding-top: 3px;
+      width: 60px; 
+      height: 60px; 
+      border-radius: 50%; 
+      border: 0px solid transparent;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+      display: flex;
+      align-items: center;
+      justify-content: center; 
+      cursor: pointer; 
+      display: none; 
+      z-index: 9999; 
+      transition: background-color 0.3s; 
+  }
+  
+  #scrollToTopBtn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
   
   /* Icon styling */
   .help-icon img {
@@ -226,6 +254,14 @@ body {
     color: #2c3e50;
     margin-top: 40px;
     font-weight: bold;
+  }
+
+
+  /* icons  */
+
+  .fab{
+    color: white;
+
   }
   
   /* Responsive adjustments */
