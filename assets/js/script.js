@@ -258,3 +258,24 @@ function hideNavigationButtons() {
   clearSearchBtn.style.display = "none";
   matchCounter.style.display = "none";
 }
+
+
+// Fade up animation
+document.addEventListener('DOMContentLoaded', function() {
+  const fadeUpElements = document.querySelectorAll('.fade-up');
+
+  function checkFadeUp() {
+    fadeUpElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (elementTop < windowHeight - 50) {
+        element.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkFadeUp);
+  window.addEventListener('resize', checkFadeUp);
+  checkFadeUp(); // Check on initial load
+});
