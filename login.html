@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+      <!-- Add Bootstrap CSS -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="./assets/css/login.css">
     <title>Login</title>
 </head>
@@ -11,6 +14,13 @@
 
     <div class="login-page">
         <div class="content">
+
+             <!-- Back Button with Bootstrap Classes -->
+            <a href="javascript:history.back()" class="btn btn-primary mb-3">
+            <i class="fas fa-arrow-left"></i> Back
+            </a>
+
+
             <h2>Welcome Back!</h2>
 
             <form class="data">
@@ -54,7 +64,7 @@
                     <p>Or login with</p>
                     <div class="social-buttons">
                         <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Continue with Google
+                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo"> Continue with Google
                         </button>
                         <button type="button" class="social-btn google-btn">
                             <img src="./assets/images/facebook.png" alt="Google Logo" class="google-logo"> Continue with Facebook
