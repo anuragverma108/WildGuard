@@ -107,7 +107,7 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link" data-nav-link>
+            <a href="#contact" class="navbar-link" data-nav-link>
               <span>Contact</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -1029,8 +1029,8 @@
       </section>
 
 
-
-
+    
+      
 
       <!-- 
         - #INSTA POST
@@ -1089,7 +1089,69 @@
       </article>
     </main>
 
-  
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+          <!-- Info Container (Left side) -->
+          <div class="info-container">
+              <div class="left-info">
+                  <h3>Contact Information</h3>
+                  
+                  <!-- Call Us Section -->
+                  <div class="info-item">
+                      <span class="icon phone-icon"></span>
+                      <div>
+                          <h4>Call Us:</h4>
+                          <p>(1) (234) 567-891 and (2) (234) 987-654</p>
+                      </div>
+                  </div>
+      
+                  <!-- Location Section -->
+                  <div class="info-item">
+                      <span class="icon location-icon"></span>
+                      <div>
+                          <h4>Location:</h4>
+                          <p> 121 Rock Street,<br>21 Avenue, New York, NY 92103-9000</p>
+                      </div>
+                  </div>
+      
+                  <!-- Business Hours Section -->
+                  <div class="info-item">
+                      <span class="icon hours-icon"></span>
+                      <div>
+                          <h4>Business Hours:</h4>
+                          <p>Monday to Friday (10 AM – 8 PM)<br>Saturday and Sunday: Closed</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+          <!-- Contact Form Container (Right side) -->
+          <div class="contact-container">
+              <div class="contact-right">
+                  <h1 class="contact-section-title">Contact Us</h1>
+                  <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                      <label for="first-name">Name</label>
+                      <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                      
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" placeholder="Email Address" required>
+        
+                      <label for="address">Address</label>
+                      <input type="text" id="address" name="address" placeholder="Address" required>
+        
+                      <label for="message">Message</label>
+                      <textarea id="message" name="message" placeholder="Message" required></textarea>
+        
+                      <button type="submit">Submit</button>
+                  </form>
+              </div>
+          </div>
+        </section>
+
+
+
+    
+
 
 
 

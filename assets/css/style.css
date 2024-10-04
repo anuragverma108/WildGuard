@@ -847,6 +847,159 @@ body {
 
 
 
+
+
+
+/*-----------------------------------*\
+  #contact
+\*-----------------------------------*/
+
+/* Contact Section Styling */
+.section.contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 50px 20px;
+  background-color: #f8f7f6;
+  width: 100%;
+  margin: auto;
+}
+
+/* Info Section (Left) */
+.info-container {
+  width: 48%;
+  margin-left: 5%;
+}
+
+.left-info {
+  text-align: left;
+  margin-right:50px;
+
+  
+}
+
+.left-info h3 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-top:7%;
+}
+
+.info-item .icon {
+  font-size: 4.5rem; /* Adjust size for icons */
+  margin-right: 10px;
+}
+
+.phone-icon:before {
+  content: "📞"; /* Replace with phone icon */
+}
+
+.location-icon:before {
+  content: "📍"; /* Replace with location pin icon */
+}
+
+.hours-icon:before {
+  content: "⏰"; /* Replace with business hours icon */
+}
+
+.info-item h4 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.info-item p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 1.5rem;
+  color: #555;
+  
+}
+
+/* Contact Form (Right) */
+.contact-container {
+  width: 48%;
+  margin-right: 10%;
+  
+}
+
+.contact-right {
+  text-align: left;
+}
+
+.contact-section-title {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+label {
+  font-weight: 550;
+  margin-bottom: 5px;
+  text-align: left;
+  font-family: sans-serif;
+}
+
+input,
+textarea {
+  padding: 12px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Submit Button */
+button {
+  background-color: #ffa500;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff8000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section.contact {
+    flex-direction: column;
+  }
+
+  .info-container,
+  .contact-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
 /*-----------------------------------*\
   #INSTA POST
 \*-----------------------------------*/
@@ -1013,7 +1166,7 @@ body {
 
 /* Footer Bottom Section */
 .footer {
-  background-color: #1a1a1a;
+  background-color: #302f2f;
   color: #ffffff;
   padding: 30px 0; /* Reduced padding */
   font-family: 'Roboto', sans-serif;
