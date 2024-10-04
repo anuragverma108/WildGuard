@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Contact Us - WildGuard</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS for the contact page -->
+  <style>
+    :root {
+      --pistachio: hsl(86, 45%, 54%);
+      --baby-powder: hsl(86, 41%, 97%);
+    }
+
+    body {
+      background-color: var(--baby-powder);
+      font-family: 'Inter', sans-serif;
+      padding: 50px 0;
+    }
+
+    .contact-container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-header h1 {
+      font-size: 2.5rem;
+      color: var(--pistachio);
+      font-weight: 600;
+    }
+
+    .form-control {
+      border-radius: 0.5rem;
+    }
+
+    .contact-btn {
+      background-color: var(--pistachio);
+      color: #fff;
+      padding: 10px 30px;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+
+    .contact-btn:hover {
+      background-color: #4da746; /* Darker shade of pistachio */
+    }
+
+    .info-box {
+      background-color: #e9f5ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .info-box h5 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--pistachio);
+    }
+
+    .info-box p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 contact-container">
+        
+        <!-- Contact Form Header -->
+        <div class="contact-header">
+          <h1>Contact Us</h1>
+          <p>If you have any questions or need help, feel free to reach out to us.</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="info-box">
+          <h5>Email Us</h5>
+          <p>support@wildguard.com</p>
+        </div>
+
+        <div class="info-box">
+          <h5>Call Us</h5>
+          <p>+91 123-4567-089</p>
+        </div>
+
+        <!-- Contact Form -->
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn contact-btn">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
