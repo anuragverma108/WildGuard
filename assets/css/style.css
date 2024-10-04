@@ -257,7 +257,7 @@ body {
   left: 0;
   width: 100%;
   background-color: transparent;
-  padding-block: 18px;
+  padding-block: 16px;
   z-index: 4;
 }
 
@@ -275,6 +275,7 @@ body {
 .header.active {
   background-color: var(--eerie-black-1);
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.8);
+  padding-block: 1px;
 }
 
 .header.active::after { display: none; }

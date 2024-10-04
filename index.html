@@ -51,147 +51,124 @@
   <header class="header" data-header>
     <div class="container">
 
-      <h1>
-        <a href="#" class="logo">WildGuard</a>
-      </h1>
+        <h1>
+            <a href="#" class="logo">WildGuard</a>
+        </h1>
 
-      <div id="google_translate_element"></div> <!-- Google Translate widget -->
+        <div id="google_translate_element"></div> <!-- Google Translate widget -->
 
-
-      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-
-      <nav class="navbar" data-navbar>
-
-        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
-          <ion-icon name="close-outline"></ion-icon>
+        <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
         </button>
 
-        <a href="#" class="logo">Wildvine</a>
+        <nav class="navbar" data-navbar>
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
 
-        <ul class="navbar-list">
+            <a href="#" class="logo">Wildvine</a>
 
-          <li>
-            <a href="#home" class="navbar-link" data-nav-link>
-              <span>Home</span>
+            <ul class="navbar-list">
+                <li>
+                    <a href="#home" class="navbar-link" data-nav-link>
+                        <span>Home</span>
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about" class="navbar-link" data-nav-link>
+                        <span>About</span>
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#service" class="navbar-link" data-nav-link>
+                        <span>Service</span>
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#donate" class="navbar-link" data-nav-link>
+                        <span>Donate</span>
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="#event" class="navbar-link" data-nav-link>
+                        <span>Event</span>
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="./Contact.html" class="navbar-link" data-nav-link>
+                        <span>Contact</span>
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" class="navbar-link" data-nav-link>
+                        <span>Login/Register</span>
+                        <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+        </nav>
 
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
+        <div class="header-action">
+            <button class="search-btn" aria-label="Search">
+                <ion-icon name="search-outline"></ion-icon>
+            </button>
 
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link>
-              <span>About</span>
+            <!-- Search input field -->
+            <div class="search-bar" id="searchBar" style="display: none;">
+                <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
 
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
+                <!-- Match counter and navigation buttons -->
+                <div class="search-nav-buttons">
+                    <span id="matchCounter" style="display: none;">0/0</span>
+                    <button id="prevMatch" style="display: none;">&#x25B2;</button> <!-- Up arrow -->
+                    <button id="nextMatch" style="display: none;">&#x25BC;</button> <!-- Down arrow -->
+                    <button id="clearSearch" style="display: none;">&#x2716;</button> <!-- Close/clear button -->
+                </div>
+            </div>
 
-          <li>
-            <a href="#service" class="navbar-link" data-nav-link>
-              <span>Service</span>
+            <button class="btn btn-primary">
+                <span>Donation</span>
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            </button>
 
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
+            <!-- Login -->
+            <div id="openPopup" class="user-icon">
+                <i class="fas fa-user"></i>
+            </div>
 
-          <li>
-            <a href="#donate" class="navbar-link" data-nav-link>
-              <span>Donate</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#event" class="navbar-link" data-nav-link>
-              <span>Event</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="./Contact.html" class="navbar-link" data-nav-link>
-              <span>Contact</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="login.html" class="navbar-link" data-nav-link>
-              <span>Login/Register</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <div class="header-action">
-
-        <button class="search-btn" aria-label="Search">
-          <ion-icon name="search-outline"></ion-icon>
-        </button>
-
-        <!-- Search input field -->
-        <div class="search-bar" id="searchBar" style="display:none;">
-          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
-
-          <!-- Match counter and navigation buttons -->
-          <div class="search-nav-buttons">
-            <span id="matchCounter" style="display: none;">0/0</span>
-            <button id="prevMatch" style="display:none;">&#x25B2;</button> <!-- Up arrow -->
-            <button id="nextMatch" style="display:none;">&#x25BC;</button> <!-- Down arrow -->
-            <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
-          </div>
+            <!-- Popup -->
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close-button" id="closePopup">&times;</span>
+                    <div class="tabs">
+                        <button class="tab-button active" id="loginTab">Login</button>
+                        <button class="tab-button" id="signupTab">Signup</button>
+                    </div>
+                    <div class="form-container">
+                        <form id="loginForm">
+                            <input type="email" placeholder="Email" required />
+                            <input type="password" placeholder="Password" required />
+                            <button type="submit">Login</button>
+                        </form>
+                        <form id="signupForm" style="display: none;">
+                            <input type="text" placeholder="Username" required />
+                            <input type="email" placeholder="Email" required />
+                            <input type="password" placeholder="Password" required />
+                            <button type="submit">Signup</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <button class="btn btn-primary">
-          <span>Donation</span>
-
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-        </button>
-        <!-- Login -->
-        <div id="openPopup" class="user-icon">
-          <i class="fas fa-user"></i>
-      </div>
-  
-      <!-- Popup -->
-      <div id="popup" class="popup">
-          <div class="popup-content">
-              <span class="close-button" id="closePopup">&times;</span>
-              <div class="tabs">
-                  <button class="tab-button active" id="loginTab">Login</button>
-                  <button class="tab-button" id="signupTab">Signup</button>
-              </div>
-              <div class="form-container">
-                  <form id="loginForm">
-                      <input type="email" placeholder="Email" required />
-                      <input type="password" placeholder="Password" required />
-                      <button type="submit">Login</button>
-                  </form>
-                  <form id="signupForm" style="display: none;">
-                      <input type="text" placeholder="Username" required />
-                      <input type="email" placeholder="Email" required />
-                      <input type="password" placeholder="Password" required />
-                      <button type="submit">Signup</button>
-                  </form>
-              </div>
-          </div>
-      </div>
-  
-
-      </div>
-
-
-
     </div>
-  </header>
+</header>
+
 
   <!-- Scroll To Top Btn -->
   <button type="button" id="btn-back-to-top">
