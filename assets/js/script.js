@@ -1,6 +1,52 @@
 'use strict';
 
+// Login
+const popup = document.getElementById('popup');
 
+// Get the icon element to open the popup
+const openPopup = document.getElementById('openPopup');
+
+// Get the close button element
+const closePopup = document.getElementById('closePopup');
+
+// Function to open the popup
+openPopup.addEventListener('click', () => {
+    popup.style.display = 'flex'; // Show the popup
+});
+
+// Function to close the popup
+closePopup.addEventListener('click', () => {
+    popup.style.display = 'none'; // Hide the popup
+});
+
+// Close the popup when clicking outside the popup content
+window.addEventListener('click', (event) => {
+    if (event.target === popup) {
+        popup.style.display = 'none'; // Hide the popup
+    }
+});
+
+// Optional: Switch between login and signup forms
+const loginTab = document.getElementById('loginTab');
+const signupTab = document.getElementById('signupTab');
+const loginForm = document.getElementById('loginForm');
+const signupForm = document.getElementById('signupForm');
+
+// Event listener for login tab
+loginTab.addEventListener('click', () => {
+    loginTab.classList.add('active');
+    signupTab.classList.remove('active');
+    loginForm.style.display = 'block';
+    signupForm.style.display = 'none';
+});
+
+// Event listener for signup tab
+signupTab.addEventListener('click', () => {
+    signupTab.classList.add('active');
+    loginTab.classList.remove('active');
+    loginForm.style.display = 'none';
+    signupForm.style.display = 'block';
+});
 
 /**
  * navbar toggle
@@ -44,6 +90,55 @@ window.addEventListener("scroll", function () {
   window.scrollY >= 50 ? header.classList.add("active")
     : header.classList.remove("active");
 });
+
+
+
+
+/**
+ * adding functionality to about section
+ */
+
+const sectionText1 = document.getElementById("section-text-1");
+const sectionText2 = document.getElementById("section-text-2");
+const sectionText3 = document.getElementById("section-text-3");
+const ourMission = document.getElementById("ourMission");
+const ourVision = document.getElementById("ourVision");
+const nextPlan = document.getElementById("nextPlan");
+
+sectionText1.style.display = "block";
+sectionText2.style.display = "none";
+sectionText3.style.display = "none";
+
+function our_mission(){
+  ourMission.classList.add("active");
+  ourMission.classList.remove("active");
+  ourMission.classList.remove("active");
+
+  sectionText1.style.display = "block";
+  sectionText2.style.display = "none";
+  sectionText3.style.display = "none";
+}
+
+function our_vision(){
+  ourVision.classList.add("active");
+  ourVision.classList.remove("active");
+  ourVision.classList.remove("active");
+
+  sectionText1.style.display = "none";
+  sectionText2.style.display = "block";
+  sectionText3.style.display = "none";
+}
+
+function next_plan(){
+  nextPlan.classList.add("active");
+  nextPlan.classList.remove("active");
+  nextPlan.classList.remove("active");
+
+  sectionText1.style.display = "none";
+  sectionText2.style.display = "none";
+  sectionText3.style.display = "block";
+}
+
 
 // Scroll To Top Button
 // Get the button
@@ -209,3 +304,20 @@ function hideNavigationButtons() {
   clearSearchBtn.style.display = "none";
   matchCounter.style.display = "none";
 }
+
+// Dynamically update the year in the footer
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+
+// Google Translate Element Initialization
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    includedLanguages: 'en,fr,es' // Supported languages
+  }, 'google_translate_element');
+}
+
+// Wait for the page to fully load before initializing Google Translate
+window.addEventListener('load', function() {
+  googleTranslateElementInit();
+});
+
