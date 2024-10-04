@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Tips</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .tip-container {
+            text-align: center;
+            background-color: #d8f3dc;
+            border: 2px solid #52b788;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1b4332;
+            font-size: 24px;
+        }
+
+        #eco-tip {
+            color: #2d6a4f;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tip-container">
+        <h1>Eco-Friendly Tip of the Day</h1>
+        <p id="eco-tip"></p>
+    </div>
+
+    <script>
+        // List of eco-friendly tips
+        const tips = [
+            "Reduce, Reuse, Recycle! Make sure to recycle materials properly.",
+            "Save water by turning off the tap while brushing your teeth.",
+            "Plant a tree in your neighborhood to help absorb CO2.",
+            "Bring your own reusable bags when shopping to avoid plastic waste.",
+            "Unplug electronic devices when not in use to save energy.",
+            "Switch to energy-efficient light bulbs to reduce your carbon footprint.",
+            "Opt for public transportation, biking, or walking instead of driving.",
+            "Support local farmers by purchasing organic and locally-grown food.",
+            "Compost food waste to enrich the soil and reduce landfill waste.",
+            "Avoid single-use plastics like straws, utensils, and packaging."
+        ];
+
+        // Function to display a random tip
+        function displayRandomTip() {
+            const randomIndex = Math.floor(Math.random() * tips.length);
+            document.getElementById('eco-tip').textContent = tips[randomIndex];
+        }
+
+        // Call the function to display a tip when the page loads
+        window.onload = displayRandomTip;
+    </script>
+</body>
+</html>
