@@ -1219,7 +1219,8 @@
     </div>
   
     <div class="footer-bottom">
-      <p>Copyright 2024 WildGuard. All Rights Reserved </p>
+      <p>© Copyright <time class="year"></time> WildGuard. All Rights Reserved </p>
+      
 
     <div class="container">
 
@@ -1236,12 +1237,26 @@
       </ul>
 
       <p class="copyright">
-        Copyright 2024 <a href="#" class="copyright-link">Anurag Bytes</a>. All Rights Reserved.
+        © Copyright <time class="year"></time> <a href="#" class="copyright-link">Anurag Bytes</a>. All Rights Reserved.
       </p>
 
 
     </div>
 </footer>
+<script>
+
+    const yearElements = document.querySelectorAll('.year');
+    
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+    
+    // Update each element's text content
+    yearElements.forEach(function(yearElement) {
+      yearElement.textContent = currentYear;
+      yearElement.style.display = 'inline'; 
+    });
+  
+</script>
 
 
 
