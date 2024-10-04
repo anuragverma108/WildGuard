@@ -75,10 +75,6 @@
 
 }
 
-
-
-
-
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -2092,4 +2088,8 @@ body {
 
 #google_translate_element img, #google_translate_element a{
   display: none;
+}
+
+.service-card:hover{
+  transform: scale(1.04);
 }
