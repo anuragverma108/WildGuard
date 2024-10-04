@@ -321,3 +321,30 @@ window.addEventListener('load', function() {
   googleTranslateElementInit();
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Your carousel functionality and all other JS code here
+    const carouselSlide = document.querySelector('.carousel-slide');
+    const carouselImages = document.querySelectorAll('.insta-post-link');
+
+    const prevBtns = document.querySelector('.carousel-prev');
+    const nextBtns = document.querySelector('.carousel-next');
+
+    let counter = 0;
+    const size = carouselImages[0].clientWidth; // Get the width of one image
+
+    // Move to the next image
+    nextBtns.addEventListener('click', () => {
+        if (counter >= carouselImages.length - 1) return; // Prevent sliding past the last image
+        carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+        counter++;
+        carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+    });
+
+    // Move to the previous image
+    prevBtns.addEventListener('click', () => {
+        if (counter <= 0) return; // Prevent sliding before the first image
+        carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+        counter--;
+        carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+    });
+});

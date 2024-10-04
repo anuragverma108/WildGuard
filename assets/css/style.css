@@ -1085,43 +1085,61 @@ body {
   #INSTA POST
 \*-----------------------------------*/
 
-.insta-post-link {
+/* Carousel container styling */
+.carousel-container {
   position: relative;
-  background-color: var(--eerie-black-1);
+  max-width: 700px; /* Keep the width fixed as specified */
+  margin: auto;
   overflow: hidden;
+  height: 500px; /* Maintain a consistent height */
+    border-radius: 10px;
 }
 
-.insta-post-link > img { transition: var(--transition-2); }
-
-.insta-post-link:is(:hover, :focus) > img {
-  transform: scale(1.1);
-  opacity: 0.5;
+.carousel-slide {
+  display: flex;
+  transition: transform 0.1s ease-in-out; /* Smoother transition */
 }
 
-.insta-post-link > ion-icon {
-  color: var(--white);
-  font-size: 5rem;
+.carousel-slide .insta-post-link {
+  min-width: 100%; /* Ensures only one image is visible at a time */
+  transition: transform 0.1s ease-in-out;
+}
+
+.carousel-prev, .carousel-next {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: var(--transition-2);
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  z-index: 1;
 }
 
-.insta-post-link:is(:hover, :focus) > ion-icon { opacity: 1; }
-
-.insta-post-list {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: inline mandatory;
+.carousel-prev {
+  left: 10px;
 }
 
-.insta-post-list::-webkit-scrollbar { display: none; }
+.carousel-next {
+  right: 10px;
+}
 
-.insta-post-item {
-  min-width: 90%;
-  scroll-snap-align: center;
+/* Add hover effects to the navigation buttons */
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container without stretching */
+}
+
+.carousel-container img {
+  height: 100%;
+  object-fit: cover; /* Ensures the image scales properly inside the container */
 }
 
 
@@ -1133,6 +1151,7 @@ body {
 \*-----------------------------------*/
 
 .footer {
+  margin-top: 5px;
   background-color: var(--raisin-black);
   color: var(--white);
   padding: 40px 0;
@@ -1143,6 +1162,7 @@ body {
 }
 
 .footer-container {
+  /* margin-top: 10px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
