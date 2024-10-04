@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="searchable-item">
 
 <head>
   <meta charset="UTF-8">
@@ -42,7 +42,7 @@
 
 </head>
 
-<body>
+<body >
 
   <!-- 
     - #HEADER
@@ -133,29 +133,34 @@
       </nav>
 
       <div class="header-action">
+<!-- Search Button -->
+<button class="search-btn" aria-label="Search">
+  <ion-icon name="search-outline"></ion-icon>
+</button>
 
-        <button class="search-btn" aria-label="Search">
-          <ion-icon name="search-outline"></ion-icon>
-        </button>
+<!-- Search Input Field -->
+<div class="search-bar" id="searchBar" style="display:none;">
+  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+  <div id="searchResults" class="search-results" style="display: none;"></div>
+  
+  <!-- Match Counter and Navigation Buttons -->
+  <div class="search-nav-buttons">
+      <span id="matchCounter" style="display: none;">0/0</span>
+      <button id="prevMatch" style="display:none;">&#x25B2;</button>
+      <button id="nextMatch" style="display:none;">&#x25BC;</button>
+      <button id="clearSearch" style="display:none;">&#x2716;</button>
+  </div>
+</div>
 
-        <!-- Search input field -->
-        <div class="search-bar" id="searchBar" style="display:none;">
-          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
 
-          <!-- Match counter and navigation buttons -->
-          <div class="search-nav-buttons">
-            <span id="matchCounter" style="display: none;">0/0</span>
-            <button id="prevMatch" style="display:none;">&#x25B2;</button> <!-- Up arrow -->
-            <button id="nextMatch" style="display:none;">&#x25BC;</button> <!-- Down arrow -->
-            <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
-          </div>
-        </div>
+      
 
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" onclick="window.location.href='Donation.html'">
           <span>Donation</span>
-
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-        </button>
+      </button>
+      
+      
         <!-- Login -->
         <div id="openPopup" class="user-icon">
           <i class="fas fa-user"></i>
@@ -226,11 +231,11 @@
             Defending Wildlife, One Paw at a Time
           </p>
 
-          <button class="btn btn-primary">
+          <button  class="btn btn-primary" onclick="window.location.href='Donation.html'">
             <span>Donation</span>
-
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-          </button>
+        </button>
+        
 
         </div>
       </section>
@@ -680,7 +685,7 @@
 
                   </div>
 
-                  <button class="btn btn-secondary">
+                  <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
                     <span>Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -739,7 +744,7 @@
 
                   </div>
 
-                  <button class="btn btn-secondary">
+                  <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
                     <span>Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -798,7 +803,7 @@
 
                   </div>
 
-                  <button class="btn btn-secondary">
+                  <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
                     <span>Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -857,7 +862,7 @@
 
                   </div>
 
-                  <button class="btn btn-secondary">
+                  <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
                     <span>Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -1247,6 +1252,7 @@
 
 
 
+
   <!-- 
     - custom js link
   -->
@@ -1306,6 +1312,77 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    /* Style for the search bar container */
+    .search-bar {
+    display: none; 
+    position: absolute;
+    top: 70px;
+    right: 70px; 
+    width: 300px;
+    height: 60px; 
+    max-width: 100%; 
+    background-color: white; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    z-index: 10; 
+}
+
+.search-btn {
+    margin-right: 70px; 
+    cursor: pointer;
+}
+    
+    /* Style for the input field inside the search bar */
+    #searchInput {
+        width: 100%; 
+        padding: 10px; 
+        border: none; 
+        outline: none; 
+        border-radius: 4px; 
+    }
+    
+    /* Style for the navigation buttons */
+    .search-nav-buttons {
+        display: flex;
+        justify-content: space-between; 
+        padding: 5px;
+    }
+    
+    /* Hide elements initially */
+    #matchCounter,
+    #prevMatch,
+    #nextMatch,
+    #clearSearch {
+        display: none; 
+    }
+    </style>
+
+
+<script>
+ 
+ document.addEventListener("DOMContentLoaded", function () {
+  
+  const searchBar = document.getElementById("searchBar");
+  const searchInput = document.getElementById("searchInput");
+
+  // Toggle the search bar visibility when the search button is clicked
+  document.querySelector(".search-btn").addEventListener("click", function () {
+      searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
+      if (searchBar.style.display === "block") {
+          searchInput.focus();
+          resetSearch();
+      }
+  });
+
+  
+});
+
+
+
+</script>
 
 </body>
 
