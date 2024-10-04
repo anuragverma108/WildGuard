@@ -797,6 +797,13 @@ body {
 .cta-banner { background-color: var(--light-gray); }
 
 
+#partner {
+  transition: transform 0.3s ease;
+}
+
+#partner:hover {
+  transform: scale(1.02);
+}
 
 
 
@@ -860,8 +867,45 @@ body {
 
 .btn-link span { text-decoration: underline; }
 
+#serivce_card1 {
+  transition: transform 0.3s ease;
+  /* background-color: #27ae60; */
+}
 
+#serivce_card1:hover {
+  transform: scale(1.04);
+   /* background-color: #27ae60;  */
+}
 
+#serivce_card2 {
+  transition: transform 0.3s ease;
+  /* background-color: #27ae60; */
+}
+
+#serivce_card2:hover {
+  transform: scale(1.04);
+   /* background-color: #27ae60;  */
+}
+
+#serivce_card3 {
+  transition: transform 0.3s ease;
+  /* background-color: #27ae60; */
+}
+
+#serivce_card3:hover {
+  transform: scale(1.04);
+   /* background-color: #27ae60;  */
+}
+
+#serivce_card4 {
+  transition: transform 0.3s ease;
+  /* background-color: #27ae60; */
+}
+
+#serivce_card4:hover {
+  transform: scale(1.04);
+   /* background-color: #27ae60;  */
+}
 
 
 /*-----------------------------------*\
