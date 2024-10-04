@@ -1,0 +1,154 @@
+:root {
+    --pistachio: hsl(86, 45%, 54%);
+    --baby-powder: hsl(86, 41%, 97%);
+  }
+
+  body {
+    background-color: var(--baby-powder);
+    font-family: 'Inter', sans-serif;
+    padding: 50px 0;
+  }
+
+  .contact-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .contact-header h1 {
+    font-size: 2.5rem;
+    color: var(--pistachio);
+    font-weight: 600;
+  }
+
+  .form-control {
+    border-radius: 0.5rem;
+  }
+
+  .contact-btn {
+    background-color: var(--pistachio);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+  }
+
+  .contact-btn:hover {
+    background-color: #4da746; /* Darker shade of pistachio */
+  }
+
+  .info-box {
+    background-color: #e9f5ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .info-box h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--pistachio);
+  }
+
+  .info-box p {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+
+
+/* Base button styling */
+.btn {
+position: relative;
+background-color: var(--btn-bg, var(--pistachio)); /* Default green background color */
+color: var(--white) !important; /* Ensure text is white */
+font-weight: var(--fw-600);
+padding: 12px 32px;
+display: flex;
+align-items: center;
+gap: 10px; /* Space between text and icon */
+transition: var(--transition-2); /* Smooth transition */
+border: none; /* Remove default border */
+outline: none; /* Remove focus outline */
+cursor: pointer; /* Add pointer cursor on hover */
+border-radius: 0; /* Remove border radius for square/rectangular corners */
+}
+
+/* Force white color for text and icon */
+.btn span, .btn ion-icon {
+color: var(--white) !important; /* Force text and icon to be white */
+}
+
+/* Icon styling with smaller size */
+.btn ion-icon {
+--ionicon-stroke-width: 55px;
+font-size: 1.2rem; /* Adjusted icon size */
+transition: var(--transition-2); /* Smooth transition */
+color: var(--white) !important; /* Ensure icon is white */
+}
+
+/* Remove blue border and default focus styles */
+.btn:focus {
+outline: none;
+box-shadow: none; /* Remove any default focus shadow */
+background-color: var(--btn-bg, var(--pistachio)); /* Keep green background on focus */
+color: var(--white) !important; /* Force white text and icon on focus */
+}
+
+/* Button outline styling for hover */
+.btn:not(.btn-outline)::after {
+content: "";
+position: absolute;
+inset: 0;
+border: 1px solid var(--btn-bg, var(--pistachio)); /* Outline color matches the background */
+transform: translate(5px, 5px); /* Initial offset for the hover effect */
+transition: var(--transition-2); /* Smooth hover effect */
+}
+
+/* On hover or focus, reset the transform to bring the outline back to normal and ensure the background stays green */
+.btn:is(:hover, :focus)::after {
+transform: translate(0, 0);
+}
+
+.btn:is(:hover, :focus) {
+background-color: var(--btn-bg, var(--pistachio)); /* Maintain green background on hover and focus */
+color: var(--white) !important; /* Force white text and icon on hover and focus */
+}
+
+/* Customizing the button colors for different classes */
+.btn-secondary {
+--btn-bg: var(--black);
+}
+
+.btn-secondary:is(:hover, :focus) {
+--btn-bg: var(--pistachio); /* Change background to pistachio on hover for secondary button */
+}
+
+/* Outline button styling */
+.btn-outline {
+border: 2px solid var(--white);
+background-color: transparent;
+border-radius: 0; /* Remove border radius for outline button as well */
+}
+
+/* Custom button with white background */
+.btn-white {
+--btn-bg: var(--platinum);
+color: var(--black);
+border-radius: 0; /* Ensure no border radius */
+}
+
+/* Prevent blue focus ring and background */
+.btn:focus-visible {
+outline: none;
+background-color: var(--btn-bg, var(--pistachio)); /* Keep green background on focus */
+color: var(--white) !important; /* Force white text and icon on focus */
+}
+
