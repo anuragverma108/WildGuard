@@ -139,6 +139,51 @@ body {
   line-height: 1.8;
   overflow-x: hidden;
 }
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+
+/* Optional: Style other elements in dark mode as needed */
+
+body.dark-mode .navbar-link {
+  color: #fff;
+}
+
+body.dark-mode .btn-primary {
+  background-color: #444;
+  color: #fff;
+}
+/* Styling the mode toggle button with a border */
+.mode-toggle-btn {
+  background: none;
+  border: 2px solid #000; /* Add a border to the button */
+  border-radius: 50%; /* Make the border circular */
+  padding: 10px; /* Add padding to increase the clickable area */
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.mode-toggle-btn:hover {
+  border-color: #888; /* Optional: Change border color on hover */
+}
+
+/* Styling the icon inside the button */
+.mode-toggle-btn ion-icon {
+  font-size: 24px;
+  color: currentColor; /* Use the current text color */
+}
+
+/* Dark mode styles */
+body.dark-mode .mode-toggle-btn {
+  border-color: #fff; /* Change border color in dark mode */
+}
+
+/* Optional: Change icon color in dark mode */
+body.dark-mode .mode-toggle-btn ion-icon {
+  color: #fff;
+}
 
 ::-webkit-scrollbar { width: 13px; }
 
@@ -361,6 +406,7 @@ body {
   align-items: center;
   padding-inline: 10px 15px;
   padding-block: 8px;
+  margin-left: -8px;
   transition: var(--transition-1);
 }
 
