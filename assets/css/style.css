@@ -504,6 +504,11 @@ body {
   line-height: 1.2;
 }
 
+.hero-title-bold {
+  line-height: 0.6;
+  font-size: var(--fs-2);
+}
+
 .hero-text {
   font-family: var(--ff-inter);
   font-size: var(--fs-8);
@@ -706,6 +711,10 @@ body {
 
 .about .section-subtitle { margin-block-end: 10px; }
 
+.about .section-title-bold {
+  line-height: 1.2;
+}
+
 .tab-nav {
   display: flex;
   flex-wrap: wrap;
@@ -786,6 +795,7 @@ body {
   margin-block-end: 25px;
 }
 
+
 .cta .btn-outline { 
   margin-inline: auto;
  }
@@ -813,6 +823,10 @@ body {
 }
 
 .service .section-title { margin-block: 10px 40px; }
+
+.service .section-title-bold {
+  line-height: 0.3;
+}
 
 .service-list {
   display: grid;
@@ -963,6 +977,11 @@ body {
   color: var(--white);
   margin-block: 10px 40px;
 }
+.testi .section-title-bold {
+  color: var(--white);
+  margin-block: 10px 40px;
+  line-height: 0.2;
+}
 
 .testi-card { color: var(--white); }
 
@@ -1024,6 +1043,12 @@ body {
 .event .section-title {
   text-align: center;
   margin-block: 15px 50px;
+}
+
+.event .section-title-bold {
+  text-align: center;
+  margin-block: 15px 50px;
+  line-height: 0.1;
 }
 
 .event-list {
