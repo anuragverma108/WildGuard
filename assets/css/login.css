@@ -189,3 +189,26 @@ button:hover {
 .signup-link a:hover {
     text-decoration: underline;
 }
+
+/* Cursor Tracker Styles */
+.cursor-tracker {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(175, 225, 108, 0.8);
+    pointer-events: none;
+    transition: transform 0.1s ease-out, background-color 0.3s ease, opacity 0.1s;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Hidden initially */
+}
+
+.cursor-active {
+    opacity: 1; /* Shows the cursor tracker when mouse is moving */
+}
+
+.cursor-scale {
+    transform: scale(1.5) translate(-50%, -50%);
+    background-color: rgba(125, 170, 70, 0.8);
+}
