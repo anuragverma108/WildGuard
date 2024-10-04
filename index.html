@@ -1127,13 +1127,13 @@
   <script src="./assets/js/script.js"></script>
   <script>
     function setActiveTab(selectedButton, contentKey) {
-   const buttons = document.querySelectorAll('.tab-btn');
-   buttons.forEach(button => button.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(button => button.classList.remove('active'));
 
-   selectedButton.classList.add('active');
+      selectedButton.classList.add('active');
 
-   const content = {
-     mission: `
+      const content = {
+        mission: `
        <p class="section-text">
          Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
        </p>
@@ -1144,7 +1144,7 @@
          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
        </ul>
      `,
-     vision: `
+        vision: `
        <p class="section-text">
          Our vision is to create a world where all animals are treated with compassion and respect.
        </p>
@@ -1154,7 +1154,7 @@
          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
        </ul>
      `,
-     plan: `
+        plan: `
        <p class="section-text">
          Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
        </p>
@@ -1165,15 +1165,16 @@
        </ul>
      `
 
-   };
+      };
 
-   document.getElementById('tab-content').innerHTML = content[contentKey] + `
+      document.getElementById('tab-content').innerHTML = content[contentKey] + `
        <button class="btn btn-secondary">
          <span>Learn More Us</span>
          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
        </button>
-     `;  }
- </script>
+     `;
+    }
+  </script>
   <!-- 
     - ionicon link
   -->
