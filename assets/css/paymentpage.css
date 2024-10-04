@@ -1,0 +1,81 @@
+/* General Styles */
+body {
+    
+    font-family: Arial, sans-serif;
+    background: url('../images/paymentpage.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.payment-container {
+    background-color: rgba(20, 20, 20, 0.85); /* Slightly transparent background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background-color: #222;
+    color: #fff;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Payment Button */
+.payment-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e50914;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.payment-btn:hover {
+    background-color: #b81d24;
+}
+
+/* Payment Confirmed Message */
+#paymentMessage {
+    margin-top: 20px;
+    color: #4caf50;
+    font-size: 18px;
+    font-weight: bold;
+}

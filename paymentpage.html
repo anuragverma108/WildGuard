@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="assets/css/paymentpage.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Card Payment</h2>
+        <form id="payment-form" onsubmit="handlePayment(event)">
+            <!-- Card Payment Fields -->
+            <div id="cardFields">
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" pattern="\d{16}" title="Enter a 16-digit card number" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MMYY" pattern="\d{4}" title="Enter a 4-digit expiry date (MMYY)" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" pattern="\d{3}" title="Enter a 3-digit CVV" required>
+                </div>
+            </div>
+
+            <button type="submit" class="payment-btn">Proceed to Pay</button>
+        </form>
+        
+        <!-- Payment Done Message -->
+        <p id="paymentMessage" class="hidden">Payment Confirmed! Thank you for your payment.</p>
+    </div>
+
+    <script src="assets/js/payment.js"></script>
+</body>
+</html>
