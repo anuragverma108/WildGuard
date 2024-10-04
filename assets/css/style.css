@@ -817,6 +817,8 @@ body {
 .service-list {
   display: grid;
   gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts the number of columns */
+  justify-content: center; /* Centers the cards horizontally */
 }
 
 .service-card {
@@ -1546,7 +1548,7 @@ body {
    */
 
   .features-list,
-  .service-list { grid-template-columns: 1fr 1fr; }
+  .service-list {  grid-template-columns: repeat(2, 1fr); }
 
 
 

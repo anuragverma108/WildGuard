@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Farming Tracker</title>
+    <style>
+        /* Background and layout */
+        .farming-page {
+           background-color: hsl(86, 45%, 54%);
+            /* Background similar to the main page */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        header {
+            background-color: black;
+            /* Add some contrast with a semi-transparent background */
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .image-gallery {
+            margin-top: 30px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            /* Image zoom effect on hover */
+        }
+
+        .tracker-section {
+            margin-top: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Light background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 30%;
+            border: 2px solid #4CAF50;
+            border-radius: 2px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #impact-result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body class="farming-page"> <!-- Apply a specific class to target page-specific styles -->
+    <div class="container">
+        <header>
+            <h1>Welcome to the Sustainable Farming Tracker</h1>
+            <p>Helping you adopt eco-friendly farming practices</p>
+        </header>
+
+        <section class="image-gallery">
+            <h2>Explore Sustainable Practices</h2>
+            <div class="gallery">
+                <img src="repo1.jpeg" alt="Sustainable farm practice 1">
+                <img src="repo2.png" alt="Sustainable farm practice 2">
+                <img src="repo3.jpeg" alt="Sustainable farm practice 3">
+            </div>
+        </section>
+
+        <section class="tracker-section">
+            <h2>Track Your Sustainability Metrics</h2>
+            <div class="tracker">
+                <label for="water-usage">Water Usage (Liters):</label>
+                <input type="number" id="water-usage" placeholder="Enter amount">
+
+                <label for="animal-welfare">Animal Welfare Score (0-100):</label>
+                <input type="number" id="animal-welfare" placeholder="Enter score">
+<br>
+
+                <button onclick="calculateImpact()">Calculate Environmental Impact</button>
+
+                <div id="impact-result"></div>
+            </div>
+        </section>
+    </div>
+    <script>
+        function calculateImpact() {
+            const waterUsage = document.getElementById('water-usage').value;
+            const welfareScore = document.getElementById('animal-welfare').value;
+            let impact = '';
+
+            if (waterUsage && welfareScore) {
+                if (welfareScore >= 80 && waterUsage < 1000) {
+                    impact = 'Your farm is on track with sustainable practices!';
+                } else if (welfareScore >= 50 && waterUsage < 2000) {
+                    impact = 'You are doing good, but there is room for improvement!';
+                } else {
+                    impact = 'Your practices need to be improved for sustainability!';
+                }
+            } else {
+                impact = 'Please fill in both fields to calculate your impact.';
+            }
+
+            document.getElementById('impact-result').innerText = impact;
+        }
+
+    </script>
+</body>
+
+</html>
