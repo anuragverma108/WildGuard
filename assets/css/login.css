@@ -1,14 +1,14 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-image: url('../images/hero.jpg'); 
+    background-image: url('../images/hero.jpg');
     background-size: cover;
     background-position: center;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,20 +16,15 @@ body {
 }
 
 .login-page {
-    width: 400px;
-    background-color: rgba(255, 255, 255, 0.185); 
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.185);
     border: 1px solid #ccc;
-    padding: 40px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
 }
 
-@media (min-width: 768px) {
-    .login-page {
-        width: 500px;
-    }
-}
 
 h2 {
     text-align: center;
@@ -42,12 +37,13 @@ h2 {
 .data {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
 .entry h3 {
     font-size: 18px;
-    color: #333;
+    color: white;
+    margin-bottom: 6px;
 }
 
 .entry input {
@@ -113,6 +109,10 @@ button:hover {
     font-size: 14px;
 }
 
+.remember-me {
+    color: white;
+}
+
 .remember-me input {
     margin-right: 5px;
 }
@@ -137,7 +137,7 @@ button:hover {
     margin: 15px 0;
     text-align: center;
     font-size: 15px;
-    color: black;
+    color: white;
 }
 
 .social-buttons {
@@ -179,6 +179,7 @@ button:hover {
     text-align: center;
     font-size: 14px;
     margin-top: 20px;
+    color: azure;
 }
 
 .signup-link a {
@@ -188,4 +189,21 @@ button:hover {
 
 .signup-link a:hover {
     text-decoration: underline;
+}
+
+/* Media query for responsiveness */
+
+@media (max-width: 768px) {
+    .login-page {
+        width: 90%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .data {
+        gap: 35px;
+    }
 }
