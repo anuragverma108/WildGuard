@@ -904,6 +904,55 @@ body {
   font-family: var(--ff-inter);
   padding-block: 40px;
 }
+ 
+
+.contact-section {
+  margin-top: 20px;
+  font-size: 16px;
+  text-align: left; 
+}
+
+.contact-section h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.contact-section p {
+  margin: 5px 0;
+}
+
+
+.contact-message {
+  margin-left: 0; 
+}
+
+.contact-section p a, 
+.contact-section p strong {
+  display: inline;
+}
+
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-link {
+  margin: 0 10px;
+  color: #007bff;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: #0056b3;
+}
+
+.social-icons i {
+  transition: color 0.3s;
+}
+
+
+
 
 .footer .container {
   margin-inline: 15px;
