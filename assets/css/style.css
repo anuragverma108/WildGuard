@@ -287,10 +287,31 @@ body {
 }
 
 .logo {
-  color: var(--white);
-  font-family: var(--ff-oswald);
-  font-size: 3.2rem;
-  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #00c896;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.logo:hover {
+  color: #00c896;
+}
+
+.logo:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 .nav-open-btn {
