@@ -105,7 +105,10 @@ time,
 input,
 strong,
 button,
-ion-icon { display: block; }
+ion-icon { 
+  display: flex;
+  justify-content: center;
+ }
 
 img { height: auto; }
 
@@ -194,9 +197,11 @@ body {
   font-weight: var(--fw-600);
   padding: 12px 32px;
   display: flex;
-  align-items: center;
+  justify-content: center;
   gap: 10px;
   transition: var(--transition-2);
+  margin: auto;
+  border-radius: 30px;
 }
 
 .btn ion-icon {
@@ -208,12 +213,14 @@ body {
   content: "";
   position: absolute;
   inset: 0;
+  border-radius: 30px;
   border: 1px solid var(--btn-bg, var(--pistachio));
   transform: translate(5px, 5px);
   transition: var(--transition-2);
 }
 
-.btn:is(:hover, :focus)::after { transform: translate(0, 0); }
+.btn:is(:hover, :focus)::after { transform: translate(0, 0); 
+}
 
 .btn-secondary { --btn-bg: var(--black); }
 
@@ -508,10 +515,18 @@ body {
   font-family: var(--ff-inter);
   font-size: var(--fs-8);
   letter-spacing: -1px;
-  max-width: 50ch;
-  margin-block-end: 30px;
+  margin: auto;
+  width: 50%;
 }
+#home span{
+  display: flex;
+  justify-content: center;
+  margin-left: 0;
 
+}
+#home img{
+  margin-left: 40%;
+}
 
 
 
