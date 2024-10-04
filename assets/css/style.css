@@ -361,10 +361,27 @@ body {
   align-items: center;
   padding-inline: 10px 15px;
   padding-block: 8px;
+  position: relative; /* Add this line */
   transition: var(--transition-1);
 }
+/*underline transition on hover*/
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  left: 50%; 
+  bottom: 0; 
+  width: 0; 
+  height: 2px; 
+  background-color: var(--pistachio);
+  transition: width 0.3s ease, left 0.3s ease; 
+}
 
-.navbar-link:is(:hover, :focus) { background-color: var(--pistachio); }
+.navbar-link:hover::after,
+.navbar-link:focus::after {
+  width: 100%; 
+  left: 0; 
+}
+
 
 /* Login Styling */
 .popup {
