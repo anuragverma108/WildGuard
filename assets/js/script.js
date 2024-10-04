@@ -76,6 +76,17 @@ for (let i = 0; i < navbarLinks.length; i++) {
   });
 }
 
+function toggleAnswer(element) {
+  const answer = element.nextElementSibling;
+
+  // Toggle the answer display
+  if (answer.style.display === "block") {
+      answer.style.display = "none";
+  } else {
+      answer.style.display = "block";
+  }
+}
+
 
 /**
  * language translation
