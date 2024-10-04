@@ -503,6 +503,11 @@ body {
   margin-block: 30px;
   line-height: 1.2;
 }
+.hero-title-bold {
+  font-size: var(--fs-2);
+  margin-block: 30px;
+  line-height: 0.6;
+}
 
 .hero-text {
   font-family: var(--ff-inter);
@@ -785,6 +790,7 @@ body {
   line-height: 1.2;
   margin-block-end: 25px;
 }
+
 
 .cta .btn-outline { 
   margin-inline: auto;
@@ -1567,6 +1573,10 @@ body {
   .about-img { margin-block-end: 0; }
 
   .about-img:first-child { margin-block-end: 30px; }
+
+  .section-title-bold {
+    line-height: 1.2;
+  }
 
 
 
