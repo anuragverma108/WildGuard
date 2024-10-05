@@ -5,24 +5,41 @@
 
 body {
     background-image: url('../images/hero.jpg'); 
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    align-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
 }
 
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:99;}
+
 .login-page {
+    position: relative;
     width: 400px;
+    /* height: 440px; */
+    background: transparent;
     background-color: rgba(255, 255, 255, 0.185); 
     border: 1px solid #ccc;
     padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0,.5);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items:center;
 }
 
 @media (min-width: 768px) {
@@ -126,7 +143,7 @@ button:hover {
     text-decoration: underline;
 }
 
-.social-login {
+.social-login{
     border-top: 1px solid #333;
     display: flex;
     justify-content: center;
@@ -141,16 +158,18 @@ button:hover {
 }
 
 .social-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: flex;           /* Change to flex */
+    justify-content: center; /* Center the buttons */
+    gap: 10px;              /* Space between buttons */
+    flex-direction: row;    /* Change to row to align buttons in one line */
 }
 
+
 .social-btn {
-    width: 100%;
+    width: 55%;
     padding: 10px;
     color: white;
-    font-size: 16px;
+    font-size: 13px;
     border: none;
     border-radius: 5px;
     display: flex;
