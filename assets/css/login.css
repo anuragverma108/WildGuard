@@ -1,55 +1,6 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-}
-
-body {
-    background-image: url('../images/hero.jpg'); 
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.login-page {
-    width: 400px;
-    background-color: rgba(255, 255, 255, 0.185); 
-    border: 1px solid #ccc;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-@media (min-width: 768px) {
-    .login-page {
-        width: 500px;
-    }
-}
-
-h2 {
-    text-align: center;
-    color: rgb(145, 190, 85);
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.data {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.entry h3 {
-    font-size: 18px;
-    color: #333;
-}
-
 .entry input {
     height: 40px;
     width: 100%;
