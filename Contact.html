@@ -7,10 +7,35 @@
   <title>Contact Us - WildGuard</title>
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/contact.css">
+   <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 <body>
+  <!-- Header -->
+  <header class="header" data-header>
+    <div class="container">
+      <h1>
+        <a href="#" class="logo">WildGuard</a>
+      </h1>
+      <select name="language" class="lang-switch" id="languageSelect">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+      </select>
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="./Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-action">
+        <button class="btn btn-primary">Donation</button>
+      </div>
+    </div>
+  </header>
+  <!-- Contact Form -->
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 contact-container">
@@ -18,15 +43,17 @@
           <h1>Contact Us</h1>
           <p>If you have any questions or need help, feel free to reach out to us.</p>
         </div>
+        <!-- Contact Information -->
         <div class="info-box">
-          <h5><i class="fas fa-envelope"></i> Email Us</h5>
+          <h5>Email Us</h5>
           <p>support@wildguard.com</p>
         </div>
         <div class="info-box">
-          <h5><i class="fas fa-phone"></i> Call Us</h5>
+          <h5>Call Us</h5>
           <p>+91 123-4567-089</p>
         </div>
-        <form id="contactForm">
+        <!-- Contact Form -->
+        <form>
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
@@ -43,26 +70,51 @@
             <button type="submit" class="btn contact-btn">Send Message</button>
           </div>
         </form>
-        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Message Sent</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                Thank you for contacting us! We will get back to you soon.
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <h3>WildGuard</h3>
+        <p>WildGuard is committed to protecting and preserving wildlife and natural habitats.</p>
+      </div>
+      <div class="footer-middle">
+        <h4>Quick Links</h4>
+        <div class="quick-links">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#donate">Donate</a></li>
+          </ul>
+          <ul>
+            <li><a href="./Contact.html">Contact</a></li>
+            <li><a href="./terms-of-use.html">Terms of Use</a></li>
+            <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h4>Stay Connected</h4>
+        <form action="#">
+          <input type="email" placeholder="Your email address">
+          <button type="submit">Subscribe</button>
+        </form>
+        <div class="footer-social-icons">
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright 2024 WildGuard. All Rights Reserved.</p>
+    </div>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/contact.js"></script>
 </body>
 </html>

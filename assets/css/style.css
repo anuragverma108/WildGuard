@@ -1183,7 +1183,7 @@ body {
   /* margin-inline: 15px; */
   background-color: var(--eerie-black-3);
   padding: 20px;
-
+}
 .footer-container {
   display: flex;
   flex-wrap: wrap;
