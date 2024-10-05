@@ -274,7 +274,7 @@ body {
 
 .header.active {
   background-color: var(--eerie-black-1);
-  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.8);
+  box-shadow: 0 0 10px hsla(0, 0%, 100%, 0.8);
 }
 
 .header.active::after { display: none; }
@@ -375,14 +375,14 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(26, 24, 24, 0.5); 
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease; 
 }
 
 .popup-content {
-  background-color: white; 
+  background-color: rgb(207, 204, 204); 
   border-radius: 10px;
   padding: 30px; 
   max-width: 500px; 
@@ -2201,6 +2201,7 @@ h1 {
 
 p.faq_1 {
   font-size: 50px;
-  color: #000;
+  color: #be4343;
   text-align: center;
+}
 }
