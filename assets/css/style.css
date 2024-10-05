@@ -2204,3 +2204,32 @@ p.faq_1 {
   color: #000;
   text-align: center;
 }
+
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.blog-item {
+  flex: 1 1 calc(33.333% - 20px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.blog-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.blog-snippet {
+  color: #666;
+}
