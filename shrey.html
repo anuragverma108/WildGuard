@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Solar System</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .solar-system {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        .sun, .planet, .moon {
+            position: absolute;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+        .sun {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #ff9933, #ff6600);
+            box-shadow: 0 0 50px #ff6600;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .orbit {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="solar-system">
+        <div class="sun"></div>
+    </div>
+
+    <script>
+        const solarSystem = document.querySelector('.solar-system');
+        const planets = [
+            { name: 'Mercury', color: '#8c7e6d', size: 10, orbit: 120, speed: 4.7 },
+            { name: 'Venus', color: '#e6b88a', size: 15, orbit: 160, speed: 3.5 },
+            { name: 'Earth', color: '#6b93d6', size: 16, orbit: 200, speed: 3 },
+            { name: 'Mars', color: '#c1440e', size: 12, orbit: 240, speed: 2.4 },
+            { name: 'Jupiter', color: '#d8ca9d', size: 40, orbit: 320, speed: 1.3 },
+            { name: 'Saturn', color: '#f4d47a', size: 35, orbit: 400, speed: 0.9 },
+            { name: 'Uranus', color: '#b5e3e3', size: 25, orbit: 460, speed: 0.7 },
+            { name: 'Neptune', color: '#4b70dd', size: 24, orbit: 520, speed: 0.5 }
+        ];
+
+        planets.forEach(planet => {
+            const orbit = document.createElement('div');
+            orbit.classList.add('orbit');
+            orbit.style.width = `${planet.orbit * 2}px`;
+            orbit.style.height = `${planet.orbit * 2}px`;
+            solarSystem.appendChild(orbit);
+
+            const planetEl = document.createElement('div');
+            planetEl.classList.add('planet');
+            planetEl.style.width = `${planet.size}px`;
+            planetEl.style.height = `${planet.size}px`;
+            planetEl.style.backgroundColor = planet.color;
+            solarSystem.appendChild(planetEl);
+
+            let angle = 0;
+            setInterval(() => {
+                angle += planet.speed;
+                const x = Math.cos(angle * Math.PI / 180) * planet.orbit;
+                const y = Math.sin(angle * Math.PI / 180) * planet.orbit;
+                planetEl.style.transform = `translate(${x}px, ${y}px)`;
+            }, 50);
+
+            planetEl.addEventListener('mouseover', () => {
+                planetEl.style.transform = `translate(${planetEl.style.transform.split('(')[1].split(')')[0]}) scale(1.5)`;
+            });
+
+            planetEl.addEventListener('mouseout', () => {
+                planetEl.style.transform = planetEl.style.transform.split(' ')[0];
+            });
+        });
+    </script>
+</body>
+</html>
