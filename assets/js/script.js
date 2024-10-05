@@ -709,3 +709,4 @@ function hideNavigationButtons() {
 document.getElementById("currentYear").textContent = new Date().getFullYear();
 
 
+// faq js
