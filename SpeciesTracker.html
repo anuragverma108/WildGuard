@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Endangered Species Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#species-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#species-list {
+  margin-top: 20px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+}
+
+table td {
+  background-color: #fafafa;
+}
+
+#riskChart {
+  max-width: 100%;
+  margin-top: 40px; /* Add space between chart and other elements */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  table th, table td {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🌿 Endangered Species Tracker 🌍</h1>
+      <div id="species-container">
+        <h1>Endangered Species List</h1>
+        <div id="species-list"></div>
+
+        <!-- Chart for displaying risk category -->
+        <canvas id="riskChart"></canvas>
+      </div>
+    </div>
+
+    <script>
+      const apiKey =
+        "9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee"; // Replace with your actual IUCN Red List API key
+      const countryCode = "US"; // Replace with the desired country code
+      const endpoint = `https://apiv3.iucnredlist.org/api/v3/country/getspecies/${countryCode}`;
+
+      // Function to update the species list
+      function updateSpeciesList() {
+        const url = `${endpoint}?token=${apiKey}`;
+        console.log("Fetching data from:", url); // Log the full URL for debugging
+
+        fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log("API Response:", data); // Log the API response for debugging
+
+            if (!data || !data.result) {
+              throw new Error("Invalid data received from API.");
+            }
+
+            const speciesData = data.result;
+            //   console.log("API speciesData:", speciesData);
+            // Update the species list in the DOM
+            const speciesList = document.getElementById("species-list");
+            if (speciesList) {
+              speciesList.innerHTML = ""; // Clear the previous content
+
+              speciesData.forEach((species) => {
+                const speciesElement = document.createElement("div");
+                speciesElement.classList.add("species");
+                speciesElement.innerHTML = `
+                        <div class="name">Scientific Name: ${species.scientific_name}</div>
+                        <div class="category">Category: ${species.category}</div>
+                        
+                    `;
+                speciesList.appendChild(speciesElement);
+                // console.log("API speciesData:", species.scientific_name);
+              });
+
+              // Create or update the chart with the new species data
+              createRiskCategoryChart(speciesData);
+            } else {
+              console.error("species-list element not found in the DOM.");
+            }
+          })
+          .catch((error) => console.error("Error fetching data:", error));
+      }
+      //   console.log("API speciesData:", speciesElement);
+      // Function to categorize species by risk category and create the chart
+      function createRiskCategoryChart(speciesData) {
+        const categoryCounts = {
+          "Critically Endangered": 0,
+          Endangered: 0,
+          Vulnerable: 0,
+          "Near Threatened": 0,
+          "Least Concern": 0,
+        };
+
+        // Normalize and categorize the species data
+        speciesData.forEach((species) => {
+          let category = species.category;
+          if (category === "CR") category = "Critically Endangered";
+          else if (category === "EN") category = "Endangered";
+          else if (category === "VU") category = "Vulnerable";
+          else if (category === "NT") category = "Near Threatened";
+          else if (category === "LC") category = "Least Concern";
+
+          // Log each normalized category to ensure it's correctly parsed
+          console.log("Normalized Category:", category);
+
+          if (categoryCounts[category] !== undefined) {
+            categoryCounts[category]++;
+          }
+        });
+        // Log the category counts to verify data
+        console.log("Category Counts:", categoryCounts);
+
+        // Prepare data for the chart
+        const labels = Object.keys(categoryCounts);
+        const data = Object.values(categoryCounts);
+
+        const ctx = document.getElementById("riskChart").getContext("2d");
+        if (!ctx) {
+          console.error("Failed to get canvas context.");
+          return;
+        }
+
+        const riskChart = new Chart(ctx, {
+          type: "pie", // Can change to 'bar', 'line', etc.
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "Species Count by Risk Category",
+                data: data,
+                backgroundColor: ["red", "orange", "yellow", "green", "blue"],
+                hoverOffset: 4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                position: "top",
+              },
+              title: {
+                display: true,
+                text: "Endangered Species by Risk Category",
+              },
+            },
+          },
+        });
+        // Call function to display the category counts in a table
+        displayCategoryCounts(categoryCounts);
+      }
+
+      // Function to display category counts in a table format
+      function displayCategoryCounts(categoryCounts) {
+        const speciesList = document.getElementById("species-list");
+
+        // Create the table
+        const table = document.createElement("table");
+
+        // Create the table header
+        const thead = document.createElement("thead");
+        const headerRow = document.createElement("tr");
+        const categoryHeader = document.createElement("th");
+        categoryHeader.textContent = "Category";
+        const countHeader = document.createElement("th");
+        countHeader.textContent = "Count";
+        headerRow.appendChild(categoryHeader);
+        headerRow.appendChild(countHeader);
+        thead.appendChild(headerRow);
+
+        // Create the table body
+        const tbody = document.createElement("tbody");
+
+        // Populate the table with category data
+        Object.keys(categoryCounts).forEach((category) => {
+          const row = document.createElement("tr");
+
+          const categoryCell = document.createElement("td");
+          categoryCell.textContent = category;
+          row.appendChild(categoryCell);
+
+          const countCell = document.createElement("td");
+          countCell.textContent = categoryCounts[category];
+          row.appendChild(countCell);
+
+          tbody.appendChild(row);
+        });
+
+        // Append the header and body to the table
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        // Clear the species list div and append the table
+        speciesList.innerHTML = ""; // Clear previous content
+        speciesList.appendChild(table);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        updateSpeciesList();
+      });
+    </script>
+  </body>
+</html>
