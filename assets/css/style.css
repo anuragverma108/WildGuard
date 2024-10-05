@@ -806,9 +806,48 @@ body {
 
 .cta-banner { background-color: var(--light-gray); }
 
+/*-----------------------------------*\
+  #GALLERY
+\*-----------------------------------*/
 
+#user-generated-content {
+  padding: 20px;
+}
 
+#submissionForm {
+  display: flex;
+  flex-direction: column;
+}
 
+#submissionForm input,
+#submissionForm textarea {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#community-gallery {
+  padding: 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.submission-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.submission-card img {
+  width: 100%;
+  height: auto;
+}
 
 /*-----------------------------------*\
   #SERVICE

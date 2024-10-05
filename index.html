@@ -14,9 +14,10 @@
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
   <!-- 
-    - custom css link
+    - custom css link 
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/wild.css">
 
     <!-- 
     - fontawesome icon link
@@ -941,6 +942,85 @@
 
       </section>
 
+      <!-- 
+        - #COMMUNITY GALLERY
+      -->
+
+      <section class="user-generated-content">
+        <div class="container">
+            <h2>Share Your Wildlife Photos or Stories</h2>
+            <form id="submissionForm" enctype="multipart/form-data">
+                <input type="text" id="username" placeholder="Your Name" required />
+                <input type="email" id="userEmail" placeholder="Your Email" required />
+                <textarea id="userStory" placeholder="Tell us your story..." required></textarea>
+                <input type="file" id="userPhoto" accept="image/*" required />
+                <button type="submit">Submit</button>
+            </form>
+            <div id="submissionMessage"></div>
+        </div>
+    </section>
+
+    <section class="community-gallery">
+        <div class="container">
+            <h2>Community Gallery</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- User submissions will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+      const submissions = []; // Initialize an empty array to store submissions
+
+      // Handle form submission
+      document.getElementById('submissionForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent default form submission
+
+          const username = document.getElementById('username').value;
+          const userEmail = document.getElementById('userEmail').value;
+          const userStory = document.getElementById('userStory').value;
+          const userPhoto = document.getElementById('userPhoto').files[0];
+
+          // Create an object to hold the submission data
+          const submissionData = {
+              username,
+              userStory,
+              userPhoto: URL.createObjectURL(userPhoto) // Create a URL for the uploaded file
+          };
+
+          // Add the submission to the array
+          submissions.push(submissionData);
+
+          // Display a success message
+          document.getElementById('submissionMessage').innerText = 'Your submission has been received!';
+
+          // Reset the form
+          document.getElementById('submissionForm').reset();
+
+          // Update the gallery with the new submission
+          displaySubmissions();
+      });
+
+      // Function to render submissions in the gallery
+      function displaySubmissions() {
+          const galleryGrid = document.getElementById('galleryGrid');
+          galleryGrid.innerHTML = ''; // Clear existing content
+
+          submissions.forEach(submission => {
+              const card = document.createElement('div');
+              card.classList.add('submission-card');
+              card.innerHTML = `
+                  <img src="${submission.userPhoto}" alt="${submission.username}'s submission" />
+                  <h3>${submission.username}</h3>
+                  <p>${submission.userStory}</p>
+              `;
+              galleryGrid.appendChild(card);
+          });
+      }
+
+      // Call this function to load submissions when the page loads (initially empty)
+      document.addEventListener('DOMContentLoaded', displaySubmissions);
+    </script>
 
 
 
