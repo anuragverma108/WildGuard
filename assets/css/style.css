@@ -6,7 +6,7 @@
    * colors
    */
 
-  --bright-yellow-crayola: hsl(40, 100%, 50%);
+  --bright-yellow-crayola: hsl(40, 73%, 50%);
   --medium-turquoise: hsl(172, 48%, 59%);
   --silver-chalice: hsl(0, 0%, 70%);
   --eerie-black-1: hsl(0, 0%, 13%);
@@ -62,7 +62,7 @@
    * shadow
    */
 
-  --card-shadow: 0 5px 20px -8px hsla(0, 0%, 0%, 0.15);
+  --card-shadow: 0 5px 20px -8px hsla(0, 11%, 31%, 0.15);
 
   /**
    * transition
@@ -142,7 +142,7 @@ body {
 
 ::-webkit-scrollbar { width: 13px; }
 
-::-webkit-scrollbar-track { background-color: hsl(0, 0%, 95%); }
+::-webkit-scrollbar-track { background-color: hsl(0, 24%, 61%); }
 
 ::-webkit-scrollbar-thumb { background-color: var(--pistachio); }
 
