@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Login</title>
+    <link rel="stylesheet" href="newlogin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Wildlife Animation Elements -->
+    <div class="wildlife-animation">
+        <div class="bird"></div>
+        <div class="bird"></div>
+        <div class="bird"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+        <div class="firefly"></div>
+    </div>
+
+    <!-- Login Container -->
+    <div class="login-page">
+        <div class="content">
+            <h2>Welcome Back!</h2>
+            
+            <div class="entry">
+                <h3>Email</h3>
+                <div class="input-wrapper">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+            </div>
+            
+            <div class="entry">
+                <h3>Password</h3>
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="Enter your password">
+                    <i class="icon toggle-password" onclick="togglePasswordVisibility()"></i>
+                </div>
+            </div>
+            
+            <div class="extras">
+                <label class="remember-me">
+                    <input type="checkbox">
+                    Remember Me
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+            <div class="terms-checkbox">
+                <label>
+                    <input type="checkbox" required>
+                    I agree to the <a href="terms.html" target="blank_">Terms and Conditions</a>
+                </label>
+
+
+            </div>
+            
+            <button class="login-btn">Login</button>
+            
+            <div class="social-login">
+                <p>Or login with</p>
+                <div class="social-buttons">
+                    <button class="social-btn google-btn">
+                        <img src="https://w7.pngwing.com/pngs/63/1016/png-transparent-google-logo-google-logo-g-suite-chrome-text-logo-chrome.png" alt="Google" class="social-icon">
+                        Continue with Google
+                    </button>
+                    <button class="social-btn facebook-btn">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTovFIRklvFqvsL9y15ztZXdHElr-A0oKTipg&s" alt="Facebook" class="social-icon">
+                        Continue with Facebook
+                    </button>
+                    <button class="social-btn apple-btn">
+                        <img src="https://w7.pngwing.com/pngs/566/77/png-transparent-apple-logo-apple-watch-logo-apple-logo-heart-logo-computer-wallpaper.png" alt="Apple" class="social-icon">
+                        Continue with Apple
+                    </button>
+                </div>
+            </div>
+            
+            
+            <div class="signup-link">
+                Don't have an account? <a href="register.html">Sign up</a>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+</body>
+</html>
