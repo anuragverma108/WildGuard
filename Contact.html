@@ -6,129 +6,188 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Contact Us - WildGuard</title>
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Custom CSS for the contact page -->
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
   <style>
-    :root {
-      --pistachio: hsl(86, 45%, 54%);
-      --baby-powder: hsl(86, 41%, 97%);
+    * {
+      font-family: 'Roboto', sans-serif;
+      box-sizing: border-box;
     }
 
     body {
-      background-color: var(--baby-powder);
-      font-family: 'Inter', sans-serif;
-      padding: 50px 0;
+      background-image: url('./assets/images/hero.jpg'); /* Maintain background image */
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
     }
 
     .contact-container {
-      background-color: #fff;
-      border-radius: 10px;
+      width: 100%;
+      max-width: 600px; /* Set max-width for responsiveness */
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      margin: 0 15px; /* Add margin for smaller screens */
     }
 
     .contact-header {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px; /* Adjusted spacing */
     }
 
     .contact-header h1 {
-      font-size: 2.5rem;
-      color: var(--pistachio);
-      font-weight: 600;
+      font-size: 28px; /* Adjusted font size */
+      color: rgb(145, 190, 85);
+      margin-bottom: 10px;
     }
 
-    .form-control {
-      border-radius: 0.5rem;
-    }
-
-    .contact-btn {
-      background-color: var(--pistachio);
-      color: #fff;
-      padding: 10px 30px;
-      border-radius: 25px;
-      font-size: 1.1rem;
-      transition: background-color 0.3s;
-    }
-
-    .contact-btn:hover {
-      background-color: #4da746; /* Darker shade of pistachio */
+    .contact-header p {
+      font-size: 14px;
+      color: #555;
     }
 
     .info-box {
-      background-color: #e9f5ff;
+      background-color: #f8f9fa;
       padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
+      border-left: 4px solid rgb(145, 190, 85);
+      border-radius: 4px;
     }
 
     .info-box h5 {
-      font-size: 1.2rem;
-      font-weight: 600;
+      font-size: 1.2em;
+      color: rgb(145, 190, 85);
       margin-bottom: 5px;
-      color: var(--pistachio);
     }
 
     .info-box p {
-      margin-bottom: 0;
-      font-size: 1rem;
+      font-size: 1em;
+      color: #333;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    .form-label {
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    .form-control {
+      background-color: #f8f9fa;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      padding: 10px;
+      width: 100%;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: rgb(145, 190, 85);
+      box-shadow: 0 0 5px rgba(145, 190, 85, 0.2);
+    }
+
+    textarea.form-control {
+      resize: none;
+    }
+
+    .contact-btn {
+      background-color: rgb(145, 190, 85);
+      color: #fff;
+      padding: 12px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+
+    .contact-btn:hover {
+      background-color: rgb(125, 170, 70);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        width: 90%;
+        padding: 20px;
+      }
+
+      .contact-header h1 {
+        font-size: 2em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-container {
+        padding: 15px;
+      }
+
+      .contact-header h1 {
+        font-size: 24px;
+      }
+
+      .info-box h5 {
+        font-size: 1.1em;
+      }
+
+      .form-label {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 contact-container">
-        
-        <!-- Contact Form Header -->
-        <div class="contact-header">
-          <h1>Contact Us</h1>
-          <p>If you have any questions or need help, feel free to reach out to us.</p>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="info-box">
-          <h5>Email Us</h5>
-          <p>support@wildguard.com</p>
-        </div>
-
-        <div class="info-box">
-          <h5>Call Us</h5>
-          <p>+91 123-4567-089</p>
-        </div>
-
-        <!-- Contact Form -->
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
-          </div>
-
-          <div class="text-center">
-            <button type="submit" class="btn contact-btn">Send Message</button>
-          </div>
-        </form>
-      </div>
+  <div class="contact-container">
+    <div class="contact-header">
+      <h1>Contact Us</h1>
+      <p>If you have any questions or need help, feel free to reach out to us.</p>
     </div>
+
+    <div class="info-box">
+      <h5>Email Us</h5>
+      <p>support@wildguard.com</p>
+    </div>
+
+    <div class="info-box">
+      <h5>Call Us</h5>
+      <p>+91 123-4567-089</p>
+    </div>
+
+    <form>
+      <div class="mb-4">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="mb-4">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="6" placeholder="Enter your message" required></textarea>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="contact-btn">Send Message</button>
+      </div>
+    </form>
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
