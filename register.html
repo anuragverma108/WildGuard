@@ -13,7 +13,7 @@
         <div class="content">
             <h2>Create an account</h2>
 
-            <form class="data">
+            <form class="data" onsubmit="return validateForm()">
 
                 <!-- Email Field -->
                 <div class="entry">
@@ -66,8 +66,8 @@
                         <button type="button" class="social-btn google-btn">
                             <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Continue with Google
                         </button>
-                        <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/facebook.png" alt="FaceBook Logo" class="google-logo"> Continue with Facebook
+                        <button type="button" class="social-btn facebook-btn">
+                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo"> Continue with Facebook
                         </button>
                     </div>
                 </div>
@@ -93,7 +93,18 @@
                 icon.classList.add('fa-eye');
             }
         }
+
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const repeatPassword = document.getElementById('repeat-password').value;
+
+            if (password !== repeatPassword) {
+                alert("Passwords do not match!");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
     </script>
 
 </body>
-</html>
+</html>   
