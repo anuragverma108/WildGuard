@@ -7,148 +7,152 @@
     <link rel="stylesheet" href="./assets/css/login.css">
     <title>Login</title>
     <style>
-        body {
-            background: url("Background.png") no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'Arial', sans-serif;
-        }
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        .login-page {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            width: 400px;
-            animation: fadeIn 0.5s ease-in-out;
-            opacity: 0;
-            transform: translateY(-20px);
-        }
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.login-page {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+}
 
-        .content h2 {
-            color: #fff;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
 
-        .entry {
-            margin-bottom: 15px;
-        }
+.entry {
+    margin-bottom: 15px;
+}
 
-        .input-wrapper {
-            position: relative;
-        }
+.input-wrapper {
+    position: relative;
+}
 
-        .input-wrapper input {
-            width: 100%;
-            height: 50px;
-            padding-left: 40px;
-            border: 2px solid #fff;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            transition: border-color 0.3s;
-        }
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
-        .input-wrapper input:focus {
-            border-color: #ffa500;
-            outline: none;
-        }
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
 
-        .fa {
-            position: absolute;
-            left: 10px;
-            top: 12px;
-            color: #fff;
-        }
+.fa {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
 
-        .extras {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #fff;
-            font-size: 14px;
-        }
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
 
-        .extras .forgot-password {
-            color: #ffa500;
-            transition: color 0.3s;
-        }
+.extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .extras .forgot-password:hover {
-            color: #ff7c00;
-        }
+.remember-me {
+    display: flex;
+    align-items: center;
+}
 
-        button {
-            width: 100%;
-            height: 50px;
-            border: none;
-            border-radius: 25px;
-            background: #ffa500;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+.remember-me input {
+    margin-right: 5px;
+}
 
-        button:hover {
-            background: #ff7c00;
-        }
+button[type="submit"], .social-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
-        .social-login {
-            text-align: center;
-            margin-top: 20px;
-        }
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
 
-        .social-buttons {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-        }
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
 
-        .social-btn {
-            background: transparent;
-            border: 2px solid #fff;
-            border-radius: 25px;
-            padding: 10px 20px;
-            color: #fff;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-        }
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+}
 
-        .social-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
-        .signup-link {
-            text-align: center;
-            margin-top: 15px;
-            color: #fff;
-        }
+.google-btn, .facebook-btn {
+    background-color: #e9ecef;
+    border: 1px solid #ccc;
+}
 
-        .signup-link a {
-            color: #ffa500;
-            transition: color 0.3s;
-        }
+.google-btn:hover, .facebook-btn:hover {
+    background-color: #d3d3d3;
+}
 
-        .signup-link a:hover {
-            color: #ff7c00;
-        }
+.signup-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 24px;
+    }
+
+    input[type="email"], input[type="password"], button {
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -173,7 +177,8 @@
                     <label for="password"><h3>Password</h3></label>
                     <div class="input-wrapper">
                         <input type="password" id="password" placeholder="Enter your password" required>
-                        <div class="fa icon toggle-password" onclick="togglePasswordVisibility('password')">
+
+                        <div class="fa" class="icon toggle-password" onclick="togglePasswordVisibility('password')">
                             <i class="fas fa-eye"></i>
                         </div>
                     </div>
@@ -200,7 +205,7 @@
                             <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Continue with Google
                         </button>
                         <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo"> Continue with Facebook
+                            <img src="./assets/images/facebook.png" alt="Google Logo" class="google-logo"> Continue with Facebook
                         </button>
                     </div>
                 </div>
