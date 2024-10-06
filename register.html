@@ -6,6 +6,119 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/login.css">
     <title>Register</title>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-page {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px; /* Increased max-width for desktop */
+    padding: 40px; /* Added padding for better spacing */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.entry {
+    margin-bottom: 15px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+    width: 100%;
+    padding: 12px 40px; /* Increased padding for better usability */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: #007bff; /* Change focus color for better visibility */
+    outline: none;
+}
+
+.fa {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+}
+
+.terms input {
+    margin-right: 5px;
+}
+
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Responsive Styles for Larger Screens */
+@media (min-width: 768px) {
+    h2 {
+        font-size: 28px;
+    }
+
+    input[type="text"], input[type="email"], input[type="tel"], input[type="password"], button {
+        font-size: 18px; /* Increase font size for better readability */
+    }
+
+    .entry {
+        margin-bottom: 20px; /* Increased margin for spacing */
+    }
+
+    button[type="submit"] {
+        padding: 15px; /* Increased padding for buttons */
+    }
+}
+
+@media (min-width: 1024px) {
+    .login-page {
+        padding: 60px; /* More padding for larger screens */
+    }
+}
+
+    </style>
 </head>
 <body>
 
