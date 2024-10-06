@@ -8,12 +8,12 @@
     <title>Login</title>
     <style>
         body {
-            background: url("Background.png");
+            background: url("Background.png") no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
             font-family: 'Arial', sans-serif;
         }
 
@@ -23,12 +23,12 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             padding: 20px;
             width: 400px;
-            animation: slideIn 0.5s ease-out forwards;
+            animation: fadeIn 0.5s ease-in-out;
             opacity: 0;
             transform: translateY(-20px);
         }
 
-        @keyframes slideIn {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
                 transform: translateY(-20px);
@@ -199,7 +199,7 @@
                         <button type="button" class="social-btn google-btn">
                             <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Continue with Google
                         </button>
-                        <button type="button" class="social-btn facebook-btn">
+                        <button type="button" class="social-btn google-btn">
                             <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo"> Continue with Facebook
                         </button>
                     </div>
@@ -220,7 +220,8 @@
                 passwordField.type = 'text';
                 icon.classList.remove('fa-eye');
                 icon.classList.add('fa-eye-slash');
-            } else {
+            } 
+            else {
                 passwordField.type = 'password';
                 icon.classList.remove('fa-eye-slash');
                 icon.classList.add('fa-eye');
