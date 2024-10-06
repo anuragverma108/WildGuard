@@ -15,12 +15,16 @@
     :root {
       --pistachio: hsl(86, 45%, 54%);
       --baby-powder: hsl(86, 41%, 97%);
+      
     }
 
     body {
       background-color: var(--baby-powder);
       font-family: 'Inter', sans-serif;
       padding: 50px 0;
+      background-image: url('assets/images/hero.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .contact-container {
@@ -28,6 +32,13 @@
       border-radius: 10px;
       padding: 30px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.2); /* More transparent white background */
+      background-color: rgba(255, 255, 255, 0.185);
+      border: 1px solid #ccc;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
     }
 
     .contact-header {
@@ -55,7 +66,7 @@
     }
 
     .contact-btn:hover {
-      background-color: #4da746; /* Darker shade of pistachio */
+      background-color:var(--pistachio);
     }
 
     .info-box {
@@ -76,6 +87,13 @@
       margin-bottom: 0;
       font-size: 1rem;
     }
+    .form-label{
+      font-weight: 600;
+    }
+    .contact-btn:hover{
+      background-color: hsl(86deg 38.88% 44.01%);
+    }
+    
   </style>
 </head>
 
