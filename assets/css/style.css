@@ -256,8 +256,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
-  padding-block: 18px;
+  padding: 10px 20px;
   z-index: 4;
 }
 
@@ -280,6 +279,7 @@ body {
 .header.active::after { display: none; }
 
 .header .container {
+  padding: 0px 20px ;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -304,7 +304,7 @@ body {
   top: 100%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100%; 
   outline: 1px solid var(--white_10);
   display: flex;
   flex-direction: column;
@@ -537,6 +537,7 @@ body {
 
 .features-item {
   display: flex;
+  justify-content: center;
   align-items: flex-start;
   gap: 25px;
 }
@@ -1183,6 +1184,7 @@ body {
   /* margin-inline: 15px; */
   background-color: var(--eerie-black-3);
   padding: 20px;
+}
 
 .footer-container {
   display: flex;
@@ -1711,6 +1713,12 @@ body {
     background-size: cover;
     background-position: left;
     min-height: 780px;
+
+    .container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
 
@@ -2203,4 +2211,31 @@ p.faq_1 {
   font-size: 50px;
   color: #000;
   text-align: center;
+}
+
+
+/* Styles for larger screens */
+@media (min-width: 768px) { /* Adjust as per your design */
+  .nav-open-btn {
+      display: block; /* Hide hamburger button on larger screens */
+  }
+
+  .navbar {
+      display: none; /* Show navbar contents */
+  }
+}
+
+/* Styles for mobile */
+@media (max-width: 767px) {
+  .navbar {
+      display: none; /* Hide navbar contents on mobile */
+  }
+
+  .navbar.active {
+      display: flex; /* Show navbar when activated */
+  }
+
+  .nav-open-btn {
+      display: block; /* Show hamburger button on mobile */
+  }
 }
