@@ -2204,3 +2204,145 @@ p.faq_1 {
   color: #000;
   text-align: center;
 }
+}
+/* Style for the input-wrapper class to align the icons */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px; /* space for the icon */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.input-wrapper .fa {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* Styling for the password strength indicator text */
+#password-strength {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Styles for each strength level */
+.strength-1 {
+  color: #ff4d4d; /* Red for Very Weak */
+}
+.strength-2 {
+  color: #ff944d; /* Orange for Weak */
+}
+.strength-3 {
+  color: #ffd11a; /* Yellow for Fair */
+}
+.strength-4 {
+  color: #66cc66; /* Light Green for Strong */
+}
+.strength-5 {
+  color: #4dff4d; /* Green for Very Strong */
+}
+
+/* Style for the Remember Me checkbox and Forgot Password link */
+.extras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.extras .remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.extras .forgot-password {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.extras .forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Styling for the Sign Up button */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #357ab7;
+}
+
+/* Style for the social buttons */
+.social-login {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.google-btn img,
+.facebook-btn img {
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* Style for the Sign Up link */
+.signup-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
