@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>WildGuard - Give Love for Saving World Animals</title>
 
   <!-- 
@@ -347,62 +348,39 @@
 
             <img src="./assets/images/deco-img.png" width="58" height="261" alt="" class="deco-img">
 
-            <div class="banner-imgs banner-carousel">
-                   <!-- Previous button -->
-              <button class="prev-btn">&#10094;</button>
-
-              <div class="banner-img-container banner-carousel-frame banner-img-cont-1" index=1>
-                  <img
-                    src="./assets/images/about-banner-1.jpg"
-                    width="315"
-                    height="380"
-                    loading="lazy"
-                    alt="Tiger"
-                    class="about-img w-100"
-                  />
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./assets/images/about-banner-1.jpg" class="d-block w-100 carousel-image" alt="Slide 1">
                 </div>
-                <div class="banner-img-container banner-carousel-frame banner-img-cont-2" index=2>
-                  <img
-                  src="./assets/images/about-banner-3.jpg"
-                  width="250"
-                  height="277"
-                  loading="lazy"
-                  alt="Elephant"
-                  class="about-img w-100"
-                />
+                <div class="carousel-item">
+                  <img src="./assets/images/about-banner-2.jpg" class="d-block w-100 carousel-image" alt="Slide 2">
                 </div>
-
-                <div class="banner-img-container banner-carousel-frame banner-img-cont-3" index=3>
-                  <img
-                  src="./assets/images/about-banner-2.jpg"
-                  width="386"
-                  height="250"
-                  loading="lazy"
-                  alt="Panda"
-                  class="about-img w-100"
-                />
-                  </div>
-
-                  <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
-                  <img
-                    src="./assets/images/about-banner-4.jpg"
-                    width="315"
-                    height="380"
-                    loading="lazy"
-                    alt="Deer"
-                    class="about-img w-100"
-                  />
-                  </div>
-                  
-                  <!-- Next button -->
-                  <button class="next-btn">&#10095;</button>
+                <div class="carousel-item">
+                  <img src="./assets/images/about-banner-3.jpg" class="d-block w-100 carousel-image" alt="Slide 3">
+                </div>
+                <div class="carousel-item">
+                  <img src="./assets/images/about-banner-4.jpg" class="d-block w-100 carousel-image" alt="Slide 4">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
+            
 
             <div class="spot-circles">
-              <span class="circle" index="1"></span>
-              <span class="circle" index="2"></span>
-              <span class="circle" index="3"></span>
-              <span class="circle" index="4"></span>
             </div>
 
           </div>
@@ -1397,6 +1375,7 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
   <style>
     /* Style for the search bar container */

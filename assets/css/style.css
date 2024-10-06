@@ -597,6 +597,12 @@ body {
   z-index: -1;
 }
 
+
+.carousel-image {
+  height: 450px; /* Or any desired height */
+  object-fit: fill;
+}
+
 .banner-imgs {
   display: grid;
   scale: calc(100px / 100%);
