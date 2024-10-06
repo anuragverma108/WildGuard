@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Added viewport meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WildGuard - Donate to Protect Wildlife</title>
     <style>
         /* ----- CSS Styles ----- */
@@ -65,11 +67,20 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .animal-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .animal-card img {
             width: 100%;
             height: 180px;
             object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+        .animal-card:hover img {
+            filter: brightness(0.9);
         }
         .animal-info {
             padding: 15px;
@@ -201,41 +212,19 @@
                 width: 100%;
             }
         }
-        .animal-card {
-    background-color: #ffffff;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 22%;
-    min-width: 250px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect for the entire card */
-.animal-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Hover effect for the image */
-.animal-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: filter 0.3s ease;
-}
-
-.animal-card:hover img {
-    filter: brightness(0.9);
-}
-
+        /* Additional styles from the other branch */
+        .backimg {
+            background-image: url("assets/images/animals.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: left;
+            min-height: 780px;
+        }
     </style>
 </head>
 <body>
-
+    <!-- Optional: If you want to use the background image -->
+    <!-- <div class="backimg"> -->
     <!-- Header -->
     <header>
         <div class="container">
@@ -320,6 +309,7 @@
             <p>&copy; 2023 WildGuard. All rights reserved.</p>
         </div>
     </footer>
+    <!-- </div> --> <!-- Close .backimg if used -->
 
     <!-- JavaScript -->
     <script>
