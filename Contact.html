@@ -105,6 +105,17 @@
         <!-- Contact Form -->
         <form>
           <div class="mb-3">
+            <label for="inquiryType" class="form-label">Inquiry Type</label>
+            <select class="form-select" id="inquiryType" required>
+              <option value="" disabled selected>Select your inquiry type</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Support</option>
+              <option value="feedback">Feedback</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
           </div>
