@@ -275,5 +275,3 @@ window.addEventListener('load', function() {
 
 
 
-
-

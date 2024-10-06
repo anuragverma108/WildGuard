@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;800&family=Poppins:wght@300&display=swap");
 
 :root {
 
@@ -1581,4 +1581,85 @@ body {
 
 #google_translate_element img, #google_translate_element a{
   display: none;
+}
+
+.faq_daddy h2{
+  text-align: center;
+  font-size: 48px;
+  font-weight: bolder;
+}
+
+.faq_daddy {
+  background: rgb(38, 36, 36);
+  color: white;
+  padding: 34px;
+  font-size: 24px;
+  
+}
+
+.ques:hover {
+  background-color: rgb(74, 72, 72);
+}
+
+.ques {
+  transition: all 0.4s ease-out;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(46, 45, 45);
+  padding: 24px;
+  max-width: 60vw;
+  margin: 10px auto;
+  cursor: pointer;
+
+  /* margin-left: 250px; */
+
+}
+
+.faq svg{
+  display: flex;
+  justify-content: space-between;
+}
+
+.answer{
+  max-height: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.faq.active .answer{
+  max-height: 300px;
+}
+
+.faq svg{
+  transition: all 0.3s ease-in-out;
+}
+
+.faq.active svg{
+  transform: rotate(45deg);
+}
+
+.faq_list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+.answer p{
+  transition: all 0.4s ease-out;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(46, 45, 45);
+  padding: 24px;
+  max-width: 60vw;
+  margin: -9px auto;
+  margin-bottom: 10px;
+  border-bottom: 50px;
+  cursor: pointer;
+  /* max-height: 0; */
+
+  /* margin-left: 250px; */
+
 }
