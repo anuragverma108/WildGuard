@@ -36,6 +36,75 @@
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+<style>
+  .faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #2ecc71; /* Green accent color */
+    margin-bottom: 30px;
+}
+
+.faq {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+.question {
+    background-color: #e6f9ea; /* Light green background */
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question h3 {
+    margin: 0;
+    color: #333;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.answer {
+    display: none; /* Hide by default */
+    padding: 15px 20px;
+    background-color: #fff; /* White background */
+}
+
+.answer p,
+.answer ul {
+    margin: 0;
+}
+
+.answer ul {
+    margin-top: 10px;
+    padding-left: 20px; /* Indent list items */
+}
+
+.answer li {
+    margin-bottom: 10px;
+}
+
+.faq:hover {
+    background-color: #f1f1f1; /* Slightly darker on hover */
+}
+
+</style>
+
 </head>
 
 <body >
@@ -268,8 +337,7 @@
                 <h3 class="h4 item-title" id="safeShelter"></h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  We provide secure and comfortable shelters for animals in need, ensuring they have a safe place to live and thrive.
                 </p>
               </div>
             </li>
@@ -283,8 +351,7 @@
                 <h3 class="h4 item-title" id="safeWater"></h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  We ensure access to clean and safe water for animals, which is essential for their health and well-being.
                 </p>
               </div>
             </li>
@@ -298,8 +365,7 @@
                 <h3 class="h4 item-title" id="saveEcology"></h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  Our efforts focus on preserving natural habitats and promoting biodiversity to maintain a balanced ecosystem.
                 </p>
               </div>
             </li>
@@ -313,8 +379,7 @@
                 <h3 class="h4 item-title" id="saveEnvironment"></h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  We work towards reducing environmental damage and restoring natural habitats for the benefit of all wildlife.
                 </p>
               </div>
             </li>
@@ -376,6 +441,10 @@
                   class="about-img w-100"
                 />
                   </div>
+
+                  <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
+                  <img
+                    src="./assets/images/about-banner-
 
                   <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
                   <img
@@ -1129,60 +1198,56 @@
       
 
       <section class="faq-section">
-        <p class="faq_1"> Frequently Asked Questions</p>
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        
         <div class="faq">
             <div class="question" onclick="toggleAnswer(this)">
                 <h3>What We Do?</h3>
+                <span class="arrow">&#x25BC;</span> <!-- Down Arrow -->
             </div>
             <div class="answer">
-                <p>At WildGuard, we believe in creating a sustainable and thriving environment for every living creature on Earth. Our initiatives are geared towards:
-
-                  Save Nature
-                  We focus on preserving natural habitats and supporting wildlife populations to ensure a balanced ecosystem.
-                  
-                  Save Ecology
-                  Our efforts are aimed at maintaining natural relationships between organisms, promoting biodiversity, and minimizing harmful impacts on the environment.
-                  
-                  Tree Plantation
-                  Trees are the foundation of our planet. We organize tree plantation drives to combat deforestation and provide safe environments for animals.
-                  
-                  Clear Oceans
-                  We support ocean cleanup initiatives, helping to remove plastic and other pollutants from our seas to protect marine life.</p>
+                <p>At WildGuard, we believe in creating a sustainable and thriving environment for every living creature on Earth. Our initiatives are geared towards:</p>
+                <ul>
+                    <li><strong>Save Nature:</strong> We focus on preserving natural habitats and supporting wildlife populations to ensure a balanced ecosystem.</li>
+                    <li><strong>Save Ecology:</strong> Our efforts aim to maintain natural relationships between organisms, promoting biodiversity, and minimizing harmful impacts on the environment.</li>
+                    <li><strong>Tree Plantation:</strong> Trees are the foundation of our planet. We organize tree plantation drives to combat deforestation and provide safe environments for animals.</li>
+                    <li><strong>Clear Oceans:</strong> We support ocean cleanup initiatives, helping to remove plastic and other pollutants from our seas to protect marine life.</li>
+                </ul>
             </div>
         </div>
-
+    
         <div class="faq">
             <div class="question" onclick="toggleAnswer(this)">
                 <h3>How You Can Help?</h3>
+                <span class="arrow">&#x25BC;</span>
             </div>
             <div class="answer">
-                <p>WildGuard provides several ways for individuals, groups, and organizations to get involved:
-
-                  🐘 Donate
-                  Your generous donations allow us to provide animals with access to food, medical care, and other essential resources they need to thrive. Every contribution counts!
-                  
-                  🌳 Volunteer
-                  Join us for tree planting, clean-up activities, and other hands-on projects to make an impact. Your time and effort helps make a significant difference.
-                  
-                  🌊 Spread the Word
-                  Raise awareness about the importance of animal welfare and ecological conservation by sharing WildGuard's mission with your friends and community. The more people know, the more we can accomplish together!</p>
+                <p>WildGuard provides several ways for individuals, groups, and organizations to get involved:</p>
+                <ul>
+                    <li><strong>🐘 Donate:</strong> Your generous donations allow us to provide animals with access to food, medical care, and other essential resources they need to thrive. Every contribution counts!</li>
+                    <li><strong>🌳 Volunteer:</strong> Join us for tree planting, clean-up activities, and other hands-on projects to make an impact. Your time and effort help make a significant difference.</li>
+                    <li><strong>🌊 Spread the Word:</strong> Raise awareness about the importance of animal welfare and ecological conservation by sharing WildGuard's mission with your friends and community. The more people know, the more we can accomplish together!</li>
+                </ul>
             </div>
         </div>
-
+    
         <div class="faq">
             <div class="question" onclick="toggleAnswer(this)">
                 <h3>Why WildGuard?</h3>
+                <span class="arrow">&#x25BC;</span>
             </div>
             <div class="answer">
-                <p>We believe that every small step counts when it comes to saving our planet. WildGuard connects passionate people from around the world to protect, nurture, and support life on Earth. Together, we can:
-
-                  Provide better living conditions for animals.
-                  Protect endangered species from extinction.
-                  Combat environmental damage and restore natural habitats.
-                  By working together, we can create a future where animals and nature are safe, healthy, and thriving.</p>
+                <p>We believe that every small step counts when it comes to saving our planet. WildGuard connects passionate people from around the world to protect, nurture, and support life on Earth. Together, we can:</p>
+                <ul>
+                    <li>Provide better living conditions for animals.</li>
+                    <li>Protect endangered species from extinction.</li>
+                    <li>Combat environmental damage and restore natural habitats.</li>
+                </ul>
+                <p>By working together, we can create a future where animals and nature are safe, healthy, and thriving.</p>
             </div>
         </div>
     </section>
+    
 
     <script src="script.js"></script>
 
@@ -1259,140 +1324,138 @@
 
 
 
-
   <!-- 
-    - #FOOTER
+  - #FOOTER
   -->
-
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-left">
-        <h3>WildGuard</h3>
-        <p id="footerDescription"></p>
+      <h3>WildGuard</h3>
+      <p id="footerDescription"></p>
       </div>
       <div class="footer-middle">
-        <h4 id="quickLinks"></h4>
-        <div class="quick-links">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#donate">Donate</a></li>
-          </ul>
-          <ul>
-            <li><a href="./Contact-Us/index.html">Contact</a></li>
-            <li><a href="./terms-of-use.html" id="terms"></a></li>
-            <li><a href="./privacy-policy.html" id="privacyPolicy"></a></li>
-          </ul>
-        </div>
+      <h4 id="quickLinks"></h4>
+      <div class="quick-links">
+        <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#donate">Donate</a></li>
+        </ul>
+        <ul>
+        <li><a href="./Contact.html">Contact</a></li>
+        <li><a href="./terms-of-use.html" id="terms"></a></li>
+        <li><a href="./privacy-policy.html" id="privacyPolicy"></a></li>
+        </ul>
+      </div>
       </div>
       <div class="footer-right">
-        <h4 id="stayConnected"></h4>
-        <form action="#">
-          <input type="email" placeholder="Your email address">
-          <button type="submit">Subscribe</button>
-        </form>
-        <div class="footer-social-icons">
-          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
-          <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
-        </div>
+      <h4 id="stayConnected"></h4>
+      <form action="#">
+        <input type="email" placeholder="Your email address">
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="footer-social-icons">
+        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+      </div>
       </div>
     </div>
-  
+    
     <div class="footer-bottom">
       <p>Copyright 2024 WildGuard. All Rights Reserved </p>
-
+  
     <div class="container">
-
+  
       <ul class="footer-list">
-
-        <li>
-          <a href="./terms-of-use.html" class="footer-link" id="terms-2"></a>
-        </li>
-
-        <li>
-          <a href="./privacy-policy.html" class="footer-link" id="privacyPolicy-2"></a>
-        </li>
-
+  
+      <li>
+        <a href="./terms-of-use.html" class="footer-link" id="terms-2"></a>
+      </li>
+  
+      <li>
+        <a href="./privacy-policy.html" class="footer-link" id="privacyPolicy-2"></a>
+      </li>
+  
       </ul>
-
+  
       <p class="copyright">
-         <a href="copyright.html" class="copyright-link">Copyright 2024 </a> Anurag Bytes . All Rights Reserved.
+       <a href="copyright.html" class="copyright-link">Copyright 2024 </a> Anurag Bytes . All Rights Reserved.
       </p>
-
-
+  
+  
     </div>
-</footer>
-
-
-
-
-
-
-  <!-- 
+  </footer>
+  
+  
+  
+  
+  
+  
+    <!-- 
     - custom js link
-  -->
-  <script src="./assets/js/carousel.js"></script>
-  <script src="./assets/js/script.js"></script>
-  <script>
+    -->
+    <script src="./assets/js/carousel.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script>
     function setActiveTab(selectedButton, contentKey) {
-   const buttons = document.querySelectorAll('.tab-btn');
-   buttons.forEach(button => button.classList.remove('active'));
-
-   selectedButton.classList.add('active');
-
-   const content = {
+     const buttons = document.querySelectorAll('.tab-btn');
+     buttons.forEach(button => button.classList.remove('active'));
+  
+     selectedButton.classList.add('active');
+  
+     const content = {
      mission: `
        <p class="section-text">
-         Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
+       Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
        </p>
        <ul class="tab-list">
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Foods</p></li>
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Education</p></li>
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Water</p></li>
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Foods</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Education</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Water</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
        </ul>
      `,
      vision: `
        <p class="section-text">
-         Our vision is to create a world where all animals are treated with compassion and respect.
+       Our vision is to create a world where all animals are treated with compassion and respect.
        </p>
        <ul class="tab-list">
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Awareness</p></li>
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Protect Wildlife</p></li>
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Awareness</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Protect Wildlife</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
        </ul>
      `,
      plan: `
        <p class="section-text">
-         Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
+       Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
        </p>
        <ul class="tab-list">
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Expand Rescue Operations</p></li>
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Funding</p></li>
-         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Partner with Local Groups</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Expand Rescue Operations</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Funding</p></li>
+       <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Partner with Local Groups</p></li>
        </ul>
      `
-
-   };
-
-   document.getElementById('tab-content').innerHTML = content[contentKey] + `
+  
+     };
+  
+     document.getElementById('tab-content').innerHTML = content[contentKey] + `
        <button class="btn btn-secondary">
-         <span>Learn More Us</span>
-         <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+       <span>Learn More Us</span>
+       <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
        </button>
      `;  }
- </script>
-  <!-- 
+   </script>
+    <!-- 
     - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  <style>
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+    <style>
     /* Style for the search bar container */
     .search-bar {
     display: none; 
@@ -1407,27 +1470,27 @@
     border-radius: 4px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
     z-index: 10; 
-}
-
-.search-btn {
+  }
+  
+  .search-btn {
     margin-right: 70px; 
     cursor: pointer;
-}
+  }
     
     /* Style for the input field inside the search bar */
     #searchInput {
-        width: 100%; 
-        padding: 10px; 
-        border: none; 
-        outline: none; 
-        border-radius: 4px; 
+      width: 100%; 
+      padding: 10px; 
+      border: none; 
+      outline: none; 
+      border-radius: 4px; 
     }
     
     /* Style for the navigation buttons */
     .search-nav-buttons {
-        display: flex;
-        justify-content: space-between; 
-        padding: 5px;
+      display: flex;
+      justify-content: space-between; 
+      padding: 5px;
     }
     
     /* Hide elements initially */
@@ -1435,34 +1498,33 @@
     #prevMatch,
     #nextMatch,
     #clearSearch {
-        display: none; 
+      display: none; 
     }
     </style>
-
-
-<script>
- 
- document.addEventListener("DOMContentLoaded", function () {
   
-  const searchBar = document.getElementById("searchBar");
-  const searchInput = document.getElementById("searchInput");
-
-  // Toggle the search bar visibility when the search button is clicked
-  document.querySelector(".search-btn").addEventListener("click", function () {
+  
+  <script>
+   
+   document.addEventListener("DOMContentLoaded", function () {
+    
+    const searchBar = document.getElementById("searchBar");
+    const searchInput = document.getElementById("searchInput");
+  
+    // Toggle the search bar visibility when the search button is clicked
+    document.querySelector(".search-btn").addEventListener("click", function () {
       searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
       if (searchBar.style.display === "block") {
-          searchInput.focus();
-          resetSearch();
+        searchInput.focus();
+        resetSearch();
       }
-  });
-
+    });
   
-});
-
-
-
-</script>
-
-</body>
-
-</html>
+    
+  });
+  
+  </script>
+  
+  </body>
+  
+  </html>
+  
