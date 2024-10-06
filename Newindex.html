@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildGuard - Give Love for Saving World Animals</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css"> 
+  <script src="https://kit.fontawesome.com/418b80718b.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <header class="header" data-header>
+    <div class="container">
+      <h1><a href="#" class="logo">WildGuard</a></h1>
+
+      <select name="language" class="lang-switch" id="languageSelect">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+      </select>
+
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar> 
+        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+          <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
+          
+          <li class="dropdown"> 
+            <a href="#service" class="navbar-link" data-nav-link>
+              Our Work <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon> 
+            </a>
+            <ul class="dropdown-content">
+              <li><a href="#service-section-1">Save Nature</a></li>
+              <li><a href="#service-section-2">Save Ecology</a></li>
+              <li><a href="#service-section-3">Tree Plantation</a></li>
+              <li><a href="#service-section-4">Clear Oceans</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#donate" class="navbar-link" data-nav-link>Donate</a></li>
+          <li><a href="#event" class="navbar-link" data-nav-link>Events</a></li>
+          <li><a href="./Contact.html" class="navbar-link" data-nav-link>Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-action">
+        <!-- Search, Donation, Login/Register remain similar -->
+      </div>
+    </div>
+  </header>
+
+  <!-- Rest of your HTML (main, sections, footer, etc.) -->
+
+  <script src="script.js"></script> 
+</body>
+</html>
