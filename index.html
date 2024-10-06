@@ -1198,67 +1198,111 @@
       <!-- 
         - #INSTA POST
       -->
-
       <section class="insta-post">
-
-        <ul class="insta-post-list">
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"
-                class="img-cover">
-
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                class="img-cover">
-
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear"
-                class="img-cover">
-
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                class="img-cover">
-
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="insta-post-item">
-            <a href="#" class="insta-post-link">
-              <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
-                class="img-cover">
-
+        <div class="container">
+          <h2 class="section-title">Follow Us on Instagram</h2>
+          <p class="section-subtitle">Stay updated with our latest activities and events</p>
+          <ul class="insta-post-list">
+            <li class="insta-post-item">
+              <a href="#" class="insta-post-link">
+                <img src="https://drscdn.500px.org/photo/1012147444/q%3D90_m%3D2048_of%3D1/v2?sig=f9109abec560273cf26bc722a05c2d912b5376c59f3596c782670dfe4d6832bf" width="320" height="300" loading="lazy" alt="Lion" class="img-cover">
                 <ion-icon name="logo-instagram"></ion-icon>
               </a>
             </li>
-        </ul>
-        </ul>
-
+            <li class="insta-post-item">
+              <a href="#" class="insta-post-link">
+                <img src="https://en.bcdn.biz/Images/2013/9/6/a1579bb7-d3b9-4fa1-a8eb-9414ad9d798f.jpg" width="320" height="300" loading="lazy" alt="Deer" class="img-cover">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="insta-post-item">
+              <a href="#" class="insta-post-link">
+                <img src="https://drscdn.500px.org/photo/140710679/q%3D90_m%3D2048_of%3D1/v2?sig=04056f5c97951924147f7f82f5a2f64140c51b48b1353c2592a7379ac4f5e76e" width="320" height="300" loading="lazy" alt="Wild Bear" class="img-cover">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="insta-post-item">
+              <a href="#" class="insta-post-link">
+                <img src="https://drscdn.500px.org/photo/1020671955/q%3D90_m%3D2048_of%3D1/v2?sig=07742e2eccd09971dab91a72484cd521701f2b63a2cdddef0ec3e2715d2ae9fd" width="320" height="300" loading="lazy" alt="Deer" class="img-cover">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="insta-post-item">
+              <a href="#" class="insta-post-link">
+                <img src="https://images.alphacoders.com/873/thumb-1920-873176.jpg" width="320" height="300" loading="lazy" alt="Horses" class="img-cover">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
           </ul>
-
+        </div>
       </section>
-      </section>
 
-        </section>
+      <style>
+        .insta-post {
+          padding: 60px 0;
+          background-color: #f9f9f9;
+          text-align: center;
+        }
 
-      </article>
-    </main>
+        .insta-post .container {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .insta-post .section-title {
+          font-size: 32px;
+          margin-bottom: 10px;
+          color: #2c3e50;
+        }
+
+        .insta-post .section-subtitle {
+          font-size: 18px;
+          margin-bottom: 40px;
+          color: #7f8c8d;
+        }
+
+        .insta-post-list {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+
+        .insta-post-item {
+          position: relative;
+          overflow: hidden;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .insta-post-link {
+          display: block;
+        }
+
+        .insta-post-link img {
+          width: 100%;
+          height: auto;
+          transition: transform 0.3s ease;
+        }
+
+        .insta-post-link ion-icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 48px;
+          color: rgba(255, 255, 255, 0.8);
+          transition: color 0.3s ease;
+        }
+
+        .insta-post-link:hover img {
+          transform: scale(1.1);
+        }
+
+        .insta-post-link:hover ion-icon {
+          color: rgba(255, 255, 255, 1);
+        }
+      </style>
 
   
 
