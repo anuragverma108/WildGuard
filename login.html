@@ -4,149 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="./assets/css/login.css">
-    <link rel="icon" href="logo.png" type="image/icon type">
     <title>Login</title>
     <style>
         body {
             background: url("Background.png");
-            color: #fff;
-        }
-
-        .container {
-            animation-name: compiler;
-            animation-duration: 5s;
-            animation-iteration-count: 1;
-            width: 420px;
-            background: transparent;
-            backdrop-filter: blur(2px);
-            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-            border: 2px solid;
-            font-size: 16px;
-            border-radius: 40px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .form input {
-            position: relative;
-            width: 80%;
-            height: 50px;
-            margin: 30px 0;
-            background: transparent;
-            border: none;
-            outline: none;
-            border: 2px solid;
-            color: #fff;
-            font-size: 16px;
-            border-radius: 40px;
-        }
-
-        .form ::placeholder {
-            color: #fff;
-        }
-
-        .forget {
             display: flex;
-            justify-content: space-between;
-            font-size: 14.5px;
-            margin: -15px 0 15px;
-            color: #fff;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
         }
 
-        @keyframes compiler {
+        .login-page {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 400px;
+            animation: slideIn 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        @keyframes slideIn {
             from {
-                width: 200px;
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-20px);
             }
             to {
-                width: 420px;
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        a {
+        .content h2 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .entry {
+            margin-bottom: 15px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            height: 50px;
+            padding-left: 40px;
+            border: 2px solid #fff;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        .input-wrapper input:focus {
+            border-color: #ffa500;
+            outline: none;
+        }
+
+        .fa {
+            position: absolute;
+            left: 10px;
+            top: 12px;
+            color: #fff;
+        }
+
+        .extras {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .extras .forgot-password {
             color: #ffa500;
-            text-decoration: none;
-            font-weight: bold;
             transition: color 0.3s;
         }
 
-        a:hover {
+        .extras .forgot-password:hover {
             color: #ff7c00;
         }
 
+        button {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 25px;
+            background: #ffa500;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #ff7c00;
+        }
+
         .social-login {
-            margin-top: 20px;
             text-align: center;
+            margin-top: 20px;
         }
 
         .social-buttons {
             display: flex;
-            justify-content: center;
-            gap: 10px;
+            justify-content: space-around;
+            margin-top: 10px;
         }
 
         .social-btn {
-            background: #fff;
-            color: #000;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 20px;
+            background: transparent;
+            border: 2px solid #fff;
+            border-radius: 25px;
+            padding: 10px 20px;
+            color: #fff;
             cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
         }
 
-        .social-btn img {
-            width: 20px;
-            margin-right: 5px;
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 15px;
+            color: #fff;
+        }
+
+        .signup-link a {
+            color: #ffa500;
+            transition: color 0.3s;
+        }
+
+        .signup-link a:hover {
+            color: #ff7c00;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2>Welcome Back!</h2>
+    <div class="login-page">
+        <div class="content">
+            <h2>Welcome Back!</h2>
 
-        <form class="data" action="language_selection.html" method="post">
+            <form class="data">
 
-            <!-- Username Field -->
-            <div class="form">
-                <input type="text" id="username" name="username" placeholder="Username" required>
-                <box-icon name='user-circle'></box-icon>
-                <br><br>
+                <!-- Email Field -->
+                <div class="entry">
+                    <label for="email"><h3>Email</h3></label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" placeholder="example@gmail.com" required>
+                        <div class="fa"><i class="fas fa-user"></i></div>
+                    </div>
+                </div>
 
                 <!-- Password Field with Toggle Visibility -->
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <box-icon name='lock'></box-icon>
-                <br>
-            </div>
-
-            <div class="forget">
-                <label><input type="checkbox"> Remember Me</label>
-                <a href="#" style="color:#fff">Forget Password?</a>
-            </div>
-
-            <button type="submit">Login</button>
-
-            <div class="social-login">
-                <p>Or login with</p>
-                <div class="social-buttons">
-                    <button type="button" class="social-btn google-btn">
-                        <img src="./assets/images/social.png" alt="Google Logo"> Continue with Google
-                    </button>
-                    <button type="button" class="social-btn facebook-btn">
-                        <img src="./assets/images/facebook.png" alt="Facebook Logo"> Continue with Facebook
-                    </button>
+                <div class="entry">
+                    <label for="password"><h3>Password</h3></label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                        <div class="fa icon toggle-password" onclick="togglePasswordVisibility('password')">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <p class="signup-link">Don't have an account? <a href="form.html" style="color:#fff">Register</a></p>
-        </form>
+                <!-- Remember Me Checkbox & Forgot Password Link -->
+                <div class="extras">
+                    <label class="remember-me">
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
 
-        <center><p><a href="index.html" style="color:#fff">Go back</a></p></center>
+                <!-- Login Button -->
+                <div class="entry">
+                    <button type="submit">Login</button>
+                </div>
+
+                <!-- Social Media Login Buttons -->
+                <div class="social-login">
+                    <p>Or login with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google-btn">
+                            <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Continue with Google
+                        </button>
+                        <button type="button" class="social-btn facebook-btn">
+                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo"> Continue with Facebook
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sign-Up Link -->
+                <p class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
+
+            </form>
+        </div>
     </div>
 
     <script>
