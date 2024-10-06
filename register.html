@@ -15,12 +15,30 @@
 
             <form class="data">
 
+                <!-- Full Name Field -->
+                <div class="entry">
+                    <label for="full-name"><h3>Full Name</h3></label>
+                    <div class="input-wrapper">
+                        <input type="text" id="full-name" placeholder="John Doe" required>
+                        <div class="fa"><i class="fas fa-user"></i></div>
+                    </div>
+                </div>
+
                 <!-- Email Field -->
                 <div class="entry">
                     <label for="email"><h3>Email</h3></label>
                     <div class="input-wrapper">
                         <input type="email" id="email" placeholder="example@gmail.com" required>
-                        <div class="fa"><i class="fas fa-user"></i></div>
+                        <div class="fa"><i class="fas fa-envelope"></i></div>
+                    </div>
+                </div>
+
+                <!-- Phone Number Field -->
+                <div class="entry">
+                    <label for="phone"><h3>Phone Number</h3></label>
+                    <div class="input-wrapper">
+                        <input type="tel" id="phone" placeholder="123-456-7890" required>
+                        <div class="fa"><i class="fas fa-phone"></i></div>
                     </div>
                 </div>
 
@@ -46,12 +64,11 @@
                     </div>
                 </div>
 
-                <!-- Remember Me Checkbox & Forgot Password Link -->
-                <div class="extras">
-                    <label class="remember-me">
-                        <input type="checkbox"> Remember Me
+                <!-- Terms and Conditions Checkbox -->
+                <div class="entry">
+                    <label class="terms">
+                        <input type="checkbox" required> I agree to the Terms and Conditions
                     </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
                 </div>
 
                 <!-- Sign up Button -->
@@ -66,8 +83,8 @@
                         <button type="button" class="social-btn google-btn">
                             <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Continue with Google
                         </button>
-                        <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/facebook.png" alt="FaceBook Logo" class="google-logo"> Continue with Facebook
+                        <button type="button" class="social-btn facebook-btn">
+                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo"> Continue with Facebook
                         </button>
                     </div>
                 </div>
