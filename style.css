@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  #main {
+    height: 100vh;
+    width: 100%;
+  }
+  #top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+  }
+  #back {
+    width: 100%;
+    height: 100vh;
+  }
+  #back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #workingarea {
+    width: 85%;
+    max-width: 1920px;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+  }
+  #nav {
+    width: 100%;
+    padding: 15px 0px;
+    justify-items: space-between;
+    align-items: center;
+  }
+  #nav img {
+    height: 80px;
+  }
+  #nleft {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  #nleft a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-family: "gilroy", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0px;
+    pointer-events: all;
+  }
+  #nright a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-family: "gilroy", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0px;
+    pointer-events: all;
+  }
+  #nright {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    float: right;
+    margin-top: -46px;
+    margin-right: 50px;
+  }
+  #hero {
+    margin-top: 23px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: "gilroy", Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+  }
+  #heroleft {
+    min-width: 50%;
+  }
+  #heroleft .firstname h1 {
+    font-family: "Kajiro";
+    font-weight: 100;
+    color: white;
+    font-size: 4vw;
+    letter-spacing: 0.5px;
+    line-height: 0.9;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+  #heroleft .firstname {
+    height: 7vw;
+    overflow: hidden;
+    position: relative;
+  }
+  #heroleft .firstname h1:nth-child(1) {
+    top: 0;
+  }
+  #heroleft button {
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: 1px solid white;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-size: 3vw;
+    font-family: "Anton", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  #heroright {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: rgb(255, 255, 255);
+  }
+  #heroright p {
+    font-size: 10px;
+    font-family: "gilroy", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 0px;
+    margin-bottom: 30px;
+    text-align: right;
+    color: rgb(255, 255, 255);
+    
+  }
+  #heroright #image {
+    width: 100%;
+    height: 150px;
+    background-image: url(../pf1/pic/image.GIF);
+    margin-top: -5px;
+    margin-bottom: 7px;
+    background-size: cover;
+    background-position: center;
+  }
+  #heroright p:nth-child(3) {
+    margin-top: 30px;
+  }
+  .heading{
+    font-size: 20px;
+    font-family: "gilroy", Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+  }
+  
