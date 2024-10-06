@@ -12,22 +12,24 @@
   
   <!-- Custom CSS for the contact page -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
     :root {
       --pistachio: hsl(86, 45%, 54%);
       --baby-powder: hsl(86, 41%, 97%);
+      --dark-green: #2d6a4f;
     }
 
     body {
-      background-color: var(--baby-powder);
+      background: linear-gradient(135deg, rgba(236, 240, 243, 0.7), rgba(253, 253, 253, 0.9)), url('https://images.unsplash.com/photo-1556740749-887f6717d7e4') no-repeat center center/cover;
       font-family: 'Inter', sans-serif;
       padding: 50px 0;
     }
 
     .contact-container {
-      background-color: #fff;
+      background-color: rgba(255, 255, 255, 0.8);
       border-radius: 10px;
       padding: 30px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
     .contact-header {
@@ -36,26 +38,29 @@
     }
 
     .contact-header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: var(--pistachio);
       font-weight: 600;
     }
 
     .form-control {
       border-radius: 0.5rem;
+      border: 1px solid var(--pistachio);
     }
 
     .contact-btn {
-      background-color: var(--pistachio);
+      background: linear-gradient(45deg, var(--pistachio), var(--dark-green));
       color: #fff;
-      padding: 10px 30px;
+      padding: 12px 35px;
       border-radius: 25px;
       font-size: 1.1rem;
-      transition: background-color 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease-in-out;
     }
 
     .contact-btn:hover {
-      background-color: #4da746; /* Darker shade of pistachio */
+      background: linear-gradient(45deg, var(--dark-green), var(--pistachio));
+      transform: translateY(-3px);
     }
 
     .info-box {
@@ -63,18 +68,34 @@
       padding: 15px;
       border-radius: 10px;
       margin-bottom: 30px;
+      transition: transform 0.3s;
+    }
+
+    .info-box:hover {
+      transform: scale(1.05);
     }
 
     .info-box h5 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 600;
       margin-bottom: 5px;
-      color: var(--pistachio);
+      color: var(--dark-green);
     }
 
     .info-box p {
       margin-bottom: 0;
       font-size: 1rem;
+    }
+
+    .contact-container .info-box .icon {
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .contact-header p {
+      font-size: 1.1rem;
+      color: #666;
     }
   </style>
 </head>
@@ -93,12 +114,12 @@
 
         <!-- Contact Information -->
         <div class="info-box">
-          <h5>Email Us</h5>
+          <h5><span class="icon">📧</span> Email Us</h5>
           <p>support@wildguard.com</p>
         </div>
 
         <div class="info-box">
-          <h5>Call Us</h5>
+          <h5><span class="icon">📞</span> Call Us</h5>
           <p>+91 123-4567-089</p>
         </div>
 
