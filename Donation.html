@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Added viewport meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildGuard - Donate to Protect Wildlife</title>
+    <style>
+        /* ----- CSS Styles ----- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f4f5;
+        }
+        header, footer {
+            background-color: #2d6a4f;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+        header h1, footer p {
+            text-align: center;
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+        }
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        /* Grid layout for animal cards */
+        .animal-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .animal-card {
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 22%;
+            min-width: 250px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .animal-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .animal-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+        .animal-card:hover img {
+            filter: brightness(0.9);
+        }
+        .animal-info {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .animal-info h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+            height: 12px;
+        }
+        .progress {
+            height: 100%;
+            background-color: #2d6a4f;
+            width: 0%;
+        }
+        .animal-info p {
+            font-size: 14px;
+            margin: 5px 0;
+            flex-grow: 1;
+        }
+        .animal-info button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #2d6a4f;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+        }
+        .ngo-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ngo-item {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .ngo-item h3 {
+            margin-top: 0;
+        }
+        .ngo-item button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #2d6a4f;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 5% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 500px; /* Could be more or less, depending on screen size */
+            border-radius: 5px;
+            position: relative;
+        }
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            cursor: pointer;
+        }
+        .donation-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .donation-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+        .donation-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2d6a4f;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        @media (max-width: 1024px) {
+            .animal-card {
+                width: 30%;
+            }
+        }
+        @media (max-width: 768px) {
+            .animal-card {
+                width: 45%;
+            }
+        }
+        @media (max-width: 500px) {
+            .animal-card {
+                width: 100%;
+            }
+        }
+        /* Additional styles from the other branch */
+        .backimg {
+            background-image: url("assets/images/animals.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: left;
+            min-height: 780px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Optional: If you want to use the background image -->
+    <!-- <div class="backimg"> -->
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>WildGuard</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Animals</a></li>
+                    <li><a href="#">Conservation</a></li>
+                    <li><a href="#">Donate</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Animal Donation Section -->
+        <section class="section" id="animal-section">
+            <h2>Support Our Animals</h2>
+            <div class="animal-grid" id="animal-cards">
+                <!-- Animal cards populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- NGOs Section -->
+        <section class="section" id="ngo-section">
+            <h2>Animal Health Care NGOs</h2>
+            <ul class="ngo-list">
+                <li class="ngo-item">
+                    <h3>Wildlife Conservation Society</h3>
+                    <p>Dedicated to saving wildlife and wild places worldwide through science, conservation action, education, and inspiring people to value nature.</p>
+                    <button onclick="window.open('https://www.wcs.org', '_blank')">Visit Website</button>
+                </li>
+                <li class="ngo-item">
+                    <h3>World Wildlife Fund</h3>
+                    <p>Works in the field of wilderness preservation and the reduction of human impact on the environment.</p>
+                    <button onclick="window.open('https://www.worldwildlife.org', '_blank')">Visit Website</button>
+                </li>
+                <li class="ngo-item">
+                    <h3>International Fund for Animal Welfare</h3>
+                    <p>Rescues and protects animals around the world, focusing on animals in crisis and in need of care.</p>
+                    <button onclick="window.open('https://www.ifaw.org', '_blank')">Visit Website</button>
+                </li>
+                <!-- Add more NGOs as needed -->
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Make a Donation</h2>
+            <div class="donation-form">
+                <form id="modalDonationForm">
+                    <input type="hidden" id="modalAnimalId">
+                    <label for="modalAnimalName">Animal</label>
+                    <input type="text" id="modalAnimalName" readonly>
+
+                    <label for="modalDonationAmount">Donation Amount ($)</label>
+                    <input type="number" id="modalDonationAmount" min="1" required>
+
+                    <label for="modalDonorName">Your Name</label>
+                    <input type="text" id="modalDonorName" required>
+
+                    <label for="modalDonorEmail">Your Email</label>
+                    <input type="email" id="modalDonorEmail" required>
+
+                    <button type="submit">Donate Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 WildGuard. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- </div> --> <!-- Close .backimg if used -->
+
+    <!-- JavaScript -->
+    <script>
+        // ----- JavaScript Data and Functions -----
+
+        // Sample data for animals
+        const initialAnimalsData = [
+            {
+                id: 1,
+                name: 'African Elephant',
+                image: 'https://cdn.britannica.com/72/272-050-E1965E27/African-elephant-Kenya.jpg',
+                description: 'Help protect the African elephant from poaching.',
+                goal: 10000,
+                raised: 0
+            },
+            {
+                id: 2,
+                name: 'Bengal Tiger',
+                image: 'https://thumbs.dreamstime.com/b/tiger-portrait-horizontal-11392212.jpg',
+                description: 'Support tiger conservation efforts.',
+                goal: 10000,
+                raised: 0
+            },
+            {
+                id: 3,
+                name: 'Sea Turtle',
+                image: 'https://darksky.org/app/uploads/2017/05/wexor-tmg-26886.jpg',
+                description: 'Contribute to sea turtle habitat protection.',
+                goal: 10000,
+                raised: 0
+            },
+            {
+                id: 4,
+                name: 'Polar Bear',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg',
+                description: 'Aid in preserving the Arctic habitat.',
+                goal: 10000,
+                raised: 0
+            },
+            {
+                id: 5,
+                name: 'Orangutan',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Orang_Utan%2C_Semenggok_Forest_Reserve%2C_Sarawak%2C_Borneo%2C_Malaysia.JPG',
+                description: 'Help stop deforestation in Borneo.',
+                goal: 10000,
+                raised: 0
+            },
+            {
+                id: 6,
+                name: 'Giant Panda',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Grosser_Panda.JPG',
+                description: 'Support breeding programs for pandas.',
+                goal: 10000,
+                raised: 0
+            },
+            {
+                id: 7,
+                name: 'Black Rhino',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Black_Rhino_at_Working_with_Wildlife.jpg',
+                description: 'Protect rhinos from illegal horn trade.',
+                goal: 10000,
+                raised: 0
+            },
+            {
+                id: 8,
+                name: 'Blue Whale',
+                image: 'https://www.antarctica.gov.au/site/assets/files/45670/ia40342.1200x630.jpg',
+                description: 'Assist in ocean clean-up efforts.',
+                goal: 10000,
+                raised: 0
+            }
+        ];
+
+        let animals = [];
+
+        // Load animals data from localStorage or use initial data
+        function loadAnimalsData() {
+            const storedAnimals = localStorage.getItem('animalsData');
+            if (storedAnimals) {
+                animals = JSON.parse(storedAnimals);
+            } else {
+                animals = initialAnimalsData;
+            }
+        }
+
+        // Save animals data to localStorage
+        function saveAnimalsData() {
+            localStorage.setItem('animalsData', JSON.stringify(animals));
+        }
+
+        // Display animal cards
+        function displayAnimalCards() {
+            const animalCardsContainer = document.getElementById('animal-cards');
+            animalCardsContainer.innerHTML = ''; // Clear existing content
+            animals.forEach(animal => {
+                // Create card elements
+                const card = document.createElement('div');
+                card.classList.add('animal-card');
+
+                const img = document.createElement('img');
+                img.src = animal.image;
+                img.alt = animal.name;
+
+                const info = document.createElement('div');
+                info.classList.add('animal-info');
+
+                const name = document.createElement('h3');
+                name.textContent = animal.name;
+
+                const desc = document.createElement('p');
+                desc.textContent = animal.description;
+
+                const progressBar = document.createElement('div');
+                progressBar.classList.add('progress-bar');
+
+                const progress = document.createElement('div');
+                progress.classList.add('progress');
+                const progressPercent = Math.min((animal.raised / animal.goal) * 100, 100);
+                progress.style.width = `${progressPercent}%`;
+
+                const progressText = document.createElement('p');
+                progressText.textContent = `$${animal.raised.toFixed(2)} raised of $${animal.goal.toFixed(2)} goal`;
+
+                const donateButton = document.createElement('button');
+                donateButton.textContent = 'Donate';
+                donateButton.onclick = () => openDonationModal(animal.id);
+
+                // Append elements
+                progressBar.appendChild(progress);
+                info.appendChild(name);
+                info.appendChild(desc);
+                info.appendChild(progressBar);
+                info.appendChild(progressText);
+                info.appendChild(donateButton);
+
+                card.appendChild(img);
+                card.appendChild(info);
+
+                animalCardsContainer.appendChild(card);
+            });
+        }
+
+        // Open donation modal
+        function openDonationModal(animalId) {
+            const animal = animals.find(a => a.id === animalId);
+            if (animal) {
+                document.getElementById('modalAnimalId').value = animal.id;
+                document.getElementById('modalAnimalName').value = animal.name;
+                document.getElementById('donationModal').style.display = 'block';
+            }
+        }
+
+        // Close modal
+        const modal = document.getElementById('donationModal');
+        const closeBtn = document.getElementsByClassName('close')[0];
+        closeBtn.onclick = () => {
+            modal.style.display = 'none';
+            document.getElementById('modalDonationForm').reset();
+        };
+        window.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.getElementById('modalDonationForm').reset();
+            }
+        };
+
+        // Handle donation form submission
+        document.getElementById('modalDonationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const animalId = parseInt(document.getElementById('modalAnimalId').value);
+            const donationAmount = parseFloat(document.getElementById('modalDonationAmount').value);
+            const donorName = document.getElementById('modalDonorName').value;
+
+            // Update the raised amount
+            const animalIndex = animals.findIndex(a => a.id === animalId);
+            if (animalIndex !== -1) {
+                animals[animalIndex].raised += donationAmount;
+                // Save updated data to localStorage
+                saveAnimalsData();
+                // Refresh animal cards to show updated progress
+                displayAnimalCards();
+
+                // Show confirmation message
+                alert(`Thank you, ${donorName}, for your generous donation of $${donationAmount.toFixed(2)} to support the ${animals[animalIndex].name}!`);
+                // Close modal
+                modal.style.display = 'none';
+                // Reset form
+                document.getElementById('modalDonationForm').reset();
+            }
+        });
+
+        // Initialize the page
+        window.onload = function() {
+            loadAnimalsData();
+            displayAnimalCards();
+        };
+    </script>
+
+</body>
+</html>
