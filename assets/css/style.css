@@ -483,6 +483,9 @@ body {
   #HERO
 \*-----------------------------------*/
 
+
+
+
 .hero {
   background-color: var(--eerie-black-1);
   color: var(--white);
@@ -515,6 +518,36 @@ body {
   letter-spacing: -1px;
   max-width: 50ch;
   margin-block-end: 30px;
+}
+
+.button-container {
+  text-align: left;
+  padding-left: 1px; /* You can adjust this padding as needed */
+}
+
+/* Keep the button styling intact */
+.donation-button {
+  background-color: #8bc34a; /* Green button color */
+  color: white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.donation-button:hover {
+  background-color: #7cb342; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
 }
 
 
