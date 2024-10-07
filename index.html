@@ -18,7 +18,7 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!-- 
+  <!-- 
     - fontawesome icon link
   -->
   <script src="https://kit.fontawesome.com/418b80718b.js" crossorigin="anonymous"></script>
@@ -27,18 +27,17 @@
     - google font link
   -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
-      rel="stylesheet"
-    />
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
+    rel="stylesheet" />
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </head>
 
-<body >
+<body>
 
   <!-- 
     - #HEADER
@@ -98,12 +97,11 @@
 
           <li>
 
-  <a href="#donate" class="navbar-link" data-nav-link>
-    <span id="donateNav">Donate</span>
-  </a>
-
+            <a href="#donate" class="navbar-link" data-nav-link>
+              <span id="donateNav">Donate</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
+
           </li>
 
           <li>
@@ -135,65 +133,66 @@
       </nav>
 
       <div class="header-action">
-<!-- Search Button -->
-<button class="search-btn" aria-label="Search">
-  <ion-icon name="search-outline"></ion-icon>
-</button>
+        <!-- Search Button -->
+        <button class="search-btn" aria-label="Search">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
 
-<!-- Search Input Field -->
-<div class="search-bar" id="searchBar" style="display:none;">
-  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
-  <div id="searchResults" class="search-results" style="display: none;"></div>
-  
-  <!-- Match Counter and Navigation Buttons -->
-  <div class="search-nav-buttons">
-      <span id="matchCounter" style="display: none;">0/0</span>
-      <button id="prevMatch" style="display:none;">&#x25B2;</button>
-      <button id="nextMatch" style="display:none;">&#x25BC;</button>
-      <button id="clearSearch" style="display:none;">&#x2716;</button>
-  </div>
-</div>
+        <!-- Search Input Field -->
+        <div class="search-bar" id="searchBar" style="display:none;">
+          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+          <div id="searchResults" class="search-results" style="display: none;"></div>
+
+          <!-- Match Counter and Navigation Buttons -->
+          <div class="search-nav-buttons">
+            <span id="matchCounter" style="display: none;">0/0</span>
+            <button id="prevMatch" style="display:none;">&#x25B2;</button>
+            <button id="nextMatch" style="display:none;">&#x25BC;</button>
+            <button id="clearSearch" style="display:none;">&#x2716;</button>
+          </div>
+        </div>
 
 
-      <button class="btn btn-primary" onclick="window.location.href='Donation.html'">
+        <button class="btn btn-primary" onclick="window.location.href='Donation.html'">
           <span>Donation</span>
 
 
-<button class="btn btn-primary">
-  <span id="donateButton">Donation</span>
-  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-</button>
-      
-      
-        <!-- Login -->
-        <div id="openPopup" class="user-icon">
-          <i class="fas fa-user"></i>
-      </div>
-  
-      <!-- Popup -->
-      <div id="popup" class="popup">
-          <div class="popup-content">
+          <button class="btn btn-primary">
+            <span id="donateButton">Donation</span>
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+
+          <!-- Login -->
+          <div id="openPopup" class="user-icon">
+            <i class="fas fa-user"></i>
+          </div>
+
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
               <span class="close-button" id="closePopup">&times;</span>
               <div class="tabs">
-                  <button class="tab-button active" id="loginTab">Login</button>
-                  <button class="tab-button" id="signupTab">Signup</button>
+                <button class="tab-button active" id="loginTab">Login</button>
+                <button class="tab-button" id="signupTab">Signup</button>
               </div>
               <div class="form-container">
-                  <form id="loginForm">
-                      <input type="email" placeholder="Email" required />
-                      <input type="password" placeholder="Password" required />
-                      <button type="submit">Login</button>
-                  </form>
-                  <form id="signupForm" style="display: none;">
-                      <input type="text" placeholder="Username" required />
-                      <input type="email" placeholder="Email" required />
-                      <input type="password" placeholder="Password" required />
-                      <button type="submit">Signup</button>
-                  </form>
+                <form id="loginForm">
+                  <input type="email" placeholder="Email" required />
+                  <input type="password" placeholder="Password" required />
+                  <button type="submit">Login</button>
+                </form>
+                <form id="signupForm" style="display: none;">
+                  <input type="text" placeholder="Username" required />
+                  <input type="email" placeholder="Email" required />
+                  <input type="password" placeholder="Password" required />
+                  <button type="submit">Signup</button>
+                </form>
               </div>
+            </div>
           </div>
-      </div>
-  
+        </button>
+
 
       </div>
 
@@ -231,22 +230,23 @@
           <h2 class="h1 hero-title-bold"><strong id="worldAnimal"></strong></h2>
           <br><br>
           <p class="hero-text" id="defendingWildlife"></p>
-          
-<button  class="btn btn-primary" onclick="window.location.href='Donation.html'">
+
+          <button class="btn btn-primary" onclick="window.location.href='Donation.html'">
             <span>Donation</span>
-  <button class="btn btn-primary">
-            <span id="donateButton2"></span>
+            <button class="btn btn-primary">
+              <span id="donateButton2"></span>
 
 
-<p class="hero-text">
-  Defending Wildlife, One Paw at a Time
-</p>
+              <p class="hero-text">
+                Defending Wildlife, One Paw at a Time
+              </p>
+              </button></button>
+              <button class="btn btn-primary">
+                <span>Donation</span>
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              </button>
+          </button>
 
-<button class="btn btn-primary">
-  <span>Donation</span>
-  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-</button>
-        
 
 
         </div>
@@ -348,54 +348,30 @@
             <img src="./assets/images/deco-img.png" width="58" height="261" alt="" class="deco-img">
 
             <div class="banner-imgs banner-carousel">
-                   <!-- Previous button -->
+              <!-- Previous button -->
               <button class="prev-btn">&#10094;</button>
 
               <div class="banner-img-container banner-carousel-frame banner-img-cont-1" index=1>
-                  <img
-                    src="./assets/images/about-banner-1.jpg"
-                    width="315"
-                    height="380"
-                    loading="lazy"
-                    alt="Tiger"
-                    class="about-img w-100"
-                  />
-                </div>
-                <div class="banner-img-container banner-carousel-frame banner-img-cont-2" index=2>
-                  <img
-                  src="./assets/images/about-banner-3.jpg"
-                  width="250"
-                  height="277"
-                  loading="lazy"
-                  alt="Elephant"
-                  class="about-img w-100"
-                />
-                </div>
+                <img src="./assets/images/about-banner-1.jpg" width="315" height="380" loading="lazy" alt="Tiger"
+                  class="about-img w-100" />
+              </div>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-2" index=2>
+                <img src="./assets/images/about-banner-3.jpg" width="250" height="277" loading="lazy" alt="Elephant"
+                  class="about-img w-100" />
+              </div>
 
-                <div class="banner-img-container banner-carousel-frame banner-img-cont-3" index=3>
-                  <img
-                  src="./assets/images/about-banner-2.jpg"
-                  width="386"
-                  height="250"
-                  loading="lazy"
-                  alt="Panda"
-                  class="about-img w-100"
-                />
-                  </div>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-3" index=3>
+                <img src="./assets/images/about-banner-2.jpg" width="386" height="250" loading="lazy" alt="Panda"
+                  class="about-img w-100" />
+              </div>
 
-                  <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
-                  <img
-                    src="./assets/images/about-banner-4.jpg"
-                    width="315"
-                    height="380"
-                    loading="lazy"
-                    alt="Deer"
-                    class="about-img w-100"
-                  />
-                  </div>
-                  
-                  <!-- Next button -->
-                  <button class="next-btn">&#10095;</button>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
+                <img src="./assets/images/about-banner-4.jpg" width="315" height="380" loading="lazy" alt="Deer"
+                  class="about-img w-100" />
+              </div>
+
+              <!-- Next button -->
+              <button class="next-btn">&#10095;</button>
             </div>
 
             <div class="spot-circles">
@@ -433,7 +409,7 @@
               </li>
 
             </ul>
-            
+
             <div class="tab-content" id="tab-content">
 
               <p class="section-text" id="riseHandText"></p>
@@ -475,7 +451,7 @@
               </ul>
               <button class="btn btn-secondary">
                 <span>Learn More Us</span>
-    
+
                 <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
               </button>
 
@@ -623,7 +599,7 @@
                 <a href="#" class="btn-link">
                   <span id="read-4"></spanid>
 
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </a>
 
               </div>
@@ -696,12 +672,12 @@
                   </div>
                   <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
                     <span>Donation</span>
-                       <button class="btn btn-secondary">
-                    <span id="donateButton3"></span>
+                    <button class="btn btn-secondary">
+                      <span id="donateButton3"></span>
 
 
-                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                  </button>
+                      <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                    </button>
 
                 </div>
 
@@ -755,14 +731,14 @@
                     </p>
 
                   </div>
-<button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
+                  <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
                     <span>Donation</span>
-   <button class="btn btn-secondary">
-                    <span id="donateButton4"></span>
+                    <button class="btn btn-secondary">
+                      <span id="donateButton4"></span>
 
 
-                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                  </button>
+                      <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                    </button>
 
                 </div>
 
@@ -816,14 +792,14 @@
                     </p>
 
                   </div>
-                   <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
+                  <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
                     <span>Donation</span>
-                     <button class="btn btn-secondary">
-                    <span id="donateButton5"></span>
+                    <button class="btn btn-secondary">
+                      <span id="donateButton5"></span>
 
 
-                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                  </button>
+                      <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                    </button>
 
                 </div>
 
@@ -879,12 +855,12 @@
                   </div>
                   <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
                     <span>Donation</span>
-                     <button class="btn btn-secondary">
-                    <span id="donateButton6"></span>
+                    <button class="btn btn-secondary">
+                      <span id="donateButton6"></span>
 
 
-                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                  </button>
+                      <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                    </button>
 
                 </div>
 
@@ -1126,71 +1102,80 @@
           <button class="btn btn-secondary">
             <span id="learnMore-2"></spanid>
 
-            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
           </button>
 
         </div>
       </section>
 
-      
+
 
       <section class="faq-section">
         <p class="faq_1"> Frequently Asked Questions</p>
         <div class="faq">
-            <div class="question" onclick="toggleAnswer(this)">
-                <h3>What We Do?</h3>
-            </div>
-            <div class="answer">
-                <p>At WildGuard, we believe in creating a sustainable and thriving environment for every living creature on Earth. Our initiatives are geared towards:
+          <div class="question" onclick="toggleAnswer(this)">
+            <h3>What We Do?</h3>
+          </div>
+          <div class="answer">
+            <p>At WildGuard, we believe in creating a sustainable and thriving environment for every living creature on
+              Earth. Our initiatives are geared towards:
 
-                  Save Nature
-                  We focus on preserving natural habitats and supporting wildlife populations to ensure a balanced ecosystem.
-                  
-                  Save Ecology
-                  Our efforts are aimed at maintaining natural relationships between organisms, promoting biodiversity, and minimizing harmful impacts on the environment.
-                  
-                  Tree Plantation
-                  Trees are the foundation of our planet. We organize tree plantation drives to combat deforestation and provide safe environments for animals.
-                  
-                  Clear Oceans
-                  We support ocean cleanup initiatives, helping to remove plastic and other pollutants from our seas to protect marine life.</p>
-            </div>
+              Save Nature
+              We focus on preserving natural habitats and supporting wildlife populations to ensure a balanced
+              ecosystem.
+
+              Save Ecology
+              Our efforts are aimed at maintaining natural relationships between organisms, promoting biodiversity, and
+              minimizing harmful impacts on the environment.
+
+              Tree Plantation
+              Trees are the foundation of our planet. We organize tree plantation drives to combat deforestation and
+              provide safe environments for animals.
+
+              Clear Oceans
+              We support ocean cleanup initiatives, helping to remove plastic and other pollutants from our seas to
+              protect marine life.</p>
+          </div>
         </div>
 
         <div class="faq">
-            <div class="question" onclick="toggleAnswer(this)">
-                <h3>How You Can Help?</h3>
-            </div>
-            <div class="answer">
-                <p>WildGuard provides several ways for individuals, groups, and organizations to get involved:
+          <div class="question" onclick="toggleAnswer(this)">
+            <h3>How You Can Help?</h3>
+          </div>
+          <div class="answer">
+            <p>WildGuard provides several ways for individuals, groups, and organizations to get involved:
 
-                  🐘 Donate
-                  Your generous donations allow us to provide animals with access to food, medical care, and other essential resources they need to thrive. Every contribution counts!
-                  
-                  🌳 Volunteer
-                  Join us for tree planting, clean-up activities, and other hands-on projects to make an impact. Your time and effort helps make a significant difference.
-                  
-                  🌊 Spread the Word
-                  Raise awareness about the importance of animal welfare and ecological conservation by sharing WildGuard's mission with your friends and community. The more people know, the more we can accomplish together!</p>
-            </div>
+              🐘 Donate
+              Your generous donations allow us to provide animals with access to food, medical care, and other essential
+              resources they need to thrive. Every contribution counts!
+
+              🌳 Volunteer
+              Join us for tree planting, clean-up activities, and other hands-on projects to make an impact. Your time
+              and effort helps make a significant difference.
+
+              🌊 Spread the Word
+              Raise awareness about the importance of animal welfare and ecological conservation by sharing WildGuard's
+              mission with your friends and community. The more people know, the more we can accomplish together!</p>
+          </div>
         </div>
 
         <div class="faq">
-            <div class="question" onclick="toggleAnswer(this)">
-                <h3>Why WildGuard?</h3>
-            </div>
-            <div class="answer">
-                <p>We believe that every small step counts when it comes to saving our planet. WildGuard connects passionate people from around the world to protect, nurture, and support life on Earth. Together, we can:
+          <div class="question" onclick="toggleAnswer(this)">
+            <h3>Why WildGuard?</h3>
+          </div>
+          <div class="answer">
+            <p>We believe that every small step counts when it comes to saving our planet. WildGuard connects passionate
+              people from around the world to protect, nurture, and support life on Earth. Together, we can:
 
-                  Provide better living conditions for animals.
-                  Protect endangered species from extinction.
-                  Combat environmental damage and restore natural habitats.
-                  By working together, we can create a future where animals and nature are safe, healthy, and thriving.</p>
-            </div>
+              Provide better living conditions for animals.
+              Protect endangered species from extinction.
+              Combat environmental damage and restore natural habitats.
+              By working together, we can create a future where animals and nature are safe, healthy, and thriving.</p>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <script src="script.js"></script>
+      <script src="script.js"></script>
 
 
 
@@ -1244,23 +1229,23 @@
               <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
                 class="img-cover">
 
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
         </ul>
         </ul>
 
-          </ul>
+        </ul>
 
       </section>
       </section>
 
-        </section>
+      </section>
 
-      </article>
-    </main>
+    </article>
+  </main>
 
-  
+
 
 
 
@@ -1307,31 +1292,31 @@
         </div>
       </div>
     </div>
-  
+
     <div class="footer-bottom">
       <p>Copyright 2024 WildGuard. All Rights Reserved </p>
 
-    <div class="container">
+      <div class="container">
 
-      <ul class="footer-list">
+        <ul class="footer-list">
 
-        <li>
-          <a href="./terms-of-use.html" class="footer-link" id="terms-2"></a>
-        </li>
+          <li>
+            <a href="./terms-of-use.html" class="footer-link" id="terms-2"></a>
+          </li>
 
-        <li>
-          <a href="./privacy-policy.html" class="footer-link" id="privacyPolicy-2"></a>
-        </li>
+          <li>
+            <a href="./privacy-policy.html" class="footer-link" id="privacyPolicy-2"></a>
+          </li>
 
-      </ul>
+        </ul>
 
-      <p class="copyright">
-         <a href="copyright.html" class="copyright-link">Copyright 2024 </a> Anurag Bytes . All Rights Reserved.
-      </p>
+        <p class="copyright">
+          <a href="copyright.html" class="copyright-link">Copyright 2024 </a> Anurag Bytes . All Rights Reserved.
+        </p>
 
 
-    </div>
-</footer>
+      </div>
+  </footer>
 
 
 
@@ -1345,13 +1330,13 @@
   <script src="./assets/js/script.js"></script>
   <script>
     function setActiveTab(selectedButton, contentKey) {
-   const buttons = document.querySelectorAll('.tab-btn');
-   buttons.forEach(button => button.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(button => button.classList.remove('active'));
 
-   selectedButton.classList.add('active');
+      selectedButton.classList.add('active');
 
-   const content = {
-     mission: `
+      const content = {
+        mission: `
        <p class="section-text">
          Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
        </p>
@@ -1362,7 +1347,7 @@
          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
        </ul>
      `,
-     vision: `
+        vision: `
        <p class="section-text">
          Our vision is to create a world where all animals are treated with compassion and respect.
        </p>
@@ -1372,7 +1357,7 @@
          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
        </ul>
      `,
-    plan: `
+        plan: `
       <p class="section-text">
          Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
        </p>
@@ -1383,15 +1368,16 @@
        </ul>
      `
 
-   };
+      };
 
-   document.getElementById('tab-content').innerHTML = content[contentKey] + `
+      document.getElementById('tab-content').innerHTML = content[contentKey] + `
        <button class="btn btn-secondary">
          <span>Learn More Us</span>
          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
        </button>
-     `;  }
- </script>
+     `;
+    }
+  </script>
   <!-- 
     - ionicon link
   -->
@@ -1401,73 +1387,73 @@
   <style>
     /* Style for the search bar container */
     .search-bar {
-    display: none; 
-    position: absolute;
-    top: 70px;
-    right: 70px; 
-    width: 300px;
-    height: 60px; 
-    max-width: 100%; 
-    background-color: white; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-    z-index: 10; 
-}
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 70px;
+      width: 300px;
+      height: 60px;
+      max-width: 100%;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+    }
 
-.search-btn {
-    margin-right: 70px; 
-    cursor: pointer;
-}
-    
+    .search-btn {
+      margin-right: 70px;
+      cursor: pointer;
+    }
+
     /* Style for the input field inside the search bar */
     #searchInput {
-        width: 100%; 
-        padding: 10px; 
-        border: none; 
-        outline: none; 
-        border-radius: 4px; 
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 4px;
     }
-    
+
     /* Style for the navigation buttons */
     .search-nav-buttons {
-        display: flex;
-        justify-content: space-between; 
-        padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
     }
-    
+
     /* Hide elements initially */
     #matchCounter,
     #prevMatch,
     #nextMatch,
     #clearSearch {
-        display: none; 
+      display: none;
     }
-    </style>
+  </style>
 
 
-<script>
- 
- document.addEventListener("DOMContentLoaded", function () {
-  
-  const searchBar = document.getElementById("searchBar");
-  const searchInput = document.getElementById("searchInput");
+  <script>
 
-  // Toggle the search bar visibility when the search button is clicked
-  document.querySelector(".search-btn").addEventListener("click", function () {
-      searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
-      if (searchBar.style.display === "block") {
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const searchBar = document.getElementById("searchBar");
+      const searchInput = document.getElementById("searchInput");
+
+      // Toggle the search bar visibility when the search button is clicked
+      document.querySelector(".search-btn").addEventListener("click", function () {
+        searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
+        if (searchBar.style.display === "block") {
           searchInput.focus();
           resetSearch();
-      }
-  });
-
-  
-});
+        }
+      });
 
 
+    });
 
-</script>
+
+
+  </script>
 
 </body>
 
