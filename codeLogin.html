@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <title>Login - Hacktoberfest 2024</title>
+    <style>
+        /* Hacktoberfest Color Palette */
+        :root {
+            --hacktoberfest-orange: #FF4500;
+            --hacktoberfest-dark: #333;
+            --hacktoberfest-light: #f4f4f4;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--hacktoberfest-light);
+            color: var(--hacktoberfest-dark);
+        }
+
+        header {
+            background-color: var(--hacktoberfest-orange);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header img {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            height: 40px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .banner {
+            background-color: #ffe5d4;
+            color: var(--hacktoberfest-dark);
+            padding: 15px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+
+        .content {
+            max-width: 400px;
+            width: 100%;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h2 {
+            color: var(--hacktoberfest-orange);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .data .entry {
+            margin-bottom: 20px;
+        }
+
+        .data label h3 {
+            margin-bottom: 5px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            padding: 10px 40px 10px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .input-wrapper .fa {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+        }
+
+        .extras {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .extras .forgot-password {
+            color: var(--hacktoberfest-orange);
+            text-decoration: none;
+        }
+
+        .extras .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .entry button {
+            width: 100%;
+            padding: 10px;
+            background-color: var(--hacktoberfest-orange);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .entry button:hover {
+            background-color: #e03e00;
+        }
+
+        .social-login {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .social-login p {
+            margin-bottom: 10px;
+            color: var(--hacktoberfest-dark);
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 180px;
+        }
+
+        .social-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        .social-btn img {
+            height: 20px;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .signup-link a {
+            color: var(--hacktoberfest-orange);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hacktoberfest Contribution Section */
+        .contribution-section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff3e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contribution-section h3 {
+            color: var(--hacktoberfest-orange);
+            margin-bottom: 15px;
+        }
+
+        .contribution-section p {
+            margin-bottom: 15px;
+        }
+
+        .contribution-section a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--hacktoberfest-orange);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .contribution-section a:hover {
+            background-color: #e03e00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--hacktoberfest-dark);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer a {
+            color: var(--hacktoberfest-orange);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 500px) {
+            .social-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .social-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Hacktoberfest Logo -->
+    <header>
+        <img src="https://hacktoberfest.com/images/logo-hacktoberfest.svg" alt="Hacktoberfest Logo">
+        <h1>Hacktoberfest 2024</h1>
+    </header>
+
+    <!-- Informational Banner -->
+    <div class="banner">
+        <strong>Join Hacktoberfest 2024!</strong> Contribute to open-source projects and earn exciting rewards.
+    </div>
+
+    <!-- Login Page Content -->
+    <div class="login-page">
+        <div class="content">
+            <h2>Welcome Back!</h2>
+
+            <form class="data" action="#" method="POST">
+
+                <!-- Email Field -->
+                <div class="entry">
+                    <label for="email"><h3>Email</h3></label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                        <div class="fa"><i class="fas fa-user"></i></div>
+                    </div>
+                </div>
+
+                <!-- Password Field with Toggle Visibility -->
+                <div class="entry">
+                    <label for="password"><h3>Password</h3></label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <div class="fa toggle-password" onclick="togglePasswordVisibility('password')">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remember Me Checkbox & Forgot Password Link -->
+                <div class="extras">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Remember Me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <!-- Login Button -->
+                <div class="entry">
+                    <button type="submit">Login</button>
+                </div>
+
+                <!-- Social Media Login Buttons -->
+                <div class="social-login">
+                    <p>Or login with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google-btn">
+                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo"> Continue with Google
+                        </button>
+                        <button type="button" class="social-btn facebook-btn">
+                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="facebook-logo"> Continue with Facebook
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sign-Up Link -->
+                <p class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Hacktoberfest Contribution Section -->
+    <div class="contribution-section">
+        <h3>Contribute to Hacktoberfest 2024</h3>
+        <p>Are you ready to make an impact? Join thousands of developers in contributing to open-source projects this October.</p>
+        <a href="https://hacktoberfest.com/" target="_blank">Get Started</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 YourProjectName. Proudly participating in <a href="https://hacktoberfest.com/" target="_blank">Hacktoberfest 2024</a></p>
+    </footer>
+
+    <!-- JavaScript for Toggle Password Visibility -->
+    <script>
+        function togglePasswordVisibility(id) {
+            const passwordField = document.getElementById(id);
+            const icon = passwordField.nextElementSibling.querySelector('i');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } 
+            else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+
+</body>
+</html>
