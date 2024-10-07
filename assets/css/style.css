@@ -1026,11 +1026,11 @@ body {
 
 .partner .container {
   display: flex;
-  /* flex-wrap: wrap;
-   */
-  justify-content: center;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
   align-items: center;
-  /* gap: 50px; */
+  gap: 3rem;
 }
 
 .partner-logo .color,
@@ -2203,4 +2203,5 @@ p.faq_1 {
   font-size: 50px;
   color: #000;
   text-align: center;
+}
 }
