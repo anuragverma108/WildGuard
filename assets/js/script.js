@@ -676,6 +676,26 @@ prevMatchBtn.addEventListener("click", function () {
   }
 });
 
+// Accordion | Frequently Asked Question
+function toggleAnswer(element) {
+  const answer = element.nextElementSibling; // Get the corresponding answer
+  const toggleSign = element.querySelector('.toggle-sign'); // Get the toggle sign
+  answer.classList.toggle('hidden'); // Show or hide the answer
+
+  toggleSign.textContent = answer.classList.contains('hidden') ? '+' : '-'; // Change sign based on visibility
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const questions = document.querySelectorAll('.question');
+
+  questions.forEach(question => {
+      question.addEventListener('click', function() {
+          toggleAnswer(this);
+      });
+  });
+});
+
+
 // Clear search input and highlights
 clearSearchBtn.addEventListener("click", function () {
   searchInput.value = ""; // Clear the input

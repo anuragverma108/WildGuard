@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href=".assets/css/FrequentlyAskQues.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <title>WildGuard - Give Love for Saving World Animals</title>
 
   <!-- 
@@ -1126,68 +1128,70 @@
         </div>
       </section>
 
-      
+      <!-- Accordion -->
 
-      <section class="faq-section">
-        <p class="faq_1"> Frequently Asked Questions</p>
+      <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-6">
+        <div class="text-center mb-6">
+            <p class="text-5xl font-bold text-gray-800 uppercase">Frequently Asked Questions</p>
+        </div>
         <div class="faq">
-            <div class="question" onclick="toggleAnswer(this)">
-                <h3>What We Do?</h3>
+            <div class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between" onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline">What We Do?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
             </div>
-            <div class="answer">
+            <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
                 <p>At WildGuard, we believe in creating a sustainable and thriving environment for every living creature on Earth. Our initiatives are geared towards:
-
-                  Save Nature
-                  We focus on preserving natural habitats and supporting wildlife populations to ensure a balanced ecosystem.
-                  
-                  Save Ecology
-                  Our efforts are aimed at maintaining natural relationships between organisms, promoting biodiversity, and minimizing harmful impacts on the environment.
-                  
-                  Tree Plantation
-                  Trees are the foundation of our planet. We organize tree plantation drives to combat deforestation and provide safe environments for animals.
-                  
-                  Clear Oceans
-                  We support ocean cleanup initiatives, helping to remove plastic and other pollutants from our seas to protect marine life.</p>
+                    <br><br>
+                    <strong>Save Nature:</strong> We focus on preserving natural habitats and supporting wildlife populations to ensure a balanced ecosystem.
+                    <br><br>
+                    <strong>Save Ecology:</strong> Our efforts are aimed at maintaining natural relationships between organisms, promoting biodiversity, and minimizing harmful impacts on the environment.
+                    <br><br>
+                    <strong>Tree Plantation:</strong> Trees are the foundation of our planet. We organize tree plantation drives to combat deforestation and provide safe environments for animals.
+                    <br><br>
+                    <strong>Clear Oceans:</strong> We support ocean cleanup initiatives, helping to remove plastic and other pollutants from our seas to protect marine life.
+                </p>
             </div>
         </div>
-
-        <div class="faq">
-            <div class="question" onclick="toggleAnswer(this)">
-                <h3>How You Can Help?</h3>
+    
+        <div class="faq mt-5">
+          <div class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between" onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline">How You Can Help?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
             </div>
-            <div class="answer">
+            <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
                 <p>WildGuard provides several ways for individuals, groups, and organizations to get involved:
-
-                  🐘 Donate
-                  Your generous donations allow us to provide animals with access to food, medical care, and other essential resources they need to thrive. Every contribution counts!
-                  
-                  🌳 Volunteer
-                  Join us for tree planting, clean-up activities, and other hands-on projects to make an impact. Your time and effort helps make a significant difference.
-                  
-                  🌊 Spread the Word
-                  Raise awareness about the importance of animal welfare and ecological conservation by sharing WildGuard's mission with your friends and community. The more people know, the more we can accomplish together!</p>
+                    <br><br>
+                    <strong>🐘 Donate:</strong> Your generous donations allow us to provide animals with access to food, medical care, and other essential resources they need to thrive. Every contribution counts!
+                    <br><br>
+                    <strong>🌳 Volunteer:</strong> Join us for tree planting, clean-up activities, and other hands-on projects to make an impact. Your time and effort helps make a significant difference.
+                    <br><br>
+                    <strong>🌊 Spread the Word:</strong> Raise awareness about the importance of animal welfare and ecological conservation by sharing WildGuard's mission with your friends and community. The more people know, the more we can accomplish together!
+                </p>
             </div>
         </div>
-
-        <div class="faq">
-            <div class="question" onclick="toggleAnswer(this)">
-                <h3>Why WildGuard?</h3>
+    
+        <div class="faq mt-5">
+          <div class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between" onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline">Why WildGuard?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
             </div>
-            <div class="answer">
+            <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
                 <p>We believe that every small step counts when it comes to saving our planet. WildGuard connects passionate people from around the world to protect, nurture, and support life on Earth. Together, we can:
-
-                  Provide better living conditions for animals.
-                  Protect endangered species from extinction.
-                  Combat environmental damage and restore natural habitats.
-                  By working together, we can create a future where animals and nature are safe, healthy, and thriving.</p>
+                    <br><br>
+                    <strong>Provide better living conditions for animals.</strong>
+                    <br>
+                    <strong>Protect endangered species from extinction.</strong>
+                    <br>
+                    <strong>Combat environmental damage and restore natural habitats.</strong>
+                    <br><br>
+                    By working together, we can create a future where animals and nature are safe, healthy, and thriving.
+                </p>
             </div>
         </div>
     </section>
+  
 
-    <script src="script.js"></script>
-
-
-
+    <script src="./assets/js/script.js" ></script>
 
       <!-- 
         - #INSTA POST
@@ -1462,6 +1466,7 @@
 
 
 </script>
+
 
 </body>
 
