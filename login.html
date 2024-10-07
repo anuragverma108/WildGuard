@@ -13,7 +13,7 @@
         <div class="content">
             <h2>Welcome Back!</h2>
 
-            <form class="data">
+            <form class="data" id="loginForm">
 
                 <!-- Email Field -->
                 <div class="entry">
@@ -33,6 +33,19 @@
                         <div class="fa" class="icon toggle-password" onclick="togglePasswordVisibility('password')">
                             <i class="fas fa-eye"></i>
                         </div>
+                    </div>
+                </div>
+
+                <!-- OTP Request Button -->
+                <div class="entry otp-request" id="otpRequest" style="display:none;">
+                    <button type="button" onclick="requestOTP()">Request OTP</button>
+                </div>
+
+                <!-- OTP Input Field -->
+                <div class="entry otp-field" id="otpField" style="display:none;">
+                    <label for="otp"><h3>Enter OTP</h3></label>
+                    <div class="input-wrapper">
+                        <input type="text" id="otp" placeholder="Enter the OTP sent to your email" required>
                     </div>
                 </div>
 
@@ -70,6 +83,7 @@
     </div>
 
     <script>
+        // Toggle password visibility
         function togglePasswordVisibility(id) {
             const passwordField = document.getElementById(id);
             const icon = passwordField.nextElementSibling.querySelector('i');
@@ -84,6 +98,30 @@
                 icon.classList.add('fa-eye');
             }
         }
+
+        // Function to request OTP
+        function requestOTP() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                alert('OTP has been sent to your email!');
+                document.getElementById('otpRequest').style.display = 'none';
+                document.getElementById('otpField').style.display = 'block';
+            } else {
+                alert('Please enter email and password first.');
+            }
+        }
+
+        // Automatically show OTP request button when password is filled
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            if (password.length > 0) {
+                document.getElementById('otpRequest').style.display = 'block';
+            } else {
+                document.getElementById('otpRequest').style.display = 'none';
+            }
+        });
     </script>
 
 </body>
