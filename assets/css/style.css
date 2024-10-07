@@ -366,6 +366,7 @@ body {
 
 .navbar-link:is(:hover, :focus) { background-color: var(--pistachio); }
 
+
 /* Login Styling */
 .popup {
   display: none; 
