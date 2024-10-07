@@ -6,36 +6,55 @@
   <title>WildGuard - Terms of Use</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>
-
-    /* Modify Bootstrap components with the base color and its shades */
+    /* Default Light Mode Styles */
     body {
       background-color: #f5f5f5;  /* Light background */
+      color: #333;  /* Dark text for readability */
     }
 
-    .h2, h3, p {
-      color: #333;  /* Darker text for better readability */
+    .container {
+      border: 1px solid #ddd;  /* Subtle border for light mode */
+      padding: 20px;
+      border-radius: 10px;
+      background-color: white;  /* White background for the container */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow effect */
+    }
+
+    h2, h3 {
+      color: #2ecc71;  /* Trendy green color for headings */
     }
 
     .h2 {
-      border-bottom: 1px solid #2ecc71;
+      border-bottom: 2px solid #2ecc71; /* Thicker green underline */
       padding-bottom: 10px;
       margin-bottom: 20px;
     }
 
-    .h3 {
-      margin-bottom: 10px;
-    }
-
+    /* Text Alignment */
     .text-justify {
       text-align: justify;
-      line-height: 1.5;
-    }  /* Adjust line height for better readability */
+      line-height: 1.5;  /* Adjust line height for better readability */
+    }
 
-    /* Optional: Style other Bootstrap components as needed */
-    .container {
-      border: 1px solid #ddd;  /* Subtle border */
-      padding: 10px;
-      border-radius: 5px;
+    /* Back button styles */
+    .btn-back {
+      background-color: #2ecc71;  /* Green background for button */
+      color: white;  /* White text */
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #121212;  /* Dark background for dark mode */
+      color: #e0e0e0;  /* Light text color for contrast */
+    }
+
+    body.dark-mode .container {
+      border: 1px solid #2ecc71;  /* Green border for dark mode */
+      background-color: #1e1e1e;  /* Dark container background */
+    }
+
+    body.dark-mode h2, body.dark-mode h3 {
+      color: #2ecc71;  /* Trendy green color for headings in dark mode */
     }
   </style>
 </head>
@@ -44,8 +63,11 @@
     <div class="row">
       <div class="col-md-12">
 
+        <!-- Dark Mode Toggle Button -->
+        <button id="darkModeToggle" class="btn btn-outline-success mb-4">Toggle Dark Mode</button>
+
         <!-- Back Button -->
-        <a href="javascript:history.back()" class="btn btn-outline-success mb-4">← Back</a>
+        <a href="index.html" class="btn btn-back mb-4">← Back</a>
 
         <h2 class="h2 text-center mb-4">Terms of Use</h2>
 
@@ -63,9 +85,29 @@
         <p class="text-justify">
           You agree to indemnify, defend, and hold harmless WildGuard, its affiliates, officers, directors, employees, agents, and licensors from and against all claims, liabilities, damages, losses, expenses, and costs, including reasonable legal fees, arising out of your use of the platform, your violation of these Terms, or your infringement of any third-party rights.
         </p>
+
+        <h3 class="h3">User Responsibilities</h3>
+        <p class="text-justify">
+          Users are responsible for maintaining the confidentiality of their account information and for all activities that occur under their account. Users agree to notify WildGuard immediately of any unauthorized use of their account or any other breach of security. WildGuard will not be liable for any loss or damage arising from a user's failure to comply with this obligation.
+        </p>
+
+        <h3 class="h3">Governing Law</h3>
+        <p class="text-justify">
+          These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which WildGuard operates, without regard to its conflict of law provisions. Any disputes arising from these Terms or your use of the platform shall be subject to the exclusive jurisdiction of the courts located in that jurisdiction.
+        </p>
       </div>
     </div>
   </div>
+  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    // Dark Mode Toggle Functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode'); // Toggle dark mode class
+      darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? 'Toggle Light Mode' : 'Toggle Dark Mode'; // Change button text
+    });
+  </script>
 </body>
 </html>
