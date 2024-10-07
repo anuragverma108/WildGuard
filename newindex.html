@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en" class="searchable-item">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>WildGuard - Give Love for Saving World Animals</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- 
+    - fontawesome icon link
+  -->
+  <script src="https://kit.fontawesome.com/418b80718b.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - google font link
+  -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
+    />
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+<body >
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo">WildGuard</a>
+      </h1>
+
+      <select name="language" class="lang-switch" id="languageSelect">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="es">Spanish</option>
+      </select>
+
+
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">Wildvine</a>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link" data-nav-link>
+              <span id="homeNav"></span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>
+              <span id="aboutNav"></span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#service" class="navbar-link" data-nav-link>
+              <span id="serviceNav"></span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+
+  <a href="#donate" class="navbar-link" data-nav-link>
+    <span id="donateNav">Donate</span>
+  </a>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#event" class="navbar-link" data-nav-link>
+              <span id="eventNav"></span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="./Contact.html" class="navbar-link" data-nav-link>
+              <span id="contactNav"></span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="login.html" class="navbar-link" data-nav-link>
+              <span>Login/Register</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-action">
+<!-- Search Button -->
+<button class="search-btn" aria-label="Search">
+  <ion-icon name="search-outline"></ion-icon>
+</button>
+
+<!-- Search Input Field -->
+<div class="search-bar" id="searchBar" style="display:none;">
+  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+  <div id="searchResults" class="search-results" style="display: none;"></div>
+  
+  <!-- Match Counter and Navigation Buttons -->
+  <div class="search-nav-buttons">
+      <span id="matchCounter" style="display: none;">0/0</span>
+      <button id="prevMatch" style="display:none;">&#x25B2;</button>
+      <button id="nextMatch" style="display:none;">&#x25BC;</button>
+      <button id="clearSearch" style="display:none;">&#x2716;</button>
+  </div>
+</div>
+
+
+      <button class="btn btn-primary" onclick="window.location.href='Donation.html'">
+          <span>Donation</span>
+
+
+<button class="btn btn-primary">
+  <span id="donateButton">Donation</span>
+  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+</button>
+      
+      
+        <!-- Login -->
+        <div id="openPopup" class="user-icon">
+          <i class="fas fa-user"></i>
+      </div>
+  
+      <!-- Popup -->
+      <div id="popup" class="popup">
+          <div class="popup-content">
+              <span class="close-button" id="closePopup">&times;</span>
+              <div class="tabs">
+                  <button class="tab-button active" id="loginTab">Login</button>
+                  <button class="tab-button" id="signupTab">Signup</button>
+              </div>
+              <div class="form-container">
+                  <form id="loginForm">
+                      <input type="email" placeholder="Email" required />
+                      <input type="password" placeholder="Password" required />
+                      <button type="submit">Login</button>
+                  </form>
+                  <form id="signupForm" style="display: none;">
+                      <input type="text" placeholder="Username" required />
+                      <input type="email" placeholder="Email" required />
+                      <input type="password" placeholder="Password" required />
+                      <button type="submit">Signup</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  
+
+      </div>
+
+
+
+    </div>
+  </header>
+
+  <!-- Scroll To Top Btn -->
+  <button type="button" id="btn-back-to-top">
+    <i class="fa-solid fa-leaf"></i>
+  </button>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <p class="section-subtitle">
+            <img src="./assets/images/subtitle-img-white.png" width="32" height="7" alt="Wavy line">
+
+            <span id="welcomeNote"></span>
+          </p>
+
+          <h2 class="h1 hero-title" id="giveLove"></h2>
+          <h2 class="h1 hero-title-bold"><strong id="worldAnimal"></strong></h2>
+          <br><br>
+          <p class="hero-text" id="defendingWildlife"></p>
+          
+<button  class="btn btn-primary" onclick="window.location.href='Donation.html'">
+            <span>Donation</span>
+  <button class="btn btn-primary">
+            <span id="donateButton2"></span>
+
+
+<p class="hero-text">
+  Defending Wildlife, One Paw at a Time
+</p>
+
+<button class="btn btn-primary">
+  <span>Donation</span>
+  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+</button>
+        
+
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #FEATURES
+      -->
+
+      <section class="section features">
+        <div class="container">
+
+          <ul class="features-list">
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title" id="safeShelter"></h3>
+
+                <p class="item-text">
+                  Sit amet consecte adiscine
+                  eiusm temor ultrices.
+                </p>
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title" id="safeWater"></h3>
+
+                <p class="item-text">
+                  Sit amet consecte adiscine
+                  eiusm temor ultrices.
+                </p>
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="leaf-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title" id="saveEcology"></h3>
+
+                <p class="item-text">
+                  Sit amet consecte adiscine
+                  eiusm temor ultrices.
+                </p>
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="snow-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title" id="saveEnvironment"></h3>
+
+                <p class="item-text">
+                  Sit amet consecte adiscine
+                  eiusm temor ultrices.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about">
+        <div class="container">
+
+          <div class="about-banner">
+
+            <h2 class="deco-title">About Us</h2>
+
+            <img src="./assets/images/deco-img.png" width="58" height="261" alt="" class="deco-img">
+
+            <div class="banner-imgs banner-carousel">
+                   <!-- Previous button -->
+              <button class="prev-btn">&#10094;</button>
+
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-1" index=1>
+                  <img
+                    src="./assets/images/about-banner-1.jpg"
+                    width="315"
+                    height="380"
+                    loading="lazy"
+                    alt="Tiger"
+                    class="about-img w-100"
+                  />
+                </div>
+                <div class="banner-img-container banner-carousel-frame banner-img-cont-2" index=2>
+                  <img
+                  src="./assets/images/about-banner-3.jpg"
+                  width="250"
+                  height="277"
+                  loading="lazy"
+                  alt="Elephant"
+                  class="about-img w-100"
+                />
+                </div>
+
+                <div class="banner-img-container banner-carousel-frame banner-img-cont-3" index=3>
+                  <img
+                  src="./assets/images/about-banner-2.jpg"
+                  width="386"
+                  height="250"
+                  loading="lazy"
+                  alt="Panda"
+                  class="about-img w-100"
+                />
+                  </div>
+
+                  <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
+                  <img
+                    src="./assets/images/about-banner-4.jpg"
+                    width="315"
+                    height="380"
+                    loading="lazy"
+                    alt="Deer"
+                    class="about-img w-100"
+                  />
+                  </div>
+                  
+                  <!-- Next button -->
+                  <button class="next-btn">&#10095;</button>
+            </div>
+
+            <div class="spot-circles">
+              <span class="circle" index="1"></span>
+              <span class="circle" index="2"></span>
+              <span class="circle" index="3"></span>
+              <span class="circle" index="4"></span>
+            </div>
+
+          </div>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">
+              <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+
+              <span id="whyUs"></span>
+            </p>
+
+            <h2 class="h2 section-title" id="riseHandToSave"></h2>
+            <h2 class="h2 section-title-bold"><strong id="animalLife"></strong></h2>
+
+            <ul class="tab-nav">
+
+              <li>
+                <button class="tab-btn active" onclick="setActiveTab(this, 'mission')" id="ourMission"></button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="setActiveTab(this, 'vision')" id="ourVision"></button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="setActiveTab(this, 'plan')" id="nextPlan"></button>
+              </li>
+
+            </ul>
+            
+            <div class="tab-content" id="tab-content">
+
+              <p class="section-text" id="riseHandText"></p>
+
+              <ul class="tab-list">
+
+                <li class="tab-item">
+                  <div class="item-icon">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                  </div>
+
+                  <p class="tab-text" id="foodCharity"></p>
+                </li>
+
+                <li class="tab-item">
+                  <div class="item-icon">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                  </div>
+
+                  <p class="tab-text" id="educationCharity"></p>
+                </li>
+
+                <li class="tab-item">
+                  <div class="item-icon">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                  </div>
+
+                  <p class="tab-text" id="waterCharity"></p>
+                </li>
+
+                <li class="tab-item">
+                  <div class="item-icon">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                  </div>
+
+                  <p class="tab-text" id="medicalCharity"></p>
+                </li>
+
+              </ul>
+              <button class="btn btn-secondary">
+                <span>Learn More Us</span>
+    
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              </button>
+
+              <button class="btn btn-secondary">
+                <span id="learnMore"></span>
+
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="section cta">
+        <div class="container">
+
+          <div class="cta-content">
+            <h2 class="h2 section-title" id="trustedPartners"></h2>
+
+            <button class="btn btn-outline">
+              <span id="becomePartner"></span>
+
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div>
+
+          <figure class="cta-banner">
+            <img src="./assets/images/cta-banner.jpg" width="520" height="228" loading="lazy" alt="Fox"
+              class="img-cover">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service" id="service" style="background-image: url('./assets/images/service-map.png')">
+        <div class="container">
+
+          <p class="section-subtitle">
+            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+
+            <span id="whatWeDo"></span>
+          </p>
+
+          <h2 class="h2 section-title" id="weWork"></h2>
+          <h2 class="h2 section-title-bold"><strong id="keepTheWorld"></strong></h2>
+          <br><br>
+
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="leaf-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title" id="saveNature"></h3>
+
+                <p class="card-text">
+                  Tempor incididunt ut labores
+                  dolore magna suspene
+                </p>
+
+                <a href="#" class="btn-link">
+                  <span id="read-1"></span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="earth-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title" id="saveEcology2"></h3>
+
+                <p class="card-text">
+                  Tempor incididunt ut labores
+                  dolore magna suspene
+                </p>
+
+                <a href="#" class="btn-link">
+                  <span id="read-2"></span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="flower-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title" id="treePlantation"></h3>
+
+                <p class="card-text">
+                  Tempor incididunt ut labores
+                  dolore magna suspene
+                </p>
+
+                <a href="#" class="btn-link">
+                  <span id="read-3"></span>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="boat-outline"></ion-icon>
+                </div>
+
+                <h3 class="h3 card-title" id="clearOcean"></h3>
+
+                <p class="card-text">
+                  Tempor incididunt ut labores
+                  dolore magna suspene
+                </p>
+
+                <a href="#" class="btn-link">
+                  <span id="read-4"></spanid>
+
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #DONATE
+      -->
+
+      <section class="section donate" id="donate">
+        <div class="container">
+
+          <ul class="donate-list">
+
+            <li>
+              <div class="donate-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/donate-1.jpg" width="520" height="325" loading="lazy" alt="Elephant"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="progress-wrapper">
+                    <p class="progress-text">
+                      <span id="raised-1"></span>
+
+                      <data value="256">$256</data>
+                    </p>
+
+                    <data class="progress-value" value="83">83%</data>
+                  </div>
+
+                  <div class="progress-box">
+                    <div class="progress"></div>
+                  </div>
+
+                  <h3 class="h3 card-title" id="raiseHandToSaveAnimals-1"></h3>
+
+                  <div class="card-wrapper">
+
+                    <p class="card-wrapper-text">
+                      <span id="goal-1"></span>
+
+                      <data class="green" value="34562">$34562</data>
+                    </p>
+
+                    <p class="card-wrapper-text">
+                      <span id="raise-1"></span>
+
+                      <data class="yellow" value="562">$562</data>
+                    </p>
+
+                    <p class="card-wrapper-text">
+                      <span id="toGo-1"></span>
+
+                      <data class="cyan" value="864">$864</data>
+                    </p>
+
+                  </div>
+                  <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
+                    <span>Donation</span>
+                       <button class="btn btn-secondary">
+                    <span id="donateButton3"></span>
+
+
+                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                  </button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="donate-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/donate-2.jpg" width="520" height="325" loading="lazy" alt="Elephant"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="progress-wrapper">
+                    <p class="progress-text">
+                      <span id="raised-2"></span>
+
+                      <data value="256">$256</data>
+                    </p>
+
+                    <data class="progress-value" value="83">83%</data>
+                  </div>
+
+                  <div class="progress-box">
+                    <div class="progress"></div>
+                  </div>
+
+                  <h3 class="h3 card-title" id="raiseHandToSaveAnimals-2"></h3>
+
+                  <div class="card-wrapper">
+
+                    <p class="card-wrapper-text">
+                      <span id="goal-2"></span>
+
+                      <data class="green" value="34562">$34562</data>
+                    </p>
+
+                    <p class="card-wrapper-text">
+                      <span id="raise-2"></span>
+
+                      <data class="yellow" value="562">$562</data>
+                    </p>
+
+                    <p class="card-wrapper-text">
+                      <span id="toGo-2"></span>
+
+                      <data class="cyan" value="864">$864</data>
+                    </p>
+
+                  </div>
+<button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
+                    <span>Donation</span>
+   <button class="btn btn-secondary">
+                    <span id="donateButton4"></span>
+
+
+                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                  </button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="donate-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/donate-3.jpg" width="520" height="325" loading="lazy" alt="Elephant"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="progress-wrapper">
+                    <p class="progress-text">
+                      <span id="raised-3"></span>
+
+                      <data value="256">$256</data>
+                    </p>
+
+                    <data class="progress-value" value="83">83%</data>
+                  </div>
+
+                  <div class="progress-box">
+                    <div class="progress"></div>
+                  </div>
+
+                  <h3 class="h3 card-title" id="raiseHandToSaveAnimals-3"></h3>
+
+                  <div class="card-wrapper">
+
+                    <p class="card-wrapper-text">
+                      <span id="goal-3"></span>
+
+                      <data class="green" value="34562">$34562</data>
+                    </p>
+
+                    <p class="card-wrapper-text">
+                      <span id="raise-3"></span>
+
+                      <data class="yellow" value="562">$562</data>
+                    </p>
+
+                    <p class="card-wrapper-text">
+                      <span id="toGo-3"></span>
+
+                      <data class="cyan" value="864">$864</data>
+                    </p>
+
+                  </div>
+                   <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
+                    <span>Donation</span>
+                     <button class="btn btn-secondary">
+                    <span id="donateButton5"></span>
+
+
+                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                  </button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="donate-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/donate-4.jpg" width="520" height="325" loading="lazy" alt="Elephant"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="progress-wrapper">
+                    <p class="progress-text">
+                      <span id="raised-4"></span>
+
+                      <data value="256">$256</data>
+                    </p>
+
+                    <data class="progress-value" value="83">83%</data>
+                  </div>
+
+                  <div class="progress-box">
+                    <div class="progress"></div>
+                  </div>
+
+                  <h3 class="h3 card-title" id="raiseHandToSaveAnimals-4"></h3>
+
+                  <div class="card-wrapper">
+
+                    <p class="card-wrapper-text">
+                      <span id="goal-4"></span>
+
+                      <data class="green" value="34562">$34562</data>
+                    </p>
+
+                    <p class="card-wrapper-text">
+                      <span id="raise-4"></span>
+
+                      <data class="yellow" value="562">$562</data>
+                    </p>
+
+                    <p class="card-wrapper-text">
+                      <span id="toGo-4"></span>
+
+                      <data class="cyan" value="864">$864</data>
+                    </p>
+
+                  </div>
+                  <button class="btn btn-secondary" onclick="window.location.href='Donation.html'">
+                    <span>Donation</span>
+                     <button class="btn btn-secondary">
+                    <span id="donateButton6"></span>
+
+
+                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                  </button>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #TESTIMONIALS
+      -->
+
+      <section class="testi">
+
+        <div class="testi-content">
+
+          <p class="section-subtitle">
+            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+
+            <span id="ourTestimonials"></spanid>
+          </p>
+
+          <h2 class="h2 section-title" id="whatPeopleSay"></h2>
+          <h2 class="h2 section-title-bold"><strong id="ourOrganization"></strong>
+          </h2><br><br>
+
+          <div class="testi-card">
+
+            <figure class="card-avatar">
+              <img src="./assets/images/testi-avatar.png" width="60" height="60" loading="lazy" alt="David S. Neuman">
+            </figure>
+
+            <div>
+              <blockquote class="testi-text">
+                Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium totam rem
+                aperiam eaquesa
+                quae abillo inventore veritatis quasi architecto beatae vitae dicta sunt explicabo enimpsam voluptatem
+              </blockquote>
+
+              <h3 class="testi-name">David S. Neuman</h3>
+
+              <p class="testi-title" id="businessManager"></p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <figure class="testi-banner">
+          <img src="./assets/images/testi-banner.jpg" width="960" height="846" loading="lazy" alt="Rhinoceros"
+            class="img-cover">
+        </figure>
+
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PARTNER
+      -->
+
+      <section class="section partner">
+        <div class="container">
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-1.png" width="157" height="55" loading="lazy" alt="Children Fund"
+              class="gray">
+
+            <img src="./assets/images/partner-1-active.png" width="157" height="55" loading="lazy" alt="Children Fund"
+              class="color">
+          </a>
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-2.png" width="163" height="55" loading="lazy" alt="Non Profit Agency"
+              class="gray">
+
+            <img src="./assets/images/partner-2-active.png" width="163" height="55" loading="lazy"
+              alt="Non Profit Agency" class="color">
+          </a>
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-3.png" width="149" height="55" loading="lazy" alt="Rise Hand Help Us"
+              class="gray">
+
+            <img src="./assets/images/partner-3-active.png" width="149" height="55" loading="lazy"
+              alt="Rise Hand Help Us" class="color">
+          </a>
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-4.png" width="169" height="58" loading="lazy" alt="Helping" class="gray">
+
+            <img src="./assets/images/partner-4-active.png" width="169" height="58" loading="lazy" alt="Helping"
+              class="color">
+          </a>
+
+          <a href="#" class="partner-logo">
+            <img src="./assets/images/partner-5.png" width="211" height="55" loading="lazy" alt="Poor Fund Organization"
+              class="gray">
+
+            <img src="./assets/images/partner-5-active.png" width="211" height="55" loading="lazy"
+              alt="Poor Fund Organization" class="color">
+          </a>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #EVENT
+      -->
+
+      <section class="section event" id="event">
+        <div class="container">
+
+          <p class="section-subtitle">
+            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+
+            <span id="eventProgram"></span>
+
+            <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+          </p>
+
+          <h2 class="h2 section-title" id="popularCauses"></h2>
+          <h2 class="h2 section-title-bold"><strong id="buildingFund"></strong></h2>
+          <br>
+
+          <ul class="event-list">
+
+            <li>
+              <div class="event-card">
+
+                <time class="card-time" datetime="01-05">
+                  <span class="month">Jan</span>
+
+                  <span class="date">05</span>
+                </time>
+
+                <div class="wrapper">
+
+                  <div class="card-content">
+                    <p class="card-subtitle" id="oceanWater-1"></p>
+
+                    <h3 class="card-title">Far from the countries Vokalia and Consonantia 2022</h3>
+
+                    <p class="card-text">
+                      Sit amet consectetur adipiscing elit sed do eiusmod tempor
+                    </p>
+                  </div>
+
+                  <button class="btn btn-white">
+                    <span id="viewEvents-1"></span>
+
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="event-card">
+
+                <time class="card-time" datetime="02-23">
+                  <span class="month">Feb</span>
+
+                  <span class="date">23</span>
+                </time>
+
+                <div class="wrapper">
+
+                  <div class="card-content">
+                    <p class="card-subtitle" id="oceanWater-2"></p>
+
+                    <h3 class="card-title">Far from the countries Vokalia and Consonantia 2022</h3>
+
+                    <p class="card-text">
+                      Sit amet consectetur adipiscing elit sed do eiusmod tempor
+                    </p>
+                  </div>
+
+                  <button class="btn btn-white">
+                    <span id="viewEvents-2"></span>
+
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="event-card">
+
+                <time class="card-time" datetime="03-27">
+                  <span class="month">Mar</span>
+
+                  <span class="date">27</span>
+                </time>
+
+                <div class="wrapper">
+
+                  <div class="card-content">
+                    <p class="card-subtitle" id="oceanWater-3"></p>
+
+                    <h3 class="card-title">Far from the countries Vokalia and Consonantia 2022</h3>
+
+                    <p class="card-text">
+                      Sit amet consectetur adipiscing elit sed do eiusmod tempor
+                    </p>
+                  </div>
+
+                  <button class="btn btn-white">
+                    <span id="viewEvents-3"></span>
+
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </button>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <button class="btn btn-secondary">
+            <span id="learnMore-2"></spanid>
+
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+        </div>
+      </section>
+
+      
+
+      <section class="faq-section">
+        <p class="faq_1"> Frequently Asked Questions</p>
+        <div class="faq">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3>What We Do?</h3>
+            </div>
+            <div class="answer">
+                <p>At WildGuard, we believe in creating a sustainable and thriving environment for every living creature on Earth. Our initiatives are geared towards:
+
+                  Save Nature
+                  We focus on preserving natural habitats and supporting wildlife populations to ensure a balanced ecosystem.
+                  
+                  Save Ecology
+                  Our efforts are aimed at maintaining natural relationships between organisms, promoting biodiversity, and minimizing harmful impacts on the environment.
+                  
+                  Tree Plantation
+                  Trees are the foundation of our planet. We organize tree plantation drives to combat deforestation and provide safe environments for animals.
+                  
+                  Clear Oceans
+                  We support ocean cleanup initiatives, helping to remove plastic and other pollutants from our seas to protect marine life.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3>How You Can Help?</h3>
+            </div>
+            <div class="answer">
+                <p>WildGuard provides several ways for individuals, groups, and organizations to get involved:
+
+                  🐘 Donate
+                  Your generous donations allow us to provide animals with access to food, medical care, and other essential resources they need to thrive. Every contribution counts!
+                  
+                  🌳 Volunteer
+                  Join us for tree planting, clean-up activities, and other hands-on projects to make an impact. Your time and effort helps make a significant difference.
+                  
+                  🌊 Spread the Word
+                  Raise awareness about the importance of animal welfare and ecological conservation by sharing WildGuard's mission with your friends and community. The more people know, the more we can accomplish together!</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3>Why WildGuard?</h3>
+            </div>
+            <div class="answer">
+                <p>We believe that every small step counts when it comes to saving our planet. WildGuard connects passionate people from around the world to protect, nurture, and support life on Earth. Together, we can:
+
+                  Provide better living conditions for animals.
+                  Protect endangered species from extinction.
+                  Combat environmental damage and restore natural habitats.
+                  By working together, we can create a future where animals and nature are safe, healthy, and thriving.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3> What animals do you focus on?</h3>
+            </div>
+            <div class="answer">
+                <p>WildGuard’s mission covers a broad range of species, but we prioritize endangered and threatened species, such as elephants, rhinos, sea turtles, and various bird species. We also focus on protecting ecosystems that support a wide variety of wildlife.
+
+</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question" onclick="toggleAnswer(this)">
+                <h3> What are the main environmental challenges WildGuard addresses?</h3>
+            </div>
+            <div class="answer">
+                <p>We tackle a wide range of environmental issues, including deforestation, habitat destruction, illegal poaching, pollution, climate change, and biodiversity loss. Our goal is to restore balance and safeguard ecosystems worldwide.
+
+
+
+</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+
+
+
+      <!-- 
+        - #INSTA POST
+      -->
+
+      <section class="insta-post">
+
+        <ul class="insta-post-list">
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
+                class="img-cover">
+
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+        </ul>
+        </ul>
+
+          </ul>
+
+      </section>
+      </section>
+
+        </section>
+
+      </article>
+    </main>
+
+  
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <h3>WildGuard</h3>
+        <p id="footerDescription"></p>
+      </div>
+      <div class="footer-middle">
+        <h4 id="quickLinks"></h4>
+        <div class="quick-links">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#donate">Donate</a></li>
+          </ul>
+          <ul>
+            <li><a href="./Contact-Us/index.html">Contact</a></li>
+            <li><a href="./terms-of-use.html" id="terms"></a></li>
+            <li><a href="./privacy-policy.html" id="privacyPolicy"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h4 id="stayConnected"></h4>
+        <form action="#">
+          <input type="email" placeholder="Your email address">
+          <button type="submit">Subscribe</button>
+        </form>
+        <div class="footer-social-icons">
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>Copyright 2024 WildGuard. All Rights Reserved </p>
+
+    <div class="container">
+
+      <ul class="footer-list">
+
+        <li>
+          <a href="./terms-of-use.html" class="footer-link" id="terms-2"></a>
+        </li>
+
+        <li>
+          <a href="./privacy-policy.html" class="footer-link" id="privacyPolicy-2"></a>
+        </li>
+
+      </ul>
+
+      <p class="copyright">
+         <a href="copyright.html" class="copyright-link">Copyright 2024 </a> Anurag Bytes . All Rights Reserved.
+      </p>
+
+
+    </div>
+</footer>
+
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/carousel.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    function setActiveTab(selectedButton, contentKey) {
+   const buttons = document.querySelectorAll('.tab-btn');
+   buttons.forEach(button => button.classList.remove('active'));
+
+   selectedButton.classList.add('active');
+
+   const content = {
+     mission: `
+       <p class="section-text">
+         Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
+       </p>
+       <ul class="tab-list">
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Foods</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Education</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Water</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
+       </ul>
+     `,
+     vision: `
+       <p class="section-text">
+         Our vision is to create a world where all animals are treated with compassion and respect.
+       </p>
+       <ul class="tab-list">
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Awareness</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Protect Wildlife</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
+       </ul>
+     `,
+    plan: `
+      <p class="section-text">
+         Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
+       </p>
+       <ul class="tab-list">
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Expand Rescue Operations</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Increase Funding</p></li>
+         <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Partner with Local Groups</p></li>
+       </ul>
+     `
+
+   };
+
+   document.getElementById('tab-content').innerHTML = content[contentKey] + `
+       <button class="btn btn-secondary">
+         <span>Learn More Us</span>
+         <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+       </button>
+     `;  }
+ </script>
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    /* Style for the search bar container */
+    .search-bar {
+    display: none; 
+    position: absolute;
+    top: 70px;
+    right: 70px; 
+    width: 300px;
+    height: 60px; 
+    max-width: 100%; 
+    background-color: white; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    z-index: 10; 
+}
+
+.search-btn {
+    margin-right: 70px; 
+    cursor: pointer;
+}
+    
+    /* Style for the input field inside the search bar */
+    #searchInput {
+        width: 100%; 
+        padding: 10px; 
+        border: none; 
+        outline: none; 
+        border-radius: 4px; 
+    }
+    
+    /* Style for the navigation buttons */
+    .search-nav-buttons {
+        display: flex;
+        justify-content: space-between; 
+        padding: 5px;
+    }
+    
+    /* Hide elements initially */
+    #matchCounter,
+    #prevMatch,
+    #nextMatch,
+    #clearSearch {
+        display: none; 
+    }
+    </style>
+
+
+<script>
+ 
+ document.addEventListener("DOMContentLoaded", function () {
+  
+  const searchBar = document.getElementById("searchBar");
+  const searchInput = document.getElementById("searchInput");
+
+  // Toggle the search bar visibility when the search button is clicked
+  document.querySelector(".search-btn").addEventListener("click", function () {
+      searchBar.style.display = searchBar.style.display === "none" ? "block" : "none";
+      if (searchBar.style.display === "block") {
+          searchInput.focus();
+          resetSearch();
+      }
+  });
+
+  
+});
+
+
+
+</script>
+
+</body>
+
+</html>
