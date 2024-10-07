@@ -20,7 +20,7 @@
     body {
       background-color: var(--baby-powder);
       font-family: 'Inter', sans-serif;
-      padding: 50px 0;
+      padding: 20px; /* Reduced padding for responsiveness */
     }
 
     .contact-container {
@@ -55,7 +55,7 @@
     }
 
     .contact-btn:hover {
-      background-color: #4da746; /* Darker shade of pistachio */
+      background-color: #4da746;
     }
 
     .info-box {
@@ -75,6 +75,21 @@
     .info-box p {
       margin-bottom: 0;
       font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .contact-btn {
+        font-size: 1rem;
+        padding: 8px 20px;
+      }
+
+      body {
+        padding: 10px;
+      }
     }
   </style>
 </head>
@@ -103,20 +118,20 @@
         </div>
 
         <!-- Contact Form -->
-        <form>
+        <form role="form">
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" aria-label="Name" required>
           </div>
 
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" aria-label="Email" required>
           </div>
 
           <div class="mb-3">
             <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" aria-label="Message" required></textarea>
           </div>
 
           <div class="text-center">
