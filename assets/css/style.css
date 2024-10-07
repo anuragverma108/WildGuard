@@ -2153,7 +2153,9 @@ body {
 }
 
 .faq-section {
-  max-width: 800px;
+  background-color: red;
+  
+ padding: 20px !important;
   margin: 0 auto;
 }
 
@@ -2170,10 +2172,11 @@ h1 {
   margin-bottom: 10px;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
 }
 
 .question {
-  padding: 15px;
+  
   cursor: pointer;
   background-color: #f1f1f1;
   border-bottom: 1px solid #ddd;
