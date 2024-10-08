@@ -2011,7 +2011,7 @@ body {
   .navbar-list:hover .navbar-link:not(:hover) { color: var(--white-60); }
 
   .navbar-link.active span {
-    text-decoration: underline;
+    color: var(--pistachio);
   }
 
   /**
