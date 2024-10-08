@@ -1816,6 +1816,11 @@ left: 45%;
   color: white;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#google_translate_element select:hover {
+  background-color: #0d6efd; 
+  color: white; 
 }
 
 /* Optional - Hide the Google "Powered by" branding (not recommended but possible) */
