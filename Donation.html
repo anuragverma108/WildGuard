@@ -24,31 +24,44 @@ body {
     background: #f0f8ff;
     color:black;
     line-height: 1.6;
+    
 }
 
 header {
     text-align: center;
-    padding: 20px;
-    background-color:rgba(255, 253, 253, 0.721);
+    padding: 10px;
+    background-color:rgba(255, 253, 253, 0.6);
     color: rgb(0, 113, 19);
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 2.2em;
 }
-
-header p {
+.fixed-header {
     font-size: 1.2em;
+           
+        }
+header p {
+    font-size:1.5em;
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick it at the top */
+    background-color: rgba(255, 253, 253, 0); /* Ensure it's visible over the background */
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000; /* Ensure it's above other elements */
+
 }
 
 .donation-form {
-    background: white;
+    background: rgba(255, 255, 255, 0.6);
     max-width: 400px;
-    margin: 30px auto;
-    padding: 20px;
+    margin: 30px auto 60px auto;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgb(0, 113, 19);
+    box-shadow: 0px 4px 8px rgba(0, 113, 19, 0.3);
     text-align: center;
+    border: 2px solid rgba(0, 113, 19,); 
+    
 }
 
 .donation-form h2 {
@@ -59,6 +72,9 @@ header p {
 
 .donation-form p {
     margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold; 
+    font-size: 1.1em; 
 }
 
 form {
@@ -69,6 +85,8 @@ form {
 label {
     margin-bottom: 5px;
     font-weight: bold;
+    text-align: left;
+    color: rgb(0, 113, 19);
 }
 
 input, select {
@@ -76,6 +94,7 @@ input, select {
     margin-bottom: 15px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    font-size: 1em;
 }
 
 button {
@@ -86,6 +105,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
+    font-size: 1em;
 }
 
 button:hover {
@@ -106,6 +126,31 @@ footer {
     width: 100%;
     bottom: 0;
 }
+.payment-logos {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; 
+}
+
+.payment-logos img {
+    width: 40px; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.payment-logos img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 500px) {
+    .payment-logos img {
+        width: 30px;
+    }
+}
+
 
     </style>
 </head>
@@ -113,7 +158,9 @@ footer {
     <div class="backimg">
     <header>
         <h1>WildGuard</h1>
-        <p>Help protect wildlife. Donate today to save the animals!</p>
+        <p>
+            Help protect wildlife. Donate today to save the animals!
+        </p>
     </header>
 
     <main>
@@ -145,6 +192,12 @@ footer {
             <div id="thankYouMessage" style="display:none;">
                 <h3>Thank you for your generosity!</h3>
                 <p>Your donation will make a huge difference in protecting animals.</p>
+            </div>
+            <div class="payment-logos">
+                <img src="assets/images/visa2.png" alt="visa">
+                <img src="assets/images/upi.png" alt="upi">
+                <img src="assets/images/Mastercard2.png" alt="master">
+                <img src="assets/images/Rupay-Logo.png" alt="Rupay">
             </div>
         </section>
     </main>
