@@ -1014,6 +1014,113 @@ body {
   scroll-snap-align: center;
 }
 
+/* MODAL Body */
+
+.modal-btn{
+  margin-bottom: 10px;
+  margin-top: -80px;
+}
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: var(--white);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 500px; /* Optional: max width */
+  animation: fadeIn 0.3s; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: var(--eerie-black-2);
+}
+
+.modal-header .close {
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--eerie-black-2);
+}
+
+.modal-body {
+  padding: 15px 0;
+  color: var(--granite-gray);
+}
+
+.contact {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-link {
+  color: var(--pistachio);
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid var(--pistachio);
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.social-link:hover {
+  background-color: var(--pistachio);
+  color: var(--white);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+  border-top: 1px solid var(--light-gray);
+}
+
+.modal-footer .btn {
+  background-color: var(--pistachio);
+  color: var(--white);
+  padding: 10px 20px;
+  font-size: var(--fs-8);
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+  background-color: var(--medium-turquoise);
+}
+
+
+
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/

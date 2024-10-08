@@ -105,31 +105,31 @@ function next_plan(){
 
 // Scroll To Top Button
 // Get the button
-let mybutton = document.getElementById("btn-back-to-top");
+// let mybutton = document.getElementById("btn-back-to-top");
 
-// Show button on scroll
-window.onscroll = function () {
-    scrollFunction();
-};
+// // Show button on scroll
+// window.onscroll = function () {
+//     scrollFunction();
+// };
 
-function scrollFunction() {
-    if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-    ) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
-}
+// function scrollFunction() {
+//     if (
+//         document.body.scrollTop > 20 ||
+//         document.documentElement.scrollTop > 20
+//     ) {
+//         mybutton.style.display = "block";
+//     } else {
+//         mybutton.style.display = "none";
+//     }
+// }
 
-// Scroll to top
-mybutton.addEventListener("click", backToTop);
+// // Scroll to top
+// mybutton.addEventListener("click", backToTop);
 
-function backToTop() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+// function backToTop() {
+//     document.body.scrollTop = 0; // For Safari
+//     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+// }
 
 /**
 *search-bar with functionality
@@ -173,6 +173,41 @@ function closeSearchBar() {
   searchBar.style.display = "none";
   hideNavigationButtons(); // Hide buttons and counter when search is closed
 }
+
+
+// modal
+
+
+const modal = document.getElementById("eventModal");
+const closeModalBtn = document.getElementById("closeModal");
+const closeModalSpan = document.querySelector(".close");
+const openModalBtn = document.getElementById("openModal");
+
+// Open the modal when the button is clicked
+openModalBtn.addEventListener("click", function () {
+  modal.style.display = "block";
+});
+
+// Close the modal when the close button is clicked
+closeModalBtn.addEventListener("click", function () {
+  modal.style.display = "none";
+});
+
+// Close the modal when the x (span) is clicked
+closeModalSpan.addEventListener("click", function () {
+  modal.style.display = "none";
+});
+
+// Close the modal when clicking outside of it
+window.addEventListener("click", function (event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+
+
+
 
 // Scroll to and highlight the matching element
 searchInput.addEventListener("input", function (event) {
