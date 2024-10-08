@@ -240,7 +240,7 @@
           </h2>
 
           <p class="hero-text">
-            Defending Wildlife, One Paw at a Time
+            <center>Defending Wildlife, One Paw at a Time</center>
           </p>
 
           <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
@@ -433,50 +433,30 @@
 
             <div class="tab-content" id="tab-content">
 
-              <p class="section-text" style="text-align: left;">
+              <!-- <p class="section-text" style="text-align: left;">
                 But I must explain to you how all this mistaken denouncing pleasure and praising pain was born and I
                 will give you a
                 complete account of the system expoundmaster
+              </p> -->
+
+              <p class="section-text">
+                Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
               </p>
 
               <ul class="tab-list">
-
-                <li class="tab-item">
-                  <div class="item-icon">
-                    <ion-icon name="checkmark-circle"></ion-icon>
-                  </div>
-
-                  <p class="tab-text">Charity For Foods</p>
-                </li>
-
-                <li class="tab-item">
-                  <div class="item-icon">
-                    <ion-icon name="checkmark-circle"></ion-icon>
-                  </div>
-
-                  <p class="tab-text">Charity For Education</p>
-                </li>
-
-                <li class="tab-item">
-                  <div class="item-icon">
-                    <ion-icon name="checkmark-circle"></ion-icon>
-                  </div>
-
-                  <p class="tab-text">Charity For Water</p>
-                </li>
-
-                <li class="tab-item">
-                  <div class="item-icon">
-                    <ion-icon name="checkmark-circle"></ion-icon>
-                  </div>
-
-                  <p class="tab-text">Charity For Medical</p>
-                </li>
-
+                <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Foods</p></li>
+                <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Education</p></li>
+                <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Water</p></li>
+                <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
               </ul>
 
-
             </div>
+
+
+            <button class="btn btn-secondary">
+              <span>Learn More Us</span>
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            </button>
 
           </div>
 
@@ -1359,12 +1339,7 @@
 
       };
 
-      document.getElementById('tab-content').innerHTML = content[contentKey] + `
-       <button class="btn btn-secondary">
-         <span>Learn More Us</span>
-         <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-       </button>
-     `;
+      document.getElementById('tab-content').innerHTML = content[contentKey];
     }
   </script>
   <!-- 
