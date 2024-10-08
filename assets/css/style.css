@@ -297,6 +297,7 @@ body {
 .header.active::after { display: none; }
 
 .header .container {
+  padding-top: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1384,6 +1385,18 @@ body {
   align-items: center;
 }
 
+.progress-bar {
+  margin-top: 0px;
+  width: 100%;
+  height: 1vh;
+  margin-top: 0px;
+}
+
+.filled {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgb(17, 173, 2), rgb(99, 255, 109));
+}
 .footer-bottom .container {
   display: flex;
   justify-content: center;
