@@ -1277,7 +1277,7 @@
       </div>
     </div>
     
-<div class="footer-bottom">
+<!-- <div class="footer-bottom">
   <p>Copyright 2024 <a href="https://wildguard.netlify.app/">WildGuard</a> All Rights Reserved</p>
   <div class="container">
     <ul class="footer-list">
@@ -1289,13 +1289,13 @@
       </li>
     </ul>
   </div>
-</div>
+</div> -->
 
 
     <div class="footer-bottom">
       <div class="footer-box">
         <div class="container">
-          <p>Copyright 2024 WildGuard. All Rights Reserved</p>
+          <p>© Copyright <time class="year"></time> WildGuard. All Rights Reserved</p>
         </div>
         <div class="footer-left">
           <ul class="footer-list">
@@ -1371,6 +1371,16 @@
 
       document.getElementById('tab-content').innerHTML = content[contentKey];
     }
+
+    //dynamic footer
+    
+  const yearElements = document.querySelectorAll('.year');
+  const currentYear = new Date().getFullYear();
+  yearElements.forEach(function(yearElement) {
+    yearElement.textContent = currentYear;
+    yearElement.style.display = 'inline'; 
+  });
+
   </script>
   <!-- 
     - ionicon link
