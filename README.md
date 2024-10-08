@@ -2,8 +2,47 @@
 
 *‘Until we consider animal life to be worthy of the consideration and reverence we bestow upon old books and pictures and historic monuments, there will always be the animal refugee living a precarious life on the edge of extermination, dependent for existence on the charity of a few human beings.’* *– Gerald Durrell*
 
-Welcome to **WildGuard**, a platform dedicated to protecting the beauty of our planet by supporting animal welfare and ecological conservation efforts 🐝. Together, we can create a better future for all living beings through community-driven action and support.
+*<i>Welcome to **WildGuard**, a platform dedicated to protecting the beauty of our planet by supporting animal welfare and ecological conservation efforts 🐝. Together, we can create a better future for all living beings through community-driven action and support.</i>*
 
+<br>
+<table align="center">
+    <thead align="center">
+        <tr border: 1px;>
+            <td><b>🌟 Stars</b></td>
+            <td><b>🍴 Forks</b></td>
+            <td><b>🐛 Issues</b></td>
+            <td><b>🔔 Open PRs</b></td>
+            <td><b>🔕 Close PRs</b></td>
+        </tr>
+     </thead>
+    <tbody>
+         <tr>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/anuragverma108/WildGuard?style=flat&logo=github"/></td>
+            <td><img alt="Forks" src="https://img.shields.io/github/forks/anuragverma108/WildGuard?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/anuragverma108/WildGuard?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/anuragverma108/WildGuard?style=flat&logo=github"/></td>
+            <td><img alt="Close Pull Requests" src="https://img.shields.io/github/issues-pr-closed/anuragverma108/WildGuard?style=flat&color=critical&logo=github"/></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+
+## Table of Contents
+
+- [About WildGuard](#about-wildguard-)
+- [Key Features](#key-features-)
+- [What We Do](#what-we-do-)
+- [Hacktoberfest 2024](#hacktoberfest-2024-)
+- [How To Contribute](#how-to-contribute-)
+- [Tech Stack Behind WildGuard](#tech-stack-behind-wildguard-)
+- [Installation](#installation-)
+- [How You Can Contribute](#how-you-can-contribute-)
+- [Why WildGuard?](#why-wildguard-️)
+- [Get in Touch with Us](#get-in-touch-with-us-)
+- [Contributors](#contributors)
+- [Website Preview](#website-preview)
+- [License](#license)
 
 ## **About WildGuard** 🐾
 
@@ -11,7 +50,7 @@ At **WildGuard**, we are driven by a passion for making a meaningful impact on t
 
 **Join us** in our mission to preserve the beauty of nature and make a tangible difference. Whether you're a wildlife enthusiast or a nature lover, **WildGuard** gives you the tools to support causes that matter 💚.
 
-### **Key Features** 💡
+## **Key Features** 💡
 
 - **Charity for Essential Needs:** 🌍 
   Provide crucial support such as food, clean water, education, and medical care for animals in need.
@@ -89,7 +128,7 @@ Locate the `index.html` file in the project folder and open it in your preferred
 
 Simply open `index.html` in your browser, and the WildGuard website will be up and running!
 
-## How You Can Contribute :bulb:
+## How You Can Contribute 💡:
 
 **WildGuard** provides several ways for individuals, groups, and organizations to get involved in our mission of protecting animals and the environment.
 
@@ -123,7 +162,7 @@ We believe that every small step counts when it comes to saving our planet. Wild
 
 By working together, we can create a future where animals and nature are safe, healthy, and thriving.
 
-## **Get in Touch with Us** 💬 
+## Get in Touch with Us 💬 
 
 Do you have questions, ideas, or simply want to get involved in our mission? We'd love to hear from you!
 
@@ -133,8 +172,26 @@ Do you have questions, ideas, or simply want to get involved in our mission? We'
 
 **Join WildGuard today and be part of the solution—one step at a time.** 🌱🌍
 
----
+## Contributors
+# Big thanks to all the contributors! 🎉
 
-## **License** 📜 
+<a href="https://github.com/anuragverma108/WildGuard/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=anuragverma108/WildGuard" />
+</a>
+
+Recent Contributions:
+
+![Alt](https://repobeats.axiom.co/api/embed/371dea6625d62314e886ddca3e74a18fe6840448.svg "Repobeats analytics image")
+
+## Website Preview📸
+<br>
+<img src='./home.png'>
+<img src='./about.png'>
+<img src='./service.png'>
+<img src='./donate.png'>
+<img src='./donation.png'>
+<br>
+
+## License 📜 
 
 This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
