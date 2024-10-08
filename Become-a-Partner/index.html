@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Partner - WildGuard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Become a Partner</h1>
+    <form id="partnerForm" action="#" method="post">
+      
+      <section class="form-section">
+        <h2>Contact Information</h2>
+        <p>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone">
+        </p>
+      </section>
+      
+      <section class="form-section">
+        <h2>Partnership Type</h2>
+        <p>
+          <label>
+            <input type="radio" name="partnership_type" value="sponsor" required>
+            Sponsor
+          </label>
+          <label>
+            <input type="radio" name="partnership_type" value="donor">
+            Donor
+          </label>
+          <label>
+            <input type="radio" name="partnership_type" value="event_partner">
+            Event Partner
+          </label>
+        </p>
+      </section>
+
+      <section class="form-section">
+        <h2>Agreement</h2>
+        <p>
+          <input type="checkbox" id="agree" name="agree" required>
+          <label for="agree">I agree to the <a href="../terms-of-use.html">Terms and Conditions</a> of partnership with WildGuard.</label>
+        </p>
+      </section>
+
+      <button type="submit" class="btn btn-primary">Submit Application</button>
+    </form>
+  </div>
+
+  <!-- JavaScript to handle form submission -->
+  <script>
+    document.getElementById('partnerForm').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+      alert('Submitted successfully!');
+      this.reset(); 
+    });
+  </script>
+</body>
+</html>
