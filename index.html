@@ -932,7 +932,7 @@
         - #PARTNER
       -->
 
-      <section class="section partner">
+      <!-- <section class="section partner">
         <div class="container">
 
           <a href="#" class="partner-logo">
@@ -975,9 +975,39 @@
           </a>
 
         </div>
+      </section> -->
+
+      <section class="section partner">
+        <div class="scroll-container">
+          <div class="container">
+            <a href="#" class="partner-logo">
+              <img src="./assets/images/partner-1.png" width="157" height="55" loading="lazy" alt="Children Fund" class="gray">
+              <img src="./assets/images/partner-1-active.png" width="157" height="55" loading="lazy" alt="Children Fund" class="color">
+            </a>
+      
+            <a href="#" class="partner-logo">
+              <img src="./assets/images/partner-2.png" width="163" height="55" loading="lazy" alt="Non Profit Agency" class="gray">
+              <img src="./assets/images/partner-2-active.png" width="163" height="55" loading="lazy" alt="Non Profit Agency" class="color">
+            </a>
+      
+            <a href="#" class="partner-logo">
+              <img src="./assets/images/partner-3.png" width="149" height="55" loading="lazy" alt="Rise Hand Help Us" class="gray">
+              <img src="./assets/images/partner-3-active.png" width="149" height="55" loading="lazy" alt="Rise Hand Help Us" class="color">
+            </a>
+      
+            <a href="#" class="partner-logo">
+              <img src="./assets/images/partner-4.png" width="169" height="58" loading="lazy" alt="Helping" class="gray">
+              <img src="./assets/images/partner-4-active.png" width="169" height="58" loading="lazy" alt="Helping" class="color">
+            </a>
+      
+            <a href="#" class="partner-logo">
+              <img src="./assets/images/partner-5.png" width="211" height="55" loading="lazy" alt="Poor Fund Organization" class="gray">
+              <img src="./assets/images/partner-5-active.png" width="211" height="55" loading="lazy" alt="Poor Fund Organization" class="color">
+            </a>
+          </div>
+        </div>
       </section>
-
-
+      
 
 
 
@@ -1245,16 +1275,7 @@
 </footer>
 <script>
 
-    const yearElements = document.querySelectorAll('.year');
-    
-    // Get the current year
-    const currentYear = new Date().getFullYear();
-    
-    // Update each element's text content
-    yearElements.forEach(function(yearElement) {
-      yearElement.textContent = currentYear;
-      yearElement.style.display = 'inline'; 
-    });
+
   
 </script>
 
@@ -1315,6 +1336,19 @@
          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
        </button>
      `;  }
+
+     //dynamic footer
+
+  const yearElements = document.querySelectorAll('.year');
+  console.log('Selected elements:', yearElements);
+
+  const currentYear = new Date().getFullYear();
+  yearElements.forEach(function(yearElement) {
+    console.log('Updating element:', yearElement);
+    yearElement.textContent = currentYear;
+    yearElement.style.display = 'inline'; 
+  });
+
  </script>
   <!-- 
     - ionicon link
