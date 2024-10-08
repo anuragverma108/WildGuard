@@ -1408,7 +1408,7 @@ body {
 .footer-bottom {
   background-color: #0f0f0f;
   text-align: center;
-  padding: 25px 0;
+  padding: 20px 0;
   font-size: 1.3rem;
   width: 100%;
   display: flex;
@@ -1438,11 +1438,19 @@ body {
 }
 .footer-box{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.footer-left {
+  position: relative;
+  right: -10px;
+}
 .footer-bottom p, .footer-bottom ul {
   margin: 0;
+}
+.footer-box .container {
+  margin: 0px;
 }
 
 .footer-bottom a {
@@ -1469,6 +1477,7 @@ body {
 .footer-right {
   text-align: right;
 }
+
 
 
 
