@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Form - Wildguard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-image: url('assets/images/bg\ form.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            padding-top: 50px;
+        }
+
+        .form-container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+        }
+
+        h2 {
+            font-family: "Oswald", sans-serif;
+            font-weight: bold;
+            color: #1f8c3a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-control,
+        .form-check-label {
+            font-size: 1rem;
+        }
+
+        #recurringOptions {
+            margin-top: -10px;
+        }
+
+        button[type="submit"] {
+            font-family: "Inter", sans-serif;
+            ;
+            background-color: #1f8c3a;
+            border-color: #1f8c3a;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #09c031;
+        }
+
+        .donation-summary {
+            display: none;
+            background-color: #0d5011;
+            border: 1px solid #c3e6cb;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .donation-summary h4 {
+            color: #1f8c3a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container form-container">
+        <h2>Support Wildguard - Donate Today!</h2>
+        <form id="donationForm">
+            <!-- Donation Type -->
+            <div class="form-group">
+                <label for="donationType">Donation Type:</label>
+                <select class="form-control" id="donationType" name="donationType" required>
+                    <option value="one-time">One-Time Donation</option>
+                    <option value="recurring">Recurring Donation</option>
+                </select>
+            </div>
+
+            <!-- Donation Amount -->
+            <div class="form-group">
+                <label for="amount">Donation Amount (USD):</label>
+                <input type="number" class="form-control" id="amount" name="amount" min="1" placeholder="Enter amount"
+                    required>
+            </div>
+
+            <!-- Recurring Options -->
+            <div class="form-group" id="recurringOptions" style="display: none;">
+                <label for="frequency">Choose Frequency:</label>
+                <select class="form-control" id="frequency" name="frequency">
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method:</label>
+                <select class="form-control" id="paymentMethod" name="paymentMethod" required>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bank-transfer">Bank Transfer</option>
+                </select>
+            </div>
+
+            <!-- Personal Info -->
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email"
+                    required>
+            </div>
+
+            <!-- Anonymous Donation -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="anonymous" name="anonymous">
+                <label class="form-check-label" for="anonymous">Donate anonymously</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary mt-3 btn-block">Submit Donation</button>
+        </form>
+
+        <!-- Donation Summary -->
+        <div class="donation-summary mt-5" id="donationSummary">
+            <h4>Thank you for your support!</h4>
+            <p><strong>Type:</strong> <span id="summaryType"></span></p>
+            <p><strong>Amount:</strong> $<span id="summaryAmount"></span></p>
+            <p id="summaryFrequencyContainer" style="display: none;"><strong>Frequency:</strong> <span
+                    id="summaryFrequency"></span></p>
+            <p><strong>Payment Method:</strong> <span id="summaryPaymentMethod"></span></p>
+            <p><strong>Name:</strong> <span id="summaryName"></span></p>
+            <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+            <p><strong>Anonymous:</strong> <span id="summaryAnonymous"></span></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS & jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $('#donationType').on('change', function () {
+            if ($(this).val() === 'recurring') {
+                $('#recurringOptions').slideDown();
+            } else {
+                $('#recurringOptions').slideUp();
+            }
+        });
+
+        // Form submission 
+        $('#donationForm').on('submit', function (event) {
+            event.preventDefault();
+
+            // Get form values
+            const donationType = $('#donationType').val();
+            const amount = $('#amount').val();
+            const frequency = $('#frequency').val();
+            const paymentMethod = $('#paymentMethod').val();
+            const name = $('#name').val();
+            const email = $('#email').val();
+            const isAnonymous = $('#anonymous').is(':checked') ? 'Yes' : 'No';
+
+            // Populate summary
+            $('#summaryType').text(donationType === 'recurring' ? 'Recurring' : 'One-Time');
+            $('#summaryAmount').text(amount);
+            $('#summaryPaymentMethod').text(paymentMethod.charAt(0).toUpperCase() + paymentMethod.slice(1));
+            $('#summaryName').text(name);
+            $('#summaryEmail').text(email);
+            $('#summaryAnonymous').text(isAnonymous);
+
+            if (donationType === 'recurring') {
+                $('#summaryFrequencyContainer').show();
+                $('#summaryFrequency').text(frequency.charAt(0).toUpperCase() + frequency.slice(1));
+            } else {
+                $('#summaryFrequencyContainer').hide();
+            }
+
+            // Display the donation summary
+            $('#donationSummary').slideDown();
+        });
+    </script>
+
+</body>
+
+</html>
