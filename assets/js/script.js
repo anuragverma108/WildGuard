@@ -104,7 +104,7 @@ function next_plan(){
 
 
 // Scroll To Top Button
-Get the button
+// Get the button
 let mybutton = document.getElementById("btn-back-to-top");
 
 // Show button on scroll
