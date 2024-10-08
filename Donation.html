@@ -10,9 +10,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.donation-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    color: #2d2525; 
+}
 .backimg {
-    background-image: url("assets/images/animals.jpg");
+    background-image: url("assets/images/hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
@@ -30,7 +35,7 @@ body {
 header {
     text-align: center;
     padding: 10px;
-    background-color:rgba(255, 253, 253, 0.6);
+    background-color:rgba(255, 253, 253, 0);
     color: rgb(0, 113, 19);
 }
 
@@ -45,7 +50,7 @@ header p {
     font-size:1.5em;
     position: sticky; /* Make it sticky */
     top: 0; /* Stick it at the top */
-    background-color: rgba(255, 253, 253, 0); /* Ensure it's visible over the background */
+    background-color: rgba(161, 37, 37, 0); /* Ensure it's visible over the background */
     padding: 10px 0;
     text-align: center;
     z-index: 1000; /* Ensure it's above other elements */
@@ -53,15 +58,17 @@ header p {
 }
 
 .donation-form {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(223, 215, 215, 0.4);
     max-width: 400px;
-    margin: 30px auto 60px auto;
-    padding: 15px;
+    margin: 30px 20px 60px 20px; /* Adds some space to the left and right */
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 113, 19, 0.3);
+    box-shadow: 0px 4px 8px rgba(152, 174, 156, 0.3);
     text-align: center;
-    border: 2px solid rgba(0, 113, 19,); 
-    
+    border: 2px solid rgba(0, 113, 19,);
+    position: relative;
+    left: 70px; /* Move the form 50px to the left */
+    top: 40px;
 }
 
 .donation-form h2 {
@@ -96,6 +103,28 @@ input, select {
     border: 1px solid #ccc;
     font-size: 1em;
 }
+.donation-form input, 
+.donation-form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    background-color: #f2f2f2; /* Light grey background for input fields */
+    color: #333; /* Dark grey text color inside input fields */
+
+}
+.donation-form h3 {
+    font-size: 1.8em; /* Adjust the font size to be more appropriate */
+    font-weight: bold; /* Make the text bold */
+    color: #311919; /* Dark grey to provide good contrast with the background */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Add some space below the text */
+    line-height: 1.4; /* Adjust line height for readability */
+    font-family: 'Arial', sans-serif;
+}
+
+
 
 button {
     padding: 10px;
@@ -157,16 +186,13 @@ footer {
 <body>
     <div class="backimg">
     <header>
-        <h1>WildGuard</h1>
-        <p>
-            Help protect wildlife. Donate today to save the animals!
-        </p>
+       
+        
     </header>
 
     <main>
         <section class="donation-form">
-            <h2>Make a Donation</h2>
-            <p>Your donation will help protect endangered species and wildlife habitats.</p>
+            <h3>Preserve Our Planet's Precious Wildlife - Donate Today</h3>
 
             <form id="donationForm">
                 <label for="donorName">Full Name</label>
@@ -202,9 +228,7 @@ footer {
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 WildGuard Organization. All rights reserved.</p>
-    </footer>
+    
 </div>
 
     <script>
