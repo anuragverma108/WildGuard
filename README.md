@@ -2,7 +2,7 @@
 
 *‘Until we consider animal life to be worthy of the consideration and reverence we bestow upon old books and pictures and historic monuments, there will always be the animal refugee living a precarious life on the edge of extermination, dependent for existence on the charity of a few human beings.’* *– Gerald Durrell*
 
-*<i>Welcome to **WildGuard**, a platform dedicated to protecting the beauty of our planet by supporting animal welfare and ecological conservation efforts 🐝. Together, we can create a better future for all living beings through community-driven action and support.</i>*
+_<i>SkillWise is an innovative online platform designed to help learners of all ages acquire new skills and knowledge. With a wide range of engaging courses and expert instructors, SkillWise provides the tools you need to succeed in today’s competitive world.</i>_
 
 <br>
 <table align="center">
