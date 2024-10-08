@@ -192,10 +192,10 @@ body {
   background-color: var(--btn-bg, var(--pistachio));
   color: var(--white);
   font-weight: var(--fw-600);
-  padding: 12px 32px;
+  padding: 10px 10px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1px;
   transition: var(--transition-2);
 }
 
