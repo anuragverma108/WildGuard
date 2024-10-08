@@ -660,8 +660,37 @@ body {
 
 .btn-link span { text-decoration: underline; }
 
+#service-card1 {
+  transition: transform 0.3s ease;
+}
 
+#service-card1:hover {
+  transform: scale(1.025);
+}
 
+#service-card2 {
+  transition: transform 0.3s ease;
+}
+
+#service-card2:hover {
+  transform: scale(1.025);
+}
+
+#service-card3 {
+  transition: transform 0.3s ease;
+}
+
+#service-card3:hover {
+  transform: scale(1.025);
+}
+
+#service-card4 {
+  transition: transform 0.3s ease;
+}
+
+#service-card4:hover {
+  transform: scale(1.025);
+}
 
 
 /*-----------------------------------*\
