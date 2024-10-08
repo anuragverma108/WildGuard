@@ -5,11 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <title>WildGuard - Give Love for Saving World Animals</title>
 
   <!-- Google Translate script -->
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
 
   <!-- 
     - favicon
@@ -107,7 +112,7 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link" data-nav-link>
+            <a href="#footer" class="navbar-link" data-nav-link>
               <span>Contact</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -120,22 +125,25 @@
 
       <div class="header-action">
 
-        <button class="search-btn" aria-label="Search">
-          <ion-icon name="search-outline"></ion-icon>
-        </button>
+        <!-- Search bar and button -->
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary search-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </div>
 
         <!-- Search input field -->
-        <div class="search-bar" id="searchBar" style="display:none;">
-          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+        <!-- <div class="search-bar" id="searchBar" style="display:none;">
+          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"> -->
 
           <!-- Match counter and navigation buttons -->
-          <div class="search-nav-buttons">
-            <span id="matchCounter" style="display: none;">0/0</span>
-            <button id="prevMatch" style="display:none;">&#x25B2;</button> <!-- Up arrow -->
-            <button id="nextMatch" style="display:none;">&#x25BC;</button> <!-- Down arrow -->
-            <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
-          </div>
-        </div>
+          <!-- <div class="search-nav-buttons">
+            <span id="matchCounter" style="display: none;">0/0</span> -->
+            <!-- <button id="prevMatch" style="display:none;">&#x25B2;</button> Up arrow -->
+            
+          <!-- </div>
+        </div> -->
 
         <button class="btn btn-primary">
           <span>Donation</span>
@@ -1099,7 +1107,7 @@
     - #FOOTER
   -->
 
-  <footer class="footer">
+  <footer id="footer" class="footer">
     <div class="container footer-container">
       <div class="footer-left">
         <h3>WildGuard</h3>
