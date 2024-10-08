@@ -5,11 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <title>WildGuard - Give Love for Saving World Animals</title>
 
   <!-- Google Translate script -->
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>  
 
   <!-- 
     - favicon
@@ -24,11 +29,16 @@
   <!-- 
     - google font link
   -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
-    rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
+    />
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </head>
 
 <body>
@@ -62,7 +72,7 @@
         <ul class="navbar-list">
 
           <li>
-            <a href="#home" class="navbar-link" data-nav-link>
+            <a href="#home" class="navbar-link active" data-nav-link>
               <span>Home</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -102,7 +112,7 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link" data-nav-link>
+            <a href="#footer" class="navbar-link" data-nav-link>
               <span>Contact</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -115,26 +125,28 @@
 
       <div class="header-action">
 
-        <button class="search-btn" aria-label="Search">
-          <ion-icon name="search-outline"></ion-icon>
-        </button>
-
-        <!-- Search input field -->
-        <div class="search-bar" id="searchBar" style="display:none;">
-          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
-
-          <!-- Match counter and navigation buttons -->
-          <div class="search-nav-buttons">
-            <span id="matchCounter" style="display: none;">0/0</span>
-            <button id="prevMatch" style="display:none;">&#x25B2;</button> <!-- Up arrow -->
-            <button id="nextMatch" style="display:none;">&#x25BC;</button> <!-- Down arrow -->
-            <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
-          </div>
+        <!-- Search bar and button -->
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary search-btn" aria-label="Search">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
         </div>
 
-        <button class="btn btn-primary">
-          <span>Donation</span>
+        <!-- Search input field -->
+        <!-- <div class="search-bar" id="searchBar" style="display:none;">
+          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"> -->
 
+          <!-- Match counter and navigation buttons -->
+          <!-- <div class="search-nav-buttons">
+            <span id="matchCounter" style="display: none;">0/0</span> -->
+            <!-- <button id="prevMatch" style="display:none;">&#x25B2;</button> Up arrow -->
+            
+          <!-- </div>
+        </div> -->
+
+        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+          <span>Donation</span>     
           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
         </button>
 
@@ -178,7 +190,7 @@
             Defending Wildlife, One Paw at a Time
           </p>
 
-          <button class="btn btn-primary">
+          <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
             <span>Donation</span>
 
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -209,8 +221,7 @@
                 <h3 class="h4 item-title">Safe Shelter</h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  Providing secure habitats ensures the survival of wildlife.
                 </p>
               </div>
             </li>
@@ -224,8 +235,7 @@
                 <h3 class="h4 item-title">Safe Water</h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  Conserving water is key to sustaining life and ecosystems.
                 </p>
               </div>
             </li>
@@ -239,8 +249,7 @@
                 <h3 class="h4 item-title">Ecology Save</h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  Protecting ecological balance preserves biodiversity for future generations.
                 </p>
               </div>
             </li>
@@ -254,8 +263,7 @@
                 <h3 class="h4 item-title">Environment</h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  A healthy environment supports both wildlife and human well-being.
                 </p>
               </div>
             </li>
@@ -312,7 +320,7 @@
               <span>Why Choose Us</span>
             </p>
 
-            <h2 class="h2 section-title">
+            <h2 class="h2 section-title" style="text-align: left;">
               Rise Your Hand to Save <strong>World Animals Life</strong>
             </h2>
 
@@ -334,7 +342,7 @@
 
             <div class="tab-content" id="tab-content">
 
-              <p class="section-text">
+              <p class="section-text" style="text-align: left;">
                 But I must explain to you how all this mistaken denouncing pleasure and praising pain was born and I
                 will give you a
                 complete account of the system expoundmaster
@@ -594,7 +602,7 @@
 
                   </div>
 
-                  <button class="btn btn-secondary">
+                  <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
                     <span>Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -653,7 +661,7 @@
 
                   </div>
 
-                  <button class="btn btn-secondary">
+                  <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
                     <span>Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -712,7 +720,7 @@
 
                   </div>
 
-                  <button class="btn btn-secondary">
+                  <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
                     <span>Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -771,7 +779,7 @@
 
                   </div>
 
-                  <button class="btn btn-secondary">
+                  <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
                     <span>Donation</span>
 
                     <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -1076,16 +1084,15 @@
               <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
                 class="img-cover">
 
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </article>
+    </main>
 
-        </ul>
-
-      </section>
-
-    </article>
-  </main>
+  
 
 
 
@@ -1095,27 +1102,64 @@
     - #FOOTER
   -->
 
-  <footer class="footer">
-    <div class="container">
-
-      <ul class="footer-list">
-
-        <li>
-          <a href="./terms-of-use.html" class="footer-link">Terms of use</a>
-        </li>
-
-        <li>
-          <a href="./privacy-policy.html" class="footer-link">Privacy & Policy</a>
-        </li>
-
-      </ul>
-
-      <p class="copyright">
-        Copyright 2024 <a href="#" class="copyright-link">Anurag Bytes</a>. All Rights Reserved.
-      </p>
-
+  <footer id="footer" class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <h3>WildGuard</h3>
+        <p>WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our mission to create a sustainable future for the planet's most vulnerable creatures.</p>
+      </div>
+      <div class="footer-middle">
+        <h4>Quick Links</h4>
+        <div class="quick-links">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#donate">Donate</a></li>
+          </ul>
+          <ul>
+            <li><a href="./Contact-Us/index.html">Contact</a></li>
+            <li><a href="./terms-of-use.html">Terms of Use</a></li>
+            <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-right">
+        <h4>Stay Connected</h4>
+        <form action="#">
+          <input type="email" class = "email-input" placeholder="Your email address">
+          <button type="submit">Subscribe</button>
+        </form>
+        <div class="footer-social-icons">
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-youtube"></ion-icon></a>
+        </div>
+      </div>
     </div>
-  </footer>
+  
+    <div class="footer-bottom">
+      <div class="footer-box">
+        <div class="container">
+          <p>Copyright 2024 WildGuard. All Rights Reserved</p>
+        </div>
+          <div class="footer-left">
+            <ul class="footer-list">
+              <li><a href="./terms-of-use.html" class="footer-link">Terms of use</a></li>
+              <li><a href="./privacy-policy.html" class="footer-link">Privacy & Policy</a></li>
+            </ul>
+          </div>
+          <!-- <div class="footer-right">
+            <!-- <p>Copyright 2024 <a href="#" class="copyright-link">Anurag Bytes</a>All Rights Reserve</p> -->
+          </div> 
+      </div>
+      
+    </div>
+      
+    </div>
+</footer>
 
 
 
@@ -1178,6 +1222,52 @@
   <!-- 
     - ionicon link
   -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.navbar-link');
+    
+      function updateActiveLink() {
+        let scrollY = window.pageYOffset;
+    
+        sections.forEach(current => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 50;
+          const sectionId = current.getAttribute('id');
+    
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href').substring(1) === sectionId) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+    
+      window.addEventListener('scroll', updateActiveLink);
+    
+      // Smooth scrolling for navbar links
+      navLinks.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 50,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    
+      // Initial call to set active link on page load
+      updateActiveLink();
+    });
+    </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
