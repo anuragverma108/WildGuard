@@ -24,7 +24,7 @@
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --jet: hsl(0, 0%, 18%);
-
+  --pistachio_100: rgb(73, 123, 7);
   /**
    * typography
    */
@@ -241,9 +241,17 @@ body {
   --btn-bg: var(--pistachio);
 }
 
-.btn-outline {
-  border: 2px solid var(--white);
-  background-color: transparent;
+.btn-outline { --btn-bg: var(--pistachio_100); }
+
+.btn-outline:is(:hover, :focus) { --btn-bg: var(--pistachio_100); }
+
+.btn-outline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--btn-bg, var(--white));
+  transform: translate(5px, 5px);
+  transition: var(--transition-2);
 }
 
 .btn-white {
@@ -286,6 +294,15 @@ body {
   background-color: transparent;
   padding-block: 18px;
   z-index: 4;
+  /* reducing height of the navbar */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 0; /* Reduce padding to decrease height */
 }
 
 .header::after {
@@ -309,6 +326,7 @@ body {
 }
 
 .header .container {
+  padding-top: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -340,6 +358,12 @@ body {
   z-index: 1;
   visibility: hidden;
   transition: 0.25s var(--cubic-in);
+  padding: 10px 0; /* reducing height of the navbar */
+}
+
+/* reducing height of the navbar */
+.logo, .navbar-list, .header-action {
+  line-height: 1; /* Ensure the content takes less vertical space */
 }
 
 .navbar.active {
@@ -560,12 +584,22 @@ body {
 .features-list {
   display: grid;
   gap: 30px;
+  /*left align */
+  list-style: none;
+  padding: 10px;
 }
 
 .features-item {
   display: flex;
   align-items: flex-start;
   gap: 25px;
+/*left align */
+  text-align: left;
+}
+
+/*left align */
+.item-text {
+  text-align: left;
 }
 
 .features-item .item-icon {
@@ -1444,12 +1478,40 @@ body {
 .footer-bottom {
   background-color: #0f0f0f;
   text-align: center;
-  padding: 25px 0; /* Reduced padding */
-  font-size: 1.3rem; /* Increased font size */
+  padding: 25px 0;
+  font-size: 1.3rem;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-bottom p {
+.progress-bar {
+  margin-top: 0px;
+  width: 100%;
+  height: 1vh;
+  margin-top: 0px;
+}
+
+.filled {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, rgb(17, 173, 2), rgb(99, 255, 109));
+}
+.footer-bottom .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%; /* Adjust the width as per your needs */
+  max-width: 1200px;
+  padding-left: 20px;
+}
+.footer-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-bottom p, .footer-bottom ul {
   margin: 0;
 }
 
@@ -1461,6 +1523,27 @@ body {
 .footer-bottom a:hover {
   color: #81a864;
 }
+
+
+.footer-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+
+
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -1986,12 +2069,14 @@ body {
     transition: var(--transition-2);
   }
 
-  .navbar-link:is(:hover, :focus) {
-    background: none;
-  }
 
-  .navbar-list:hover .navbar-link:not(:hover) {
-    color: var(--white-60);
+  .navbar-link:is(:hover, :focus) { background: none; }
+
+  .navbar-list:hover .navbar-link:not(:hover) { color: var(--white-60); }
+
+  .navbar-link.active span {
+    text-decoration: underline;
+
   }
 
   /**
@@ -2197,6 +2282,7 @@ body {
   display: none;
 }
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -2260,4 +2346,8 @@ p.faq_1 {
   font-size: 50px;
   color: #000;
   text-align: center;
+
+.email-input{
+  color: rgb(208, 208, 208);
+
 }
