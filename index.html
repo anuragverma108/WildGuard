@@ -36,6 +36,7 @@
     - google font link
   -->
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -45,6 +46,7 @@
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <link rel="stylesheet" href="./Events-Data/modal.css">
+
 </head>
 
 <body>
@@ -53,7 +55,12 @@
     - #HEADER
   -->
 
+
   <header class="header" data-header>
+
+    <div class="progress-bar">
+      <div class="filled"></div>
+    </div>
     <div class="container">
 
       <h1>
@@ -331,7 +338,7 @@
 
             <h2 class="deco-title">About Us</h2>
 
-            <img src="./assets/images/deco-img.png" width="58" height="261" alt="" class="deco-img">
+            <img src="./assets/images/deco-img.png" width="58" height="261" alt="Decorative design element for styling"  class="deco-img">
 
             <div class="banner-imgs banner-carousel">
                    <!-- Previous button -->
@@ -1193,15 +1200,15 @@
               <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
                 class="img-cover">
 
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </article>
-    </main>
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </article>
+  </main>
 
-  
+
 
 
 
@@ -1215,7 +1222,8 @@
     <div class="container footer-container">
       <div class="footer-left">
         <h3>WildGuard</h3>
-        <p>WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our mission to create a sustainable future for the planet's most vulnerable creatures.</p>
+        <p>WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our
+          mission to create a sustainable future for the planet's most vulnerable creatures.</p>
       </div>
       <div class="footer-middle">
         <h4>Quick Links</h4>
@@ -1248,27 +1256,27 @@
         </div>
       </div>
     </div>
-  
+
     <div class="footer-bottom">
       <div class="footer-box">
         <div class="container">
           <p>Copyright 2024 WildGuard. All Rights Reserved</p>
         </div>
-          <div class="footer-left">
-            <ul class="footer-list">
-              <li><a href="./terms-of-use.html" class="footer-link">Terms of use</a></li>
-              <li><a href="./privacy-policy.html" class="footer-link">Privacy & Policy</a></li>
-            </ul>
-          </div>
-          <!-- <div class="footer-right">
+        <div class="footer-left">
+          <ul class="footer-list">
+            <li><a href="./terms-of-use.html" class="footer-link">Terms of use</a></li>
+            <li><a href="./privacy-policy.html" class="footer-link">Privacy & Policy</a></li>
+          </ul>
+        </div>
+        <!-- <div class="footer-right">
             <!-- <p>Copyright 2024 <a href="#" class="copyright-link">Anurag Bytes</a>All Rights Reserve</p> -->
-          </div> 
       </div>
-      
     </div>
-      
+
     </div>
-</footer>
+
+    </div>
+  </footer>
 
 
 
@@ -1286,13 +1294,13 @@
 
   <script>
     function setActiveTab(selectedButton, contentKey) {
-   const buttons = document.querySelectorAll('.tab-btn');
-   buttons.forEach(button => button.classList.remove('active'));
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(button => button.classList.remove('active'));
 
-   selectedButton.classList.add('active');
+      selectedButton.classList.add('active');
 
-   const content = {
-     mission: `
+      const content = {
+        mission: `
        <p class="section-text">
          Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
        </p>
@@ -1303,7 +1311,7 @@
          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Charity For Medical</p></li>
        </ul>
      `,
-     vision: `
+        vision: `
        <p class="section-text">
          Our vision is to create a world where all animals are treated with compassion and respect.
        </p>
@@ -1313,7 +1321,7 @@
          <li class="tab-item"><div class="item-icon"><ion-icon name="checkmark-circle"></ion-icon></div><p class="tab-text">Advocate for Laws</p></li>
        </ul>
      `,
-     plan: `
+        plan: `
        <p class="section-text">
          Our next plan focuses on expanding our efforts to new regions and providing better resources for wildlife protection.
        </p>
@@ -1324,15 +1332,16 @@
        </ul>
      `
 
-   };
+      };
 
-   document.getElementById('tab-content').innerHTML = content[contentKey] + `
+      document.getElementById('tab-content').innerHTML = content[contentKey] + `
        <button class="btn btn-secondary">
          <span>Learn More Us</span>
          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
        </button>
-     `;  }
- </script>
+     `;
+    }
+  </script>
   <!-- 
     - ionicon link
   -->
