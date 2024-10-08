@@ -302,6 +302,7 @@ body {
   padding-top: 0px;
   display: flex;
   text-align: center;
+  justify-content: space-between;
   align-items: center;
   gap: 25px;
 }
@@ -320,7 +321,7 @@ body {
 }
 
 .navbar {
-  position: relative;
+  position: fixed;
   background-color: var(--eerie-black-1);
   top: 100%;
   left: 0;
@@ -332,7 +333,7 @@ body {
   z-index: 1;
   visibility: hidden;
   transition: 0.25s var(--cubic-in);
-  padding: 10px 0; /*reducing height of the navbar */
+  padding: 10px; /*reducing height of the navbar */
 }
 
 /* reducing height of the navbar */
