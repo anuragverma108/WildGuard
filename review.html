@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Organization Ratings</title>
+   
+    <style>
+        
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('image.avif'); /* Add background image */
+    background-size: cover; /* Cover entire page */
+    background-position: center; /* Center image */
+    background-attachment: fixed;
+    opacity: .9
+     /* Fix image position */
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff; /* White background for container */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    opacity: .9;
+}
+
+.rating {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2ecc71;
+
+}
+
+.rating-breakdown {
+    font-size: 22px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.reviews-container {
+    margin-top: 60px;
+    opacity: .9
+}
+
+.review {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.review:nth-child(even) {
+    background-color: #e5e5e5;
+}
+
+/* .organization-info {
+    margin-top: 80px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(239, 9, 9, 0.797);
+} */
+
+.rating-form {
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    opacity: .9
+}
+
+.rating-form h2 {
+    color: #333;
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 20px;
+    
+}
+
+.rating-form label {
+    font-size: 18px;
+    color: #594c4c;
+    margin-bottom: 10px;
+}
+
+.rating-form select {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.rating-form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    
+}
+
+.rating-form button {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.rating-form button:hover {
+    background-color: #34c759;
+
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .rating-container {
+        padding: 20px;
+    }
+    .rating-form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rating-container {
+        padding: 10px;
+    }
+    .rating-form {
+        padding: 20px;
+    }
+}
+
+/*  */
+    </style>
+</head>
+<body>
+  
+<div class="rating-form">
+    <h2>Rate this Organization</h2>
+    <form id="rating-form">
+        <label for="rating">Rating (1-5):</label>
+        <select id="rating" required>
+            <option value="1">1🌟</option>
+            <option value="2">2🌟🌟</option>
+            <option value="3">3🌟🌟🌟</option>
+            <option value="4">4🌟🌟🌟🌟</option>
+            <option value="5">5🌟🌟🌟🌟🌟</option>
+        </select>
+        <label for="review">Review:</label>
+        <textarea id="review" required></textarea>
+        <button id="submit-btn">Submit Review</button>
+    </form>
+</div>
+<!-- Organization Profile Page -->
+<div class="organization-profile">
+    <h2 >Organization Profile</h2>
+    <div class="rating-container">
+        <div class="rating">Average Rating: <span id="average-rating"></span></div>
+        <div class="rating-breakdown">
+            <span id="rating-distribution"></span>
+        </div>
+    </div>
+    <div class="reviews-container">
+        <h3 style="color: #2ecc71;">Reviews:</h3>
+        <div id="reviews"></div>
+    </div>
+  
+</div>
+
+
+    
+    <script>
+        
+
+let ratings = [];
+
+// Get organization profile elements
+const averageRatingElement = document.getElementById('average-rating');
+const ratingDistributionElement = document.getElementById('rating-distribution');
+const reviewsElement = document.getElementById('reviews');
+const organizationNameElement = document.getElementById('organization-name');
+const missionStatementElement = document.getElementById('mission-statement');
+const contactInfoElement = document.getElementById('contact-info');
+
+// Submit rating form event listener
+document.getElementById('submit-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Get rating and review values
+    const ratingValue = document.getElementById('rating').value;
+    const reviewValue = document.getElementById('review').value;
+    const newRating = {
+        rating: ratingValue,
+        review: reviewValue
+    };
+
+    // Add new rating to ratings array
+    ratings.push(newRating);
+
+    // Update organization profile page
+    updateOrganizationProfile();
+});
+
+// Update organization profile page function
+function updateOrganizationProfile() {
+    // Calculate average rating
+    const averageRating = calculateAverageRating();
+
+    // Update average rating element
+    averageRatingElement.textContent = `${averageRating}/5`;
+
+    // Update rating distribution element
+    ratingDistributionElement.textContent = `${getRatingDistribution()}% positive`;
+
+    reviewsElement.innerHTML = '';
+    ratings.forEach((rating, index) => {
+        const reviewHTML = `
+            <div class="review">
+                <p>Rating: ${rating.rating}/5</p>
+                <p>${rating.review}</p>
+            </div>
+        `;
+        reviewsElement.insertAdjacentHTML('beforeend', reviewHTML);
+    });
+}
+
+// Calculate average rating function
+function calculateAverageRating() {
+    let sum = 0;
+    ratings.forEach((rating) => {
+        sum += parseInt(rating.rating);
+    });
+    return (sum / ratings.length).toFixed(2);
+}
+
+// Get rating distribution function
+function getRatingDistribution() {
+    let positiveRatings = 0;
+    ratings.forEach((rating) => {
+        if (rating.rating >= 4) {
+            positiveRatings++;
+        }
+    });
+    return ((positiveRatings / ratings.length) * 100).toFixed(2);
+}
+
+
+
+
+    </script>
+</body>
+</html>
+
+
