@@ -264,6 +264,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  height: 90px;
   background-color: transparent;
   padding-block: 18px;
   z-index: 4;
@@ -276,6 +277,7 @@ body {
   width: 100%;
   z-index: 1000;
   padding: 10px 0; /* Reduce padding to decrease height */
+  
 }
 
 .header::after {
@@ -300,10 +302,12 @@ body {
 .header .container {
   padding-top: 0px;
   display: flex;
+  text-align: center;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  gap: 25px;
 }
+
 
 .logo {
   color: var(--white);
@@ -330,7 +334,7 @@ body {
   z-index: 1;
   visibility: hidden;
   transition: 0.25s var(--cubic-in);
-  padding: 10px 0; /* reducing height of the navbar */
+  padding: 10px; /*reducing height of the navbar */
 }
 
 /* reducing height of the navbar */
@@ -364,6 +368,7 @@ body {
 .navbar-list {
   max-width: 300px;
   width: 100%;
+  height: 100%;
   margin: auto;
   padding-top: 20px;
   padding-inline: 10px;
@@ -371,6 +376,9 @@ body {
   transition: 0.5s ease;
   transition-delay: 0s;
   background-color:hsla(0, 0%, 0%, 0.8) ;
+}
+.active{
+  text-decoration: dashed;
 }
 
 .navbar.active .navbar-list {
@@ -537,6 +545,12 @@ body {
   letter-spacing: -1px;
   max-width: 50ch;
   margin-block-end: 30px;
+}
+
+.button-container{
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
 }
 
 
