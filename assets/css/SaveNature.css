@@ -1,0 +1,250 @@
+
+/* Save Nature CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  .header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .section {
+    padding: 20px 0;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .section-title {
+    color: #4CAF50;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: #45a049;
+  }
+  
+  .footer {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+  
+  .footer-content h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-content p {
+    margin: 5px 0;
+  }
+  
+  .social-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-links li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background: #222;
+  }
+  /* Grid layout for the statistics */
+  .stats-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .stat-item {
+    flex: 1;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+  }
+  
+  .stat-item:hover {
+    transform: scale(1.05);
+    background-color: #e8f5e9;
+  }
+  
+  .icon {
+    margin-bottom: 15px;
+  }
+  
+  .stat-info h3 {
+    font-size: 48px;
+    color: #3ca374;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .stat-description {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Icon styling */
+  .icon img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .stats-grid {
+        flex-direction: column;
+    }
+  }
+  /* General section styling */
+  .section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 40px;
+  }
+  
+  /* Help grid layout */
+  .help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .help-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .help-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Icon styling */
+  .help-icon img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .help-info h3 {
+    font-size: 24px;
+    color: #16a085;
+    margin-bottom: 10px;
+  }
+  
+  .help-info p {
+    font-size: 16px;
+    color: #7f8c8d;
+    line-height: 1.6;
+  }
+  
+  /* Call to action */
+  .help-call-to-action {
+    text-align: center;
+    font-size: 18px;
+    color: #2c3e50;
+    margin-top: 40px;
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+  
+    .help-item {
+        padding: 15px;
+    }
+  
+    .help-info h3 {
+        font-size: 22px;
+    }
+  
+    .help-info p {
+        font-size: 14px;
+    }
+  }
+  
+  
