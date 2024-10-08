@@ -537,6 +537,16 @@ body {
   max-width: 50ch;
   margin-block-end: 30px;
 }
+.btn-container{
+  display: flex; /* Use flexbox */
+  flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Full height of the viewport */
+}
+.donation-btn{
+  text-align: center;
+}
 
 
 
