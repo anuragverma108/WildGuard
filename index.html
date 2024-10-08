@@ -72,7 +72,7 @@
         <ul class="navbar-list">
 
           <li>
-            <a href="#home" class="navbar-link" data-nav-link>
+            <a href="#home" class="navbar-link active" data-nav-link>
               <span>Home</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -221,8 +221,7 @@
                 <h3 class="h4 item-title">Safe Shelter</h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  Providing secure habitats ensures the survival of wildlife.
                 </p>
               </div>
             </li>
@@ -236,8 +235,7 @@
                 <h3 class="h4 item-title">Safe Water</h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  Conserving water is key to sustaining life and ecosystems.
                 </p>
               </div>
             </li>
@@ -251,8 +249,7 @@
                 <h3 class="h4 item-title">Ecology Save</h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  Protecting ecological balance preserves biodiversity for future generations.
                 </p>
               </div>
             </li>
@@ -266,8 +263,7 @@
                 <h3 class="h4 item-title">Environment</h3>
 
                 <p class="item-text">
-                  Sit amet consecte adiscine
-                  eiusm temor ultrices.
+                  A healthy environment supports both wildlife and human well-being.
                 </p>
               </div>
             </li>
@@ -324,7 +320,7 @@
               <span>Why Choose Us</span>
             </p>
 
-            <h2 class="h2 section-title">
+            <h2 class="h2 section-title" style="text-align: left;">
               Rise Your Hand to Save <strong>World Animals Life</strong>
             </h2>
 
@@ -346,7 +342,7 @@
 
             <div class="tab-content" id="tab-content">
 
-              <p class="section-text">
+              <p class="section-text" style="text-align: left;">
                 But I must explain to you how all this mistaken denouncing pleasure and praising pain was born and I
                 will give you a
                 complete account of the system expoundmaster
@@ -1225,6 +1221,52 @@
   <!-- 
     - ionicon link
   -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.navbar-link');
+    
+      function updateActiveLink() {
+        let scrollY = window.pageYOffset;
+    
+        sections.forEach(current => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 50;
+          const sectionId = current.getAttribute('id');
+    
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href').substring(1) === sectionId) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+    
+      window.addEventListener('scroll', updateActiveLink);
+    
+      // Smooth scrolling for navbar links
+      navLinks.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 50,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    
+      // Initial call to set active link on page load
+      updateActiveLink();
+    });
+    </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
