@@ -429,57 +429,109 @@ body {
 
 
 
+/*-----------------------------------*\
+  #SAVED DONATIONS SECTION
+\*-----------------------------------*/
+#saved-donations {
+  margin-top: 100px; 
+  margin-bottom: 80px; 
+  padding: 50px 0;
+  background-color: #675e5e; 
+  color: #ffffff; 
+  position: relative;
+  z-index: 2; 
+  min-height: 300px; 
+}
 
+#savedDonationsList {
+  max-width: 800px;
+  margin: 50px auto; 
+  padding: 30px; 
+  background-color: #ffffff; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  color: #333;
+  position: relative;
+  z-index: 3;
+}
+
+#savedDonationsList .list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px; 
+  border-bottom: 1px solid #ddd;
+  background-color: #f8f9fa; 
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+#savedDonationsList .list-group-item h5,
+#savedDonationsList .list-group-item p,
+#savedDonationsList .list-group-item small {
+  color: #333; /* Text color */
+}
+
+#savedDonationsList .list-group-item .btn-danger {
+  background-color: #ff4d4d;
+  border-color: #ff4d4d;
+}
 
 /*-----------------------------------*\
-  #FEATURES
+  #FEATURES SECTION
 \*-----------------------------------*/
-
 .features {
-  padding-block-start: 0;
+  margin-top: 100px; 
+  padding-block-start: 50px;
   background-color: var(--eerie-black-1);
+  position: relative;
+  z-index: 1; 
 }
 
 .features-list {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
   gap: 30px;
-  /*left align */
   list-style: none;
-  padding: 10px;
+  padding: 20px; 
 }
 
 .features-item {
   display: flex;
   align-items: flex-start;
   gap: 25px;
-/*left align */
   text-align: left;
-}
-
-/*left align */
-.item-text {
-  text-align: left;
+  background-color: #ffffff; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+  margin-bottom: 20px; 
+  position: relative;
+  z-index: 1;
 }
 
 .features-item .item-icon {
   color: var(--pistachio);
   font-size: 5.5rem;
   margin-block-start: 10px;
-} 
+}
 
-.features-item .item-icon ion-icon { --ionicon-stroke-width: 25px; }
-
-.features-item .item-title { margin-block-end: 10px; }
+.features-item .item-title {
+  margin-block-end: 10px;
+  font-size: var(--fs-8);
+  color: var(--eerie-black-1); 
+}
 
 .features-item .item-text {
   max-width: 25ch;
-  color: var(--white_50);
+  color: #555555; 
   font-size: var(--fs-9);
 }
 
-
-
-
+/* Adjust feature item icon stroke width */
+.features-item .item-icon ion-icon {
+  --ionicon-stroke-width: 25px;
+}
 
 /*-----------------------------------*\
   #ABOUT

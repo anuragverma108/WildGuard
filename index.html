@@ -106,7 +106,7 @@
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
-
+    
           <li>
             <a href="#event" class="navbar-link" data-nav-link>
               <span>Event</span>
@@ -199,12 +199,16 @@
 
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
           </button>
-
         </div>
       </section>
 
-
-
+        <!-- Saved Donations Section -->
+<section id="saved-donations-wrapper" class="container mt-5 mb-1" style="display: none;">
+  <h2>Saved Donations</h2>
+  <div id="savedDonationsList" class="list-group">
+      <!-- Saved donations will be dynamically injected here -->
+  </div>
+</section>
 
 
       <!-- 
@@ -1288,6 +1292,65 @@
       updateActiveLink();
     });
     </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          // Function to display saved donations on the main page
+          function displaySavedDonations() {
+              let savedDonations = JSON.parse(localStorage.getItem('savedDonations')) || [];
+              let donationsList = document.getElementById('savedDonationsList');
+              let savedDonationsWrapper = document.getElementById('saved-donations-wrapper'); // Get the wrapper section
+  
+              // Clear existing content
+              donationsList.innerHTML = '';
+  
+              // Check if there are any saved donations
+              if (savedDonations.length === 0) {
+                  // Hide the section if there are no saved donations
+                  savedDonationsWrapper.style.display = 'none';
+                  donationsList.innerHTML = '<p>No saved donations found.</p>';
+              } else {
+                  // Show the section if there are saved donations
+                  savedDonationsWrapper.style.display = 'block';
+  
+                  // Iterate through saved donations and display each one
+                  savedDonations.forEach((donation, index) => {
+                      let donationItem = document.createElement('div');
+                      donationItem.classList.add('list-group-item');
+  
+                      // Populate the donation item with details
+                      donationItem.innerHTML = `
+                          <h5 class="mb-1">Donation Type: ${donation.donationType}</h5>
+                          <p class="mb-1">Amount: ${donation.amount} USD</p>
+                          <p class="mb-1">Payment Method: ${donation.paymentMethod}</p>
+                          <p class="mb-1">Full Name: ${donation.name}</p>
+                          <p class="mb-1">Email: ${donation.email}</p>
+                          <p class="mb-1">Anonymous: ${donation.anonymous}</p>
+                          <small class="text-muted">Saved on: ${donation.date}</small>
+                          <button class="btn btn-danger btn-sm float-right" onclick="removeDonation(${index})">Remove</button>
+                      `;
+  
+                      // Append each donation item to the list
+                      donationsList.appendChild(donationItem);
+                  });
+              }
+          }
+  
+          // Function to remove a saved donation
+          window.removeDonation = function (index) {
+              let savedDonations = JSON.parse(localStorage.getItem('savedDonations')) || [];
+              savedDonations.splice(index, 1); // Remove the donation at the specified index
+              localStorage.setItem('savedDonations', JSON.stringify(savedDonations)); // Save updated array back to local storage
+              displaySavedDonations(); // Update the displayed list
+          };
+  
+          // Call display function to show saved donations on the main page
+          displaySavedDonations();
+      });
+  </script>
+  
+
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
