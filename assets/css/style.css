@@ -292,6 +292,7 @@ body {
 .header.active {
   background-color: var(--eerie-black-1);
   box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.8);
+  padding: 0px;
 }
 
 .header.active::after { display: none; }
@@ -1419,7 +1420,7 @@ body {
 .progress-bar {
   margin-top: 0px;
   width: 100%;
-  height: 1vh;
+  height: 0.2vh;
   margin-top: 0px;
 }
 
