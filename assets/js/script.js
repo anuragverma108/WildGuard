@@ -70,11 +70,60 @@ for (let i = 0; i < navElemArr.length; i++) {
 
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
 
-for (let i = 0; i < navbarLinks.length; i++) {
-  navbarLinks[i].addEventListener("click", function () {
-    navbar.classList.remove("active");
-  });
+// Function to remove 'active' class from all navbar links
+function removeActiveClass() {
+  navbarLinks.forEach(link => link.classList.remove("active"));
 }
+
+// Function to handle link clicks
+function activateNavLink(event) {
+  event.preventDefault(); // Prevent default anchor click behavior
+
+  // Remove 'active' class from all links
+  removeActiveClass();
+
+  // Add 'active' class to the clicked link
+  event.currentTarget.classList.add("active");
+
+  // Optionally close the navbar (for mobile views)
+  const navbar = document.querySelector(".navbar");
+  navbar.classList.remove("active");
+
+  // Scroll smoothly to the target section
+  const targetId = event.currentTarget.getAttribute("href").substring(1);
+  const targetElement = document.getElementById(targetId);
+  
+  if (targetElement) {
+    // Scroll to the target element
+    targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
+// Add click event listener to each navbar link
+navbarLinks.forEach(link => {
+  link.addEventListener("click", activateNavLink);
+});
+
+// Optional: Highlight active link on scroll
+window.addEventListener('scroll', () => {
+  let foundActive = false;
+
+  navbarLinks.forEach(link => {
+    const targetId = link.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const bounding = targetElement.getBoundingClientRect();
+      // Check if the target element is in the viewport
+      if (bounding.top >= 0 && bounding.top < window.innerHeight / 2 && !foundActive) {
+        removeActiveClass();
+        link.classList.add("active");
+        foundActive = true; // Ensure only one active class is added
+      }
+    }
+  });
+});
+
 
 
 
