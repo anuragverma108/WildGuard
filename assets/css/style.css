@@ -1109,12 +1109,28 @@ body {
 .footer-bottom {
   background-color: #0f0f0f;
   text-align: center;
-  padding: 25px 0; /* Reduced padding */
-  font-size: 1.3rem; /* Increased font size */
+  padding: 25px 0;
+  font-size: 1.3rem;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer-bottom p {
+.footer-bottom .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%; /* Adjust the width as per your needs */
+  max-width: 1200px;
+  padding-left: 20px;
+}
+.footer-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-bottom p, .footer-bottom ul {
   margin: 0;
 }
 
@@ -1126,6 +1142,23 @@ body {
 .footer-bottom a:hover {
   color: #81a864;
 }
+
+.footer-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-right {
+  text-align: right;
+}
+
 
 
 
