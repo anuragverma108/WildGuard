@@ -598,6 +598,11 @@ body {
   --ff: var(--ff-inter);
   --fs: var(--fs-7);
 }
+.section-subtitle {
+  margin-left: 35%;
+  font-size: 32px;
+  color: white;
+}
 
 .hero-title {
   font-size: var(--fs-2);
