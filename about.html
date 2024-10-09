@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>About Us</title>
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quos totam reprehenderit deserunt, temporibus velit est nemo voluptatum iusto iste eaque, maiores error facere magni alias pariatur cupiditate perspiciatis odit.</p>
+    <style>
+        :root {
+            --pistachio: hsl(86, 45%, 54%);
+            --baby-powder: hsl(86, 41%, 97%);
+          }
+        body {
+            background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+            margin: auto;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+        .content {
+            background-color: rgba(255, 255, 255, 0.75);
+            padding: 20px;
+            margin: 50px auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color: var(--pistachio);
+        }
+        p {
+            text-align: justify;
+        }
+    </style>
+    <div class="content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <a href="javascript:history.back()" class="btn btn-outline-success">← Back</a>
+            <h1 class="mb-0">About Us</h1>
+        </div>
+        <p>WildGuard is a company that specializes in providing security services for wildlife reserves and national parks. Our team of highly trained professionals are dedicated to protecting the animals and the environment from poachers and other threats. We work closely with local authorities and conservation organizations to ensure the safety of the wildlife and the people who visit these beautiful places.</p>
+        <p>Our mission is to preserve and protect the natural world for future generations to enjoy. We believe that by working together, we can make a difference in the fight against illegal hunting and deforestation. Join us in our mission to protect the planet and all of its inhabitants.</p>
+        <p>Contact us today to learn more about our services and how we can help you protect your wildlife reserve or national park.</p>
+        <p>Thank you for choosing WildGuard!</p>
+
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <a href="contact.html" class="btn btn-outline-success">Contact Us</a>
+        </div>
+    </div>
+    
+    
 </body>
 </html>
