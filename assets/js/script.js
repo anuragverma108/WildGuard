@@ -21,6 +21,12 @@ document.getElementById('submitPost').addEventListener('click', function() {
 // Login
 const popup = document.getElementById('popup');
 
+// user popup btn
+const popbtn = document.getElementById('userbtn')
+userbtn.addEventListener('click', ()=>{
+  popup.style.display = 'flex';
+})
+
 // Get the icon element to open the popup
 const openPopup = document.getElementById('openPopup');
 
