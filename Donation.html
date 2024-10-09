@@ -10,9 +10,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.donation-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    color: #2d2525; 
+}
 .backimg {
-    background-image: url("assets/images/animals.jpg");
+    background-image: url("assets/images/hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
@@ -24,31 +29,46 @@ body {
     background: #f0f8ff;
     color:black;
     line-height: 1.6;
+    
 }
 
 header {
     text-align: center;
-    padding: 20px;
-    background-color:rgba(255, 253, 253, 0.721);
+    padding: 10px;
+    background-color:rgba(255, 253, 253, 0);
     color: rgb(0, 113, 19);
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 2.2em;
 }
-
-header p {
+.fixed-header {
     font-size: 1.2em;
+           
+        }
+header p {
+    font-size:1.5em;
+    position: sticky; /* Make it sticky */
+    top: 0; /* Stick it at the top */
+    background-color: rgba(161, 37, 37, 0); /* Ensure it's visible over the background */
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000; /* Ensure it's above other elements */
+
 }
 
 .donation-form {
-    background: white;
+    background: rgba(223, 215, 215, 0.4);
     max-width: 400px;
-    margin: 30px auto;
+    margin: 30px 20px 60px 20px; /* Adds some space to the left and right */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgb(0, 113, 19);
+    box-shadow: 0px 4px 8px rgba(152, 174, 156, 0.3);
     text-align: center;
+    border: 2px solid rgba(0, 113, 19,);
+    position: relative;
+    left: 70px; /* Move the form 50px to the left */
+    top: 30px;
 }
 
 .donation-form h2 {
@@ -59,6 +79,9 @@ header p {
 
 .donation-form p {
     margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold; 
+    font-size: 1.1em; 
 }
 
 form {
@@ -69,14 +92,43 @@ form {
 label {
     margin-bottom: 5px;
     font-weight: bold;
+    text-align: left;
+    color: rgb(0, 113, 19);
 }
 
-input, select {
+input, select,textarea{
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    font-size: 1em;
 }
+.donation-form textarea {
+    background-color: #f2f2f2; /* Light grey background for textarea */
+    color: #333; /* Dark grey text color inside textarea */
+}
+.donation-form input, 
+.donation-form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    background-color: #f2f2f2; /* Light grey background for input fields */
+    color: #333; /* Dark grey text color inside input fields */
+
+}
+.donation-form h3 {
+    font-size: 1.8em; /* Adjust the font size to be more appropriate */
+    font-weight: bold; /* Make the text bold */
+    color: #311919; /* Dark grey to provide good contrast with the background */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Add some space below the text */
+    line-height: 1.4; /* Adjust line height for readability */
+    font-family: 'Arial', sans-serif;
+}
+
+
 
 button {
     padding: 10px;
@@ -86,6 +138,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease;
+    font-size: 1em;
 }
 
 button:hover {
@@ -106,20 +159,44 @@ footer {
     width: 100%;
     bottom: 0;
 }
+.payment-logos {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; 
+}
+
+.payment-logos img {
+    width: 40px; 
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.payment-logos img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 500px) {
+    .payment-logos img {
+        width: 30px;
+    }
+}
+
 
     </style>
 </head>
 <body>
     <div class="backimg">
     <header>
-        <h1>WildGuard</h1>
-        <p>Help protect wildlife. Donate today to save the animals!</p>
+       
+        
     </header>
 
     <main>
         <section class="donation-form">
-            <h2>Make a Donation</h2>
-            <p>Your donation will help protect endangered species and wildlife habitats.</p>
+            <h4>Preserve Our Planet's Precious Wildlife - Donate Today</h4>
 
             <form id="donationForm">
                 <label for="donorName">Full Name</label>
@@ -138,7 +215,8 @@ footer {
                 </select>
 
                 <input type="number" id="customAmount" placeholder="Enter custom amount" style="display: none;">
-
+                <label for="expectations">How would you like your donation to make an impact?</label>
+                <textarea id="expectations" placeholder="Your expectations..." rows="4"></textarea>
                 <button type="submit">Donate Now</button>
             </form>
 
@@ -146,12 +224,16 @@ footer {
                 <h3>Thank you for your generosity!</h3>
                 <p>Your donation will make a huge difference in protecting animals.</p>
             </div>
+            <div class="payment-logos">
+                <img src="assets/images/visa2.png" alt="visa">
+                <img src="assets/images/upi.png" alt="upi">
+                <img src="assets/images/Mastercard2.png" alt="master">
+                <img src="assets/images/Rupay-Logo.png" alt="Rupay">
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 WildGuard Organization. All rights reserved.</p>
-    </footer>
+    
 </div>
 
     <script>
@@ -160,6 +242,8 @@ footer {
     const amountSelect = document.getElementById('amount');
     const customAmountInput = document.getElementById('customAmount');
     const thankYouMessage = document.getElementById('thankYouMessage');
+    const expectationsInput = document.getElementById('expectations');
+
 
     // Show custom amount input if 'Custom' is selected
     amountSelect.addEventListener('change', function () {
@@ -177,7 +261,9 @@ footer {
         const name = document.getElementById('donorName').value;
         const email = document.getElementById('email').value;
         let amount = amountSelect.value === 'custom' ? customAmountInput.value : amountSelect.value;
+        const expectations = expectationsInput.value.trim();
 
+        console.log("Donor Expectations:", expectations);
         if (amount && name && email) {
             // Display thank you message
             donationForm.style.display = 'none';
