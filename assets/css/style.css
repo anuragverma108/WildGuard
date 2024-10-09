@@ -344,6 +344,7 @@ body {
 }
 
 .header {
+  font-family: oswald;
   position: fixed;
   top: 0;
   left: 0;
@@ -509,8 +510,8 @@ body {
   border-radius: 10px;
   padding: 30px;
   overflow: hidden;
-  width: 60vw;
-  height: 50vh;
+  width: 50vw;
+  height: 38vh;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
