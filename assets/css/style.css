@@ -1023,7 +1023,12 @@ body {
   color: var(--sonic-silver);
   font-weight: var(--fw-500);
 }
+.donate-sec-btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+}
 .card-wrapper-text data { font-weight: var(--fw-600); }
 
 .card-wrapper-text .green { color: var(--pistachio); }
