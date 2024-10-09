@@ -505,12 +505,12 @@ body {
 }
 
 .popup-content {
-  background-color: white;
+  background-color:#cefad0;
   border-radius: 10px;
   padding: 30px;
   overflow: hidden;
   width: 60vw;
-  height: 50vh;
+  height: 55vh;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
@@ -569,10 +569,16 @@ body {
   overflow: hidden;
   width: 50%;
 }
+
 .form-img img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 90%; 
+  height: auto; 
+  object-fit: cover; 
+  margin-left: 2rem;
+  position: relative; 
+  border-radius: 50%; 
+  border: 5px solid #28a745; 
+  box-shadow: 0 2px 15px rgba(40, 167, 69, 0.5); 
 }
 .form-fields {
   width: 50%;
@@ -603,16 +609,31 @@ body {
 }
 
 .close-button {
-  cursor: pointer;
+  display: inline-block;
   font-size: 24px;
-  color: #fff;
-  position: absolute;
-  right: 10px;
-  top: 5rem;
-  background-color: #27ae60;
-  padding: 0.6rem 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #d9534f;
   border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: absolute;
   top: 10px;
+  right: 10px;
+}
+
+.close-button:hover {
+  background-color: #c9302c;
+  transform: scale(1.1);
+}
+
+.close-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.5);
 }
 
 .user-icon {
@@ -2400,4 +2421,49 @@ body {
 }
 .email-input {
   color: rgb(208, 208, 208);
+}
+
+/* General reset for inputs */
+input {
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 10px 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+input[type="email"],
+input[type="password"],
+input[type="text"]
+ {
+  width: 100%; 
+  background-color: #f0f0f0; 
+  border: 1px solid #ccc;
+}
+
+/* Focus effect */
+input[type="email"]:focus,
+input[type="text"]:focus
+input[type="password"]:focus {
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+input::placeholder {
+  color: #999; 
+  opacity: 1; 
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  input {
+      font-size: 14px; 
+  }
+}
+
+#align-email{
+  margin-right: 10px;
 }
