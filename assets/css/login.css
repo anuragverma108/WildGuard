@@ -1,10 +1,14 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
 }
 
 body {
     background-image: url('../images/hero.jpg'); 
+    
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -13,6 +17,52 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.navbar {
+    font-family: oswald;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255,255,0.07);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+}
+
+.navbar .logo {
+    font-size:2rem;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: oswald;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+    font-size: 1.3rem;
+    color:white;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
 }
 
 .login-page {

@@ -8,8 +8,18 @@
     <title>Register</title>
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+          <a href="./index.html" class="logo">WILDGUARD</a>
+          <ul>
+            <li><a href="./index.html">Home</a><i class="fa-solid fa-house"></i></li>
+    
+          </ul>
+      </nav>
+      </header>
+    
 
-    <div class="login-page">
+    <div class="login-page" style="margin-left: 48rem; backdrop-filter: blur(8); margin-top: 3rem;">
         <div class="content">
             <h2>Create an account</h2>
 
@@ -17,7 +27,7 @@
 
                 <!-- Email Field -->
                 <div class="entry">
-                    <label for="email"><h3>Email</h3></label>
+                    <label for="email"><h3 style="color: white;">Email</h3></label>
                     <div class="input-wrapper">
                         <input type="email" id="email" placeholder="example@gmail.com" required>
                         <div class="fa"><i class="fas fa-user"></i></div>
@@ -26,7 +36,7 @@
 
                 <!-- Password Field with Toggle Visibility -->
                 <div class="entry">
-                    <label for="password"><h3>Password</h3></label>
+                    <label for="password"><h3 style="color: white;">Password</h3></label>
                     <div class="input-wrapper">
                         <input type="password" id="password" placeholder="Enter your password" required>
                         <div class="fa toggle-password" onclick="togglePasswordVisibility('password')">
@@ -37,7 +47,7 @@
 
                 <!-- Repeat Password Field with Toggle Visibility -->
                 <div class="entry">
-                    <label for="repeat-password"><h3>Re-enter Password</h3></label>
+                    <label for="repeat-password"><h3 style="color: white;">Re-enter Password</h3></label>
                     <div class="input-wrapper">
                         <input type="password" id="repeat-password" placeholder="Re-enter your password" required>
                         <div class="fa toggle-password" onclick="togglePasswordVisibility('repeat-password')">
@@ -48,20 +58,20 @@
 
                 <!-- Remember Me Checkbox & Forgot Password Link -->
                 <div class="extras">
-                    <label class="remember-me">
-                        <input type="checkbox"> Remember Me
+                    <label class="remember-me" style="color: white;">
+                        <input type="checkbox" > Remember Me
                     </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <a href="#" class="forgot-password" style="color: white;">Forgot Password?</a>
                 </div>
 
                 <!-- Sign up Button -->
                 <div class="entry">
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" style="color: white;">Sign Up</button>
                 </div>
 
                 <!-- Social Media Buttons -->
                 <div class="social-login">
-                    <p>Or Sign up with</p>
+                    <p style="color: white;">Or Sign up with</p>
                     <div class="social-buttons">
                         <button type="button" class="social-btn google-btn">
                             <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Continue with Google
@@ -73,7 +83,7 @@
                 </div>
 
                 <!-- Login Link -->
-                <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
+                <p class="signup-link" style="color: white;">Already have an account? <a href="login.html">Login</a></p>
 
             </form>
         </div>
