@@ -2108,7 +2108,7 @@ body {
   z-index: 10;
   bottom: 20px;
   right: 20px;
-  background-color: #27ae60; /* Nature-inspired green */
+  background-color: var(--pistachio); /* Nature-inspired green */
   color: white;
   border: none;
   border-radius: 50%;
