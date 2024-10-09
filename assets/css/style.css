@@ -1024,9 +1024,8 @@ body {
   font-weight: var(--fw-500);
 }
 .card-content:hover{
-  height: 310px;
+  height: 305px;
   cursor: pointer;
-
 }
 .card-wrapper-text data { font-weight: var(--fw-600); }
 
