@@ -1,3 +1,21 @@
+// Function to submit a post
+document.getElementById('submitPost').addEventListener('click', function() {
+  const postContent = document.getElementById('postContent').value;
+
+  if (postContent.trim() === "") {
+      alert("Please enter a message.");
+      return;
+  }
+
+  const postsContainer = document.getElementById('postsContainer');
+  const postDiv = document.createElement('div');
+  postDiv.classList.add('post');
+  postDiv.textContent = postContent;
+
+  postsContainer.appendChild(postDiv);
+  document.getElementById('postContent').value = ''; // Clear the textarea
+});
+
 'use strict';
 
 // Login
