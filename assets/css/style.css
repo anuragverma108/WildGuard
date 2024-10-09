@@ -384,6 +384,8 @@ body {
   transform: translateY(-100%);
   visibility: visible;
   transition: 0.5s var(--cubic-out);
+  height: 50vh;
+  top: 29rem;
 }
 
 .nav-close-btn {
