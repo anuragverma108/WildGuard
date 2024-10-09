@@ -137,8 +137,14 @@
 
           <li>
             <a class="navbar-link login-nav" id="openPopup" data-nav-link>
-              <span>Login/Register</span>
-
+              <span>Login</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+          
+          <li>
+            <a class="navbar-link login-nav" id="openPopup" data-nav-link>
+              <span>Register</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
@@ -181,6 +187,39 @@
         <!-- Popup -->
         <div id="popup" class="popup">
           <div class="popup-content">
+              <span class="close-button" id="closePopup">&times;</span>
+              <div class="tabs">
+                  <button class="tab-button active" id="loginTab">Login</button>
+                  <button class="tab-button" id="signupTab">Signup</button>
+              </div>
+              <div class="form-container">
+                  <form id="loginForm">
+                    <div class="form_wrapper">
+                    <div class="form-fields">
+                      <input type="email" placeholder="Email" required />
+                      <input type="password" placeholder="Password" required />
+                      <button type="submit">Login</button>
+                    </div>
+                    <div class="form-img">
+                      <img src="./assets/images/animals.jpg" alt="" srcset="">
+                    </div>
+                   </div>
+                  </form>
+                  <form id="signupForm" style="display: none;">
+                    <div class="form_wrapper">
+                      <div class="form-fields">
+                        <input type="text" placeholder="Username" required />
+                      <input type="email" placeholder="Email" required />
+                      <input type="password" placeholder="Password" required />
+                      <button type="submit">Signup</button>
+                      </div>
+                      <div class="form-img">
+                        <img src="./assets/images/cta-banner.jpg" alt="" srcset="">
+                      </div>
+                      </div>
+
+                  </form>
+              </div>
             <span class="close-button" id="closePopup">&times;</span>
             <div class="tabs">
                 <button class="tab-button active" id="loginTab">Login</button>
@@ -866,11 +905,20 @@
 
         </div>
       </section>
-
-
-
-
-
+      <div class="container_1">
+        <h1>Wildlife Conservation Forum</h1>
+        <div class="post-form">
+            <h2>Share Your Thoughts</h2>
+            <textarea id="postContent" placeholder="Write your message..." required></textarea>
+            <button id="submitPost">Submit</button>
+        </div>
+        <div class="posts">
+            <h2>Discussions</h2>
+            <div id="postsContainer"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+      
       <!-- 
         - #TESTIMONIALS
       -->
@@ -975,6 +1023,17 @@
 
 
 
+      <!-- Trigger Button for Modal -->
+<button id="openModalBtn" class="btn" style="display: block; margin: 0 auto;">Learn More</button>
+
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Event Details</h2>
+    <p>More information about the event goes here.</p>
+  </div>
+</div>
       <!-- 
         - #EVENT
       -->
@@ -1140,7 +1199,7 @@
             <a href="#" class="social-link">LinkedIn</a>
           </div>
           <div class="modal-footer">
-            <button onclick="modal.style.display='none'" class="btn btn-primary">Close</button>
+            <button onclick="document.getElementById('eventModal').style.display='none'" class="btn btn-primary">Close</button>
           </div>
         </div>
       </div>

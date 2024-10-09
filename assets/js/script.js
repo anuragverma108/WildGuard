@@ -1,3 +1,21 @@
+// Function to submit a post
+document.getElementById('submitPost').addEventListener('click', function() {
+  const postContent = document.getElementById('postContent').value;
+
+  if (postContent.trim() === "") {
+      alert("Please enter a message.");
+      return;
+  }
+
+  const postsContainer = document.getElementById('postsContainer');
+  const postDiv = document.createElement('div');
+  postDiv.classList.add('post');
+  postDiv.textContent = postContent;
+
+  postsContainer.appendChild(postDiv);
+  document.getElementById('postContent').value = ''; // Clear the textarea
+});
+
 'use strict';
 
 // Login
@@ -123,11 +141,31 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+/**
+ * modal functionality
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('myModal');
+  const openModalBtn = document.getElementById('openModalBtn');
+  const closeBtn = document.querySelector('.close');
 
+  // Open modal
+  openModalBtn.onclick = function() {
+    modal.style.display = 'block';
+  }
 
+  // Close modal
+  closeBtn.onclick = function() {
+    modal.style.display = 'none';
+  }
 
-
-
+  // Close modal when clicking outside
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
+});
 
 /**
  * header active when window scrolled down
@@ -168,8 +206,8 @@ sectionText3.style.display = "none";
 
 function our_mission(){
   ourMission.classList.add("active");
-  ourMission.classList.remove("active");
-  ourMission.classList.remove("active");
+  ourVision.classList.remove("active");
+  nextPlan.classList.remove("active");
 
   sectionText1.style.display = "block";
   sectionText2.style.display = "none";
@@ -178,8 +216,8 @@ function our_mission(){
 
 function our_vision(){
   ourVision.classList.add("active");
-  ourVision.classList.remove("active");
-  ourVision.classList.remove("active");
+  ourMission.classList.remove("active");
+  nextPlan.classList.remove("active");
 
   sectionText1.style.display = "none";
   sectionText2.style.display = "block";
@@ -188,8 +226,8 @@ function our_vision(){
 
 function next_plan(){
   nextPlan.classList.add("active");
-  nextPlan.classList.remove("active");
-  nextPlan.classList.remove("active");
+  ourMission.classList.remove("active");
+  ourVision.classList.remove("active");
 
   sectionText1.style.display = "none";
   sectionText2.style.display = "none";
