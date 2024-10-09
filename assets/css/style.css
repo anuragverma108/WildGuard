@@ -147,8 +147,20 @@ body {
 ::-webkit-scrollbar-thumb { background-color: var(--pistachio); }
 
 
-
-
+ .testi-card {
+  margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    gap: 30px;
+  }
+.testi-text, .testi-name, .testi-title{
+  text-align: center;
+}
+ .testi .section-title{
+  text-align: center;
+ }
 
 /*-----------------------------------*\
   #REUSED STYLE
@@ -1094,7 +1106,9 @@ body {
 .partner-logo:is(:hover, :focus) .color,
 .partner-logo .gray { display: block; }
 
-
+.modal-content{
+width: 80%;
+}
 
 
 
@@ -1706,7 +1720,9 @@ body {
 
   .testi-card {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
     gap: 30px;
   }
 
