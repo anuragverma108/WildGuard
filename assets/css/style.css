@@ -2401,3 +2401,40 @@ body {
 .email-input {
   color: rgb(208, 208, 208);
 }
+
+.faq {
+  margin-top: 10px; /* Reduced top spacing */
+}
+
+.faq-list {
+  margin-top: 10px; /* Reduced space above FAQ items */
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  background: #e7f7e7; /* Lighter green color */
+  border: none;
+  padding: 12px 20px; /* Slightly increased padding for a better look */
+  width: calc(100% + 20px); /* Increased width for squares */
+  margin-left: -10px; /* Adjust for increased width */
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background 0.3s; /* Transition for hover effect */
+}
+
+.faq-question:hover {
+  background: #78b478; /* Slightly darker green on hover */
+}
+
+.faq-answer {
+  padding: 10px 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}

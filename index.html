@@ -1179,6 +1179,58 @@
         </div>
       </div>
       
+    <!-- 
+  - #FAQ
+-->
+
+<section class="section faq" id="faq">
+  <div class="container">
+
+    <p class="section-subtitle">
+      <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+      <span>Frequently Asked Questions</span>
+      <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
+    </p>
+
+    <h2 class="h2 section-title">Your Questions Answered</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleAnswer(1)">What is the purpose of this event?</button>
+        <div class="faq-answer" id="faq-answer-1" style="display: none;">
+          <p>This event aims to raise funds and awareness for animal welfare and conservation efforts.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleAnswer(2)">How can I participate in the events?</button>
+        <div class="faq-answer" id="faq-answer-2" style="display: none;">
+          <p>You can participate by signing up on our website and joining us at the scheduled events!</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleAnswer(3)">Is there a registration fee?</button>
+        <div class="faq-answer" id="faq-answer-3" style="display: none;">
+          <p>Most of our events are free to join, but some may have a registration fee to cover costs.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JavaScript to handle FAQ dropdown functionality -->
+<script>
+  function toggleAnswer(index) {
+    const answer = document.getElementById(`faq-answer-${index}`);
+    if (answer.style.display === "none") {
+      answer.style.display = "block";
+    } else {
+      answer.style.display = "none";
+    }
+  }
+</script>
 
 
       <!-- 
