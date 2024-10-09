@@ -520,7 +520,7 @@ left: 45%;
 }
 
 .tab-btn:hover{
-  background-color: var(--sonic-silver);
+  background-color: var(--pistachio);
   color: var(--baby-powder);
   transition: background-color 0.2s var(--cubic-in), color 0.2s var(--cubic-in);
 }
