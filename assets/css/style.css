@@ -1951,6 +1951,30 @@ body {
     --ionicon-stroke-width: 50px;
   }
 
+
+
+  /* search bar fixed here   */
+
+  /* search box  */
+
+  .search-box {
+    height:50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    
+  }
+  .search-box button{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    width: 40px;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+  }
+
+
   /**
    * HERO
    */

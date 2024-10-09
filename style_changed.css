@@ -1747,7 +1747,7 @@ left: 45%;
   border: 1px solid var(--pistachio); /* Border to match the pistachio theme */
   border-radius: 5px;
   padding: 5px;
-  display: flex;
+  display: flex;  
   align-items: center;
   gap: 5px; /* Space between input and buttons */
   z-index: 10;
