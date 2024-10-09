@@ -68,7 +68,7 @@ header p {
     border: 2px solid rgba(0, 113, 19,);
     position: relative;
     left: 70px; /* Move the form 50px to the left */
-    top: 40px;
+    top: 30px;
 }
 
 .donation-form h2 {
@@ -96,12 +96,16 @@ label {
     color: rgb(0, 113, 19);
 }
 
-input, select {
+input, select,textarea{
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 4px;
     border: 1px solid #ccc;
     font-size: 1em;
+}
+.donation-form textarea {
+    background-color: #f2f2f2; /* Light grey background for textarea */
+    color: #333; /* Dark grey text color inside textarea */
 }
 .donation-form input, 
 .donation-form select {
@@ -192,7 +196,7 @@ footer {
 
     <main>
         <section class="donation-form">
-            <h3>Preserve Our Planet's Precious Wildlife - Donate Today</h3>
+            <h4>Preserve Our Planet's Precious Wildlife - Donate Today</h4>
 
             <form id="donationForm">
                 <label for="donorName">Full Name</label>
@@ -211,7 +215,8 @@ footer {
                 </select>
 
                 <input type="number" id="customAmount" placeholder="Enter custom amount" style="display: none;">
-
+                <label for="expectations">How would you like your donation to make an impact?</label>
+                <textarea id="expectations" placeholder="Your expectations..." rows="4"></textarea>
                 <button type="submit">Donate Now</button>
             </form>
 
@@ -237,6 +242,8 @@ footer {
     const amountSelect = document.getElementById('amount');
     const customAmountInput = document.getElementById('customAmount');
     const thankYouMessage = document.getElementById('thankYouMessage');
+    const expectationsInput = document.getElementById('expectations');
+
 
     // Show custom amount input if 'Custom' is selected
     amountSelect.addEventListener('change', function () {
@@ -254,7 +261,9 @@ footer {
         const name = document.getElementById('donorName').value;
         const email = document.getElementById('email').value;
         let amount = amountSelect.value === 'custom' ? customAmountInput.value : amountSelect.value;
+        const expectations = expectationsInput.value.trim();
 
+        console.log("Donor Expectations:", expectations);
         if (amount && name && email) {
             // Display thank you message
             donationForm.style.display = 'none';
