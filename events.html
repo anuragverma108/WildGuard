@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #006400; /* Dark green representing nature */
+            padding: 15px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .donate-btn {
+            background-color: #FFD700; /* Golden color for the Donate button */
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: black;
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .burger .line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: #006400;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                display: none;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+
+            .show {
+                display: flex;
+            }
+        }
+
+        .events {
+            display: flex;
+            justify-content: center; /* Center the cards horizontally */
+            gap: 20px; /* Space between cards */
+            padding: 20px;
+            flex-wrap: wrap; /* Allow wrapping of cards onto new lines */
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px); /* Responsive width: 3 cards per row */
+            max-width: 300px; /* Limit the maximum width */
+            padding: 20px;
+            text-align: center;
+            margin: 10px; /* Margin for spacing */
+        }
+
+        .event-card img {
+            width: 100%; /* Make the image responsive */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Wildlife NGO</a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#volunteer">Volunteer</a></li>
+                <li><a href="donate.html" class="donate-btn">Donate</a></li>
+            </ul>
+            <div class="burger" id="burger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="events">
+        <div class="event-card" data-aos="fade-up">
+            <h2>Pet Adoption Drive</h2>
+            <p>Date: March 28, 2024</p>
+            <p>Timings: 10AM - 5:30PM</p>
+            <p>Location: Central Park, New York</p>
+            <img src="adoption-event.jpg" alt="Pet Adoption Drive" height="300px">
+            <p>Join us for a day of fun and animal adoptions! Adopt poor animals instead of buying them. Many of your pets are waiting, please help us.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="event-card" data-aos="fade-up">
+            <h2>Animal Shelter Fundraiser</h2>
+            <p>Date: February 5, 2024</p>
+            <p>Location: Riverside Park, Chicago</p>
+            <p>Timings: 10AM - 11:30AM</p>
+            <img src="shelter-event.jpeg" alt="Animal Shelter Fundraiser" height="250px">
+            <p>Help us raise funds for local animal shelters. This hot summer has been a nightmare for roadside animals, to help them we are raising shelter funds.</p>
+            <button>Learn More</button>
+        </div>
+
+        <div class="event-card" data-aos="fade-up">
+            <h2>Wildlife Conservation Walk</h2>
+            <p>Date: January 5, 2024</p>
+            <p>Timings: 10AM - 12:30PM</p>
+            <p>Location: Manhattan to New Jersey</p>
+            <img src="conservation-walk.jpeg" alt="Wildlife Conservation Walk" height="250px">
+            <p>A walkathon to support wildlife conservation efforts. Where each step counts as a dollar. Please help us to help wildlife.</p>
+            <button>Learn More</button>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

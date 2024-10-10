@@ -3,9 +3,591 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Wildlife NGO</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #006400; /* Dark green representing nature */
+    padding: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.donate-btn {
+    background-color: #FFD700; /* Golden color for the Donate button */
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: black;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+} 
+#AboutUs {
+    position: relative;
+    width: 100%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.about-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Overlay text */
+.overlay-text {
+    position: absolute;
+    top: 10%; /* Adjust this for vertical position */
+    left: 10%; 
+    color: white;
+    text-align: center;
+    z-index: 1; /* Ensures the text is above the image */
+    padding: 20px;
+    border-radius: 10px; /* Optional: rounded edges */ 
+
+}
+
+.overlay-text h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    color: #ffffe0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.overlay-text p {
+    font-size: 50px; 
+    color: #ffffe0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    
+}
+ 
+/* Card Section */
+/* Card Section Styling */
+#card-section {
+    padding: 50px 0;
+   
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+
+}
+
+.card-reverse {
+    flex-direction: row-reverse; /* Image on the right */
+}
+
+.card-image-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.card-reverse .card-image-container {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.card-content {
+    flex: 2;
+    text-align: left;
+}
+
+.card-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.card-content p {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFD700;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.card-btn:hover {
+    background-color: #FFC300;
+}
+
+/* Stats Section */
+#stats-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.stat-card {
+    text-align: center;
+    margin: 20px;
+}
+
+.stat-number {
+    font-size: 48px;
+    color: white; /* Matches the text on the cards */
+    font-weight: bold;
+}
+
+.stat-card p {
+    font-size: 18px;
+    color: white;
+} 
+.form-group {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+label {
+    flex: 0 0 100px; /* Fixed width for the label */
+    margin-right: 10px; /* Space between label and input */
+}
+
+input, textarea {
+    flex: 1; /* Take up remaining space */
+    padding: 10px; /* Padding for the input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #fff; /* Background color for input fields */
+    color: #333; /* Text color inside the input fields */ 
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #999; /* Placeholder color */
+}
+
+.form-btn {
+    background-color: #4CAF50; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.form-btn:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #card-section, #stats-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-image-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .card-reverse .card-image-container {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #stats-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-card {
+        margin: 10px 0;
+    }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-reverse {
+        flex-direction: column;
+    }
+
+    .card-image-container {
+        margin: 0 0 20px 0;
+    }
+
+    .card-reverse .card-image-container {
+        margin: 0 0 20px 0;
+    }
+
+    .card-content h2 {
+        font-size: 20px;
+    }
+
+    .card-content p {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card-image, .card-text {
+        width: 100%;
+    }
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #006400;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .show {
+        display: flex;
+    }
+} 
+
+.contact-form {
+    max-width: 600px; /* Increased maximum width of the form */
+    width: 100%; /* Allow the form to be responsive */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding inside the form */
+  
+    border-radius: 10px; /* Rounded corners for the form */
+  
+}
+
+.form-group {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    margin-bottom: 20px; /* Increased space between form fields */
+    font-size: 20px;
+}
+
+label {
+    flex: 0 0 120px; /* Increased width for the label */
+    margin-right: 15px; /* Space between label and input */
+}
+
+input, textarea {
+    flex: 1; /* Take up remaining space */
+    padding: 15px; /* Increased padding for the input fields */
+    border: 1px solid #ccc; /* Border for input fields */
+    border-radius: 5px; /* Rounded corners */
+  
+    color: #333; /* Text color inside the input fields */
+    width: calc(100% - 135px); /* Adjust width to accommodate label */
+}
+
+textarea {
+    height: 100px; /* Increased height for textarea */
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #999; /* Placeholder color */
+}
+
+.form-btn {
+    background-color: #4CAF50; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 12px 20px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width button */
+}
+
+.form-btn:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-group {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    label {
+        margin-bottom: 10px; /* Space below label */
+        margin-right: 0; /* Remove right margin */
+    }
+}
+
+
+    </style>
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quos totam reprehenderit deserunt, temporibus velit est nemo voluptatum iusto iste eaque, maiores error facere magni alias pariatur cupiditate perspiciatis odit.</p>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">WildGuard</a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="events.html">Projects</a></li>
+                <li><a href="Contact.html">Volunteer</a></li>
+                <li><a href="donate.html" class="donate-btn">Donate</a></li>
+            </ul>
+            <div class="burger" id="burger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+      <!-- Hero Section -->
+    <!-- Hero Section --> 
+<section id="AboutUs">
+    <div class="image-container">
+        <img src="/WildGuard/assets/images/animals.jpg" class="about-image" alt="About Banner">
+        <div class="overlay-text">
+            <h1>"Together for a Greener Tomorrow."</h1>
+            <p>At WildGuard, we believe in the power of community to create meaningful change. Whether it's through adopting pets, participating in local conservation efforts, or donating to our cause, every action counts. Join us in making a difference for wildlife and ensuring a brighter future for all living beings</p>
+        </div>
+    </div> 
+</section>
+<section id="card-section" style="background-color: #006400;">
+    <!-- Card 1 -->
+    <div class="card">
+        <div class="card-image-container" data-aos="fade-up">
+            <img src="/WildGuard/assets/images/about-banner-4.jpg" alt="Card 1 Image" class="card-image">
+        </div>
+        <div class="card-content" data-aos="fade-up">
+            <h2>Card Title 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi eius nemo aspernatur laboriosam excepturi. Recusandae illum accusamus, quasi natus expedita consequuntur libero incidunt reprehenderit. Optio exercitationem eius omnis nesciunt, placeat est quibusdam soluta nobis corrupti, tenetur id deserunt deleniti iste perferendis. Adipisci sequi, suscipit earum aut quos magnam architecto? Accusantium ipsa, tempora vel aperiam eveniet eum eligendi cumque odit id distinctio magni iure in omnis, expedita voluptatum nam! Officia modi dolores earum dolorum molestiae, iste tenetur culpa magni, dolorem necessitatibus tempore doloremque rerum molestias aliquid distinctio in maiores pariatur ab non reiciendis vero ipsum possimus perspiciatis dolore. Qui, hic odit!</p>
+            <a href="#" class="card-btn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card card-reverse">
+        <div class="card-image-container" data-aos="fade-up">
+            <img src="/WildGuard/assets/images/about-banner-3.jpg" alt="Card 2 Image" class="card-image">
+        </div>
+        <div class="card-content" data-aos="fade-up">
+            <h2>Card Title 2</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, totam, ipsam beatae repellat dolore ipsum excepturi recusandae, nobis eos id facere in aliquam vero ad dolorum officiis impedit obcaecati cupiditate. Possimus labore nam aspernatur sit rem impedit incidunt quos eveniet ipsam blanditiis iste voluptate, nemo unde! Enim ea deleniti sapiente est et ipsa nobis aperiam aspernatur rerum nulla. Laborum tempora fugit accusantium officiis eaque harum incidunt necessitatibus. Quo in eius rem voluptate sit, officia omnis! At quisquam officiis veniam pariatur tempore, natus dolorum ad iure voluptate aut. Corrupti eos qui tenetur cupiditate, repellat cum itaque officiis temporibus, quam nam veritatis?</p>
+            <a href="#" class="card-btn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <div class="card-image-container" data-aos="fade-up">
+            <img src="/WildGuard/assets/images/about-banner-2.jpg" alt="Card 3 Image" class="card-image">
+        </div>
+        <div class="card-content" data-aos="fade-up">
+            <h2>Card Title 3</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium alias quibusdam, explicabo aspernatur harum ipsum molestias iure inventore illo. Fugit magnam exercitationem sint quo, laboriosam provident optio quod rerum quaerat delectus excepturi! Repudiandae amet, ratione mollitia in eos quod expedita explicabo veniam. Animi est vitae molestiae enim non, natus ipsum nisi laboriosam dignissimos? Quibusdam id blanditiis, inventore unde ex a numquam obcaecati amet, nisi suscipit est eius non? Rerum pariatur quibusdam voluptas non omnis natus. Odit quos molestiae aut tempore impedit aliquid facilis provident ipsum harum a, quaerat dignissimos. Debitis, dolorem? Cupiditate consequuntur repellendus culpa. Magni, dolorem? Aspernatur, magni provident!</p>
+            <a href="#" class="card-btn">Learn More</a>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div id="stats-section" data-aos="fade-up">
+        <div class="stat-card">
+            <h2 class="stat-number" data-target="2500">0</h2>
+            <p>Wildlife Rescued</p>
+        </div>
+        <div class="stat-card">
+            <h2 class="stat-number" data-target="120">0</h2>
+            <p>Sanctuaries Supported</p>
+        </div>
+        <div class="stat-card">
+            <h2 class="stat-number" data-target="300">0</h2>
+            <p>Volunteers Engaged</p>
+        </div>
+        <div class="stat-card">
+            <h2 class="stat-number" data-target="15">0</h2>
+            <p>Projects Completed</p>
+        </div>
+    </div>  
+  
+    <form class="contact-form" style="margin-top: 30px;" data-aos="fade-up">
+        <h1 style="text-align: center; font-size: 50px; margin-bottom: 30px;">Get in Touch With Us</h1>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="form-btn">Submit</button>
+    </form>
+
+    
+</section>
+
+
+
+
+
+    
 </body>
+<script>
+    function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    navLinks.classList.toggle('show');
+}
+
+</script> 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script> 
+  <script>
+    // Function to animate the count up
+function countUpAnimation() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+
+    statNumbers.forEach(stat => {
+        const updateCount = () => {
+            const target = +stat.getAttribute('data-target'); // Convert target value to a number
+            const count = +stat.innerText;
+
+            // The speed of the count (the smaller, the faster)
+            const speed = 100; 
+
+            // Calculate the increment
+            const increment = target / speed;
+
+            // If the current count is less than the target, increase it
+            if (count < target) {
+                stat.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 20); // Update every 20 milliseconds
+            } else {
+                stat.innerText = target; // Ensure the final value is the exact target
+            }
+        };
+
+        updateCount(); // Call the function to start the count-up
+    });
+}
+
+// Ensure the function runs when the user scrolls to the section
+window.addEventListener('scroll', () => {
+    const statsSection = document.getElementById('stats-section');
+    const sectionPosition = statsSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3; // Adjust when you want the effect to start
+
+    if (sectionPosition < screenPosition) {
+        countUpAnimation();
+    }
+});
+
+  </script>
 </html>
