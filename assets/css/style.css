@@ -421,6 +421,22 @@ body {
   padding: 10px; /*reducing height of the navbar */
 }
 
+
+.navbar-linkl {
+  color: var(--white);
+  font-size: var(--fs-9);
+  font-weight: var(--fw-500);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 10px 15px;
+  padding-block: 11px;
+  transition: var(--transition-1);
+
+}
+
+
+
 /* reducing height of the navbar */
 .logo,
 .navbar-list,
