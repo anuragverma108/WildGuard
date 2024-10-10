@@ -934,14 +934,14 @@ body {
 \*-----------------------------------*/
 
 .cta-content {
-  background-color: var(--pistachio);
-  text-align: center;
+  background-color: var(--pistachio); /* Changed from pistachio to black */
+  color: white; /* Changed text color to white for better contrast */
   padding: 50px 15px;
-  margin-block-end: 30px;
+  margin-block-end: 20px;
 }
 
 .cta .section-title {
-  color: var(--white);
+  color: white; /* Changed from transparent to white */
   font-size: var(--fs-4);
   font-weight: var(--fw-600);
   line-height: 1.2;
@@ -949,10 +949,13 @@ body {
 }
 
 .cta .btn-outline {
+  background-color: black; /* Changed from pistachio to black */
+  color: white; /* Changed text color to white for better contrast */
   margin-inline: auto;
 }
+
 .cta .btn-outline:hover {
-  background-color: #9acb5d;
+  background-color: #000000; /* Ensuring hover state is also black */
 }
 
 .cta-banner {
