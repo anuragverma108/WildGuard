@@ -71,6 +71,46 @@
   --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
   --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-to-top {
+  animation-name: appear;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 70px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 9999;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  3% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  3.5% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .container_1 {
   max-width: 800px;
   margin: 0 auto;
