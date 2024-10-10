@@ -4,20 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Feedback</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Font for the body */
+      background-color: #f0f0f0; /* Light grey background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full viewport height */
+      margin: 0;
+    }
+
+    .feedback-container {
+      background-color: #2c3e50; /* Dark blue background for the box */
+      color: white; /* Text color */
+      padding: 20px;
+      border-radius: 10px; /* Rounded corners */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+      width: 300px; /* Width of the box */
+    }
+
+    h1 {
+      text-align: center; /* Center the header */
+      color: #27ae60; /* Green color for the header */
+      margin-bottom: 20px; /* Space below the header */
+    }
+
+    label {
+      display: block; /* Block display for labels */
+      margin: 10px 0 5px; /* Spacing around labels */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%; /* Full width for inputs and textarea */
+      padding: 10px; /* Padding inside inputs */
+      border: 1px solid #ccc; /* Light grey border */
+      border-radius: 5px; /* Rounded corners for inputs */
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    textarea {
+      resize: vertical; /* Allow vertical resizing */
+    }
+
+    button {
+      background-color: #27ae60; /* Green background for the button */
+      color: white; /* Button text color */
+      border: none; /* Remove default border */
+      border-radius: 5px; /* Rounded corners for button */
+      padding: 10px 15px; /* Padding inside button */
+      cursor: pointer; /* Pointer cursor on hover */
+      font-size: 16px; /* Font size for button */
+      width: 100%; /* Full width for button */
+      margin-top: 10px; /* Space above button */
+    }
+
+    button:hover {
+      background-color: #219150; /* Darker green on hover */
+    }
+  </style>
 </head>
 <body>
-  <h1>User Feedback</h1>
-  <form action="/submit-feedback" method="POST">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+  <div class="feedback-container">
+    <h1>User Feedback</h1>
+    <form action="/submit-feedback" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-    <label for="feedback">Your Feedback:</label><br>
-    <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+      <label for="feedback">Your Feedback:</label>
+      <textarea id="feedback" name="feedback" rows="4" required></textarea>
 
-    <button type="submit">Submit</button>
-  </form>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </body>
 </html>
