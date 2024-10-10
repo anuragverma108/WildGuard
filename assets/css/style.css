@@ -166,10 +166,6 @@ button {
   font: inherit;
 }
 
-input {
-  width: 100%;
-}
-
 button {
   cursor: pointer;
 }
@@ -1379,15 +1375,14 @@ body {
   padding: 0 20px;
 }
 
-.footer-left,
-.footer-links,
-.footer-right {
-  flex-basis: calc(33.333% - 30px); /* Three equal columns */
-  min-width: 250px;
-}
-
 .footer-left {
   max-width: 350px;
+}
+.footer-right input, button{
+  display: inline-block;
+}
+.footer-right button{
+  margin-top: 0;
 }
 
 .footer-logo {
@@ -1493,12 +1488,6 @@ body {
   margin: 0 auto;
 }
 
-.footer-left,
-.footer-middle,
-.footer-right {
-  flex: 1;
-  min-width: 200px;
-}
 
 .footer-left h3 {
   color: #98c379;
@@ -1532,18 +1521,19 @@ body {
   color: #98c379;
 }
 
-.footer-right form {
-  display: flex;
-  gap: 10px;
+#mt{
+  margin-top: 3rem;
+  align-self: flex-end;
 }
-
 .footer-right input {
   padding: 10px;
   border: 1px solid #98c379;
-  border-radius: 4px;
-  width: 65%; /* Adjusted width */
+  border-radius: 10px;
 }
-
+.footer-right h2{
+  font-size: 5rem;
+  margin-bottom: 10px;
+}
 .footer-right button {
   background-color: #98c379;
   color: #ffffff;
@@ -1551,6 +1541,7 @@ body {
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 4px;
+  margin-left: 10px;
 }
 
 .footer-right button:hover {
@@ -1566,7 +1557,7 @@ body {
 
 .footer-social-icons a {
   color: #bbbbbb;
-  font-size: 1.6rem;
+  font-size: 2.6rem;
 }
 
 .footer-social-icons a:hover {
@@ -1574,14 +1565,8 @@ body {
 }
 
 .footer-bottom {
-  background-color: #0f0f0f;
-  text-align: center;
-  padding: 25px 0;
-  font-size: 1.3rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 1.4rem;
+  margin-top: 30px;
 }
 
 .progress-bar {
@@ -1638,10 +1623,13 @@ body {
 .footer-right {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
-
 .footer-right {
   text-align: right;
+}
+.footer-right form{
+  width: fit-content;
 }
 
 /* Responsive adjustments */
@@ -2252,15 +2240,6 @@ body {
 
   .insta-post-item {
     min-width: 20%;
-  }
-
-  /**
-   * FOOTER
-   */
-
-  .footer .container {
-    margin-inline: 30px;
-    width: auto;
   }
 }
 
