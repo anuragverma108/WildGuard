@@ -962,7 +962,10 @@ body {
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
-
+.line{
+  color: var(--eerie-black-1);
+  font-weight: 400;
+}
 .service {
   background-color: var(--baby-powder);
   background-repeat: no-repeat;
