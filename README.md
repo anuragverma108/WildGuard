@@ -15,7 +15,7 @@
       <th>Event Description</th>
    </tr>
     <tr>
-      <td><img src="hacktober.jpg.png" width="200" height="auto" loading="lazy" alt="Hacktoberfest 2024"/></td>
+      <td><img src="hacktober.jpg" width="200" height="auto" loading="lazy" alt="Hacktoberfest 2024"/></td>
       <td>Hacktoberfest 2024</td>
       <td>Hacktoberfest is a month-long celebration of open source software run by DigitalOcean, GitHub, and Twilio. It encourages contributions to open source projects and promotes a global community of developers.</td>
    </tr>
