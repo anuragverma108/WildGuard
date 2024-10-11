@@ -491,6 +491,11 @@ body {
   background-color: var(--pistachio);
 }
 
+/**/
+.search-btn{
+ margin-top:0px ;
+}
+/**/
 /* Login Styling */
 .popup {
   display: none;
@@ -2310,6 +2315,7 @@ body {
   align-items: center;
   gap: 5px; /* Space between input and buttons */
   z-index: 10;
+  
 }
 
 /* Remove default outline for the search input */
@@ -2335,8 +2341,8 @@ body {
   display: flex;
   align-items: center;
   gap: 5px; /* Small space between buttons */
+  margin-top: 0px;
 }
-
 #matchCounter {
   color: var(--pistachio); /* Match counter in pistachio color */
   font-size: 1.2rem;
