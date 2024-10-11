@@ -74,6 +74,7 @@
 .container_1 {
   max-width: 800px;
   margin: 0 auto;
+  margin-bottom: 40px;
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -1285,6 +1286,14 @@ body {
 }
 
 .event-card .card-subtitle {
+  margin-block: 30px 5px;
+  color: var(--pistachio);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  letter-spacing: -1px;
+}
+
+.card-subtitle {
   margin-block: 30px 5px;
   color: var(--pistachio);
   font-size: var(--fs-8);
