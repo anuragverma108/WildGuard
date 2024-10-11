@@ -1168,6 +1168,9 @@ body {
 
 .testi-content {
   padding: var(--section-padding) 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .testi .section-title {
@@ -1182,6 +1185,8 @@ body {
 .testi-text,
 .testi-name {
   font-size: var(--fs-8);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .testi-text,
@@ -1203,7 +1208,12 @@ body {
 .testi-banner {
   background-color: var(--light-gray);
 }
-
+.testi-cover {
+  width: 80px;  /* Increased from 60px to 80px */
+  height: 80px; /* Increased from 60px to 80px */
+  border-radius: 50%;
+  object-fit: cover;
+}
 /*-----------------------------------*\
   #PARTNER
 \*-----------------------------------*/
