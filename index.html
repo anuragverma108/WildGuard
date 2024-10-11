@@ -453,11 +453,11 @@
               </li>
 
               <li>
-                <button class="tab-btn" onclick="setActiveTab(this, 'vision')">Our Vision</button>
+                <button class="tab-btn active" onclick="setActiveTab(this, 'vision')">Our Vision</button>
               </li>
 
               <li>
-                <button class="tab-btn" onclick="setActiveTab(this, 'plan')">Next Plan</button>
+                <button class="tab-btn active" onclick="setActiveTab(this, 'plan')">Next Plan</button>
               </li>
 
             </ul>
@@ -1519,7 +1519,7 @@
 
           if (targetElement) {
             window.scrollTo({
-              top: targetElement.offsetTop - 50,
+              top: targetElement.offsetTop ,
               behavior: 'smooth'
             });
           }
@@ -1529,6 +1529,14 @@
       // Initial call to set active link on page load
       updateActiveLink();
     });
+  let backToTop =document.getElementById('btn-back-to-top');
+  backToTop.addEventListener('click',()=>{
+    window.scrollTo({
+      top : 0,
+      behavior : 'smooth',
+    })
+  })
+  
   </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
