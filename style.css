@@ -1,0 +1,33 @@
+.impact-gallery {
+    text-align: center;
+    margin: 40px 0;
+
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.gallery-item {
+    width: 30%;
+    margin: 10px;
+    transition: transform 0.3s;
+
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+border-radius: 8px;
+}
+
+#fontt {
+    font-size: 30px;
+    font-style: normal;
+}
