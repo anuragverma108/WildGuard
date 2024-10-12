@@ -394,10 +394,14 @@ body {
 }
 
 .logo {
-  color: rgb(73, 127, 3);
+  color: rgb(113, 194, 7);
   font-family: var(--ff-oswald);
   font-size: 3.2rem;
   text-transform: uppercase;
+}
+
+.custom-menu-icon {
+  color: rgb(113, 194, 7);
 }
 
 .nav-open-btn {
