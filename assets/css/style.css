@@ -151,6 +151,12 @@ ion-icon {
   display: block;
 }
 
+.opaque-background {
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+  color: white; /* Text color */
+  padding: 5px; /* Some padding for better visibility */
+}
+
 img {
   height: auto;
 }
