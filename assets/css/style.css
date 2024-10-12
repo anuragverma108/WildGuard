@@ -71,17 +71,34 @@
   --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
   --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
 }
-.container_1 {
+
+/* .container_1 {
   max-width: 800px;
   margin: 0 auto;
   background-color: white;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+.container_1 {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 h1 {
   text-align: center;
+  color: #8BC34A;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .post-form {
@@ -96,27 +113,100 @@ textarea {
   border-radius: 4px;
 }
 
+
+To use the green color from the image you uploaded, you can extract its color code and apply it to your CSS. Based on the visual, the green color appears to be close to #8BC34A. I'll update your CSS using this green.
+
+Updated CSS with Green Color from the Image (#8BC34A):
+css
+Copy code
+/* Updated Green Color: #8BC34A */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container_1 {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container_1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #8BC34A;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 140px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #fff;
+    resize: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #8BC34A;
+  box-shadow: 0 0 10px rgba(139, 195, 74, 0.2);
+}
+
 button {
-  background-color: #28a745;
-  color:black;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px; /* Adds space above button */
+    background: linear-gradient(135deg, #8BC34A, #6fa037);
+    color: black;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+    transform: scale(1);
 }
 
 button:hover {
-  background-color: #218838;
+  background: linear-gradient(135deg, #6fa037, #8BC34A);
+  box-shadow: 0 8px 20px rgba(139, 195, 74, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 .posts {
   margin-top: 20px;
 }
 
-.post {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+.post{
+background: linear-gradient(135deg, #ffffff, #e0f7fa);
+padding: 20px;
+border-radius: 15px;
+margin-bottom: 25px;
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+opacity: 0;
+transform: translateY(30px);
+animation: slideIn 0.5s forwards ease-out;
 }
 
 /*-----------------------------------*\
@@ -205,7 +295,9 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--pistachio);
+background-color: #8BC34A;
+border-radius: 20px;
+border: 2px solid #e0f7fa;
 }
 
 /*-----------------------------------*\
@@ -2134,6 +2226,11 @@ body {
     margin-inline: auto;
     padding-inline: 30px;
   }
+
+  .container_1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
 
   .section-title {
     line-height: 1.2;
