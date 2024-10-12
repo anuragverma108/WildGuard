@@ -196,17 +196,31 @@ body {
   overflow-x: hidden;
 }
 
+/* WebKit-based browsers (Chrome, Safari, Edge, Opera) */
 ::-webkit-scrollbar {
-  width: 13px;
+  width: 9px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: hsl(0, 0%, 95%);
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--pistachio);
+  border-radius: 30px;
 }
+
+/* Firefox */
+* {
+  scrollbar-width: thin; /* Use "auto" for wider scrollbar */
+  scrollbar-color: var(--pistachio) transparent;
+}
+
+/* Internet Explorer 10+ */
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
 
 /*-----------------------------------*\
   #REUSED STYLE
