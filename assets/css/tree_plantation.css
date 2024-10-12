@@ -1,0 +1,55 @@
+
+
+@media (min-width: 992px) {
+.hero-tree {
+    background-image: url("../images/tree_plantation.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    min-height: 780px;
+  }
+
+  .service-list {
+    grid-template-columns: repeat(3, 1fr);
+   }
+
+    .donate-list {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .donate-card .card-content {
+        position: relative;
+        width: 100%;
+        bottom: auto;
+        right: 0;
+        border-radius: 4px;
+        box-shadow: var(--card-shadow);
+    }
+    .donate-list {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    .donate-card {
+        position: relative;
+        padding-block-end: 20px;
+        box-shadow: none;
+    }
+}
+
+
+
+/*-----------------------------------*\
+  #SERVICE
+\*-----------------------------------*/
+
+.service {
+    background-color: var(--baby-powder);
+    background-repeat: no-repeat;
+    background-position: center top;
+    margin-block-start: -50px;
+    padding-block-start: 50px;
+  }
