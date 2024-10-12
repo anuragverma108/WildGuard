@@ -145,11 +145,12 @@
 
           
           <li>
-            <a class="navbar-link login-nav" id="openPopup" data-nav-link>
+            <a class="navbar-link login-nav" href="register.html" id="registerLink" data-nav-link>
               <span>Register</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
+
 
         </ul>
 
@@ -1439,6 +1440,10 @@
   <script src="./assets/js/carousel.js"></script>
 
   <script>
+    document.getElementById('registerLink').addEventListener('click', function (event) {
+        window.location.href = 'register.html';  // Redirect to register.html when clicked
+      });
+
     document.getElementById('loginLink').addEventListener('click', function (event) {
         window.location.href = 'login.html';  // Navigate to login.html
       });
