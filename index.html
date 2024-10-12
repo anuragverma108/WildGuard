@@ -136,11 +136,13 @@
           </li>
 
           <li>
-            <a class="navbar-link login-nav" id="openPopup" data-nav-link>
-              <span>Login</span>
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
+  <a class="navbar-link login-nav" href="login.html" id="loginLink" data-nav-link>
+    <span>Login</span>
+    <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+  </a>
+</li>
+
+
           
           <li>
             <a class="navbar-link login-nav" id="openPopup" data-nav-link>
@@ -1437,6 +1439,10 @@
   <script src="./assets/js/carousel.js"></script>
 
   <script>
+    document.getElementById('loginLink').addEventListener('click', function (event) {
+        window.location.href = 'login.html';  // Navigate to login.html
+      });
+
     function setActiveTab(selectedButton, contentKey) {
       const buttons = document.querySelectorAll('.tab-btn');
       buttons.forEach(button => button.classList.remove('active'));
