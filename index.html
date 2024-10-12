@@ -907,18 +907,40 @@
       </section>
       <div class="container_1">
         <h1>Wildlife Conservation Forum</h1>
-        <div class="post-form">
-            <h2>Share Your Thoughts</h2>
-            <textarea id="postContent" placeholder="Write your message..." required></textarea>
-            <button id="submitPost">Submit</button>
-        </div>
+    
+        <form id="conservationForm">
+            <label for="thoughts">Share your insights:</label>
+            <textarea id="thoughts" name="thoughts" placeholder="Write some thoughts..."></textarea>
+            <button type="submit">Submit</button>
+            <div id="message" style="margin-top: 10px; color: green;"></div>
+        </form>
+    
         <div class="posts">
             <h2>Discussions</h2>
             <div id="postsContainer"></div>
         </div>
     </div>
-    <script src="script.js"></script>
-      
+    
+    <script>
+      // Wait for the DOM content to load to ensure elements are ready
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("conservationForm");
+        const messageDiv = document.getElementById("message");
+    
+        form.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the page from refreshing on submit
+    
+          const thoughts = document.getElementById("thoughts").value.trim();
+    
+          // Check if the textarea is not empty
+          if (thoughts) {
+            messageDiv.textContent = "Thanks for your valuable thoughts!";
+          } else {
+            messageDiv.textContent = "Please share some thoughts before submitting.";
+          }
+        });
+      });
+    </script>
       <!-- 
         - #TESTIMONIALS
       -->
