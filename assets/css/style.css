@@ -351,7 +351,7 @@ body {
   height: 90px;
   background-color: transparent;
   padding-block: 18px;
-  z-index: 4;
+  z-index: 100;
   /* reducing height of the navbar */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -359,8 +359,10 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
-  z-index: 1000;
   padding: 10px 0; /* Reduce padding to decrease height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .header::after {
@@ -391,6 +393,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 25px;
+  width: 100%;
 }
 
 .logo {
@@ -403,6 +406,7 @@ body {
 .nav-open-btn {
   color: var(--white);
   font-size: 3.8rem;
+  margin-top: 0;
 }
 
 .navbar {
@@ -451,12 +455,12 @@ body {
   width: max-content;
   margin-inline: auto;
   margin-block-start: 50px;
+  margin: auto;
 }
 
 .navbar-list {
   max-width: 300px;
   width: 100%;
-  height: 100%;
   margin: auto;
   padding-top: 20px;
   padding-inline: 10px;
@@ -472,6 +476,12 @@ body {
 .navbar.active .navbar-list {
   opacity: 1;
   transition-delay: 0.25s;
+  height: 30rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .navbar-link {
@@ -600,6 +610,25 @@ body {
 .form-container button:hover {
   background-color: darkgreen;
   transform: translateY(-2px);
+}
+
+.input-group{
+  /* width: 100px; */
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+
+.input-group .form-control{
+  height: 39px;
+  min-width: 100px;
+}
+
+.input-group .search-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close-button {
@@ -1217,7 +1246,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  /* gap: 50px; */
 }
 
 .partner-logo .color,
@@ -1939,7 +1968,10 @@ body {
   .header-action {
     display: flex;
     align-items: center;
-    gap: 50px;
+    justify-content: space-between;
+    width: 300px;
+    gap: 30px;
+    margin-right: 2rem;
   }
 
   .search-btn {
@@ -2111,7 +2143,7 @@ body {
  * responsive for larger than 1200px screen
  */
 
-@media (min-width: 1200px) {
+@media (min-width: 1260px) {
   /**
    * CUSTOM PROPERTY
    */
@@ -2197,6 +2229,10 @@ body {
 
   .navbar-link.active span {
     color: var(--pistachio);
+  }
+
+  .header-action{
+    gap: 1.5rem;
   }
 
   /**
@@ -2292,6 +2328,11 @@ body {
   text-align: center;
   margin-top: 10px; /* Space from the top */
 }
+
+/* .container:last-child{
+  padding: 0;
+} */
+
 /**
 * Search-bar
 */

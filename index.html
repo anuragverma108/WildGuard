@@ -25,11 +25,6 @@
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
   <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 
     - fontawesome icon link
   -->
   <script src="https://kit.fontawesome.com/418b80718b.js" crossorigin="anonymous"></script>
@@ -47,6 +42,11 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="./Events-Data/modal.css">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
 
 
@@ -141,7 +141,7 @@
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
-          
+
           <li>
             <a class="navbar-link login-nav" id="openPopup" data-nav-link>
               <span>Register</span>
@@ -158,7 +158,7 @@
         <!-- Search bar and button -->
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary search-btn" aria-label="Search">
+          <button class="btn btn-primary search-btn" aria-label="Search" style="z-index: 0;">
             <ion-icon name="search-outline"></ion-icon>
           </button>
         </div>
@@ -187,47 +187,14 @@
         <!-- Popup -->
         <div id="popup" class="popup">
           <div class="popup-content">
-              <span class="close-button" id="closePopup">&times;</span>
-              <div class="tabs">
-                  <button class="tab-button active" id="loginTab">Login</button>
-                  <button class="tab-button" id="signupTab">Signup</button>
-              </div>
-              <div class="form-container">
-                  <form id="loginForm">
-                    <div class="form_wrapper">
-                    <div class="form-fields">
-                      <input type="email" placeholder="Email" required />
-                      <input type="password" placeholder="Password" required />
-                      <button type="submit">Login</button>
-                    </div>
-                    <div class="form-img">
-                      <img src="./assets/images/animals.jpg" alt="" srcset="">
-                    </div>
-                   </div>
-                  </form>
-                  <form id="signupForm" style="display: none;">
-                    <div class="form_wrapper">
-                      <div class="form-fields">
-                        <input type="text" placeholder="Username" required />
-                      <input type="email" placeholder="Email" required />
-                      <input type="password" placeholder="Password" required />
-                      <button type="submit">Signup</button>
-                      </div>
-                      <div class="form-img">
-                        <img src="./assets/images/cta-banner.jpg" alt="" srcset="">
-                      </div>
-                      </div>
-
-                  </form>
-              </div>
             <span class="close-button" id="closePopup">&times;</span>
             <div class="tabs">
-                <button class="tab-button active" id="loginTab">Login</button>
-                <button class="tab-button" id="signupTab">Signup</button>
+              <button class="tab-button active" id="loginTab">Login</button>
+              <button class="tab-button" id="signupTab">Signup</button>
             </div>
             <div class="form-container">
-                <form id="loginForm">
-                  <div class="form_wrapper">
+              <form id="loginForm">
+                <div class="form_wrapper">
                   <div class="form-fields">
                     <input type="email" placeholder="Email" required />
                     <input type="password" placeholder="Password" required />
@@ -236,33 +203,66 @@
                   <div class="form-img">
                     <img src="./assets/images/animals.jpg" alt="" srcset="">
                   </div>
-                 </div>
-                </form>
-                <form id="signupForm" style="display: none;">
-                  <div class="form_wrapper">
-                    <div class="form-fields">
-                      <input type="text" placeholder="Username" required />
+                </div>
+              </form>
+              <form id="signupForm" style="display: none;">
+                <div class="form_wrapper">
+                  <div class="form-fields">
+                    <input type="text" placeholder="Username" required />
                     <input type="email" placeholder="Email" required />
                     <input type="password" placeholder="Password" required />
                     <button type="submit">Signup</button>
-                    </div>
-                    <div class="form-img">
-                      <img src="./assets/images/cta-banner.jpg" alt="" srcset="">
-                    </div>
-                    </div>
+                  </div>
+                  <div class="form-img">
+                    <img src="./assets/images/cta-banner.jpg" alt="" srcset="">
+                  </div>
+                </div>
 
-                </form>
+              </form>
+            </div>
+            <span class="close-button" id="closePopup">&times;</span>
+            <div class="tabs">
+              <button class="tab-button active" id="loginTab">Login</button>
+              <button class="tab-button" id="signupTab">Signup</button>
+            </div>
+            <div class="form-container">
+              <form id="loginForm">
+                <div class="form_wrapper">
+                  <div class="form-fields">
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit">Login</button>
+                  </div>
+                  <div class="form-img">
+                    <img src="./assets/images/animals.jpg" alt="" srcset="">
+                  </div>
+                </div>
+              </form>
+              <form id="signupForm" style="display: none;">
+                <div class="form_wrapper">
+                  <div class="form-fields">
+                    <input type="text" placeholder="Username" required />
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit">Signup</button>
+                  </div>
+                  <div class="form-img">
+                    <img src="./assets/images/cta-banner.jpg" alt="" srcset="">
+                  </div>
+                </div>
+
+              </form>
             </div>
           </div>
         </div>
 
 
       </div>
-
-
-
     </div>
+
   </header>
+
+  
 
   <!-- Scroll To Top Btn -->
   <button type="button" id="btn-back-to-top">
@@ -908,17 +908,17 @@
       <div class="container_1">
         <h1>Wildlife Conservation Forum</h1>
         <div class="post-form">
-            <h2>Share Your Thoughts</h2>
-            <textarea id="postContent" placeholder="Write your message..." required></textarea>
-            <button id="submitPost">Submit</button>
+          <h2>Share Your Thoughts</h2>
+          <textarea id="postContent" placeholder="Write your message..." required></textarea>
+          <button id="submitPost">Submit</button>
         </div>
         <div class="posts">
-            <h2>Discussions</h2>
-            <div id="postsContainer"></div>
+          <h2>Discussions</h2>
+          <div id="postsContainer"></div>
         </div>
-    </div>
-    <script src="script.js"></script>
-      
+      </div>
+      <script src="script.js"></script>
+
       <!-- 
         - #TESTIMONIALS
       -->
@@ -1024,16 +1024,16 @@
 
 
       <!-- Trigger Button for Modal -->
-<button id="openModalBtn" class="btn" style="display: block; margin: 0 auto;">Learn More</button>
+      <button id="openModalBtn" class="btn" style="display: block; margin: 0 auto;">Learn More</button>
 
-<!-- Modal Structure -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Event Details</h2>
-    <p>More information about the event goes here.</p>
-  </div>
-</div>
+      <!-- Modal Structure -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Event Details</h2>
+          <p>More information about the event goes here.</p>
+        </div>
+      </div>
       <!-- 
         - #EVENT
       -->
@@ -1199,7 +1199,8 @@
             <a href="#" class="social-link">LinkedIn</a>
           </div>
           <div class="modal-footer">
-            <button onclick="document.getElementById('eventModal').style.display='none'" class="btn btn-primary">Close</button>
+            <button onclick="document.getElementById('eventModal').style.display='none'"
+              class="btn btn-primary">Close</button>
           </div>
         </div>
       </div>
@@ -1284,18 +1285,18 @@
         </div>
       </section>
 
-      
-<script>
-  // Accordion | Frequently Asked Questions
-  function toggleAnswer(element) {
-      const answer = element.nextElementSibling; // Get the corresponding answer
-      const toggleSign = element.querySelector('.toggle-sign'); // Get the toggle sign
-      answer.classList.toggle('hidden'); // Show or hide the answer
 
-      // Change sign based on visibility
-      toggleSign.textContent = answer.classList.contains('hidden') ? '+' : '-'; 
-  }
-</script>
+      <script>
+        // Accordion | Frequently Asked Questions
+        function toggleAnswer(element) {
+          const answer = element.nextElementSibling; // Get the corresponding answer
+          const toggleSign = element.querySelector('.toggle-sign'); // Get the toggle sign
+          answer.classList.toggle('hidden'); // Show or hide the answer
+
+          // Change sign based on visibility
+          toggleSign.textContent = answer.classList.contains('hidden') ? '+' : '-';
+        }
+      </script>
 
 
 
@@ -1532,6 +1533,7 @@
   </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./assets/js/script.js"></script>
 
 </body>
 
