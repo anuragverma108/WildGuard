@@ -420,6 +420,67 @@ body {
   transition: 0.25s var(--cubic-in);
   padding: 10px; /*reducing height of the navbar */
 }
+/*input group adjust size*/
+/* Adjusting only the input group for the search bar */
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto; /* Centering within its container */
+  background: rgba(255, 255, 255, 0.1); /* Blurred background to match navbar */
+  border-radius: 25px;
+  padding: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.input-group .form-control {
+  flex-grow: 1;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  background: rgba(255, 255, 255, 0.15); /* Transparent background */
+  color: white;
+  outline: none;
+  align-items: center; /* Aligning content vertically */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6); /* Placeholder color */
+}
+
+.input-group .form-control:focus {
+  background: rgba(255, 255, 255, 0.3); /* More visible on focus */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+}
+
+.input-group .search-btn1 {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  align-items: center; /* Aligning content vertically */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group .search-btn1:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 10px rgba(0, 86, 179, 0.5); /* Subtle shadow on hover */
+}
+
+.input-group .search-btn1 i{
+  font-size: 1.2rem;
+
+}
+
+
+
+
+/*END Input group class*/
 
 /* reducing height of the navbar */
 .logo,
@@ -1122,6 +1183,7 @@ body {
   font-size: var(--fs-7);
   font-weight: var(--fw-600);
 }
+
 
 .card-wrapper {
   display: flex;
@@ -1949,7 +2011,11 @@ body {
 
   .search-btn ion-icon {
     --ionicon-stroke-width: 50px;
+
   }
+
+  
+
 
   /**
    * HERO
