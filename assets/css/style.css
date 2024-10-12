@@ -394,7 +394,7 @@ body {
 }
 
 .logo {
-  color: var(--white);
+  color: rgb(73, 127, 3);
   font-family: var(--ff-oswald);
   font-size: 3.2rem;
   text-transform: uppercase;
