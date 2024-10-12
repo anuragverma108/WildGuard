@@ -88,6 +88,12 @@
       .donation-summary h4 {
         color: #1f8c3a;
       }
+
+      .upi-id-field {
+        display: none;
+        margin-top: 10px;
+      }
+
       #print {
         border: 1px solid black;
       }
@@ -148,22 +154,22 @@
             <option value="credit-card">Credit Card</option>
             <option value="paypal">PayPal</option>
             <option value="bank-transfer">Bank Transfer</option>
-            <option value="upi-payment">UPI Payment</option>
+            <option value="upi">UPI</option>
           </select>
         </div>
 
         <!-- Initially this input field will be hidden.
           Only visible on selection of UPI-Payment option -->
 
-        <div class="form-group" id="upiField">
-          <label for="upi-payment">Enter UPI ID:</label>
+        <!-- UPI Input Field -->
+        <div class="form-group" id="upiField" style="display: none">
+          <label for="upiId">UPI ID:</label>
           <input
             type="text"
             class="form-control"
             id="upiId"
             name="upiId"
-            placeholder="e.g., yourname@upi"
-            required
+            placeholder="Enter your UPI ID"
           />
         </div>
 
@@ -288,22 +294,22 @@
 
           const content = `
 
-                
-                <div style="text-align: center;margin-bottom: -15px; font-family: Ubuntu;font-weight: bold; font-size:xx-large;">Receipt</div>
-                
 
-                <div style="position: absolute; top: 10px; right: 10px; font-size: xx-small;">
-                    <div>${dateString} ${timeString}</div>
-                </div>
-                
-                <p>____________________________________________________________________________________________</p>
+                  <div style="text-align: center;margin-bottom: -15px; font-family: Ubuntu;font-weight: bold; font-size:xx-large;">Receipt</div>
 
-                    <div>${a.innerHTML}</div>
-                    <p> ____________________________________________________________________________________________</p>
-                
-                    
 
-                `;
+                  <div style="position: absolute; top: 10px; right: 10px; font-size: xx-small;">
+                      <div>${dateString} ${timeString}</div>
+                  </div>
+
+                  <p>____________________________________________________________________________________________</p>
+
+                      <div>${a.innerHTML}</div>
+                      <p> ____________________________________________________________________________________________</p>
+
+
+
+                  `;
 
           html2pdf().from(content).set(opt).save();
         });
@@ -312,15 +318,14 @@
       // -----------------------------------
       // UPI ID input field handling
       // -----------------------------------
-      const paymentMethod = document.getElementById('paymentMethod');
-      const upiField = document.getElementById('upiField');
-
-      paymentMethod.addEventListener('change', function () {
-        if (paymentMethod.value == 'upi-payment') {
-          upiField.style.display = 'block';
-        } else {
-          upiField.style.display = 'none';
-        }
+      $(document).ready(function () {
+        $('#paymentMethod').on('change', function () {
+          if ($(this).val() === 'upi') {
+            $('#upiField').slideDown(); // Show UPI field
+          } else {
+            $('#upiField').slideUp(); // Hide UPI field
+          }
+        });
       });
       // -----------------------------------
 
