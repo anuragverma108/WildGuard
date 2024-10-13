@@ -407,12 +407,39 @@ document.getElementById("currentYear").textContent = new Date().getFullYear();
 // Google Translate Element Initialization
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
-    includedLanguages: 'en,fr,es' // Supported languages
+    // includedLanguages: 'en,fr,es' // Supported languages
   }, 'google_translate_element');
 }
 
 // Wait for the page to fully load before initializing Google Translate
 window.addEventListener('load', function() {
   googleTranslateElementInit();
+});
+
+const someElement = document.getElementById('someElement');
+if (someElement) {
+    someElement.style.display = 'none'; // Only access if it exists
+} else {
+    console.error('Element with ID someElement not found.');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Access the link element by ID
+  const linkElement = document.getElementById('openPopup');
+  if (linkElement) {
+    // Safe to access linkElement.href
+    console.log('Link href:', linkElement.href || 'No href attribute'); // Log href or a message
+  } else {
+    console.error('linkHref is null for link: openPopup not found');
+  }
+
+  // Access another element by ID
+  const element = document.getElementById('someElementId');
+  if (element) {
+    // Safe to access element.style
+    element.style.display = 'block'; // Example action
+  } else {
+    console.error('someElementId not found');
+  }
 });
 
