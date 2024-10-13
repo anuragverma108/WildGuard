@@ -261,7 +261,7 @@ async function displayEvents() {
                 <p>${formatDate(event.date)} at ${event.time}</p>
             </div>
             <div class="event-action">
-                <button onclick="${event.type === 'future' ? 'getTickets()' : 'viewDetails()'}">
+                <button onclick="${event.name === 'Plant a Tree Campaign' ? 'redirectToPlantATree()' : 'getTickets()'}">
                     ${event.type === 'future' ? 'Get Involved' : 'View Details'}
                 </button>
             </div>
@@ -275,30 +275,35 @@ async function displayEvents() {
     }
 }
 
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            return date.toLocaleDateString('en-US', options);
-        }
+function redirectToPlantATree() {
+    window.location.href = 'plantatreecampaign.html'; // Redirect to plantatreecampaign.html
+}
 
-        function remindMe() {
-            alert('Reminder set for the upcoming conservation event!');
-        }
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+}
 
-        function getTickets() {
-            alert('Redirecting to event registration...');
-        }
+function remindMe() {
+    alert('Reminder set for the upcoming conservation event!');
+}
 
-        function viewDetails() {
-            alert('Viewing event details...');
-        }
+function getTickets() {
+    alert('Redirecting to event registration...');
+}
 
-        // Function to go back to the previous page
-        function goBack() {
-            window.history.back();
-        }
+function viewDetails() {
+    alert('Viewing event details...');
+}
 
-        displayEvents();
+// Function to go back to the previous page
+function goBack() {
+    window.history.back();
+}
+
+displayEvents();
+
     </script>
 </body>
 
