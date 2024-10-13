@@ -1,129 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Save World Animals</title>
+  <link rel="stylesheet" href="assets/css/about.css">
+</head>
+<body>
+<body>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <title>About - WildGuard</title>
+    <!-- Navbar Section -->
+    <nav class="navbar" data-navbar>
+        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
 
-    <!-- 
-      - favicon
-    -->
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+        <a href="#" class="logo">WildGuard</a>
 
-    <!-- 
-      - fontawesome icon link
-    -->
-    <script
-      src="https://kit.fontawesome.com/418b80718b.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- 
-      - google font link
-    -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-    <link rel="stylesheet" href="./Events-Data/modal.css" />
-  </head>
-
-  <body>
-    <header style="padding: 2rem; border-bottom: 1px solid #91be55">
-      <div>
-        <nav style="display: flex; justify-content: space-evenly">
-          <h2>
-            <a href="index.html" style="text-decoration: none; color: #91be55">
-              WildGuard
+        <ul class="navbar-list">
+          <li>
+            <a href="./index.html" class="navbar-link active" data-nav-link>
+              <span>Home</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
-          </h2>
+          </li>
+          <li>
+            <a href="donate.html" class="navbar-link" data-nav-link>
+              <span>Donate</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+        </ul>
+    </nav>
 
-          <ul
-            style="
-              display: flex;
-              list-style: none;
-              justify-content: space-between;
-              padding: 0;
-              width: 10rem;
-            "
-          >
-            <li>
-              <a
-                href="index.html"
-                style="text-decoration: none; color: black; font-weight: 500"
-              >
-                <span>Home</span>
-              </a>
-            </li>
+    <header class="hero-section">
+      <div class="hero-content">
+          <h1>Raise Your Hand to Save World Animals Life</h1>
+          <p>
+              Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
+          </p>
+          <a href="donate.html">
+              <button class="btn-donate">Donate Now</button>
+          </a>
+      </div>
+  </header>
+  
 
-            <li>
-              <a
-                href="about.html"
-                style="text-decoration: none; color: black; font-weight: 500"
-              >
-                <span>About</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <section>
-      <div style="display: flex; padding: 2rem; align-items: center;">
-        <div style="padding: 1rem 2rem">
-          <h1>Protecting Wildlife In tech era</h1>
-          <p>
-            Wild Guard is a cutting-edge web application dedicated to the
-            protection and preservation of wild animals. As human activities
-            encroach upon natural habitats, the survival of wildlife becomes
-            increasingly threatened. Wild Guard aims to be a powerful tool for
-            conservationists, researchers, and animal lovers to monitor and
-            safeguard endangered species across the globe.
-          </p>
-          <p>
-            Wild Guard: Protecting Wildlife Through Technology Wild Guard is a
-            cutting-edge web application dedicated to the protection and
-            preservation of wild animals. As human activities encroach upon
-            natural habitats, the survival of wildlife becomes increasingly
-            threatened. user-generated reports to map movements and habitats.
-            This data helps wildlife organizations predict potential dangers,
-            such as poaching, habitat loss, or human-animal conflict, allowing
-            for quicker and more effective responses. Wild Guard also features
-            educational resources, offering users insight into the challenges
-            faced by various species and ways to contribute to their protection.
-          </p>
-          <p>
-            Our mission is simple: to harness the power of technology and
-            community to protect the world’s wildlife before it’s too late. With
-            Wild Guard, we can all play a role in guarding the wild and ensuring
-            a safer future for animals at risk.
-          </p>
+    <section class="mission-section">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p>We believe that every animal deserves a chance at a safe and healthy life. Through our initiatives, we aim to protect endangered species, rehabilitate injured wildlife, and educate communities on how to coexist with animals. Together, we can make a difference and give animals the life they deserve.</p>
         </div>
-        <div>
-          <img src="./assets/images/community-hero-bg.jpeg" alt="" srcset="" />
-        </div>
-      </div>
     </section>
-  </body>
+
+    <section class="charity-section">
+        <div class="container">
+            <h2>Our Initiatives</h2>
+            <div class="charity-cards">
+                <div class="charity-card">
+                    <h3>Charity For Foods</h3>
+                    <p>
+                        Many animals suffer from malnutrition and hunger due to abandonment, habitat destruction, or overcrowding in shelters. Our "Charity For Foods" initiative focuses on providing nourishing meals to animals in shelters and wildlife rescue centers. We collaborate with local communities and businesses to distribute fresh food to animals in need, helping them recover their strength and health.
+                    </p>
+                </div>
+                <div class="charity-card">
+                    <h3>Charity For Education</h3>
+                    <p>
+                        Education is the key to long-term change. Our "Charity For Education" initiative raises awareness about animal rights and welfare. We host workshops in schools, colleges, and communities to teach the importance of empathy, respect, and responsibility toward animals. By educating the next generation, we hope to create a more compassionate world where animals are protected and cared for.
+                    </p>
+                </div>
+                <div class="charity-card">
+                    <h3>Charity For Water</h3>
+                    <p>
+                        Water is essential for life, and many animals, especially in arid regions, suffer from a lack of clean, drinkable water. Our "Charity For Water" initiative works to provide sustainable water sources for wildlife and animals in shelters. We install water tanks, purification systems, and community-managed water stations in areas where water is scarce, ensuring animals have access to this vital resource.
+                    </p>
+                </div>
+                <div class="charity-card">
+                    <h3>Charity For Medical</h3>
+                    <p>
+                        Countless animals suffer from injuries, illnesses, and diseases, often without access to veterinary care. Our "Charity For Medical" program ensures that these animals receive the medical attention they need. We provide funding for surgeries, vaccinations, rehabilitation, and ongoing care. We also partner with veterinarians and clinics to offer free or low-cost treatments to animals in crisis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <p>&copy; 2024 Save World Animals. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>
