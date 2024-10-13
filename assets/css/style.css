@@ -560,6 +560,22 @@ html {
   background-color: var(--pistachio);
 }
 
+.header-action{
+  width:425px;
+}
+
+.input-group{
+  display: flex;
+  align-items: center;
+}
+.form-control::placeholder{
+  font-size: 18px;
+}
+.form-control{
+  height: 37px;
+  margin-top: 9px;
+}
+
 /* Login Styling */
 .popup {
   display: none;
