@@ -434,7 +434,7 @@ body {
   text-align: center;
   justify-content: space-between;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
 }
 
 .logo {
@@ -464,6 +464,15 @@ body {
   transition: 0.25s var(--cubic-in);
   padding: 10px; /*reducing height of the navbar */
 }
+
+
+/* .input-group{
+  display: flex;
+  flex-direction: row;
+  
+  
+} */
+
 
 /* reducing height of the navbar */
 .logo,
@@ -2448,17 +2457,17 @@ align-items: baseline;
   position: absolute;
   top: 50%;
   right: 20%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   background-color: var(
-    --baby-powder
+    --transition-1
   ); /* Light background matching page theme */
-  border: 1px solid var(--pistachio); /* Border to match the pistachio theme */
+  /* Border to match the pistachio theme */
   border-radius: 5px;
   padding: 5px;
   display: flex;
   align-items: center;
   gap: 5px; /* Space between input and buttons */
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 /* Remove default outline for the search input */
@@ -2471,7 +2480,7 @@ align-items: baseline;
 }
 
 .search-bar input {
-  width: 150px; /* Compact width */
+  width: 100px; /* Compact width */
   padding: 5px;
   font-size: 1.4rem;
   color: var(--eerie-black-2); /* Dark text inside the input */
