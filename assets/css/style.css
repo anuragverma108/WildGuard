@@ -4,6 +4,7 @@
    */
 
   --bright-yellow-crayola: hsl(40, 100%, 50%);
+  --yellow: hsl(70, 86%, 55%);
   --medium-turquoise: hsl(172, 48%, 59%);
   --silver-chalice: hsl(0, 0%, 70%);
   --eerie-black-1: hsl(0, 0%, 13%);
@@ -475,7 +476,7 @@ body {
 }
 
 .navbar-link {
-  color: var(--white);
+  color: var(--yellow);
   font-size: var(--fs-9);
   font-weight: var(--fw-500);
   text-transform: uppercase;
