@@ -1,11 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - WildGuard</title>
+  <style>
+    /* Internal CSS */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .about-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .about-container h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+    .about-container p {
+      line-height: 1.6;
+      color: #34495e;
+    }
+    .team-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .team-member {
+      flex: 1 1 30%;
+      margin: 10px;
+      padding: 10px;
+      background-color: #ecf0f1;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .team-member img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+    .team-member h3 {
+      margin: 10px 0;
+      color: #2c3e50;
+    }
+    .footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores quos totam reprehenderit deserunt, temporibus velit est nemo voluptatum iusto iste eaque, maiores error facere magni alias pariatur cupiditate perspiciatis odit.</p>
+  <header>
+    <h1>About Us</h1>
+  </header>
+
+  <div class="about-container">
+    <h2>Who We Are</h2>
+    <p>WildGuard is a non-profit initiative focused on wildlife conservation and environmental sustainability. Our mission is to protect endangered species and their habitats through innovative solutions, partnerships, and public engagement.</p>
+
+    <h2>Our Vision</h2>
+    <p>We envision a world where humans and wildlife coexist in harmony, and every individual takes responsibility for environmental stewardship. Our goal is to create impactful change by harnessing the power of technology and community action.</p>
+
+    <h2>Meet Our Team</h2>
+    <div class="team-section">
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Team Member 1">
+        <h3>Anurag Verma</h3>
+        <p>Founder & Project Lead</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Team Member 2">
+        <h3>Samantha Smith</h3>
+        <p>Head of Communications</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/100" alt="Team Member 3">
+        <h3>Rahul Kapoor</h3>
+        <p>Wildlife Specialist</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 WildGuard. All rights reserved.</p>
+  </div>
 </body>
 </html>
