@@ -714,7 +714,9 @@ body {
   align-items: center;
 }
 
-/*-----------------------------------*\
+
+
+/*-----------------------------------*\ 
   #FEATURES
 \*-----------------------------------*/
 
@@ -737,9 +739,15 @@ body {
   gap: 25px;
   /*left align */
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/*left align */
+/* Glow and upward movement on hover */
+.features-item:hover {
+  transform: translateY(-10px); /* Move the feature item upwards */
+  box-shadow: 0 10px 20px rgba(0, 255, 0, 0.6); /* Glowing effect */
+}
+
 .item-text {
   text-align: left;
 }
@@ -763,6 +771,13 @@ body {
   color: var(--white_50);
   font-size: var(--fs-9);
 }
+
+/* Glowing effect for item-icon on hover */
+.features-item:hover .item-icon {
+  color: var(--pistachio); /* Ensure the color stays the same */
+  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.7)); /* Icon glowing effect */
+}
+
 
 /*-----------------------------------*\
   #ABOUT
