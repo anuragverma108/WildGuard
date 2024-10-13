@@ -24,6 +24,12 @@ const popup = document.getElementById('popup');
 // Get the icon element to open the popup
 const openPopup = document.getElementById('openPopup');
 
+// click on user icon to open login
+const userbtn = document.getElementById('userpopUpbtn');
+userbtn.addEventListener('click', () => {
+    popup.style.display = 'flex'; // Show the popup
+});
+
 // Get the close button element
 const closePopup = document.getElementById('closePopup');
 
