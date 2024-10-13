@@ -559,32 +559,11 @@ html {
 
 .navbar-link:is(:hover, :focus) {
   background-color: var(--pistachio);
-}
-
-<<<<<<< HEAD
-/**/
+}/**/
 .search-btn{
  margin-top:0px ;
 }
 /**/
-=======
-.header-action{
-  width:425px;
-}
-
-.input-group{
-  display: flex;
-  align-items: center;
-}
-.form-control::placeholder{
-  font-size: 18px;
-}
-.form-control{
-  height: 37px;
-  margin-top: 9px;
-}
-
->>>>>>> 659934b75d4dca6cabe5abb6ffdb55f0279e088b
 /* Login Styling */
 .popup {
   display: none;
@@ -2506,13 +2485,7 @@ align-items: baseline;
   display: flex;
   align-items: center;
   gap: 5px; /* Space between input and buttons */
-<<<<<<< HEAD
-  z-index: 10;
-  
-=======
-  /* z-index: 10; */
->>>>>>> 659934b75d4dca6cabe5abb6ffdb55f0279e088b
-}
+  z-index: 10; }
 
 /* Remove default outline for the search input */
 .search-bar input:focus {
