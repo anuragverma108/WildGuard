@@ -1540,24 +1540,6 @@ html {
   text-align: justify;
 }
 
-.footer-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.footer-right form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  width: 100%;
-}
-
-.footer-right form button {
-  margin: 0;
-}
 
 .footer-right {
   display: flex;
