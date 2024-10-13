@@ -5,6 +5,25 @@
 *<i>Welcome to **WildGuard**, a platform dedicated to protecting the beauty of our planet by supporting animal welfare and ecological conservation efforts 🐝. Together, we can create a better future for all living beings through community-driven action and support.</i>*
 
 <br>
+
+## Featured In
+<table>
+
+   <tr>
+      <th>Event Logo</th>
+      <th>Event Name</th>
+      <th>Event Description</th>
+   </tr>
+    <tr>
+      <td><img src="hacktober.jpg" width="200" height="auto" loading="lazy" alt="Hacktoberfest 2024"/></td>
+      <td>Hacktoberfest 2024</td>
+      <td>Hacktoberfest is a month-long celebration of open source software run by DigitalOcean, GitHub, and Twilio. It encourages contributions to open source projects and promotes a global community of developers.</td>
+   </tr>
+
+</table>
+
+<br />
+
 <table align="center">
     <thead align="center">
         <tr border: 1px;>
@@ -34,15 +53,18 @@
 - [Key Features](#key-features-)
 - [What We Do](#what-we-do-)
 - [Hacktoberfest 2024](#hacktoberfest-2024-)
-- [How To Contribute](#how-to-contribute-)
+- [How to Contribute](#how-to-contribute-)
 - [Tech Stack Behind WildGuard](#tech-stack-behind-wildguard-)
 - [Installation](#installation-)
 - [How You Can Contribute](#how-you-can-contribute-)
-- [Why WildGuard?](#why-wildguard-️)
+- [Why WildGuard?](#why-wildguard-)
 - [Get in Touch with Us](#get-in-touch-with-us-)
 - [Contributors](#contributors)
-- [Website Preview](#website-preview)
-- [License](#license)
+- [Forkers](#forkers)
+- [Stargazers](#stargazers)
+- [Website Preview](#website-preview📸)
+- [License](#license-)
+
 
 ## **About WildGuard** 🐾
 
@@ -179,6 +201,21 @@ Do you have questions, ideas, or simply want to get involved in our mission? We'
   <img src="https://contrib.rocks/image?repo=anuragverma108/WildGuard" />
 </a>
 
+## Forkers
+<div align='center'>
+
+[![Forkers repo roster for @anuragverma108/WildGuard](https://reporoster.com/forks/anuragverma108/WildGuard)](https://github.com/anuragverma108/WildGuard/network/members)
+
+</div>
+
+## Stargazers
+
+<div align='center'>
+
+[![Stargazers repo roster for @anuragverma108/WildGuard](https://reporoster.com/stars/)](https://github.com/anuragverma108/WildGuard/stargazers)
+
+</div>
+
 Recent Contributions:
 
 ![Alt](https://repobeats.axiom.co/api/embed/371dea6625d62314e886ddca3e74a18fe6840448.svg "Repobeats analytics image")
@@ -195,3 +232,10 @@ Recent Contributions:
 ## License 📜 
 
 This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
+
+<div align="center">
+    <a href="#top">
+        <img src="https://img.shields.io/badge/Back%20to%20Top-000000?style=for-the-badge&logo=github&logoColor=white" alt="Back to Top">
+    </a>
+</div>
+
