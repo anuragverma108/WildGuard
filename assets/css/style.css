@@ -28,7 +28,6 @@
   /**
    * typography
    */
-  
 
   --ff-oswald: 'Oswald', sans-serif;
   --ff-inter: 'Inter', sans-serif;
@@ -87,6 +86,11 @@ h1 {
 .post-form {
   margin-bottom: 20px;
 }
+.wildguard-text {
+  background: linear-gradient(90deg, #f2ff00, #00ae09);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 textarea {
   width: 100%;
@@ -98,7 +102,7 @@ textarea {
 
 button {
   background-color: #28a745;
-  color:black;
+  color: black;
   padding: 10px 15px;
   border: none;
   border-radius: 4px;
@@ -1719,7 +1723,8 @@ body {
   font-weight: bold;
 }
 
-.close:hover, .close:focus {
+.close:hover,
+.close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
