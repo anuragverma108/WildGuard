@@ -25,6 +25,7 @@
   --black: hsl(0, 0%, 0%);
   --jet: hsl(0, 0%, 18%);
   --pistachio_100: rgb(73, 123, 7);
+  --green: #28a745;
   /**
    * typography
    */
@@ -452,7 +453,7 @@ html {
 }
 
 .logo {
-  color: var(--white);
+  color: var(--green);
   font-family: var(--ff-oswald);
   font-size: 3.2rem;
   text-transform: uppercase;
