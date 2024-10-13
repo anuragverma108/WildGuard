@@ -1909,6 +1909,10 @@ align-items: baseline;
     text-align: center;
   }
 
+  .footer-right {
+    align-items: center;
+  }
+
   .footer-right input,
   .footer-right button {
     width: fit-content;
