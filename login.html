@@ -8,10 +8,10 @@
     <title>Login</title>
 </head>
 <body>
-    
 
     <div class="login-page">
         <div class="content">
+            <a href="./index.html" class="home-icon" ><i class="fa-solid fa-house"></i></a>
             <h2>Welcome Back!</h2>
 
             <form class="data">
@@ -46,7 +46,7 @@
                 </div>
 
                 <!-- Login Button -->
-                <div class="entry">
+                <div class="entry login">
                     <button type="submit">Login</button>
                 </div>
 
@@ -55,10 +55,10 @@
                     <p>Or login with</p>
                     <div class="social-buttons">
                         <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Continue with Google
+                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo"> 
                         </button>
                         <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/facebook.png" alt="Google Logo" class="google-logo"> Continue with Facebook
+                            <img src="./assets/images/facebook.png" alt="Google Logo" class="google-logo"> 
                         </button>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    <script>
+    <script >
         function togglePasswordVisibility(id) {
             const passwordField = document.getElementById(id);
             const icon = passwordField.nextElementSibling.querySelector('i');
@@ -86,7 +86,6 @@
             }
         }
     </script>
-    
 
 </body>
 </html>
