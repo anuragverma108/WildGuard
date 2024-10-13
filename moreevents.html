@@ -1,266 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Events - World Animals Life</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Conservation Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-        color: #333;
-        margin: 0;
-        padding: 0;
-        position: relative;
-      }
+        :root {
+            --primary-color: #91BE55; /* Forest Green */
+            --background-color: #f0f8ff; /* Light blue (nature-like) */
+            --card-background: #ffffff;
+            --text-color: #91BE55; /* Sea Green */
+        }
 
-      .back-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: #91be55; /* New color */
-        color: white;
-        border: none;
-        border-radius: 4px;
-        padding: 10px 15px;
-        cursor: pointer;
-        font-size: 1em;
-        transition: background-color 0.3s;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+           
+        }
 
-      .back-button:hover {
-        background-color: #78a848; /* Darker shade for hover */
-      }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-      .section {
-        padding: 40px 20px;
-        background-color: #e0f7fa;
-      }
 
-      .section-title {
-        text-align: center;
-        color: #00695c;
-        margin-bottom: 30px;
-        font-size: 2.5em;
-      }
 
-      .event-card {
-        background: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        margin: 20px 0;
-        padding: 20px;
-        transition: transform 0.2s;
-      }
+        h1, h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
 
-      .event-card:hover {
-        transform: translateY(-5px);
-      }
+        .main-event {
+            background: url(./assets/images/hero.jpg);
+            object-fit: cover;
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: #f0f8ff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-      .event-title {
-        color: #91be55; /* New color */
-        margin-bottom: 10px;
-        font-size: 1.8em;
-      }
+        .events-container {
+            padding: 20px 0;
+        }
 
-      .event-date,
-      .event-location {
-        color: #00796b;
-        margin: 5px 0;
-      }
+        .event-card {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
 
-      .event-description {
-        margin: 15px 0;
-        line-height: 1.6;
-      }
+        .event-card:hover {
+   
+          border: 3px solid var(--primary-color);
+        }
 
-      .event-actions {
-        text-align: center;
-      }
+        /* Date Section */
+        .event-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px #5b7737;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            width: 80px;
+        }
 
-      .btn {
-        background-color: #91be55; /* New color */
-        color: white;
-        border: none;
-        border-radius: 4px;
-        padding: 10px 20px;
-        font-size: 1em;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
+        .event-date .month {
+            font-size: 1.2em;
+        }
 
-      .btn:hover {
-        background-color: #78a848; /* Darker shade for hover */
-      }
+        .event-date .day {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
 
-      .btn-secondary {
-        background-color: #ffa000;
-      }
+        .event-details {
+            flex: 1;
+          
+            margin-left: 20px;
+        }
 
-      .btn-secondary:hover {
-        background-color: #ff8f00;
-      }
+        .event-details h3 {
+            margin: 0;
+            font-size: 1.5em;
+            padding-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .event-details p {
+            margin: 5px 0;
+           
+        }
+
+        .event-action {
+            text-align: right;
+        }
+        button {
+            background-color: gray; /* Change button background color to black */
+            color: white; /* Keep text color white for contrast */
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #444; /* Darker shade for hover effect */
+        }
+
+        /* Back Button Styling */
+        .back-btn {
+            background-color: var(--primary-color); /* Change back button background color to black */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .back-btn:hover {
+            background-color: #444; /* Darker shade for hover effect */
+        }
+
+
+        @media (max-width: 768px) {
+            .event-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .event-action {
+                margin-top: 15px;
+                text-align: left;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+
+            nav a {
+                margin: 5px 10px 5px 0;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <!-- Back Button -->
-    <button class="back-button" onclick="location.href='index.html';">
-      Back
-    </button>
+</head>
+<body>
+    <div class="container">
+        <!-- Back Button -->
+        <button class="back-btn" onclick="goBack()">← Back</button>
 
-    <!-- Events Section -->
-    <section class="section events" id="events">
-      <div class="container">
-        <h2 class="section-title">Upcoming Events</h2>
+        <main>
+            <div class="main-event">
+                <h1 id="mainEventName">Save the Forests</h1>
+                <p id="mainEventDate"></p>
+                <button onclick="remindMe()">Set Reminder</button>
+            </div>
 
-        <!-- Event 1 -->
-        <div class="event-card">
-          <div class="event-details">
-            <h3 class="event-title">Animal Conservation Workshop</h3>
-            <p class="event-date">
-              <ion-icon name="calendar-outline"></ion-icon>
-              October 20, 2024
-            </p>
-            <p class="event-location">
-              <ion-icon name="location-outline"></ion-icon>
-              New York City, NY
-            </p>
-            <p class="event-description">
-              Join us for a day-long workshop focusing on the latest strategies
-              in wildlife conservation. Experts will share their insights on
-              protecting endangered species and promoting sustainability in
-              habitats.
-            </p>
-          </div>
-          <div class="event-actions">
-            <button class="btn" onclick="location.href='register.html';">
-              Register Now
-            </button>
-          </div>
-        </div>
+            <h2>Upcoming Conservation Events</h2>
+            <div id="futureEvents" class="events-container"></div>
 
-        <!-- Event 2 -->
-        <div class="event-card">
-          <div class="event-details">
-            <h3 class="event-title">World Animal Day Celebration</h3>
-            <p class="event-date">
-              <ion-icon name="calendar-outline"></ion-icon>
-              November 3, 2024
-            </p>
-            <p class="event-location">
-              <ion-icon name="location-outline"></ion-icon>
-              Virtual Event
-            </p>
-            <p class="event-description">
-              Celebrate World Animal Day with us! Tune in to our virtual event
-              where you can participate in interactive talks with wildlife
-              experts, learn about animal conservation, and donate to support
-              our mission.
-            </p>
-          </div>
-          <div class="event-actions">
-            <button class="btn" onclick="location.href='event-details.html';">
-              Learn More
-            </button>
-          </div>
-        </div>
+            <h2>Previous Wildlife Events</h2>
+            <div id="pastEvents" class="events-container"></div>
+        </main>
+    </div>
 
-        <!-- Event 3 -->
-        <div class="event-card">
-          <div class="event-details">
-            <h3 class="event-title">Wildlife Charity Gala</h3>
-            <p class="event-date">
-              <ion-icon name="calendar-outline"></ion-icon>
-              December 10, 2024
-            </p>
-            <p class="event-location">
-              <ion-icon name="location-outline"></ion-icon>
-              Los Angeles, CA
-            </p>
-            <p class="event-description">
-              Join us for our annual Wildlife Charity Gala in Los Angeles, where
-              we raise funds to support endangered species. The event will
-              feature a silent auction, dinner, and keynote speakers from the
-              wildlife conservation community.
-            </p>
-          </div>
-          <div class="event-actions">
-            <button class="btn" onclick="location.href='event-details.html';">
-              Buy Tickets
-            </button>
-          </div>
-        </div>
+    <script>
+        const events = [
+    { 
+        name: "Forest Restoration Drive", 
+        date: '2024-10-22', 
+        time: '9:00 AM', 
+        type: 'main', 
+        location: 'Central Park, New York', 
+        description: 'Join us for a day of planting trees and restoring the natural habitat.' 
+    },
+    { 
+        name: "Clean Our Oceans", 
+        date: '2024-10-23', 
+        time: '10:00 AM', 
+        type: 'future', 
+        location: 'Santa Monica Beach, California', 
+        description: 'Help us clean up our oceans and beaches to protect marine life.' 
+    },
+    { 
+        name: "Plant a Tree Campaign", 
+        date: '2024-10-24', 
+        time: '11:00 AM', 
+        type: 'future', 
+        location: 'Golden Gate Park, San Francisco', 
+        description: 'Participate in our campaign to plant trees and enhance urban greenery.' 
+    },
+    { 
+        name: "Save the Wetlands", 
+        date: '2024-10-25', 
+        time: '8:00 AM', 
+        type: 'future', 
+        location: 'Everglades, Florida', 
+        description: 'Join us in preserving wetlands and protecting wildlife habitats.' 
+    },
+    { 
+        name: "Wildlife Rescue Operations", 
+        date: '2024-10-21', 
+        time: '7:00 AM', 
+        type: 'past', 
+        location: 'City Zoo, Chicago', 
+        description: 'Volunteer with us to rescue and rehabilitate wildlife.' 
+    }
+];
 
-        <!-- Past Events Section -->
-        <h2 class="section-title">Past Events</h2>
 
-        <!-- Past Event 1 -->
-        <div class="event-card">
-          <div class="event-details">
-            <h3 class="event-title">Wildlife Rescue Fundraiser</h3>
-            <p class="event-date">
-              <ion-icon name="calendar-outline"></ion-icon>
-              August 15, 2024
-            </p>
-            <p class="event-location">
-              <ion-icon name="location-outline"></ion-icon>
-              San Francisco, CA
-            </p>
-            <p class="event-description">
-              Our Wildlife Rescue Fundraiser in San Francisco was a great
-              success! Thanks to all our generous donors, we raised over $50,000
-              for animal rescue operations and conservation programs across the
-              globe.
-            </p>
-          </div>
-          <div class="event-actions">
-            <button
-              class="btn btn-secondary"
-              onclick="location.href='event-details.html';"
-            >
-              View Photos
-            </button>
-          </div>
-        </div>
+async function displayEvents() {
+    const mainEvent = events.find(event => event.type === 'main');
+    if (mainEvent) {
+        document.getElementById('mainEventName').textContent = mainEvent.name;
+        document.getElementById('mainEventDate').textContent = `${formatDate(mainEvent.date)} at ${mainEvent.time}`;
+    }
 
-        <!-- Past Event 2 -->
-        <div class="event-card">
-          <div class="event-details">
-            <h3 class="event-title">Environmental Education Conference</h3>
-            <p class="event-date">
-              <ion-icon name="calendar-outline"></ion-icon>
-              July 30, 2024
-            </p>
-            <p class="event-location">
-              <ion-icon name="location-outline"></ion-icon>
-              London, UK
-            </p>
-            <p class="event-description">
-              The Environmental Education Conference brought together teachers,
-              activists, and environmentalists to discuss the future of
-              environmental education and the role of wildlife conservation in
-              our curriculum.
-            </p>
-          </div>
-          <div class="event-actions">
-            <button
-              class="btn btn-secondary"
-              onclick="location.href='event-details.html';"
-            >
-              Read Summary
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
+    const futureEvents = document.getElementById('futureEvents');
+    const pastEvents = document.getElementById('pastEvents');
+
+    for (const event of events) {
+        if (event.type === 'main') continue;
+
+        const eventElement = document.createElement('div');
+        eventElement.className = 'event-card';
+        eventElement.innerHTML = `
+            <div class="event-date">
+                <span class="month">${new Date(event.date).toLocaleString('default', { month: 'short' })}</span>
+                <span class="day">${new Date(event.date).getDate()}</span>
+            </div>
+            <div class="event-details">
+                <h3>${event.name}</h3>
+                <p>${event.description}</p>
+                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+</svg>${event.location}</p>
+                <p>${formatDate(event.date)} at ${event.time}</p>
+            </div>
+            <div class="event-action">
+                <button onclick="${event.type === 'future' ? 'getTickets()' : 'viewDetails()'}">
+                    ${event.type === 'future' ? 'Get Involved' : 'View Details'}
+                </button>
+            </div>
+        `;
+
+        if (event.type === 'future') {
+            futureEvents.appendChild(eventElement);
+        } else if (event.type === 'past') {
+            pastEvents.appendChild(eventElement);
+        }
+    }
+}
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        function remindMe() {
+            alert('Reminder set for the upcoming conservation event!');
+        }
+
+        function getTickets() {
+            alert('Redirecting to event registration...');
+        }
+
+        function viewDetails() {
+            alert('Viewing event details...');
+        }
+
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+
+        displayEvents();
+    </script>
+</body>
+
+<!-- rebooted -->
 </html>
