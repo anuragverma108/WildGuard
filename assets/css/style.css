@@ -1944,6 +1944,12 @@ body {
     gap: 50px;
   }
 
+  .search-box{
+    margin-top: 10px;
+    width: 250px;
+    height: 40px;
+  }
+
   .search-btn {
     color: var(--white);
     font-size: 2.6rem;
