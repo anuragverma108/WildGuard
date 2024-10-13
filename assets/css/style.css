@@ -477,7 +477,7 @@ body {
 }
 
 .navbar-link {
-  color: var(--white);
+  color: var(--bright-yellow-crayola);
   font-size: var(--fs-9);
   font-weight: var(--fw-500);
   text-transform: uppercase;
@@ -651,7 +651,7 @@ body {
 .section-subtitle {
   margin-left: 35%;
   font-size: 32px;
-  color: white;
+  color: green;
 }
 
 .hero-title {
@@ -2194,11 +2194,11 @@ body {
   }
 
   .navbar-list:hover .navbar-link:not(:hover) {
-    color: var(--white-60);
+    color: var(--bright-yellow-crayola);
   }
 
   .navbar-link.active span {
-    color: var(--pistachio);
+    color: var(--pistachio_100);
   }
 
   /**
