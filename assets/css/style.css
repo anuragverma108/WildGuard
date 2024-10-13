@@ -266,6 +266,10 @@ body {
   gap: 10px;
 }
 
+.section-subtitle span{
+  color: #0f0f0f;
+}
+
 .h1,
 .h2 {
   font-weight: var(--fw-300);
