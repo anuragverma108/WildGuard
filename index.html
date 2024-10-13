@@ -8,13 +8,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-
+  <link rel="stylesheet" href="myCSS.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <title>WildGuard - Give Love for Saving World Animals</title>
 
   <!-- Google Translate script -->
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- ***************Corrected this bug of url by adding https****************** -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -265,7 +266,7 @@
   </header>
 
   <!-- Scroll To Top Btn -->
-  <button type="button" id="btn-back-to-top">
+  <button title="btn" type="button" id="btn-back-to-top">
     <i class="fa-solid fa-leaf"></i>
   </button>
 
@@ -403,22 +404,27 @@
               <button class="prev-btn">&#10094;</button>
 
               <div class="banner-img-container banner-carousel-frame banner-img-cont-1" index=1>
-                <img src="./assets/images/about-banner-1.jpg" width="315" height="380" loading="lazy" alt="Tiger"
+                <img src="./assets/images/about-banner-1.jpg" id="tgr" width="315" height="380" loading="lazy" alt="Tiger"
                   class="about-img w-100" />
+                  <img src="hippo.jpg" id="hpp" width="315" height="380" loading="lazy" alt="Hippo" class="about-img w-100"/>
               </div>
               <div class="banner-img-container banner-carousel-frame banner-img-cont-2" index=2>
-                <img src="./assets/images/about-banner-3.jpg" width="250" height="277" loading="lazy" alt="Elephant"
+                <img src="./assets/images/about-banner-3.jpg" id="ele" width="250" height="277" loading="lazy" alt="Elephant"
                   class="about-img w-100" />
+                <img src="owl.jpg" id="ol" width="250" height="277" loading="lazy" alt="owl" class="about-img w-100"/>
               </div>
 
               <div class="banner-img-container banner-carousel-frame banner-img-cont-3" index=3>
-                <img src="./assets/images/about-banner-2.jpg" width="386" height="250" loading="lazy" alt="Panda"
+                <img src="./assets/images/about-banner-2.jpg" id="pnd" width="386" height="250" loading="lazy" alt="Panda"
+                  class="about-img w-100" />
+                  <img src="wolf.jpg" id="wlf" width="386" height="250" loading="lazy" alt="Wolf"
                   class="about-img w-100" />
               </div>
 
               <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
-                <img src="./assets/images/about-banner-4.jpg" width="315" height="380" loading="lazy" alt="Deer"
+                <img src="./assets/images/about-banner-4.jpg" id="dr" width="315" height="380" loading="lazy" alt="Deer"
                   class="about-img w-100" />
+                <img src="giraffes.jpg" id="grf" loading="lazy" alt="Girrafe" width="315" height="380" class="about-img w-100"/>
               </div>
 
               <!-- Next button -->
@@ -1532,7 +1538,7 @@
   </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="bcktotop.js"></script>
 </body>
 
 </html>

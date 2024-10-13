@@ -1,0 +1,105 @@
+.banner-img-cont-3{
+    position: relative;
+}
+#pnd {
+    position: absolute;
+  transition: opacity 3s ease;
+  display: block;
+  z-index: 1;
+}
+
+#wlf {
+    object-fit: cover;
+    position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
+
+.banner-img-cont-3:hover #wlf {
+  opacity: 1;
+  z-index: 3;
+}
+
+.banner-img-cont-3:hover #pnd {
+  opacity: 0;
+  z-index: 0;
+}
+.banner-img-cont-4{
+    position: relative;
+}
+#dr {
+    position: absolute;
+  transition: opacity 3s ease;
+  display: block;
+  z-index: 1;
+}
+
+#grf {
+    object-fit: cover;
+    position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
+
+.banner-img-cont-4:hover #grf {
+  opacity: 1;
+  z-index: 3;
+}
+
+.banner-img-cont-4:hover #dr {
+  opacity: 0;
+  z-index: 0;
+}
+.banner-img-cont-2{
+    position: relative;
+}
+#ele {
+    position: absolute;
+  transition: opacity 3s ease;
+  display: block;
+  z-index: 1;
+}
+
+#ol {
+    object-fit: cover;
+    position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
+
+.banner-img-cont-2:hover #ol {
+  opacity: 1;
+  z-index: 3;
+}
+
+.banner-img-cont-2:hover #ele {
+  opacity: 0;
+  z-index: 0;
+}
+
+.banner-img-cont-1{
+    position: relative;
+}
+#tgr {
+    position: absolute;
+  transition: opacity 3s ease;
+  display: block;
+  z-index: 1;
+}
+
+#hpp {
+    object-fit: cover;
+    position: absolute;
+  opacity: 0;
+  z-index: 2;
+}
+
+.banner-img-cont-1:hover #hpp {
+  opacity: 1;
+  z-index: 3;
+}
+
+.banner-img-cont-1:hover #tgr {
+  opacity: 0;
+  z-index: 0;
+}
