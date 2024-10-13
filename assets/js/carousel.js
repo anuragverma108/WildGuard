@@ -118,4 +118,6 @@ checkScreenSize();
 
 window.addEventListener('resize', checkScreenSize);
 
-
+function GiveAlert(){
+  alert("Thank you for sharing your valuable thoughts!");
+}
