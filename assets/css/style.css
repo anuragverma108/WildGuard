@@ -175,10 +175,8 @@ button:hover {
   background-color: black;
 }
 .input-group {
-  position: fixed;
-  top: 38px;
-  right: 183px;
   width: 106px;
+  min-width: 10vw;
   height: 44px;
   background-color: #fff;
   border-radius: 3px;
@@ -604,10 +602,6 @@ html {
   width: 425px;
 }
 
-.input-group {
-  display: flex;
-  align-items: center;
-}
 
 .form-control::placeholder {
   font-size: 18px;
@@ -2364,7 +2358,7 @@ data{
   .header-action {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap:1vw;
   }
 
   .search-box {

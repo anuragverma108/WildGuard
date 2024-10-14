@@ -165,52 +165,52 @@
       </nav>
 
       <div class="header-action">
-        <!-- Search bar and button -->
+
         <div class="input-group">
-          <input type="text" class="form-control" id="search-input" placeholder="Search" aria-label="Search"
-            autocomplete="off" oninput="handleInput()">
+          <input type="text" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
           <button class="btn btn-primary search-btn" aria-label="Search" onclick="performSearch()">
             <ion-icon name="search-outline"></ion-icon>
           </button>
           <div class="result-box" id="result-box">
             <!-- Suggestions will be displayed here -->
           </div>
-        </div>
+
+</div>
 
 
-        =
-        <!-- <div class="search-bar" id="searchBar" style="display:none;">
-          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
-        </div> -->
-        <!-- Search bar and button -->
-        <div class="input-group">
-          <input type="text" class="form-control search-box" placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary search-btn" aria-label="Search">
-            <ion-icon name="search-outline"></ion-icon>
-          </button>
-        </div>
+<!-- <div class="search-bar" id="searchBar" style="display:none;">
+  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+</div> -->
+<!-- Search bar and button -->
+<!-- <div class="input-group">
+  <input type="text" class="form-control search-box" placeholder="Search" aria-label="Search">
+  <button class="btn btn-primary search-btn" aria-label="Search">
+    <ion-icon name="search-outline"></ion-icon>
+  </button>
+</div> -->
 
-        <!-- Search input field -->
-        <!-- <div class="search-bar" id="searchBar" style="display:none;">
-          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"> -->
+<!-- Search input field -->
+<!-- <div class="search-bar" id="searchBar" style="display:none;">
+  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"> -->
+  
+  
+  <!-- Match counter and navigation buttons -->
+  <!-- <div class="search-nav-buttons">
+    <span id="matchCounter" style="display: none;">0/0</span> -->
+    <!-- <button id="prevMatch" style="display:none;">&#x25B2;</button> Up arrow -->
+    
+  <!-- </div>
+</div> -->
 
 
-        <!-- Match counter and navigation buttons -->
-        <!-- <div class="search-nav-buttons">
-            <span id="matchCounter" style="display: none;">0/0</span> -->
-        <!-- <button id="prevMatch" style="display:none;">&#x25B2;</button> Up arrow -->
-
-        <!-- </div>
-        </div> -->
-
-        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-          <span>Donation</span>
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-        </button>
-        <!-- Login -->
-        <div id="userpopUpbtn" class="user-icon">
-          <i class="fas fa-user"></i>
-        </div>
+<button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+  <span>Donation</span>
+  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+</button>
+<!-- Login -->
+<div id="userpopUpbtn" class="user-icon">
+  <i class="fas fa-user"></i>
+</div>
 
         <!-- Popup -->
         <div id="popup" class="popup">
@@ -250,8 +250,6 @@
             </div>
           </div>
         </div>
-
-
       </div>
 
 
@@ -280,7 +278,7 @@
           <p class="section-subtitle">
             <img src="./assets/images/subtitle-img-white.png" width="32" height="7" alt="Wavy line">
 
-            <span>Welcome to WildGuard</span>
+            <span style="color:white;">Welcome to WildGuard</span>
           </p>
 
           <h2 class="h1 hero-title">
@@ -449,11 +447,11 @@
               </li>
 
               <li>
-                <button class="tab-btn active" onclick="setActiveTab(this, 'vision')">Our Vision</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'vision')">Our Vision</button>
               </li>
 
               <li>
-                <button class="tab-btn active" onclick="setActiveTab(this, 'plan')">Next Plan</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'plan')">Next Plan</button>
               </li>
 
             </ul>
@@ -1734,7 +1732,7 @@
 
           if (targetElement) {
             window.scrollTo({
-              top: targetElement.offsetTop,
+              top: targetElement.offsetTop - 50,
               behavior: 'smooth'
             });
           }
@@ -1746,27 +1744,19 @@
     });
 
     //Mobile toggle menu
-    document.addEventListener("DOMContentLoaded", function () {
-      const navOpenBtn = document.querySelector("[data-nav-open-btn]");
-      const navCloseBtn = document.querySelector("[data-nav-close-btn]");
-      const navbar = document.querySelector("[data-navbar]");
-
-      navOpenBtn.addEventListener("click", () => {
-        navbar.classList.add("active"); // Add a class to show the menu
-      });
-
-      navCloseBtn.addEventListener("click", () => {
-        navbar.classList.remove("active"); // Remove the class to hide the menu
-      });
+    document.addEventListener("DOMContentLoaded", function() {
+    const navOpenBtn = document.querySelector("[data-nav-open-btn]");
+    const navCloseBtn = document.querySelector("[data-nav-close-btn]");
+    const navbar = document.querySelector("[data-navbar]");
+  
+    navOpenBtn.addEventListener("click", () => {
+      navbar.classList.add("active"); // Add a class to show the menu
     });
-    let backToTop = document.getElementById('btn-back-to-top');
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      })
-    })
-
+  
+    navCloseBtn.addEventListener("click", () => {
+      navbar.classList.remove("active"); // Remove the class to hide the menu
+    });
+  });
   </script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
