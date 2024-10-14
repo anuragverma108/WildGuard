@@ -1,0 +1,226 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../images/hero.jpg'); 
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-page {
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.185); 
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    height: 630px;
+}
+
+
+.home-icon{
+    font-size: 19px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.home-icon:hover {
+    color: #a3cba5;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+@media (min-width: 400px) {
+    .login-page {
+        width: 500px;
+    }
+}
+
+h2 {
+    text-align: center;
+    color: rgb(227 239 211);
+    font-size: 27px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 18px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.entry h3 {
+    font-size: 18px;
+    color: #caeecc;
+    margin-bottom: 10px;
+}
+
+.entry.login , .signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.entry input {
+    height: 40px;
+    width: 90%;
+    padding: 8px 45px 8px 15px;
+    font-size: 15px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.icon {
+    border: none;
+    background: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    font-size: 16px;
+}
+
+.fa {
+    margin-left: -60px;
+    height: 37px;
+    width: 40px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.fas {
+    font-size: 15px;
+}
+
+button {
+    width: 40%;
+    height: 40px;
+    background-color: rgb(145, 190, 85);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    background-color: rgb(125, 170, 70);
+}
+
+.extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.remember-me input {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.remember-me {
+    color: #d5e2d6;
+}
+
+.forgot-password {
+    color: rgb(224, 252, 189);
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.social-login {
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.social-login p {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 15px;
+    color: #ebe1e1;
+}
+
+.social-buttons {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-btn {
+    width: 10%;
+    padding: 1px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.google-btn {
+    background-color: #4286f400;/
+    /* color: white; */
+}
+
+.google-btn:hover {
+    background-color: #c8d7ef13;
+}
+
+.google-logo {
+    height: 25px;
+    width: 25px;
+}
+
+.signup-link {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 0px;
+    color: #ebe1e1;
+}
+
+.signup-link a {
+    color: rgb(145, 190, 85);
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
