@@ -1,0 +1,40 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="password"],
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: -30px; /* Adjust based on your layout */
+}
+
+button:hover {
+    opacity: 0.7; /* Add a hover effect */
+}
+
+#eye-icon {
+    font-size: 20px; /* Adjust icon size */
+}
