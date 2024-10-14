@@ -1,0 +1,16 @@
+body{
+
+    background-color: rgb(251, 255, 0);
+}
+
+.container{
+
+    margin-left: 40px;
+}
+
+.faq-accordion{
+
+    margin-left : -10px;
+    font-size : 30px;
+
+}
