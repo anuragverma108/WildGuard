@@ -763,7 +763,7 @@ html {
 .input-group .form-control{
   height: 39px;
   min-width: 100px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .input-group .search-btn{
