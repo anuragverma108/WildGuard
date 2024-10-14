@@ -114,7 +114,8 @@ html {
 
 .container_1 {
   max-width: 800px;
-  margin: 20px auto;
+  margin: 0 auto;
+  margin-bottom: 40px;
   background-color: white;
   padding: 20px;
   border-radius: 8px;
@@ -429,11 +430,10 @@ html {
   left: 0;
   width: 100%;
   height: 90px;
-  background-color: transparent;
   padding-block: 18px;
   z-index: 4;
   /* reducing height of the navbar */
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(167, 167, 167, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1463,6 +1463,14 @@ html {
 }
 
 .event-card .card-subtitle {
+  margin-block: 30px 5px;
+  color: var(--pistachio);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  letter-spacing: -1px;
+}
+
+.card-subtitle {
   margin-block: 30px 5px;
   color: var(--pistachio);
   font-size: var(--fs-8);
