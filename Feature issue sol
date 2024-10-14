@@ -1,0 +1,34 @@
+Feature Request: Password Visibility Toggle for Login and Sign-Up Pages
+Problem Statement
+Currently, the login and sign-up pages lack the functionality to toggle the visibility of the password field. Users are unable to view their passwords while typing, which can lead to input errors, especially when using complex passwords. This omission can result in frustration and a poor user experience.
+
+Proposed Solution
+To enhance user experience, I propose the addition of a password visibility toggle (represented by an "eye" icon) next to the password input fields on both the login and sign-up pages. The key aspects of this solution include:
+
+Toggle Button:
+
+An "eye" icon that allows users to switch between showing the password in plain text and masking it.
+Use Font Awesome icons: fa-eye (👁️) for visible passwords and fa-eye-slash (🙈) for hidden passwords.
+User Interaction:
+
+Ensure that the toggle button has hover effects to provide visual feedback.
+Implement keyboard accessibility to enhance usability for all users.
+Implementation:
+
+Modify the password input field to include the toggle button.
+Write the necessary JavaScript or React code to handle the visibility toggle.
+Update the CSS to include styles for the hover effects and button placement.
+Implementation Plan
+Fork the repository and create a new branch for the feature.
+Implement the toggle functionality for the password input fields.
+Add an "eye" icon button next to the password input field in both forms.
+Write JavaScript to handle the toggle action, allowing users to switch between type="password" and type="text".
+Test the feature across different browsers to ensure compatibility and functionality.
+Submit a pull request with detailed comments and documentation regarding the changes made.
+Benefits
+Implementing this feature will:
+
+Improve usability and accessibility for users, particularly those who have difficulty entering passwords accurately.
+Reduce errors associated with complex password inputs.
+Align with industry standards and common practices observed in modern authentication systems (e.g., Google, Facebook).
+Thank you for considering this feature request! I look forward to contributing to the project and enhancing its functionality.
