@@ -222,6 +222,12 @@ button {
   background: none;
   border: none;
   font: inherit;
+  margin-bottom: 8px;
+}
+
+button span{
+  font: 14px var(--ff-roboto);
+  font-weight: bold;
 }
 
 input {
@@ -349,7 +355,7 @@ html {
   position: absolute;
   inset: 0;
   border: 1px solid var(--btn-bg, var(--pistachio));
-  transform: translate(5px, 5px);
+  transform: translate(2px, 2px);
   transition: var(--transition-2);
 }
 
@@ -748,19 +754,24 @@ html {
   /* width: 100px; */
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: nowrap;
   gap: 0.75rem;
+  font-size: 14px;
 }
 
 .input-group .form-control{
   height: 39px;
   min-width: 100px;
+  margin-bottom: 8px;
 }
 
 .input-group .search-btn{
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 8px;
+  margin-left: 5px;
 }
 
 .close-button {
