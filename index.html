@@ -71,7 +71,7 @@
     <div class="container">
 
       <h1>
-        <a href="#" class="logo">WildGuard</a>
+        <a  class="logo">WildGuard</a>
       </h1>
 
       <div id="google_translate_element"></div> <!-- Google Translate widget -->
@@ -93,7 +93,7 @@
 
           <li>
             <a href="#home" class="navbar-link active" data-nav-link>
-              <span>Home</span>
+              <span class="new_size">Home</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -101,7 +101,7 @@
 
           <li>
             <a href="#about" class="navbar-link" data-nav-link>
-              <span>About</span>
+              <span class="new_size">About</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -109,7 +109,7 @@
 
           <li>
             <a href="#service" class="navbar-link" data-nav-link>
-              <span>Service</span>
+              <span class="new_size">Service</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -117,7 +117,7 @@
 
           <li>
             <a href="#donate" class="navbar-link" data-nav-link>
-              <span>Donate</span>
+              <span class="new_size">Donate</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -125,7 +125,7 @@
 
           <li>
             <a href="#event" class="navbar-link" data-nav-link>
-              <span>Event</span>
+              <span class="new_size">Event</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -133,7 +133,7 @@
 
           <li>
             <a href="#footer" class="navbar-link" data-nav-link>
-              <span>Contact</span>
+              <span class="new_size">Contact</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -166,37 +166,51 @@
 
       <div class="header-action">
 
-        <!-- <div class="search-bar" id="searchBar" style="display:none;">
-          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
-        </div> -->
-        <!-- Search bar and button -->
         <div class="input-group">
-          <input type="text" class="form-control search-box" placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary search-btn" aria-label="Search">
+          <input type="text" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
+          <button class="btn btn-primary search-btn" aria-label="Search" onclick="performSearch()">
             <ion-icon name="search-outline"></ion-icon>
           </button>
-        </div>
+          <div class="result-box" id="result-box">
+            <!-- Suggestions will be displayed here -->
+          </div>
 
-        <!-- Search input field -->
-        <!-- <div class="search-bar" id="searchBar" style="display:none;">
-          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"> -->
+</div>
 
-        <!-- Match counter and navigation buttons -->
-        <!-- <div class="search-nav-buttons">
-            <span id="matchCounter" style="display: none;">0/0</span> -->
-        <!-- <button id="prevMatch" style="display:none;">&#x25B2;</button> Up arrow -->
 
-        <!-- </div>
-        </div> -->
+<!-- <div class="search-bar" id="searchBar" style="display:none;">
+  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+</div> -->
+<!-- Search bar and button -->
+<!-- <div class="input-group">
+  <input type="text" class="form-control search-box" placeholder="Search" aria-label="Search">
+  <button class="btn btn-primary search-btn" aria-label="Search">
+    <ion-icon name="search-outline"></ion-icon>
+  </button>
+</div> -->
 
-        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-          <span>Donation</span>
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-        </button>
-        <!-- Login -->
-        <div id="userpopUpbtn" class="user-icon">
-          <i class="fas fa-user"></i>
-        </div>
+<!-- Search input field -->
+<!-- <div class="search-bar" id="searchBar" style="display:none;">
+  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"> -->
+  
+  
+  <!-- Match counter and navigation buttons -->
+  <!-- <div class="search-nav-buttons">
+    <span id="matchCounter" style="display: none;">0/0</span> -->
+    <!-- <button id="prevMatch" style="display:none;">&#x25B2;</button> Up arrow -->
+    
+  <!-- </div>
+</div> -->
+
+
+<button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+  <span>Donation</span>
+  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+</button>
+<!-- Login -->
+<div id="userpopUpbtn" class="user-icon">
+  <i class="fas fa-user"></i>
+</div>
 
         <!-- Popup -->
         <div id="popup" class="popup">
@@ -236,8 +250,6 @@
             </div>
           </div>
         </div>
-
-
       </div>
 
 
@@ -265,7 +277,7 @@
           <p class="section-subtitle">
             <img src="./assets/images/subtitle-img-white.png" width="32" height="7" alt="Wavy line">
 
-            <span>Welcome to WildGuard</span>
+            <span style="color:white;">Welcome to WildGuard</span>
           </p>
 
           <h2 class="h1 hero-title">
@@ -495,27 +507,27 @@
     <div class="card">
      <b> <h2>Basic Tier</h2></b>
       <p class="amount">$10/month</p>
-      <p class="donate-button">Donate Now</p>
+      <p onclick="location.href='Donation.html';" class="donate-button">Donate Now</p>
 
     </div>
     <div class="card">
       <b><h2>Supporter Tier</h2></b>
       <p class="amount">$25/month</p>
       <p class="benefits">All Basic Tier benefits<br>Personalised thank-you message</p>
-      <button class="donate-button">Donate Now</button>
+      <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
     </div>
     <div class="card">
       <b><h2>Champion Tier</h2></b>
       <p class="amount">$50/month</p>
       <p class="benefits">All Suppoeter Tier benefits<br>Quarterly report on our impact</p>
-      <button class="donate-button">Donate Now</button>
+      <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
     </div>
     
     <div class="card">
       <b><h2>Leader Tier</h2></b>
       <p class="amount">$100/month</p>
       <p class="benefits">All Champion Tier benefits<br>Invitation to exclusive events</p>
-      <button class="donate-button">Donate Now</button>
+      <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
     </div>
   </div>
 </div>
@@ -672,6 +684,13 @@
         - #DONATE
       -->
 
+
+      <!-- 
+  - #DONATE
+-->
+<section class="section donate" id="donate">
+  <div class="container">
+
       <section class="section donate" id="donate">
         <div class="container">
 
@@ -723,18 +742,33 @@
                       <data class="cyan" value="864">$274</data>
                     </p>
 
-                  </div>
 
-                  <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-                    <span>Donation</span>
+    <ul class="donate-list">
 
-                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                  </button>
+      <li>
+        <div class="donate-card">
 
-                </div>
+          <div class="card-banner-wrapper">
+            <figure class="card-banner">
+              <img src="./assets/images/donate-1.jpg" width="520" height="325" loading="lazy" alt="Elephant" class="img-cover">
+            </figure>
+          </div>
 
+          <div class="card-content-wrapper">
+            <div class="card-content">
+
+              <div class="progress-wrapper">
+                <p class="progress-text">
+                  <span>Raised</span>
+                  <data value="256">$256</data>
+                </p>
+                <data class="progress-value" value="83">83%</data>
               </div>
-            </li>
+
+
+              <div class="progress-box">
+                <div class="progress"></div>
+              </div>
 
             <li>
               <div class="donate-card">
@@ -756,58 +790,99 @@
                     <data class="progress-value" value="72">72.6%</data>
                   </div>
 
-                  <div class="progress-box">
-                    <div class="progress"></div>
-                  </div>
 
-                  <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
+              <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
 
-                  <div class="card-wrapper">
+              <div class="card-wrapper">
 
-                    <p class="card-wrapper-text">
-                      <span>Goal</span>
+                <p class="card-wrapper-text">
+                  <span>Goal</span>
+                  <data class="green" value="34562">$34562</data>
+                </p>
+
+                <p class="card-wrapper-text">
+                  <span>Raise</span>
+                  <data class="yellow" value="562">$562</data>
+                </p>
+
+
+                <p class="card-wrapper-text">
+                  <span>To Go</span>
+                  <data class="cyan" value="864">$864</data>
+                </p>
 
                       <data class="green" value="1000">$1000</data>
                     </p>
 
-                    <p class="card-wrapper-text">
-                      <span>Raise</span>
+
+              </div>
+
+
+              <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                <span>Donation</span>
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              </button>
 
                       <data class="yellow" value="726">$726</data>
                     </p>
 
-                    <p class="card-wrapper-text">
-                      <span>To Go</span>
+
+            </div>
+          </div>
+
+
+        </div>
+      </li>
 
                       <data class="cyan" value="274">$274</data>
                     </p>
 
-                  </div>
 
-                  <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-                    <span>Donation</span>
+      <li>
+        <div class="donate-card">
 
-                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                  </button>
+          <div class="card-banner-wrapper">
+            <figure class="card-banner">
+              <img src="./assets/images/donate-2.jpg" width="520" height="325" loading="lazy" alt="Elephant" class="img-cover">
+            </figure>
+          </div>
 
-                </div>
+          <div class="card-content-wrapper">
+            <div class="card-content">
+
+              <div class="progress-wrapper">
+                <p class="progress-text">
+                  <span>Raised</span>
+                  <data value="256">$256</data>
+                </p>
+                <data class="progress-value" value="83">83%</data>
+              </div>
+
+              <div class="progress-box">
+                <div class="progress"></div>
+              </div>
+
+              <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
+
+              <div class="card-wrapper">
+
+                <p class="card-wrapper-text">
+                  <span>Goal</span>
+                  <data class="green" value="34562">$34562</data>
+                </p>
+
+                <p class="card-wrapper-text">
+                  <span>Raise</span>
+                  <data class="yellow" value="562">$562</data>
+                </p>
+
+
+                <p class="card-wrapper-text">
+                  <span>To Go</span>
+                  <data class="cyan" value="864">$864</data>
+                </p>
 
               </div>
-            </li>
-
-            <li>
-              <div class="donate-card">
-
-                <figure class="card-banner">
-                  <img src="./assets/images/donate-3.jpg" width="520" height="325" loading="lazy" alt="Elephant"
-                    class="img-cover">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="progress-wrapper">
-                    <p class="progress-text">
-                      <span>Raised</span>
 
                       <data value="726">$726</data>
                     </p>
@@ -815,52 +890,88 @@
                     <data class="progress-value" value="72">72.6%</data>
                   </div>
 
-                  <div class="progress-box">
-                    <div class="progress"></div>
-                  </div>
 
-                  <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
+              <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                <span>Donation</span>
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              </button>
 
-                  <div class="card-wrapper">
+            </div>
+          </div>
 
-                    <p class="card-wrapper-text">
-                      <span>Goal</span>
+        </div>
+      </li>
+
+      <li>
+        <div class="donate-card">
+
+          <div class="card-banner-wrapper">
+            <figure class="card-banner">
+              <img src="./assets/images/donate-3.jpg" width="520" height="325" loading="lazy" alt="Elephant" class="img-cover">
+            </figure>
+          </div>
 
                       <data class="green" value="1000">$1000</data>
                     </p>
 
-                    <p class="card-wrapper-text">
-                      <span>Raise</span>
+
+          <div class="card-content-wrapper">
+            <div class="card-content">
+
+
+              <div class="progress-wrapper">
+                <p class="progress-text">
+                  <span>Raised</span>
+                  <data value="256">$256</data>
+                </p>
+                <data class="progress-value" value="83">83%</data>
+              </div>
 
                       <data class="yellow" value="726">$726</data>
                     </p>
 
-                    <p class="card-wrapper-text">
-                      <span>To Go</span>
+
+              <div class="progress-box">
+                <div class="progress"></div>
+              </div>
+
+
+              <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
 
                       <data class="cyan" value="274">$724</data>
                     </p>
 
-                  </div>
 
-                  <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-                    <span>Donation</span>
+              <div class="card-wrapper">
 
-                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                  </button>
+                <p class="card-wrapper-text">
+                  <span>Goal</span>
+                  <data class="green" value="34562">$34562</data>
+                </p>
 
-                </div>
+                <p class="card-wrapper-text">
+                  <span>Raise</span>
+                  <data class="yellow" value="562">$562</data>
+                </p>
+
+                <p class="card-wrapper-text">
+                  <span>To Go</span>
+                  <data class="cyan" value="864">$864</data>
+                </p>
 
               </div>
-            </li>
 
-            <li>
-              <div class="donate-card">
+              <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                <span>Donation</span>
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              </button>
 
-                <figure class="card-banner">
-                  <img src="./assets/images/donate-4.jpg" width="520" height="325" loading="lazy" alt="Elephant"
-                    class="img-cover">
-                </figure>
+
+            </div>
+          </div>
+
+        </div>
+      </li>
 
                 <div class="card-content">
 
@@ -874,46 +985,78 @@
                     <data class="progress-value" value="72">72.6%</data>
                   </div>
 
-                  <div class="progress-box">
-                    <div class="progress"></div>
-                  </div>
 
-                  <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
+      <li>
+        <div class="donate-card">
 
-                  <div class="card-wrapper">
+          <div class="card-banner-wrapper">
+            <figure class="card-banner">
+              <img src="./assets/images/donate-4.jpg" width="520" height="325" loading="lazy" alt="Elephant" class="img-cover">
+            </figure>
+          </div>
 
-                    <p class="card-wrapper-text">
-                      <span>Goal</span>
+          <div class="card-content-wrapper">
+            <div class="card-content">
+
+              <div class="progress-wrapper">
+                <p class="progress-text">
+                  <span>Raised</span>
+                  <data value="256">$256</data>
+                </p>
+                <data class="progress-value" value="83">83%</data>
+              </div>
+
+
+              <div class="progress-box">
+                <div class="progress"></div>
+              </div>
 
                       <data class="green" value="1000">$1000</data>
                     </p>
 
-                    <p class="card-wrapper-text">
-                      <span>Raise</span>
+
+              <h3 class="h3 card-title">Raise Hand To Save Animals</h3>
+
+
+              <div class="card-wrapper">
 
                       <data class="yellow" value="726">$726</data>
                     </p>
 
-                    <p class="card-wrapper-text">
-                      <span>To Go</span>
+
+                <p class="card-wrapper-text">
+                  <span>Goal</span>
+                  <data class="green" value="34562">$34562</data>
+                </p>
+
+                <p class="card-wrapper-text">
+                  <span>Raise</span>
+                  <data class="yellow" value="562">$562</data>
+                </p>
 
                       <data class="cyan" value="274">$274</data>
                     </p>
 
-                  </div>
 
-                  <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-                    <span>Donation</span>
-
-                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                  </button>
-
-                </div>
+                <p class="card-wrapper-text">
+                  <span>To Go</span>
+                  <data class="cyan" value="864">$864</data>
+                </p>
 
               </div>
-            </li>
 
-          </ul>
+              <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                <span>Donation</span>
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+      </li>
+
+    </ul>
 
         </div>
       </section>
@@ -921,7 +1064,7 @@
         <h1>Wildlife Conservation Forum</h1>
         <div class="post-form">
             <h2>Share Your Thoughts</h2>
-            <textarea id="postContent" placeholder="Write your message..." required></textarea>
+            <textarea id="postContent" placeholder="Write your message..."></textarea>
             <button onclick="GiveAlert()" id="submitPost">Submit</button>
           </div>
           <div class="posts">
@@ -1193,7 +1336,7 @@
       <div id="eventModal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
-            <span class="close">&times;</span>
+            <span class="close" onclick="document.getElementById('eventModal').style.display='none'">&times;</span>
             <h2 id="eventTitle">Event Title 3</h2>
             <p id="eventDate">March 27, 2024</p>
           </div>
@@ -1335,6 +1478,67 @@
       <!-- 
         - #INSTA POST
       -->
+
+
+      <section class="insta-post">
+
+        <ul class="insta-post-list">
+
+          <li class="insta-post-item">
+            <a href="javascript:void(0);"  
+            class="insta-post-link">
+              <img src="./assets/images/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"onclick="playSound('lion-roar-6011.mp3')"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+              <audio id="lionRoar" src="lion-roar-6011.mp3"></audio>
+            </a>
+           
+          </li>
+
+          <li class="insta-post-item">
+            <a  href="javascript:void(0);" class="insta-post-link">
+              <img src="./assets/images/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer" onclick="playSound('impala.wav')"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <audio  id="impala" src="WildGuard/impala.wav"></audio>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="javascript:void(0);" 
+            class="insta-post-link">
+              <img src="./assets/images/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear" onclick="playSound('bear.wav')"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <audio id="bear" src="WildGuard/bear.wav"></audio>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="javascript:void(0);" class="insta-post-link">
+              <img src="./assets/images/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer" onclick="playSound('dear.wav')"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <audio src="WildGuard/dear.wav"></audio>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="javascript:void(0);" class="insta-post-link">
+              <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses" onclick="playSound('horse.wav')"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <audio src="WildGuard/horse.wav"></audio>
+          </li>
+        </ul>
+      </section>
+
         <div id="marquee">
           <section class="insta-post">
 
@@ -1437,6 +1641,7 @@
             </ul>
           </section>
         </div>
+
     </article>
   </main>
 
@@ -1516,7 +1721,7 @@
   <!-- 
     - custom js link
   -->
-
+  <script src="sounds.js"></script>
   <script src="./Become-a-Partner/script.js"></script>
   <script src="./Events-Data/modal-scripts.js"></script>
   <script src="./assets/js/script.js"></script>
@@ -1635,7 +1840,6 @@
   
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>
