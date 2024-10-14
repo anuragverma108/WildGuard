@@ -1222,10 +1222,7 @@ html {
 /*-----------------------------------*\
   #DONATE
 \*-----------------------------------*/
-/* new strat */
-/*-----------------------------------*\
-  #DONATE
-\*-----------------------------------*/
+
 
 .donate-list {
   display: block;
@@ -1266,12 +1263,15 @@ html {
   position: absolute;
   top: 58%;  
   left: 35%;
-  width: 80%;
   padding: 35px;
   background-color: white;  
   z-index: 2;  
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  
   border-radius: 10px;
+}
+
+.card-content {
+  width: 60%;
 }
 
 .donate-list > li{
@@ -1378,106 +1378,6 @@ data{
   padding-inline-end: 120px;
 }
  
-
-
-/* new end */
-/* .donate-list {
-  display: grid;
-  gap: 60px;
-}
-
-.donate-card {
-  box-shadow: var(--card-shadow);
-}
-
-.donate-card .card-banner {
-  background-color: var(--light-gray);
-}
-
-.donate-card .card-content {
-  background-color: var(--white);
-  padding: 35px;
-}
-
-.progress-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.progress-text {
-  display: flex;
-  gap: 5px;
-  font-size: var(--fs-8);
-}
-
-.progress-text data {
-  color: var(--eerie-black-2);
-  font-weight: var(--fw-600);
-}
-
-.donate-card .card-title {
-  --fs-5: 2.1rem;
-}
-
-.progress-box {
-  background-color: var(--cultured);
-  border-radius: 20px;
-  margin-block: 10px 20px;
-}
-
-.progress {
-  height: 6px;
-  width: 72.6%;
-  background-color: var(--pistachio);
-  border-radius: inherit;
-}
-
-.progress-value {
-  color: var(--pistachio);
-  font-size: var(--fs-7);
-  font-weight: var(--fw-600);
-}
-
-.card-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5px;
-  margin-block: 15px;
-}
-
-.card-wrapper-text {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.donate-card{
-  width: 100%; 
-}
-
-.donate-card .card-wrapper-text span {
-  color: var(--sonic-silver);
-  font-weight: var(--fw-500);
-}
-
-.card-wrapper-text data {
-  font-weight: var(--fw-600);
-}
-
-.card-wrapper-text .green {
-  color: var(--pistachio);
-}
-
-.card-wrapper-text .yellow {
-  color: var(--bright-yellow-crayola);
-}
-
-.card-wrapper-text .cyan {
-  color: var(--medium-turquoise);
-} */
 
 /*-----------------------------------*\
   #TESTIMONIALS
