@@ -1214,28 +1214,70 @@ html {
   #DONATE
 \*-----------------------------------*/
 
+
 .donate-list {
-  display: grid;
+  display: block;
   gap: 60px;
 }
 
+.donate-list >li{
+  margin-bottom: 100px;
+}
 .donate-card {
+  width: 100%;
+  position: relative;  /* To control the position of elements inside the card */
   box-shadow: var(--card-shadow);
+  margin-bottom: 60px;
+  background-color: white;
 }
 
 .donate-card .card-banner {
+  width: 100%;
+  height: 300px;  
   background-color: var(--light-gray);
+  position: relative;
+  overflow: hidden;  
+}
+
+.donate-card .card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;  
 }
 
 .donate-card .card-content {
-  background-color: var(--white);
+  position: absolute;
+  top: 58%;  
+  left: 35%;
   padding: 35px;
+  background-color: white;  
+  z-index: 2;  
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  
+  border-radius: 10px;
+}
+
+.card-content {
+  width: 60%;
+}
+
+.donate-list > li{
+  margin-bottom: 300px;
+}
+
+data{
+  background-color: white;
 }
 
 .progress-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
 }
 
 .progress-text {
@@ -1254,9 +1296,9 @@ html {
 }
 
 .progress-box {
-  background-color: var(--cultured);
   border-radius: 20px;
   margin-block: 10px 20px;
+  background-color: white;
 }
 
 .progress {
@@ -1281,9 +1323,10 @@ html {
   margin-block: 15px;
 }
 
-.donate-card .card-wrapper-text {
+.card-wrapper-text {
   display: flex;
-  gap: 5px;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .donate-card .card-wrapper-text span {
@@ -1293,6 +1336,7 @@ html {
 
 .card-wrapper-text data {
   font-weight: var(--fw-600);
+  background-color: white;
 }
 
 .card-wrapper-text .green {
@@ -1306,6 +1350,25 @@ html {
 .card-wrapper-text .cyan {
   color: var(--medium-turquoise);
 }
+
+.card-banner-wrapper,
+.card-content-wrapper {
+  flex: 1;
+  background-color: white;
+}
+
+.card-banner-wrapper img {
+  width: 90%;
+  height: auto;
+}
+
+.donate-card {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; 
+  padding-inline-end: 120px;
+}
+ 
 
 /*-----------------------------------*\
   #TESTIMONIALS
@@ -2061,28 +2124,7 @@ html {
     --fs-2: 5.5rem;
   }
 
-  /**
-   * DONATE
-   */
-
-  .donate-card {
-    position: relative;
-    padding-block-end: 150px;
-    box-shadow: none;
-  }
-
-  .donate-card .card-content {
-    position: absolute;
-    width: 85%;
-    bottom: 0;
-    right: 0;
-    border-radius: 4px;
-    box-shadow: var(--card-shadow);
-  }
-
-  .donate-card .card-title {
-    --fs-5: 2.4rem;
-  }
+  
 
   /**
    * EVENT
@@ -2354,37 +2396,7 @@ html {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  /**
-   * DONATE
-   */
-
-  .donate-card {
-    display: flex;
-    flex-direction: row;
-    gap: 20px; /* Adds spacing between image and content */
-  }
-
-  .card-banner-wrapper,
-  .card-content-wrapper {
-    flex: 1;
-  }
-
-  .card-banner-wrapper img {
-    width: 100%;
-    height: auto;
-  }
-
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .donate-list {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
-  }
-
+  
   /**
    * TESTIMONIALS
    */
@@ -2541,18 +2553,7 @@ html {
     left: -35px;
   }
 
-  /**
-   * DONATE
-   */
-
-  .donate-card {
-    padding-inline-end: 120px;
-  }
-
-  .donate-card .card-content {
-    width: 65%;
-  }
-
+  
   /**
    * PARTNER
    */
