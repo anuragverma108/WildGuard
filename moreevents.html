@@ -189,117 +189,121 @@
 
     <script>
         const events = [
-    { 
-        name: "Forest Restoration Drive", 
-        date: '2024-10-22', 
-        time: '9:00 AM', 
-        type: 'main', 
-        location: 'Central Park, New York', 
-        description: 'Join us for a day of planting trees and restoring the natural habitat.' 
-    },
-    { 
-        name: "Clean Our Oceans", 
-        date: '2024-10-23', 
-        time: '10:00 AM', 
-        type: 'future', 
-        location: 'Santa Monica Beach, California', 
-        description: 'Help us clean up our oceans and beaches to protect marine life.' 
-    },
-    { 
-        name: "Plant a Tree Campaign", 
-        date: '2024-10-24', 
-        time: '11:00 AM', 
-        type: 'future', 
-        location: 'Golden Gate Park, San Francisco', 
-        description: 'Participate in our campaign to plant trees and enhance urban greenery.' 
-    },
-    { 
-        name: "Save the Wetlands", 
-        date: '2024-10-25', 
-        time: '8:00 AM', 
-        type: 'future', 
-        location: 'Everglades, Florida', 
-        description: 'Join us in preserving wetlands and protecting wildlife habitats.' 
-    },
-    { 
-        name: "Wildlife Rescue Operations", 
-        date: '2024-10-21', 
-        time: '7:00 AM', 
-        type: 'past', 
-        location: 'City Zoo, Chicago', 
-        description: 'Volunteer with us to rescue and rehabilitate wildlife.' 
-    }
-];
-
-
-async function displayEvents() {
-    const mainEvent = events.find(event => event.type === 'main');
-    if (mainEvent) {
-        document.getElementById('mainEventName').textContent = mainEvent.name;
-        document.getElementById('mainEventDate').textContent = `${formatDate(mainEvent.date)} at ${mainEvent.time}`;
-    }
-
-    const futureEvents = document.getElementById('futureEvents');
-    const pastEvents = document.getElementById('pastEvents');
-
-    for (const event of events) {
-        if (event.type === 'main') continue;
-
-        const eventElement = document.createElement('div');
-        eventElement.className = 'event-card';
-        eventElement.innerHTML = `
-            <div class="event-date">
-                <span class="month">${new Date(event.date).toLocaleString('default', { month: 'short' })}</span>
-                <span class="day">${new Date(event.date).getDate()}</span>
-            </div>
-            <div class="event-details">
-                <h3>${event.name}</h3>
-                <p>${event.description}</p>
-                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-</svg>${event.location}</p>
-                <p>${formatDate(event.date)} at ${event.time}</p>
-            </div>
-            <div class="event-action">
-                <button onclick="${event.type === 'future' ? 'getTickets()' : 'viewDetails()'}">
-                    ${event.type === 'future' ? 'Get Involved' : 'View Details'}
-                </button>
-            </div>
-        `;
-
-        if (event.type === 'future') {
-            futureEvents.appendChild(eventElement);
-        } else if (event.type === 'past') {
-            pastEvents.appendChild(eventElement);
+            { 
+                name: "Forest Restoration Drive", 
+                date: '2024-10-22', 
+                time: '9:00 AM', 
+                type: 'main', 
+                location: 'Central Park, New York', 
+                description: 'Join us for a day of planting trees and restoring the natural habitat.' 
+            },
+            { 
+                name: "Clean Our Oceans", 
+                date: '2024-10-23', 
+                time: '10:00 AM', 
+                type: 'future', 
+                location: 'Santa Monica Beach, California', 
+                description: 'Help us clean up our oceans and beaches to protect marine life.' 
+            },
+            { 
+                name: "Plant a Tree Campaign", 
+                date: '2024-10-24', 
+                time: '11:00 AM', 
+                type: 'future', 
+                location: 'Golden Gate Park, San Francisco', 
+                description: 'Participate in our campaign to plant trees and enhance urban greenery.' 
+            },
+            { 
+                name: "Save the Wetlands", 
+                date: '2024-10-25', 
+                time: '8:00 AM', 
+                type: 'future', 
+                location: 'Everglades, Florida', 
+                description: 'Join us in preserving wetlands and protecting wildlife habitats.' 
+            },
+            { 
+                name: "Wildlife Rescue Operations", 
+                date: '2024-10-21', 
+                time: '7:00 AM', 
+                type: 'past', 
+                location: 'City Zoo, Chicago', 
+                description: 'Volunteer with us to rescue and rehabilitate wildlife.' 
+            }
+        ];
+    
+        async function displayEvents() {
+            const mainEvent = events.find(event => event.type === 'main');
+            if (mainEvent) {
+                document.getElementById('mainEventName').textContent = mainEvent.name;
+                document.getElementById('mainEventDate').textContent = `${formatDate(mainEvent.date)} at ${mainEvent.time}`;
+            }
+    
+            const futureEvents = document.getElementById('futureEvents');
+            const pastEvents = document.getElementById('pastEvents');
+    
+            for (const event of events) {
+                if (event.type === 'main') continue;
+    
+                const eventElement = document.createElement('div');
+                eventElement.className = 'event-card';
+                eventElement.innerHTML = `
+                    <div class="event-date">
+                        <span class="month">${new Date(event.date).toLocaleString('default', { month: 'short' })}</span>
+                        <span class="day">${new Date(event.date).getDate()}</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>${event.name}</h3>
+                        <p>${event.description}</p>
+                        <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+        </svg>${event.location}</p>
+                        <p>${formatDate(event.date)} at ${event.time}</p>
+                    </div>
+                    <div class="event-action">
+                        <button onclick="getTickets('${event.name}')">
+                            Get Involved
+                        </button>
+                    </div>
+                `;
+    
+                if (event.type === 'future') {
+                    futureEvents.appendChild(eventElement);
+                } else if (event.type === 'past') {
+                    pastEvents.appendChild(eventElement);
+                }
+            }
         }
-    }
-}
-
+    
         function formatDate(dateString) {
             const date = new Date(dateString);
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             return date.toLocaleDateString('en-US', options);
         }
-
+    
         function remindMe() {
             alert('Reminder set for the upcoming conservation event!');
         }
-
-        function getTickets() {
-            alert('Redirecting to event registration...');
+    
+        function getTickets(eventName) {
+            if (eventName === "Clean Our Oceans") {
+                window.location.href = "cleanocean.html";
+            } else {
+                alert('Redirecting to event registration...');
+            }
         }
-
+    
         function viewDetails() {
             alert('Viewing event details...');
         }
-
+    
         // Function to go back to the previous page
         function goBack() {
             window.history.back();
         }
-
+    
         displayEvents();
     </script>
+    
 </body>
 
 <!-- rebooted -->
