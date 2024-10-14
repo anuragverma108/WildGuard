@@ -1331,6 +1331,10 @@ html {
   justify-content: center;
 }
 
+.section-subtitle span {
+  color: var(--green);
+}
+
 .testi .section-title {
   color: var(--white);
   margin-block: 10px 40px;
