@@ -30,7 +30,6 @@
    * typography
    */
 
-
   --ff-oswald: 'Oswald', sans-serif;
   --ff-inter: 'Inter', sans-serif;
   --ff-roboto: 'Roboto', sans-serif;
@@ -150,7 +149,7 @@ button {
 
 button:hover {
   background-color: #218838;
-  color:white
+  color: white;
 }
 
 .posts {
@@ -280,7 +279,6 @@ body {
 html {
   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
-
 
 /*-----------------------------------*\
   #REUSED STYLE
@@ -501,14 +499,12 @@ html {
   /*reducing height of the navbar */
 }
 
-
 /* .input-group{
   display: flex;
   flex-direction: row;
   
   
 } */
-
 
 /* reducing height of the navbar */
 .logo,
@@ -538,7 +534,7 @@ html {
   --ionicon-stroke-width: 60px;
 }
 
-.navbar>.logo {
+.navbar > .logo {
   font-size: 4rem;
   width: max-content;
   margin-inline: auto;
@@ -576,7 +572,6 @@ html {
   transform: scale(1.4);
 }
 .navbar-link {
-
   margin-left: -10px;
   color: var(--white);
   font-size: 15px;
@@ -601,7 +596,6 @@ html {
 .header-action {
   width: 425px;
 }
-
 
 .form-control::placeholder {
   font-size: 18px;
@@ -807,8 +801,6 @@ html {
   align-items: center;
 }
 
-
-
 /*-----------------------------------*\ 
   #FEATURES
 \*-----------------------------------*/
@@ -874,7 +866,6 @@ html {
   filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.7));
   /* Icon glowing effect */
 }
-
 
 /*-----------------------------------*\
   #ABOUT
@@ -1518,23 +1509,22 @@ html {
   }
 }
 
-
 .insta-post-link {
   position: relative;
   background-color: var(--eerie-black-1);
   overflow: hidden;
 }
 
-.insta-post-link>img {
+.insta-post-link > img {
   transition: var(--transition-2);
 }
 
-.insta-post-link:is(:hover, :focus)>img {
+.insta-post-link:is(:hover, :focus) > img {
   transform: scale(1.1);
   opacity: 0.5;
 }
 
-.insta-post-link>ion-icon {
+.insta-post-link > ion-icon {
   color: var(--white);
   font-size: 5rem;
   position: absolute;
@@ -1545,7 +1535,7 @@ html {
   transition: var(--transition-2);
 }
 
-.insta-post-link:is(:hover, :focus)>ion-icon {
+.insta-post-link:is(:hover, :focus) > ion-icon {
   opacity: 1;
 }
 
@@ -1554,7 +1544,6 @@ html {
   overflow-x: auto;
   padding: 0;
   scroll-snap-type: inline mandatory;
-
 }
 
 .insta-post-list::-webkit-scrollbar {
@@ -1603,7 +1592,6 @@ html {
 .footer-left {
   max-width: 1200px;
   text-align: justify;
-
 }
 
 .footer-logo {
@@ -1750,7 +1738,16 @@ html {
 .footer-right h4 {
   color: #98c379;
   font-size: 1.6rem;
+}
+
+.footer-middle h4 {
   margin-bottom: 10px;
+}
+
+.footer-right h4 {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .footer-middle ul {
@@ -1774,6 +1771,7 @@ html {
 
 .footer-right form {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
@@ -1850,9 +1848,11 @@ html {
 .filled {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to right,
-      rgb(17, 173, 2),
-      rgb(99, 255, 109));
+  background-image: linear-gradient(
+    to right,
+    rgb(17, 173, 2),
+    rgb(99, 255, 109)
+  );
 }
 
 .footer-bottom .container {
@@ -1898,15 +1898,17 @@ html {
   flex-direction: column;
 }
 
-.footer-right {
-  text-align: right;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    width: 100%;
   }
 
   .footer-right form {
@@ -1943,16 +1945,19 @@ html {
 
 /* Media Queries for Smaller Devices */
 @media (max-width: 480px) {
-
   .footer-left,
   .footer-middle,
   .footer-right {
     text-align: center;
   }
 
+  .footer-right {
+    align-items: center;
+  }
+
   .footer-right input,
   .footer-right button {
-    width: 100%;
+    width: fit-content;
   }
 
   .footer-bottom {
@@ -2216,7 +2221,7 @@ html {
   .header-action {
     display: flex;
     align-items: center;
-    gap:1vw;
+    gap: 1vw;
   }
 
   .search-box {
@@ -2455,8 +2460,8 @@ html {
 
   .nav-open-btn,
   .nav-close-btn,
-  .navbar>.logo,
-  .navbar-link>ion-icon {
+  .navbar > .logo,
+  .navbar-link > ion-icon {
     display: none;
   }
 
