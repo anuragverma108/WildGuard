@@ -602,8 +602,8 @@ html {
 }
 
 .form-control {
-  height: 37px;
-  margin-top: 9px;
+  height: 42px;
+  margin-top: 0px;
 }
 
 /* Login Styling */
