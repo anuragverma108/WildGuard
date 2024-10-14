@@ -1178,6 +1178,10 @@ html {
   text-decoration: underline;
 }
 
+.btn-link span:hover{
+  cursor: pointer;
+}
+
 #service-card1 {
   transition: transform 0.3s ease;
 }
