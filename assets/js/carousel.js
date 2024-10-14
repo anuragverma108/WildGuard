@@ -118,4 +118,11 @@ checkScreenSize();
 
 window.addEventListener('resize', checkScreenSize);
 
-
+const check= document.getElementById('postContent')
+function GiveAlert() {
+  if (check.value.trim() === '') {
+      alert('Please enter a message.');
+  } else {
+      alert('Thank you for your feedback!');
+  }
+}
