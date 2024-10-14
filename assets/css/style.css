@@ -1077,7 +1077,16 @@ body {
 
 .event .btn-secondary { margin-inline: auto; }
 
+/*--------------------------*\
+Modified code
+\*--------------------------*/
+.event-details {
+  display: none;
+}
 
+.event-card.active .event-details {
+  display: block;
+}
 
 
 

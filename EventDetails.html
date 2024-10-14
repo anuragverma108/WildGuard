@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .event-details-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    .btn-register {
+      display: block;
+      width: 100%;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .btn-register:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="event-details-container">
+    <h2 id="event-title">Event Title</h2>
+    <img id="event-image" src="" alt="Event Image" width="500" height="300">
+    <div id="event-description"></div>
+    <h3><p><strong>Date:</strong> <span id="event-date"></span></p></h3>
+    <h3><p><strong>Time:</strong> <span id="event-time"></span></p></h3>
+    <h3><p><strong>Location:</strong> <span id="event-location"></span></p></h3>
+    
+    <button class="btn-register" id="register-btn">Register Now</button>
+  </div>
+
+  
+  <script>
+    // Function to get URL parameters
+    function getQueryParams() {
+      const params = {};
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      params.image = urlParams.get('image');
+      params.title = urlParams.get('title');
+      params.date = urlParams.get('date');
+      params.time = urlParams.get('time');
+      params.location = urlParams.get('location');
+      params.description = urlParams.get('description');
+      
+
+      return params;
+    }
+
+    // Populate the event details
+    window.onload = function() {
+      const params = getQueryParams();
+      
+      document.getElementById('event-image').src = params.image;
+      document.getElementById('event-title').innerText = params.title;
+      document.getElementById('event-date').innerText = params.date;
+      document.getElementById('event-time').innerText = params.time;
+      document.getElementById('event-location').innerText = params.location;
+      document.getElementById('event-description').innerText = params.description;
+      
+      // Handle registration button click
+      document.getElementById('register-btn').onclick = function() {
+        window.location.href = `EventRegister.html?event=${encodeURIComponent(params.title)}&date=${encodeURIComponent(params.date)}&location=${encodeURIComponent(params.location)}`;
+      };
+    };
+  </script>
+</body>
+</html>

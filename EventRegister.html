@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration</title>
+  <style>
+    /*--------------------------*\ 
+Event Register 
+\*--------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#event-form {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input[readonly] {
+  background-color: #f0f0f0;
+  color: #555;
+}
+
+button[type="submit"],
+button[type="button"] {
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.container {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#back-button {
+  margin-top: 15px;
+}
+
+#back-button button {
+  background-color: #6c757d;
+}
+
+@media (max-width: 600px) {
+  #event-form {
+    padding: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    font-size: 0.9rem;
+  }
+
+  button[type="submit"],
+  button[type="button"] {
+    font-size: 1rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Event Registration</h2>
+    <form id="event-form">
+      <div class="form-section">
+        <label for="event-name">Event Name:</label>
+        <input type="text" id="event-name" name="event-name" readonly>
+      </div>
+      
+      <div class="form-section">
+        <label for="event-date">Date & Time:</label>
+        <input type="text" id="event-date" name="event-date" readonly>
+      </div>
+
+      <div class="form-section">
+        <label for="event-location">Location:</label>
+        <input type="text" id="event-location" name="event-location" readonly>
+      </div>
+
+      <div class="form-section">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-section">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+      </div>
+
+      <div class="form-section">
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-section">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+
+      <div class="form-section">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="success-message" style="display:none; color: green; font-size: 1.2rem;">Registered successfully! A confirmation email has been sent.</p>
+
+    <div id="back-button">
+      <button type="button" onclick="goBack()">Back</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to get URL parameters
+    function getQueryParams() {
+      const params = {};
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      params.event = urlParams.get('event');
+      params.date = urlParams.get('date');
+      params.location = urlParams.get('location');
+
+      return params;
+    }
+
+    // Populate the form with event details from URL parameters
+    window.onload = function() {
+      const params = getQueryParams();
+      if (params.event && params.date && params.location) {
+        document.getElementById('event-name').value = decodeURIComponent(params.event);
+        document.getElementById('event-date').value = decodeURIComponent(params.date);
+        document.getElementById('event-location').value = decodeURIComponent(params.location);
+      } else {
+        console.error("Event data not found in URL.");
+      }
+    };
+
+    // Simulate sending an email (this will just log the email details)
+    function sendEmailToUser(email, eventDetails) {
+      console.log(`Sending email to: ${email}`);
+      console.log(`Event Details: ${eventDetails}`);
+      // Simulate email sending by logging the message
+      alert(`An email has been sent to ${email} with the event details.`);
+    }
+
+    // Handle form submission
+    document.getElementById('event-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting to the server
+
+      const email = document.getElementById('email').value;
+      const eventName = document.getElementById('event-name').value;
+      const eventDate = document.getElementById('event-date').value;
+      const eventLocation = document.getElementById('event-location').value;
+
+      const eventDetails = `Event Name: ${eventName}\nDate & Time: ${eventDate}\nLocation: ${eventLocation}`;
+      
+      // Display success message
+      document.getElementById('success-message').style.display = 'block';
+
+      // Simulate sending an email
+      sendEmailToUser(email, eventDetails);
+    });
+
+    // Back button functionality
+    function goBack() {
+      window.history.back(); // Go back to the previous page
+    }
+  </script>
+</body>
+</html>
