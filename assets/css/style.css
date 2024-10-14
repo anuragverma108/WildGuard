@@ -427,7 +427,7 @@ html {
   height: 90px;
   background-color: transparent;
   padding-block: 18px;
-  z-index: 4;
+  z-index: 100;
   /* reducing height of the navbar */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -435,8 +435,11 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
-  z-index: 1000;
+  /* z-index: 1000; */
   padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   /* Reduce padding to decrease height */
 }
 
@@ -467,7 +470,8 @@ html {
   text-align: center;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
+  width: 100%;
 }
 
 .logo {
@@ -480,6 +484,7 @@ html {
 .nav-open-btn {
   color: var(--white);
   font-size: 3.9rem;
+  margin-top: 0;
 }
 
 .navbar {
@@ -518,8 +523,8 @@ html {
   transform: translateY(-100%);
   visibility: visible;
   transition: 0.5s var(--cubic-out);
-  height: 50vh;
-  top: 29rem;
+  height: 9rem;
+  top: 9rem;
 }
 
 .nav-close-btn {
@@ -539,12 +544,12 @@ html {
   width: max-content;
   margin-inline: auto;
   margin-block-start: 50px;
+  margin: auto;
 }
 
 .navbar-list {
   max-width: 300px;
   width: 100%;
-  height: 100%;
   margin: auto;
   padding-top: 20px;
   padding-inline: 10px;
@@ -561,6 +566,12 @@ html {
 .navbar.active .navbar-list {
   opacity: 1;
   transition-delay: 0.25s;
+  height: 30rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .new_size {
@@ -572,7 +583,7 @@ html {
   transform: scale(1.4);
 }
 .navbar-link {
-  margin-left: -10px;
+
   color: var(--white);
   font-size: 15px;
 
@@ -726,6 +737,25 @@ html {
 .form-container button:hover {
   background-color: darkgreen;
   transform: translateY(-2px);
+}
+
+.input-group{
+  /* width: 100px; */
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+
+.input-group .form-control{
+  height: 39px;
+  min-width: 100px;
+}
+
+.input-group .search-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .close-button {
@@ -1443,7 +1473,7 @@ data{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  /* gap: 50px; */
 }
 
 .partner-logo .color,
@@ -2263,7 +2293,11 @@ data{
   .header-action {
     display: flex;
     align-items: center;
-    gap: 1vw;
+    /* gap:1vw; */
+    justify-content: space-between;
+    width: 300px;
+    gap: 30px;
+    margin-right: 2rem;
   }
 
   .search-box {
@@ -2438,7 +2472,7 @@ data{
  * responsive for larger than 1200px screen
  */
 
-@media (min-width: 1200px) {
+@media (min-width: 1260px) {
   /**
    * CUSTOM PROPERTY
    */
@@ -2524,6 +2558,10 @@ data{
 
   .navbar-link.active span {
     color: var(--pistachio_100);
+  }
+
+  .header-action{
+    gap: 1.5rem;
   }
 
   /**
