@@ -58,7 +58,7 @@
 }
 
 .card:hover {
-    transform: scale(1, 0.5);
+    cursor:pointer
 }
 
 .card h2 {
