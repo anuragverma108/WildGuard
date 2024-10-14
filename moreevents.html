@@ -256,12 +256,12 @@ async function displayEvents() {
                 <h3>${event.name}</h3>
                 <p>${event.description}</p>
                 <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-</svg>${event.location}</p>
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                </svg>${event.location}</p>
                 <p>${formatDate(event.date)} at ${event.time}</p>
             </div>
             <div class="event-action">
-                <button onclick="${event.type === 'future' ? 'getTickets()' : 'viewDetails()'}">
+                <button onclick="getTickets('${event.name}')">
                     ${event.type === 'future' ? 'Get Involved' : 'View Details'}
                 </button>
             </div>
@@ -285,9 +285,14 @@ async function displayEvents() {
             alert('Reminder set for the upcoming conservation event!');
         }
 
-        function getTickets() {
-            alert('Redirecting to event registration...');
-        }
+        function getTickets(eventName) {
+    if (eventName === "Save the Wetlands") {
+        window.location.href = 'SaveTheWetlands.html'; // Redirect to the specific page
+    } else {
+        alert('Redirecting to event registration...');
+    }
+}
+
 
         function viewDetails() {
             alert('Viewing event details...');
