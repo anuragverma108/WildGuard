@@ -176,9 +176,10 @@ button:hover {
 .input-group {
   width: 106px;
   min-width: 10vw;
-  height: 44px;
-  background-color: #fff;
+  height: 40px;
   border-radius: 3px;
+  margin-bottom: 5px;
+ 
 }
 
 *,
