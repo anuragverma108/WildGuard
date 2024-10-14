@@ -602,9 +602,15 @@ html {
 }
 
 .form-control {
-  height: 42px;
+  height: 52px;
   margin-top: 0px;
 }
+
+/* style.css */
+.form-control {
+  font-size: 2rem; /* Sets the font size to 1 rem */
+}
+
 
 /* Login Styling */
 .popup {
