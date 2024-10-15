@@ -70,7 +70,6 @@ html {
     color: rgb(232, 232, 50);
 }
 
-
 #ratingForm #reviewInput {
     width: 380px;
     height: 155px;
@@ -108,7 +107,6 @@ button:hover {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
 
 /* review section css */
 
@@ -331,5 +329,3 @@ main h1 {
         margin: 10px;
     }
 }
-
-

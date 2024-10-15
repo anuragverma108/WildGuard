@@ -164,6 +164,7 @@ button:hover {
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
+
 .result-box ul li {
   list-style: none;
   padding: 2px;
@@ -504,13 +505,6 @@ html {
   /*reducing height of the navbar */
 }
 
-/* .input-group{
-  display: flex;
-  flex-direction: row;
-  
-  
-} */
-
 /* reducing height of the navbar */
 .logo,
 .navbar-list,
@@ -579,17 +573,16 @@ html {
   font-weight: bold;
   left: 1px;
 }
+
 .new_size:hover {
   transform: scale(1.4);
 }
-.navbar-link {
 
+.navbar-link {
   color: var(--white);
   font-size: 15px;
-
   color: var(--bright-yellow-crayola);
   font-size: var(--fs-9);
-
   font-weight: var(--fw-500);
   text-transform: uppercase;
   display: flex;
@@ -681,8 +674,6 @@ html {
   gap: 2em;
 }
 
-
-
 .form-fields--login {
   padding-left: 10px;
   padding-right: 10px;
@@ -691,8 +682,6 @@ html {
 .form-fields--signup {
   margin-bottom: 10px;
 }
-
-
 
 .form-container input {
   margin: 10px 0;
@@ -1253,7 +1242,6 @@ html {
   #DONATE
 \*-----------------------------------*/
 
-
 .donate-list {
   display: block;
   gap: 60px;
@@ -1408,7 +1396,6 @@ data{
   padding-inline-end: 120px;
 }
  
-
 /*-----------------------------------*\
   #TESTIMONIALS
 \*-----------------------------------*/
@@ -2162,8 +2149,6 @@ data{
 
     --fs-2: 5.5rem;
   }
-
-  
 
   /**
    * EVENT

@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const partnerBtn = document.getElementById("partnerButton");
 
-
     if (partnerBtn) {
         partnerBtn.addEventListener("click", function () {
             console.log("Hello");

@@ -1,5 +1,3 @@
-
-
 :root {
 
   /**
@@ -75,10 +73,6 @@
 
 }
 
-
-
-
-
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
@@ -145,10 +139,6 @@ body {
 ::-webkit-scrollbar-track { background-color: hsl(0, 0%, 95%); }
 
 ::-webkit-scrollbar-thumb { background-color: var(--pistachio); }
-
-
-
-
 
 /*-----------------------------------*\
   #REUSED STYLE
@@ -240,9 +230,6 @@ body {
   height: 100%;
   object-fit: cover;
 }
-
-
-
 
 /*-----------------------------------*\
   #HEADER
@@ -371,10 +358,6 @@ body {
 
 .navbar-link:is(:hover, :focus) { background-color: var(--pistachio); }
 
-
-
-
-
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
@@ -396,7 +379,6 @@ body {
 }
 
 .hero .h1 .hero-title{
-
   padding-left: 600px;
 }
 
@@ -418,9 +400,6 @@ body {
 .hero .btn {
 left: 45%;
 }
-
-
-
 
 /*-----------------------------------*\
   #FEATURES
@@ -457,10 +436,6 @@ left: 45%;
   color: var(--white_50);
   font-size: var(--fs-9);
 }
-
-
-
-
 
 /*-----------------------------------*\
   #ABOUT
@@ -550,10 +525,6 @@ left: 45%;
   font-weight: var(--fw-500);
 }
 
-
-
-
-
 /*-----------------------------------*\
   #CTA
 \*-----------------------------------*/
@@ -576,10 +547,6 @@ left: 45%;
 .cta .btn-outline { margin-inline: auto; }
 
 .cta-banner { background-color: var(--light-gray); }
-
-
-
-
 
 /*-----------------------------------*\
   #SERVICE
@@ -640,10 +607,6 @@ left: 45%;
 }
 
 .btn-link span { text-decoration: underline; }
-
-
-
-
 
 /*-----------------------------------*\
   #DONATE
@@ -728,10 +691,6 @@ left: 45%;
 
 .card-wrapper-text .cyan { color: var(--medium-turquoise); }
 
-
-
-
-
 /*-----------------------------------*\
   #TESTIMONIALS
 \*-----------------------------------*/
@@ -766,10 +725,6 @@ left: 45%;
 
 .testi-banner { background-color: var(--light-gray); }
 
-
-
-
-
 /*-----------------------------------*\
   #PARTNER
 \*-----------------------------------*/
@@ -789,10 +744,6 @@ left: 45%;
 
 .partner-logo:is(:hover, :focus) .color,
 .partner-logo .gray { display: block; }
-
-
-
-
 
 /*-----------------------------------*\
   #EVENT
@@ -858,10 +809,6 @@ left: 45%;
 
 .event .btn-secondary { margin-inline: auto; }
 
-
-
-
-
 /*-----------------------------------*\
   #INSTA POST
 \*-----------------------------------*/
@@ -904,10 +851,6 @@ left: 45%;
   min-width: 90%;
   scroll-snap-align: center;
 }
-
-
-
-
 
 /*-----------------------------------*\
   #FOOTER
@@ -1142,8 +1085,6 @@ left: 45%;
   color: #81a864;
 }
 
-
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .footer-container {
@@ -1188,11 +1129,6 @@ left: 45%;
   }
 }
 
-
-
-
-
-
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
@@ -1217,8 +1153,6 @@ left: 45%;
 
   }
 
-
-
   /**
    * CTA
    */
@@ -1226,10 +1160,6 @@ left: 45%;
   .cta { --fs-4: 4.1rem; }
 
 }
-
-
-
-
 
 /**
  * responsive for larger than 580px screen
@@ -1250,8 +1180,6 @@ left: 45%;
     --fs-2: 5.5rem;
 
   }
-
-
 
   /**
    * DONATE
@@ -1274,8 +1202,6 @@ left: 45%;
 
   .donate-card .card-title { --fs-5: 2.4rem; }
 
-
-
   /**
    * EVENT
    */
@@ -1293,8 +1219,6 @@ left: 45%;
     line-height: 1.4;
   }
 
-
-
   /**
    * INSTA POST
    */
@@ -1302,10 +1226,6 @@ left: 45%;
   .insta-post-item { min-width: 45%; }
 
 }
-
-
-
-
 
 /**
  * responsive for larger than 768px screen
@@ -1319,8 +1239,6 @@ left: 45%;
 
   .features-list,
   .service-list { grid-template-columns: 1fr 1fr; }
-
-
 
   /**
    * ABOUT
@@ -1340,8 +1258,6 @@ left: 45%;
 
   .about-img:first-child { margin-block-end: 30px; }
 
-
-
   /**
    * TESTIMONIALS
    */
@@ -1354,15 +1270,11 @@ left: 45%;
 
   .testi-text { margin-block-start: 0; }
 
-
-
   /**
    * INSTA POST
    */
 
   .insta-post-item { min-width: 32%; }
-
-
 
   /**
    * FOOTER
@@ -1382,10 +1294,6 @@ left: 45%;
   .footer-list { margin-block-end: 0; }
 
 }
-
-
-
-
 
 /**
  * responsive for larger than 992px screen
@@ -1407,8 +1315,6 @@ left: 45%;
 
   }
 
-
-
   /**
    * HEADER
    */
@@ -1428,8 +1334,6 @@ left: 45%;
 
   .search-btn ion-icon { --ionicon-stroke-width: 50px; }
 
-
-
   /**
    * HERO
    */
@@ -1442,8 +1346,6 @@ left: 45%;
     min-height: 780px;
   }
 
-
-
   /**
    * FEATURES
    */
@@ -1451,8 +1353,6 @@ left: 45%;
   .features { padding-block-start: var(--section-padding); }
 
   .features-list { grid-template-columns: repeat(4, 1fr); }
-
-
 
   /**
    * ABOUT
@@ -1478,8 +1378,6 @@ left: 45%;
 
   .about-banner { margin-block-end: 0; }
 
-
-
   /**
    * CTA
    */
@@ -1494,15 +1392,11 @@ left: 45%;
 
   .cta .section-title { --fs-4: 5rem; }
 
-
-
   /**
    * SERVICE
    */
 
   .service-list { grid-template-columns: repeat(4, 1fr); }
-
-
 
   /**
    * DONATE
@@ -1512,8 +1406,6 @@ left: 45%;
     grid-template-columns: 1fr 1fr;
     column-gap: 30px;
   }
-
-
 
   /**
    * TESTIMONIALS
@@ -1525,8 +1417,6 @@ left: 45%;
   }
 
   .testi-content { padding-inline: 30px 50px; }
-
-
 
   /**
    * EVENT
@@ -1541,8 +1431,6 @@ left: 45%;
 
   .event-card .card-text { margin-block-end: 0; }
 
-
-
   /**
    * INSTA POST
    */
@@ -1550,10 +1438,6 @@ left: 45%;
   .insta-post-item { min-width: 24%; }
 
 }
-
-
-
-
 
 /**
  * responsive for larger than 1200px screen
@@ -1575,8 +1459,6 @@ left: 45%;
 
   }
 
-
-
   /**
    * REUSED STYLE
    */
@@ -1589,8 +1471,6 @@ left: 45%;
   }
 
   .section-title { line-height: 1.2; }
-
-
 
   /**
    * HEADER
@@ -1638,8 +1518,6 @@ left: 45%;
 
   .navbar-list:hover .navbar-link:not(:hover) { color: var(--white-60); }
 
-
-
   /**
    * HERO
    */
@@ -1648,8 +1526,6 @@ left: 45%;
     padding-block: 200px 325px;
     background-position: center;
   }
-
-
 
   /**
    * FEATURES
@@ -1661,15 +1537,11 @@ left: 45%;
     background-color: transparent;
   }
 
-
-
   /**
    * ABOUT
    */
 
   .deco-img { left: -35px; }
-
-
 
   /**
    * DONATE
@@ -1679,23 +1551,17 @@ left: 45%;
 
   .donate-card .card-content { width: 65%; }
 
-
-
   /**
    * PARTNER
    */
 
   .partner .container { justify-content: space-evenly; }
 
-
-
   /**
    * INSTA POST
    */
 
   .insta-post-item { min-width: 20%; }
-
-
 
   /**
    * FOOTER
@@ -1735,6 +1601,7 @@ left: 45%;
   text-align: center;
   margin-top: 10px; /* Space from the top */
 }
+
 /**
 * Search-bar
 */

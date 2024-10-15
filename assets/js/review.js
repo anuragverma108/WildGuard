@@ -55,13 +55,6 @@ document.getElementById("ratingForm").addEventListener("submit", (e) => {
     }
 });
 
-
-
-
-
-
-
-
 //review section
 
 const btns = document.querySelectorAll(".btn");

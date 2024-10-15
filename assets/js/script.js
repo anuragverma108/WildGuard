@@ -194,7 +194,6 @@ function update() {
 
 update();
 
-
 /**
  * adding functionality to about section
  */
@@ -421,5 +420,3 @@ function googleTranslateElementInit() {
 window.addEventListener('load', function() {
   googleTranslateElementInit();
 });
-
-
