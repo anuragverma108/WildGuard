@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Conservation Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url(../WildGuard/assets/images/images4.jpeg);
+        }
+
+        header {
+            background: #51ac54;
+            color: #802525;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #105c27;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-left: 5px solid #4CAF50;
+            background: #bbefd2;
+            border-radius: 5px;
+        }
+
+        .resource h2 {
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #4CAF50;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wildlife Conservation Resources</h1>
+        <p>Discover articles and educational resources on wildlife conservation.</p>
+    </header>
+
+    <main id="resources-container">
+        <!-- Resources will be dynamically inserted here -->
+    </main>
+
+    <footer>
+        <p>&copy; WildGuard</p>
+    </footer>
+
+    <script>
+        const resources = [
+            {
+                title: "The Role of Biodiversity in Ecosystems",
+                content: "Biodiversity contributes to ecosystem resilience and stability, supporting various life forms.",
+                link: "https://www.example.com/biodiversity"
+            },
+            {
+                title: "Conservation Strategies for Endangered Species",
+                content: "Learn about effective strategies that help protect endangered species and their habitats.",
+                link: "https://www.example.com/conservation-strategies"
+            },
+            {
+                title: "The Impact of Climate Change on Wildlife",
+                content: "This article discusses how climate change affects wildlife and what can be done to mitigate these impacts.",
+                link: "https://www.example.com/climate-impact"
+            },
+            {
+                title: "Community Involvement in Wildlife Conservation",
+                content: "Explore how communities can engage in and support wildlife conservation efforts.",
+                link: "https://www.example.com/community-involvement"
+            },
+            {
+                title: "Success Stories in Wildlife Conservation",
+                content: "Read about successful conservation efforts around the world that have made a difference.",
+                link: "https://www.example.com/success-stories"
+            }
+        ];
+
+        const resourcesContainer = document.getElementById('resources-container');
+
+        resources.forEach(resource => {
+            const resourceDiv = document.createElement('div');
+            resourceDiv.classList.add('resource');
+            resourceDiv.innerHTML = `
+                <h2>${resource.title}</h2>
+                <p>${resource.content}</p>
+                <a href="${resource.link}" class="button" target="_blank">Read More</a>
+            `;
+            resourcesContainer.appendChild(resourceDiv);
+        });
+    </script>
+</body>
+</html>
+
