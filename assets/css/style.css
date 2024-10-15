@@ -1578,7 +1578,7 @@ data{
 #marquee {
   display: flex;
   width: 100%;
-  height: 50vh;
+  height: 266;
   background-color: var(--light-gray);
   white-space: nowrap;
   overflow-x: hidden;
@@ -1587,7 +1587,7 @@ data{
 
 .insta-post-item img {
   width: 100%;
-  height: 100%;
+  height: 266;
   object-fit: cover;
   object-position: center;
 }
@@ -1654,9 +1654,10 @@ data{
 
 .insta-post-item {
   width: 50vh;
-  height: 50vh;
+  height: 266;
   scroll-snap-align: center;
 }
+
 
 /*-----------------------------------*\
   #FOOTER
