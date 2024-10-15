@@ -99,4 +99,97 @@
 }
 
 
+/* header */
+/* Wrapper for the search bar */
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Increased width */
+    margin: 0 auto;
+  }
+  
+  /* Search container to align input and button */
+  .search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Search input */
+  .search-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+  }
+  
+  .search-input::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+  
+  /* Search button with green background */
+  .search-btn {
+    background-color: #28a745; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .search-btn ion-icon {
+    font-size: 20px;
+  }
+  
+  /* Result box styling */
+  .result-box {
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none; /* Initially hidden */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .search-wrapper {
+      padding: 0 15px;
+    }
+  
+    .search-input {
+      font-size: 14px;
+      padding: 10px 15px;
+    }
+  
+    .search-btn {
+      padding: 8px 15px;
+    }
+  
+    .search-btn ion-icon {
+      font-size: 18px;
+    }
+  }
+  
 

@@ -164,18 +164,18 @@
 
       </nav>
 
-      <div class="header-action">
-
-        <div class="input-group">
-          <input type="text" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
-          <button class="btn btn-primary search-btn" aria-label="Search" style="z-index: 0;">
+      <div class="search-wrapper">
+        <div class="search-container">
+          <input type="text" class="search-input" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
+          <button class="search-btn" aria-label="Search">
             <ion-icon name="search-outline"></ion-icon>
           </button>
-          <div class="result-box" id="result-box">
-            <!-- Suggestions will be displayed here -->
-          </div>
-
-</div>
+        </div>
+        <div class="result-box" id="result-box">
+          <!-- Suggestions will be displayed here -->
+        </div>
+      </div>
+      
 
 
 <!-- <div class="search-bar" id="searchBar" style="display:none;">
