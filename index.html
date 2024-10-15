@@ -28,11 +28,6 @@
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
   <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 
     - fontawesome icon link
   -->
   <script src="https://kit.fontawesome.com/418b80718b.js" crossorigin="anonymous"></script>
@@ -50,6 +45,11 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="./Events-Data/modal.css">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
 
 
@@ -168,7 +168,7 @@
 
         <div class="input-group">
           <input type="text" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
-          <button class="btn btn-primary search-btn" aria-label="Search" onclick="performSearch()">
+          <button class="btn btn-primary search-btn" aria-label="Search" style="z-index: 0;">
             <ion-icon name="search-outline"></ion-icon>
           </button>
           <div class="result-box" id="result-box">
@@ -208,9 +208,9 @@
   <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
 </button>
 <!-- Login -->
-<div id="userpopUpbtn" class="user-icon">
-  <i class="fas fa-user"></i>
-</div>
+<div id="openPopup" class="user-icon">
+  <a href="user.html"><i class="fas fa-user"></i></a>  
+  </div>
 
         <!-- Popup -->
         <div id="popup" class="popup">
@@ -223,9 +223,9 @@
             <div class="form-container">
               <form id="loginForm">
                 <div class="form_wrapper">
-                  <div class="form-fields">
-                    <input type="email" placeholder="Email" required />
-                    <input type="password" placeholder="Password" required />
+                  <div class="form-fields--login">
+                    <input class="form-input" type="email" placeholder="Email" required />
+                    <input class="form-input" type="password" placeholder="Password" required />
                     <button type="submit">Login</button>
                   </div>
                   <div class="form-img">
@@ -235,10 +235,10 @@
               </form>
               <form id="signupForm" style="display: none;">
                 <div class="form_wrapper">
-                  <div class="form-fields">
-                    <input type="text" placeholder="Username" required />
-                    <input type="email" placeholder="Email" required />
-                    <input type="password" placeholder="Password" required />
+                  <div class="form-fields--signup">
+                    <input class="form-input" type="text" placeholder="Username" required />
+                    <input class="form-input" type="email" placeholder="Email" required />
+                    <input class="form-input" type="password" placeholder="Password" required />
                     <button type="submit">Signup</button>
                   </div>
                   <div class="form-img">
@@ -252,10 +252,9 @@
         </div>
       </div>
 
-
-
-    </div>
   </header>
+
+  
 
   <!-- Scroll To Top Btn -->
   <!-- <button type="button" id="btn-back-to-top">
@@ -1090,18 +1089,18 @@
 
 
 
-          <!-- Trigger Button for Modal -->
-          <button id="openModalBtn" class="btn" style="display: block; margin: 0 auto;">Learn More</button>
+      <!-- Trigger Button for Modal -->
+      <button id="openModalBtn" class="btn" style="display: block; margin: 0 auto;">Learn More</button>
 
-          <!-- Modal Structure -->
-          <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <h2>Event Details</h2>
-              <p>More information about the event goes here.</p>
-            </div>
-          </div>
-          <!-- 
+      <!-- Modal Structure -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Event Details</h2>
+          <p>More information about the event goes here.</p>
+        </div>
+      </div>
+      <!-- 
         - #EVENT
       -->
 
@@ -1243,35 +1242,34 @@
       -->
 
 
-          <div id="eventModal" class="modal">
-            <div class="modal-content">
-              <div class="modal-header">
-                <span class="close" onclick="document.getElementById('eventModal').style.display='none'">&times;</span>
-                <h2 id="eventTitle">Event Title 3</h2>
-                <p id="eventDate">March 27, 2024</p>
-              </div>
-              <div class="modal-body">
-                <p id="eventDescription">Join us for a memorable day dedicated to conservation efforts focusing on
-                  marine
-                  life...</p>
-                <p><strong>Location:</strong> Coastal Marine Center, Bay Area</p>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8977552820395!2d-122.08424958469287!3d37.421999979824664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5efa53e47%3A0x97f5e2f74fd231e8!2sGoogleplex!5e0!3m2!1sen!2sus!4v1596425069474!5m2!1sen!2sus"
-                  width="100%" height="250"></iframe>
-                <h3>Contact Details</h3>
-                <p><strong>Email:</strong> contact@event.org</p>
-                <p><strong>Phone:</strong> +123 456 7890</p>
-                <h3>Share This Event</h3>
-                <a href="#" class="social-link">Facebook</a>
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">LinkedIn</a>
-              </div>
-              <div class="modal-footer">
-                <button onclick="document.getElementById('eventModal').style.display='none'"
-                  class="btn btn-primary">Close</button>
-              </div>
-            </div>
+      <div id="eventModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close" onclick="document.getElementById('eventModal').style.display='none'">&times;</span>
+            <h2 id="eventTitle">Event Title 3</h2>
+            <p id="eventDate">March 27, 2024</p>
           </div>
+          <div class="modal-body">
+            <p id="eventDescription">Join us for a memorable day dedicated to conservation efforts focusing on marine
+              life...</p>
+            <p><strong>Location:</strong> Coastal Marine Center, Bay Area</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8977552820395!2d-122.08424958469287!3d37.421999979824664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b5efa53e47%3A0x97f5e2f74fd231e8!2sGoogleplex!5e0!3m2!1sen!2sus!4v1596425069474!5m2!1sen!2sus"
+              width="100%" height="250"></iframe>
+            <h3>Contact Details</h3>
+            <p><strong>Email:</strong> contact@event.org</p>
+            <p><strong>Phone:</strong> +123 456 7890</p>
+            <h3>Share This Event</h3>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">LinkedIn</a>
+          </div>
+          <div class="modal-footer">
+            <button onclick="document.getElementById('eventModal').style.display='none'"
+              class="btn btn-primary">Close</button>
+          </div>
+        </div>
+      </div>
 
 
           <!-- 
@@ -1383,17 +1381,17 @@
           </section>
 
 
-          <script>
-            // Accordion | Frequently Asked Questions
-            function toggleAnswer(element) {
-              const answer = element.nextElementSibling; // Get the corresponding answer
-              const toggleSign = element.querySelector('.toggle-sign'); // Get the toggle sign
-              answer.classList.toggle('hidden'); // Show or hide the answer
+      <script>
+        // Accordion | Frequently Asked Questions
+        function toggleAnswer(element) {
+          const answer = element.nextElementSibling; // Get the corresponding answer
+          const toggleSign = element.querySelector('.toggle-sign'); // Get the toggle sign
+          answer.classList.toggle('hidden'); // Show or hide the answer
 
-              // Change sign based on visibility
-              toggleSign.textContent = answer.classList.contains('hidden') ? '+' : '-';
-            }
-          </script>
+          // Change sign based on visibility
+          toggleSign.textContent = answer.classList.contains('hidden') ? '+' : '-';
+        }
+      </script>
 
 
 
@@ -1645,7 +1643,7 @@
   <script src="sounds.js"></script>
   <script src="./Become-a-Partner/script.js"></script>
   <script src="./Events-Data/modal-scripts.js"></script>
-  <script src="./assets/js/script.js"></script>
+  
 
   <script src="./assets/js/carousel.js"></script>
 
@@ -1761,6 +1759,8 @@
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./assets/js/script.js"></script>
+
 </body>
 
 </html>
