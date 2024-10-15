@@ -42,7 +42,6 @@ function updateDot(index)
         dot.setAttribute('style', 'background-color: transparent; border-color: #00000077;')
     );
 
-
 }
 
 const nextBtn = document.querySelector(".next-btn");

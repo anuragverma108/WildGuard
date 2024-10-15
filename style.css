@@ -1,21 +1,18 @@
 .impact-gallery {
     text-align: center;
     margin: 40px 0;
-
 }
 
 .gallery {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
 }
 
 .gallery-item {
     width: 30%;
     margin: 10px;
     transition: transform 0.3s;
-
 }
 
 .gallery-item:hover {
@@ -65,17 +62,18 @@
     color: #5a5a5a;
 
 }
+
 .amount {
     font-size: 1.5em;
     margin: 10px 0;
     color: #2c3e50;
 
 }
+
 .benefits {
     font-size: 0.9em;
     color: #7f8c8d;
     margin: 15px 0;
-
 }
 
 .donate-button {
@@ -88,17 +86,14 @@
     font-size: 1em;
     transition: background-color 0.3s;
 }
+
 .donate-button:hover {
     background-color: #2980b9;
-
 }
 
 .boxx {
     font-size: 27px;
-
 }
-
-
 
 .user-icon {
     position: relative;
