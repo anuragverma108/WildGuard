@@ -173,13 +173,13 @@ button:hover {
 .result-box ul li:hover {
   background-color: black;
 }
-.input-group {
+/* .input-group {
   width: 106px;
   min-width: 10vw;
   height: 44px;
   background-color: #fff;
   border-radius: 3px;
-}
+} */
 
 *,
 *::before,
@@ -608,14 +608,51 @@ html {
   width: 425px;
 }
 
-.form-control::placeholder {
-  font-size: 18px;
-}
+/* .form-control::placeholder {
+  font-size: 15px;
+} */
 
-.form-control {
+/* .form-control {
   height: 37px;
   margin-top: 9px;
+  font-size: 15px;
+} */
+
+.search-box{
+  font-size: 15px;
+  color: rgb(3, 107, 1);
+  margin-top: 10px;
+  height: 40px;
+
+  background-color: var(--baby-powder); 
+  border: 1px solid var(--pistachio); 
+  border-radius: 10px;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  gap: 1px; 
+  transition: var(--transition-2);
+  z-index: 10;
+  width: 100px;
 }
+.search-box input {
+  width: 20px; 
+  padding: 5px;
+  font-size: 2.4rem;
+  color:#218838; 
+  background-color: var(--white); 
+  border: 1px solid var(--pistachio); 
+  border-radius: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+
+
+.search-bar input:hover {
+border-color: var(--granite-gray); 
+box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); 
+}
+
 
 /* Login Styling */
 .popup {
