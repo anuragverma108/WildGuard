@@ -605,6 +605,7 @@ html {
 .form-control {
   height: 37px;
   margin-top: 9px;
+  font-size: medium;
 }
 
 /* Login Styling */
