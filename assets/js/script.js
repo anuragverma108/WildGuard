@@ -82,22 +82,30 @@ const navCloseBtn = document.querySelector("[data-nav-close-btn]");
 
 const navElemArr = [navOpenBtn, navCloseBtn];
 
+// Get all elements that are part of the navbar
+const navElemAr = document.querySelectorAll("[data-nav-link]");
+
+// Add event listeners to all nav links
 for (let i = 0; i < navElemArr.length; i++) {
   navElemArr[i].addEventListener("click", function () {
+    // Remove 'active' class from all navbar links
+    removeActiveClass();
+
+    // Add 'active' class to the clicked link
+    this.classList.add("active");
+
+    // Optional: If you want to collapse the navbar after a link is clicked
     navbar.classList.toggle("active");
   });
 }
 
 /**
- * toggle navbar when click any navbar link
+ * Function to remove 'active' class from all navbar links
  */
-
-const navbarLinks = document.querySelectorAll("[data-nav-link]");
-
-// Function to remove 'active' class from all navbar links
 function removeActiveClass() {
-  navbarLinks.forEach(link => link.classList.remove("active"));
+  navElemArr.forEach(link => link.classList.remove("active"));
 }
+
 
 // Function to handle link clicks
 function activateNavLink(event) {
