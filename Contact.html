@@ -49,188 +49,188 @@
   <link rel="stylesheet" href="./Events-Data/modal.css">
 
   <style>
-    .headd {
-      background-color: #98C379;
-      color: #fff;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
-    .headd h1 {
-      font-weight: bolder;
-      color: #fff;
-      margin-left: 2.3rem;
-      display: inline;
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
     }
 
-    .headd ul {
-      display: flex;
-      justify-content: space-around;
-      font-weight: lighter;
-      justify-content: center;
-      align-items: center;
-      margin-left: 100px;
-    }
-
-    .headd a {
-      margin-left: 2.3rem;
-      margin-right: 2.3rem;
-    }
-
-    .headd {
-      display: flex;
-    }
-
-    .form {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 8px 32px 0 #98C379;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      width: 500px;
-      height: 500px;
-    }
-
-    .form input {
-      margin-bottom: 10px;
-      margin-top: 10px;
-      width: 300px;
-      height: 40px;
-      font-size: 20px;
-      border: 2px solid #bcb4b4;
-    }
-
-    .form input:hover {
-      box-shadow: 7px 7px 10px 10px #dfd9d9;
-    }
-
-    .form h2 {
-      color: #bcb4b4;
-    }
-
-    .contact_form {
-      margin-top: 10px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-
-    .contact_form img {
-      border-radius: 30px;
-      box-shadow: 1px 3px 1px 3px white;
-    }
-
-    .im {
-      margin-top: 9rem;
-      text-align: center;
-    }
-
-    /* Button styling */
-    /* From Uiverse.io by doniaskima */
-    .btn-17 {
-      background-color: #98C379;
-      color: #fff;
-      font-weight: 900;
-      padding: 0.8rem 3rem;
-      border-radius: 99rem;
-      position: relative;
-    }
-
-    .btn-17:hover .text {
-      animation: move-up-alternate 0.3s forwards;
-    }
-
-    /* Media queries for responsiveness */
-    @media only screen and (max-width: 768px) {
-      .form {
-        width: 80%;
-        height: auto;
-      }
-
-      .contact_form {
-        flex-direction: column;
+    header {
+        background-color: #9bc98b;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-      }
+        padding: 15px 30px;
+    }
 
-      .contact_form img {
+    header h1 {
+        font-size: 36px;
+        color: white;
+    }
+
+    nav {
+        display: flex;
+        gap: 20px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 15px;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .container img {
+        width: 70%;
+        border-radius: 15px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        height: 600px;
+        margin-left: -120px;
+    }
+
+    .form-container {
+        width: 45%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+        margin-right: -180px;
+    }
+
+    .form-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #99d28a;
+        text-align: left;
+    }
+
+    .form-container label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: block;
+        /* margin-left: -250px; */
+        text-align: left;
+    }
+
+    .form-container input[type="text"], 
+    .form-container input[type="email"], 
+    .form-container input[type="tel"], 
+    .form-container textarea {
         width: 100%;
-        height: auto;
-      }
-
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
       
     }
 
-    @media only screen and (max-width: 480px) {
-      .form {
-        width: 90%;
-        height: auto;
-      }
-
-      .form input {
-        width: 100%;
-      }
-
-      
+    .form-container input[type="submit"] {
+        background-color: #99d28a;
+        border: none;
+        color: white;
+        padding: 1px 10px;
+        border-radius: 20px;
+        width: 95px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
     }
-  </style>
 
+    .form-container input[type="submit"]:hover {
+        background-color: #88c17d;
+    }
+
+    footer {
+        background-color: #99d28a;
+        text-align: center;
+        padding: 15px;
+        color: white;
+        margin-top: 40px;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+        }
+    }
+</style>
 </head>
-
 <body>
-  <!-- header -->
-  <header class="navbar">
-    <div class="headd display-2">
-      <h1>WildGuard</h1>
-      <ul class="h4">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="Contact.html">Contact Us</a></li>
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
 
+<header>
+<h1>WildGuard</h1>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="#">Service</a>
+    <a href="Contact.html">Contact Us</a>
+    <a href="donate.html">Donate</a>
+    <a href="login.html">Login</a>
+</nav>
+</header>
 
-    </div>
-  </header>
+<div class="container">
+<!-- Left side: Image -->
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReHDIAZtYGPU6V1mgi0NgGklFupj5RDAIGTnr6Bj8fskpbCDy3wiqZCDx5kmMXqFUrDuo&usqp=CAU" alt="Wild Animal">
 
-  <!-- contact form  -->
+<!-- Right side: Contact Form -->
+<div class="form-container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <label for="name">Enter Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-  <div class="contact_form">
+        <label for="email">Enter Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
 
-    <div class="im">
-      <img src="contactus1.jpg" width="500px" alt="xyz">
-    </div>
-    <div class="form">
-      <form action="mailto:firdousfatima131004@gmail.com">
-        <label for="Name">
-          <h2>Enter Your Name</h2>
-        </label><br>
-        <input type="text"><br>
-        <label for="Email">
-          <h2>Enter Your Email</h2>
-        </label><br>
-        <input type="email" id=""><br>
-        <label for="Message">
-          <h2>Write Your Message</h2>
-        </label><br>
-        <input type="text" style="height: 100px;
-              width: 300px;"><br>
-        
-        <button class="btn-17">
-          <span class="text-container">
-            <span class="text">submit</span>
-          </span>
-        </button>
+        <label for="phone">Enter Your Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
 
+        <label for="message">Write Your Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
 
-      </form>
-    </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</div>
 
-  </div>
-  <!-- 
+   <!-- 
     - #FOOTER
   -->
 
@@ -240,39 +240,43 @@
         <h3>
           <a href="#" class="logo">WildGuard</a>
         </h3>
-        <p>WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our
+        <p >WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our
           mission to create a sustainable future for the planet's most vulnerable creatures.</p>
       </div>
       <div class="footer-middle">
         <h4>Quick Links</h4>
         <div class="quick-links">
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="#service">Service</a></li>
-            <li><a href="#donate">Donate</a></li>
-            <li><a href="./Contact.html">Contact Us</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-right">
-        <form action="review.html">
-
-          <button type="submit">🌟Rating/Review🌟</button>
-        </form>
-        <h4>Stay Connected</h4>
-
+        <div class="">
+            <a href="review.html">
+              <button type="submit">🌟Rating/Review🌟</button>
+            </a>
+            
+        </div>
+        <div class="subscribe-form">
         <form action="#">
           <input type="email" class="email-input" placeholder="Your email address">
           <button type="submit">Subscribe</button>
         </form>
+      </div>
         <div class="footer-social-icons">
+          <div class="social-links">
           <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
           <a href="https://x.com/"><ion-icon name="logo-twitter"></ion-icon></a>
           <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
           <a href="https://www.linkedin.com/"><ion-icon name="logo-linkedin"></ion-icon></a>
           <a href="https://www.youtube.com/"><ion-icon name="logo-youtube"></ion-icon></a>
-
+        </div>
+        <div class="message">Stay Connected</div>
         </div>
       </div>
     </div>
@@ -288,6 +292,16 @@
 
 
   </footer>
+
+
+  
+<!-- JavaScript for form submission alert -->
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Thank you for reaching out to us! We will get back to you shortly.");
+  });
+</script>
 
   
 
