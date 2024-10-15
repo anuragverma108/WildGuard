@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,8 @@
     <link rel="stylesheet" href="./assets/css/login.css">
     <title>Login</title>
 </head>
+
 <body>
-    
 
     <div class="login-page">
         <div class="content">
@@ -18,7 +19,9 @@
 
                 <!-- Email Field -->
                 <div class="entry">
-                    <label for="email"><h3>Email</h3></label>
+                    <label for="email">
+                        <h3>Email</h3>
+                    </label>
                     <div class="input-wrapper">
                         <input type="email" id="email" placeholder="example@gmail.com" required>
                         <div class="fa"><i class="fas fa-user"></i></div>
@@ -27,7 +30,9 @@
 
                 <!-- Password Field with Toggle Visibility -->
                 <div class="entry">
-                    <label for="password"><h3>Password</h3></label>
+                    <label for="password">
+                        <h3>Password</h3>
+                    </label>
                     <div class="input-wrapper">
                         <input type="password" id="password" placeholder="Enter your password" required>
 
@@ -55,10 +60,12 @@
                     <p>Or login with</p>
                     <div class="social-buttons">
                         <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo"> Continue with Google
+                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo"> Continue with
+                            Google
                         </button>
                         <button type="button" class="social-btn facebook-btn">
-                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="Facebook-logo"> Continue with Facebook
+                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="Facebook-logo"> Continue
+                            with Facebook
                         </button>
                     </div>
                 </div>
@@ -78,7 +85,7 @@
                 passwordField.type = 'text';
                 icon.classList.remove('fa-eye');
                 icon.classList.add('fa-eye-slash');
-            } 
+            }
             else {
                 passwordField.type = 'password';
                 icon.classList.remove('fa-eye-slash');
@@ -86,7 +93,7 @@
             }
         }
     </script>
-    
 
 </body>
+
 </html>
