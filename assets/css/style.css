@@ -424,7 +424,6 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
   background-color: transparent;
   padding-block: 18px;
   z-index: 100;
@@ -583,7 +582,6 @@ html {
   transform: scale(1.4);
 }
 .navbar-link {
-
   color: var(--white);
   font-size: 15px;
 
@@ -681,8 +679,6 @@ html {
   gap: 2em;
 }
 
-
-
 .form-fields--login {
   padding-left: 10px;
   padding-right: 10px;
@@ -691,8 +687,6 @@ html {
 .form-fields--signup {
   margin-bottom: 10px;
 }
-
-
 
 .form-container input {
   margin: 10px 0;
@@ -744,7 +738,7 @@ html {
   transform: translateY(-2px);
 }
 
-.input-group{
+.input-group {
   /* width: 100px; */
   display: flex;
   align-items: center;
@@ -752,12 +746,12 @@ html {
   gap: 0.75rem;
 }
 
-.input-group .form-control{
+.input-group .form-control {
   height: 39px;
   min-width: 100px;
 }
 
-.input-group .search-btn{
+.input-group .search-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1213,7 +1207,7 @@ html {
   text-decoration: underline;
 }
 
-.btn-link span:hover{
+.btn-link span:hover {
   cursor: pointer;
 }
 
@@ -1253,18 +1247,17 @@ html {
   #DONATE
 \*-----------------------------------*/
 
-
 .donate-list {
   display: block;
   gap: 60px;
 }
 
-.donate-list >li{
+.donate-list > li {
   margin-bottom: 100px;
 }
 .donate-card {
   width: 100%;
-  position: relative;  /* To control the position of elements inside the card */
+  position: relative; /* To control the position of elements inside the card */
   box-shadow: var(--card-shadow);
   margin-bottom: 60px;
   background-color: white;
@@ -1272,10 +1265,10 @@ html {
 
 .donate-card .card-banner {
   width: 100%;
-  height: 300px;  
+  height: 300px;
   background-color: var(--light-gray);
   position: relative;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .donate-card .card-banner img {
@@ -1286,17 +1279,17 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;  
+  z-index: 1;
 }
 
 .donate-card .card-content {
   position: absolute;
-  top: 58%;  
+  top: 58%;
   left: 35%;
   padding: 35px;
-  background-color: white;  
-  z-index: 2;  
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  
+  background-color: white;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -1304,11 +1297,11 @@ html {
   width: 60%;
 }
 
-.donate-list > li{
+.donate-list > li {
   margin-bottom: 300px;
 }
 
-data{
+data {
   background-color: white;
 }
 
@@ -1404,10 +1397,9 @@ data{
 .donate-card {
   display: flex;
   flex-direction: row;
-  gap: 20px; 
+  gap: 20px;
   padding-inline-end: 120px;
 }
- 
 
 /*-----------------------------------*\
   #TESTIMONIALS
@@ -2069,6 +2061,13 @@ data{
   .footer-social-icons a {
     font-size: 1.4rem;
   }
+  .header .container {
+    flex-wrap: wrap;
+  }
+  .header .container button {
+    background: #27ae60;
+    padding: 3px 6px;
+  }
 }
 
 /* Modal styling */
@@ -2162,8 +2161,6 @@ data{
 
     --fs-2: 5.5rem;
   }
-
-  
 
   /**
    * EVENT
@@ -2440,7 +2437,6 @@ data{
     grid-template-columns: repeat(4, 1fr);
   }
 
-  
   /**
    * TESTIMONIALS
    */
@@ -2570,7 +2566,7 @@ data{
     color: var(--pistachio_100);
   }
 
-  .header-action{
+  .header-action {
     gap: 1.5rem;
   }
 
@@ -2601,7 +2597,6 @@ data{
     left: -35px;
   }
 
-  
   /**
    * PARTNER
    */
