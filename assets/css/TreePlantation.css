@@ -37,6 +37,12 @@ body {
   .nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  nav ul li a:hover {
+    color: yellow;
   }
   
   .container {
@@ -54,8 +60,16 @@ body {
   .section-title {
     color: #4CAF50;
   }
+
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   
   .contact-form {
+    width: 70%;
     display: flex;
     flex-direction: column;
   }
@@ -66,6 +80,7 @@ body {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    letter-spacing: 1px;
   }
   
   .btn {
@@ -105,6 +120,11 @@ body {
   .social-links {
     list-style: none;
     padding: 0;
+  }
+
+  .social-links a {
+    text-decoration: none;
+    color: #fff;
   }
   
   .social-links li {
