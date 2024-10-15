@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,21 @@
     <link rel="stylesheet" href="./assets/css/register.css">
     <title>Register</title>
 </head>
+
 <body>
 
     <div class="login-page">
         <div class="content">
-            <a href="./index.html" class="home-icon" ><i class="fa-solid fa-house"></i></a>
+            <a href="./index.html" class="home-icon"><i class="fa-solid fa-house"></i></a>
             <h2>Create an account</h2>
 
             <form class="data">
 
                 <!-- Email Field -->
                 <div class="entry">
-                    <label for="email"><h3>Email</h3></label>
+                    <label for="email">
+                        <h3>Email</h3>
+                    </label>
                     <div class="input-wrapper">
                         <input type="email" id="email" placeholder="example@gmail.com" required>
                         <div class="fa"><i class="fas fa-user"></i></div>
@@ -27,7 +31,9 @@
 
                 <!-- Password Field with Toggle Visibility -->
                 <div class="entry">
-                    <label for="password"><h3>Password</h3></label>
+                    <label for="password">
+                        <h3>Password</h3>
+                    </label>
                     <div class="input-wrapper">
                         <input type="password" id="password" placeholder="Enter your password" required>
                         <div class="fa toggle-password" onclick="togglePasswordVisibility('password')">
@@ -38,7 +44,9 @@
 
                 <!-- Repeat Password Field with Toggle Visibility -->
                 <div class="entry">
-                    <label for="repeat-password"><h3>Re-enter Password</h3></label>
+                    <label for="repeat-password">
+                        <h3>Re-enter Password</h3>
+                    </label>
                     <div class="input-wrapper">
                         <input type="password" id="repeat-password" placeholder="Re-enter your password" required>
                         <div class="fa toggle-password" onclick="togglePasswordVisibility('repeat-password')">
@@ -65,7 +73,7 @@
                     <p>Or Sign up with</p>
                     <div class="social-buttons">
                         <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo"> 
+                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo">
                         </button>
                         <button type="button" class="social-btn google-btn">
                             <img src="./assets/images/facebook.png" alt="FaceBook Logo" class="google-logo">
@@ -97,4 +105,5 @@
     </script>
 
 </body>
+
 </html>

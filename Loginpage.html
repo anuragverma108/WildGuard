@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
         body {
             font-family: 'Arial', sans-serif;
             background-image: url(assets/images/zebras.jpg);
-            background-size:cover;
+            background-size: cover;
             background-position: center;
             display: flex;
             justify-content: center;
@@ -17,6 +18,7 @@
             margin: 0;
             color: #000000;
         }
+
         .container {
             background: rgba(245, 245, 245, 0.875);
             padding: 2.2rem;
@@ -25,20 +27,24 @@
             width: 350px;
             text-align: center;
         }
+
         h1 {
             color: #016c60;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
+
         .form-group {
             margin-bottom: 1rem;
             text-align: left;
         }
+
         label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: bold;
         }
+
         input {
             width: 100%;
             padding: 0.5rem;
@@ -46,11 +52,13 @@
             border-radius: 4px;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
+
         input:focus {
             border-color: #06796b32;
             box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
             outline: none;
         }
+
         button {
             width: 100%;
             padding: 0.85rem;
@@ -61,15 +69,18 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
         }
+
         button:hover {
             background-color: #01463a78;
             transform: translateY(-2px);
         }
+
         .message {
             margin-top: 1rem;
             font-weight: bold;
             min-height: 1.5rem;
         }
+
         .toggle-link {
             margin-top: 1rem;
             cursor: pointer;
@@ -77,6 +88,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1 id="formTitle">Sign In</h1>
@@ -103,7 +115,7 @@
 
         const validCredentials = { username: 'admin', password: 'password' };
 
-        authForm.addEventListener('submit', function(event) {
+        authForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
             const username = document.getElementById('username').value;
@@ -125,7 +137,7 @@
             }
         });
 
-        toggleLink.addEventListener('click', function() {
+        toggleLink.addEventListener('click', function () {
             if (formTitle.textContent === 'Sign In') {
                 formTitle.textContent = 'Sign Up';
                 toggleLink.textContent = 'Already have an account? Sign In';
@@ -139,5 +151,7 @@
             }
         });
     </script>
+
 </body>
+
 </html>
