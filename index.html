@@ -68,151 +68,82 @@
     <div class="progress-bar">
       <div class="filled"></div>
     </div>
+  
     <div class="container">
-
+  
       <h1>
         <a class="logo">WildGuard</a>
       </h1>
-
+  
       <div id="google_translate_element"></div> <!-- Google Translate widget -->
-
-
+  
       <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
         <ion-icon name="menu-outline"></ion-icon>
       </button>
-
+  
       <nav class="navbar" data-navbar>
-
+  
         <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
           <ion-icon name="close-outline"></ion-icon>
         </button>
-
+  
         <a href="#" class="logo">WildGuard</a>
-
+  
         <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link active" data-nav-link>
-              <span class="new_size">Home</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link>
-              <span class="new_size">About</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#service" class="navbar-link" data-nav-link>
-              <span class="new_size">Service</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#donate" class="navbar-link" data-nav-link>
-              <span class="new_size">Donate</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#event" class="navbar-link" data-nav-link>
-              <span class="new_size">Event</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#footer" class="navbar-link" data-nav-link>
-              <span class="new_size">Contact</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a class="navbar-link login-nav" href="login.html" id="openPopup" data-nav-link>
-              <span>Login</span>
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
-            <span>Register</span>
-            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-          </a>
-
+          <li><a href="#home" class="navbar-link active" data-nav-link><span class="new_size">Home</span><ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon></a></li>
+          <li><a href="#about" class="navbar-link" data-nav-link><span class="new_size">About</span><ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon></a></li>
+          <li><a href="#service" class="navbar-link" data-nav-link><span class="new_size">Service</span><ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon></a></li>
+          <li><a href="#donate" class="navbar-link" data-nav-link><span class="new_size">Donate</span><ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon></a></li>
+          <li><a href="#event" class="navbar-link" data-nav-link><span class="new_size">Event</span><ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon></a></li>
+          <li><a href="#footer" class="navbar-link" data-nav-link><span class="new_size">Contact</span><ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon></a></li>
+          <li><a class="navbar-link login-nav" href="login.html" id="openPopup" data-nav-link><span>Login</span><ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon></a></li>
+  
+          <!-- Fixed Register Button -->
+          <li><a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link><span>Register</span><ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon></a></li>
+  
+          <!-- Corrected Script for Register Button -->
           <script>
             document.getElementById('registerLink').addEventListener('click', function (e) {
-              e.preventDefault();
+              // No need to prevent default action if you want it to navigate to the register.html page.
               window.location.href = 'register.html';
             });
           </script>
-
-
-
+  
         </ul>
-
+  
       </nav>
-
+  
       <div class="header-action">
-
-        <div class="input-group">
-          <input type="text" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
-          <button class="btn btn-primary search-btn" aria-label="Search" style="z-index: 0;">
-            <ion-icon name="search-outline"></ion-icon>
+  
+        <!-- Rounded Search Bar -->
+        <div class="input-group" style="position: relative; display: flex; align-items: center; max-width: 300px; border-radius: 25px; overflow: hidden; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);">
+          
+          <!-- Search Input Field with full round design -->
+          <input type="text" class="form-control search-input" id="search-input" placeholder="Search" aria-label="Search"
+            autocomplete="off" oninput="handleInput()" style="width: 100%; padding-right: 45px; font-size: 14px; padding: 10px 20px; border: none; outline: none; border-radius: 25px;">
+          
+          <!-- Search Button with Icon (fixed issues, removed unwanted border/outline) -->
+          <button class="btn search-btn" aria-label="Search" style="position: absolute; right: 10px; background: transparent; border: none; padding: 0; cursor: pointer; outline: none; box-shadow: none;">
+            <ion-icon name="search-outline" style="font-size: 20px; color: #555;"></ion-icon>
           </button>
-          <div class="result-box" id="result-box">
-            <!-- Suggestions will be displayed here -->
+          
+          <!-- Suggestions Box -->
+          <div class="result-box" id="result-box" style="position: absolute; top: 100%; left: 0; width: 100%; background-color: white; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <!-- Search suggestions or results will appear here -->
           </div>
-
-</div>
-
-
-<!-- <div class="search-bar" id="searchBar" style="display:none;">
-  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
-</div> -->
-<!-- Search bar and button -->
-<!-- <div class="input-group">
-  <input type="text" class="form-control search-box" placeholder="Search" aria-label="Search">
-  <button class="btn btn-primary search-btn" aria-label="Search">
-    <ion-icon name="search-outline"></ion-icon>
-  </button>
-</div> -->
-
-<!-- Search input field -->
-<!-- <div class="search-bar" id="searchBar" style="display:none;">
-  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"> -->
   
+        </div>
   
-  <!-- Match counter and navigation buttons -->
-  <!-- <div class="search-nav-buttons">
-    <span id="matchCounter" style="display: none;">0/0</span> -->
-    <!-- <button id="prevMatch" style="display:none;">&#x25B2;</button> Up arrow -->
-    
-  <!-- </div>
-</div> -->
-
-
-<button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-  <span>Donation</span>
-  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-</button>
-<!-- Login -->
-<div id="openPopup" class="user-icon">
-  <a href="user.html"><i class="fas fa-user"></i></a>  
-  </div>
-
-        <!-- Popup -->
+        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+          <span>Donation</span>
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+        </button>
+  
+        <!-- User Icon and Popup -->
+        <div id="openPopup" class="user-icon">
+          <a href="user.html"><i class="fas fa-user"></i></a>  
+        </div>
+  
         <div id="popup" class="popup">
           <div class="popup-content">
             <span class="close-button" id="closePopup">&times;</span>
@@ -229,7 +160,7 @@
                     <button type="submit">Login</button>
                   </div>
                   <div class="form-img">
-                    <img src="./assets/images/animals.jpg" alt="" srcset="">
+                    <img src="./assets/images/animals.jpg" alt="Login Image">
                   </div>
                 </div>
               </form>
@@ -242,18 +173,65 @@
                     <button type="submit">Signup</button>
                   </div>
                   <div class="form-img">
-                    <img src="./assets/images/cta-banner.jpg" alt="" srcset="">
+                    <img src="./assets/images/cta-banner.jpg" alt="Signup Image">
                   </div>
                 </div>
-
               </form>
             </div>
           </div>
         </div>
+  
       </div>
-
+  
+    </div>
+  
   </header>
-
+  
+  <!-- Styles for Search Bar and Icons -->
+  <style>
+    .search-btn ion-icon {
+      transition: color 0.3s;
+    }
+  
+    .search-btn:hover ion-icon {
+      color: #007bff; /* Change the icon color on hover */
+    }
+  
+    /* Removed the outline/border issue from search button */
+    .search-btn {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+  
+    /* Responsive behavior: adjust the search bar width for mobile */
+    @media (max-width: 768px) {
+      .input-group {
+        max-width: 100%; /* Allow the search bar to expand fully on small screens */
+      }
+  
+      .search-input {
+        font-size: 12px; /* Reduce text size for smaller screens */
+      }
+    }
+  </style>
+  
+  <!-- JavaScript for Search Suggestions -->
+  <script>
+    function handleInput() {
+      var inputValue = document.getElementById('search-input').value;
+      var resultBox = document.getElementById('result-box');
+      
+      // Example logic for displaying results (replace with your logic)
+      if (inputValue.length > 0) {
+        resultBox.style.display = 'block';
+        resultBox.innerHTML = `<p>Showing results for "${inputValue}"...</p>`; // Mock result
+      } else {
+        resultBox.style.display = 'none';
+      }
+    }
+  </script>
+  
   
 
   <!-- Scroll To Top Btn -->
