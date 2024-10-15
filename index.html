@@ -139,19 +139,24 @@
             </a>
           </li>
 
-          <li>
-            <a class="navbar-link login-nav" href="loginfixed.html" id="openPopup" data-nav-link>
+
+
+
+          <li><a id="loginLink" class="navbar-link login-nav" href="loginfixed.html" data-nav-link>
               <span>Login</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
+            </a></li>
+          <li><a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
+              <span>Register</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a></li>
 
-          <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
-            <span>Register</span>
-            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-          </a>
 
           <script>
+            document.getElementById('loginLink').addEventListener('click', function (e) {
+              e.preventDefault();
+              window.location.href = 'loginfixed.html';
+            });
             document.getElementById('registerLink').addEventListener('click', function (e) {
               e.preventDefault();
               window.location.href = 'register.html';
