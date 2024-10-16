@@ -42,7 +42,9 @@ p.line {
 .container {
   width: 80%;
   margin: 0 auto;
+  
 }
+
 
 .section {
   padding: 20px 0;
@@ -121,6 +123,18 @@ p.line {
   padding: 10px 0;
   background: #222;
 }
+
+#statistics{
+  background: rgb(65, 184, 65);
+  border-radius: 1px;
+}
+
+#section-sustain{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 
 /* Grid layout for the statistics */
 .stats-grid {
