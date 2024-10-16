@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WildGuard - Wildlife Monitoring and Tracking">
+    <title>WildGuard - Wildlife Tracking</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        /* Additional custom styles */
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('images/wildlife.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-green-700 text-white p-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">WildGuard</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="hover:text-gray-300">About</a></li>
+                    <li><a href="#tracking" class="hover:text-gray-300">Tracking</a></li>
+                    <li><a href="#alerts" class="hover:text-gray-300">Alerts</a></li>
+                    <li><a href="#contact" class="hover:text-gray-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center text-center text-white">
+        <div class="bg-opacity-60 bg-black p-10 rounded-lg">
+            <h2 class="text-5xl font-bold mb-6">Explore the Wild</h2>
+            <p class="text-xl mb-4">Real-time wildlife tracking and monitoring for conservation efforts.</p>
+            <a href="#tracking" class="bg-green-600 hover:bg-green-500 text-white py-2 px-4 rounded-lg">Start Tracking</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-8">About WildGuard</h3>
+            <p class="text-lg text-gray-700">
+                WildGuard is dedicated to providing real-time insights into wildlife movements and behaviors. 
+                Our mission is to assist researchers, conservationists, and wildlife enthusiasts in understanding 
+                and protecting endangered species through modern technology.
+            </p>
+        </div>
+    </section>
+
+    <!-- Wildlife Tracking Section -->
+    <section id="tracking" class="bg-white py-16">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-8">Real-time Wildlife Tracking</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tracking Item 1 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-bold mb-4">African Elephants</h4>
+                    <p class="text-gray-700">Track the migration patterns of African elephants and their interactions with the environment.</p>
+                    <a href="#" class="block mt-4 text-green-600 hover:underline">Track Now</a>
+                </div>
+                <!-- Tracking Item 2 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-bold mb-4">Bengal Tigers</h4>
+                    <p class="text-gray-700">Monitor the territorial behaviors and movements of Bengal tigers in protected regions.</p>
+                    <a href="#" class="block mt-4 text-green-600 hover:underline">Track Now</a>
+                </div>
+                <!-- Tracking Item 3 -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                    <h4 class="text-2xl font-bold mb-4">Arctic Wolves</h4>
+                    <p class="text-gray-700">Analyze the pack movements and hunting techniques of Arctic wolves in the northern regions.</p>
+                    <a href="#" class="block mt-4 text-green-600 hover:underline">Track Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section id="alerts" class="bg-gray-100 py-16">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-8">Get Wildlife Alerts</h3>
+            <p class="text-lg text-gray-700 mb-8">Sign up to receive notifications about wildlife activity in your area.</p>
+            <form class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
+                <input type="email" class="border p-2 w-full mb-4" placeholder="Enter your email address">
+                <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded-lg w-full">Sign Up</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-8">Contact Us</h3>
+            <p class="text-lg text-gray-700">If you have any questions or suggestions, feel free to reach out to us.</p>
+            <form class="bg-gray-100 p-6 rounded-lg shadow-md max-w-md mx-auto mt-8">
+                <input type="text" class="border p-2 w-full mb-4" placeholder="Your Name">
+                <input type="email" class="border p-2 w-full mb-4" placeholder="Your Email">
+                <textarea class="border p-2 w-full mb-4" rows="5" placeholder="Your Message"></textarea>
+                <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded-lg w-full">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-700 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 WildGuard. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
