@@ -3,51 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WildGuard Sign In / Sign Up</title>
+    <title>WildGuard | Sign In / Sign Up</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-image: url(assets/images/zebras.jpg);
-            background-size:cover;
-            background-position: center;
+            font-family: Arial, sans-serif;
+            background: url(assets/images/zebras.jpg) no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            color: #000000;
+            color: #000;
         }
         .container {
-            background: rgba(245, 245, 245, 0.875);
-            padding: 2.2rem;
+            background: rgba(245, 245, 245, 0.9);
+            padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            width: 350px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 400px;
             text-align: center;
         }
         h1 {
             color: #016c60;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
         }
         .form-group {
             margin-bottom: 1rem;
             text-align: left;
         }
         label {
-            display: block;
-            margin-bottom: 0.5rem;
             font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
         }
         input {
             width: 100%;
-            padding: 0.5rem;
+            padding: 0.6rem;
             border: 2px solid #ccc;
-            border-radius: 4px;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s;
         }
         input:focus {
-            border-color: #06796b32;
+            border-color: #00796b;
             box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
             outline: none;
         }
@@ -55,14 +55,15 @@
             width: 100%;
             padding: 0.85rem;
             background-color: #00796b;
-            color: white;
+            color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: all 0.3s;
         }
         button:hover {
-            background-color: #01463a78;
+            background-color: #004d40;
             transform: translateY(-2px);
         }
         .message {
@@ -74,6 +75,7 @@
             margin-top: 1rem;
             cursor: pointer;
             color: #25500a;
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -82,11 +84,11 @@
         <h1 id="formTitle">Sign In</h1>
         <form id="authForm">
             <div class="form-group">
-                <label for="username">Username:</label>
+                <label for="username">Username</label>
                 <input type="text" id="username" required>
             </div>
             <div class="form-group">
-                <label for="password">Password:</label>
+                <label for="password">Password</label>
                 <input type="password" id="password" required>
             </div>
             <button type="submit">Sign In</button>
@@ -100,17 +102,14 @@
         const formTitle = document.getElementById('formTitle');
         const messageElement = document.getElementById('message');
         const toggleLink = document.getElementById('toggleLink');
-
         const validCredentials = { username: 'admin', password: 'password' };
 
         authForm.addEventListener('submit', function(event) {
             event.preventDefault();
-
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
             if (formTitle.textContent === 'Sign In') {
-                // Sign In Logic
                 if (username === validCredentials.username && password === validCredentials.password) {
                     messageElement.textContent = 'Login successful!';
                     messageElement.style.color = 'green';
@@ -119,24 +118,17 @@
                     messageElement.style.color = 'red';
                 }
             } else {
-                // Sign Up Logic (for demonstration purposes)
                 messageElement.textContent = 'Account created! You can now sign in.';
                 messageElement.style.color = 'green';
             }
         });
 
         toggleLink.addEventListener('click', function() {
-            if (formTitle.textContent === 'Sign In') {
-                formTitle.textContent = 'Sign Up';
-                toggleLink.textContent = 'Already have an account? Sign In';
-                document.querySelector('button').textContent = 'Sign Up';
-                messageElement.textContent = ''; // Clear message
-            } else {
-                formTitle.textContent = 'Sign In';
-                toggleLink.textContent = "Don't have an account? Sign Up";
-                document.querySelector('button').textContent = 'Sign In';
-                messageElement.textContent = ''; // Clear message
-            }
+            const isSigningIn = formTitle.textContent === 'Sign In';
+            formTitle.textContent = isSigningIn ? 'Sign Up' : 'Sign In';
+            toggleLink.textContent = isSigningIn ? 'Already have an account? Sign In' : "Don't have an account? Sign Up";
+            document.querySelector('button').textContent = isSigningIn ? 'Sign Up' : 'Sign In';
+            messageElement.textContent = ''; 
         });
     </script>
 </body>
