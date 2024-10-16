@@ -1,133 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
 
-    body {
-      background-color: #f7f7f7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <!-- Add Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-    .user-container {
-      width: 100%;
-      max-width: 400px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      text-align: center;
-    }
+    <!-- Add icon library for social media icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    .user-container img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
 
-    .user-container h1 {
-      font-size: 24px;
-      font-weight: 600;
-      color: #333;
-    }
+      body {
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
 
-    .user-container p {
-      color: #777;
-      margin-bottom: 20px;
-    }
+      .home-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
 
-    .user-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
+      .home-btn:hover {
+        background-color: #45a049;
+      }
 
-    .user-info div {
-      text-align: center;
-    }
-
-    .user-info div h3 {
-      font-size: 18px;
-      color: #333;
-    }
-
-    .user-info div p {
-      color: #777;
-      font-size: 14px;
-    }
-
-    .btn-logout {
-      background-color: #a4db75;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-logout:hover {
-      background-color: #87c358;
-    }
-
-/* responsive design for different viewports */
-    @media (max-width: 600px) {
       .user-container {
-        padding: 15px;
-        max-width: 90%;
+        width: 100%;
+        max-width: 400px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .user-container img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 15px;
       }
 
       .user-container h1 {
-        font-size: 20px;
+        font-size: 24px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .user-container p {
+        color: #777;
+        margin-bottom: 20px;
+      }
+
+      .user-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .user-info div {
+        text-align: center;
       }
 
       .user-info div h3 {
-        font-size: 16px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .user-info div p {
+        color: #777;
+        font-size: 14px;
+      }
+
+      /* Social media icon links */
+      a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+        margin: 0 10px;
+        transition: opacity 0.3s;
+      }
+
+      a:hover {
+        opacity: 0.7;
       }
 
       .btn-logout {
-        font-size: 14px;
-        padding: 8px 15px;
+        background-color: #a4db75;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="user-container">
-    <img src="https://randomuser.me/api/portraits/thumb/men/77.jpg" alt="User Profile Pictures">
-    <h1>Arman Bhadoriya</h1>
-    <p>arman@gmail.com</p>
 
-    <div class="user-info">
-      <div>
-        <h3>120</h3>
-        <p>Followers</p>
+      .btn-logout:hover {
+        background-color: #87c358;
+      }
+
+      /* Follow More Section */
+      .follow-more {
+        margin-top: 30px;
+      }
+
+      .follow-more h2 {
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: #333;
+      }
+
+      .mini-cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .mini-card {
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 75px;
+        text-align: center;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 8px;
+      }
+
+      .mini-card img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 8px;
+      }
+
+      .mini-card p {
+        font-size: 12px;
+        color: #333;
+      }
+
+      /* responsive design for different viewports */
+      @media (max-width: 600px) {
+        .user-container {
+          padding: 15px;
+          max-width: 90%;
+        }
+
+        .user-container h1 {
+          font-size: 20px;
+        }
+
+        .user-info div h3 {
+          font-size: 16px;
+        }
+
+        .btn-logout {
+          font-size: 14px;
+          padding: 8px 15px;
+        }
+
+        .mini-card {
+          width: 60px;
+        }
+
+        .mini-card p {
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Home Button -->
+    <a href="index.html" class="home-btn">Home</a>
+
+    <div class="user-container">
+      <img
+        src="https://randomuser.me/api/portraits/thumb/men/77.jpg"
+        alt="User Profile Picture"
+      />
+      <h1>Arman Bhadoriya</h1>
+      <p class="title">CEO & Founder, Example</p>
+      <p>Harvard University</p>
+
+      <div class="user-info">
+        <div>
+          <h3>120</h3>
+          <p>Followers</p>
+        </div>
+        <div>
+          <h3>80</h3>
+          <p>Following</p>
+        </div>
+        <div>
+          <h3>15</h3>
+          <p>Posts</p>
+        </div>
       </div>
-      <div>
-        <h3>80</h3>
-        <p>Following</p>
-      </div>
-      <div>
-        <h3>15</h3>
-        <p>Posts</p>
-      </div>
+
+      <!-- Social Media Links -->
+      <a href="#"><i class="fa fa-dribbble"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+
+      <!-- Contact Button -->
+      <p><button class="btn-logout">Contact</button></p>
     </div>
 
-    <button class="btn-logout">Logout</button>
-  </div>
-</body>
+    <!-- Follow More Section -->
+    <div class="follow-more">
+      <h2>Follow More</h2>
+      <div class="mini-cards">
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/women/65.jpg"
+            alt="User Profile"
+          />
+          <p>Sara</p>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/men/80.jpg"
+            alt="User Profile"
+          />
+          <p>John</p>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/women/47.jpg"
+            alt="User Profile"
+          />
+          <p>Emma</p>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/men/52.jpg"
+            alt="User Profile"
+          />
+          <p>Chris</p>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/women/50.jpg"
+            alt="User Profile"
+          />
+          <p>Lisa</p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
