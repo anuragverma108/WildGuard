@@ -102,23 +102,23 @@
         margin: auto;
     }
 
-    .container img {
-        width: 70%;
-        border-radius: 15px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-        height: 600px;
-        margin-left: -120px;
-    }
 
     .form-container {
-        width: 45%;
-        background-color: white;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-        margin-left: 20px;
-        margin-right: -180px;
-    }
+    width: 45%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-right: -180px;
+    border: 3px solid #ccc; /* Initial border color */
+    transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+.form-container:hover {
+    border-color: #99d28a; /* Border color on hover */
+}
+
 
     .form-container h2 {
         font-size: 24px;
@@ -164,6 +164,12 @@
         background-color: #88c17d;
     }
 
+    .form-container:hover {
+    transform: scale(1.02); /* Slightly enlarge the form */
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
     footer {
         background-color: #99d28a;
         text-align: center;
@@ -189,6 +195,69 @@
             width: 100%;
         }
     }
+
+
+
+    .flip-container {
+    perspective: 1000px;
+    width: 70%;
+    height: 600px;
+    margin-left: -120px;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.back {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    text-align: center;
+    color: #333;
+}
+
+.flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+/* Optional: Hover or click border effect on flip */
+.flip-container:hover .front,
+.flip-container:hover .back {
+    border: 2px solid #99d28a;
+}
+
+
+.flip-container:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+
 </style>
 </head>
 <body>
@@ -206,8 +275,25 @@
 </header>
 
 <div class="container">
-<!-- Left side: Image -->
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReHDIAZtYGPU6V1mgi0NgGklFupj5RDAIGTnr6Bj8fskpbCDy3wiqZCDx5kmMXqFUrDuo&usqp=CAU" alt="Wild Animal">
+
+
+
+<div class="flip-container" id="flip-container">
+  <div class="flipper">
+      <!-- Front: Image -->
+      <div class="front">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReHDIAZtYGPU6V1mgi0NgGklFupj5RDAIGTnr6Bj8fskpbCDy3wiqZCDx5kmMXqFUrDuo&usqp=CAU" alt="Wild Animal">
+      </div>
+      <!-- Back: Contact Information -->
+      <div class="back">
+          <h3>Contact Us</h3>
+          <p>If you have any queries, please reach out to us at:</p>
+          <p>Email: support@wildguard.org</p>
+          <p>Phone: +1234567890</p>
+      </div>
+  </div>
+</div>
+
 
 <!-- Right side: Contact Form -->
 <div class="form-container">
@@ -227,6 +313,13 @@
 
         <input type="submit" value="Submit">
     </form>
+
+<!-- This is where the success message will be displayed -->
+<div id="formMessage" style="display:none; margin-top: 20px; color: green;">
+  Thank you for reaching out to us! We will get back to you shortly.
+</div>
+
+
 </div>
 </div>
 
@@ -295,12 +388,29 @@
 
 
   
-<!-- JavaScript for form submission alert -->
+<!-- JavaScript for form submission alert
 <script>
   document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
       alert("Thank you for reaching out to us! We will get back to you shortly.");
   });
+</script> -->
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Show the success message
+      var messageDiv = document.getElementById('formMessage');
+      messageDiv.style.display = 'block';
+
+      // Optional: Clear the form fields after submission
+      document.getElementById('contactForm').reset();
+  });
+
+
+
+
 </script>
 
   
