@@ -341,7 +341,7 @@ body {
   margin-block-start: 50px;
 }
 
-.navbar-list {
+/* .navbar-list {
   max-width: 400px;
   width: 100%;
   margin: auto;
@@ -349,7 +349,7 @@ body {
   opacity: 0;
   transition: 0.5s ease;
   transition-delay: 0s;
-}
+} */
 
 .navbar.active .navbar-list {
   opacity: 1;

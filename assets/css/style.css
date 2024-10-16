@@ -431,9 +431,9 @@ html {
   z-index: 100;
   /* reducing height of the navbar */
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(10px); */
+  /* -webkit-backdrop-filter: blur(10px); */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   position: fixed;
   width: 100%;
   /* z-index: 1000; */
@@ -457,7 +457,7 @@ html {
 
 .header.active {
   background-color: var(--eerie-black-1);
-  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.8);
+  /* box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.8); */
   padding: 0px;
 }
 
@@ -514,7 +514,7 @@ html {
 
 /* reducing height of the navbar */
 .logo,
-.navbar-list,
+
 .header-action {
   line-height: 1;
   /* Ensure the content takes less vertical space */
@@ -558,6 +558,7 @@ html {
   transition: 0.5s ease;
   transition-delay: 0s;
   background-color: hsla(0, 0%, 0%, 0.8);
+  display: flex;
 }
 
 .active {
@@ -585,7 +586,7 @@ html {
 }
 .navbar-link {
 
-  color: var(--white);
+  color: black;
   font-size: 15px;
 
   color: var(--bright-yellow-crayola);
@@ -593,9 +594,9 @@ html {
 
   font-weight: var(--fw-500);
   text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: space-between;
+  align-items: center; */
   padding-inline: 10px 15px;
   padding-block: 8px;
   transition: var(--transition-1);

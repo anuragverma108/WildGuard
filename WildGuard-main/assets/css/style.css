@@ -542,16 +542,20 @@ html {
 }
 
 .navbar-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   max-width: 300px;
   width: 100%;
   height: 100%;
   margin: auto;
   padding-top: 20px;
-  padding-inline: 10px;
+  /* padding-inline: 10px; */
   opacity: 0;
   transition: 0.5s ease;
   transition-delay: 0s;
   background-color: hsla(0, 0%, 0%, 0.8);
+  /* background-color: pink; */
 }
 
 .active {
