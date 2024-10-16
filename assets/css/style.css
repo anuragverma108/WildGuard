@@ -1157,16 +1157,24 @@ html {
 .service-list {
   display: grid;
   gap: 30px;
+  background-color: transparent;
+}
+.service-card {
+  flex: 1 1 calc(25% - 20px); /* Each card will take up 25% of the width minus the gap */
+  min-width: 200px; /* Ensures the card doesn't shrink too much */
+  max-width: 300px; /* Sets a maximum width for responsiveness */
+  background-color: #fff; /* Background color for each card */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
 }
 
-.service-card {
-  background-color: var(--white);
-  text-align: center;
-  padding: 45px 40px;
-  border-radius: 2px;
-  outline: 3px solid transparent;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition-2);
+.service-card:hover {
+  transform: translateY(-5px); /* A subtle hover effect */
 }
 
 .service-card:is(:hover, :focus-within) {
@@ -2212,7 +2220,13 @@ data {
 
   .features-list,
   .service-list {
-    grid-template-columns: 1fr 1fr;
+    display: flex; /* Or use display: grid; for grid layout */
+    justify-content: space-between; /* Evenly space the cards horizontally */
+    align-items: stretch; /* Ensure all cards have the same height */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if necessary */
+    gap: 20px; /* Adds spacing between the cards */
+    margin: 0 auto; /* Centers the list within its container */
+    padding: 20px;
   }
 
   /**
@@ -2801,9 +2815,9 @@ data {
 }
 
 .card-icon {
-  font-size: 40px; /* Adjust icon size as needed */
-  color: green; /* Icon color */
-  margin-bottom: 20px; /* Space between icon and title */
+  font-size: 40px; /* Adjust size of the icon */
+  color: #6ab04c; /* Give it a green color */
+  margin-bottom: 15px; /* Adds space below the icon */
 }
 
 .h3.card-title {
@@ -2821,12 +2835,14 @@ data {
 .btn-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   background-color: #4caf50; /* Button background color */
   color: white; /* Button text color */
   padding: 10px 20px; /* Button padding */
   border-radius: 5px; /* Rounded corners */
   transition: background-color 0.3s; /* Transition for hover effect */
+  margin-top: auto; /* Push the button to the bottom */
 }
 
 .btn-link:hover {
@@ -2884,7 +2900,38 @@ data {
   transform-style: preserve-3d;
 }
 
-.card-front,
+.card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.card-front .card-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.card-front .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card-front .card-text {
+  flex-grow: 1; /* Ensures the text takes up the available space */
+  margin-bottom: 20px;
+}
+
+.card-front .btn-link {
+  margin-top: auto;
+  width: 100%;
+}
+
 .card-back {
   position: absolute;
   width: 100%;
@@ -2903,11 +2950,38 @@ data {
   transform: rotateY(180deg);
   background-color: #f0f0f0; /* Background color for back side */
 }
-
-.service-card:hover .card-inner {
-  animation: rotateCard 2s forwards;
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Prevents the mirrored effect */
 }
-
+.card-front {
+  z-index: 2;
+  transform: rotateY(0deg); /* Front starts unrotated */
+}
+.card-back {
+  transform: rotateY(180deg); /* Back starts flipped */
+  z-index: 1;
+  background-color: #fff; /* Ensure the back face is visible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.service-card:hover .card-inner {
+  transform: rotateY(180deg); /* Rotates the card */
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d; /* Ensures both front and back rotate in 3D */
+}
 @keyframes rotateCard {
   0% {
     transform: rotateY(0deg);
