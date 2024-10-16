@@ -29,19 +29,19 @@ header {
 }
 
 header a.navbar-brand {
-    color: #fff; /* White brand text */
+    color: #f0b410; /* White brand text */
     font-weight: bold; /* Bold text */
     font-size: 1.5rem; /* Larger font size */
 }
 
 header .navbar-nav .nav-item .nav-link {
-    color: #fff; /* White nav links */
+    color: #f0b410; /* White nav links */
     margin-right: 15px; /* Space between nav links */
 }
 
 header .navbar-nav .nav-item .nav-link.active {
     font-weight: bold; /* Bold active link */
-    color: #cfe0d6; /* Lighter color for active link */
+    color: #f0b410; /* Lighter color for active link */
 }
 
 .contact-section {
