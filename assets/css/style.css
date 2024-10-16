@@ -2785,3 +2785,37 @@ data{
 .email-input {
   color: rgb(208, 208, 208);
 }
+
+
+/* Search */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#search-input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid var(--silver-chalice);
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  font-size: 16px;
+}
+#search-button {
+  padding: 10px 15px;
+  border: 1px solid var(--silver-chalice);
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  background-color: var(--green);
+  color: var(--platinum);
+  cursor: pointer;
+  outline: none;
+  margin-top:0 !important;
+}
+#search-button i {
+  font-size: 18px;
+}
+#search-button:hover {
+  background-color: var(--green);
+}
+
