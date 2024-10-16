@@ -111,45 +111,57 @@ html {
   }
 }
 
-.container_1 {
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+.formContainer{
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  margin: 0;
+  width: 100vw;
+  height: min-content;
+  margin-bottom: 20px; 
   text-align: center;
 }
 
-.post-form {
-  margin-bottom: 20px;
+.container_1 {
+ background-color: white;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ padding: 20px;
+ max-width: 600px;
+ width: 90%;
 }
 
-textarea {
+.container_1 h1{
+  font-size: 24px;
+  font-weight: 800;
+  color: #27ae60;
+}
+
+.post-form {
+  margin: 20px 0;
+}
+
+#postContent {
   width: 100%;
   height: 100px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: vertical;
 }
 
-button {
+#submitPost {
   background-color: #28a745;
-  color: black;
-  padding: 10px 15px;
+  color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
-  /* Adds space above button */
+  transition: background-color 0.3s;
 }
 
-button:hover {
+#submitPost:hover {
   background-color: #218838;
-  color: white;
 }
 
 .posts {
@@ -157,8 +169,11 @@ button:hover {
 }
 
 .post {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 /*-----------------------------------*\
@@ -1270,7 +1285,7 @@ html {
   margin-bottom: 100px;
 }
 .donate-card {
-  width: 100%;
+  width: 90vw;
   position: relative;  /* To control the position of elements inside the card */
   box-shadow: var(--card-shadow);
   margin-bottom: 60px;
@@ -1279,7 +1294,7 @@ html {
 
 .donate-card .card-banner {
   width: 100%;
-  height: 300px;  
+  height: 500px;  
   background-color: var(--light-gray);
   position: relative;
   overflow: hidden;  
@@ -1298,8 +1313,8 @@ html {
 
 .donate-card .card-content {
   position: absolute;
-  top: 58%;  
-  left: 35%;
+  top: 60%;  
+  left: 39%;
   padding: 35px;
   background-color: white;  
   z-index: 2;  
@@ -1410,9 +1425,8 @@ data{
 
 .donate-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px; 
-  padding-inline-end: 120px;
 }
  
 
@@ -2666,7 +2680,6 @@ data{
 .container {
   padding: 10px;
   text-align: center;
-  margin-top: 10px;
   /* Space from the top */
 }
 
