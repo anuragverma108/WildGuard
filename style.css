@@ -75,7 +75,7 @@
     font-size: 0.9em;
     color: #7f8c8d;
     margin: 15px 0;
-
+    min-height: 8rem;
 }
 
 .donate-button {
