@@ -3,29 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="about.css">
-
     <title>WildGuard - About Us</title>
-  
+    <style>
+        /* General Reset and Box Sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f5f1;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: #2d4739;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        /* Nature-themed Background */
+        .about-section {
+            background: url('https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .about-overlay {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .text-content, .image-content {
+            flex-basis: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-content h2 {
+            font-size: 2rem;
+            color: #2d4739;
+        }
+
+        /* Image Styling */
+        .image-content img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-content img:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        /* Typing effect for about section */
+        #paragraph1, #paragraph2 {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .text-content, .image-content {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Values Section */
+        .values-section {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .values-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: #2d4739;
+        }
+
+        .value-box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .value-box-center {
+            display: flex;
+            justify-content: center; /* Center the third image */
+            margin-bottom: 30px;
+        }
+
+        .value-item {
+            flex-basis: 48%; /* Make both items take up roughly half the container's width */
+            text-align: center;
+        }
+
+        .value-item img {
+            width: 100%;
+            height: auto;
+            max-width: 500px; /* Adjust the maximum width */
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .value-box {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .value-item {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+
+            .value-box-center {
+                margin-top: 20px;
+            }
+            .team-member {
+                flex-basis: 45%;
+            }
+        }
+        /* Team Section */
+        .team-section {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            flex-basis: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        
+    </style>
 </head>
 <body>
 
     <!-- About Us Section -->
     <section id="about" class="about-section">
         <div class="about-overlay">
-            <h2>About Us</h2>
-            <p id="paragraph1"></p> <!-- Empty initially, will be filled by JavaScript -->
-            <p id="paragraph2"></p> <!-- Empty initially, will be filled by JavaScript -->
+            <h2 style="color: white;">About Us</h2>
+            <p id="paragraph1" style="color: white;"></p> <!-- Empty initially, will be filled by JavaScript -->
+            <p id="paragraph2" style="color: white;"></p> <!-- Empty initially, will be filled by JavaScript -->
         </div>
     </section>
 
     <section>
         <div class="container">
-            <!-- Section Heading -->
-            <!-- <div class="section-heading">
-                <h1>About Us</h1>
-            </div> -->
-    
             <!-- Row 1: Vision on the right, Image on the left -->
             <div class="row">
                 <div class="image-content">
@@ -33,35 +230,72 @@
                 </div>
                 <div class="text-content">
                     <h2>Our Vision</h2>
-                    <p>At WildGuard, we envision a world where wildlife thrives in harmony with human activity. Our efforts are focused on conservation, awareness, and sustainable initiatives that promote the well-being of animals and their habitats. By protecting endangered species and preserving biodiversity, we aim to create a future where every animal has a safe, thriving environment to call home. Our vision drives us to foster coexistence between humans and nature, ensuring that future generations will experience the beauty and diversity of wildlife</p>
+                    <p>At WildGuard, we envision a world where wildlife thrives in harmony with human activity. Our efforts are focused on conservation, awareness, and sustainable initiatives that promote the well-being of animals and their habitats. By protecting endangered species and preserving biodiversity, we aim to create a future where every animal has a safe, thriving environment to call home.</p>
                 </div>
             </div>
-    
+
             <!-- Row 2: Mission on the left, Image on the right -->
             <div class="row">
                 <div class="text-content">
                     <h2>Our Mission</h2>
-                    <p>Our mission is to actively protect wildlife through education, conservation programs, and direct action. We are dedicated to restoring natural ecosystems and advocating for stronger policies that safeguard the most vulnerable species. By partnering with local communities, governments, and global organizations, we work to inspire change, reduce poaching, and mitigate the impact of human activities on wildlife. We believe in the power of collective action to create sustainable solutions that benefit both animals and people, and we strive every day to make this mission a reality.</p>
+                    <p>Our mission is to actively protect wildlife through education, conservation programs, and direct action. We are dedicated to restoring natural ecosystems and advocating for stronger policies that safeguard the most vulnerable species. By partnering with local communities, governments, and global organizations, we work to inspire change and create sustainable solutions for wildlife.</p>
                 </div>
                 <div class="image-content">
                     <img src="https://images.pexels.com/photos/144234/bull-landscape-nature-mammal-144234.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wild Animal">
                 </div>
-    
-    
-    
-                <!-- <div class="text-content">
-                    <h2>Our Mission</h2>
-                    <p>Our mission is to protect endangered species, preserve wildlife habitats, and foster a connection between humans and nature. We aim to educate and engage communities to take part in our cause and ensure a future for wildlife.</p>
-                </div> -->
             </div>
         </div>
-    
     </section>
 
- 
-
-
-  
+    <!-- Core Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2>Our Core Values</h2>
+            <div class="value-box">
+                <div class="value-item">
+                    <img src="https://as2.ftcdn.net/v2/jpg/05/65/79/53/1000_F_565795322_RZvxdtwV490ARO2AvaFxR9CQamuXVJOB.jpg" alt="Conservation Icon">
+                    <p><strong>Conservation</strong></p>
+                    <p>Protecting and preserving wildlife and their habitats for future generations.</p>
+                </div>
+                <div class="value-item">
+                    <img src="https://image.shutterstock.com/image-vector/community-icon-260nw-1500731231.jpg" alt="Community Icon">
+                    <p><strong>Community</strong></p>
+                    <p>Engaging with local communities to foster understanding and stewardship of the natural world.</p>
+                </div>
+            </div>
+            <div class="value-box-center">
+                <div class="value-item">
+                    <img src="https://wallpapercave.com/wp/wp8046449.jpg" alt="Sustainability Icon">
+                    <p><strong>Sustainability</strong></p>
+                    <p>Promoting sustainable practices to ensure a balanced coexistence with nature.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+     <!-- Our Team Section -->
+     <section class="team-section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Lead Biologist</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Team Member 3">
+                    <h3>Mark Allen</h3>
+                    <p>Conservation Officer</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script>
         // Typing effect function
@@ -85,16 +319,12 @@
             const paragraph2 = document.getElementById("paragraph2");
 
             // Text content to be typed out
-            const text1 = "At WildGuard, we are passionate about protecting and preserving the world’s wildlife. Our mission is simple: to defend wildlife, one paw at a time. With ecosystems facing unprecedented threats, we are committed to ensuring that future generations can experience the beauty and diversity of the animal kingdom.";
-            const text2 = "Our organization is built on the belief that every species plays a critical role in maintaining the balance of our planet. We work tirelessly to provide resources, support, and awareness for wildlife conservation efforts around the globe. Through our initiatives, we aim to protect endangered species, restore natural habitats, and promote sustainability in the face of environmental challenges.";
+            const text1 = "At WildGuard, we are passionate about protecting and preserving the world’s wildlife. Our mission is simple: to conserve natural habitats, protect endangered species, and promote a sustainable coexistence with nature.";
+            const text2 = "By supporting communities, engaging in conservation initiatives, and advocating for environmental responsibility, we aim to create a future where nature and humanity thrive together.";
 
-            // Typing effect on first paragraph, followed by the second paragraph
-            typeText(paragraph1, text1, 30); // Typing effect for the first paragraph
-
-            // Starts the second after the first finishes
-            setTimeout(() => {
-                typeText(paragraph2, text2, 30); // Typing effect for the second paragraph
-            }, text1.length * 30); // Delay based on the length of the first text
+            // Start typing effect
+            typeText(paragraph1, text1);
+            setTimeout(() => typeText(paragraph2, text2), text1.length * 50 + 1000); // Delay second paragraph
         });
     </script>
 </body>
