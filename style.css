@@ -100,3 +100,16 @@
 
 
 
+.footer-social-icons .message {
+    background-color: #98c379;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 200px;
+  }
+  
+  .message:hover {
+    background-color: #81a864;
+  }
