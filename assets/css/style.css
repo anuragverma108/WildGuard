@@ -583,7 +583,6 @@ html {
   transform: scale(1.4);
 }
 .navbar-link {
-
   color: var(--white);
   font-size: 15px;
 
@@ -681,8 +680,6 @@ html {
   gap: 2em;
 }
 
-
-
 .form-fields--login {
   padding-left: 10px;
   padding-right: 10px;
@@ -691,8 +688,6 @@ html {
 .form-fields--signup {
   margin-bottom: 10px;
 }
-
-
 
 .form-container input {
   margin: 10px 0;
@@ -744,7 +739,7 @@ html {
   transform: translateY(-2px);
 }
 
-.input-group{
+.input-group {
   /* width: 100px; */
   display: flex;
   align-items: center;
@@ -752,12 +747,12 @@ html {
   gap: 0.75rem;
 }
 
-.input-group .form-control{
+.input-group .form-control {
   height: 39px;
   min-width: 100px;
 }
 
-.input-group .search-btn{
+.input-group .search-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1213,7 +1208,7 @@ html {
   text-decoration: underline;
 }
 
-.btn-link span:hover{
+.btn-link span:hover {
   cursor: pointer;
 }
 
@@ -1253,18 +1248,17 @@ html {
   #DONATE
 \*-----------------------------------*/
 
-
 .donate-list {
   display: block;
   gap: 60px;
 }
 
-.donate-list >li{
+.donate-list > li {
   margin-bottom: 100px;
 }
 .donate-card {
   width: 100%;
-  position: relative;  /* To control the position of elements inside the card */
+  position: relative; /* To control the position of elements inside the card */
   box-shadow: var(--card-shadow);
   margin-bottom: 60px;
   background-color: white;
@@ -1272,10 +1266,10 @@ html {
 
 .donate-card .card-banner {
   width: 100%;
-  height: 300px;  
+  height: 300px;
   background-color: var(--light-gray);
   position: relative;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .donate-card .card-banner img {
@@ -1286,17 +1280,17 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;  
+  z-index: 1;
 }
 
 .donate-card .card-content {
   position: absolute;
-  top: 58%;  
+  top: 58%;
   left: 35%;
   padding: 35px;
-  background-color: white;  
-  z-index: 2;  
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  
+  background-color: white;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -1304,11 +1298,11 @@ html {
   width: 60%;
 }
 
-.donate-list > li{
+.donate-list > li {
   margin-bottom: 300px;
 }
 
-data{
+data {
   background-color: white;
 }
 
@@ -1404,10 +1398,9 @@ data{
 .donate-card {
   display: flex;
   flex-direction: row;
-  gap: 20px; 
+  gap: 20px;
   padding-inline-end: 120px;
 }
- 
 
 /*-----------------------------------*\
   #TESTIMONIALS
@@ -2163,8 +2156,6 @@ data{
     --fs-2: 5.5rem;
   }
 
-  
-
   /**
    * EVENT
    */
@@ -2440,7 +2431,6 @@ data{
     grid-template-columns: repeat(4, 1fr);
   }
 
-  
   /**
    * TESTIMONIALS
    */
@@ -2570,7 +2560,7 @@ data{
     color: var(--pistachio_100);
   }
 
-  .header-action{
+  .header-action {
     gap: 1.5rem;
   }
 
@@ -2601,7 +2591,6 @@ data{
     left: -35px;
   }
 
-  
   /**
    * PARTNER
    */
@@ -2784,4 +2773,78 @@ data{
 
 .email-input {
   color: rgb(208, 208, 208);
+}
+.forum-container {
+  max-width: 1400px;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.forum-main-title {
+  text-align: center;
+  font-size: 36px;
+  color: #2c5046; /* Darker green for contrast */
+  margin-bottom: 20px;
+}
+
+.forum-title {
+  color: #27ae60; /* Main green color */
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.post-form {
+  margin-bottom: 30px;
+}
+
+.post-textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  resize: none;
+  font-size: 18px;
+  transition: border-color 0.3s;
+}
+
+.post-textarea:focus {
+  border-color: #27ae60; /* Focus color */
+  outline: none;
+}
+
+.submit-button {
+  background-color: #27ae60; /* Main green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #2ecc71; /* Lighter green on hover */
+}
+
+.posts-container {
+  margin-top: 20px;
+}
+
+.post-item {
+  background: #ecf0f1;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.post-item:hover {
+  background: #d1d8db; /* Slightly darker for hover effect */
 }

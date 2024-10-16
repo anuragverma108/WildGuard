@@ -965,20 +965,25 @@
               </ul>
             </div>
           </section>
-
-          <div class="container_1">
-            <h1>Wildlife Conservation Forum</h1>
+        
+        
+          <div class="forum-container">
+            <h1 class="forum-main-title">Wildlife Conservation Forum</h1>
             <div class="post-form">
-              <h2>Share Your Thoughts</h2>
-              <textarea id="postContent" placeholder="Write your message..."></textarea>
-              <button onclick="GiveAlert()" id="submitPost">Submit</button>
+                <h2 class="forum-title">Share Your Thoughts</h2>
+                <textarea id="postContent" class="post-textarea" placeholder="Write your message..." required></textarea>
+                <button class="submit-button">Submit</button>
             </div>
-            <div class="posts">
-              <h2>Discussions</h2>
-              <div id="postsContainer"></div>
+            <div class="posts-container">
+                <div class="post-item">
+                    <p><strong>User123:</strong> Let's discuss the importance of preserving our wildlife!</p>
+                </div>
+                <!-- More post items will go here -->
             </div>
-          </div>
-          <script src="script.js"></script>
+        </div>
+        
+        
+    
 
           <!-- 
         - #TESTIMONIALS
