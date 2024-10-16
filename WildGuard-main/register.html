@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/register.css">
+    <title>Register</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .entry {
+            margin-bottom: 20px;
+        }
+
+        label h3 {
+            margin-bottom: 8px;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            padding-right: 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .fa {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .extras {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .forgot-password {
+            font-size: 0.9em;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            text-align: center;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-btn {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: #f1f1f1;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .signup-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Add media query for responsiveness */
+        @media (max-width: 480px) {
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-page">
+        <div class="content">
+            <a href="./index.html" class="home-icon"><i class="fa-solid fa-house"></i></a>
+            <h2>Create an account</h2>
+
+            <form class="data" id="registrationForm">
+
+                <!-- Email Field -->
+                <div class="entry">
+                    <label for="email"><h3>Email</h3></label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" placeholder="example@gmail.com" required>
+                        <div class="fa"><i class="fas fa-envelope"></i></div>
+                    </div>
+                </div>
+
+                <!-- Password Field with Toggle Visibility -->
+                <div class="entry">
+                    <label for="password"><h3>Password</h3></label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password" required minlength="8">
+                        <div class="fa toggle-password" onclick="togglePasswordVisibility('password')">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat Password Field with Toggle Visibility -->
+                <div class="entry">
+                    <label for="repeat-password"><h3>Re-enter Password</h3></label>
+                    <div class="input-wrapper">
+                        <input type="password" id="repeat-password" placeholder="Re-enter your password" required minlength="8">
+                        <div class="fa toggle-password" onclick="togglePasswordVisibility('repeat-password')">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remember Me Checkbox & Forgot Password Link -->
+                <div class="extras">
+                    <label class="remember-me">
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <!-- Sign up Button -->
+                <div class="entry signup">
+                    <button type="submit">Sign Up</button>
+                </div>
+
+                <!-- Social Media Buttons -->
+                <div class="social-login">
+                    <p>Or Sign up with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google-btn" onclick="redirectToGoogle()">
+                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo">
+                        </button>
+                        <button type="button" class="social-btn google-btn" onclick="redirectToFacebook()">
+                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Login Link -->
+                <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle password visibility function
+        function togglePasswordVisibility(id) {
+            const passwordField = document.getElementById(id);
+            const icon = passwordField.nextElementSibling.querySelector('i');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        // Form validation for matching passwords
+        const form = document.getElementById('registrationForm');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const password = document.getElementById('password').value;
+            const repeatPassword = document.getElementById('repeat-password').value;
+
+            if (password !== repeatPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            alert("Registration successful!");
+            form.reset(); // Optionally reset the form after submission
+        });
+
+        // Redirect to Google for OAuth sign-in
+        function redirectToGoogle() {
+            // For OAuth, you'd redirect to your Google OAuth endpoint
+            window.location.href = 'https://accounts.google.com/signin'; // This is a placeholder
+        }
+
+        // Redirect to Facebook for OAuth sign-in
+        function redirectToFacebook() {
+            // For OAuth, you'd redirect to your Facebook OAuth endpoint
+            window.location.href = 'https://www.facebook.com/login'; // This is a placeholder
+        }
+    </script>
+
+</body>
+</html>

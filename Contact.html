@@ -1,296 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - WildCard</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <title>WildGuard - Give Love for Saving World Animals</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/contact.css" />
 
-  <!-- Google Translate script -->
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-  <!-- 
-      - favicon
-    -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-
-  <!-- 
-      - custom css link
-    -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 
-      - fontawesome icon link
-    -->
-  <script src="https://kit.fontawesome.com/418b80718b.js" crossorigin="anonymous"></script>
-
-  <!-- 
-      - google font link
-    -->
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
-    rel="stylesheet" />
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="./Events-Data/modal.css">
-
-  <style>
-    .headd {
-      background-color: #98C379;
-      color: #fff;
-    }
-
-    .headd h1 {
-      font-weight: bolder;
-      color: #fff;
-      margin-left: 2.3rem;
-      display: inline;
-    }
-
-    .headd ul {
-      display: flex;
-      justify-content: space-around;
-      font-weight: lighter;
-      justify-content: center;
-      align-items: center;
-      margin-left: 100px;
-    }
-
-    .headd a {
-      margin-left: 2.3rem;
-      margin-right: 2.3rem;
-    }
-
-    .headd {
-      display: flex;
-    }
-
-    .form {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 8px 32px 0 #98C379;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      width: 500px;
-      height: 500px;
-    }
-
-    .form input {
-      margin-bottom: 10px;
-      margin-top: 10px;
-      width: 300px;
-      height: 40px;
-      font-size: 20px;
-      border: 2px solid #bcb4b4;
-    }
-
-    .form input:hover {
-      box-shadow: 7px 7px 10px 10px #dfd9d9;
-    }
-
-    .form h2 {
-      color: #bcb4b4;
-    }
-
-    .contact_form {
-      margin-top: 10px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-
-    .contact_form img {
-      border-radius: 30px;
-      box-shadow: 1px 3px 1px 3px white;
-    }
-
-    .im {
-      margin-top: 9rem;
-      text-align: center;
-    }
-
-    /* Button styling */
-    /* From Uiverse.io by doniaskima */
-    .btn-17 {
-      background-color: #98C379;
-      color: #fff;
-      font-weight: 900;
-      padding: 0.8rem 3rem;
-      border-radius: 99rem;
-      position: relative;
-    }
-
-    .btn-17:hover .text {
-      animation: move-up-alternate 0.3s forwards;
-    }
-
-    /* Media queries for responsiveness */
-    @media only screen and (max-width: 768px) {
-      .form {
-        width: 80%;
-        height: auto;
-      }
-
-      .contact_form {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .contact_form img {
-        width: 100%;
-        height: auto;
-      }
-
-      
-    }
-
-    @media only screen and (max-width: 480px) {
-      .form {
-        width: 90%;
-        height: auto;
-      }
-
-      .form input {
-        width: 100%;
-      }
-
-      
-    }
-  </style>
-
-</head>
-
-<body>
-  <!-- header -->
-  <header class="navbar">
-    <div class="headd display-2">
-      <h1>WildGuard</h1>
-      <ul class="h4">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="Contact.html">Contact Us</a></li>
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-
-
-    </div>
-  </header>
-
-  <!-- contact form  -->
-
-  <div class="contact_form">
-
-    <div class="im">
-      <img src="contactus1.jpg" width="500px" alt="xyz">
-    </div>
-    <div class="form">
-      <form action="mailto:firdousfatima131004@gmail.com">
-        <label for="Name">
-          <h2>Enter Your Name</h2>
-        </label><br>
-        <input type="text"><br>
-        <label for="Email">
-          <h2>Enter Your Email</h2>
-        </label><br>
-        <input type="email" id=""><br>
-        <label for="Message">
-          <h2>Write Your Message</h2>
-        </label><br>
-        <input type="text" style="height: 100px;
-              width: 300px;"><br>
-        
-        <button class="btn-17">
-          <span class="text-container">
-            <span class="text">submit</span>
-          </span>
-        </button>
-
-
-      </form>
-    </div>
-
-  </div>
-  <!-- 
-    - #FOOTER
-  -->
-
-  <footer id="footer" class="footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <h3>
-          <a href="#" class="logo">WildGuard</a>
-        </h3>
-        <p>WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our
-          mission to create a sustainable future for the planet's most vulnerable creatures.</p>
+  <body>
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="logo.png" alt="" width="50" />
+          WildCard
+        </a>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="donate.html">Donate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.html">Contact</a>
+          </li>
+        </ul>
       </div>
-      <div class="footer-middle">
-        <h4>Quick Links</h4>
-        <div class="quick-links">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#donate">Donate</a></li>
-            <li><a href="./Contact.html">Contact Us</a></li>
-          </ul>
+    </header>
+
+    <!-- Main Content: Contact Section -->
+    <section class="contact-section">
+      <div class="container d-flex align-items-center justify-content-center vh-100">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 contact-info">
+            <h1>Get in Touch</h1>
+            <p>
+              If you have any questions, feel free to reach out to us. We're
+              here to help and protect wildlife!
+            </p>
+            <p>
+              <i class="fas fa-envelope"></i>
+              info@wildcard.com
+            </p>
+            <p>
+              <i class="fas fa-phone"></i>
+              +91 00000 00000
+            </p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i>
+              India
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-6 contact-form">
+            <form action="mailto:info@wildcard.com" method="POST">
+              <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-green btn-block">
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-      <div class="footer-right">
-        <form action="review.html">
+    </section>
 
-          <button type="submit">🌟Rating/Review🌟</button>
-        </form>
-        <h4>Stay Connected</h4>
-
-        <form action="#">
-          <input type="email" class="email-input" placeholder="Your email address">
-          <button type="submit">Subscribe</button>
-        </form>
-        <div class="footer-social-icons">
-          <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
-          <a href="https://x.com/"><ion-icon name="logo-twitter"></ion-icon></a>
-          <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
-          <a href="https://www.linkedin.com/"><ion-icon name="logo-linkedin"></ion-icon></a>
-          <a href="https://www.youtube.com/"><ion-icon name="logo-youtube"></ion-icon></a>
-
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+      <div class="container footer-container">
+        <div class="footer-left">
+          <h3 class="logo">WildCard</h3>
+          <p>
+            WildCard is dedicated to creating sustainable environmental
+            solutions and preserving the planet. Join us in our mission to
+            foster a greener world for future generations.
+          </p>
+        </div>
+        <div class="footer-middle">
+          <h4>Quick Links</h4>
+          <div class="quick-links">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="donate.html">Donate</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-right">
+          <form action="review.html" class="rating-form">
+            <button type="submit" class="btn btn-review">🌟 Rate Us</button>
+          </form>
+          <div class="email-subscribe">
+            <form action="#">
+              <input
+                type="email"
+                class="email-input"
+                placeholder="Your email address"
+                required
+              />
+              <button type="submit" class="btn btn-subscribe">Subscribe</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+      <div class="footer-bottom">
+        <p>
+          © 2024
+          <a href="/copyright">WildCard</a>
+          All Rights Reserved
+        </p>
+        <p>
+          <a class="footer-link" href="/terms-of-use">Terms of Service</a>
+          |
+          <a class="footer-link" href="/privacy-policy">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
 
-    <div class="footer-bottom" style="display: inline;">
-      <p>© 2024 <a href="copyright.html" style="display: inline;">WildGuard</a> All Rights Reserved</p>
-      <p>
-        <a href="./terms-of-use.html" class="footer-link" style="display: inline;">Terms of Service</a> |
-        <a href="./privacy-policy.html" class="footer-link" style="display: inline;">Privacy Policy</a>
-      </p>
-    </div>
-
-
-
-  </footer>
-
-  
-
-</body>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
