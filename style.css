@@ -98,7 +98,9 @@
 
 }
 
-
+.navbar-link{
+    font-size: xx-small;
+}
 
 .user-icon {
     position: relative;
