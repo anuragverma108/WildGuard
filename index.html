@@ -140,21 +140,26 @@
           </li>
 
           <li>
-            <a class="navbar-link login-nav" href="login.html" id="openPopup" data-nav-link>
+            <a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>
               <span>Login</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
-
-          <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
-            <span>Register</span>
-            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-          </a>
+          <li>
+            <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
+              <span>Register</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
 
           <script>
             document.getElementById('registerLink').addEventListener('click', function (e) {
               e.preventDefault();
               window.location.href = 'register.html';
+            });
+            document.getElementById('loginLink').addEventListener('click', function (e) {
+              e.preventDefault();
+              window.location.href = 'login.html';
             });
           </script>
 
