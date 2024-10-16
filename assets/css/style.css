@@ -176,9 +176,10 @@ button:hover {
 .input-group {
   width: 106px;
   min-width: 10vw;
-  height: 44px;
-  background-color: #fff;
+  height: 40px;
   border-radius: 3px;
+  margin-bottom: 5px;
+ 
 }
 
 *,
@@ -615,6 +616,7 @@ html {
 .form-control {
   height: 37px;
   margin-top: 9px;
+  font-size: medium;
 }
 
 /* Login Styling */
