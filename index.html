@@ -145,6 +145,15 @@
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
+
+          <!--login page was not linked -->
+           <script>
+            document.getElementById('openPopup').addEventListener('click', function (e) {
+              e.preventDefault(); // Prevent default anchor behavior
+              window.location.href = 'login.html'; // Redirect to the login page
+            });
+          </script>
+           <!--now the login page is successfully linked-->
           <li>
             <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
               <span>Register</span>
