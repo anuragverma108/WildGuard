@@ -179,7 +179,6 @@ button:hover {
   height: 40px;
   border-radius: 3px;
   margin-bottom: 5px;
- 
 }
 
 *,
@@ -583,7 +582,6 @@ html {
   transform: scale(1.4);
 }
 .navbar-link {
-
   color: var(--white);
   font-size: 15px;
 
@@ -682,8 +680,6 @@ html {
   gap: 2em;
 }
 
-
-
 .form-fields--login {
   padding-left: 10px;
   padding-right: 10px;
@@ -692,8 +688,6 @@ html {
 .form-fields--signup {
   margin-bottom: 10px;
 }
-
-
 
 .form-container input {
   margin: 10px 0;
@@ -745,7 +739,7 @@ html {
   transform: translateY(-2px);
 }
 
-.input-group{
+.input-group {
   /* width: 100px; */
   display: flex;
   align-items: center;
@@ -753,12 +747,12 @@ html {
   gap: 0.75rem;
 }
 
-.input-group .form-control{
+.input-group .form-control {
   height: 39px;
   min-width: 100px;
 }
 
-.input-group .search-btn{
+.input-group .search-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1163,16 +1157,24 @@ html {
 .service-list {
   display: grid;
   gap: 30px;
+  background-color: transparent;
+}
+.service-card {
+  flex: 1 1 calc(25% - 20px); /* Each card will take up 25% of the width minus the gap */
+  min-width: 200px; /* Ensures the card doesn't shrink too much */
+  max-width: 300px; /* Sets a maximum width for responsiveness */
+  background-color: #fff; /* Background color for each card */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
 }
 
-.service-card {
-  background-color: var(--white);
-  text-align: center;
-  padding: 45px 40px;
-  border-radius: 2px;
-  outline: 3px solid transparent;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition-2);
+.service-card:hover {
+  transform: translateY(-5px); /* A subtle hover effect */
 }
 
 .service-card:is(:hover, :focus-within) {
@@ -1214,7 +1216,7 @@ html {
   text-decoration: underline;
 }
 
-.btn-link span:hover{
+.btn-link span:hover {
   cursor: pointer;
 }
 
@@ -1254,29 +1256,45 @@ html {
   #DONATE
 \*-----------------------------------*/
 
-
 .donate-list {
   display: block;
   gap: 60px;
 }
 
-.donate-list >li{
+.donate-list > li {
   margin-bottom: 100px;
 }
 .donate-card {
   width: 100%;
-  position: relative;  /* To control the position of elements inside the card */
+  position: relative; /* To control the position of elements inside the card */
   box-shadow: var(--card-shadow);
   margin-bottom: 60px;
   background-color: white;
 }
+.donate-button {
+  background-color: #91be55;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 1em;
+  transition: background-color 0.3s;
+  width: 100%; /* Full width of the card */
+  text-align: center;
+  margin-top: auto; /* Push the button to the bottom */
+}
+
+.donate-button:hover {
+  background-color: #2980b9;
+}
 
 .donate-card .card-banner {
   width: 100%;
-  height: 300px;  
+  height: 300px;
   background-color: var(--light-gray);
   position: relative;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .donate-card .card-banner img {
@@ -1287,17 +1305,17 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;  
+  z-index: 1;
 }
 
 .donate-card .card-content {
   position: absolute;
-  top: 58%;  
+  top: 58%;
   left: 35%;
   padding: 35px;
-  background-color: white;  
-  z-index: 2;  
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  
+  background-color: white;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -1305,11 +1323,11 @@ html {
   width: 60%;
 }
 
-.donate-list > li{
+.donate-list > li {
   margin-bottom: 300px;
 }
 
-data{
+data {
   background-color: white;
 }
 
@@ -1405,10 +1423,9 @@ data{
 .donate-card {
   display: flex;
   flex-direction: row;
-  gap: 20px; 
+  gap: 20px;
   padding-inline-end: 120px;
 }
- 
 
 /*-----------------------------------*\
   #TESTIMONIALS
@@ -1658,7 +1675,6 @@ data{
   height: 266;
   scroll-snap-align: center;
 }
-
 
 /*-----------------------------------*\
   #FOOTER
@@ -2165,8 +2181,6 @@ data{
     --fs-2: 5.5rem;
   }
 
-  
-
   /**
    * EVENT
    */
@@ -2206,7 +2220,13 @@ data{
 
   .features-list,
   .service-list {
-    grid-template-columns: 1fr 1fr;
+    display: flex; /* Or use display: grid; for grid layout */
+    justify-content: space-between; /* Evenly space the cards horizontally */
+    align-items: stretch; /* Ensure all cards have the same height */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line if necessary */
+    gap: 20px; /* Adds spacing between the cards */
+    margin: 0 auto; /* Centers the list within its container */
+    padding: 20px;
   }
 
   /**
@@ -2442,7 +2462,6 @@ data{
     grid-template-columns: repeat(4, 1fr);
   }
 
-  
   /**
    * TESTIMONIALS
    */
@@ -2572,7 +2591,7 @@ data{
     color: var(--pistachio_100);
   }
 
-  .header-action{
+  .header-action {
     gap: 1.5rem;
   }
 
@@ -2603,7 +2622,6 @@ data{
     left: -35px;
   }
 
-  
   /**
    * PARTNER
    */
@@ -2797,9 +2815,9 @@ data{
 }
 
 .card-icon {
-  font-size: 40px; /* Adjust icon size as needed */
-  color: green; /* Icon color */
-  margin-bottom: 20px; /* Space between icon and title */
+  font-size: 40px; /* Adjust size of the icon */
+  color: #6ab04c; /* Give it a green color */
+  margin-bottom: 15px; /* Adds space below the icon */
 }
 
 .h3.card-title {
@@ -2817,12 +2835,14 @@ data{
 .btn-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
-  background-color: #4CAF50; /* Button background color */
+  background-color: #4caf50; /* Button background color */
   color: white; /* Button text color */
   padding: 10px 20px; /* Button padding */
   border-radius: 5px; /* Rounded corners */
   transition: background-color 0.3s; /* Transition for hover effect */
+  margin-top: auto; /* Push the button to the bottom */
 }
 
 .btn-link:hover {
@@ -2860,7 +2880,7 @@ data{
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  background-color: #4CAF50; /* Button background color */
+  background-color: #4caf50; /* Button background color */
   color: white; /* Button text color */
   padding: 10px 20px; /* Button padding */
   border-radius: 5px; /* Rounded corners */
@@ -2880,7 +2900,39 @@ data{
   transform-style: preserve-3d;
 }
 
-.card-front, .card-back {
+.card-front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.card-front .card-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.card-front .card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card-front .card-text {
+  flex-grow: 1; /* Ensures the text takes up the available space */
+  margin-bottom: 20px;
+}
+
+.card-front .btn-link {
+  margin-top: auto;
+  width: 100%;
+}
+
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -2898,21 +2950,46 @@ data{
   transform: rotateY(180deg);
   background-color: #f0f0f0; /* Background color for back side */
 }
-
-.service-card:hover .card-inner {
-  animation: rotateCard 2s forwards;
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Prevents the mirrored effect */
 }
-
+.card-front {
+  z-index: 2;
+  transform: rotateY(0deg); /* Front starts unrotated */
+}
+.card-back {
+  transform: rotateY(180deg); /* Back starts flipped */
+  z-index: 1;
+  background-color: #fff; /* Ensure the back face is visible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.service-card:hover .card-inner {
+  transform: rotateY(180deg); /* Rotates the card */
+}
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d; /* Ensures both front and back rotate in 3D */
+}
 @keyframes rotateCard {
   0% {
-      transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   50% {
-      transform: rotateY(180deg);
+    transform: rotateY(180deg);
   }
   100% {
-      transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
 }
-
-
