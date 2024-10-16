@@ -6,6 +6,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Become a Partner - WildGuard</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #0056b3;
+      margin-bottom: 30px;
+    }
+
+    .form-section {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #0056b3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00408b;
+    }
+
+    a {
+      color: #0056b3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"] {
+        font-size: 0.9rem;
+      }
+
+      h1, h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -14,55 +113,49 @@
       
       <section class="form-section">
         <h2>Contact Information</h2>
-        <p>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-        </p>
-        <p>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </p>
-        <p>
-          <label for="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone">
-        </p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Optional">
       </section>
       
       <section class="form-section">
         <h2>Partnership Type</h2>
-        <p>
-          <label>
-            <input type="radio" name="partnership_type" value="sponsor" required>
-            Sponsor
-          </label>
-          <label>
-            <input type="radio" name="partnership_type" value="donor">
-            Donor
-          </label>
-          <label>
-            <input type="radio" name="partnership_type" value="event_partner">
-            Event Partner
-          </label>
-        </p>
+        <label>
+          <input type="radio" name="partnership_type" value="sponsor" required> Sponsor
+        </label>
+        <label>
+          <input type="radio" name="partnership_type" value="donor"> Donor
+        </label>
+        <label>
+          <input type="radio" name="partnership_type" value="event_partner"> Event Partner
+        </label>
       </section>
 
       <section class="form-section">
         <h2>Agreement</h2>
-        <p>
-          <input type="checkbox" id="agree" name="agree" required>
-          <label for="agree">I agree to the <a href="../terms-of-use.html">Terms and Conditions</a> of partnership with WildGuard.</label>
-        </p>
+        <label>
+          <input type="checkbox" id="agree" name="agree" required> 
+          I agree to the <a href="../terms-of-use.html">Terms and Conditions</a> of partnership with WildGuard.
+        </label>
       </section>
 
-      <button type="submit" class="btn btn-primary">Submit Application</button>
+      <button type="submit" class="btn">Submit Application</button>
     </form>
   </div>
 
-  <!-- JavaScript to handle form submission -->
   <script>
     document.getElementById('partnerForm').addEventListener('submit', function(e) {
       e.preventDefault(); 
-      alert('Submitted successfully!');
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const partnershipType = document.querySelector('input[name="partnership_type"]:checked').value;
+
+      alert(`Thank you, ${name}!\nYour application as a ${partnershipType} has been received.`);
       this.reset(); 
     });
   </script>
