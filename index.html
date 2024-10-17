@@ -139,6 +139,8 @@
           </li>
 
           <li>
+
+          <li>
             <a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>
               <span>Login</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -150,6 +152,7 @@
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
+
 
           <script>
             document.getElementById('registerLink').addEventListener('click', function (e) {
@@ -180,6 +183,10 @@
           </div>
 
         </div>
+    
+        <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+
+</div>
 
 
         <!-- <div class="search-bar" id="searchBar" style="display:none;">
@@ -1006,19 +1013,23 @@
         </div>
       </section>
 
-      <div class="container_1">
-        <h1>Wildlife Conservation Forum</h1>
-        <div class="post-form">
-          <h2>Share Your Thoughts</h2>
-          <textarea id="postContent" placeholder="Write your message..."></textarea>
-          <button onclick="GiveAlert()" id="submitPost">Submit</button>
-        </div>
-        <div class="posts">
-          <h2>Discussions</h2>
-          <div id="postsContainer"></div>
-        </div>
-      </div>
-      <script src="script.js"></script>
+          <!-- opinion form -->
+           <div class="formContainer">
+            <div class="container_1">
+              <h1>Wildlife Conservation Forum</h1>
+              <div class="post-form">
+                <h2>Share Your Thoughts</h2>
+                <textarea id="postContent" placeholder="Write your message..."></textarea>
+                <button onclick="GiveAlert()" id="submitPost">Submit</button>
+              </div>
+              <div class="posts">
+                 <h2>Discussions</h2>
+                 <div id="postsContainer"></div>
+               </div>
+             </div>
+             <script src="script.js"></script>
+           </div>
+          
 
       <!-- 
         - #TESTIMONIALS
@@ -1698,36 +1709,40 @@
     - ionicon link
   -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.navbar-link');
+      document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-link');
 
-      function updateActiveLink() {
-        let scrollY = window.pageYOffset;
+    function updateActiveLink() {
+      let scrollY = window.pageYOffset;
 
-        sections.forEach(current => {
-          const sectionHeight = current.offsetHeight;
-          const sectionTop = current.offsetTop - 50;
-          const sectionId = current.getAttribute('id');
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 50;
+        const sectionId = current.getAttribute('id');
 
-          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href').substring(1) === sectionId) {
-                link.classList.add('active');
-              }
-            });
-          }
-        });
-      }
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === sectionId) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }
 
-      window.addEventListener('scroll', updateActiveLink);
+    window.addEventListener('scroll', updateActiveLink);
 
-      // Smooth scrolling for navbar links
-      navLinks.forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // Smooth scrolling for navbar links
+    navLinks.forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+
+        // Only prevent default if the link is an internal section reference
+        if (href.startsWith('#')) {
           e.preventDefault();
-          const targetId = this.getAttribute('href').substring(1);
+          const targetId = href.substring(1);
           const targetElement = document.getElementById(targetId);
 
           if (targetElement) {
@@ -1736,15 +1751,19 @@
               behavior: 'smooth'
             });
           }
-        });
+        } 
+        // Else, allow normal page navigation for external links
+        else {
+          window.location.href = href;
+        }
       });
-
-      // Initial call to set active link on page load
-      updateActiveLink();
     });
 
-    //Mobile toggle menu
-    document.addEventListener("DOMContentLoaded", function () {
+// Initial call to set active link on page load
+    updateActiveLink();
+
+    // Mobile toggle menu
+    document.addEventListener("DOMContentLoaded", function() {
       const navOpenBtn = document.querySelector("[data-nav-open-btn]");
       const navCloseBtn = document.querySelector("[data-nav-close-btn]");
       const navbar = document.querySelector("[data-navbar]");
@@ -1757,6 +1776,8 @@
         navbar.classList.remove("active"); // Remove the class to hide the menu
       });
     });
+
+  });
   </script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
