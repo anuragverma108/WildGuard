@@ -4,98 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #545454;
+            background-color: #505050;
             font-family: "Poppins", sans-serif;
-            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
         .container {
-            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .card {
-            width: 380px;
-            border: none;
-            border-radius: 15px;
-            padding: 8px;
             background-color: #fff;
-            position: relative;
-            height: 370px;
-        }
-
-        .upper {
-            height: 100px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 350px;
+            text-align: center;
         }
 
         .upper img {
             width: 100%;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-
-        .user {
-            position: relative;
-        }
-
-        .profile img {
-            height: 80px;
-            width: 80px;
-            margin-top: 2px;
+            height: 100px;
+            object-fit: cover;
         }
 
         .profile {
-            position: absolute;
-            top: -50px;
-            left: 38%;
-            height: 90px;
-            width: 90px;
-            border: 3px solid #fff;
+            position: relative;
+            top: -40px;
+            margin-bottom: -40px;
+        }
+
+        .profile img {
             border-radius: 50%;
+            border: 4px solid #fff;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .card h4 {
+            font-weight: 600;
+            margin: 0;
+            padding-top: 10px;
+        }
+
+        .card span {
+            font-size: 14px;
+            color: #777;
         }
 
         .follow {
-            border-radius: 15px;
-            padding-left: 20px;
-            padding-right: 20px;
-            height: 35px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .follow:hover {
+            background-color: #0056b3;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            margin-top: 20px;
+        }
+
+        .stats div {
+            text-align: center;
+        }
+
+        .stats h6 {
+            font-size: 12px;
+            font-weight: 600;
+            margin: 0;
+            color: #555;
         }
 
         .stats span {
-            font-size: 29px;
+            font-size: 18px;
+            font-weight: 500;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <div class="container d-flex justify-content-center align-items-center">
+    <div class="container">
         <div class="card">
             <div class="upper">
-                <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid">
+                <img src="undefined - Imgur.jpg" alt="Cover Image">
             </div>
-            <div class="user text-center">
-                <div class="profile">
-                    <img src="https://i.imgur.com/JgYD2nQ.jpg" class="rounded-circle" width="80">
+            <div class="profile">
+                <img src="download (2).jpg" alt="Profile Image">
+            </div>
+            <div>
+                <h4>Arman Bhadoriya</h4>
+                <span>arman@gmail.com</span>
+                <br>
+                <button class="follow">Follow</button>
+            </div>
+            <div class="stats">
+                <div>
+                    <h6>Followers</h6>
+                    <span>8,797</span>
                 </div>
-            </div>
-            <div class="mt-5 text-center">
-                <h4 class="mb-0">Arman Bhadoriya</h4>
-                <span class="text-muted d-block mb-2">arman@gmail.com</span>
-                <button class="btn btn-primary btn-sm follow">Follow</button>
-                <div class="d-flex justify-content-between align-items-center mt-4 px-4">
-                    <div class="stats">
-                        <h6 class="mb-0">Followers</h6>
-                        <span>8,797</span>
-                    </div>
-                    <div class="stats">
-                        <h6 class="mb-0">Projects</h6>
-                        <span>142</span>
-                    </div>
-                    <div class="stats">
-                        <h6 class="mb-0">Ranks</h6>
-                        <span>129</span>
-                    </div>
+                <div>
+                    <h6>Projects</h6>
+                    <span>142</span>
+                </div>
+                <div>
+                    <h6>Ranks</h6>
+                    <span>129</span>
                 </div>
             </div>
         </div>
