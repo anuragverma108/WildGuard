@@ -71,7 +71,7 @@
     <div class="container">
 
       <h1>
-        <a class="logo">WildGuard</a>
+        <a href="#home" class="logo">WildGuard</a>
       </h1>
 
       <div id="google_translate_element"></div> <!-- Google Translate widget -->
@@ -140,21 +140,29 @@
           </li>
 
           <li>
-            <a class="navbar-link login-nav" href="login.html" id="openPopup" data-nav-link>
-              <span>Login</span>
+
+           <li>
+                <a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>
+                      <span>Login</span>
+                      <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+            </li>
+          <li>
+            <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
+              <span>Register</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
 
-          <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
-            <span>Register</span>
-            <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-          </a>
 
           <script>
             document.getElementById('registerLink').addEventListener('click', function (e) {
               e.preventDefault();
               window.location.href = 'register.html';
+            });
+            document.getElementById('loginLink').addEventListener('click', function (e) {
+              e.preventDefault();
+              window.location.href = 'login.html';
             });
           </script>
 
@@ -167,13 +175,17 @@
       <div class="header-action">
 
         <div class="input-group">
-          <input type="text" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
-          <button class="btn btn-primary search-btn" aria-label="Search" style="z-index: 0;">
+          <input type="text" style="font-size: medium;" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
+          <button class="btn btn-primary search-btn" aria-label="Search" onclick="performSearch()">
             <ion-icon name="search-outline"></ion-icon>
           </button>
           <div class="result-box" id="result-box">
             <!-- Suggestions will be displayed here -->
           </div>
+
+        </div>
+    
+        <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 
 </div>
 
@@ -209,7 +221,11 @@
 </button>
 <!-- Login -->
 <div id="openPopup" class="user-icon">
-  <a href="user.html"><i class="fas fa-user"></i></a>  
+  <a href="user.html"><i class="fas fa-user"></i></a> 
+  <div class="dropdown-content" id="profileDropdown">
+    <a href="user.html">Profile</a>
+    <a href="/">Logout</a>
+  </div> 
   </div>
 
         <!-- Popup -->
@@ -261,7 +277,7 @@
     <i class="fa-solid fa-leaf"></i>
   </button> -->
 
-  <a href="#"><img src="./assets/images/upward-arrow.png" alt="" style="right: 0; top: 80%; width: 70px;"
+  <a href="#"><img src="./assets/images/upward-arrow.png" alt="" style="right: 1.33%; top: 88.88%; width: 70px;"
       class="scroll-to-top"></a>
 
   <main>
@@ -511,6 +527,10 @@
               <h2>Basic Tier</h2>
             </b>
             <p class="amount">$10/month</p>
+            <p class = "benefits">Access to monthly newsletter<br>
+            Exclusive content <br>Early access to new features
+          </p>
+            
             <p onclick="location.href='Donation.html';" class="donate-button">Donate Now</p>
 
           </div>
@@ -595,91 +615,119 @@
 
             <li>
               <div class="service-card" id="service-card1">
-
-                <div class="card-icon">
-                  <ion-icon name="leaf-outline"></ion-icon>
-                </div>
-
-                <h3 class="h3 card-title">Save Nature</h3>
-
-                <p class="card-text">
-                  Conserve nature to preserve our diverse and thriving ecosystem.
-                </p>
-
-                <a href="SaveNature.html" class="btn-link">
-                  <span>Read More</span>
-
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
+                  <div class="card-inner">
+                      <div class="card-front">
+                          <div class="card-icon">
+                              <ion-icon name="leaf-outline"></ion-icon>
+                          </div>
+                          <h3 class="h3 card-title">Save Nature</h3>
+                          <p class="card-text">
+                              Conserve nature to preserve our diverse and thriving ecosystem.
+                          </p>
+                          <a href="SaveNature.html" class="btn-link">
+                              <span>Read More</span>
+                              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                          </a>
+                      </div>
+                      <div class="card-back">
+                          <div class="card-icon">
+                              <ion-icon name="leaf-outline"></ion-icon>
+                          </div>
+                          <h3 class="h3 card-title">Thank You!</h3>
+                          <p class="card-text">
+                              Your support helps us make a difference!
+                          </p>
+                      </div>
+                  </div>
               </div>
-            </li>
+          </li>
 
-            <li>
-              <div class="service-card" id="service-card2">
-
-                <div class="card-icon">
-                  <ion-icon name="earth-outline"></ion-icon>
+          <li>
+            <div class="service-card" id="service-card2">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <ion-icon name="earth-outline"></ion-icon>
+                        </div>
+                        <h3 class="h3 card-title">Save Ecology</h3>
+                        <p class="card-text">
+                            Advancing solutions to protect endangered species & maintain the health of ecosystems.
+                        </p>
+                        <a href="SaveEcology.html" class="btn-link">
+                            <span>Read More</span>
+                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-icon">
+                            <ion-icon name="earth-outline"></ion-icon>
+                        </div>
+                        <h3 class="h3 card-title">Thank You!</h3>
+                        <p class="card-text">
+                            Your contribution helps protect our planet's ecology!
+                        </p>
+                    </div>
                 </div>
-
-                <h3 class="h3 card-title">Save Ecology</h3>
-
-                <p class="card-text">
-                  Advancing solutions to protect endangered species & maintain the health of ecosystems.
-                </p>
-
-                <a href="SaveEcology.html" class="btn-link">
-                  <span>Read More</span>
-
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card" id="service-card3">
-
-                <div class="card-icon">
-                  <ion-icon name="flower-outline"></ion-icon>
+            </div>
+        </li>
+    
+        <li>
+            <div class="service-card" id="service-card3">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <ion-icon name="flower-outline"></ion-icon>
+                        </div>
+                        <h3 class="h3 card-title">Tree Plantation</h3>
+                        <p class="card-text">
+                            Growing green spaces for a healthier environment and sustainable future.
+                        </p>
+                        <a href="TreePlantation.html" class="btn-link">
+                            <span>Read More</span>
+                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-icon">
+                            <ion-icon name="flower-outline"></ion-icon>
+                        </div>
+                        <h3 class="h3 card-title">Thank You!</h3>
+                        <p class="card-text">
+                            Together, we can create a greener future!
+                        </p>
+                    </div>
                 </div>
-
-                <h3 class="h3 card-title">Tree Plantation</h3>
-
-                <p class="card-text">
-                  Growing green spaces for a healthier environment and sustainable future
-                </p>
-
-                <a onclick="location.href='TreePlantation.html';" class="btn-link">
-                  <span>Read More</span>
-
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card" id="service-card4">
-
-                <div class="card-icon">
-                  <ion-icon name="boat-outline"></ion-icon>
+            </div>
+        </li>
+    
+        <li>
+            <div class="service-card" id="service-card4">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <ion-icon name="boat-outline"></ion-icon>
+                        </div>
+                        <h3 class="h3 card-title">Clear Ocean</h3>
+                        <p class="card-text">
+                            Tackling ocean pollution to ensure cleaner seas for future generations.
+                        </p>
+                        <a href="SaveOcean.html" class="btn-link">
+                            <span>Read More</span>
+                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-icon">
+                            <ion-icon name="boat-outline"></ion-icon>
+                        </div>
+                        <h3 class="h3 card-title">Thank You!</h3>
+                        <p class="card-text">
+                            Your support is vital for ocean conservation!
+                        </p>
+                    </div>
                 </div>
-
-                <h3 class="h3 card-title">Clear Ocean</h3>
-
-                <p class="card-text">
-                  Tackling ocean pollution to ensure cleaner seas for future generations.
-                </p>
-
-                <a href="SaveOcean.html" class="btn-link">
-                  <span>Read More</span>
-
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
+            </div>
+        </li>
 
           </ul>
 
@@ -966,19 +1014,23 @@
             </div>
           </section>
 
-          <div class="container_1">
-            <h1>Wildlife Conservation Forum</h1>
-            <div class="post-form">
-              <h2>Share Your Thoughts</h2>
-              <textarea id="postContent" placeholder="Write your message..."></textarea>
-              <button onclick="GiveAlert()" id="submitPost">Submit</button>
-            </div>
-            <div class="posts">
-              <h2>Discussions</h2>
-              <div id="postsContainer"></div>
-            </div>
-          </div>
-          <script src="script.js"></script>
+          <!-- opinion form -->
+           <div class="formContainer">
+            <div class="container_1">
+              <h1>Wildlife Conservation Forum</h1>
+              <div class="post-form">
+                <h2>Share Your Thoughts</h2>
+                <textarea id="postContent" placeholder="Write your message..."></textarea>
+                <button onclick="GiveAlert()" id="submitPost">Submit</button>
+              </div>
+              <div class="posts">
+                 <h2>Discussions</h2>
+                 <div id="postsContainer"></div>
+               </div>
+             </div>
+             <script src="script.js"></script>
+           </div>
+          
 
           <!-- 
         - #TESTIMONIALS
@@ -1090,7 +1142,7 @@
 
 
       <!-- Trigger Button for Modal -->
-      <button id="openModalBtn" class="btn" style="display: block; margin: 0 auto;">Learn More</button>
+      <button id="openModalBtn" class="btn" onclick="location.href='learnmore.html';" style="display: block; margin: 0 auto;">Learn More</button>
 
       <!-- Modal Structure -->
       <div id="myModal" class="modal">
@@ -1400,112 +1452,67 @@
         - #INSTA POST
       -->
 
-
-          <section class="insta-post">
-
-            <ul class="insta-post-list">
-
-              <li class="insta-post-item">
-                <a href="javascript:void(0);" class="insta-post-link">
-                  <img src="./assets/images/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"
-                    onclick="playSound('lion-roar-6011.mp3')" class="img-cover">
-
-                  <ion-icon name="logo-instagram"></ion-icon>
-                  <audio id="lionRoar" src="lion-roar-6011.mp3"></audio>
-                </a>
-
-              </li>
-
-              <li class="insta-post-item">
-                <a href="javascript:void(0);" class="insta-post-link">
-                  <img src="./assets/images/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                    onclick="playSound('impala.wav')" class="img-cover">
-
-                  <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-                <audio id="impala" src="WildGuard/impala.wav"></audio>
-              </li>
-
-              <li class="insta-post-item">
-                <a href="javascript:void(0);" class="insta-post-link">
-                  <img src="./assets/images/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear"
-                    onclick="playSound('bear.wav')" class="img-cover">
-
-                  <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-                <audio id="bear" src="WildGuard/bear.wav"></audio>
-              </li>
-
-              <li class="insta-post-item">
-                <a href="javascript:void(0);" class="insta-post-link">
-                  <img src="./assets/images/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                    onclick="playSound('dear.wav')" class="img-cover">
-
-                  <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-                <audio src="WildGuard/dear.wav"></audio>
-              </li>
-
-              <li class="insta-post-item">
-                <a href="javascript:void(0);" class="insta-post-link">
-                  <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
-                    onclick="playSound('horse.wav')" class="img-cover">
-
-                  <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-                <audio src="WildGuard/horse.wav"></audio>
-              </li>
-            </ul>
-          </section>
-
-          <div id="marquee">
+<div id="marquee">
             <section class="insta-post">
 
               <ul class="insta-post-list">
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
-                    <img src="./assets/images/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"
-                      class="img-cover">
+  <a href="javascript:void(0);" class="insta-post-link">
+    <img
+      src="./assets/images/insta-1.jpg"
+      width="320"
+      height="300"
+      loading="lazy"
+      alt="Lion"
+      onclick="playSound('lion-roar-6011.mp3')"
+      class="img-cover"
+    />
 
-                    <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
-                </li>
+    <ion-icon name="logo-instagram"></ion-icon>
+    <audio id="lionRoar" src="lion-roar-6011.mp3"></audio>
+  </a>
+</li>
+
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
+                  <a href="javascript:void(0);" class="insta-post-link">
                     <img src="./assets/images/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                      class="img-cover">
+                      onclick="playSound('impala.wav')" class="img-cover">
 
                     <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                                <audio id="impala" src="WildGuard/impala.wav"></audio>
+  </a>
                 </li>
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
+                  <a href="javascript:void(0);" class="insta-post-link">
                     <img src="./assets/images/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear"
-                      class="img-cover">
+                      onclick="playSound('bear.wav')"  class="img-cover">
 
                     <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                                <audio id="bear" src="WildGuard/bear.wav"></audio>
+  </a>
                 </li>
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
+                  <a href="javascript:void(0);" class="insta-post-link">
                     <img src="./assets/images/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                      class="img-cover">
+                    onclick="playSound('dear.wav')"   class="img-cover">
 
                     <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                                 <audio src="WildGuard/dear.wav"></audio>
+ </a>
                 </li>
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
+                  <a href="javascript:void(0);" class="insta-post-link">
                     <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
-                      class="img-cover">
+                      onclick="playSound('horse.wav')" class="img-cover">
 
                     <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                                 <audio src="WildGuard/horse.wav"></audio>
+ </a>
                 </li>
               </ul>
             </section>
@@ -1514,48 +1521,52 @@
               <ul class="insta-post-list">
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
+                  <a href="javascript:void(0);" class="insta-post-link">
                     <img src="./assets/images/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"
-                      class="img-cover">
+                      onclick="playSound('lion-roar-6011.mp3')" class="img-cover">
 
                     <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                  <audio id="lionRoar" src="lion-roar-6011.mp3"></audio></a>
                 </li>
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
+                  <a href="javascript:void(0);" class="insta-post-link">
                     <img src="./assets/images/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                      class="img-cover">
+                      onclick="playSound('impala.wav')"class="img-cover">
 
                     <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                               <audio id="impala" src="WildGuard/impala.wav"></audio>
+   </a>
                 </li>
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
+                  <a href="javascript:void(0);" class="insta-post-link">
                     <img src="./assets/images/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear"
-                      class="img-cover">
+                      onclick="playSound('bear.wav')"  class="img-cover">
 
                     <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                               <audio id="bear" src="WildGuard/bear.wav"></audio>
+   </a>
                 </li>
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
+                  <a href="javascript:void(0);" class="insta-post-link">
                     <img src="./assets/images/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer"
-                      class="img-cover">
+                     onclick="playSound('dear.wav')"  class="img-cover">
 
                     <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                                <audio src="WildGuard/dear.wav"></audio>
+  </a>
                 </li>
 
                 <li class="insta-post-item">
-                  <a href="#" class="insta-post-link">
+                  <a href="javascript:void(0);" class="insta-post-link">
                     <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
-                      class="img-cover">
+                      onclick="playSound('horse.wav')" class="img-cover">
 
                     <ion-icon name="logo-instagram"></ion-icon>
-                  </a>
+                                 <audio src="WildGuard/horse.wav"></audio>
+ </a>
                 </li>
               </ul>
             </section>
@@ -1696,36 +1707,40 @@
     - ionicon link
   -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.navbar-link');
+      document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar-link');
 
-      function updateActiveLink() {
-        let scrollY = window.pageYOffset;
+    function updateActiveLink() {
+      let scrollY = window.pageYOffset;
 
-        sections.forEach(current => {
-          const sectionHeight = current.offsetHeight;
-          const sectionTop = current.offsetTop - 50;
-          const sectionId = current.getAttribute('id');
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 50;
+        const sectionId = current.getAttribute('id');
 
-          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href').substring(1) === sectionId) {
-                link.classList.add('active');
-              }
-            });
-          }
-        });
-      }
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === sectionId) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }
 
-      window.addEventListener('scroll', updateActiveLink);
+    window.addEventListener('scroll', updateActiveLink);
 
-      // Smooth scrolling for navbar links
-      navLinks.forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // Smooth scrolling for navbar links
+    navLinks.forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+
+        // Only prevent default if the link is an internal section reference
+        if (href.startsWith('#')) {
           e.preventDefault();
-          const targetId = this.getAttribute('href').substring(1);
+          const targetId = href.substring(1);
           const targetElement = document.getElementById(targetId);
 
           if (targetElement) {
@@ -1734,26 +1749,32 @@
               behavior: 'smooth'
             });
           }
-        });
+        } 
+        // Else, allow normal page navigation for external links
+        else {
+          window.location.href = href;
+        }
+      });
+    });
+
+// Initial call to set active link on page load
+    updateActiveLink();
+
+    // Mobile toggle menu
+    document.addEventListener("DOMContentLoaded", function() {
+      const navOpenBtn = document.querySelector("[data-nav-open-btn]");
+      const navCloseBtn = document.querySelector("[data-nav-close-btn]");
+      const navbar = document.querySelector("[data-navbar]");
+
+      navOpenBtn.addEventListener("click", () => {
+        navbar.classList.add("active"); // Add a class to show the menu
       });
 
-      // Initial call to set active link on page load
-      updateActiveLink();
+      navCloseBtn.addEventListener("click", () => {
+        navbar.classList.remove("active"); // Remove the class to hide the menu
+      });
     });
 
-    //Mobile toggle menu
-    document.addEventListener("DOMContentLoaded", function() {
-    const navOpenBtn = document.querySelector("[data-nav-open-btn]");
-    const navCloseBtn = document.querySelector("[data-nav-close-btn]");
-    const navbar = document.querySelector("[data-navbar]");
-  
-    navOpenBtn.addEventListener("click", () => {
-      navbar.classList.add("active"); // Add a class to show the menu
-    });
-  
-    navCloseBtn.addEventListener("click", () => {
-      navbar.classList.remove("active"); // Remove the class to hide the menu
-    });
   });
   </script>
 
