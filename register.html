@@ -1,86 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/register.css">
+    <script src="register.js"></script>
     <title>Register</title>
-</head>
-<body>
-
-    <div class="login-page">
-        <div class="content">
-            <a href="./index.html" class="home-icon" ><i class="fa-solid fa-house"></i></a>
-            <h2>Create an account</h2>
-
-            <form class="data">
-
-                <!-- Email Field -->
-                <div class="entry">
-                    <label for="email"><h3>Email</h3></label>
-                    <div class="input-wrapper">
-                        <input type="email" id="email" placeholder="example@gmail.com" required>
-                        <div class="fa"><i class="fas fa-user"></i></div>
-                    </div>
-                </div>
-
-                <!-- Password Field with Toggle Visibility -->
-                <div class="entry">
-                    <label for="password"><h3>Password</h3></label>
-                    <div class="input-wrapper">
-                        <input type="password" id="password" placeholder="Enter your password" required>
-                        <div class="fa toggle-password" onclick="togglePasswordVisibility('password')">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Repeat Password Field with Toggle Visibility -->
-                <div class="entry">
-                    <label for="repeat-password"><h3>Re-enter Password</h3></label>
-                    <div class="input-wrapper">
-                        <input type="password" id="repeat-password" placeholder="Re-enter your password" required>
-                        <div class="fa toggle-password" onclick="togglePasswordVisibility('repeat-password')">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Remember Me Checkbox & Forgot Password Link -->
-                <div class="extras">
-                    <label class="remember-me">
-                        <input type="checkbox"> Remember Me
-                    </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
-                </div>
-
-                <!-- Sign up Button -->
-                <div class="entry signup">
-                    <button type="submit">Sign Up</button>
-                </div>
-
-                <!-- Social Media Buttons -->
-                <div class="social-login">
-                    <p>Or Sign up with</p>
-                    <div class="social-buttons">
-                        <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo"> 
-                        </button>
-                        <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/facebook.png" alt="FaceBook Logo" class="google-logo">
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Login Link -->
-                <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
-
-            </form>
-        </div>
-    </div>
-
     <script>
+         const handleSubmitOnSignUp = () => {
+        const password = document.getElementById('password').value;
+
+        const minLen = 8;
+        const maxLen = 16;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const hasSpecialChar = /[$@_]/.test(password);
+
+        if (
+            password.length >= minLen &&
+            password.length <= maxLen &&
+            hasUpperCase &&
+            hasLowerCase &&
+            hasNumber &&
+            hasSpecialChar
+        ) {
+            console.log('Password is strong.');
+            alert('Registration successful!');
+        } else {
+            console.log('Password does not meet the criteria.');
+            alert('Password must be 8-16 characters long, contain at least 1 uppercase, 1 lowercase, 1 number, and 1 special character ($, @, _).');
+        }
+    };
+
         function togglePasswordVisibility(id) {
             const passwordField = document.getElementById(id);
             const icon = passwordField.nextElementSibling.querySelector('i');
@@ -94,7 +48,114 @@
                 icon.classList.add('fa-eye');
             }
         }
+
+        function handlePasswordMatch() {
+            const password = document.getElementById('password').value;
+            const repeatPassword = document.getElementById('repeat-password').value;
+            const signupButton = document.querySelector('button[type="submit"]');
+            const message = document.getElementById('dispOrNot');
+
+            if (password === repeatPassword && password !== "") {
+                signupButton.disabled = false;
+                message.style.display = 'none';
+                signupButton.setAttribute("title","All Ok")
+            } else {
+                signupButton.setAttribute("title","Password is not matched");
+                signupButton.disabled = true;
+                // message.style.display = 'block';
+            }
+            if(password == "" && repeatPassword =="") {
+                signupButton.setAttribute("title","Password Is Empty")
+                signupButton.disabled = false;
+                // message.style.display = 'none';
+            }
+        }
     </script>
+</head>
+
+<body>
+
+    <div class="login-page">
+        <div class="content">
+            <a href="./index.html" class="home-icon"><i class="fa-solid fa-house"></i></a>
+            <h2>Create an account</h2>
+
+            <form class="data" onsubmit="return false;">
+
+                <!-- Email Field -->
+                <div class="entry">
+                    <label for="email">
+                        <h3>Email</h3>
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" placeholder="example@gmail.com" required>
+                        <div class="fa"><i class="fas fa-user"></i></div>
+                    </div>
+                </div>
+
+                <!-- Password Field with Toggle Visibility -->
+                <div class="entry">
+                    <label for="password">
+                        <h3>Password</h3>
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password" required
+                            oninput="handlePasswordMatch()">
+                        <div class="fa toggle-password" onclick="togglePasswordVisibility('password')">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat Password Field with Toggle Visibility -->
+                <div class="entry">
+                    <label for="repeat-password">
+                        <h3>Re-enter Password</h3>
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="password" id="repeat-password" placeholder="Re-enter your password" required
+                            oninput="handlePasswordMatch()">
+                        <div class="fa toggle-password" onclick="togglePasswordVisibility('repeat-password')">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="display: none; color: red; " id="dispOrNot" >Passwords do not match</p>
+
+                <!-- Remember Me Checkbox & Forgot Password Link -->
+                <div class="extras">
+                    <label class="remember-me">
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <!-- Sign up Button -->
+                <div class="entry signup">
+                    <button type="submit" disabled onclick="handleSubmitOnSignUp()">Sign Up</button>
+                </div>
+
+                <!-- Social Media Buttons -->
+                <div class="social-login">
+                    <p>Or Sign up with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google-btn">
+                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo">
+                        </button>
+                        <button type="button" class="social-btn google-btn">
+                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Login Link -->
+                <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
+
+            </form>
+        </div>
+    </div>
 
 </body>
+
 </html>
