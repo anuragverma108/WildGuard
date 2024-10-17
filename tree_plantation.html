@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildGuard - Give Love for Saving World Animals</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/tree_plantation.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo">WildGuard</a>
+      </h1>
+
+      <select name="language" class="lang-switch">
+
+        <option value="english">English</option>
+        <option value="french">French</option>
+        <option value="spanish">Spanish</option>
+
+      </select>
+
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">Wildvine</a>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link" data-nav-link>
+              <span>Home</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>
+              <span>About</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#service" class="navbar-link" data-nav-link>
+              <span>Service</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#donate" class="navbar-link" data-nav-link>
+              <span>Donate</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="#event" class="navbar-link" data-nav-link>
+              <span>Event</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="/Contact-Us/index.html" class="navbar-link" data-nav-link>
+              <span>Contact</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-action">
+        <button class="search-btn" aria-label="Search" id="searchIcon">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+      
+        <!-- Search input field -->
+        <div class="search-bar" id="searchBar" style="display:none;">
+          <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+          
+          <!-- Match counter and navigation buttons -->
+          <div class="search-nav-buttons">
+            <span id="matchCounter" style="display: none;">0/0</span>
+            <button id="prevMatch" style="display:none;">&#x25B2;</button> <!-- Up arrow -->
+            <button id="nextMatch" style="display:none;">&#x25BC;</button> <!-- Down arrow -->
+            <button id="clearSearch" style="display:none;">&#x2716;</button> <!-- Close/clear button -->
+          </div>
+        </div>
+      
+        <button class="btn btn-primary">
+          <span>Donation</span>
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+        </button>
+      </div>
+      
+      
+      
+    </div>
+  </header>
+
+<!-- Scroll To Top Btn -->
+<button
+type="button"
+id="btn-back-to-top"
+>
+<i class="fas fa-leaf"></i>
+</button>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero hero-tree" id="home">
+        <div class="container">
+
+          <p class="section-subtitle">
+            <img src="./assets/images/subtitle-img-white.png" width="32" height="7" alt="Wavy line">
+
+            <span>Welcome to Tree Plantation</span>
+          </p>
+
+          <h2 class="h1 hero-title">
+            Protecting Wildlife, Preserving Nature <strong>Together, We Rise to Safeguard Our Planet's Future.</strong>
+          </h2>
+
+          <p class="hero-text">
+            Plant a Tree, Save a Life
+          </p>
+
+          <button class="btn btn-primary">
+            <span>Donation</span>
+
+            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #FEATURES
+      -->
+
+      <section class="section features">
+        <div class="container">
+
+          <ul class="features-list">
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title">Safe Shelter</h3>
+
+                <p class="item-text">
+                  Sit amet consecte adiscine
+                  eiusm temor ultrices.
+                </p>
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="water-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title">Safe Water</h3>
+
+                <p class="item-text">
+                  Sit amet consecte adiscine
+                  eiusm temor ultrices.
+                </p>
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="leaf-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title">Ecology Save</h3>
+
+                <p class="item-text">
+                  Sit amet consecte adiscine
+                  eiusm temor ultrices.
+                </p>
+              </div>
+            </li>
+
+            <li class="features-item">
+              <div class="item-icon">
+                <ion-icon name="snow-outline"></ion-icon>
+              </div>
+
+              <div>
+                <h3 class="h4 item-title">Environment</h3>
+
+                <p class="item-text">
+                  Sit amet consecte adiscine
+                  eiusm temor ultrices.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service" id="service" style="background-image: url('./assets/images/service-map.png')">
+        <div class="container">
+
+          <h2 class="h2 section-title">
+            How Tree Plantation Helps<strong>Wildlife</strong>
+          </h2>
+
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card">
+                <h3 class="h3 card-title">Creating Shelter for Animals</h3>
+
+                <p class="card-text">
+                    Many species rely on trees for shelter, food, and breeding grounds. By planting trees, we ensure that countless animals have a place to live and thrive.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+                <h3 class="h3 card-title">Providing Safe Water</h3>
+
+                <p class="card-text">
+                    Trees play a vital role in maintaining the water cycle. Their roots prevent soil erosion, helping to filter and retain clean water, which in turn supports animal habitats.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <h3 class="h3 card-title">Restoring Ecosystems</h3>
+
+                <p class="card-text">
+                    Reforestation and tree planting efforts help revive damaged ecosystems. By restoring forests, we give wildlife a second chance to flourish in their natural environment.
+                </p>
+
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+      <section class="section donate" id="donate">
+        <div class="container">
+
+            <h2 class="h2 section-title">
+                Join Us in Our Mission<strong>How You Can Help</strong>
+              </h2>
+
+          <ul class="donate-list">
+            <li>
+              <div class="donate-card">
+                <div class="card-content">
+                  <div class="card-wrapper">
+                    <h3 class="h3 card-title">Donate: Your donations help fund tree plantation efforts in vulnerable regions.</h3>
+                  </div>
+                  <button class="btn btn-secondary">
+                    <span>Donation</span>
+
+                    <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                  </button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+                <div class="donate-card">
+                  <div class="card-content">
+                    <div class="card-wrapper">
+                      <h3 class="h3 card-title">Volunteer: Join us in our hands-on tree planting events and be a part of the change.</h3>
+                    </div>
+                    <button class="btn btn-secondary">
+                      <span>Register Yourself</span>
+  
+                      <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                    </button>
+  
+                  </div>
+  
+                </div>
+              </li>
+
+              <li>
+                <div class="donate-card">
+                  <div class="card-content">
+                    <div class="card-wrapper">
+                      <h3 class="h3 card-title">Raise Awareness: Spread the word about the importance of trees for wildlife and the environment. Share our mission with friends and family.</h3>
+                    </div>
+                    <button class="btn btn-secondary">
+                      <span>Share</span>
+  
+                      <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                    </button>
+  
+                  </div>
+  
+                </div>
+              </li>
+
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+
+      <!-- 
+        - #INSTA POST
+      -->
+
+      <section class="insta-post">
+
+        <ul class="insta-post-list">
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-1.jpg" width="320" height="300" loading="lazy" alt="Lion"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-2.jpg" width="320" height="300" loading="lazy" alt="Deer"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-3.jpg" width="320" height="300" loading="lazy" alt="Wild Bear"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-4.jpg" width="320" height="300" loading="lazy" alt="Deer"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li class="insta-post-item">
+            <a href="#" class="insta-post-link">
+              <img src="./assets/images/insta-5.jpg" width="320" height="300" loading="lazy" alt="Horses"
+                class="img-cover">
+
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <ul class="footer-list">
+
+        <li>
+          <a href="./terms-of-use.html" class="footer-link">Terms of use</a>
+        </li>
+
+        <li>
+          <a href="./privacy-policy.html" class="footer-link">Privacy & Policy</a>
+        </li>
+
+      </ul>
+
+      <p class="copyright">
+        Copyright 2024 <a href="#" class="copyright-link">Anurag Bytes</a>. All Rights Reserved.
+      </p>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
