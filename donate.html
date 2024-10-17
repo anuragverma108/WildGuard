@@ -257,6 +257,7 @@
     <!-- Bootstrap JS & jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 
     <script>
       window.onload = function () {
@@ -327,6 +328,19 @@
       // Form submission
       $('#donationForm').on('submit', function (event) {
         event.preventDefault();
+
+        confetti({
+          particleCount: 200,
+          spread: 100,
+          angle:120,
+          origin: { x: 1, y: 0.9 },
+        });
+        confetti({
+          particleCount: 200,
+          spread: 100,
+          angle: 60,
+          origin: { x: 0, y: 0.9 },
+        });
 
         // Get form values
         const donationType = $('#donationType').val();
