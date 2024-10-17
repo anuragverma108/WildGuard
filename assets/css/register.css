@@ -26,6 +26,14 @@ body {
     height: 630px;
 }
 
+.error-message {
+    height: 20px; /* Reserve space even when hidden */
+    color: red;
+    visibility: hidden; /* Use visibility to prevent shifting */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
 
 .home-icon{
     font-size: 19px;
