@@ -98,6 +98,7 @@ nav ul li a:hover {
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 25px;   
     text-decoration: none;
     border-radius: 25px;
     transition: background-color 0.3s;
