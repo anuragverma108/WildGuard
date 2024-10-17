@@ -172,6 +172,7 @@ h2 {
 .google-btn {
     background-color: #ffffff;
     color: #5F6368;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .google-btn:hover {
@@ -179,14 +180,22 @@ h2 {
     transform: scale(1.10);
 }
 
-.facebook-btn{
-    background-color: #1877F2;
-}
-.facebook-btn:hover{
+.facebook-btn {
+    color:  black;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .facebook-btn:hover {
     background-color: #145DBF;
     transform: scale(1.10);
-}
+  }
 
+.loginbtn {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.loginbtn:hover {
+    transform: scale(1.10);
+  }
 .google-logo {
     height: 25px;
     width: 25px;
@@ -211,3 +220,4 @@ h2 {
 .signup-link a:hover {
     text-decoration: underline;
 }
+
