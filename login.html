@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    
+
+    <div class="login-page">
+        <div class="content">
+            <div>
+
+                <span><a href="./index.html" class="home-icon" ><i class="fa-solid fa-house"></i></a></span>
+                <h2>Welcome Back!</h2>
+            </div>
+
+            <form class="data">
+
+                <!-- Email Field -->
+                <div class="entry">
+                    <label for="email"><h3>Email</h3></label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" placeholder="example@gmail.com" required>
+                        <div class="fa"><i class="fas fa-user"></i></div>
+                    </div>
+                </div>
+
+                <!-- Password Field with Toggle Visibility -->
+                <div class="entry">
+                    <label for="password"><h3>Password</h3></label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password" required>
+
+                        <div class="fa" class="icon toggle-password" onclick="togglePasswordVisibility('password')">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remember Me Checkbox & Forgot Password Link -->
+                <div class="extras">
+                    <label class="remember-me">
+                        <input type="checkbox"> Remember Me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <!-- Login Button -->
+                <div class="entry">
+                    <button type="submit">Login</button>
+                </div>
+
+                <!-- Social Media Login Buttons -->
+                <div class="social-login">
+                    <p>Or login with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="social-btn google-btn">
+                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo"> Continue with Google
+                        </button>
+                        <button type="button" class="social-btn facebook-btn">
+                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="Facebook-logo"> Continue with Facebook
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sign-Up Link -->
+                <p class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility(id) {
+            const passwordField = document.getElementById(id);
+            const icon = passwordField.nextElementSibling.querySelector('i');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } 
+            else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+    </script>
+    
+
+</body>
+</html>

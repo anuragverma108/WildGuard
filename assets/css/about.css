@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Courier New', Courier, monospace; */
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-variant: normal;
+    font-stretch: expanded;
+}
+
+body {
+    line-height: 1.6;
+}
+
+/* Animal Background using online URL */
+.about-section {
+    position: relative;
+    height: 100vh;
+    background: url('https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;
+    /* Example: URL from Unsplash */
+    color: #fff;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    /* text-align: center; */
+}
+
+.about-overlay {
+    /* background-color: rgba(0, 0, 0, 0.6); Dark translucent overlay */
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 800px;
+
+}
+
+h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    margin-top: 150px;
+    
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight:500;
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #77dd77;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.donate-button {
+    margin-top: 30px;
+    background-color: #77dd77;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.donate-button:hover {
+    background-color: #66cc66;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    p, ul li {
+        font-size: 1rem;
+    }
+}
+
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-variant: normal;
+    font-stretch: expanded;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.row:nth-child(odd) {
+    flex-direction: flex-start;
+  
+}
+
+.text-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-content h2 {
+    font-size: 2em;
+    color: #2d2d2d;
+    margin-bottom: 10px;
+    margin-top: 1px;
+}
+
+.text-content p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.image-content {
+    flex: 1;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* .section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h1 {
+    font-size: 3em;
+    color: #3c763d;
+} */
+
+/* Add some responsiveness */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .row:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .text-content, .image-content {
+        width: 100%;
+    }
+
+    .text-content h2 {
+        font-size: 1.5em;
+    }
+}
