@@ -18,7 +18,7 @@ body {
 .about-section {
     position: relative;
     height: 100vh;
-    background: url('https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;
+    background: url('https://images.pexels.com/photos/1098886/pexels-photo-1098886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
     /* Example: URL from Unsplash */
     color: #fff;
     display: flex;
@@ -35,11 +35,13 @@ body {
 
 }
 
+
 h2 {
     font-size: 3rem;
     margin-bottom: 20px;
     text-transform: uppercase;
     margin-top: 150px;
+    color: #000;
     
 }
 
@@ -47,6 +49,7 @@ p {
     font-size: 1.1rem;
     margin-bottom: 20px;
     font-weight:500;
+    color: #000;
 }
 
 h3 {
