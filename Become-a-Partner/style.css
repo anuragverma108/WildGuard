@@ -24,7 +24,7 @@ body {
 }
 
 h1, h2 {
-  color: #28a745;
+  color: #0c8bf3;
 }
 
 h1 {
@@ -72,7 +72,7 @@ input[type="checkbox"] {
 }
 
 button.btn-primary {
-  background-color: #28a745;
+  background-color: #128af4;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -82,12 +82,15 @@ button.btn-primary {
 }
 
 button.btn-primary:hover {
-  background-color: #28a745;
+  background-color: #232222;
 }
 
 a {
-  color: #28a745;
+  color: #1184f1;
   text-decoration: underline; /* Make links underlined by default */
+}
+.title{
+  color:black
 }
 
 a:hover {
