@@ -140,33 +140,18 @@
           </li>
 
           <li>
-
-           <li>
-                <a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>
-                      <span>Login</span>
-                      <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-            </li>
+            <a class="navbar-link login-nav" id="openPopup" data-nav-link>
+              <span>Login</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+          
           <li>
-            <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
+            <a class="navbar-link login-nav" id="openPopup" data-nav-link>
               <span>Register</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
-
-
-          <script>
-            document.getElementById('registerLink').addEventListener('click', function (e) {
-              e.preventDefault();
-              window.location.href = 'register.html';
-            });
-            document.getElementById('loginLink').addEventListener('click', function (e) {
-              e.preventDefault();
-              window.location.href = 'login.html';
-            });
-          </script>
-
-
 
         </ul>
 
@@ -1659,6 +1644,14 @@
   <script src="./assets/js/carousel.js"></script>
 
   <script>
+    document.getElementById('registerLink').addEventListener('click', function (event) {
+        window.location.href = 'register.html';  // Redirect to register.html when clicked
+      });
+
+    document.getElementById('loginLink').addEventListener('click', function (event) {
+        window.location.href = 'login.html';  // Navigate to login.html
+      });
+
     function setActiveTab(selectedButton, contentKey) {
       const buttons = document.querySelectorAll('.tab-btn');
       buttons.forEach(button => button.classList.remove('active'));
