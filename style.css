@@ -98,5 +98,23 @@
 
 }
 
+.zoom-effect {
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  @media (min-width: 768px) {
+    .zoom-effect {
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .zoom-effect:hover {
+      transform: scale(1.05); 
+    }
+  
+    .zoom-effect img {
+      transition: transform 0.3s ease-in-out;
+    }
+  }
 
 
