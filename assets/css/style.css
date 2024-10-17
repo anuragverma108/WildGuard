@@ -2890,6 +2890,19 @@ data{
   background-color: #45a049; /* Darker shade on hover */
 }
 
+/* styles for progress bar */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 7px;
+  background-color: #4caf50; 
+  width: 0%; 
+  z-index: 9000; 
+}
+
+
 /* Styles for the flip card effect */
 .card-inner {
   position: relative;

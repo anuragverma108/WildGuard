@@ -56,8 +56,8 @@
 </head>
 
 <body>
-   <!-- Intro Landing Section with Image and Quote -->
-   <div id="intro-landing" style="
+<!-- Intro Landing Section with Image and Quote -->
+<div id="intro-landing" style="
    position: fixed;
    top: 0;
    left: 0;
@@ -86,12 +86,9 @@
    ">
      "Save Nature, Save Wildlife"
    </div>
- </div>
+</div>
 
-
- </div>
-
- <script>
+<script>
    window.addEventListener('load', function () {
      const introLanding = document.getElementById('intro-landing');
      const mainContent = document.querySelector('.main-content');
@@ -122,8 +119,34 @@
      }
    `;
    document.head.appendChild(style);
- </script>
-  
+</script>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: green;
+  width: 0;
+  z-index: 2000;
+"></div>
+
+<script>
+   window.onscroll = function () {
+     updateProgressBar();
+   };
+
+   function updateProgressBar() {
+     const progressBar = document.getElementById('progressBar');
+     const totalHeight = document.body.scrollHeight - window.innerHeight;
+     const scrollPosition = window.scrollY;
+
+     const progressWidth = (scrollPosition / totalHeight) * 100;
+
+     progressBar.style.width = progressWidth + '%';
+   }
+</script>
 
 
   <!--
