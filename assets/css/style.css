@@ -617,6 +617,7 @@ html {
 
 .navbar-link:is(:hover, :focus) {
   background-color: var(--pistachio);
+  transition: 1.5s ease-in-out;
 }
 
 .header-action {
