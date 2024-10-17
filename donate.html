@@ -1,5 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+main
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation Form - Wildguard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--importing library  for downloading receipt in pdf format -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background-image: url('assets/images/bg\ form.jpg');
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        padding-top: 150px;
+        padding-right: 150px;
+      }
+      #name-error {
+        display: none;
+        color: #ff3737;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: white;
+        border: 1px solid #ff3737;
+      }
+
+      #name-error i {
+        margin-right: 5px;
+      }
+
+      .form-container {
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      h2 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
+        color: #1f8c3a;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      label {
+        font-weight: 600;
+        color: #495057;
+      }
+
+      .form-control,
+      .form-check-label {
+        font-size: 2rem;
+      }
+
+      #recurringOptions {
+        margin-top: -10px;
+      }
+
+      button[type='submit'] {
+        font-family: 'Inter', sans-serif;
+        background-color: #1f8c3a;
+        border-color: #1f8c3a;
+      }
+
+      button[type='submit']:hover {
+        background-color: #09c031;
+      }
+
+      .donation-summary {
+        display: none;
+        background-color: #ffffff;
+        border: 1px solid #c3e6cb;
+        padding: 20px;
+        border-radius: 10px;
+      }
+main
 
 <head>
   <meta charset="UTF-8" />

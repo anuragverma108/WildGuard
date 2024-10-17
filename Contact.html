@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+main
 
 <head>
   <meta charset="UTF-8" />
@@ -154,3 +155,407 @@
 </body>
 
 </html>
+=======
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>WildGuard - Give Love for Saving World Animals</title>
+
+  <!-- Google Translate script -->
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- 
+      - favicon
+    -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+      - custom css link
+    -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+      - fontawesome icon link
+    -->
+  <script src="https://kit.fontawesome.com/418b80718b.js" crossorigin="anonymous"></script>
+
+  <!-- 
+      - google font link
+    -->
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
+    rel="stylesheet" />
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="./Events-Data/modal.css">
+
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    header {
+        background-color: #9bc98b;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+    }
+
+    header h1 {
+        font-size: 36px;
+        color: white;
+    }
+
+    nav {
+        display: flex;
+        gap: 20px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 15px;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #333;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+
+    .form-container {
+    width: 45%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-right: -180px;
+    border: 3px solid #ccc; /* Initial border color */
+    transition: border-color 0.3s ease; /* Smooth transition */
+}
+
+.form-container:hover {
+    border-color: #99d28a; /* Border color on hover */
+}
+
+
+    .form-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #99d28a;
+        text-align: left;
+    }
+
+    .form-container label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: block;
+        /* margin-left: -250px; */
+        text-align: left;
+    }
+
+    .form-container input[type="text"], 
+    .form-container input[type="email"], 
+    .form-container input[type="tel"], 
+    .form-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+      
+    }
+
+    .form-container input[type="submit"] {
+        background-color: #99d28a;
+        border: none;
+        color: white;
+        padding: 1px 10px;
+        border-radius: 20px;
+        width: 95px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+    }
+
+    .form-container input[type="submit"]:hover {
+        background-color: #88c17d;
+    }
+
+    .form-container:hover {
+    transform: scale(1.02); /* Slightly enlarge the form */
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    footer {
+        background-color: #99d28a;
+        text-align: center;
+        padding: 15px;
+        color: white;
+        margin-top: 40px;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+        }
+    }
+
+
+
+    .flip-container {
+    perspective: 1000px;
+    width: 70%;
+    height: 600px;
+    margin-left: -120px;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.back {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    text-align: center;
+    color: #333;
+}
+
+.flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+/* Optional: Hover or click border effect on flip */
+.flip-container:hover .front,
+.flip-container:hover .back {
+    border: 2px solid #99d28a;
+}
+
+
+.flip-container:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+
+</style>
+</head>
+<body>
+<header>
+<h1>WildGuard</h1>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="#">Service</a>
+    <a href="Contact.html">Contact Us</a>
+    <a href="donate.html">Donate</a>
+    <a href="login.html">Login</a>
+</nav>
+</header>
+
+<div class="container">
+<div class="flip-container" id="flip-container">
+  <div class="flipper">
+      <!-- Front: Image -->
+      <div class="front">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReHDIAZtYGPU6V1mgi0NgGklFupj5RDAIGTnr6Bj8fskpbCDy3wiqZCDx5kmMXqFUrDuo&usqp=CAU" alt="Wild Animal">
+      </div>
+      <!-- Back: Contact Information -->
+      <div class="back">
+          <h3>Contact Us</h3>
+          <p>If you have any queries, please reach out to us at:</p>
+          <p>Email: support@wildguard.org</p>
+          <p>Phone: +1234567890</p>
+      </div>
+  </div>
+</div>
+
+
+<!-- Right side: Contact Form -->
+<div class="form-container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <label for="name">Enter Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Enter Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="phone">Enter Your Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+        <label for="message">Write Your Message</label>
+        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+<!-- This is where the success message will be displayed -->
+<div id="formMessage" style="display:none; margin-top: 20px; color: green;">
+  Thank you for reaching out to us! We will get back to you shortly.
+</div>
+
+
+</div>
+</div>
+
+   <!-- 
+    - #FOOTER
+  -->
+
+  <footer id="footer" class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <h3>
+          <a href="#" class="logo">WildGuard</a>
+        </h3>
+        <p >WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our
+          mission to create a sustainable future for the planet's most vulnerable creatures.</p>
+      </div>
+      <div class="footer-middle">
+        <h4>Quick Links</h4>
+        <div class="quick-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="">
+            <a href="review.html">
+              <button type="submit">🌟Rating/Review🌟</button>
+            </a>
+            
+        </div>
+        <div class="subscribe-form">
+        <form action="#">
+          <input type="email" class="email-input" placeholder="Your email address">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+        <div class="footer-social-icons">
+          <div class="social-links">
+          <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="https://x.com/"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="https://www.linkedin.com/"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <a href="https://www.youtube.com/"><ion-icon name="logo-youtube"></ion-icon></a>
+        </div>
+        <div class="message">Stay Connected</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom" style="display: inline;">
+      <p>© 2024 <a href="copyright.html" style="display: inline;">WildGuard</a> All Rights Reserved</p>
+      <p>
+        <a href="./terms-of-use.html" class="footer-link" style="display: inline;">Terms of Service</a> |
+        <a href="./privacy-policy.html" class="footer-link" style="display: inline;">Privacy Policy</a>
+      </p>
+    </div>
+ </footer>
+
+
+  
+<!-- JavaScript for form submission alert
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Thank you for reaching out to us! We will get back to you shortly.");
+  });
+</script> -->
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Show the success message
+      var messageDiv = document.getElementById('formMessage');
+      messageDiv.style.display = 'block';
+
+      // Optional: Clear the form fields after submission
+      document.getElementById('contactForm').reset();
+  });
+</script>
+</body>
+</html>
+main
