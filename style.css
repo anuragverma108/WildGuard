@@ -85,9 +85,12 @@
     color: white;
     cursor: pointer;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 15px;
     transition: background-color 0.3s;
 }
+
+
+
 .donate-button:hover {
     background-color: #2980b9;
 
