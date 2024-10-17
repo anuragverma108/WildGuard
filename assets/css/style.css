@@ -111,45 +111,57 @@ html {
   }
 }
 
-.container_1 {
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+.formContainer{
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  margin: 0;
+  width: 100vw;
+  height: min-content;
+  margin-bottom: 20px; 
   text-align: center;
 }
 
-.post-form {
-  margin-bottom: 20px;
+.container_1 {
+ background-color: white;
+ border-radius: 10px;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ padding: 20px;
+ max-width: 600px;
+ width: 90%;
 }
 
-textarea {
+.container_1 h1{
+  font-size: 24px;
+  font-weight: 800;
+  color: #27ae60;
+}
+
+.post-form {
+  margin: 20px 0;
+}
+
+#postContent {
   width: 100%;
   height: 100px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: vertical;
 }
 
-button {
+#submitPost {
   background-color: #28a745;
-  color: black;
-  padding: 10px 15px;
+  color: white;
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
-  /* Adds space above button */
+  transition: background-color 0.3s;
 }
 
-button:hover {
+#submitPost:hover {
   background-color: #218838;
-  color: white;
 }
 
 .posts {
@@ -157,8 +169,11 @@ button:hover {
 }
 
 .post {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 /*-----------------------------------*\
@@ -176,9 +191,10 @@ button:hover {
 .input-group {
   width: 106px;
   min-width: 10vw;
-  height: 44px;
-  background-color: #fff;
+  height: 40px;
   border-radius: 3px;
+  margin-bottom: 5px;
+ 
 }
 
 *,
@@ -503,7 +519,6 @@ html {
   padding: 10px;
   /*reducing height of the navbar */
 }
-
 /* .input-group{
   display: flex;
   flex-direction: row;
@@ -613,9 +628,16 @@ html {
 }
 
 .form-control {
-  height: 37px;
-  margin-top: 9px;
+  height: 52px;
+  margin-top: 0px;
+  
 }
+
+/* style.css */
+.form-control {
+  font-size: 2rem; /* Sets the font size to 1 rem */
+}
+
 
 /* Login Styling */
 .popup {
@@ -1263,7 +1285,7 @@ html {
   margin-bottom: 100px;
 }
 .donate-card {
-  width: 100%;
+  width: 90vw;
   position: relative;  /* To control the position of elements inside the card */
   box-shadow: var(--card-shadow);
   margin-bottom: 60px;
@@ -1272,7 +1294,7 @@ html {
 
 .donate-card .card-banner {
   width: 100%;
-  height: 300px;  
+  height: 500px;  
   background-color: var(--light-gray);
   position: relative;
   overflow: hidden;  
@@ -1291,8 +1313,8 @@ html {
 
 .donate-card .card-content {
   position: absolute;
-  top: 58%;  
-  left: 35%;
+  top: 60%;  
+  left: 39%;
   padding: 35px;
   background-color: white;  
   z-index: 2;  
@@ -1403,9 +1425,8 @@ data{
 
 .donate-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 20px; 
-  padding-inline-end: 120px;
 }
  
 
@@ -1578,7 +1599,7 @@ data{
 #marquee {
   display: flex;
   width: 100%;
-  height: 50vh;
+  height: 266;
   background-color: var(--light-gray);
   white-space: nowrap;
   overflow-x: hidden;
@@ -1587,7 +1608,7 @@ data{
 
 .insta-post-item img {
   width: 100%;
-  height: 100%;
+  height: 266;
   object-fit: cover;
   object-position: center;
 }
@@ -1654,9 +1675,10 @@ data{
 
 .insta-post-item {
   width: 50vh;
-  height: 50vh;
+  height: 266;
   scroll-snap-align: center;
 }
+
 
 /*-----------------------------------*\
   #FOOTER
@@ -2658,7 +2680,6 @@ data{
 .container {
   padding: 10px;
   text-align: center;
-  margin-top: 10px;
   /* Space from the top */
 }
 
@@ -2785,3 +2806,132 @@ data{
 .email-input {
   color: rgb(208, 208, 208);
 }
+
+.service-card {
+  perspective: 1000px;
+  cursor: pointer;
+  width: 300px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+  margin: 20px; /* Add some margin around the card */
+}
+
+.card-icon {
+  font-size: 40px; /* Adjust icon size as needed */
+  color: green; /* Icon color */
+  margin-bottom: 20px; /* Space between icon and title */
+}
+
+.h3.card-title {
+  font-size: 1.5em; /* Title font size */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center align title */
+}
+
+.card-text {
+  font-size: 1em; /* Text font size */
+  text-align: center; /* Center align text */
+  margin: 10px 0; /* Space above and below the text */
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: #4CAF50; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.btn-link:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Styles for the flip card effect */
+.service-card {
+  perspective: 1000px;
+  cursor: pointer;
+  width: 270px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+  margin: 20px; /* Add some margin around the card */
+}
+
+.card-icon {
+  font-size: 40px; /* Adjust icon size as needed */
+  color: green; /* Icon color */
+  margin-bottom: 20px; /* Space between icon and title */
+}
+
+.h3.card-title {
+  font-size: 1.5em; /* Title font size */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center align title */
+}
+
+.card-text {
+  font-size: 1em; /* Text font size */
+  text-align: center; /* Center align text */
+  margin: 10px 0; /* Space above and below the text */
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: #4CAF50; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.btn-link:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Styles for the flip card effect */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc; /* Optional border */
+  border-radius: 10px; /* Optional rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: #f0f0f0; /* Background color for back side */
+}
+
+.service-card:hover .card-inner {
+  animation: rotateCard 2s forwards;
+}
+
+@keyframes rotateCard {
+  0% {
+      transform: rotateY(0deg);
+  }
+  50% {
+      transform: rotateY(180deg);
+  }
+  100% {
+      transform: rotateY(0deg);
+  }
+}
+
+
