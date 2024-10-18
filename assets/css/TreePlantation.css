@@ -237,8 +237,8 @@ body {
   
   /* Icon styling */
   .icon img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 80px;
   }
   
   /* Responsive design for smaller screens */
@@ -345,3 +345,33 @@ body {
     }
   }
   
+  .footer-social-icons {
+    margin-top: 20px;
+    display: flex;
+    /* Aligns icons horizontally */
+    flex-direction: column;
+    justify-content: left;
+    gap: 15px;
+    /* Space between icons */
+    align-items: left;
+  }
+  
+  .footer-social-icons .message {
+    font-size: 2rem;
+    color: #709157;
+    text-align: left;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .footer-social-icons a {
+    color: #bbbbbb;
+    font-size: 2rem;
+  }
+  
+  .footer-social-icons a:hover {
+    color: #98c379;
+  }
