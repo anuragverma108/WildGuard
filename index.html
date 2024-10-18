@@ -59,11 +59,21 @@
 
 <body>
 
-<div class="scroll-to-bottom">
-  <button id="scrollBOTTOM">
-    <i class="material-icons">arrow_downward</i>
-  </button>
-</div>
+  <div class="scroll-to-bottom">
+    <button id="scrollBOTTOM">
+      <i class="material-icons">arrow_downward</i>
+    </button>
+  </div>
+  <script>
+    const scrollBOTTOM = document.querySelector('#scrollBOTTOM');
+    scrollBOTTOM.addEventListener('click', function() {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          left: 0,
+          behavior:'smooth'
+        });
+    });
+  </script>
  
 <!-- progress bar  -->
   <div class="progress-bar" id="progressBar"></div>
@@ -182,14 +192,6 @@
 
 
           <script>
-            const scrollBOTTOM = document.querySelector('#scrollBOTTOM');
-            window.addEventListener('click', function(){
-              window.scrollTo({
-                top: document.body.scrollHeight,
-                left: 0,
-                behavior:'smooth'
-              });
-            });
             document.getElementById('registerLink').addEventListener('click', function (e) {
               e.preventDefault();
               window.location.href = 'register.html';
