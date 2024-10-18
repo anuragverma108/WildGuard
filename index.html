@@ -83,177 +83,72 @@
   </div>
 
   <header class="header" data-header>
-
+    <!-- Progress Bar -->
     <div class="progress-bar">
       <div class="filled"></div>
     </div>
+  
+    <!-- Container for Header Content -->
     <div class="container">
-
-      <h1>
-        <a href="#home" class="logo">WildGuard</a>
-      </h1>
-
-      <div id="google_translate_element"></div> <!-- Google Translate widget -->
-
-
+  
+      <!-- Logo -->
+      <h1><a href="#home" class="logo">WildGuard</a></h1>
+  
+      <!-- Google Translate Widget -->
+      <div id="google_translate_element"></div>
+  
+      <!-- Navigation Open Button (for mobile) -->
       <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
         <ion-icon name="menu-outline"></ion-icon>
       </button>
-
+  
+      <!-- Navigation Menu -->
       <nav class="navbar" data-navbar>
-
+        <!-- Close Button (for mobile) -->
         <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
           <ion-icon name="close-outline"></ion-icon>
         </button>
-
-        <a href="#" class="logo">WildGuard</a>
-
+  
+        <!-- Navigation Links -->
         <ul class="navbar-list">
-
-          <li>
-            <a href="#home" class="navbar-link active" data-nav-link>
-              <span class="new_size">Home</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link" data-nav-link>
-              <span class="new_size">About</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#service" class="navbar-link" data-nav-link>
-              <span class="new_size">Service</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#donate" class="navbar-link" data-nav-link>
-              <span class="new_size">Donate</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#event" class="navbar-link" data-nav-link>
-              <span class="new_size">Event</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#footer" class="navbar-link" data-nav-link>
-              <span class="new_size">Contact</span>
-
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-
-           <li>
-                <a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>
-                      <span>Login</span>
-                      <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-            </li>
-          <li>
-            <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
-              <span>Register</span>
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-
-
-          <script>
-            document.getElementById('registerLink').addEventListener('click', function (e) {
-              e.preventDefault();
-              window.location.href = 'register.html';
-            });
-            document.getElementById('loginLink').addEventListener('click', function (e) {
-              e.preventDefault();
-              window.location.href = 'login.html';
-            });
-          </script>
-
-
-
+          <li><a href="#home" class="navbar-link active" data-nav-link>Home</a></li>
+          <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
+          <li><a href="#service" class="navbar-link" data-nav-link>Service</a></li>
+          <li><a href="#donate" class="navbar-link" data-nav-link>Donate</a></li>
+          <li><a href="#event" class="navbar-link" data-nav-link>Event</a></li>
+          <li><a href="#footer" class="navbar-link" data-nav-link>Contact</a></li>
+          <li><a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>Login</a></li>
+          <li><a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>Register</a></li>
         </ul>
-
       </nav>
-
+  
+      <!-- Header Actions -->
       <div class="header-action">
-
+        <!-- Search Bar -->
         <div class="input-group">
-          <input type="text" style="font-size: medium;" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
+          <input type="text" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
           <button class="btn btn-primary search-btn" aria-label="Search" onclick="performSearch()">
             <ion-icon name="search-outline"></ion-icon>
           </button>
-          <div class="result-box" id="result-box">
-            <!-- Suggestions will be displayed here -->
-          </div>
-
+          <div class="result-box" id="result-box"></div>
         </div>
-    
-        <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
-
-</div>
-
-
-<!-- <div class="search-bar" id="searchBar" style="display:none;">
-  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
-</div> -->
-<!-- Search bar and button -->
-<!-- <div class="input-group">
-  <input type="text" class="form-control search-box" placeholder="Search" aria-label="Search">
-  <button class="btn btn-primary search-btn" aria-label="Search">
-    <ion-icon name="search-outline"></ion-icon>
-  </button>
-</div> -->
-
-<!-- Search input field -->
-<!-- <div class="search-bar" id="searchBar" style="display:none;">
-  <input type="text" id="searchInput" placeholder="Search..." autocomplete="off"> -->
   
+        <!-- Donate Button -->
+        <button type="button" class="donate-button" onclick="location.href='donate.html';">
+          <span>Donation</span>
+          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+        </button>
   
-  <!-- Match counter and navigation buttons -->
-  <!-- <div class="search-nav-buttons">
-    <span id="matchCounter" style="display: none;">0/0</span> -->
-    <!-- <button id="prevMatch" style="display:none;">&#x25B2;</button> Up arrow -->
-    
-  <!-- </div>
-</div> -->
-
-
-<!-- <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-  <span>Donation</span>
-  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-</button> -->
-
-<button type="button"  class="donate-button" onclick="location.href='donate.html';">
-  <span>Donation</span>
-  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-</button>
-
-<!-- Login -->
-<div id="openPopup" class="user-icon">
-  <a href="user.html"><i class="fas fa-user"></i></a> 
-  <div class="dropdown-content" id="profileDropdown">
-    <a href="user.html">Profile</a>
-    <a href="/">Logout</a>
-  </div> 
-  </div>
-
-        <!-- Popup -->
+        <!-- User Icon with Dropdown -->
+        <div class="user-icon" id="openPopup">
+          <a href="user.html"><i class="fas fa-user"></i></a>
+          <div class="dropdown-content" id="profileDropdown">
+            <a href="user.html">Profile</a>
+            <a href="/">Logout</a>
+          </div>
+        </div>
+  
+        <!-- Popup for Login/Signup -->
         <div id="popup" class="popup">
           <div class="popup-content">
             <span class="close-button" id="closePopup">&times;</span>
@@ -262,6 +157,7 @@
               <button class="tab-button" id="signupTab">Signup</button>
             </div>
             <div class="form-container">
+              <!-- Login Form -->
               <form id="loginForm">
                 <div class="form_wrapper">
                   <div class="form-fields--login">
@@ -270,10 +166,12 @@
                     <button type="submit">Login</button>
                   </div>
                   <div class="form-img">
-                    <img src="./assets/images/animals.jpg" alt="" srcset="">
+                    <img src="./assets/images/animals.jpg" alt="Login Image">
                   </div>
                 </div>
               </form>
+  
+              <!-- Signup Form (Hidden initially) -->
               <form id="signupForm" style="display: none;">
                 <div class="form_wrapper">
                   <div class="form-fields--signup">
@@ -283,17 +181,33 @@
                     <button type="submit">Signup</button>
                   </div>
                   <div class="form-img">
-                    <img src="./assets/images/cta-banner.jpg" alt="" srcset="">
+                    <img src="./assets/images/cta-banner.jpg" alt="Signup Image">
                   </div>
                 </div>
-
               </form>
             </div>
           </div>
         </div>
       </div>
-
+    </div>
+  
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css">
   </header>
+  
+  <!-- JavaScript for Login and Register Links -->
+  <script>
+    document.getElementById('registerLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.location.href = 'register.html';
+    });
+  
+    document.getElementById('loginLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.location.href = 'login.html';
+    });
+  </script>
+  
 
   
 
