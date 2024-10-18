@@ -3,94 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/login.css">
-    <title>Login</title>
+    <title>Enhanced Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .login-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #1877f2;
+            margin-bottom: 30px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #606770;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #dddfe2;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .input-group input:focus {
+            border-color: #1877f2;
+            outline: none;
+        }
+        .password-toggle {
+            position: relative;
+        }
+        .password-toggle i {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #606770;
+        }
+        .password-strength {
+            height: 5px;
+            margin-top: 5px;
+            border-radius: 2px;
+            transition: width 0.3s;
+        }
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1877f2;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .login-button:hover {
+            background-color: #166fe5;
+        }
+        .extras {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        .remember-me input {
+            margin-right: 5px;
+        }
+        .forgot-password {
+            color: #1877f2;
+            text-decoration: none;
+        }
+        .social-login {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .social-login p {
+            margin-bottom: 10px;
+            color: #606770;
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .social-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .google-btn {
+            background-color: #ffffff;
+            color: #757575;
+            border: 1px solid #dadce0;
+            margin-right: 10px;
+        }
+        .facebook-btn {
+            background-color: #1877f2;
+            color: #ffffff;
+        }
+        .social-btn img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #606770;
+        }
+        .signup-link a {
+            color: #1877f2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .home-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #1877f2;
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    
-
-    <div class="login-page">
-        <div class="content">
-            <div>
-
-                <span><a href="./index.html" class="home-icon" ><i class="fa-solid fa-house"></i></a></span>
-                <h2>Welcome Back!</h2>
+    <a href="./index.html" class="home-icon"><i class="fas fa-house"></i></a>
+    <div class="login-container">
+        <h2>Welcome Back!</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="example@gmail.com" required>
             </div>
-
-            <form class="data">
-
-                <!-- Email Field -->
-                <div class="entry">
-                    <label for="email"><h3>Email</h3></label>
-                    <div class="input-wrapper">
-                        <input type="email" id="email" placeholder="example@gmail.com" required>
-                        <div class="fa"><i class="fas fa-user"></i></div>
-                    </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-toggle">
+                    <input type="password" id="password" placeholder="Enter your password" required >
+                    
                 </div>
-
-                <!-- Password Field with Toggle Visibility -->
-                <div class="entry">
-                    <label for="password"><h3>Password</h3></label>
-                    <div class="input-wrapper">
-                        <input type="password" id="password" placeholder="Enter your password" required>
-
-                        <div class="fa" class="icon toggle-password" onclick="togglePasswordVisibility('password')">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Remember Me Checkbox & Forgot Password Link -->
-                <div class="extras">
-                    <label class="remember-me">
-                        <input type="checkbox"> Remember Me
-                    </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
-                </div>
-
-                <!-- Login Button -->
-                <div class="entry">
-                    <button type="submit">Login</button>
-                </div>
-
-                <!-- Social Media Login Buttons -->
-                <div class="social-login">
-                    <p>Or login with</p>
-                    <div class="social-buttons">
-                        <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo"> Continue with Google
-                        </button>
-                        <button type="button" class="social-btn facebook-btn">
-                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="Facebook-logo"> Continue with Facebook
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Sign-Up Link -->
-                <p class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
-
-            </form>
+                <div class="password-strength" id="passwordStrength"></div>
+            </div>
+            <div class="extras">
+                <label class="remember-me">
+                    <input type="checkbox"> Remember Me
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <div class="social-login">
+            <p>Or login with</p>
+            <div class="social-buttons">
+                <button type="button" class="social-btn google-btn">
+                    <img src="./assets/images/google.png" alt="Google Logo"> Google
+                </button>
+                <button type="button" class="social-btn facebook-btn">
+                    <img src="./assets/images/facebook.png" alt="Facebook Logo"> Facebook
+                </button>
+            </div>
         </div>
+        <p class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
     <script>
-        function togglePasswordVisibility(id) {
-            const passwordField = document.getElementById(id);
-            const icon = passwordField.nextElementSibling.querySelector('i');
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
-            } 
-            else {
-                passwordField.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
-            }
-        }
-    </script>
-    
+        document.addEventListener('DOMContentLoaded', function() {
+            const togglePassword = document.getElementById('togglePassword');
+            const password = document.getElementById('password');
+            const passwordStrength = document.getElementById('passwordStrength');
+            const email = document.getElementById('email');
+            const loginForm = document.getElementById('loginForm');
 
+            togglePassword.addEventListener('click', function() {
+                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                password.setAttribute('type', type);
+                this.classList.toggle('fa-eye');
+                this.classList.toggle('fa-eye-slash');
+            });
+
+            password.addEventListener('input', function() {
+                const strength = calculatePasswordStrength(this.value);
+                updatePasswordStrengthIndicator(strength);
+            });
+
+            email.addEventListener('input', function() {
+                this.setCustomValidity('');
+                if (this.validity.typeMismatch) {
+                    this.setCustomValidity('Please enter a valid email address');
+                }
+            });
+
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (this.checkValidity()) {
+                    alert('Login successful!');
+                    // Here you would typically send the form data to your server
+                } else {
+                    alert('Please fill out all fields correctly.');
+                }
+            });
+
+            function calculatePasswordStrength(password) {
+                let strength = 0;
+                if (password.length >= 8) strength++;
+                if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+                if (password.match(/\d/)) strength++;
+                if (password.match(/[^a-zA-Z\d]/)) strength++;
+                return strength;
+            }
+
+            function updatePasswordStrengthIndicator(strength) {
+                const colors = ['#ff4d4d', '#ffa64d', '#ffff4d', '#4dff4d'];
+                const widths = ['25%', '50%', '75%', '100%'];
+                passwordStrength.style.width = widths[strength];
+                passwordStrength.style.backgroundColor = colors[strength];
+            }
+        });
+    </script>
 </body>
 </html>

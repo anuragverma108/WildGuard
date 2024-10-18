@@ -110,28 +110,27 @@ html {
     visibility: visible;
   }
 }
-
-.formContainer{
+.formContainer {
   display: flex;
-  justify-content: center; 
-  align-items: center;     
+  justify-content: center;
+  align-items: center;
   margin: 0;
   width: 100vw;
   height: min-content;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .container_1 {
- background-color: white;
- border-radius: 10px;
- box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
- padding: 20px;
- max-width: 600px;
- width: 90%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
 }
 
-.container_1 h1{
+.container_1 h1 {
   font-size: 24px;
   font-weight: 800;
   color: #27ae60;
@@ -169,11 +168,13 @@ html {
 }
 
 .post {
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
+  background-color: #91be55;
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0;
+  color: white;
+  font-size:larger;
+  font-style: oblique;
 }
 
 /*-----------------------------------*\
@@ -194,7 +195,6 @@ html {
   height: 40px;
   border-radius: 3px;
   margin-bottom: 5px;
- 
 }
 
 *,
@@ -598,7 +598,6 @@ html {
   transform: scale(1.4);
 }
 .navbar-link {
-
   color: var(--white);
   font-size: 15px;
 
@@ -617,6 +616,7 @@ html {
 
 .navbar-link:is(:hover, :focus) {
   background-color: var(--pistachio);
+  transition: 1.5s ease-in-out;
 }
 
 .header-action {
@@ -630,14 +630,12 @@ html {
 .form-control {
   height: 52px;
   margin-top: 0px;
-  
 }
 
 /* style.css */
 .form-control {
   font-size: 2rem; /* Sets the font size to 1 rem */
 }
-
 
 /* Login Styling */
 .popup {
@@ -703,8 +701,6 @@ html {
   gap: 2em;
 }
 
-
-
 .form-fields--login {
   padding-left: 10px;
   padding-right: 10px;
@@ -713,8 +709,6 @@ html {
 .form-fields--signup {
   margin-bottom: 10px;
 }
-
-
 
 .form-container input {
   margin: 10px 0;
@@ -766,7 +760,7 @@ html {
   transform: translateY(-2px);
 }
 
-.input-group{
+.input-group {
   /* width: 100px; */
   display: flex;
   align-items: center;
@@ -774,12 +768,12 @@ html {
   gap: 0.75rem;
 }
 
-.input-group .form-control{
+.input-group .form-control {
   height: 39px;
   min-width: 100px;
 }
 
-.input-group .search-btn{
+.input-group .search-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -801,14 +795,19 @@ html {
 .user-icon {
   background-color: #555;
   display: inline-block;
-  padding: 10px;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .user-icon i {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+
+.header{
+  background-color: black
 }
 
 /*-----------------------------------*\
@@ -1137,32 +1136,114 @@ html {
 /*-----------------------------------*\
   #CTA
 \*-----------------------------------*/
+.section.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  background-color: #f5f7fa; /* Light neutral background */
+  padding: 60px 0; /* Add more padding for a spacious feel */
+  width: 100%;
+}
+
+.cta-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 2000px;
+  width: 100%;
+  padding: 20px; /* Increase padding for better spacing */
+  background-color: #fff;
+  box-shadow: 0px 8px 25px rgba(50, 205, 50, 0.4); /* Subtle green shadow */
+  border-radius: 12px; /* Slightly more rounded corners */
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover */
+}
 
 .cta-content {
-  background-color: var(--pistachio);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  background-color: #71b973; /* Keep the green background */
+  padding: 50px;
+  color: white;
+  border-radius: 10px;
   text-align: center;
-  padding: 50px 15px;
-  margin-block-end: 30px;
 }
 
-.cta .section-title {
-  color: var(--white);
-  font-size: var(--fs-4);
-  font-weight: var(--fw-600);
-  line-height: 1.2;
-  margin-block-end: 25px;
+.cta-content h2 {
+  font-size: 5rem;
+  font-weight: 700; /* Bolder title */
+  line-height: 1.2; /* Tighter line height */
+  margin-bottom: 20px;
 }
 
-.cta .btn-outline {
-  margin-inline: auto;
+.cta-image {
+  flex: 1;
+  max-width: 100%;
 }
 
-.cta .btn-outline:hover {
-  background-color: #9acb5d;
+.cta-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15); /* Softer image shadow */
+  transition: transform 0.3s ease; /* Add hover effect */
 }
 
-.cta-banner {
-  background-color: var(--light-gray);
+.cta-image img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+#partnerButton {
+  outline: none; /* Remove default focus outline */
+  background-color: #fff;
+  color: #71b973;
+  border: 2px solid black; /* Custom border */
+  padding: 20px 50px;
+  font-style: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  font-size: 2rem;
+  gap: 10px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#partnerButton:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(113, 185, 115, 0.5);
+}
+
+#partnerButton:hover {
+  background-color: #71b973;
+  color: white;
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  opacity: 0.9; /* Slightly reduce opacity */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .cta-wrapper {
+    flex-direction: column;
+    gap: 20px; /* Reduce gap for mobile */
+  }
+
+  .cta-content {
+    padding: 30px;
+  }
+
+  #partnerButton {
+    margin-top: 15px;
+    font-size: 1.8rem;
+  }
 }
 
 /*-----------------------------------*\
@@ -1182,8 +1263,11 @@ html {
 }
 
 .service-list {
-  display: grid;
-  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* gap: 30px; */
 }
 
 .service-card {
@@ -1235,7 +1319,7 @@ html {
   text-decoration: underline;
 }
 
-.btn-link span:hover{
+.btn-link span:hover {
   cursor: pointer;
 }
 
@@ -1275,18 +1359,17 @@ html {
   #DONATE
 \*-----------------------------------*/
 
-
 .donate-list {
   display: block;
   gap: 60px;
 }
 
-.donate-list >li{
+.donate-list > li {
   margin-bottom: 100px;
 }
 .donate-card {
   width: 90vw;
-  position: relative;  /* To control the position of elements inside the card */
+  position: relative; /* To control the position of elements inside the card */
   box-shadow: var(--card-shadow);
   margin-bottom: 60px;
   background-color: white;
@@ -1294,10 +1377,10 @@ html {
 
 .donate-card .card-banner {
   width: 100%;
-  height: 500px;  
+  height: 500px;
   background-color: var(--light-gray);
   position: relative;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .donate-card .card-banner img {
@@ -1308,17 +1391,17 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;  
+  z-index: 1;
 }
 
 .donate-card .card-content {
   position: absolute;
-  top: 60%;  
+  top: 60%;
   left: 39%;
   padding: 35px;
-  background-color: white;  
-  z-index: 2;  
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  
+  background-color: white;
+  z-index: 2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
@@ -1326,11 +1409,15 @@ html {
   width: 60%;
 }
 
+.card .benefits{
+  height: 100px;
+}
+
 .donate-list > li{
   margin-bottom: 300px;
 }
 
-data{
+data {
   background-color: white;
 }
 
@@ -1426,9 +1513,8 @@ data{
 .donate-card {
   display: flex;
   flex-direction: column;
-  gap: 20px; 
+  gap: 20px;
 }
- 
 
 /*-----------------------------------*\
   #TESTIMONIALS
@@ -1678,7 +1764,6 @@ data{
   height: 266;
   scroll-snap-align: center;
 }
-
 
 /*-----------------------------------*\
   #FOOTER
@@ -2185,8 +2270,6 @@ data{
     --fs-2: 5.5rem;
   }
 
-  
-
   /**
    * EVENT
    */
@@ -2440,18 +2523,12 @@ data{
    * CTA
    */
 
-  .cta .container {
-    display: grid;
-    grid-template-columns: 1fr 0.7fr;
-    gap: 30px;
-  }
-
   .cta-content {
     margin-block-end: 0;
   }
 
   .cta .section-title {
-    --fs-4: 5rem;
+    --fs-4: 7rem;
   }
 
   /**
@@ -2462,7 +2539,6 @@ data{
     grid-template-columns: repeat(4, 1fr);
   }
 
-  
   /**
    * TESTIMONIALS
    */
@@ -2592,7 +2668,7 @@ data{
     color: var(--pistachio_100);
   }
 
-  .header-action{
+  .header-action {
     gap: 1.5rem;
   }
 
@@ -2623,7 +2699,6 @@ data{
     left: -35px;
   }
 
-  
   /**
    * PARTNER
    */
@@ -2837,7 +2912,7 @@ data{
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  background-color: #4CAF50; /* Button background color */
+  background-color: #4caf50; /* Button background color */
   color: white; /* Button text color */
   padding: 10px 20px; /* Button padding */
   border-radius: 5px; /* Rounded corners */
@@ -2852,8 +2927,8 @@ data{
 .service-card {
   perspective: 1000px;
   cursor: pointer;
-  width: 270px; /* Adjust the width as needed */
-  height: 400px; /* Adjust the height as needed */
+  width: 300px; /* Adjust the width as needed */
+  height: 500px; /* Adjust the height as needed */
   margin: 20px; /* Add some margin around the card */
 }
 
@@ -2872,14 +2947,16 @@ data{
 .card-text {
   font-size: 1em; /* Text font size */
   text-align: center; /* Center align text */
-  margin: 10px 0; /* Space above and below the text */
+  /* margin: 10px 0; Space above and below the text */
+  height: 120px;
+  padding: 0 7px;
 }
 
 .btn-link {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  background-color: #4CAF50; /* Button background color */
+  background-color: #4caf50; /* Button background color */
   color: white; /* Button text color */
   padding: 10px 20px; /* Button padding */
   border-radius: 5px; /* Rounded corners */
@@ -2912,7 +2989,8 @@ data{
   transform-style: preserve-3d;
 }
 
-.card-front, .card-back {
+.card-front,
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -2937,14 +3015,12 @@ data{
 
 @keyframes rotateCard {
   0% {
-      transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
   50% {
-      transform: rotateY(180deg);
+    transform: rotateY(180deg);
   }
   100% {
-      transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
 }
-
-

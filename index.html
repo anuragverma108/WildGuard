@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylesss.css">
 
   <title>WildGuard - Give Love for Saving World Animals</title>
 
@@ -59,6 +60,7 @@
 
 <body>
 
+
   <div class="scroll-to-bottom">
     <button id="scrollBOTTOM">
       <i class="material-icons">arrow_downward</i>
@@ -82,16 +84,99 @@
       updateProgressBar();
     };
 
-    function updateProgressBar() {
-      const progressBar = document.getElementById('progressBar');
-      const totalHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPosition = window.scrollY;
+<!-- Intro Landing Section with Image and Quote -->
+<div id="intro-landing" style="
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1000;
+   background: black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+ ">
+   <img src="https://cdn.pixabay.com/photo/2024/09/04/19/09/blackbird-9022655_1280.jpg" alt="Nature Image" class="intro-image" style="
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     z-index: -1;
+   ">
+   <div class="intro-quote" style="
+     position: absolute;
+     color: white;
+     font-size: 2rem;
+     font-weight: bold;
+     text-align: center;
+     z-index: 10;
+   ">
+     "Save Nature, Save Wildlife"
+   </div>
+</div>
 
-      const progressWidth = (scrollPosition / totalHeight) * 100;
 
-      progressBar.style.width = progressWidth + '%';
-    }
-  </script>
+<script>
+   window.addEventListener('load', function () {
+     const introLanding = document.getElementById('intro-landing');
+     const mainContent = document.querySelector('.main-content');
+     
+     // Start the slide-away animation
+     introLanding.style.animation = 'slideAway 2s ease-out forwards';
+ 
+     // After the animation, hide the intro and show the main content
+     setTimeout(() => {
+       introLanding.style.display = 'none';
+       mainContent.style.display = 'block'; // Show the main content
+       document.body.style.overflow = 'auto'; // Restore scrolling
+     }, 5000); // Match the animation duration (5 seconds)
+   });
+
+   // Inline keyframe animation
+   const style = document.createElement('style');
+   style.innerHTML = `
+     @keyframes slideAway {
+       0% {
+         transform: translateY(0);
+         opacity: 1;
+       }
+       100% {
+         transform: translateY(-100%);
+         opacity: 0;
+       }
+     }
+   `;
+   document.head.appendChild(style);
+</script>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: green;
+  width: 0;
+  z-index: 2000;
+"></div>
+
+<script>
+   window.onscroll = function () {
+     updateProgressBar();
+   };
+
+   function updateProgressBar() {
+     const progressBar = document.getElementById('progressBar');
+     const totalHeight = document.body.scrollHeight - window.innerHeight;
+     const scrollPosition = window.scrollY;
+
+     const progressWidth = (scrollPosition / totalHeight) * 100;
+
+     progressBar.style.width = progressWidth + '%';
+   }
+</script>
+
 
   <!--
     - #HEADER
@@ -179,13 +264,13 @@
 
            <li>
                 <a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>
-                      <span>Login</span>
+                      <span class="new_size">Login</span>
                       <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
             </li>
           <li>
             <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
-              <span>Register</span>
+              <span class="new_size">Register</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
@@ -251,10 +336,16 @@
 </div> -->
 
 
-<button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+<!-- <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+  <span>Donation</span>
+  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+</button> -->
+
+<button type="button"  class="donate-button" onclick="location.href='Donation.html';">
   <span>Donation</span>
   <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
 </button>
+
 <!-- Login -->
 <div id="openPopup" class="user-icon">
   <a href="user.html"><i class="fas fa-user"></i></a> 
@@ -313,8 +404,7 @@
     <i class="fa-solid fa-leaf"></i>
   </button> -->
 
-  <a href="#"><img src="./assets/images/upward-arrow.png" alt="" style="right: 1.33%; top: 88.88%; width: 70px;"
-      class="scroll-to-top"></a>
+
 
   <main>
     <article>
@@ -340,8 +430,16 @@
             <center>Defending Wildlife, One Paw at a Time</center>
           </p>
 
-          <div class="button-container">
+          <!-- <div class="button-container">
             <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+              <span>Donation</span>
+
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div> -->
+
+          <div class="button-container">
+            <button type="button" class="donate-button" onclick="location.href='Donation.html';">
               <span>Donation</span>
 
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -447,21 +545,21 @@
               <!-- Previous button -->
               <button class="prev-btn">&#10094;</button>
 
-              <div class="banner-img-container banner-carousel-frame banner-img-cont-1" index=1>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-1 zoom-effect" index=1>
                 <img src="./assets/images/about-banner-1.jpg" width="315" height="380" loading="lazy" alt="Tiger"
                   class="about-img w-100" />
               </div>
-              <div class="banner-img-container banner-carousel-frame banner-img-cont-2" index=2>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-2 zoom-effect" index=2>
                 <img src="./assets/images/about-banner-3.jpg" width="250" height="277" loading="lazy" alt="Elephant"
                   class="about-img w-100" />
               </div>
 
-              <div class="banner-img-container banner-carousel-frame banner-img-cont-3" index=3>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-3 zoom-effect" index=3>
                 <img src="./assets/images/about-banner-2.jpg" width="386" height="250" loading="lazy" alt="Panda"
                   class="about-img w-100" />
               </div>
 
-              <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-4 zoom-effect" index=4>
                 <img src="./assets/images/about-banner-4.jpg" width="315" height="380" loading="lazy" alt="Deer"
                   class="about-img w-100" />
               </div>
@@ -498,11 +596,11 @@
               </li>
 
               <li>
-                <button class="tab-btn" onclick="setActiveTab(this, 'vision')">Our Vision</button>
+                <button class="tab-btn active" onclick="setActiveTab(this, 'vision')">Our Vision</button>
               </li>
 
               <li>
-                <button class="tab-btn" onclick="setActiveTab(this, 'plan')">Next Plan</button>
+                <button class="tab-btn active" onclick="setActiveTab(this, 'plan')">Next Plan</button>
               </li>
 
             </ul>
@@ -563,10 +661,9 @@
               <h2>Basic Tier</h2>
             </b>
             <p class="amount">$10/month</p>
-            <p class = "benefits">Access to monthly newsletter<br>
-            Exclusive content <br>Early access to new features
-          </p>
-            
+
+            <p class="benefits">Contribute to wildlife care <br> receive digital badges and <br>monthly newsletters.
+
             <p onclick="location.href='Donation.html';" class="donate-button">Donate Now</p>
 
           </div>
@@ -575,7 +672,7 @@
               <h2>Supporter Tier</h2>
             </b>
             <p class="amount">$25/month</p>
-            <p class="benefits">All Basic Tier benefits<br>Personalised thank-you message</p>
+            <p class="benefits">Aid wildlife recovery, get <br> exclusive videos and <br>behind-the-scenes insights.</p>
             <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
           </div>
           <div class="card">
@@ -583,7 +680,7 @@
               <h2>Champion Tier</h2>
             </b>
             <p class="amount">$50/month</p>
-            <p class="benefits">All Suppoeter Tier benefits<br>Quarterly report on our impact</p>
+            <p class="benefits">Sponsor critical projects,  <br> enjoy special merchandise and <br>priority event access.</p>
             <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
           </div>
 
@@ -592,7 +689,7 @@
               <h2>Leader Tier</h2>
             </b>
             <p class="amount">$100/month</p>
-            <p class="benefits">All Champion Tier benefits<br>Invitation to exclusive events</p>
+            <p class="benefits">Lead wildlife conservation,<br> receive personalized tours and <br>lifetime  honorary membership.</p>
             <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
           </div>
         </div>
@@ -607,24 +704,27 @@
 
       <section class="section cta">
         <div class="container">
-
-          <div class="cta-content">
-            <h2 class="h2 section-title">324+ Trusted Global Partners</h2>
-
-            <button class="btn btn-outline" id="partnerButton">
-              <span style="padding : 20px; font-size : 17px;">Become a Partner</span>
-
-              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-            </button>
+          <div class="cta-wrapper">
+      
+            <!-- Central Content: Trusted Partners -->
+            <div class="cta-content">
+              <h2 id="partnerCount">0+ Trusted Global Partners</h2>
+              <button id="partnerButton">
+                <span>Become a Partner</span>
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+            </div>
+      
+            <!-- Single Image on the right side -->
+            <figure class="cta-image">
+              <img src="./assets/images/cta-banner.jpg" alt="Fox Image" class="img-cover">
+            </figure>
+      
           </div>
-
-          <figure class="cta-banner" style="box-shadow: 70px 70px 70px rgba(50,50,50,10);">
-            <img src="./assets/images/cta-banner.jpg" width="520" height="228" loading="lazy" alt="Fox"
-              class="img-cover">
-          </figure>
-
         </div>
       </section>
+      
+      
 
 
 
@@ -647,9 +747,9 @@
             We Work Differently to <strong>keep The World Safe</strong>
           </h2>
 
-          <ul class="service-list">
+          <div class="service-list">
 
-            <li>
+            <div>
               <div class="service-card" id="service-card1">
                   <div class="card-inner">
                       <div class="card-front">
@@ -676,9 +776,9 @@
                       </div>
                   </div>
               </div>
-          </li>
+            </div>
 
-          <li>
+          <div>
             <div class="service-card" id="service-card2">
                 <div class="card-inner">
                     <div class="card-front">
@@ -705,9 +805,9 @@
                     </div>
                 </div>
             </div>
-        </li>
+          </div>
     
-        <li>
+        <div>
             <div class="service-card" id="service-card3">
                 <div class="card-inner">
                     <div class="card-front">
@@ -734,9 +834,9 @@
                     </div>
                 </div>
             </div>
-        </li>
+          </div>
     
-        <li>
+        <div>
             <div class="service-card" id="service-card4">
                 <div class="card-inner">
                     <div class="card-front">
@@ -763,9 +863,9 @@
                     </div>
                 </div>
             </div>
-        </li>
+          </div>
 
-          </ul>
+        </div>
 
         </div>
       </section>
@@ -831,7 +931,12 @@
 
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                        <!-- <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                          <span>Donation</span>
+                          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                        </button> -->
+
+                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -899,7 +1004,7 @@
 
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -966,7 +1071,7 @@
 
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1034,7 +1139,7 @@
 
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1057,7 +1162,7 @@
               <div class="post-form">
                 <h2>Share Your Thoughts</h2>
                 <textarea id="postContent" placeholder="Write your message..."></textarea>
-                <button onclick="GiveAlert()" id="submitPost">Submit</button>
+                <button class="submit-button" onclick="GiveAlert()" id="submitPost">Submit</button>
               </div>
               <div class="posts">
                  <h2>Discussions</h2>
@@ -1079,7 +1184,7 @@
               <p class="section-subtitle">
                 <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
 
-                <span>Our Testimonials</span>
+                <span style="color:azure">Our Testimonials</span>
               </p>
 
               <h2 class="h2 section-title">
@@ -1178,7 +1283,7 @@
 
 
       <!-- Trigger Button for Modal -->
-      <button id="openModalBtn" class="btn" onclick="location.href='learnmore.html';" style="display: block; margin: 0 auto;">Learn More</button>
+      <button id="openModalBtn" class="donate-button" onclick="location.href='learnmore.html';" style="display: block; margin: 0 auto;">Learn More</button>
 
       <!-- Modal Structure -->
       <div id="myModal" class="modal">
@@ -1234,7 +1339,7 @@
 
 
                       <button class="btn btn-white view-event-btn" id="viewEvent1">
-                        <span>View Events</span>
+                        <span class="donate-button2">View Events</span>
 
 
                         <!-- <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
@@ -1270,7 +1375,7 @@
 
 
                       <button class="btn btn-white view-event-btn" id="viewEvent2">
-                        <span>View Events</span>
+                        <span class="donate-button2">View Events</span>
 
 
 
@@ -1306,7 +1411,7 @@
                       <button class="btn btn-white view-event-btn" id="viewEvent3">
 
 
-                        <span>View Events</span>
+                        <span class="donate-button2">View Events</span>
 
                         <!-- </button> -->
 
@@ -1316,8 +1421,8 @@
 
               </ul>
 
-              <button class="btn btn-secondary" onclick="location.href='moreevents.html';">
-                <span>More Events</span>
+              <button class="donate-button2" onclick="location.href='moreevents.html';">
+                <span >More Events</span>
 
                 <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
               </button>
@@ -1466,6 +1571,30 @@
                 </p>
               </div>
             </div>
+
+            <div class="faq mt-5">
+              <div
+                class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between"
+                onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
+                  onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">How to verify your Payment ?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
+              </div>
+              <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
+                <p>You can verify your Payment by following of the methods :
+                  <br>
+                  <strong>Check Bank Account :</strong> 1st check your Bank App or website if the payment is debit or not and credit to right account or not.
+                  <br>
+                  <strong>Check Payment App</strong> 2nd check the application you used to proceed the payment. Their you will get the transextion id. Copy that id and come to aur website.
+                  <br>
+                  <strong>Share Your Thought</strong> Come to this section and paste the transextion id with your name and bank name. We will verify the details and let you know in few days.
+
+                  We care about every animal and human are no less than any animal. So, you can trust on us.
+                </p>
+              </div>
+            </div>
+
+
           </section>
 
 
@@ -1810,13 +1939,28 @@
         navbar.classList.remove("active"); // Remove the class to hide the menu
       });
     });
+    window.onload = function() {
+        let countEl = document.getElementById('partnerCount');
+    let count = 0;
+    let target = 324;
+    let speed = 40; // Reduce the speed for faster increment
 
+    const counter = setInterval(function() {
+      if (count < target) {
+        count++;
+        countEl.textContent = count + "+ Trusted Global Partners";
+      } else {
+        clearInterval(counter);
+      }
+    }, speed);
+  };
   });
   </script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./assets/js/script.js"></script>
+  <script src="//code.tidio.co/wtslouasr8yln5hjnm7ytob3kl8mkylx.js" async></script>
 
 </body>
 
