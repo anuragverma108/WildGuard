@@ -1101,7 +1101,7 @@ html {
 }
 
 .tab-btn.active {
-  background-color: var(--granite-gray);
+  background-color: var(--pistachio);
   color: var(--white);
 }
 
@@ -1183,13 +1183,13 @@ html {
 
 .service-list {
   display: grid;
-  gap: 30px;
+  gap: 10px;
 }
 
 .service-card {
   background-color: var(--white);
   text-align: center;
-  padding: 45px 40px;
+  padding: 30px 40px;
   border-radius: 2px;
   outline: 3px solid transparent;
   box-shadow: var(--card-shadow);
