@@ -1,21 +1,18 @@
 .impact-gallery {
     text-align: center;
     margin: 40px 0;
-
 }
 
 .gallery {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
 }
 
 .gallery-item {
     width: 30%;
     margin: 10px;
     transition: transform 0.3s;
-
 }
 
 .gallery-item:hover {
@@ -48,13 +45,14 @@
 .card {
     background-color: #ffffff;
     border-radius: 10px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-shadow: 0 1px 10px #91be55;
     margin: 20px;
     padding: 20px;
     width: 250px;
     transition: transform 0.3s;
-
 }
 
 .card:hover {
@@ -63,19 +61,18 @@
 
 .card h2 {
     color: #5a5a5a;
-
 }
+
 .amount {
     font-size: 1.5em;
     margin: 10px 0;
     color: #2c3e50;
-
 }
+
 .benefits {
     font-size: 0.9em;
     color: #7f8c8d;
     margin: 15px 0;
-
 }
 
 .donate-button {
@@ -88,44 +85,41 @@
     font-size: 1em;
     transition: background-color 0.3s;
 }
+
 .donate-button:hover {
     background-color: #2980b9;
-
 }
 
 .boxx {
     font-size: 27px;
-
 }
-
-
 
 .user-icon {
     position: relative;
     display: inline-block;
     cursor: pointer;
-  }
+}
 
-  .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: white;
     min-width: 10px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
-  .dropdown-content a {
+}
+
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
+}
 
-  .dropdown-content a:hover {
+.dropdown-content a:hover {
     background-color: #f1f1f1;
+}
 
-  }
-
-  .user-icon:hover .dropdown-content {
+.user-icon:hover .dropdown-content {
     display: block;
-  }
+}
