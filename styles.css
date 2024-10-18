@@ -11,7 +11,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color:#333;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -23,6 +23,11 @@ header {
     font-size: 28px;
     font-weight: bold;
 }
+.navbar{
+    display: flex;
+    flex-direction: row;
+    line-height: 1rem;
+}
 
 nav ul {
     list-style: none;
@@ -30,7 +35,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 0 0 110px;
 }
 
 nav ul li a {
