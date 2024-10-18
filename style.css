@@ -132,3 +132,31 @@
   .user-icon:hover .dropdown-content {
     display: block;
   }
+
+  @media only screen and (max-width: 600px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    #fontt, .boxx {
+        font-size: 20px;
+    }
+
+    .donate-button {
+        width: 100%;
+    }
+}
