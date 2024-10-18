@@ -129,3 +129,18 @@
   .user-icon:hover .dropdown-content {
     display: block;
   }
+  
+  .container{
+    transform: translateX(-100%);
+    animation: moveRight 1s ease forwards;
+  }
+
+  @keyframes moveRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+  
