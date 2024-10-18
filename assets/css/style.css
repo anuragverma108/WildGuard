@@ -1187,8 +1187,11 @@ html {
 }
 
 .service-list {
-  display: grid;
-  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* gap: 30px; */
 }
 
 .service-card {
@@ -1329,6 +1332,10 @@ html {
 
 .card-content {
   width: 60%;
+}
+
+.card .benefits{
+  height: 100px;
 }
 
 .donate-list > li{
@@ -2857,8 +2864,8 @@ data{
 .service-card {
   perspective: 1000px;
   cursor: pointer;
-  width: 270px; /* Adjust the width as needed */
-  height: 400px; /* Adjust the height as needed */
+  width: 300px; /* Adjust the width as needed */
+  height: 500px; /* Adjust the height as needed */
   margin: 20px; /* Add some margin around the card */
 }
 
@@ -2877,7 +2884,9 @@ data{
 .card-text {
   font-size: 1em; /* Text font size */
   text-align: center; /* Center align text */
-  margin: 10px 0; /* Space above and below the text */
+  /* margin: 10px 0; Space above and below the text */
+  height: 120px;
+  padding: 0 7px;
 }
 
 .btn-link {
