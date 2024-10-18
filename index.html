@@ -676,24 +676,27 @@
 
       <section class="section cta">
         <div class="container">
-
-          <div class="cta-content">
-            <h2 class="h2 section-title">324+ Trusted Global Partners</h2>
-
-            <button class="btn btn-outline" id="partnerButton">
-              <span style="padding : 20px; font-size : 17px;">Become a Partner</span>
-
-              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-            </button>
+          <div class="cta-wrapper">
+      
+            <!-- Central Content: Trusted Partners -->
+            <div class="cta-content">
+              <h2 id="partnerCount">0+ Trusted Global Partners</h2>
+              <button id="partnerButton">
+                <span>Become a Partner</span>
+                <ion-icon name="heart-outline"></ion-icon>
+              </button>
+            </div>
+      
+            <!-- Single Image on the right side -->
+            <figure class="cta-image">
+              <img src="./assets/images/cta-banner.jpg" alt="Fox Image" class="img-cover">
+            </figure>
+      
           </div>
-
-          <figure class="cta-banner" style="box-shadow: 70px 70px 70px rgba(50,50,50,10);">
-            <img src="./assets/images/cta-banner.jpg" width="520" height="228" loading="lazy" alt="Fox"
-              class="img-cover">
-          </figure>
-
         </div>
       </section>
+      
+      
 
 
 
@@ -1908,7 +1911,21 @@
         navbar.classList.remove("active"); // Remove the class to hide the menu
       });
     });
+    window.onload = function() {
+        let countEl = document.getElementById('partnerCount');
+    let count = 0;
+    let target = 324;
+    let speed = 40; // Reduce the speed for faster increment
 
+    const counter = setInterval(function() {
+      if (count < target) {
+        count++;
+        countEl.textContent = count + "+ Trusted Global Partners";
+      } else {
+        clearInterval(counter);
+      }
+    }, speed);
+  };
   });
   </script>
 
