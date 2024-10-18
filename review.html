@@ -8,106 +8,268 @@
     <link rel="stylesheet" href="./assets/css/review.css">
     <script src="./assets/js/review.js" defer></script>
 
-    <!-- font Awsome cdn  -->
+    <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Card and Rating Section */
+        .bodys {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .card a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .card h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .star {
+            font-size: 32px;
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .star:hover, .star.active {
+            color: #FFD700;
+        }
+
+        #output {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            resize: none;
+            font-size: 16px;
+            color: #333;
+        }
+
+        button[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        #popup {
+            display: none;
+            margin-top: 15px;
+            color: #28a745;
+        }
+
+        /* Reviews Section */
+        main {
+            text-align: center;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .slider {
+            width: 80%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .slide-row {
+            display: flex;
+            width: 100%;
+            transition: all 0.5s;
+        }
+
+        .slide-col {
+            width: 25%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .content p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .content h2 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .content p:last-child {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .hero img {
+            width: 100%;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        /* Slider Controls */
+        .indicator {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn.active {
+            background-color: #007bff;
+        }
+
+    </style>
 </head>
 
 <body>
 
     <div class="bodys">
-    <!-- <div class="rating-form">
-    </div> -->
-    <div class="card">
-        <a href="./index.html"> <i class="fa-solid fa-house" ></i></a>
-        <h2>Rate Us</h2>
-        <br />
-        <span onclick="gfg(1)" class="star" >★
-        </span>
-        <span onclick="gfg(2)" class="star">★
-        </span>
-        <span onclick="gfg(3)" class="star">★
-        </span>
-        <span onclick="gfg(4)" class="star">★
-        </span>
-        <span onclick="gfg(5)" class="star">★
-        </span>
-        <h5 id="output">
-            Rating is: 0/5
-        </h5>
+        <div class="card">
+            <a href="./index.html"> <i class="fa-solid fa-house"></i></a>
+            <h2>Rate Us</h2>
+            <br />
+            <span onclick="gfg(1)" class="star">★</span>
+            <span onclick="gfg(2)" class="star">★</span>
+            <span onclick="gfg(3)" class="star">★</span>
+            <span onclick="gfg(4)" class="star">★</span>
+            <span onclick="gfg(5)" class="star">★</span>
+            <h5 id="output">Rating is: 0/5</h5>
 
+            <form id="ratingForm">
+                <textarea id="reviewInput" placeholder="Enter Review ....." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
 
-        <form id="ratingForm">
-            <textarea id="reviewInput" placeholder="Enter Review ....." required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-       
-        <div id="popup">Review Submitted !</div>
+            <div id="popup">Review Submitted!</div>
+        </div>
     </div>
-
-</div>
 
     <main>
         <h1>Reviews</h1>
-    
         <div class="slider">
-          <div class="slide-row" id="slide-row">
-            <div class="slide-col">
-              <div class="content">
-                <p>Zen Doan is a business analyst, entrepreneur and media proprietor, and investor. She also known as the best selling book author.</p>
-                <h2>Zen</h2>
-                <p>Author</p>
-              </div>
-              <div class="hero">
-                <img src="https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg" alt="avatar">
-              </div>
-            </div>
-    
-            <div class="slide-col">
-              <div class="content">
-                <p>Jonathan Koletic is an American internet entrepreneur and media proprietor, and investor. He is the founder of the multi-national technology company Treymont.</p>
-                <h2>Jonathan</h2>
-                <p>Treymont Inc.</p>
-              </div>
-              <div class="hero">
-                <img src="https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg" alt="avatar">
-              </div>
-            </div>
-    
-            <div class="slide-col">
-              <div class="content">
-                <p>Charlie Green is an European entrepreneur and media consultant, and investor. He is the founder of the Hallmark Inc.</p>
-                <h2>Charlie</h2>
-                <p>Hallmark Inc.</p>
-              </div>
-              <div class="hero">
-                <img src="https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg" alt="avatar">
-              </div>
-            </div>
-    
-            <div class="slide-col">
-              <div class="content">
-                <p>Sarah Dam is an American internet entrepreneur and media proprietor, and investor. She is the founder of the multi-national technology company Zara.</p>
-                <h2>Sarah</h2>
-                <p>Zara Inc.</p>
-              </div>
-              <div class="hero">
-                <img src="https://github.com/ecemgo/ecemgo/assets/13468728/55116c98-5f9a-4b0a-9fdb-4911b52d5ef3" alt="avatar">
-              </div>
-            </div>
-    
-          </div>
-        </div>
-    
-        <div class="indicator">
-          <span class="btn active"></span>
-          <span class="btn"></span>
-          <span class="btn"></span>
-          <span class="btn"></span>
-        </div>
-    
-      </main>
+            <div class="slide-row" id="slide-row">
+                <div class="slide-col">
+                    <div class="content">
+                        <p>Zen Doan is a business analyst, entrepreneur, and media proprietor, known for her best-selling book.</p>
+                        <h2>Zen</h2>
+                        <p>Author</p>
+                    </div>
+                    <div class="hero">
+                        <img src="https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg" alt="avatar">
+                    </div>
+                </div>
 
+                <div class="slide-col">
+                    <div class="content">
+                        <p>Jonathan Koletic is an American entrepreneur and founder of the technology company Treymont.</p>
+                        <h2>Jonathan</h2>
+                        <p>Treymont Inc.</p>
+                    </div>
+                    <div class="hero">
+                        <img src="https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg" alt="avatar">
+                    </div>
+                </div>
+
+                <div class="slide-col">
+                    <div class="content">
+                        <p>Charlie Green is the founder of Hallmark Inc., a leading media and consultancy firm.</p>
+                        <h2>Charlie</h2>
+                        <p>Hallmark Inc.</p>
+                    </div>
+                    <div class="hero">
+                        <img src="https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg" alt="avatar">
+                    </div>
+                </div>
+
+                <div class="slide-col">
+                    <div class="content">
+                        <p>Sarah Dam is the founder of Zara Inc., a multinational technology company.</p>
+                        <h2>Sarah</h2>
+                        <p>Zara Inc.</p>
+                    </div>
+                    <div class="hero">
+                        <img src="https://github.com/ecemgo/ecemgo/assets/13468728/55116c98-5f9a-4b0a-9fdb-4911b52d5ef3" alt="avatar">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="indicator">
+            <span class="btn active"></span>
+            <span class="btn"></span>
+            <span class="btn"></span>
+            <span class="btn"></span>
+        </div>
+    </main>
 
 </body>
+
 </html>
