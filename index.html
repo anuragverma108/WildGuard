@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylesss.css">
 
   <title>WildGuard - Give Love for Saving World Animals</title>
 
@@ -233,10 +234,16 @@
 </div> -->
 
 
-<button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+<!-- <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+  <span>Donation</span>
+  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+</button> -->
+
+<button type="button"  class="donate-button" onclick="location.href='donate.html';">
   <span>Donation</span>
   <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
 </button>
+
 <!-- Login -->
 <div id="openPopup" class="user-icon">
   <a href="user.html"><i class="fas fa-user"></i></a> 
@@ -322,8 +329,16 @@
             <center>Defending Wildlife, One Paw at a Time</center>
           </p>
 
-          <div class="button-container">
+          <!-- <div class="button-container">
             <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+              <span>Donation</span>
+
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </div> -->
+
+          <div class="button-container">
+            <button type="button" class="donate-button" onclick="location.href='donate.html';">
               <span>Donation</span>
 
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -813,7 +828,12 @@
 
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                        <!-- <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                          <span>Donation</span>
+                          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                        </button> -->
+
+                        <button type="button" class="donate-button" onclick="location.href='donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -881,7 +901,7 @@
 
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                        <button type="button" class="donate-button" onclick="location.href='donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -948,7 +968,7 @@
 
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                        <button type="button" class="donate-button" onclick="location.href='donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1016,7 +1036,7 @@
 
                         </div>
 
-                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
+                        <button type="button" class="donate-button" onclick="location.href='donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1039,7 +1059,7 @@
               <div class="post-form">
                 <h2>Share Your Thoughts</h2>
                 <textarea id="postContent" placeholder="Write your message..."></textarea>
-                <button onclick="GiveAlert()" id="submitPost">Submit</button>
+                <button  onclick="GiveAlert()" id="submitPost">Submit</button>
               </div>
               <div class="posts">
                  <h2>Discussions</h2>
@@ -1160,7 +1180,7 @@
 
 
       <!-- Trigger Button for Modal -->
-      <button id="openModalBtn" class="btn" onclick="location.href='learnmore.html';" style="display: block; margin: 0 auto;">Learn More</button>
+      <button id="openModalBtn" class="donate-button" onclick="location.href='learnmore.html';" style="display: block; margin: 0 auto;">Learn More</button>
 
       <!-- Modal Structure -->
       <div id="myModal" class="modal">
@@ -1216,7 +1236,7 @@
 
 
                       <button class="btn btn-white view-event-btn" id="viewEvent1">
-                        <span>View Events</span>
+                        <span class="donate-button2">View Events</span>
 
 
                         <!-- <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
@@ -1252,7 +1272,7 @@
 
 
                       <button class="btn btn-white view-event-btn" id="viewEvent2">
-                        <span>View Events</span>
+                        <span class="donate-button2">View Events</span>
 
 
 
@@ -1288,7 +1308,7 @@
                       <button class="btn btn-white view-event-btn" id="viewEvent3">
 
 
-                        <span>View Events</span>
+                        <span class="donate-button2">View Events</span>
 
                         <!-- </button> -->
 
@@ -1298,8 +1318,8 @@
 
               </ul>
 
-              <button class="btn btn-secondary" onclick="location.href='moreevents.html';">
-                <span>More Events</span>
+              <button class="donate-button2" onclick="location.href='moreevents.html';">
+                <span >More Events</span>
 
                 <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
               </button>
