@@ -212,10 +212,16 @@
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary mt-3 btn-block">
+        <button type="submit" class="btn btn-primary mt-3 btn-block" onclick="btnAlertBox()">
           Submit Donation
         </button>
       </form>
+
+      <script>
+        function btnAlertBox() {
+          alert("Thank you for yout donation!");
+        }
+        </script>
 
       <!-- Donation Summary -->
       <div class="donation-summary mt-5" id="donationSummary">
