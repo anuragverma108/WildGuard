@@ -1,331 +1,856 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="about.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <title>WildGuard - About Us</title>
     <style>
-        /* General Reset and Box Sizing */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      /* General Reset and Box Sizing */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f2f5f1;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      h2 {
+        font-family: 'Merriweather', serif;
+        font-size: 2.5rem;
+        color: #2d4739;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #333;
+        margin-top: 10px;
+      }
+
+      /* nav bar */
+      .navbar {
+        width: 100%;
+        height: 80px;
+        background-color: black;
+        position: sticky;
+        top: 0; 
+        z-index: 1000;
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+      }
+
+      ul, li {
+        display: flex;
+        justify-content:space-evenly;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(7, 156, 7);
+        text-decoration: none;
+        padding-right:45%;
+        font-weight:bolder;
+     }
+
+     .navbar-list {
+        display: flex;
+        list-style: none;
+        gap: 20px; 
+    }
+
+    .navbar-link {
+        color:rgb(216, 183, 35);
+        text-decoration: none;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        font-weight: bolder;
+    }
+
+    .anton-regular {
+        font-family: "Anton", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+      /* Nature-themed Background */
+      .about-section {
+        background: url('https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+          no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        position: relative;
+        font-family: "Anton", sans-serif;
+      }
+
+      .about-overlay {
+        background: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Semi-transparent overlay for readability */
+        padding: 40px;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      /* Container */
+      .container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 50px 0;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 50px;
+      }
+
+      .text-content,
+      .image-content {
+        flex-basis: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .text-content h2 {
+        font-size: 2rem;
+        color: #2d4739;
+      }
+
+      /* Image Styling */
+      .image-content img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .image-content img:hover {
+        transform: scale(1.05); /* Zoom effect on hover */
+      }
+
+      /* Typing effect for about section */
+      #paragraph1,
+      #paragraph2 {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        opacity: 0.9;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .row {
+          flex-direction: column;
         }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f2f5f1;
-            color: #333;
-            line-height: 1.6;
+        .text-content,
+        .image-content {
+          flex-basis: 100%;
+          margin-bottom: 20px;
         }
 
         h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 2.5rem;
-            color: #2d4739;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #333;
-            margin-top: 10px;
-        }
-
-        /* Nature-themed Background */
-        .about-section {
-            background: url('https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            position: relative;
-        }
-
-        .about-overlay {
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        /* Container */
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 50px 0;
-        }
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 50px;
-        }
-
-        .text-content, .image-content {
-            flex-basis: 45%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+          font-size: 2rem;
         }
 
         .text-content h2 {
-            font-size: 2rem;
-            color: #2d4739;
+          font-size: 1.75rem;
         }
+      }
 
-        /* Image Styling */
-        .image-content img {
-            width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
+      /* Values Section */
+      .values-section {
+        background-color: #fff;
+        padding: 50px 0;
+      }
 
-        .image-content img:hover {
-            transform: scale(1.05); /* Zoom effect on hover */
-        }
+      .values-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-family: 'Merriweather', serif;
+        font-size: 2.5rem;
+        color: #2d4739;
+      }
 
-        /* Typing effect for about section */
-        #paragraph1, #paragraph2 {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            opacity: 0.9;
-        }
+      .value-box {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-            }
+      .value-box-center {
+        display: flex;
+        justify-content: center; /* Center the third image */
+        margin-bottom: 30px;
+      }
 
-            .text-content, .image-content {
-                flex-basis: 100%;
-                margin-bottom: 20px;
-            }
+      .value-item {
+        flex-basis: 48%; /* Make both items take up roughly half the container's width */
+        text-align: center;
+      }
 
-            h2 {
-                font-size: 2rem;
-            }
+      .value-item img {
+        width: 100%;
+        height: 80%;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+      }
 
-            .text-content h2 {
-                font-size: 1.75rem;
-            }
-        }
+      .value-item img:hover {
+        transform: scale(1.05); /* Zoom effect on hover */
+      }
 
-        /* Values Section */
-        .values-section {
-            background-color: #fff;
-            padding: 50px 0;
-        }
-
-        .values-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-family: 'Merriweather', serif;
-            font-size: 2.5rem;
-            color: #2d4739;
-        }
-
+      /* Responsive Design for Smaller Screens */
+      @media (max-width: 768px) {
         .value-box {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-        }
-
-        .value-box-center {
-            display: flex;
-            justify-content: center; /* Center the third image */
-            margin-bottom: 30px;
+          flex-direction: column;
+          align-items: center;
         }
 
         .value-item {
-            flex-basis: 48%; /* Make both items take up roughly half the container's width */
-            text-align: center;
+          flex-basis: 100%;
+          margin-bottom: 20px;
         }
 
-        .value-item img {
-            width: 100%;
-            height: auto;
-            max-width: 500px; /* Adjust the maximum width */
-            margin-bottom: 20px;
-            border-radius: 10px;
+        .value-box-center {
+          margin-top: 20px;
         }
-
-        /* Responsive Design for Smaller Screens */
-        @media (max-width: 768px) {
-            .value-box {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .value-item {
-                flex-basis: 100%;
-                margin-bottom: 20px;
-            }
-
-            .value-box-center {
-                margin-top: 20px;
-            }
-            .team-member {
-                flex-basis: 45%;
-            }
-        }
-        /* Team Section */
-        .team-section {
-            background-color: #fff;
-            padding: 50px 0;
-        }
-
-        .team-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .team-members {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
         .team-member {
-            flex-basis: 30%;
-            text-align: center;
-            margin-bottom: 20px;
+          flex-basis: 45%;
         }
+      }
+      /* Team Section */
+      .team-section {
+        background-color: #fff;
+        padding: 50px 0;
+      }
 
-        .team-member img {
-            width: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease-in-out;
-        }
+      .team-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
 
-        .team-member img:hover {
-            transform: scale(1.1); /* Zoom effect on hover */
-        }
+      .team-members {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
 
-        
+      .team-member {
+        flex-basis: 30%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .team-member img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .team-member img:hover {
+        transform: scale(1.1); /* Zoom effect on hover */
+      }
+
+      /* footer section */
+
+      .footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 0;
+  /* Reduced padding */
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  /* Added max-width for better alignment */
+  margin: 0 auto;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-left h3 {
+  color: #98c379;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.footer-middle h4,
+.footer-right h4 {
+  color: #98c379;
+  font-size: 1.6rem;
+}
+
+.footer-middle h4 {
+  margin-bottom: 10px;
+}
+
+.footer-right h4 {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer-middle ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-middle ul li {
+  margin-bottom: 8px;
+}
+
+.footer-middle ul li a {
+  color: #bbbbbb;
+  text-decoration: none;
+}
+
+.footer-middle ul li a:hover {
+  color: #98c379;
+}
+
+.footer-right form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-right input {
+  padding: 10px;
+  border: 1px solid #98c379;
+  border-radius: 4px;
+  width: 100%;
+  /* Adjusted width */
+}
+
+.footer-right button {
+  background-color: #98c379;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.footer-right button:hover {
+  background-color: #81a864;
+}
+
+.footer-social-icons {
+  margin-top: 20px;
+  display: flex;
+  /* Aligns icons horizontally */
+  flex-direction: column;
+  justify-content: left;
+  gap: 15px;
+  /* Space between icons */
+  align-items: left;
+}
+
+.footer-social-icons .message {
+  font-size: 2rem;
+  color: #709157;
+  text-align: left;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social-icons a {
+  color: #bbbbbb;
+  font-size: 2rem;
+}
+
+.footer-social-icons a:hover {
+  color: #98c379;
+}
+
+.footer-bottom {
+  background-color: #0f0f0f;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 1.3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar {
+  margin-top: 0px;
+  width: 100%;
+  height: 0.2vh;
+  margin-top: 0px;
+}
+
+.filled {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgb(17, 173, 2),
+    rgb(99, 255, 109)
+  );
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  /* Adjust the width as per your needs */
+  max-width: 1200px;
+  padding-left: 20px;
+}
+
+.footer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom p,
+.footer-bottom ul {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: #98c379;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #81a864;
+}
+
+.footer-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    width: 100%;
+  }
+
+  .footer-right form {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-right input {
+    width: 100%;
+  }
+
+  .footer-right button {
+    width: 100%;
+  }
+
+  .quick-links {
+    flex-direction: column;
+    /* Stack quick links vertically on smaller screens */
+  }
+
+  .footer-middle,
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 94vw;
+    margin-top: 6px;
+  }
+
+  .footer-right {
+    gap: 10px;
+  }
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 480px) {
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    text-align: center;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-right input,
+  .footer-right button {
+    width: fit-content;
+  }
+
+  .footer-bottom {
+    font-size: 1.2rem;
+  }
+
+  .footer-social-icons a {
+    font-size: 1.4rem;
+  }
+}
+
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <nav class="navbar" data-navbar>
+      <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <a href="index.html" class="logo">WildGuard</a>
+      <ul class="navbar-list">
+        <li>
+          <a href="index.html" class="navbar-link active" data-nav-link>
+            <span class="new_size">Home</span>
+
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html" class="navbar-link" data-nav-link>
+            <span class="new_size">About</span>
+
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="donate.html" class="navbar-link" data-nav-link>
+            <span class="new_size">Donate</span>
+
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="event1.html" class="navbar-link" data-nav-link>
+            <span class="new_size">Event</span>
+
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="Contact.html" class="navbar-link" data-nav-link>
+            <span class="new_size">Contact</span>
+
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <script>
+            document
+              .getElementById('registerLink')
+              .addEventListener('click', function (e) {
+                e.preventDefault();
+                window.location.href = 'register.html';
+              });
+            document
+              .getElementById('loginLink')
+              .addEventListener('click', function (e) {
+                e.preventDefault();
+                window.location.href = 'login.html';
+              });
+          </script>
+        </li>
+      </ul>
+    </nav>
 
     <!-- About Us Section -->
     <section id="about" class="about-section">
-        <div class="about-overlay">
-            <h2 style="color: white;">About Us</h2>
-            <p id="paragraph1" style="color: white;"></p> <!-- Empty initially, will be filled by JavaScript -->
-            <p id="paragraph2" style="color: white;"></p> <!-- Empty initially, will be filled by JavaScript -->
-        </div>
+      <div class="about-overlay">
+        <h2 style="color: white">About Us</h2>
+        <p id="paragraph1" style="color: white"></p>
+        <!-- Empty initially, will be filled by JavaScript -->
+        <p id="paragraph2" style="color: white"></p>
+        <!-- Empty initially, will be filled by JavaScript -->
+      </div>
     </section>
 
     <section>
-        <div class="container">
-            <!-- Row 1: Vision on the right, Image on the left -->
-            <div class="row">
-                <div class="image-content">
-                    <img src="https://images.pexels.com/photos/34231/antler-antler-carrier-fallow-deer-hirsch.jpg?auto=compress&cs=tinysrgb&w=600" alt="Wild Animal">
-                </div>
-                <div class="text-content">
-                    <h2>Our Vision</h2>
-                    <p>At WildGuard, we envision a world where wildlife thrives in harmony with human activity. Our efforts are focused on conservation, awareness, and sustainable initiatives that promote the well-being of animals and their habitats. By protecting endangered species and preserving biodiversity, we aim to create a future where every animal has a safe, thriving environment to call home.</p>
-                </div>
-            </div>
-
-            <!-- Row 2: Mission on the left, Image on the right -->
-            <div class="row">
-                <div class="text-content">
-                    <h2>Our Mission</h2>
-                    <p>Our mission is to actively protect wildlife through education, conservation programs, and direct action. We are dedicated to restoring natural ecosystems and advocating for stronger policies that safeguard the most vulnerable species. By partnering with local communities, governments, and global organizations, we work to inspire change and create sustainable solutions for wildlife.</p>
-                </div>
-                <div class="image-content">
-                    <img src="https://images.pexels.com/photos/144234/bull-landscape-nature-mammal-144234.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wild Animal">
-                </div>
-            </div>
+      <div class="container">
+        <!-- Row 1: Vision on the right, Image on the left -->
+        <div class="row">
+          <div class="image-content">
+            <img
+              src="https://images.pexels.com/photos/34231/antler-antler-carrier-fallow-deer-hirsch.jpg?auto=compress&cs=tinysrgb&w=600"
+              alt="Wild Animal"
+            />
+          </div>
+          <div class="text-content">
+            <h2>Our Vision</h2>
+            <p>
+              At WildGuard, we envision a world where wildlife thrives in
+              harmony with human activity. Our efforts are focused on
+              conservation, awareness, and sustainable initiatives that promote
+              the well-being of animals and their habitats. By protecting
+              endangered species and preserving biodiversity, we aim to create a
+              future where every animal has a safe, thriving environment to call
+              home.
+            </p>
+          </div>
         </div>
+
+        <!-- Row 2: Mission on the left, Image on the right -->
+        <div class="row">
+          <div class="text-content">
+            <h2>Our Mission</h2>
+            <p>
+              Our mission is to actively protect wildlife through education,
+              conservation programs, and direct action. We are dedicated to
+              restoring natural ecosystems and advocating for stronger policies
+              that safeguard the most vulnerable species. By partnering with
+              local communities, governments, and global organizations, we work
+              to inspire change and create sustainable solutions for wildlife.
+            </p>
+          </div>
+          <div class="image-content">
+            <img
+              src="https://images.pexels.com/photos/144234/bull-landscape-nature-mammal-144234.jpeg?auto=compress&cs=tinysrgb&w=600"
+              alt="Wild Animal"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Core Values Section -->
     <section class="values-section">
-        <div class="container">
-            <h2>Our Core Values</h2>
-            <div class="value-box">
-                <div class="value-item">
-                    <img src="https://as2.ftcdn.net/v2/jpg/05/65/79/53/1000_F_565795322_RZvxdtwV490ARO2AvaFxR9CQamuXVJOB.jpg" alt="Conservation Icon">
-                    <p><strong>Conservation</strong></p>
-                    <p>Protecting and preserving wildlife and their habitats for future generations.</p>
-                </div>
-                <div class="value-item">
-                    <img src="assets/images/partner-3.png" alt="Community Icon">
-                    <p><strong>Community</strong></p>
-                    <p>Engaging with local communities to foster understanding and stewardship of the natural world.</p>
-                </div>
-            </div>
-            <div class="value-box-center">
-                <div class="value-item">
-                    <img src="https://wallpapercave.com/wp/wp8046449.jpg" alt="Sustainability Icon">
-                    <p><strong>Sustainability</strong></p>
-                    <p>Promoting sustainable practices to ensure a balanced coexistence with nature.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2>Our Core Values</h2>
+        <div class="value-box">
+          <div class="value-item">
+            <img
+              src="https://as2.ftcdn.net/v2/jpg/05/65/79/53/1000_F_565795322_RZvxdtwV490ARO2AvaFxR9CQamuXVJOB.jpg"
+              alt="Conservation Icon"
+            />
+            <p><strong>Conservation</strong></p>
+            <p>
+              Protecting and preserving wildlife and their habitats for future
+              generations.
+            </p>
+          </div>
+          <div class="value-item">
+            <img src="./assets/images/community.jpg" alt="Community Icon" />
+            <p><strong>Community</strong></p>
+            <p>
+              Engaging with local communities to foster understanding and
+              stewardship of the natural world.
+            </p>
+          </div>
         </div>
-    </section>
-    <hr>
-     <!-- Our Team Section -->
-     <section class="team-section">
-        <div class="container">
-            <h2>Meet Our Team</h2>
-            <div class="team-members">
-                <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member 1">
-                    <h3>John Doe</h3>
-                    <p>Founder & CEO</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team Member 2">
-                    <h3>Jane Smith</h3>
-                    <p>Lead Biologist</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Team Member 3">
-                    <h3>Mark Allen</h3>
-                    <p>Conservation Officer</p>
-                </div>
-            </div>
+        <div class="value-box-center">
+          <div class="value-item">
+            <img
+              src="https://wallpapercave.com/wp/wp8046449.jpg"
+              alt="Sustainability Icon"
+            />
+            <p><strong>Sustainability</strong></p>
+            <p>
+              Promoting sustainable practices to ensure a balanced coexistence
+              with nature.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
+    <hr />
+
+    <!-- Our Team Section -->
+    <section class="team-section">
+      <div class="container">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+          <div class="team-member">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Team Member 1"
+            />
+            <h3>John Doe</h3>
+            <p>Founder & CEO</p>
+          </div>
+          <div class="team-member">
+            <img
+              src="https://randomuser.me/api/portraits/women/45.jpg"
+              alt="Team Member 2"
+            />
+            <h3>Jane Smith</h3>
+            <p>Lead Biologist</p>
+          </div>
+          <div class="team-member">
+            <img
+              src="https://randomuser.me/api/portraits/men/35.jpg"
+              alt="Team Member 3"
+            />
+            <h3>Mark Allen</h3>
+            <p>Conservation Officer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer id="footer" class="footer">
+        <div class="container footer-container">
+          <div class="footer-left">
+            <h3>
+              <a href="#" class="logo">WildGuard</a>
+            </h3>
+            <p>WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our
+              mission to create a sustainable future for the planet's most vulnerable creatures.</p>
+          </div>
+          <div class="footer-middle">
+            <h4>Quick Links</h4>
+            <div class="quick-links">
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="./Contact.html">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-right">
+            <div class="">
+              <a href="review.html">
+                <button type="submit">🌟Rating/Review🌟</button>
+              </a>
+    
+            </div>
+            <div class="subscribe-form">
+              <form action="#">
+                <input type="email" class="email-input" placeholder="Your email address">
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+            <div class="footer-social-icons">
+              <div class="social-links">
+                <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="https://x.com/"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="https://www.linkedin.com/"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="https://www.youtube.com/"><ion-icon name="logo-youtube"></ion-icon></a>
+              </div>
+              <div class="message">Stay Connected</div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="footer-bottom" style="display: inline;">
+          <p>© 2024 <a href="copyright.html" style="display: inline;">WildGuard</a> All Rights Reserved</p>
+          <p>
+            <a href="./terms-of-use.html" class="footer-link" style="display: inline;">Terms of Service</a> |
+            <a href="./privacy-policy.html" class="footer-link" style="display: inline;">Privacy Policy</a>
+          </p>
+        </div>
+    
+    
+    
+      </footer>
 
     <script>
-        // Typing effect function
-        function typeText(element, text, delay = 50) {
-            let index = 0;
-            element.innerHTML = '';
-            element.style.visibility = 'visible'; // Make the paragraph visible once typing starts
-            const interval = setInterval(() => {
-                if (index < text.length) {
-                    element.innerHTML += text.charAt(index);
-                    index++;
-                } else {
-                    clearInterval(interval);
-                }
-            }, delay);
-        }
+      // Typing effect function
+      function typeText(element, text, delay = 50) {
+        let index = 0;
+        element.innerHTML = '';
+        element.style.visibility = 'visible'; // Make the paragraph visible once typing starts
+        const interval = setInterval(() => {
+          if (index < text.length) {
+            element.innerHTML += text.charAt(index);
+            index++;
+          } else {
+            clearInterval(interval);
+          }
+        }, delay);
+      }
 
-        // Call typing effect for each paragraph
-        document.addEventListener("DOMContentLoaded", function () {
-            const paragraph1 = document.getElementById("paragraph1");
-            const paragraph2 = document.getElementById("paragraph2");
+      // Call typing effect for each paragraph
+      document.addEventListener('DOMContentLoaded', function () {
+        const paragraph1 = document.getElementById('paragraph1');
+        const paragraph2 = document.getElementById('paragraph2');
 
-            // Text content to be typed out
-            const text1 = "At WildGuard, we are passionate about protecting and preserving the world’s wildlife. Our mission is simple: to conserve natural habitats, protect endangered species, and promote a sustainable coexistence with nature.";
-            const text2 = "By supporting communities, engaging in conservation initiatives, and advocating for environmental responsibility, we aim to create a future where nature and humanity thrive together.";
+        // Text content to be typed out
+        const text1 =
+          'At WildGuard, we are passionate about protecting and preserving the world’s wildlife. Our mission is simple: to conserve natural habitats, protect endangered species, and promote a sustainable coexistence with nature.';
+        const text2 =
+          'By supporting communities, engaging in conservation initiatives, and advocating for environmental responsibility, we aim to create a future where nature and humanity thrive together.';
 
-            // Start typing effect
-            typeText(paragraph1, text1);
-            setTimeout(() => typeText(paragraph2, text2), text1.length * 50 + 1000); // Delay second paragraph
-        });
+        // Start typing effect
+        typeText(paragraph1, text1);
+        setTimeout(() => typeText(paragraph2, text2), text1.length * 50 + 1000); // Delay second paragraph
+      });
     </script>
-</body>
+  </body>
 </html>
