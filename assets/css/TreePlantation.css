@@ -197,7 +197,7 @@ body {
   
   .help-item {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -211,8 +211,19 @@ body {
   
   /* Icon styling */
   .help-icon img {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 90px;
+    margin-bottom: 20px;
+  }
+  
+  .helping-icon img{
+    width: 160px;
+    height: 120px;
+  }
+
+  .help-green-icon img{
+    width: 80px;
+    height: 80px;
     margin-bottom: 15px;
   }
   
