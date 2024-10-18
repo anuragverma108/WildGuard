@@ -1,0 +1,158 @@
+body {
+    background: rgb(91, 120, 91);
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+}
+
+.container {
+    position: relative;
+
+    @media (max-width: 600px) {
+        // padding: 1rem;
+        width: 90%;
+    }
+
+    width: 50%;
+    padding: 4rem;
+    border-radius: 1rem;
+    font-family: Poppins;
+    background: white;
+
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .profile {
+
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+
+        img {
+            width: 125px;
+            border-radius: 50%;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            font-size: 2rem;
+
+            p {
+                margin: 0;
+            }
+
+            .email,
+            .bio {
+                font-size: 1.25rem;
+                color: darkslategray;
+            }
+
+        }
+    }
+
+    .badges {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: 600px) {
+            justify-content: flex-start;
+        }
+
+        ul {
+            padding: 0;
+            width: 100%;
+            align-items: center;
+
+
+
+            list-style: none;
+            justify-content: space-between;
+
+            .icons {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+
+                li {
+                    display: flex;
+                    gap: 0.5em;
+
+                    @media (max-width: 600px) {
+                        flex-direction: column;
+                        justify-content: flex-start;
+                    }
+
+                    align-items: center;
+                    text-transform: capitalize;
+                    font-size: 1.5rem;
+
+                    img {
+                        @media (max-width: 600px) {
+                            width: 2.5rem;
+                        }
+
+                        width: 3rem;
+                    }
+
+                    p {
+                        @media (max-width: 600px) {
+                            font-size: 1rem;
+                        }
+
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.wildGuardBadge {
+    background: forestgreen;
+    border-radius: 50%;
+    color: white;
+    padding: 1rem;
+    border: 3px solid darkgreen;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    :hover {
+        transform: scale(1.2);
+        cursor: pointer;
+        transition: ease-in-out;
+        transition-duration: 300ms;
+    }
+}
+
+.social-media {
+    margin-top: 2rem;
+    text-align: center;
+
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+
+        li {
+            img {
+                width: 2.5rem; // Adjust size as needed
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}

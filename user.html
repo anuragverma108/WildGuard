@@ -1,133 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #f7f7f7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .user-container {
-      width: 100%;
-      max-width: 400px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      text-align: center;
-    }
-
-    .user-container img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-
-    .user-container h1 {
-      font-size: 24px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .user-container p {
-      color: #777;
-      margin-bottom: 20px;
-    }
-
-    .user-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    .user-info div {
-      text-align: center;
-    }
-
-    .user-info div h3 {
-      font-size: 18px;
-      color: #333;
-    }
-
-    .user-info div p {
-      color: #777;
-      font-size: 14px;
-    }
-
-    .btn-logout {
-      background-color: #a4db75;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-logout:hover {
-      background-color: #87c358;
-    }
-
-/* responsive design for different viewports */
-    @media (max-width: 600px) {
-      .user-container {
-        padding: 15px;
-        max-width: 90%;
-      }
-
-      .user-container h1 {
-        font-size: 20px;
-      }
-
-      .user-info div h3 {
-        font-size: 16px;
-      }
-
-      .btn-logout {
-        font-size: 14px;
-        padding: 8px 15px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="user.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>WildGuard</title>
 </head>
-<body>
-  <div class="user-container">
-    <img src="https://randomuser.me/api/portraits/thumb/men/77.jpg" alt="User Profile Pictures">
-    <h1>Arman Bhadoriya</h1>
-    <p>arman@gmail.com</p>
 
-    <div class="user-info">
-      <div>
-        <h3>120</h3>
-        <p>Followers</p>
-      </div>
-      <div>
-        <h3>80</h3>
-        <p>Following</p>
-      </div>
-      <div>
-        <h3>15</h3>
-        <p>Posts</p>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img src="assets/images/user profile photo.png" alt="profile photo">
+      <div class="text">
+        <p class="name">John Smith</p>
+        <p class="email">johnsmith@wildguard@gmail.com</p>
+        <p class="bio">Wildlife enthusiast dedicated to protecting endangered species and promoting ecological balance.
+          Proud
+          supporter of
+          WildGuard's mission!</p>
       </div>
     </div>
-
-    <button class="btn-logout">Logout</button>
+    <div class="badges">
+      <ul>
+        <div class="icons">
+          <li>
+            <img src="assets/images/icons/followers.svg" alt="followers ">
+            <p>Followers</p>
+            <p>103k</p>
+          </li>
+          <li>
+            <img src="assets/images/icons/following.svg" alt="following">
+            <p>following</p>
+            <p>234K</p>
+          </li>
+          <li>
+            <img src="assets/images/icons/posts.svg" alt="posts">
+            <p>Posts</p>
+            <p>234</p>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <div class="wildGuardBadge">
+      <p>WildGuard</p>
+    </div>
+    <div class="social-media">
+      <h3>Connect with Me</h3>
+      <ul>
+        <li>
+          <a href="https://facebook.com" target="_blank">
+            <img src="assets/images/icons/facebook.svg" alt="Facebook">
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com" target="_blank">
+            <img src="assets/images/icons/twitter.svg" alt="Twitter">
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com" target="_blank">
+            <img src="assets/images/icons/instagram.svg" alt="Instagram">
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com" target="_blank">
+            <img src="assets/images/icons/linkedin.svg" alt="LinkedIn">
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </body>
+
 </html>

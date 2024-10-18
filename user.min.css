@@ -1,0 +1,180 @@
+body {
+  background: rgb(91, 120, 91);
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+  padding: 4rem;
+  border-radius: 1rem;
+  font-family: Poppins;
+  background: white;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
+.container .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .profile img {
+  width: 125px;
+  border-radius: 50%;
+}
+.container .profile .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 2rem;
+}
+.container .profile .text p {
+  margin: 0;
+}
+.container .profile .text .email,
+.container .profile .text .bio {
+  font-size: 1.25rem;
+  color: darkslategray;
+}
+.container .badges {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+@media (max-width: 600px) {
+  .container .badges {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+.container .badges ul {
+  padding: 0;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.container .badges ul .icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.container .badges ul .icons li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+@media (max-width: 600px) {
+  .container .badges ul .icons li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+.container .badges ul .icons li img {
+  width: 3rem;
+}
+@media (max-width: 600px) {
+  .container .badges ul .icons li img {
+    width: 2.5rem;
+  }
+}
+.container .badges ul .icons li p {
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .container .badges ul .icons li p {
+    font-size: 1rem;
+  }
+}
+
+.wildGuardBadge {
+  background: forestgreen;
+  border-radius: 50%;
+  color: white;
+  padding: 1rem;
+  border: 3px solid darkgreen;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.wildGuardBadge :hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+
+.social-media {
+  margin-top: 2rem;
+  text-align: center;
+}
+.social-media h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.social-media ul {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5rem;
+}
+.social-media ul li img {
+  width: 2.5rem;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.social-media ul li img:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
