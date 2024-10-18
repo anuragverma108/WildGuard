@@ -4,6 +4,25 @@
 
 }
 
+#scrollBOTTOM{
+    position: fixed;
+    right: 30px;
+    top: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #321dce;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#scrollBOTTOM:active{
+    background-color: #35c91e;
+}
+
+
 .gallery {
     display: flex;
     justify-content: space-around;
