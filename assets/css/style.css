@@ -1397,7 +1397,9 @@ html {
 .card-content {
   width: 60%;
 }
-
+.card .benefits {
+  height: 100px;
+}
 .donate-list > li {
   margin-bottom: 300px;
 }
