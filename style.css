@@ -75,7 +75,7 @@
     font-size: 0.9em;
     color: #7f8c8d;
     margin: 15px 0;
-
+    min-height: 8rem;
 }
 
 .donate-button {
@@ -85,9 +85,12 @@
     color: white;
     cursor: pointer;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 15px;
     transition: background-color 0.3s;
 }
+
+
+
 .donate-button:hover {
     background-color: #2980b9;
 
@@ -129,3 +132,31 @@
   .user-icon:hover .dropdown-content {
     display: block;
   }
+
+  @media only screen and (max-width: 600px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    #fontt, .boxx {
+        font-size: 20px;
+    }
+
+    .donate-button {
+        width: 100%;
+    }
+}
