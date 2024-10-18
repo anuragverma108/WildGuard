@@ -741,9 +741,6 @@ body {
   font-weight: var(--fw-500);
 }
 
-@media (min-width: 1200px) {
-
-
 
 .progress-box {
   background-color: var(--cultured);

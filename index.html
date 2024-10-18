@@ -320,52 +320,42 @@
 
 <!-- Login -->
 <div id="openPopup" class="user-icon">
-  <a href="user.html"><i class="fas fa-user"></i></a> 
-  <div class="dropdown-content" id="profileDropdown">
-    <a href="user.html">Profile</a>
-    <a href="/">Logout</a>
-  </div> 
-  </div>
-
-        <!-- Popup -->
-        <div id="popup" class="popup">
-          <div class="popup-content">
-            <span class="close-button" id="closePopup">&times;</span>
-            <div class="tabs">
-              <button class="tab-button active" id="loginTab">Login</button>
-              <button class="tab-button" id="signupTab">Signup</button>
-            </div>
-            <div class="form-container">
-              <form id="loginForm">
-                <div class="form_wrapper">
-                  <div class="form-fields--login">
-                    <input class="form-input" type="email" placeholder="Email" required />
-                    <input class="form-input" type="password" placeholder="Password" required />
-                    <button type="submit">Login</button>
-                  </div>
-                  <div class="form-img">
-                    <img src="./assets/images/animals.jpg" alt="" srcset="">
-                  </div>
-                </div>
-              </form>
-              <form id="signupForm" style="display: none;">
-                <div class="form_wrapper">
-                  <div class="form-fields--signup">
-                    <input class="form-input" type="text" placeholder="Username" required />
-                    <input class="form-input" type="email" placeholder="Email" required />
-                    <input class="form-input" type="password" placeholder="Password" required />
-                    <button type="submit">Signup</button>
-                  </div>
-                  <div class="form-img">
-                    <img src="./assets/images/cta-banner.jpg" alt="" srcset="">
-                  </div>
-                </div>
-
-              </form>
-            </div>
+  <img src="assets/images/user.png" class="user-pic" alt="User Profile" onclick="toggleMenu()" width="100px" height="100px">
+  <div class="sub-menu-wrap" id="submenu">
+      <div class="sub-menu">
+          <div class="user-info">
+              <img src="assets/images/user.png" alt="User">
+              <h3>Sebastian</h3>
           </div>
-        </div>
+          <hr>
+          <a href="user.html" class="sub-menu-link">
+              <img src="assets/images/profile.png" alt="Edit Profile">
+              <p>Edit Profile</p>
+              <span>&gt;</span>
+          </a>
+          <a href="#" class="sub-menu-link">
+              <img src="assets/images/setting.png" alt="Settings">
+              <p>Settings & Privacy</p>
+              <span>&gt;</span>
+          </a>
+          <a href="#" class="sub-menu-link">
+              <img src="assets/images/help.png" alt="Help">
+              <p>Help & Support</p>
+              <span>&gt;</span>
+          </a>
+          <a href="/" class="sub-menu-link">
+              <p>Logout</p>
+              <span></span>
+          </a>
       </div>
+  </div>
+  <script>
+    function toggleMenu() {
+        const submenu = document.getElementById("submenu");
+        submenu.classList.toggle("open-menu");
+    }
+  </script>
+</div>
 
   </header>
 
