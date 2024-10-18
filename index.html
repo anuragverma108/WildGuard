@@ -57,24 +57,98 @@
 </head>
 
 <body>
+<!-- Intro Landing Section with Image and Quote -->
+<div id="intro-landing" style="
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1000;
+   background: black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+ ">
+   <img src="https://cdn.pixabay.com/photo/2024/09/04/19/09/blackbird-9022655_1280.jpg" alt="Nature Image" class="intro-image" style="
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     z-index: -1;
+   ">
+   <div class="intro-quote" style="
+     position: absolute;
+     color: white;
+     font-size: 2rem;
+     font-weight: bold;
+     text-align: center;
+     z-index: 10;
+   ">
+     "Save Nature, Save Wildlife"
+   </div>
+</div>
+
+<script>
+   window.addEventListener('load', function () {
+     const introLanding = document.getElementById('intro-landing');
+     const mainContent = document.querySelector('.main-content');
+     
+     // Start the slide-away animation
+     introLanding.style.animation = 'slideAway 2s ease-out forwards';
  
-<!-- progress bar  -->
-  <div class="progress-bar" id="progressBar"></div>
-  <script>
-    window.onscroll = function () {
-      updateProgressBar();
-    };
+     // After the animation, hide the intro and show the main content
+     setTimeout(() => {
+       introLanding.style.display = 'none';
+       mainContent.style.display = 'block'; // Show the main content
+       document.body.style.overflow = 'auto'; // Restore scrolling
+     }, 5000); // Match the animation duration (5 seconds)
+   });
 
-    function updateProgressBar() {
-      const progressBar = document.getElementById('progressBar');
-      const totalHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPosition = window.scrollY;
+   // Inline keyframe animation
+   const style = document.createElement('style');
+   style.innerHTML = `
+     @keyframes slideAway {
+       0% {
+         transform: translateY(0);
+         opacity: 1;
+       }
+       100% {
+         transform: translateY(-100%);
+         opacity: 0;
+       }
+     }
+   `;
+   document.head.appendChild(style);
+</script>
 
-      const progressWidth = (scrollPosition / totalHeight) * 100;
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: green;
+  width: 0;
+  z-index: 2000;
+"></div>
 
-      progressBar.style.width = progressWidth + '%';
-    }
-  </script>
+<script>
+   window.onscroll = function () {
+     updateProgressBar();
+   };
+
+   function updateProgressBar() {
+     const progressBar = document.getElementById('progressBar');
+     const totalHeight = document.body.scrollHeight - window.innerHeight;
+     const scrollPosition = window.scrollY;
+
+     const progressWidth = (scrollPosition / totalHeight) * 100;
+
+     progressBar.style.width = progressWidth + '%';
+   }
+</script>
+
 
   <!--
     - #HEADER
