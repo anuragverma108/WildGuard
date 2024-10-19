@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="stylesss.css">
+  <link rel="stylesheet" href="./assets/css/searchbar.css">
 
   <title>WildGuard - Give Love for Saving World Animals</title>
 
@@ -264,19 +265,26 @@
         </ul>
 
       </nav>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search..." aria-label="Search" autocomplete="off"
+          oninput="handleInput()">
+        <button id="search-button" aria-label="Search" onclick="performSearch()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
 
       <div class="header-action">
 
-        <div class="input-group">
+        <!-- <div class="input-group">
           <input type="text" style="font-size: medium;" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
           <button class="btn btn-primary search-btn" aria-label="Search" onclick="performSearch()">
             <ion-icon name="search-outline"></ion-icon>
           </button>
           <div class="result-box" id="result-box">
-            <!-- Suggestions will be displayed here -->
+            Suggestions will be displayed here
           </div>
 
-        </div>
+        </div> -->
     
         <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 
