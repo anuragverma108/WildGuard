@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/about.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="about.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <title>WildGuard - About Us</title>
     <style>
-        /* General Reset and Box Sizing */
+        html {
+        scroll-behavior: smooth;
+    }
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +17,7 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f2f5f1;
+            background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
         }
@@ -28,227 +26,243 @@
             font-family: 'Merriweather', serif;
             font-size: 2.5rem;
             color: #2d4739;
+            margin-bottom: 1rem;
         }
 
         p {
             font-size: 1.1rem;
-            color: #333;
+            color: #555;
             margin-top: 10px;
         }
 
-        /* Nature-themed Background */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        /* About Section */
         .about-section {
-            background: url('https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
-            position: relative;
         }
 
         .about-overlay {
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+            background: rgba(45, 71, 57, 0.8);
             padding: 40px;
             border-radius: 15px;
             text-align: center;
+            max-width: 1000px;
+            min-width: 800px;
         }
 
-        /* Container */
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 50px 0;
+        .about-overlay h2 {
+            color: #fff;
+            margin-bottom: 1rem;
         }
 
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 50px;
-        }
-
-        .text-content, .image-content {
-            flex-basis: 45%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .text-content h2 {
-            font-size: 2rem;
-            color: #2d4739;
-        }
-
-        /* Image Styling */
-        .image-content img {
-            width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .image-content img:hover {
-            transform: scale(1.05); /* Zoom effect on hover */
-        }
-
-        /* Typing effect for about section */
         #paragraph1, #paragraph2 {
             font-size: 1.2rem;
             line-height: 1.8;
             opacity: 0.9;
+            margin-bottom: 1rem;
+            color: #fff;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-            }
-
-            .text-content, .image-content {
-                flex-basis: 100%;
-                margin-bottom: 20px;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .text-content h2 {
-                font-size: 1.75rem;
-            }
-        }
-
-        /* Values Section */
-        .values-section {
+        /* Vision and Mission Section */
+        .info-section {
             background-color: #fff;
-            padding: 50px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 50px;
         }
 
-        .values-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-family: 'Merriweather', serif;
-            font-size: 2.5rem;
-            color: #2d4739;
-        }
-
-        .value-box {
+        .info-row {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
-        .value-box-center {
-            display: flex;
-            justify-content: center; /* Center the third image */
-            margin-bottom: 30px;
+        .info-content, .info-image {
+            flex: 1;
+            padding: 40px;
         }
 
-        .value-item {
-            flex-basis: 48%; /* Make both items take up roughly half the container's width */
-            text-align: center;
-        }
-
-        .value-item img {
+        .info-image img {
             width: 100%;
-            height: auto;
-            max-width: 500px; /* Adjust the maximum width */
-            margin-bottom: 20px;
+            height: 100%;
+            object-fit: cover;
             border-radius: 10px;
             transition: transform 0.3s ease-in-out;
         }
 
-        .value-item img:hover {
-            transform: scale(1.05); /* Zoom effect on hover */
+        .info-image img:hover {
+            transform: scale(1.05);
         }
 
-        /* Responsive Design for Smaller Screens */
-        @media (max-width: 768px) {
-            .value-box {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .value-item {
-                flex-basis: 100%;
-                margin-bottom: 20px;
-            }
-
-            .value-box-center {
-                margin-top: 20px;
-            }
-            .team-member {
-                flex-basis: 45%;
-            }
+        /* Values Section */
+        .values-section {
+            background-color: #f1f8e9;
+            padding: 50px 0;
         }
+
+        .values-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .value-card {
+            flex-basis: calc(33.333% - 20px);
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2d4739;
+        }
+
         /* Team Section */
         .team-section {
             background-color: #fff;
             padding: 50px 0;
         }
 
-        .team-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
         .team-members {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
+            justify-content: space-around;
         }
 
         .team-member {
-            flex-basis: 30%;
+            flex-basis: calc(33.333% - 30px);
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
         }
 
         .team-member img {
-            width: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             margin-bottom: 15px;
-            transition: transform 0.3s ease-in-out;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .team-member img:hover {
-            transform: scale(1.1); /* Zoom effect on hover */
+        .team-member h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #2d4739;
         }
 
-        
+        .team-member p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .info-row {
+                flex-direction: column;
+            }
+
+            .value-card, .team-member {
+                flex-basis: 100%;
+            }
+        }
+
+        /* Add this CSS for scroll animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Apply to sections */
+section {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+section.in-view {
+    opacity: 1;
+    transform: none;
+}
+
     </style>
 </head>
 <body>
-
     <!-- About Us Section -->
     <section id="about" class="about-section">
         <div class="about-overlay">
-            <h2 style="color: white;">About Us</h2>
-            <p id="paragraph1" style="color: white;"></p> <!-- Empty initially, will be filled by JavaScript -->
-            <p id="paragraph2" style="color: white;"></p> <!-- Empty initially, will be filled by JavaScript -->
+            <h2>About Us</h2>
+            <p id="paragraph1"></p>
+            <p id="paragraph2"></p>
         </div>
     </section>
 
-    <section>
-        <div class="container">
-            <!-- Row 1: Vision on the right, Image on the left -->
-            <div class="row">
-                <div class="image-content">
+    <!-- Vision and Mission Section -->
+    <section class="container">
+        <div class="info-section">
+            <div class="info-row">
+                <div class="info-image">
                     <img src="https://images.pexels.com/photos/34231/antler-antler-carrier-fallow-deer-hirsch.jpg?auto=compress&cs=tinysrgb&w=600" alt="Wild Animal">
                 </div>
-                <div class="text-content">
+                <div class="info-content">
                     <h2>Our Vision</h2>
                     <p>At WildGuard, we envision a world where wildlife thrives in harmony with human activity. Our efforts are focused on conservation, awareness, and sustainable initiatives that promote the well-being of animals and their habitats. By protecting endangered species and preserving biodiversity, we aim to create a future where every animal has a safe, thriving environment to call home.</p>
                 </div>
             </div>
+        </div>
 
-            <!-- Row 2: Mission on the left, Image on the right -->
-            <div class="row">
-                <div class="text-content">
+        <div class="info-section">
+            <div class="info-row">
+                <div class="info-content">
                     <h2>Our Mission</h2>
                     <p>Our mission is to actively protect wildlife through education, conservation programs, and direct action. We are dedicated to restoring natural ecosystems and advocating for stronger policies that safeguard the most vulnerable species. By partnering with local communities, governments, and global organizations, we work to inspire change and create sustainable solutions for wildlife.</p>
                 </div>
-                <div class="image-content">
+                <div class="info-image">
                     <img src="https://images.pexels.com/photos/144234/bull-landscape-nature-mammal-144234.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wild Animal">
                 </div>
             </div>
@@ -259,30 +273,28 @@
     <section class="values-section">
         <div class="container">
             <h2>Our Core Values</h2>
-            <div class="value-box">
-                <div class="value-item">
+            <div class="values-container">
+                <div class="value-card">
                     <img src="https://as2.ftcdn.net/v2/jpg/05/65/79/53/1000_F_565795322_RZvxdtwV490ARO2AvaFxR9CQamuXVJOB.jpg" alt="Conservation Icon">
-                    <p><strong>Conservation</strong></p>
+                    <h3>Conservation</h3>
                     <p>Protecting and preserving wildlife and their habitats for future generations.</p>
                 </div>
-                <div class="value-item">
-                    <img src="assets/images/partner-3.png" alt="Community Icon">
-                    <p><strong>Community</strong></p>
+                <div class="value-card">
+                    <img src="https://img.freepik.com/free-vector/illustration-community-concept_53876-20649.jpg" alt="Community Icon">
+                    <h3>Community</h3>
                     <p>Engaging with local communities to foster understanding and stewardship of the natural world.</p>
                 </div>
-            </div>
-            <div class="value-box-center">
-                <div class="value-item">
+                <div class="value-card">
                     <img src="https://wallpapercave.com/wp/wp8046449.jpg" alt="Sustainability Icon">
-                    <p><strong>Sustainability</strong></p>
+                    <h3>Sustainability</h3>
                     <p>Promoting sustainable practices to ensure a balanced coexistence with nature.</p>
                 </div>
             </div>
         </div>
     </section>
-    <hr>
-     <!-- Our Team Section -->
-     <section class="team-section">
+
+    <!-- Our Team Section -->
+    <section class="team-section">
         <div class="container">
             <h2>Meet Our Team</h2>
             <div class="team-members">
@@ -306,11 +318,10 @@
     </section>
 
     <script>
-        // Typing effect function
         function typeText(element, text, delay = 50) {
             let index = 0;
             element.innerHTML = '';
-            element.style.visibility = 'visible'; // Make the paragraph visible once typing starts
+            element.style.visibility = 'visible';
             const interval = setInterval(() => {
                 if (index < text.length) {
                     element.innerHTML += text.charAt(index);
@@ -321,19 +332,31 @@
             }, delay);
         }
 
-        // Call typing effect for each paragraph
         document.addEventListener("DOMContentLoaded", function () {
             const paragraph1 = document.getElementById("paragraph1");
             const paragraph2 = document.getElementById("paragraph2");
 
-            // Text content to be typed out
-            const text1 = "At WildGuard, we are passionate about protecting and preserving the world’s wildlife. Our mission is simple: to conserve natural habitats, protect endangered species, and promote a sustainable coexistence with nature.";
+            const text1 = "At WildGuard, we are passionate about protecting and preserving the world's wildlife. Our mission is simple: to conserve natural habitats, protect endangered species, and promote a sustainable coexistence with nature.";
             const text2 = "By supporting communities, engaging in conservation initiatives, and advocating for environmental responsibility, we aim to create a future where nature and humanity thrive together.";
 
-            // Start typing effect
             typeText(paragraph1, text1);
-            setTimeout(() => typeText(paragraph2, text2), text1.length * 50 + 1000); // Delay second paragraph
+            setTimeout(() => typeText(paragraph2, text2), text1.length * 50 + 1000);
         });
+
+    const sections = document.querySelectorAll('section');
+
+    function handleScroll() {
+        sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight * 0.85;
+
+            if (sectionTop < triggerPoint) {
+                section.classList.add('in-view');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll);
     </script>
 </body>
 </html>
