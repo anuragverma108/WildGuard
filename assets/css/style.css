@@ -3010,7 +3010,8 @@ data {
 }
 
 .service-card:hover .card-inner {
-  animation: rotateCard 2s forwards;
+  /*animation: rotateCard 2s forwards;*/
+  transform: rotateY(180deg);
 }
 
 @keyframes rotateCard {
