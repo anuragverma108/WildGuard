@@ -3,33 +3,31 @@
 ## Related Issue(s)
 
 Link any related issues or tasks, if applicable. Use the format `Fixes #issue_number` for issues that this pull request resolves.
-- Example: Fixes #51
+- Example: Fixes #1131
 
 **Description:**
-Please provide a summary of the changes made in this pull request. Describe the main purpose and the impact of the changes.
+Accurate Password mathcing  , A small enhancement on photos just after about.html , Password Strength cheking
 
-- [ ] Briefly explain the changes introduced.
-- [ ] Highlight any important aspects (such as new features, bug fixes, or refactoring).
-- [ ] Mention any files added, removed, or updated.
 
 **Key Changes:**
-List the key changes in this pull request (e.g., new files, modifications, or deletions):
-- [ ] Added: `<new-file>.html`
-- [ ] Updated: `<existing-file>.js`
+
+- [ ] Updated: `login.css , register.css , index.html , login.html,register.html`
 
 ## Screenshots/Videos (if applicable)
 
-Attach any relevant screenshots that help visualize the changes, especially if UI updates are involved.
+Hover Effect
 - [ ] Screenshot 1:
+![Screenshot 2024-10-17 144419](https://github.com/user-attachments/assets/7d082260-af62-494e-86c6-066d0e29c3ca)
 - [ ] Screenshot 2:
+small enhancement just a hover effect , but looks very good
+![Screenshot 2024-10-17 144739](https://github.com/user-attachments/assets/2ed370fd-cb63-4b5c-ba49-9f6cbd2e74ec)
 
 ## Testing
 
 Please describe how you tested your changes:
-- [ ] Unit Tests (if applicable)
-- [ ] Integration Tests
-- [ ] Manual Testing
- 
+- [ ] hover on Effect just on animalPhotos (Applied only for large screen like desktop (because i think pointer will only on desktop , no need to do on other css breakpoints))
+- [ ] every moment Password mathching in register.html
+- [ ] password Strength on register.html
 
 ## Type of Changes
 

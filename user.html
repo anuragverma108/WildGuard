@@ -1,133 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
 
-    body {
-      background-color: #f7f7f7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+    <!-- Add Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-    .user-container {
-      width: 100%;
-      max-width: 400px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      text-align: center;
-    }
+    <!-- Add icon library for social media icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    .user-container img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
 
-    .user-container h1 {
-      font-size: 24px;
-      font-weight: 600;
-      color: #333;
-    }
+      body {
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        flex-direction: column;
+        padding: 20px;
+      }
 
-    .user-container p {
-      color: #777;
-      margin-bottom: 20px;
-    }
+      .home-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
-    .user-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
+      .home-btn:hover {
+        background-color: #45a049;
+      }
 
-    .user-info div {
-      text-align: center;
-    }
-
-    .user-info div h3 {
-      font-size: 18px;
-      color: #333;
-    }
-
-    .user-info div p {
-      color: #777;
-      font-size: 14px;
-    }
-
-    .btn-logout {
-      background-color: #a4db75;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-logout:hover {
-      background-color: #87c358;
-    }
-
-/* responsive design for different viewports */
-    @media (max-width: 600px) {
       .user-container {
-        padding: 15px;
-        max-width: 90%;
+        width: 100%;
+        max-width: 400px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .user-container img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
       .user-container h1 {
-        font-size: 20px;
+        font-size: 26px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .user-container p.title {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .user-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .user-info div {
+        text-align: center;
       }
 
       .user-info div h3 {
-        font-size: 16px;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .user-info div p {
+        color: #777;
+        font-size: 14px;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 22px;
+        color: #555;
+        margin: 0 10px;
+        transition: color 0.3s, transform 0.3s;
+      }
+
+      a:hover {
+        color: #1db954;
+        transform: scale(1.1);
       }
 
       .btn-logout {
-        font-size: 14px;
-        padding: 8px 15px;
+        background-color: #1db954;
+        color: white;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-top: 15px;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="user-container">
-    <img src="https://randomuser.me/api/portraits/thumb/men/77.jpg" alt="User Profile Pictures">
-    <h1>Arman Bhadoriya</h1>
-    <p>arman@gmail.com</p>
 
-    <div class="user-info">
-      <div>
-        <h3>120</h3>
-        <p>Followers</p>
+      .btn-logout:hover {
+        background-color: #159f42;
+        transform: translateY(-2px);
+      }
+
+      .bio {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .bio h2 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .bio p {
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .skills {
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      .skills h2 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .skills ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .skills ul li {
+        background-color: #e0f7e0;
+        padding: 8px 12px;
+        border-radius: 20px;
+        display: inline-block;
+        margin: 5px;
+        font-size: 14px;
+        color: #2c662d;
+      }
+
+      .follow-more {
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      .follow-more h2 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .mini-cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .mini-card {
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 75px;
+        text-align: center;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 8px;
+      }
+
+      .mini-card img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 8px;
+      }
+
+      .mini-card p {
+        font-size: 12px;
+        color: #333;
+      }
+
+      .activity-feed {
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      .activity-feed h2 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .activity-feed ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .activity-feed ul li {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        font-size: 14px;
+        color: #555;
+      }
+
+      @media (max-width: 600px) {
+        .user-container {
+          padding: 15px;
+          max-width: 90%;
+        }
+
+        .user-info div h3 {
+          font-size: 16px;
+        }
+
+        .btn-logout {
+          font-size: 14px;
+          padding: 8px 15px;
+        }
+
+        .mini-card {
+          width: 60px;
+        }
+
+        .mini-card p {
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Home Button -->
+    <a href="index.html" class="home-btn">Home</a>
+
+    <div class="user-container">
+      <img
+        src="https://randomuser.me/api/portraits/thumb/men/77.jpg"
+        alt="User Profile Picture"
+      />
+      <h1>Arman Bhadoriya</h1>
+      <p class="title">CEO & Founder, Example</p>
+      <p>Harvard University</p>
+
+      <div class="user-info">
+        <div>
+          <h3>120</h3>
+          <p>Followers</p>
+        </div>
+        <div>
+          <h3>80</h3>
+          <p>Following</p>
+        </div>
+        <div>
+          <h3>15</h3>
+          <p>Posts</p>
+        </div>
       </div>
-      <div>
-        <h3>80</h3>
-        <p>Following</p>
+
+      <!-- Social Media Links -->
+      <div class="social-links">
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-facebook"></i></a>
       </div>
-      <div>
-        <h3>15</h3>
-        <p>Posts</p>
+
+      <!-- Contact Button -->
+      <button class="btn-logout">view more</button>
+
+      <!-- Bio Section -->
+      <div class="bio">
+        <h2>About Arman</h2>
+        <p>
+          Arman Bhadoriya is a tech enthusiast and entrepreneur with a passion
+          for creating innovative solutions. With a background in software
+          engineering, he has built a number of successful projects and startups
+          in the tech industry.
+        </p>
+      </div>
+
+      <!-- Skills Section -->
+      <div class="badges">
+        <h2>Badges</h2>
+        <div class="badge">First Animal Adopted</div>
+        <div class="badge">Top Contributor 2024</div>
+        <div class="badge">Community Builder</div>
+        <div class="badge">100 Days of Code</div>
+        <div class="badge">Beta Tester</div>
       </div>
     </div>
 
-    <button class="btn-logout">Logout</button>
-  </div>
-</body>
+    <!-- Follow More Section -->
+    <div class="follow-more">
+      <h2>Follow More</h2>
+      <div class="mini-cards">
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/women/65.jpg"
+            alt="User Profile"
+          />
+          <p>Sara</p>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/men/80.jpg"
+            alt="User Profile"
+          />
+          <p>John</p>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/women/47.jpg"
+            alt="User Profile"
+          />
+          <p>Emma</p>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/men/52.jpg"
+            alt="User Profile"
+          />
+          <p>Chris</p>
+        </div>
+        <div class="mini-card">
+          <img
+            src="https://randomuser.me/api/portraits/thumb/women/50.jpg"
+            alt="User Profile"
+          />
+          <p>Lisa</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity Feed Section -->
+    <div class="activity-feed">
+      <h2>Recent Activity</h2>
+      <ul>
+        <li>Arman shared a post about AI and its future in tech.</li>
+        <li>
+          Started following
+          <strong>Sara</strong>
+          and
+          <strong>John</strong>
+          .
+        </li>
+        <li>Updated profile picture.</li>
+        <li>
+          Commented on
+          <strong>Chris's</strong>
+          post.
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>

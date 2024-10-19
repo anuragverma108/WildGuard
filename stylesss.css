@@ -143,3 +143,52 @@
         margin-left: 5px; /* Space between text and icon */
     }
     
+
+    .submit-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 12px;
+        background-color: #91be55;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 15px;
+        text-decoration: none;
+        border: 1px solid #0078d4;
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.2s, box-shadow 0.2s;
+        position: relative; /* Required for ::before pseudo-element */
+        cursor: pointer;
+    }
+    
+    .submit-button::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border: 2px solid transparent; /* Start as invisible */
+        border-radius: 15px; /* Matches the button's roundness */
+        transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+        transform: scale(0.9); /* Shrinks initially */
+    }
+    
+    .submit-button:hover::before {
+        border-color: #0078d4; /* Blue border on hover */
+        transform: scale(1); /* Full size on hover */
+    }
+    
+    .submit-button:hover {
+        background-color: #7fa844; /* Slight color change */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    }
+    
+    .submit-button svg {
+        fill: white;
+        width: 10px;
+        height: 10px;
+        margin-left: 5px;
+    }

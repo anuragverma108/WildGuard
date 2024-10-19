@@ -1,113 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animal Organization Ratings</title>
-    <link rel="stylesheet" href="./assets/css/review.css">
+    <link rel="stylesheet" href="./assets/css/review.css" />
     <script src="./assets/js/review.js" defer></script>
 
     <!-- font Awsome cdn  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="bodys">
-    <!-- <div class="rating-form">
+      <!-- <div class="rating-form">
     </div> -->
-    <div class="card">
-        <a href="./index.html"> <i class="fa-solid fa-house" ></i></a>
+      <div class="card">
+        <a href="./index.html"><i class="fa-solid fa-house"></i></a>
         <h2>Rate Us</h2>
         <br />
-        <span onclick="gfg(1)" class="star" >★
-        </span>
-        <span onclick="gfg(2)" class="star">★
-        </span>
-        <span onclick="gfg(3)" class="star">★
-        </span>
-        <span onclick="gfg(4)" class="star">★
-        </span>
-        <span onclick="gfg(5)" class="star">★
-        </span>
-        <h5 id="output">
-            Rating is: 0/5
-        </h5>
-
+        <span onclick="gfg(1)" class="star">★</span>
+        <span onclick="gfg(2)" class="star">★</span>
+        <span onclick="gfg(3)" class="star">★</span>
+        <span onclick="gfg(4)" class="star">★</span>
+        <span onclick="gfg(5)" class="star">★</span>
+        <h5 id="output">Rating is: 0/5</h5>
 
         <form id="ratingForm">
-            <textarea id="reviewInput" placeholder="Enter Review ....." required></textarea>
-            <button type="submit">Submit</button>
+          <textarea
+            id="reviewInput"
+            placeholder="Write your Review"
+            required
+          ></textarea>
+          <button type="submit">Submit</button>
         </form>
-       
+
         <div id="popup">Review Submitted !</div>
+      </div>
     </div>
 
-</div>
-
     <main>
-        <h1>Reviews</h1>
-    
-        <div class="slider">
-          <div class="slide-row" id="slide-row">
-            <div class="slide-col">
-              <div class="content">
-                <p>Zen Doan is a business analyst, entrepreneur and media proprietor, and investor. She also known as the best selling book author.</p>
-                <h2>Zen</h2>
-                <p>Author</p>
-              </div>
-              <div class="hero">
-                <img src="https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg" alt="avatar">
-              </div>
+      <h1>Reviews</h1>
+
+      <div class="slider">
+        <div class="slide-row" id="slide-row">
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Zen Doan is a business analyst, entrepreneur and media
+                proprietor, and investor. She also known as the best selling
+                book author.
+              </p>
+              <h2>Zen</h2>
+              <p>Author</p>
             </div>
-    
-            <div class="slide-col">
-              <div class="content">
-                <p>Jonathan Koletic is an American internet entrepreneur and media proprietor, and investor. He is the founder of the multi-national technology company Treymont.</p>
-                <h2>Jonathan</h2>
-                <p>Treymont Inc.</p>
-              </div>
-              <div class="hero">
-                <img src="https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg" alt="avatar">
-              </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg"
+                alt="avatar"
+              />
             </div>
-    
-            <div class="slide-col">
-              <div class="content">
-                <p>Charlie Green is an European entrepreneur and media consultant, and investor. He is the founder of the Hallmark Inc.</p>
-                <h2>Charlie</h2>
-                <p>Hallmark Inc.</p>
-              </div>
-              <div class="hero">
-                <img src="https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg" alt="avatar">
-              </div>
+          </div>
+
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Jonathan Koletic is an American internet entrepreneur and media
+                proprietor, and investor. He is the founder of the
+                multi-national technology company Treymont.
+              </p>
+              <h2>Jonathan</h2>
+              <p>Treymont Inc.</p>
             </div>
-    
-            <div class="slide-col">
-              <div class="content">
-                <p>Sarah Dam is an American internet entrepreneur and media proprietor, and investor. She is the founder of the multi-national technology company Zara.</p>
-                <h2>Sarah</h2>
-                <p>Zara Inc.</p>
-              </div>
-              <div class="hero">
-                <img src="https://github.com/ecemgo/ecemgo/assets/13468728/55116c98-5f9a-4b0a-9fdb-4911b52d5ef3" alt="avatar">
-              </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg"
+                alt="avatar"
+              />
             </div>
-    
+          </div>
+
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Charlie Green is an European entrepreneur and media consultant,
+                and investor. He is the founder of the Hallmark Inc.
+              </p>
+              <h2>Charlie</h2>
+              <p>Hallmark Inc.</p>
+            </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg"
+                alt="avatar"
+              />
+            </div>
+          </div>
+
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Sarah Dam is an American internet entrepreneur and media
+                proprietor, and investor. She is the founder of the
+                multi-national technology company Zara.
+              </p>
+              <h2>Sarah</h2>
+              <p>Zara Inc.</p>
+            </div>
+            <div class="hero">
+              <img
+                src="https://github.com/ecemgo/ecemgo/assets/13468728/55116c98-5f9a-4b0a-9fdb-4911b52d5ef3"
+                alt="avatar"
+              />
+            </div>
           </div>
         </div>
-    
-        <div class="indicator">
-          <span class="btn active"></span>
-          <span class="btn"></span>
-          <span class="btn"></span>
-          <span class="btn"></span>
-        </div>
-    
-      </main>
+      </div>
 
-
-</body>
+      <div class="indicator">
+        <span class="btn active"></span>
+        <span class="btn"></span>
+        <span class="btn"></span>
+        <span class="btn"></span>
+      </div>
+    </main>
+  </body>
 </html>
