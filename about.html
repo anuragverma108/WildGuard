@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/about.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+
+ main
     <title>WildGuard - About Us</title>
     <style>
       /* General Reset and Box Sizing */
@@ -233,8 +244,56 @@
           margin-bottom: 20px;
         }
 
+
         .value-box-center {
           margin-top: 20px;
+        .value-item img {
+            width: 100%;
+            height: auto;
+            max-width: 500px; /* Adjust the maximum width */
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .value-item img:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .value-box {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .value-item {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+
+            .value-box-center {
+                margin-top: 20px;
+            }
+            .team-member {
+                flex-basis: 45%;
+            }
+        }
+        /* Team Section */
+        .team-section {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
         .team-member {
           flex-basis: 45%;
