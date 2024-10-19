@@ -91,6 +91,9 @@
     padding: 10px 20px;
     font-size: 15px;
     transition: background-color 0.3s;
+    display: flex;
+    gap: 6px;
+    align-items: center;
 }
 
 

@@ -595,7 +595,8 @@ html {
   left: 1px;
 }
 .new_size:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
+  transition-duration: 0.6s;
 }
 .navbar-link {
   color: var(--white);
@@ -611,12 +612,17 @@ html {
   align-items: center;
   padding-inline: 10px 15px;
   padding-block: 8px;
-  transition: var(--transition-1);
 }
 
-.navbar-link:is(:hover, :focus) {
+.navbar-link:hover {
   background-color: var(--pistachio);
-  transition: 1.5s ease-in-out;
+  transform: scale(1.1);
+  transition-duration: 500ms;
+}
+
+.navbar-link {
+  transform: scale(1);
+  transition-duration: 500ms;
 }
 
 .header-action {
@@ -2646,6 +2652,7 @@ data {
   .navbar-list {
     all: unset;
     display: flex;
+    align-items: center;
     gap: 10px;
   }
 
