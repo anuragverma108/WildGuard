@@ -1056,7 +1056,9 @@ html {
 .tab-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   margin-block: 25px 35px;
 }
 
@@ -1088,6 +1090,10 @@ html {
 .tab-btn.active:hover {
   background-color: var(--pistachio);
   color: var(--white);
+  scale: 1.2;
+  box-shadow: 10px 10px 11px rgba(33,33,33,.2);
+  /* transition: 1s all; */
+  border: 2px dotted black;
 }
 
 .tab-list {
@@ -1112,6 +1118,13 @@ html {
   color: var(--eerie-black-2);
   font-size: var(--fs-8);
   font-weight: var(--fw-500);
+}
+.tab-text:hover{
+  cursor: pointer;
+}
+#learn-btn:hover{
+  background-color: var(--pistachio);
+  transition: 1s all;
 }
 
 /*-----------------------------------*\
