@@ -799,6 +799,7 @@ body {
 
 .testi-content {
   padding: var(--section-padding) 15px;
+  margin: 50px;
 }
 
 .testi .section-title {
