@@ -50,6 +50,27 @@
     display: flex;
     margin-left: 35px;
 }
+.secDon{
+    padding-bottom: 0;
+}
+
+.formContainer{
+    margin-bottom: 100px;
+}
+
+.formContainer .container_1 h2{
+    padding-bottom: 20px;
+}
+
+.formContainer .container_1 .submit-button{
+    margin-top: 16px;
+}
+
+.formContainer .container_1 .posts h2{
+    font-weight: 500;
+    font-style: italic;
+}
+
 .testi{
     width: 91%;
     margin: auto;
