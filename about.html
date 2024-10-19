@@ -1,94 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Save World Animals</title>
-  <link rel="stylesheet" href="assets/css/about.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/about.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+
+    <title>WildGuard - About Us</title>
+    <style>
+        /* General Reset and Box Sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f5f1;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: #2d4739;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        /* Nature-themed Background */
+        .about-section {
+            background: url('https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .about-overlay {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .text-content, .image-content {
+            flex-basis: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-content h2 {
+            font-size: 2rem;
+            color: #2d4739;
+        }
+
+        /* Image Styling */
+        .image-content img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-content img:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        /* Typing effect for about section */
+        #paragraph1, #paragraph2 {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+
+            .text-content, .image-content {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* Values Section */
+        .values-section {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .values-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            color: #2d4739;
+        }
+
+        .value-box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .value-box-center {
+            display: flex;
+            justify-content: center; /* Center the third image */
+            margin-bottom: 30px;
+        }
+
+        .value-item {
+            flex-basis: 48%; /* Make both items take up roughly half the container's width */
+            text-align: center;
+        }
+
+        .value-item img {
+            width: 100%;
+            height: auto;
+            max-width: 500px; /* Adjust the maximum width */
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .value-item img:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .value-box {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .value-item {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+
+            .value-box-center {
+                margin-top: 20px;
+            }
+            .team-member {
+                flex-basis: 45%;
+            }
+        }
+        /* Team Section */
+        .team-section {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            flex-basis: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member img:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        
+    </style>
 </head>
 <body>
-<body>
 
-    <!-- Navbar Section -->
-    <nav class="navbar" data-navbar>
-        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-
-        <a href="#" class="logo">WildGuard</a>
-
-        <ul class="navbar-list">
-          <li>
-            <a href="./index.html" class="navbar-link active" data-nav-link>
-              <span>Home</span>
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="donate.html" class="navbar-link" data-nav-link>
-              <span>Donate</span>
-              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
-            </a>
-          </li>
-        </ul>
-    </nav>
-
-    <header class="hero-section">
-      <div class="hero-content">
-          <h1>Raise Your Hand to Save World Animals Life</h1>
-          <p>
-              Our mission is to provide the best care and support for animals in need, ensuring their safety and well-being.
-          </p>
-          <a href="donate.html">
-              <button class="btn-donate">Donate Now</button>
-          </a>
-      </div>
-  </header>
-  
-
-    <section class="mission-section">
-        <div class="container">
-            <h2>Our Mission</h2>
-            <p>We believe that every animal deserves a chance at a safe and healthy life. Through our initiatives, we aim to protect endangered species, rehabilitate injured wildlife, and educate communities on how to coexist with animals. Together, we can make a difference and give animals the life they deserve.</p>
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="about-overlay">
+            <h2 style="color: white;">About Us</h2>
+            <p id="paragraph1" style="color: white;"></p> <!-- Empty initially, will be filled by JavaScript -->
+            <p id="paragraph2" style="color: white;"></p> <!-- Empty initially, will be filled by JavaScript -->
         </div>
     </section>
 
-    <section class="charity-section">
+    <section>
         <div class="container">
-            <h2>Our Initiatives</h2>
-            <div class="charity-cards">
-                <div class="charity-card">
-                    <h3>Charity For Foods</h3>
-                    <p>
-                        Many animals suffer from malnutrition and hunger due to abandonment, habitat destruction, or overcrowding in shelters. Our "Charity For Foods" initiative focuses on providing nourishing meals to animals in shelters and wildlife rescue centers. We collaborate with local communities and businesses to distribute fresh food to animals in need, helping them recover their strength and health.
-                    </p>
+            <!-- Row 1: Vision on the right, Image on the left -->
+            <div class="row">
+                <div class="image-content">
+                    <img src="https://images.pexels.com/photos/34231/antler-antler-carrier-fallow-deer-hirsch.jpg?auto=compress&cs=tinysrgb&w=600" alt="Wild Animal">
                 </div>
-                <div class="charity-card">
-                    <h3>Charity For Education</h3>
-                    <p>
-                        Education is the key to long-term change. Our "Charity For Education" initiative raises awareness about animal rights and welfare. We host workshops in schools, colleges, and communities to teach the importance of empathy, respect, and responsibility toward animals. By educating the next generation, we hope to create a more compassionate world where animals are protected and cared for.
-                    </p>
+                <div class="text-content">
+                    <h2>Our Vision</h2>
+                    <p>At WildGuard, we envision a world where wildlife thrives in harmony with human activity. Our efforts are focused on conservation, awareness, and sustainable initiatives that promote the well-being of animals and their habitats. By protecting endangered species and preserving biodiversity, we aim to create a future where every animal has a safe, thriving environment to call home.</p>
                 </div>
-                <div class="charity-card">
-                    <h3>Charity For Water</h3>
-                    <p>
-                        Water is essential for life, and many animals, especially in arid regions, suffer from a lack of clean, drinkable water. Our "Charity For Water" initiative works to provide sustainable water sources for wildlife and animals in shelters. We install water tanks, purification systems, and community-managed water stations in areas where water is scarce, ensuring animals have access to this vital resource.
-                    </p>
+            </div>
+
+            <!-- Row 2: Mission on the left, Image on the right -->
+            <div class="row">
+                <div class="text-content">
+                    <h2>Our Mission</h2>
+                    <p>Our mission is to actively protect wildlife through education, conservation programs, and direct action. We are dedicated to restoring natural ecosystems and advocating for stronger policies that safeguard the most vulnerable species. By partnering with local communities, governments, and global organizations, we work to inspire change and create sustainable solutions for wildlife.</p>
                 </div>
-                <div class="charity-card">
-                    <h3>Charity For Medical</h3>
-                    <p>
-                        Countless animals suffer from injuries, illnesses, and diseases, often without access to veterinary care. Our "Charity For Medical" program ensures that these animals receive the medical attention they need. We provide funding for surgeries, vaccinations, rehabilitation, and ongoing care. We also partner with veterinarians and clinics to offer free or low-cost treatments to animals in crisis.
-                    </p>
+                <div class="image-content">
+                    <img src="https://images.pexels.com/photos/144234/bull-landscape-nature-mammal-144234.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wild Animal">
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer-section">
+    <!-- Core Values Section -->
+    <section class="values-section">
         <div class="container">
-            <p>&copy; 2024 Save World Animals. All rights reserved.</p>
+            <h2>Our Core Values</h2>
+            <div class="value-box">
+                <div class="value-item">
+                    <img src="https://as2.ftcdn.net/v2/jpg/05/65/79/53/1000_F_565795322_RZvxdtwV490ARO2AvaFxR9CQamuXVJOB.jpg" alt="Conservation Icon">
+                    <p><strong>Conservation</strong></p>
+                    <p>Protecting and preserving wildlife and their habitats for future generations.</p>
+                </div>
+                <div class="value-item">
+                    <img src="assets/images/partner-3.png" alt="Community Icon">
+                    <p><strong>Community</strong></p>
+                    <p>Engaging with local communities to foster understanding and stewardship of the natural world.</p>
+                </div>
+            </div>
+            <div class="value-box-center">
+                <div class="value-item">
+                    <img src="https://wallpapercave.com/wp/wp8046449.jpg" alt="Sustainability Icon">
+                    <p><strong>Sustainability</strong></p>
+                    <p>Promoting sustainable practices to ensure a balanced coexistence with nature.</p>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+    <hr>
+     <!-- Our Team Section -->
+     <section class="team-section">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Lead Biologist</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Team Member 3">
+                    <h3>Mark Allen</h3>
+                    <p>Conservation Officer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Typing effect function
+        function typeText(element, text, delay = 50) {
+            let index = 0;
+            element.innerHTML = '';
+            element.style.visibility = 'visible'; // Make the paragraph visible once typing starts
+            const interval = setInterval(() => {
+                if (index < text.length) {
+                    element.innerHTML += text.charAt(index);
+                    index++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, delay);
+        }
+
+        // Call typing effect for each paragraph
+        document.addEventListener("DOMContentLoaded", function () {
+            const paragraph1 = document.getElementById("paragraph1");
+            const paragraph2 = document.getElementById("paragraph2");
+
+            // Text content to be typed out
+            const text1 = "At WildGuard, we are passionate about protecting and preserving the world’s wildlife. Our mission is simple: to conserve natural habitats, protect endangered species, and promote a sustainable coexistence with nature.";
+            const text2 = "By supporting communities, engaging in conservation initiatives, and advocating for environmental responsibility, we aim to create a future where nature and humanity thrive together.";
+
+            // Start typing effect
+            typeText(paragraph1, text1);
+            setTimeout(() => typeText(paragraph2, text2), text1.length * 50 + 1000); // Delay second paragraph
+        });
+    </script>
 </body>
 </html>

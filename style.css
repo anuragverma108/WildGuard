@@ -24,8 +24,10 @@
 
 .gallery-item img {
     width: 100%;
-    aspect-ratio: 16/9;  /* Maintain a 16:9 aspect ratio */
-    object-fit: cover;  /* Ensure the image covers the container without distortion */
+    aspect-ratio: 16/9;
+    /* Maintain a 16:9 aspect ratio */
+    object-fit: cover;
+    /* Ensure the image covers the container without distortion */
     border-radius: 8px;
 }
 
@@ -48,7 +50,7 @@
 .card {
     background-color: #ffffff;
     border-radius: 10px;
-    
+
     box-shadow: 0 1px 10px #91be55;
     margin: 20px;
     padding: 20px;
@@ -65,17 +67,19 @@
     color: #5a5a5a;
 
 }
+
 .amount {
     font-size: 1.5em;
     margin: 10px 0;
     color: #2c3e50;
 
 }
+
 .benefits {
     font-size: 0.9em;
     color: #7f8c8d;
     margin: 15px 0;
-
+    min-height: 8rem;
 }
 
 .donate-button {
@@ -85,9 +89,12 @@
     color: white;
     cursor: pointer;
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 15px;
     transition: background-color 0.3s;
 }
+
+
+
 .donate-button:hover {
     background-color: #2980b9;
 
@@ -100,3 +107,81 @@
 
 
 
+.user-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+
+}
+
+.user-icon:hover .dropdown-content {
+    display: block;
+}
+
+@media only screen and (max-width: 600px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    #fontt,
+    .boxx {
+        font-size: 20px;
+    }
+
+    .donate-button {
+        width: 100%;
+    }
+}
+
+.zoom-effect {
+    overflow: hidden;
+    display: inline-block;
+}
+
+@media (min-width: 768px) {
+    .zoom-effect {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .zoom-effect:hover {
+        transform: scale(1.05);
+    }
+
+    .zoom-effect img {
+        transition: transform 0.3s ease-in-out;
+    }
+}
