@@ -174,8 +174,8 @@
             <div class="input-group">
                 <label for="password">Password</label>
                 <div class="password-toggle">
-                    <input type="password" id="password" placeholder="Enter your password" required>
-                    <i class="fas fa-eye" id="togglePassword"></i>
+                    <input type="password" id="password" placeholder="Enter your password" required >
+                    
                 </div>
                 <div class="password-strength" id="passwordStrength"></div>
             </div>
@@ -233,6 +233,7 @@
                 e.preventDefault();
                 if (this.checkValidity()) {
                     alert('Login successful!');
+                    // Here you would typically send the form data to your server
                 } else {
                     alert('Please fill out all fields correctly.');
                 }
