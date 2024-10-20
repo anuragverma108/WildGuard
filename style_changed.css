@@ -799,6 +799,7 @@ body {
 
 .testi-content {
   padding: var(--section-padding) 15px;
+  margin: 50px;
 }
 
 .testi .section-title {
@@ -1885,4 +1886,5 @@ body {
 
 .cta-banner {
   box-shadow: 10px 10px 10px rgba(rgb(208, 15, 15), green, blue, alpha);
+}
 }
