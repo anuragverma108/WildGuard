@@ -304,15 +304,6 @@ html {
   padding-inline: 15px;
 }
 
-.section-subtitle {
-  color: var(--color, var(--pistachio));
-  font-size: var(--fs, var(--fs-8));
-  font-family: var(--ff, var(--ff-roboto));
-  font-weight: var(--fw-600);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
 .section-subtitle span {
   color: #0f0f0f;
@@ -836,7 +827,12 @@ html {
 }
 
 .section-subtitle {
-  margin-left: 35%;
+  font-family: var(--ff, var(--ff-roboto));
+  font-weight: var(--fw-600);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
   font-size: 32px;
   color: green;
 }
