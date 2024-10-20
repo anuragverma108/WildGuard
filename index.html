@@ -284,12 +284,17 @@
 
       </nav>
       <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search..." aria-label="Search" autocomplete="off"
-          oninput="handleInput()">
-        <button id="search-button" aria-label="Search" onclick="performSearch()">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
+        <form id="search-form">
+            <div class="search-input-wrapper">
+                <!-- <i class="fas fa-search search-icon"></i> -->
+                <input type="text" id="search-input" placeholder="Search..." aria-label="Search">
+            </div>
+            <button type="submit" id="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        <div id="search-results"></div>
+    </div>
 
       <div class="header-action">
 
@@ -1170,12 +1175,11 @@ Our mission is to provide outstanding care and dedicated support for animals in 
              <script src="script.js"></script>
            </div>
           
-
           <!-- 
         - #TESTIMONIALS
         -->
 
-          <section class="testi">
+          <section class="testi" id="testi">
 
             <div class="testi-content">
 
@@ -1230,7 +1234,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
         - #PARTNER
       -->
 
-          <section class="section partner">
+          <section class="section partner" id="partners">
             <div class="container">
 
               <a href="#" class="partner-logo">
@@ -1465,7 +1469,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
           <!-- 
         -# ACCORDION
        -->
-          <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36">
+          <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36" id="faq">
             <div class="text-center mb-6">
               <p class="text-5xl font-bold text-gray-800 uppercase">Frequently Asked Questions</p>
             </div>
@@ -1478,7 +1482,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                 <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
               </div>
 
-              <div class="impact-gallery">
+              <div class="impact-gallery" id="impact">
                 <div id="fontt"><b>
                     <h2>Impact of Your Donations</h2>
                   </b> </div>
@@ -1958,6 +1962,8 @@ Our mission is to provide outstanding care and dedicated support for animals in 
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./assets/js/script.js"></script>
   <script src="//code.tidio.co/wtslouasr8yln5hjnm7ytob3kl8mkylx.js" async></script>
+  <script src="./assets/js/search-index.js"></script>
+  <script src="./assets/js/search.js"></script>
 
 </body>
 
