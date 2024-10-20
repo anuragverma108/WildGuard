@@ -230,9 +230,79 @@ section.in-view {
     transform: none;
 }
 
+        .navbar {
+            background-color: #3b4f3a;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-list {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-link:hover {
+            background-color: #87d15b;
+            border-radius: 5px;
+        }
+
+        .navbar-link.active {
+            background-color: #89ce4d;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
 <body>
+    <nav class="navbar" data-navbar>
+        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">WildGuard</a>
+
+        <ul class="navbar-list">
+          <li>
+            <a href="./index.html" class="navbar-link active" data-nav-link>
+              <span>Home</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="donate.html" class="navbar-link" data-nav-link>
+              <span>Donate</span>
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+        </ul>
+    </nav>
     <!-- About Us Section -->
     <section id="about" class="about-section">
         <div class="about-overlay">
