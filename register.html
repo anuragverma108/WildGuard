@@ -3,17 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/login.css">
     <title>Register</title>
-</head>
-<body>
 
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/login.css">
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-page {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .entry {
+            margin-bottom: 20px;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 40px 12px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #6e8efb;
+            outline: none;
+        }
+
+        .fa {
+            position: absolute;
+            right: 12px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .extras {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .extras .remember-me {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .forgot-password {
+            text-decoration: none;
+            font-size: 14px;
+            color: #6e8efb;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background: #6e8efb;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background: #5a75d1;
+        }
+
+        .social-login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f5f5f5;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .social-btn:hover {
+            background: #ebebeb;
+        }
+
+        .google-logo {
+            width: 20px;
+            margin-right: 8px;
+        }
+
+        .signup-link {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: #6e8efb;
+            text-decoration: none;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
     <div class="login-page">
         <div class="content">
-            <h2>Create an account</h2>
+            <h2>Create an Account</h2>
 
-            <form class="data">
+            <form class="data" onsubmit="return validateForm()">
 
                 <!-- Email Field -->
                 <div class="entry">
@@ -46,7 +201,7 @@
                     </div>
                 </div>
 
-                <!-- Remember Me Checkbox & Forgot Password Link -->
+                <!-- Remember Me & Forgot Password -->
                 <div class="extras">
                     <label class="remember-me">
                         <input type="checkbox"> Remember Me
@@ -54,7 +209,7 @@
                     <a href="#" class="forgot-password">Forgot Password?</a>
                 </div>
 
-                <!-- Sign up Button -->
+                <!-- Sign Up Button -->
                 <div class="entry">
                     <button type="submit">Sign Up</button>
                 </div>
@@ -63,18 +218,17 @@
                 <div class="social-login">
                     <p>Or Sign up with</p>
                     <div class="social-buttons">
-                        <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Continue with Google
+                        <button type="button" class="social-btn">
+                            <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Google
                         </button>
-                        <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/facebook.png" alt="FaceBook Logo" class="google-logo"> Continue with Facebook
+                        <button type="button" class="social-btn">
+                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo"> Facebook
                         </button>
                     </div>
                 </div>
 
                 <!-- Login Link -->
                 <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
-
             </form>
         </div>
     </div>
@@ -85,15 +239,23 @@
             const icon = passwordField.nextElementSibling.querySelector('i');
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
             } else {
                 passwordField.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
             }
         }
-    </script>
 
+        function validateForm() {
+            const password = document.getElementById('password').value;
+            const repeatPassword = document.getElementById('repeat-password').value;
+
+            if (password !== repeatPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
