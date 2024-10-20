@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clean Our Oceans - Event Registration</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --d: 2500ms;
+        --angle: 90deg;
+        --gradX: 100%;
+        --gradY: 50%;
+        --c1: rgb(0, 13, 15);
+        --c2: rgba(168, 239, 255, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      @property --angle {
+        syntax: '<angle>';
+        initial-value: 90deg;
+        inherits: true;
+      }
+
+      @property --gradX {
+        syntax: '<percentage>';
+        initial-value: 50%;
+        inherits: true;
+      }
+
+      @property --gradY {
+        syntax: '<percentage>';
+        initial-value: 0%;
+        inherits: true;
+      }
+
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f8ff;
+        margin: 0;
+        padding: 0;
+        background-image: url(./assets/images/cleanOcean.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* nav bar */
+      .navbar {
+        width: 100%;
+        height: 80px;
+        background-color: black;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      ul,
+      li {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(7, 156, 7);
+        text-decoration: none;
+        padding-right: 15%;
+        font-weight: bolder;
+      }
+
+      .navbar-list {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+      }
+
+      .navbar-link {
+        color: rgb(216, 183, 35);
+        text-decoration: none;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        font-weight: bolder;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-top: 40px;
+        border: 0.35rem solid;
+        padding: 3vw;
+        border-image: conic-gradient(
+            from var(--angle),
+            var(--c2),
+            var(--c1) 0.1turn,
+            var(--c1) 0.15turn,
+            var(--c2) 0.25turn
+          )
+          30;
+        animation: borderRotate var(--d) linear infinite forwards;
+      }
+
+      .container:nth-child(2) {
+        border-image: radial-gradient(
+            ellipse at var(--gradX) var(--gradY),
+            var(--c1),
+            var(--c1) 10%,
+            var(--c2) 40%
+          )
+          30;
+        animation: borderRadial var(--d) linear infinite forwards;
+      }
+
+      @keyframes borderRotate {
+        100% {
+          --angle: 420deg;
+        }
+      }
+
+      @keyframes borderRadial {
+        20% {
+          --gradX: 100%;
+          --gradY: 50%;
+        }
+        40% {
+          --gradX: 100%;
+          --gradY: 100%;
+        }
+        60% {
+          --gradX: 50%;
+          --gradY: 100%;
+        }
+        80% {
+          --gradX: 0%;
+          --gradY: 50%;
+        }
+        100% {
+          --gradX: 50%;
+          --gradY: 0%;
+        }
+      }
+
+      /* border-animation */
+
+      h1 {
+        font-size: 2em;
+        color: #0b4b0d;
+        text-align: center;
+        font-family: 'Merriweather', serif;
+      }
+
+      p {
+        text-align: center;
+        color: #666;
+        font-size: 1em;
+        margin-bottom: 40px;
+        font-family: 'Merriweather', serif;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      label {
+        font-size: 1.1em;
+        color: #333;
+        font-weight: bold;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 10px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #0d550f;
+        color: white;
+        padding: 15px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      button:hover {
+        background-color: #0f5713;
+      }
+
+      .back-button {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .back-button a {
+        text-decoration: none;
+        color: #094d0b;
+        font-size: 1.1em;
+      }
+
+      .back-button a:hover {
+        color: #08300a;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar" data-navbar>
+      <a href="index.html" class="logo">WildGuard</a>
+      <ul class="navbar-list">
+        <li>
+          <a href="index.html" class="navbar-link active" data-nav-link>
+            <span class="new_size">Home</span>
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="about.html" class="navbar-link" data-nav-link>
+            <span class="new_size">About</span>
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="donate.html" class="navbar-link" data-nav-link>
+            <span class="new_size">Donate</span>
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="moreevents.html" class="navbar-link" data-nav-link>
+            <span class="new_size">Event</span>
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="Contact.html" class="navbar-link" data-nav-link>
+            <span class="new_size">Contact</span>
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-hidden="true"
+            ></ion-icon>
+          </a>
+        </li>
+        <li>
+          <script>
+            document
+              .getElementById('registerLink')
+              .addEventListener('click', function (e) {
+                e.preventDefault();
+                window.location.href = 'register.html';
+              });
+            document
+              .getElementById('loginLink')
+              .addEventListener('click', function (e) {
+                e.preventDefault();
+                window.location.href = 'login.html';
+              });
+          </script>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <h1>Register for Clean Our Oceans Event</h1>
+      <p>
+        <b>
+          Join us on October 23 2024
+          <br />
+          At Santa Monica Beach, California, to help clean up our oceans and
+          protect marine life!
+        </b>
+      </p>
+      <form action="/submit-registration" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="volunteer-role">Preferred Volunteer Role:</label>
+        <select id="volunteer-role" name="volunteer-role">
+          <option value="cleaning">Beach Cleaning</option>
+          <option value="awareness">Awareness Campaign</option>
+          <option value="logistics">Logistics Support</option>
+        </select>
+
+        <label for="message">Additional Information (optional):</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Submit Registration</button>
+      </form>
+
+      <div class="back-button">
+        <a href="index.html">← Back to Events</a>
+      </div>
+    </div>
+  </body>
+</html>

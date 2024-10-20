@@ -1,270 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animal Organization Ratings</title>
-   
+    <link rel="stylesheet" href="./assets/css/review.css" />
+    <script src="./assets/js/review.js" defer></script>
+
+    <!-- font Awsome cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <style>
-        
+      /* Improved CSS for Rate Us Page */
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
 
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-image: url('image.avif'); /* Add background image */
-    background-size: cover; /* Cover entire page */
-    background-position: center; /* Center image */
-    background-attachment: fixed;
-    opacity: .9
-     /* Fix image position */
-}
-
-.rating-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    background-color: #fff; /* White background for container */
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    opacity: .9;
-}
-
-.rating {
-    font-size: 36px;
-    font-weight: bold;
-    color: #2ecc71;
-
-}
-
-.rating-breakdown {
-    font-size: 22px;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.reviews-container {
-    margin-top: 60px;
-    opacity: .9
-}
-
-.review {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-bottom: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.review:nth-child(even) {
-    background-color: #e5e5e5;
-}
-
-/* .organization-info {
-    margin-top: 80px;
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(239, 9, 9, 0.797);
-} */
-
-.rating-form {
-    max-width: 700px;
-    margin: 80px auto;
-    padding: 50px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    opacity: .9
-}
-
-.rating-form h2 {
-    color: #333;
-    font-weight: bold;
-    font-size: 32px;
-    margin-bottom: 20px;
-    
-}
-
-.rating-form label {
-    font-size: 18px;
-    color: #594c4c;
-    margin-bottom: 10px;
-}
-
-.rating-form select {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.rating-form textarea {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    
-}
-
-.rating-form button {
-    background-color: #2ecc71;
-    color: #fff;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.rating-form button:hover {
-    background-color: #34c759;
-
-}
-
-/* Responsive Design */
-
-@media (max-width: 768px) {
-    .rating-container {
+      .bodys {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         padding: 20px;
-    }
-    .rating-form {
+        border-radius: 10px;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 12px;
         padding: 30px;
-    }
-}
+        text-align: center;
+        max-width: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
 
-@media (max-width: 480px) {
-    .rating-container {
+      .card h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .fa-house {
+        color: #f76c6c;
+        font-size: 24px;
+        text-decoration: none;
+        margin-bottom: 10px;
+      }
+
+      .star {
+        font-size: 40px;
+        color: #e0e0e0;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      .star:hover,
+      .star.active {
+        color: #f76c6c;
+      }
+
+      #output {
+        font-size: 18px;
+        color: #333;
+        margin-top: 10px;
+      }
+
+      #ratingForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      #reviewInput {
+        width: 100%;
         padding: 10px;
-    }
-    .rating-form {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        resize: none;
+        min-height: 100px;
+        margin-bottom: 15px;
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+      }
+
+      button[type="submit"] {
+        background-color: #f76c6c;
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #e05b5b;
+      }
+
+      #popup {
+        display: none;
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+
+      main {
+        max-width: 1000px;
+        margin: 40px auto;
+      }
+
+      main h1 {
+        text-align: center;
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .slider {
+        overflow: hidden;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+
+      .slide-row {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .slide-col {
+        flex: 1;
+        margin-right: 20px;
+        background-color: #fff;
         padding: 20px;
-    }
-}
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-/*  */
+      .slide-col .content {
+        max-width: 60%;
+      }
+
+      .slide-col h2 {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .slide-col p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .hero img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+      }
+
+      .indicator {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .indicator .btn {
+        width: 10px;
+        height: 10px;
+        background-color: #ddd;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .indicator .btn.active {
+        background-color: #f76c6c;
+      }
+
+      .indicator .btn:hover {
+        background-color: #e05b5b;
+      }
     </style>
-</head>
+  </head>
+
 <body>
-  
-<div class="rating-form">
-    <h2>Rate this Organization</h2>
-    <form id="rating-form">
-        <label for="rating">Rating (1-5):</label>
-        <select id="rating" required>
-            <option value="1">1🌟</option>
-            <option value="2">2🌟🌟</option>
-            <option value="3">3🌟🌟🌟</option>
-            <option value="4">4🌟🌟🌟🌟</option>
-            <option value="5">5🌟🌟🌟🌟🌟</option>
-        </select>
-        <label for="review">Review:</label>
-        <textarea id="review" required></textarea>
-        <button id="submit-btn">Submit Review</button>
-    </form>
-</div>
-<!-- Organization Profile Page -->
-<div class="organization-profile">
-    <h2 >Organization Profile</h2>
-    <div class="rating-container">
-        <div class="rating">Average Rating: <span id="average-rating"></span></div>
-        <div class="rating-breakdown">
-            <span id="rating-distribution"></span>
-        </div>
+
+    <div class="bodys">
+      <div class="card">
+        <a href="./index.html"><i class="fa-solid fa-house"></i></a>
+        <h2>Rate Us</h2>
+        <br />
+        <span onclick="gfg(1)" class="star">★</span>
+        <span onclick="gfg(2)" class="star">★</span>
+        <span onclick="gfg(3)" class="star">★</span>
+        <span onclick="gfg(4)" class="star">★</span>
+        <span onclick="gfg(5)" class="star">★</span>
+        <h5 id="output">Rating is: 0/5</h5>
+
+        <form id="ratingForm">
+          <textarea
+            id="reviewInput"
+            placeholder="Write your Review"
+            required
+          ></textarea>
+          <button type="submit">Submit</button>
+        </form>
+
+        <div id="popup">Review Submitted !</div>
+      </div>
     </div>
-    <div class="reviews-container">
-        <h3 style="color: #2ecc71;">Reviews:</h3>
-        <div id="reviews"></div>
-    </div>
-  
-</div>
 
+    <main>
+      <h1>Reviews</h1>
 
-    
-    <script>
-        
-
-let ratings = [];
-
-// Get organization profile elements
-const averageRatingElement = document.getElementById('average-rating');
-const ratingDistributionElement = document.getElementById('rating-distribution');
-const reviewsElement = document.getElementById('reviews');
-const organizationNameElement = document.getElementById('organization-name');
-const missionStatementElement = document.getElementById('mission-statement');
-const contactInfoElement = document.getElementById('contact-info');
-
-// Submit rating form event listener
-document.getElementById('submit-btn').addEventListener('click', (e) => {
-    e.preventDefault();
-
-    // Get rating and review values
-    const ratingValue = document.getElementById('rating').value;
-    const reviewValue = document.getElementById('review').value;
-    const newRating = {
-        rating: ratingValue,
-        review: reviewValue
-    };
-
-    // Add new rating to ratings array
-    ratings.push(newRating);
-
-    // Update organization profile page
-    updateOrganizationProfile();
-});
-
-// Update organization profile page function
-function updateOrganizationProfile() {
-    // Calculate average rating
-    const averageRating = calculateAverageRating();
-
-    // Update average rating element
-    averageRatingElement.textContent = `${averageRating}/5`;
-
-    // Update rating distribution element
-    ratingDistributionElement.textContent = `${getRatingDistribution()}% positive`;
-
-    reviewsElement.innerHTML = '';
-    ratings.forEach((rating, index) => {
-        const reviewHTML = `
-            <div class="review">
-                <p>Rating: ${rating.rating}/5</p>
-                <p>${rating.review}</p>
+      <div class="slider">
+        <div class="slide-row" id="slide-row">
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Zen Doan is a business analyst, entrepreneur and media
+                proprietor, and investor. She also known as the best selling
+                book author.
+              </p>
+              <h2>Zen</h2>
+              <p>Author</p>
             </div>
-        `;
-        reviewsElement.insertAdjacentHTML('beforeend', reviewHTML);
-    });
-}
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg"
+                alt="avatar"
+              />
+            </div>
+          </div>
 
-// Calculate average rating function
-function calculateAverageRating() {
-    let sum = 0;
-    ratings.forEach((rating) => {
-        sum += parseInt(rating.rating);
-    });
-    return (sum / ratings.length).toFixed(2);
-}
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Jonathan Koletic is an American internet entrepreneur and media
+                proprietor, and investor. He is the founder of the
+                multi-national technology company Treymont.
+              </p>
+              <h2>Jonathan</h2>
+              <p>Treymont Inc.</p>
+            </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg"
+                alt="avatar"
+              />
+            </div>
+          </div>
 
-// Get rating distribution function
-function getRatingDistribution() {
-    let positiveRatings = 0;
-    ratings.forEach((rating) => {
-        if (rating.rating >= 4) {
-            positiveRatings++;
-        }
-    });
-    return ((positiveRatings / ratings.length) * 100).toFixed(2);
-}
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Charlie Green is an European entrepreneur and media consultant,
+                and investor. He is the founder of the Hallmark Inc.
+              </p>
+              <h2>Charlie</h2>
+              <p>Hallmark Inc.</p>
+            </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg"
+                alt="avatar"
+              />
+            </div>
+          </div>
 
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Sarah Dam is an American internet entrepreneur and media
+                consultant. She is the co-founder and CEO of Treymont.
+              </p>
+              <h2>Sarah</h2>
+              <p>Treymont Inc.</p>
+            </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031654-f891d60e-53c6-420b-b57f-0c4c898e5b78.jpg"
+                alt="avatar"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-
-    </script>
-</body>
+      <div class="indicator">
+        <span class="btn active" onclick="slide(0)"></span>
+        <span class="btn" onclick="slide(1)"></span>
+        <span class="btn" onclick="slide(2)"></span>
+      </div>
+    </main>
+  </body>
 </html>
-
-

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,172 +8,75 @@
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/login.css">
-
-    <style>
-        /* General Styling */
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
+    <link rel="stylesheet" href="./assets/css/register.css">
+    <title>Register</title>
+    <script>
+        console.log("yesv")
+        const handleSubmitOnSignUp = (e) => {
+        e.preventDefault();
+        const password = document.getElementById('password').value;
+        const email = document.getElementById('email').value;
+        const minLen = 8;
+        const maxLen = 16;
+        const hasUpperCase = /[A-Z]/.test(password);
+        const hasLowerCase = /[a-z]/.test(password);
+        const hasNumber = /[0-9]/.test(password);
+        const hasSpecialChar = /[$@_]/.test(password);
+        if(!email.match('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')){
+            alert("Incorrect Email format");
+            return;
         }
-
-        .login-page {
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
+        if (
+            password.length >= minLen &&
+            password.length <= maxLen &&
+            hasUpperCase &&
+            hasLowerCase &&
+            hasNumber &&
+            hasSpecialChar
+        ) {
+            const pswd = document.getElementById("password").value;
+            const rpswd = document.getElementById("repeat-password").value;
+            if(pswd === rpswd) {
+                alert("Registration SuccessFull")
+            }
+            else {
+                alert("Passwords Do not match")
+            }
+        } else {
+            console.log('Password does not meet the criteria.');
+            alert('Password must be 8-16 characters long, contain at least 1 uppercase, 1 lowercase, 1 number, and 1 special character ($, @, _).');
         }
-
-        h2 {
-            margin-bottom: 1rem;
-            font-weight: 600;
-            color: #333;
+    };
+    
+        function togglePasswordVisibility(id) {
+            const passwordField = document.getElementById(id);
+            const icon = passwordField.nextElementSibling.querySelector('i');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
         }
-
-        .entry {
-            margin-bottom: 20px;
-        }
-
-        .input-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 12px 40px 12px 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        input:focus {
-            border-color: #6e8efb;
-            outline: none;
-        }
-
-        .fa {
-            position: absolute;
-            right: 12px;
-            cursor: pointer;
-            color: #888;
-        }
-
-        .extras {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .extras .remember-me {
-            display: flex;
-            align-items: center;
-            font-size: 14px;
-            color: #555;
-        }
-
-        .forgot-password {
-            text-decoration: none;
-            font-size: 14px;
-            color: #6e8efb;
-        }
-
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        button[type="submit"] {
-            width: 100%;
-            background: #6e8efb;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button[type="submit"]:hover {
-            background: #5a75d1;
-        }
-
-        .social-login {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .social-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .social-btn {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: #f5f5f5;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .social-btn:hover {
-            background: #ebebeb;
-        }
-
-        .google-logo {
-            width: 20px;
-            margin-right: 8px;
-        }
-
-        .signup-link {
-            margin-top: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        .signup-link a {
-            color: #6e8efb;
-            text-decoration: none;
-        }
-
-        .signup-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    </script>
 </head>
 
 <body>
     <div class="login-page">
         <div class="content">
-            <h2>Create an Account</h2>
+            <a href="./index.html" class="home-icon"><i class="fa-solid fa-house"></i></a>
+            <h2>Create an account</h2>
 
             <form class="data" onsubmit="return validateForm()">
 
                 <!-- Email Field -->
                 <div class="entry">
-                    <label for="email"><h3>Email</h3></label>
+                    <label for="email">
+                        <h3 style="margin-left: 30px;">Email</h3>
+                    </label>
                     <div class="input-wrapper">
                         <input type="email" id="email" placeholder="example@gmail.com" required>
                         <div class="fa"><i class="fas fa-user"></i></div>
@@ -181,7 +85,9 @@
 
                 <!-- Password Field with Toggle Visibility -->
                 <div class="entry">
-                    <label for="password"><h3>Password</h3></label>
+                    <label for="password">
+                        <h3 style="margin-left: 30px;">Password</h3>
+                    </label>
                     <div class="input-wrapper">
                         <input type="password" id="password" placeholder="Enter your password" required>
                         <div class="fa toggle-password" onclick="togglePasswordVisibility('password')">
@@ -192,7 +98,9 @@
 
                 <!-- Repeat Password Field with Toggle Visibility -->
                 <div class="entry">
-                    <label for="repeat-password"><h3>Re-enter Password</h3></label>
+                    <label for="repeat-password">
+                        <h3 style="margin-left: 30px;">Confirm Password</h3>
+                    </label>
                     <div class="input-wrapper">
                         <input type="password" id="repeat-password" placeholder="Re-enter your password" required>
                         <div class="fa toggle-password" onclick="togglePasswordVisibility('repeat-password')">
@@ -204,25 +112,25 @@
                 <!-- Remember Me & Forgot Password -->
                 <div class="extras">
                     <label class="remember-me">
-                        <input type="checkbox"> Remember Me
+                        <input type="checkbox" style="margin-left: 30px;"> Remember Me
                     </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <a href="#" class="forgot-password" style="margin-right: 20px;">Forgot Password?</a>
                 </div>
 
-                <!-- Sign Up Button -->
-                <div class="entry">
-                    <button type="submit">Sign Up</button>
+                <!-- Sign up Button -->
+                <div class="entry signup">
+                    <button type="submit" onclick="handleSubmitOnSignUp(event)">Sign Up</button>
                 </div>
 
                 <!-- Social Media Buttons -->
                 <div class="social-login">
                     <p>Or Sign up with</p>
                     <div class="social-buttons">
-                        <button type="button" class="social-btn">
-                            <img src="./assets/images/social.png" alt="Google Logo" class="google-logo"> Google
+                        <button type="button" class="social-btn google-btn">
+                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo">
                         </button>
-                        <button type="button" class="social-btn">
-                            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo"> Facebook
+                        <button type="button" class="social-btn google-btn">
+                            <img src="./assets/images/facebook.png" alt="FaceBook Logo" class="google-logo">
                         </button>
                     </div>
                 </div>
@@ -232,30 +140,6 @@
             </form>
         </div>
     </div>
-
-    <script>
-        function togglePasswordVisibility(id) {
-            const passwordField = document.getElementById(id);
-            const icon = passwordField.nextElementSibling.querySelector('i');
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                icon.classList.replace('fa-eye', 'fa-eye-slash');
-            } else {
-                passwordField.type = 'password';
-                icon.classList.replace('fa-eye-slash', 'fa-eye');
-            }
-        }
-
-        function validateForm() {
-            const password = document.getElementById('password').value;
-            const repeatPassword = document.getElementById('repeat-password').value;
-
-            if (password !== repeatPassword) {
-                alert("Passwords do not match!");
-                return false;
-            }
-            return true;
-        }
-    </script>
 </body>
+
 </html>

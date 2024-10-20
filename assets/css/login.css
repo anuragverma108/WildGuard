@@ -1,5 +1,8 @@
-* {
-    font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
     box-sizing: border-box;
 }
 
@@ -13,6 +16,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .login-page {
@@ -33,7 +39,7 @@ body {
 
 h2 {
     text-align: center;
-    color: rgb(145, 190, 85);
+    color: #228B22;
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -91,10 +97,10 @@ h2 {
     font-size: 20px;
 }
 
-button {
+.entry button {
     width: 100%;
     height: 40px;
-    background-color: rgb(145, 190, 85);
+    background-color: #228B22;
     color: white;
     font-size: 18px;
     border: none;
@@ -102,8 +108,9 @@ button {
     cursor: pointer;
 }
 
-button:hover {
-    background-color: rgb(125, 170, 70);
+.entry button:hover {
+    background-color: #32CD32;
+    transform: scale(1.05);
 }
 
 .extras {
@@ -118,7 +125,7 @@ button:hover {
 }
 
 .forgot-password {
-    color: rgb(145, 190, 85);
+    color: #013201;
     text-decoration: none;
 }
 
@@ -161,16 +168,31 @@ button:hover {
     transition: background-color 0.3s;
 }
 
+
 .google-btn {
-    background-color: #4285F4;
-    color: white;
+    background-color: #ffffff;
+    color: #5F6368;
 }
 
 .google-btn:hover {
-    background-color: #357ae8;
+    background-color: #E8E8E8;
+    transform: scale(1.10);
+}
+
+.facebook-btn{
+    background-color: #1877F2;
+}
+.facebook-btn:hover{
+    background-color: #145DBF;
+    transform: scale(1.10);
 }
 
 .google-logo {
+    height: 25px;
+    width: 25px;
+}
+
+.Facebook-logo{
     height: 25px;
     width: 25px;
 }

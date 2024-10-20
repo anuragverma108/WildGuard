@@ -1,9 +1,41 @@
 /* Save Nature CSS */
+* {
+	box-sizing: border-box;
+}
+
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
+
+:root {
+	--d: 2500ms;
+	--angle: 90deg;
+	--gradX: 100%;
+	--gradY: 50%;
+	--c1: rgba(11, 49, 111);
+	--c2: rgba(168, 239, 255, 0.1);
 }
 
 p.line {
@@ -35,20 +67,71 @@ p.line {
 }
 
 .nav ul li a {
-  color: white;
-  text-decoration: none;
+  font-weight: 800;
+    overflow: hidden;
+    background: linear-gradient(to right, midnightblue, midnightblue 50%, rgb(255, 255, 255) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none; 
+    &:hover {
+      background-position: 0 100%;
+    }
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
+  
 }
+
 
 .section {
   padding: 20px 0;
   margin: 20px 0;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 1.5rem;
+	border: 0.35rem solid;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.section:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+	100% {
+		--angle: 420deg;
+	}
+}
+
+@keyframes borderRadial {
+	20% {
+		--gradX: 100%;
+		--gradY: 50%;
+	}
+	40% {
+		--gradX: 100%;
+		--gradY: 100%;
+	}
+	60% {
+		--gradX: 50%;
+		--gradY: 100%;
+	}
+	80% {
+		--gradX: 0%;
+		--gradY: 50%;
+	}
+	100% {
+		--gradX: 50%;
+		--gradY: 0%;
+	}
 }
 
 .section-title {
@@ -91,7 +174,7 @@ p.line {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 20px 0;
+  padding: 20px 10px;
 }
 
 .footer-content h3 {
@@ -112,11 +195,27 @@ p.line {
   margin-right: 10px;
 }
 
+.social-links a {
+  color: #00b3ff;
+}
+
 .footer-bottom {
   text-align: center;
   padding: 10px 0;
   background: #222;
 }
+
+#statistics{
+  background: rgb(65, 184, 65);
+  border-radius: 1px;
+}
+
+#section-sustain{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 
 /* Grid layout for the statistics */
 .stats-grid {

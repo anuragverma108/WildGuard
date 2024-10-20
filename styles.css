@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color:#333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #00a13e;
+    font-size: 28px;
+    font-weight: bold;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    line-height: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 0 0 110px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffbe00;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+.learn-more-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.learn-more-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.learn-more-section p {
+    font-size: 18px;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.content-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    margin: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #00a13e;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+.donate-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: #00a13e;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;   
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.donate-btn:hover {
+    background-color: #007f2b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
