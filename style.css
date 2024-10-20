@@ -91,13 +91,6 @@
     padding: 10px 20px;
     font-size: 15px;
     transition: background-color 0.3s;
-    display: flex;
-    align-items: center;
-}
-
-.donate-button > ion-icon{
-    margin-left: 0.5rem;
-    font-size: large;
 }
 
 
