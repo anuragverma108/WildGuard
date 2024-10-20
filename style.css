@@ -1,21 +1,55 @@
+/* Forum branch styles */
+.section-subtitle {
+    display: flex;
+    margin-left: 35px;
+}
+
+.secDon {
+    padding-bottom: 0;
+}
+
+.formContainer {
+    margin-bottom: 100px;
+}
+
+.formContainer .container_1 h2 {
+    padding-bottom: 20px;
+}
+
+.formContainer .container_1 .submit-button {
+    margin-top: 16px;
+}
+
+.formContainer .container_1 .posts h2 {
+    font-weight: 500;
+    font-style: italic;
+}
+
+.testi {
+    width: 91%;
+    margin: auto;
+}
+
+.testi-data {
+    padding-left: 30px;
+}
+
+/* Main branch styles */
 .impact-gallery {
     text-align: center;
     margin: 40px 0;
-
 }
 
 .gallery {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-
 }
 
 .gallery-item {
     width: 30%;
     margin: 10px;
     transition: transform 0.3s;
-
 }
 
 #scrollBOTTOM{
@@ -43,9 +77,7 @@
 .gallery-item img {
     width: 100%;
     aspect-ratio: 16/9;
-    /* Maintain a 16:9 aspect ratio */
     object-fit: cover;
-    /* Ensure the image covers the container without distortion */
     border-radius: 8px;
 }
 
@@ -68,13 +100,11 @@
 .card {
     background-color: #ffffff;
     border-radius: 10px;
-
     box-shadow: 0 1px 10px #91be55;
     margin: 20px;
     padding: 20px;
     width: 250px;
     transition: transform 0.3s;
-
 }
 
 .card:hover {
@@ -83,14 +113,12 @@
 
 .card h2 {
     color: #5a5a5a;
-
 }
 
 .amount {
     font-size: 1.5em;
     margin: 10px 0;
     color: #2c3e50;
-
 }
 
 .benefits {
@@ -114,19 +142,13 @@
     align-items: center;
 }
 
-
-
 .donate-button:hover {
     background-color: #2980b9;
-
 }
 
 .boxx {
     font-size: 27px;
-
 }
-
-
 
 .user-icon {
     position: relative;
@@ -152,7 +174,6 @@
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
-
 }
 
 .user-icon:hover .dropdown-content {
