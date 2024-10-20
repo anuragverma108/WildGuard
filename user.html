@@ -25,9 +25,9 @@
     .user-container {
       width: 100%;
       max-width: 400px;
-      background-color: #fff;
+      background-color: ghostwhite;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 10px 20px 8px #333;
       padding: 20px;
       text-align: center;
     }
@@ -48,6 +48,7 @@
     .user-container p {
       color: #777;
       margin-bottom: 20px;
+      text-decoration-line: none;
     }
 
     .user-info {
@@ -56,8 +57,11 @@
       margin-bottom: 10px;
     }
 
-    .user-info div {
+    .user-info div:hover {
+      text-shadow: #a4db75;
+      cursor: pointer;
       text-align: center;
+
     }
 
     .user-info div h3 {
@@ -111,7 +115,7 @@
   <div class="user-container">
     <img src="https://randomuser.me/api/portraits/thumb/men/77.jpg" alt="User Profile Pictures">
     <h1>Arman Bhadoriya</h1>
-    <p>arman@gmail.com</p>
+    <a href="#"><p>arman@gmail.com</p></a>
 
     <div class="user-info">
       <div>
