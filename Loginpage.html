@@ -65,6 +65,34 @@
             background-color: #01463a78;
             transform: translateY(-2px);
         }
+        /* New Social Login Button Styles */
+        .social-login { /* <-- added for social login section */
+            margin-top: 1rem;
+        }
+
+        .social-btn { /* <-- added for social button styling */
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .google-btn { /* <-- added Google button style */
+            background-color: #db4437;
+            color: white;
+        }
+
+        .facebook-btn { /* <-- added Facebook button style */
+            background-color: #4267b2;
+            color: white;
+        }
+
+        .twitter-btn { /* <-- added Twitter button style */
+            background-color: #1da1f2;
+            color: white;
+        }
         .message {
             margin-top: 1rem;
             font-weight: bold;
@@ -93,6 +121,12 @@
             <p id="message" class="message"></p>
             <p class="toggle-link" id="toggleLink">Don't have an account? Sign Up</p>
         </form>
+         <!-- Social Login Buttons (New Section) -->
+         <div class="social-login"> <!-- Added for social login buttons -->
+            <button class="social-btn google-btn" id="googleSignIn">Continue with Google</button> <!-- Google button -->
+            <button class="social-btn facebook-btn" id="facebookSignIn">Continue with Facebook</button> <!-- Facebook button -->
+            <button class="social-btn twitter-btn" id="twitterSignIn">Continue with Twitter</button> <!-- Twitter button -->
+        </div>
     </div>
 
     <script>
@@ -137,6 +171,23 @@
                 document.querySelector('button').textContent = 'Sign In';
                 messageElement.textContent = ''; // Clear message
             }
+        });
+        // Placeholder function for Google sign-in
+        document.getElementById('googleSignIn').addEventListener('click', function () {
+            alert('Google Sign In functionality coming soon!');
+            
+        });
+
+        // Placeholder function for Facebook sign-in
+        document.getElementById('facebookSignIn').addEventListener('click', function () {
+            alert('Facebook Sign In functionality coming soon!');
+           
+        });
+
+        // Placeholder function for Twitter sign-in
+        document.getElementById('twitterSignIn').addEventListener('click', function () {
+            alert('Twitter Sign In functionality coming soon!');
+            
         });
     </script>
 </body>
