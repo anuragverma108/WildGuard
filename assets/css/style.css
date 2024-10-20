@@ -1079,6 +1079,7 @@ html {
 }
 
 .tab-nav {
+  height: 8rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1094,11 +1095,6 @@ html {
   font-weight: var(--fw-500);
   padding: 10px 32px;
   transition: background-color 0.3s ease;
-}
-
-.tab-btn:hover {
-  background-color: var(--pistachio);
-  color: var(--white);
 }
 
 .tab-btn:hover {
