@@ -64,17 +64,7 @@
     justify-content: center;
     flex-wrap: wrap;
 }
-.section-subtitle{
-    display: flex;
-    margin-left: 35px;
-}
-.testi{
-    width: 91%;
-    margin: auto;
-}
-.testi-data{
-    padding-left: 30px;
-}
+
 .card {
     background-color: #ffffff;
     border-radius: 10px;
