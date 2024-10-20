@@ -177,7 +177,11 @@ footer {
         const name = document.getElementById('donorName').value;
         const email = document.getElementById('email').value;
         let amount = amountSelect.value === 'custom' ? customAmountInput.value : amountSelect.value;
-
+         // Validating the name field
+         if(!name.match('^[a-zA-Z\s]+$')){
+            alert("Invalid Name Format");
+            return
+        }
         if (amount && name && email) {
             // Display thank you message
             donationForm.style.display = 'none';
