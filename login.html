@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enhanced Login</title>
     <style>
-              body {
+        body {
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #c3e3fd, #dcf4ff, #e3fcf7);
             margin: 0;
@@ -177,7 +178,7 @@
         }
 
         .facebook-btn {
-            background-color: #023430;
+            background-color: #3a5a95;
             color: #ffffff;
         }
 
@@ -209,6 +210,7 @@
         }
     </style>
 </head>
+
 <body>
     <a href="./index.html" class="home-icon"><i class="fas fa-house"></i></a>
     <div class="login-container">
@@ -221,8 +223,8 @@
             <div class="input-group">
                 <label for="password">Password</label>
                 <div class="password-toggle">
-                    <input type="password" id="password" placeholder="Enter your password" required >
-                    
+                    <input type="password" id="password" placeholder="Enter your password" required>
+
                 </div>
                 <div class="password-strength" id="passwordStrength"></div>
             </div>
@@ -250,33 +252,33 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const togglePassword = document.getElementById('togglePassword');
             const password = document.getElementById('password');
             const passwordStrength = document.getElementById('passwordStrength');
             const email = document.getElementById('email');
             const loginForm = document.getElementById('loginForm');
 
-            togglePassword.addEventListener('click', function() {
+            togglePassword.addEventListener('click', function () {
                 const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
                 password.setAttribute('type', type);
                 this.classList.toggle('fa-eye');
                 this.classList.toggle('fa-eye-slash');
             });
 
-            password.addEventListener('input', function() {
+            password.addEventListener('input', function () {
                 const strength = calculatePasswordStrength(this.value);
                 updatePasswordStrengthIndicator(strength);
             });
 
-            email.addEventListener('input', function() {
+            email.addEventListener('input', function () {
                 this.setCustomValidity('');
                 if (this.validity.typeMismatch) {
                     this.setCustomValidity('Please enter a valid email address');
                 }
             });
 
-            loginForm.addEventListener('submit', function(e) {
+            loginForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 if (this.checkValidity()) {
                     alert('Login successful!');
@@ -304,4 +306,5 @@
         });
     </script>
 </body>
+
 </html>
