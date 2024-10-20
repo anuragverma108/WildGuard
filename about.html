@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -267,6 +280,309 @@ section.in-view {
             display: flex;
             align-items: center;
         }
+      }
+      /* Team Section */
+      .team-section {
+        background-color: #fff;
+        padding: 50px 0;
+      }
+
+      .team-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .team-members {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .team-member {
+        flex-basis: 30%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .team-member img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .team-member img:hover {
+        transform: scale(1.1); /* Zoom effect on hover */
+      }
+
+      /* footer section */
+
+      .footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 0;
+  /* Reduced padding */
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  /* Added max-width for better alignment */
+  margin: 0 auto;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-left h3 {
+  color: #98c379;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.footer-middle h4,
+.footer-right h4 {
+  color: #98c379;
+  font-size: 1.6rem;
+}
+
+.footer-middle h4 {
+  margin-bottom: 10px;
+}
+
+.footer-right h4 {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer-middle ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-middle ul li {
+  margin-bottom: 8px;
+}
+
+.footer-middle ul li a {
+  color: #bbbbbb;
+  text-decoration: none;
+}
+
+.footer-middle ul li a:hover {
+  color: #98c379;
+}
+
+.footer-right form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-right input {
+  padding: 10px;
+  border: 1px solid #98c379;
+  border-radius: 4px;
+  width: 100%;
+  /* Adjusted width */
+}
+
+.footer-right button {
+  background-color: #98c379;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.footer-right button:hover {
+  background-color: #81a864;
+}
+
+.footer-social-icons {
+  margin-top: 20px;
+  display: flex;
+  /* Aligns icons horizontally */
+  flex-direction: column;
+  justify-content: left;
+  gap: 15px;
+  /* Space between icons */
+  align-items: left;
+}
+
+.footer-social-icons .message {
+  font-size: 2rem;
+  color: #709157;
+  text-align: left;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social-icons a {
+  color: #bbbbbb;
+  font-size: 2rem;
+}
+
+.footer-social-icons a:hover {
+  color: #98c379;
+}
+
+.footer-bottom {
+  background-color: #0f0f0f;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 1.3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar {
+  margin-top: 0px;
+  width: 100%;
+  height: 0.2vh;
+  margin-top: 0px;
+}
+
+.filled {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    rgb(17, 173, 2),
+    rgb(99, 255, 109)
+  );
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  /* Adjust the width as per your needs */
+  max-width: 1200px;
+  padding-left: 20px;
+}
+
+.footer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom p,
+.footer-bottom ul {
+  margin: 0;
+}
+
+.footer-bottom a {
+  color: #98c379;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #81a864;
+}
+
+.footer-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    width: 100%;
+  }
+
+  .footer-right form {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-right input {
+    width: 100%;
+  }
+
+  .footer-right button {
+    width: 100%;
+  }
+
+  .quick-links {
+    flex-direction: column;
+    /* Stack quick links vertically on smaller screens */
+  }
+
+  .footer-middle,
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 94vw;
+    margin-top: 6px;
+  }
+
+  .footer-right {
+    gap: 10px;
+  }
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 480px) {
+  .footer-left,
+  .footer-middle,
+  .footer-right {
+    text-align: center;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-right input,
+  .footer-right button {
+    width: fit-content;
+  }
+
+  .footer-bottom {
+    font-size: 1.2rem;
+  }
+
+  .footer-social-icons a {
+    font-size: 1.4rem;
+  }
+}
 
         .navbar-link:hover {
             background-color: #87d15b;
@@ -337,6 +653,7 @@ section.in-view {
                 </div>
             </div>
         </div>
+      </div>
     </section>
 
     <!-- Core Values Section -->
@@ -361,6 +678,20 @@ section.in-view {
                 </div>
             </div>
         </div>
+        <div class="value-box-center">
+          <div class="value-item">
+            <img
+              src="https://wallpapercave.com/wp/wp8046449.jpg"
+              alt="Sustainability Icon"
+            />
+            <p><strong>Sustainability</strong></p>
+            <p>
+              Promoting sustainable practices to ensure a balanced coexistence
+              with nature.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Our Team Section -->
@@ -385,6 +716,7 @@ section.in-view {
                 </div>
             </div>
         </div>
+      </div>
     </section>
 
     <script>
