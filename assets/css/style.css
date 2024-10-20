@@ -851,7 +851,6 @@ html {
 
 .button-container {
   display: flex;
-  margin-top: 0.5rem;
   /* Use flexbox */
   justify-content: center;
   /* Center horizontally */
@@ -877,8 +876,7 @@ html {
 
 .features-item {
   display: flex;
-  align-items: center;
-  padding: 1.5rem 0.5rem;
+  align-items: flex-start;
   gap: 25px;
   /*left align */
   text-align: left;
@@ -895,14 +893,12 @@ html {
 
 .item-text {
   text-align: left;
-  line-height: 1.5;
 }
 
 .features-item .item-icon {
   color: var(--pistachio);
   font-size: 5.5rem;
   margin-block-start: 10px;
-  align-self: flex-start;
 }
 
 .features-item .item-icon ion-icon {
@@ -911,7 +907,6 @@ html {
 
 .features-item .item-title {
   margin-block-end: 10px;
-  line-height: 10px;
 }
 
 .features-item .item-text {
