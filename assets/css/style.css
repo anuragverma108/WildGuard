@@ -2920,7 +2920,8 @@ data {
 }
 
 .btn-link:hover {
-  background-color: #45a049; /* Darker shade on hover */
+  background-color: #2c7a1a; /* Darker shade on hover */
+  color: white;
 }
 
 /* Styles for the flip card effect */
