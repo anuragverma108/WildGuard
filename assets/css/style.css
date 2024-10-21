@@ -1222,34 +1222,36 @@ html {
 }
 
 #partnerButton {
-  outline: none; /* Remove default focus outline */
-  background-color: #fff;
-  color: #71b973;
-  border: 2px solid black; /* Custom border */
-  padding: 20px 50px;
-  font-style: bold;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  align-items: center;
-  font-size: 2rem;
-  gap: 10px;
-  text-align: center;
-  text-decoration: underline;
+    outline: none;
+    background-color: #fff;
+    color: #71b973;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px 50px;
+    font-weight: bold; 
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    font-size: 2rem;
+    gap: 10px;
+    text-align: center;
 }
 
 #partnerButton:focus {
   outline: none;
-  box-shadow: 0 0 10px rgba(113, 185, 115, 0.5);
+  box-shadow: 0 4px 10px rgba(113, 185, 115, 0.5); 
+  background-color: #71b973; 
+  color: #fff; 
+  transform: scale(1.05); 
 }
 
 #partnerButton:hover {
-  background-color: #71b973;
-  color: white;
-  transform: scale(1.05); /* Slightly increase size */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
-  opacity: 0.9; /* Slightly reduce opacity */
+  background-color: #71b973; 
+  color: #fff; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.05); 
 }
 
 /* Responsive design adjustments */
