@@ -15,12 +15,199 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <style>
+      /* Improved CSS for Rate Us Page */
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .bodys {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        max-width: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card h2 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .fa-house {
+        color: #f76c6c;
+        font-size: 24px;
+        text-decoration: none;
+        margin-bottom: 10px;
+      }
+
+      .star {
+        font-size: 40px;
+        color: #e0e0e0;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      .star:hover,
+      .star.active {
+        color: #f76c6c;
+      }
+
+      #output {
+        font-size: 18px;
+        color: #333;
+        margin-top: 10px;
+      }
+
+      #ratingForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      #reviewInput {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        resize: none;
+        min-height: 100px;
+        margin-bottom: 15px;
+        font-family: 'Arial', sans-serif;
+        font-size: 16px;
+      }
+
+      button[type="submit"] {
+        background-color: #f76c6c;
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #e05b5b;
+      }
+
+      #popup {
+        display: none;
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+
+      main {
+        max-width: 1000px;
+        margin: 40px auto;
+      }
+
+      main h1 {
+        text-align: center;
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .slider {
+        overflow: hidden;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+
+      .slide-row {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .slide-col {
+        flex: 1;
+        margin-right: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .slide-col .content {
+        max-width: 60%;
+      }
+
+      .slide-col h2 {
+        color: #333;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .slide-col p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .hero img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+      }
+
+      .indicator {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .indicator .btn {
+        width: 10px;
+        height: 10px;
+        background-color: #ddd;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .indicator .btn.active {
+        background-color: #f76c6c;
+      }
+
+      .indicator .btn:hover {
+        background-color: #e05b5b;
+      }
+    </style>
   </head>
 
-  <body>
+<body>
+
     <div class="bodys">
-      <!-- <div class="rating-form">
-    </div> -->
       <div class="card">
         <a href="./index.html"><i class="fa-solid fa-house"></i></a>
         <h2>Rate Us</h2>
@@ -107,15 +294,14 @@
             <div class="content">
               <p>
                 Sarah Dam is an American internet entrepreneur and media
-                proprietor, and investor. She is the founder of the
-                multi-national technology company Zara.
+                consultant. She is the co-founder and CEO of Treymont.
               </p>
               <h2>Sarah</h2>
-              <p>Zara Inc.</p>
+              <p>Treymont Inc.</p>
             </div>
             <div class="hero">
               <img
-                src="https://github.com/ecemgo/ecemgo/assets/13468728/55116c98-5f9a-4b0a-9fdb-4911b52d5ef3"
+                src="https://user-images.githubusercontent.com/13468728/234031654-f891d60e-53c6-420b-b57f-0c4c898e5b78.jpg"
                 alt="avatar"
               />
             </div>
@@ -124,10 +310,9 @@
       </div>
 
       <div class="indicator">
-        <span class="btn active"></span>
-        <span class="btn"></span>
-        <span class="btn"></span>
-        <span class="btn"></span>
+        <span class="btn active" onclick="slide(0)"></span>
+        <span class="btn" onclick="slide(1)"></span>
+        <span class="btn" onclick="slide(2)"></span>
       </div>
     </main>
   </body>

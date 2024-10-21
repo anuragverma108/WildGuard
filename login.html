@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            background: linear-gradient(to right, #c3e3fd, #dcf4ff, #e3fcf7);
             margin: 0;
             padding: 0;
             display: flex;
@@ -15,41 +16,59 @@
             align-items: center;
             min-height: 100vh;
         }
+
         .login-container {
             background-color: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
             padding: 40px;
             width: 100%;
             max-width: 400px;
+            transition: transform 0.3s;
         }
+
+        .login-container:hover {
+            transform: scale(1.02);
+            /* Slightly enlarge the container on hover */
+        }
+
         h2 {
             text-align: center;
-            color: #1877f2;
+            color: #023430;
             margin-bottom: 30px;
         }
+
         .input-group {
             margin-bottom: 20px;
         }
+
         .input-group label {
             display: block;
             margin-bottom: 5px;
             color: #606770;
         }
+
         .input-group input {
             width: 100%;
             padding: 10px;
             border: 1px solid #dddfe2;
             border-radius: 4px;
             font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            /* Add transition */
         }
+
         .input-group input:focus {
-            border-color: #1877f2;
+            border-color: #023430;
             outline: none;
+            box-shadow: 0 0 5px rgba(2, 52, 48, 0.5);
+            /* Shadow effect on focus */
         }
+
         .password-toggle {
             position: relative;
         }
+
         .password-toggle i {
             position: absolute;
             top: 50%;
@@ -58,55 +77,74 @@
             cursor: pointer;
             color: #606770;
         }
+
         .password-strength {
             height: 5px;
             margin-top: 5px;
             border-radius: 2px;
             transition: width 0.3s;
         }
+
         .login-button {
             width: 100%;
             padding: 12px;
-            background-color: #1877f2;
+            background-color: #023430;
             color: #ffffff;
             border: none;
             border-radius: 4px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            /* Add transition */
         }
+
         .login-button:hover {
-            background-color: #166fe5;
+            background-color: #011c1a;
+            transform: translateY(-2px);
+            /* Slight lift effect on hover */
         }
+
+        .login-button:active {
+            transform: translateY(0);
+            /* Reset lift effect on click */
+        }
+
         .extras {
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
         }
+
         .remember-me {
             display: flex;
             align-items: center;
         }
+
         .remember-me input {
             margin-right: 5px;
         }
+
         .forgot-password {
-            color: #1877f2;
+            color: #023430;
             text-decoration: none;
         }
+
         .social-login {
             margin-top: 20px;
             text-align: center;
         }
+
         .social-login p {
             margin-bottom: 10px;
             color: #606770;
         }
+
         .social-buttons {
             display: flex;
             justify-content: space-between;
         }
+
         .social-btn {
             flex: 1;
             padding: 10px;
@@ -118,42 +156,61 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+            /* Add transition */
         }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            /* Lift effect on hover */
+        }
+
+        .social-btn:active {
+            transform: translateY(0);
+            /* Reset lift effect on click */
+        }
+
         .google-btn {
             background-color: #ffffff;
             color: #757575;
             border: 1px solid #dadce0;
             margin-right: 10px;
         }
+
         .facebook-btn {
-            background-color: #1877f2;
+            background-color: #3a5a95;
             color: #ffffff;
         }
+
         .social-btn img {
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
+
         .signup-link {
             text-align: center;
             margin-top: 20px;
             color: #606770;
         }
+
         .signup-link a {
-            color: #1877f2;
+            color: #023430;
             text-decoration: none;
             font-weight: bold;
         }
+
         .home-icon {
             position: absolute;
             top: 20px;
             left: 20px;
-            color: #1877f2;
+            color: #023430;
             font-size: 24px;
             text-decoration: none;
         }
     </style>
 </head>
+
 <body>
     <a href="./index.html" class="home-icon"><i class="fas fa-house"></i></a>
     <div class="login-container">
@@ -166,8 +223,8 @@
             <div class="input-group">
                 <label for="password">Password</label>
                 <div class="password-toggle">
-                    <input type="password" id="password" placeholder="Enter your password" required >
-                    
+                    <input type="password" id="password" placeholder="Enter your password" required>
+
                 </div>
                 <div class="password-strength" id="passwordStrength"></div>
             </div>
@@ -195,33 +252,33 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const togglePassword = document.getElementById('togglePassword');
             const password = document.getElementById('password');
             const passwordStrength = document.getElementById('passwordStrength');
             const email = document.getElementById('email');
             const loginForm = document.getElementById('loginForm');
 
-            togglePassword.addEventListener('click', function() {
+            togglePassword.addEventListener('click', function () {
                 const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
                 password.setAttribute('type', type);
                 this.classList.toggle('fa-eye');
                 this.classList.toggle('fa-eye-slash');
             });
 
-            password.addEventListener('input', function() {
+            password.addEventListener('input', function () {
                 const strength = calculatePasswordStrength(this.value);
                 updatePasswordStrengthIndicator(strength);
             });
 
-            email.addEventListener('input', function() {
+            email.addEventListener('input', function () {
                 this.setCustomValidity('');
                 if (this.validity.typeMismatch) {
                     this.setCustomValidity('Please enter a valid email address');
                 }
             });
 
-            loginForm.addEventListener('submit', function(e) {
+            loginForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 if (this.checkValidity()) {
                     alert('Login successful!');
@@ -249,4 +306,5 @@
         });
     </script>
 </body>
+
 </html>
