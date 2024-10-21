@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
@@ -121,6 +123,22 @@
      }
    `;
    document.head.appendChild(style);
+</script>
+
+<div class="scroll-to-bottom">
+  <button id="scrollBOTTOM">
+    <i class="material-icons">arrow_downward</i>
+  </button>
+</div>
+<script>
+  const scrollBOTTOM = document.querySelector('#scrollBOTTOM');
+  scrollBOTTOM.addEventListener('click', function() {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        left: 0,
+        behavior:'smooth'
+      });
+  });
 </script>
 
 <!-- Progress Bar -->
@@ -266,12 +284,17 @@
 
       </nav>
       <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search..." aria-label="Search" autocomplete="off"
-          oninput="handleInput()">
-        <button id="search-button" aria-label="Search" onclick="performSearch()">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
+        <form id="search-form">
+            <div class="search-input-wrapper">
+                <!-- <i class="fas fa-search search-icon"></i> -->
+                <input type="text" id="search-input" placeholder="Search..." aria-label="Search">
+            </div>
+            <button type="submit" id="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        <div id="search-results"></div>
+    </div>
 
       <div class="header-action">
 
@@ -462,7 +485,7 @@
               </div>
 
               <div>
-                <h3 class="h4 item-title">Safe Water</h3>
+                <h3 class="h4 item-title">Save Water</h3>
 
                 <p class="item-text">
                   Conserving water is key to sustaining life and ecosystems.
@@ -854,7 +877,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
         - #DONATE
       -->
       
-          <section class="section donate" id="donate">
+          <section class="section donate secDon" id="donate">
             <div class="container">
               <ul class="donate-list">
 
@@ -1152,12 +1175,11 @@ Our mission is to provide outstanding care and dedicated support for animals in 
              <script src="script.js"></script>
            </div>
           
-
           <!-- 
         - #TESTIMONIALS
         -->
 
-          <section class="testi">
+          <section class="testi" id="testi">
 
             <div class="testi-content">
 
@@ -1212,7 +1234,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
         - #PARTNER
       -->
 
-          <section class="section partner">
+          <section class="section partner" id="partners">
             <div class="container">
 
               <a href="#" class="partner-logo">
@@ -1447,7 +1469,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
           <!-- 
         -# ACCORDION
        -->
-          <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36">
+          <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36" id="faq">
             <div class="text-center mb-6">
               <p class="text-5xl font-bold text-gray-800 uppercase">Frequently Asked Questions</p>
             </div>
@@ -1460,7 +1482,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                 <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
               </div>
 
-              <div class="impact-gallery">
+              <div class="impact-gallery" id="impact">
                 <div id="fontt"><b>
                     <h2>Impact of Your Donations</h2>
                   </b> </div>
@@ -1753,7 +1775,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
       <div class="footer-right">
         <div class="">
           <a href="review.html">
-            <button type="submit">🌟Rating/Review🌟</button>
+            <button type="submit">Rate Us</button>
           </a>
 
         </div>
@@ -1940,6 +1962,8 @@ Our mission is to provide outstanding care and dedicated support for animals in 
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./assets/js/script.js"></script>
   <script src="//code.tidio.co/wtslouasr8yln5hjnm7ytob3kl8mkylx.js" async></script>
+  <script src="./assets/js/search-index.js"></script>
+  <script src="./assets/js/search.js"></script>
 
 </body>
 
