@@ -1546,3 +1546,25 @@ body {
   color: var(--white); /* White text on highlighted elements */
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.header.dark-mode,
+.footer.dark-mode {
+  background-color: #1e1e1e;
+}
+
+.navbar.dark-mode {
+  background-color: #1e1e1e;
+}
+
+.btn.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+

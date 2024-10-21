@@ -209,3 +209,29 @@ function hideNavigationButtons() {
   clearSearchBtn.style.display = "none";
   matchCounter.style.display = "none";
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('themeToggle'); 
+  const themeIcon = document.getElementById('themeIcon'); 
+  const body = document.body; 
+
+  
+  if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+    themeIcon.setAttribute('name', 'sunny-outline'); 
+  }
+
+  themeToggle.addEventListener('click', () => { 
+    body.classList.toggle('dark-mode'); 
+
+   
+    if (body.classList.contains('dark-mode')) { 
+      themeIcon.setAttribute('name', 'sunny-outline'); 
+      localStorage.setItem('dark-mode', 'enabled');
+    } else { 
+      themeIcon.setAttribute('name', 'moon-outline'); 
+      localStorage.setItem('dark-mode', 'disabled');
+    } 
+  });
+});
