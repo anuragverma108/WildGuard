@@ -52,6 +52,33 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <style> 
+  body {
+    font-family: Arial, sans-serif;
+    height: 2000px; /* To demonstrate scrolling */
+    margin: 0;
+    padding: 20px;
+  }
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; 
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+.back-to-top:hover {
+    background-color: #0056b3;
+    }
+</style>
 
 
 
@@ -1784,6 +1811,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
         <a href="./privacy-policy.html" class="footer-link" style="display: inline;">Privacy Policy</a>
       </p>
     </div>
+    <button id="backToTop" class="back-to-top">↑</button>
 
 
 
@@ -1941,6 +1969,24 @@ Our mission is to provide outstanding care and dedicated support for animals in 
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./assets/js/script.js"></script>
   <script src="//code.tidio.co/wtslouasr8yln5hjnm7ytob3kl8mkylx.js" async></script>
+  <script>
+    // JavaScript Code
+    window.onscroll = function() {
+        const backToTopButton = document.getElementById("backToTop");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block"; // Show button
+        } else {
+            backToTopButton.style.display = "none"; // Hide button
+        }
+    };
+
+    document.getElementById("backToTop").onclick = function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Smooth scroll effect
+        });
+    };
+</script>
 
 </body>
 
