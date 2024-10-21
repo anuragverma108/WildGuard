@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./assets/css/register.css">
     <title>Register</title>
     <script>
+        
         console.log("yesv")
         const handleSubmitOnSignUp = (e) => {
         e.preventDefault();
@@ -66,7 +67,7 @@
     <div class="login-page">
         <div class="content">
             <a href="./index.html" class="home-icon"><i class="fa-solid fa-house"></i></a>
-            <h2>Create an account</h2>
+            <h2 class="CreateHeading">Create an account</h2>
 
             <form class="data">
 
@@ -117,12 +118,12 @@
 
                 <!-- Sign up Button -->
                 <div class="entry signup">
-                    <button type="submit" onclick="handleSubmitOnSignUp(event)">Sign Up</button>
+                    <button type="submit" id="signupBTN" onclick="handleSubmitOnSignUp(event)">Sign Up</button>
                 </div>
 
                 <!-- Social Media Buttons -->
                 <div class="social-login">
-                    <p>Or Sign up with</p>
+                    <p class="SPW">Or Sign up with</p>
                     <div class="social-buttons">
                         <button type="button" class="social-btn google-btn">
                             <img src="./assets/images/google.png" alt="Google Logo" class="google-logo">
@@ -134,11 +135,51 @@
                 </div>
 
                 <!-- Login Link -->
-                <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
+                <p class="signup-link">Already have an account? <a id="LoginBTN">Login</a></p>
 
             </form>
         </div>
     </div>
+
+    <script>
+        let signupB = document.getElementById("signupBTN");
+        let Login = document.getElementById("LoginBTN");
+        let SUW = document.querySelector(".SPW");
+        let repass = document.getElementById("repeat-password").parentElement.parentElement;
+        let heading = document.querySelector(".CreateHeading");
+        
+        let isLoginMode = false;
+    
+        Login.onclick = () => {
+            if (isLoginMode) {
+                repass.innerHTML = `
+                    <label for="repeat-password">
+                        <h3 style="margin-left: 30px;">Confirm Password</h3>
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="password" id="repeat-password" placeholder="Re-enter your password" required>
+                        <div class="fa toggle-password" onclick="togglePasswordVisibility('repeat-password')">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                `;
+                repass.style.maxHeight = 'fit-content';
+                signupB.innerHTML = "Sign Up";
+                SUW.innerHTML = "Or Sign up with";
+                Login.innerHTML = "Login";
+                heading.innerHTML = "Create an account";
+                isLoginMode = false;
+            } else {
+                repass.style.maxHeight = 0;
+                repass.innerHTML = '';
+                signupB.innerHTML = "Log In";
+                SUW.innerHTML = "Log in with";
+                Login.innerHTML = "Register";
+                heading.innerHTML = "Welcome Back!";
+                isLoginMode = true;
+            }
+        };
+    </script>
 </body>
 
 </html>
