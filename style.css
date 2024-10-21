@@ -157,3 +157,33 @@
         width: 100%;
     }
 }
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 80%;
+  }
+  
+  .testimonial p {
+    font-size: 1.2em;
+    font-style: italic;
+  }
+  
+  .testimonial h4 {
+    margin-top: 10px;
+    color: #555;
+  }
