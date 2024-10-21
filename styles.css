@@ -53,6 +53,7 @@ nav ul li a:hover {
     padding: 60px 20px;
     text-align: center;
     background-color: #fff;
+
 }
 
 .learn-more-section h2 {
@@ -124,4 +125,46 @@ footer {
 footer p {
     margin: 0;
     font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .content-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%; 
+    }
+
+    .donate-btn {
+        font-size: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .learn-more-section h2 {
+        font-size: 24px; 
+    }
+
+    .learn-more-section p {
+        font-size: 16px; 
+    }
+
+    .card {
+        width: 90%; 
+    }
+
+    .donate-btn {
+        padding: 12px 25px; 
+    }
 }
