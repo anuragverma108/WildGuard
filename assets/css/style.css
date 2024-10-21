@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Baloo+Bhai+2:wght@400..800&display=swap');
+
 :root {
   /**
    * colors
@@ -593,6 +595,7 @@ html {
   font-size: 15px;
   font-weight: bold;
   left: 1px;
+  font-family: "Arima";
 }
 .new_size:hover {
   transform: scale(1.2);
@@ -882,7 +885,8 @@ html {
 
 .features-item {
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
   /*left align */
   text-align: left;
@@ -893,7 +897,7 @@ html {
 .features-item:hover {
   transform: translateY(-10px);
   /* Move the feature item upwards */
-  box-shadow: 0 10px 20px rgba(0, 255, 0, 0.6);
+  box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.6);
   /* Glowing effect */
 }
 
