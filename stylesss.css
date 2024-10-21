@@ -113,6 +113,10 @@
         cursor: pointer; /* Show pointer on hover */
     }
     
+    .donate-button2 ion-icon {
+        margin-left: 6px;
+    }
+    
     .donate-button2::before {
         content: "";
         position: absolute;
