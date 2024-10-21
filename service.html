@@ -1,53 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container-xxl {
+            padding: 50px 0;
+        }
+
+        h1, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        .section-title {
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .display-6 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        /* Internal CSS for max-width */
+        .max-width-600 {
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Flexbox Styles for Services */
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .service-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            flex-basis: calc(33.333% - 30px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Different background colors for services */
+        .service-item:nth-child(1) {
+            background-color: #f8d7da;
+        }
+
+        .service-item:nth-child(2) {
+            background-color: #d4edda;
+        }
+
+        .service-item:nth-child(3) {
+            background-color: #d1ecf1;
+        }
+
+        .service-item:nth-child(4) {
+            background-color: #fff3cd;
+        }
+
+        .service-item:nth-child(5) {
+            background-color: #cce5ff;
+        }
+
+        .service-item:nth-child(6) {
+            background-color: #e2e3e5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .service-item {
+                flex-basis: calc(50% - 30px);
+            }
+
+            .display-6 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .service-item {
+                flex-basis: 100%;
+            }
+
+            .service-item {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
 <body>
+
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <div class="max-width-600">
                 <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
-                <h1 class="display-6 mb-4">We Focuse On Making The Best In All Sectors</h1>
+                <h1 class="display-6 mb-4">We Focus On Making The Best In All Sectors</h1>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                        <img class="img-fluid rounded mb-4" src="img/service-1.jpg" alt="">
-                        <h4 class="mb-0">Web Design</h4>
-                    </a>
+            <div class="services-container">
+                <div class="service-item">
+                    <h4>Web Design</h4>
+                    <p class="service-description">We create visually appealing and responsive websites tailored to your business needs, ensuring a seamless user experience on all devices.</p>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                        <img class="img-fluid rounded mb-4" src="img/service-2.jpg" alt="">
-                        <h4 class="mb-0">App Development</h4>
-                    </a>
+                <div class="service-item">
+                    <h4>App Development</h4>
+                    <p class="service-description">Our team develops high-quality mobile and web applications, focusing on performance, user-friendliness, and cross-platform compatibility.</p>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                        <img class="img-fluid rounded mb-4" src="img/service-3.jpg" alt="">
-                        <h4 class="mb-0">SEO Optimization</h4>
-                    </a>
+                <div class="service-item">
+                    <h4>SEO Optimization</h4>
+                    <p class="service-description">We boost your website's visibility on search engines using the latest SEO techniques, driving organic traffic to your business.</p>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                        <img class="img-fluid rounded mb-4" src="img/service-4.jpg" alt="">
-                        <h4 class="mb-0">Social Marketing</h4>
-                    </a>
+                <div class="service-item">
+                    <h4>Social Marketing</h4>
+                    <p class="service-description">Our social media marketing strategies help you connect with your target audience, grow your brand, and increase engagement across platforms.</p>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                        <img class="img-fluid rounded mb-4" src="img/service-5.jpg" alt="">
-                        <h4 class="mb-0">Graphics Designing</h4>
-                    </a>
+                <div class="service-item">
+                    <h4>Graphics Designing</h4>
+                    <p class="service-description">From logos to complete brand identities, our creative team delivers stunning graphic designs that leave a lasting impression.</p>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <a class="service-item d-block rounded text-center h-100 p-4" href="">
-                        <img class="img-fluid rounded mb-4" src="img/service-6.jpg" alt="">
-                        <h4 class="mb-0">Linkedin Optimization</h4>
-                    </a>
+                <div class="service-item">
+                    <h4>LinkedIn Optimization</h4>
+                    <p class="service-description">We help you build a strong LinkedIn presence, optimize your profile, and enhance your professional network to achieve your career goals.</p>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Service End -->
 
 </body>
 </html>
