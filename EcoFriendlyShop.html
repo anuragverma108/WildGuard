@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Shop</title>
+
+    <!-- Font and Icon Links -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        /* General styling for body */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #28a745;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 20px;
+        }
+
+        .nav-link:hover {
+            color: #f1f1f1;
+        }
+
+        /* Shop Title */
+        .shop-title {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Product Grid Styling */
+        .product-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            font-size: 1.2rem;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background-color: #218838;
+        }
+
+        /* Cart Section Styling */
+        .cart-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .cart-section h2 {
+            font-size: 2rem;
+        }
+
+        .cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .cart-items li {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-controls button {
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .cart-controls button:hover {
+            background-color: #218838;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #28a745;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Eco-Friendly Shop 🛍️</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shop">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cart">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Section -->
+    <div class="shop-title">Eco-Friendly Products</div>
+    <div class="product-container">
+        <div class="product-card">
+            <img src="https://www.ecomena.org/wp-content/uploads/2018/07/reusuable-shopping-bags.jpg" alt="Reusable Bag">
+            <h3>Reusable Bag</h3>
+            <p>Price: $10.00</p>
+            <button onclick="addToCart('Reusable Bag', 10)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://rukminim2.flixcart.com/image/750/900/l0tweq80/bottle/q/j/g/1000-elina-plastic-water-bottle-for-fridge-home-office-gym-and-original-imagcj4a9jkppzkw.jpeg?q=20&crop=false" alt="Eco Water Bottle">
+            <h3>Eco Water Bottle</h3>
+            <p>Price: $15.00</p>
+            <button onclick="addToCart('Eco Water Bottle', 15)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="https://www.theimpatientgardener.com/wp-content/uploads/2020/01/seeds-8443.jpg" alt="Plantable Seeds">
+            <h3>Plantable Seeds</h3>
+            <p>Price: $5.00</p>
+            <button onclick="addToCart('Plantable Seeds', 5)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <section class="cart-section" id="cart">
+        <h2>Your Cart</h2>
+        <ul class="cart-items"></ul>
+        <p><strong>Total Price: $<span id="total-price">0</span></strong></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Save Ecology. All rights reserved.</p>
+    </footer>
+
+    <!-- JS for Cart -->
+    <script>
+        let cartItems = [];
+        let totalPrice = 0;
+
+        function addToCart(productName, productPrice) {
+            const existingItem = cartItems.find(item => item.name === productName);
+            if (existingItem) {
+                existingItem.quantity++;
+                existingItem.totalPrice += productPrice;
+            } else {
+                cartItems.push({ name: productName, price: productPrice, quantity: 1, totalPrice: productPrice });
+            }
+            totalPrice += productPrice;
+            updateCartDisplay();
+        }
+
+        function removeFromCart(productName, productPrice) {
+            const existingItem = cartItems.find(item => item.name === productName);
+            if (existingItem && existingItem.quantity > 0) {
+                existingItem.quantity--;
+                existingItem.totalPrice -= productPrice;
+                totalPrice -= productPrice;
+                if (existingItem.quantity === 0) {
+                    cartItems = cartItems.filter(item => item.name !== productName);
+                }
+            }
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItemsList = document.querySelector('.cart-items');
+            cartItemsList.innerHTML = ''; // Clear previous cart items
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    ${item.name} - $${item.price} x ${item.quantity} = $${item.totalPrice.toFixed(2)}
+                    <div class="cart-controls">
+                        <button onclick="addToCart('${item.name}', ${item.price})">+</button>
+                        <button onclick="removeFromCart('${item.name}', ${item.price})">-</button>
+                    </div>`;
+                cartItemsList.appendChild(listItem);
+            });
+            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
