@@ -1,0 +1,126 @@
+/* Reset some default styles */
+body, h1, h2, h3, h4, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333; /* Dark text for better readability */
+}
+.backgoundimage{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+
+}
+html, body {
+    height: 100%; /* Ensure full height */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%; /* Ensure container fills height */
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: #007bff; /* Blue background */
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .logo {
+    color: #fff; /* White text for logo */
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffc107; /* Yellow on hover */
+}
+
+/* Hero Section Styles */
+.hero-section {
+    /* background-image: url('https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?w=1800&t=st=1729523427~exp=1729524027~hmac=1973a4c729fe8e2fafb5a114290d7955939b4e05e9f2f4cd46c89b1e758631fe'); */
+    color: #f60000;
+    background-repeat:repeat-x;
+    padding: 100px 0;
+    text-align: center;
+    height: calc(100vh - 70px); /* Full height minus navbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Service Section Styles */
+.container-xxl {
+    padding: 60px 0;
+    background-color: #ffffff; /* White background */
+}
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue color for title */
+}
+
+.service-item {
+    background-color: #f1f1f1; /* Light grey background for services */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2); /* Subtle shadow on hover */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #007bff; /* Blue background */
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin: 0;
+}
