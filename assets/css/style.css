@@ -1293,13 +1293,19 @@ html {
 }
 
 .service-card {
+  height: 100%;
   background-color: var(--white);
   text-align: center;
-  padding: 45px 40px;
+  padding-top: 25px;
+  padding-bottom: 70px;
+  padding-right: 30px;
+  padding-left: 30px;
   border-radius: 2px;
   outline: 3px solid transparent;
   box-shadow: var(--card-shadow);
   transition: var(--transition-2);
+  position: relative; 
+  overflow:visible;
 }
 
 .service-card:is(:hover, :focus-within) {
@@ -1327,17 +1333,20 @@ html {
 }
 
 .btn-link {
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 2px;
   color: var(--silver-chalice);
-  font-size: var(--fs-8);
+  font-size: var(--fs-9);
   font-weight: var(--fw-600);
-  margin-block-start: 15px;
+  
 }
 
 .btn-link span {
+  
   text-decoration: underline;
 }
 
