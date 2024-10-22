@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enhanced Login</title>
     <style>
+        /* Your existing styles */
+
         body {
             font-family: Arial, sans-serif;
             background: linear-gradient(to right, #c3e3fd, #dcf4ff, #e3fcf7);
@@ -29,7 +31,6 @@
 
         .login-container:hover {
             transform: scale(1.02);
-            /* Slightly enlarge the container on hover */
         }
 
         h2 {
@@ -55,14 +56,12 @@
             border-radius: 4px;
             font-size: 16px;
             transition: border-color 0.3s, box-shadow 0.3s;
-            /* Add transition */
         }
 
         .input-group input:focus {
             border-color: #023430;
             outline: none;
             box-shadow: 0 0 5px rgba(2, 52, 48, 0.5);
-            /* Shadow effect on focus */
         }
 
         .password-toggle {
@@ -96,18 +95,11 @@
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
-            /* Add transition */
         }
 
         .login-button:hover {
             background-color: #011c1a;
             transform: translateY(-2px);
-            /* Slight lift effect on hover */
-        }
-
-        .login-button:active {
-            transform: translateY(0);
-            /* Reset lift effect on click */
         }
 
         .extras {
@@ -157,17 +149,10 @@
             align-items: center;
             justify-content: center;
             transition: background-color 0.3s, transform 0.3s;
-            /* Add transition */
         }
 
         .social-btn:hover {
             transform: translateY(-2px);
-            /* Lift effect on hover */
-        }
-
-        .social-btn:active {
-            transform: translateY(0);
-            /* Reset lift effect on click */
         }
 
         .google-btn {
@@ -224,7 +209,6 @@
                 <label for="password">Password</label>
                 <div class="password-toggle">
                     <input type="password" id="password" placeholder="Enter your password" required>
-
                 </div>
                 <div class="password-strength" id="passwordStrength"></div>
             </div>
@@ -242,7 +226,7 @@
                 <button type="button" class="social-btn google-btn" id="googleSignInBtn">
                     <img src="./assets/images/google.png" alt="Google Logo"> Google
                 </button>
-                <button type="button" class="social-btn facebook-btn">
+                <button type="button" class="social-btn facebook-btn" id="facebookLoginBtn">
                     <img src="./assets/images/facebook.png" alt="Facebook Logo"> Facebook
                 </button>
             </div>
@@ -251,61 +235,8 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const togglePassword = document.getElementById('togglePassword');
-            const password = document.getElementById('password');
-            const passwordStrength = document.getElementById('passwordStrength');
-            const email = document.getElementById('email');
-            const loginForm = document.getElementById('loginForm');
-
-            togglePassword.addEventListener('click', function () {
-                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                password.setAttribute('type', type);
-                this.classList.toggle('fa-eye');
-                this.classList.toggle('fa-eye-slash');
-            });
-
-            password.addEventListener('input', function () {
-                const strength = calculatePasswordStrength(this.value);
-                updatePasswordStrengthIndicator(strength);
-            });
-
-            email.addEventListener('input', function () {
-                this.setCustomValidity('');
-                if (this.validity.typeMismatch) {
-                    this.setCustomValidity('Please enter a valid email address');
-                }
-            });
-
-            loginForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                if (this.checkValidity()) {
-                    alert('Login successful!');
-                    // Here you would typically send the form data to your server
-                } else {
-                    alert('Please fill out all fields correctly.');
-                }
-            });
-
-            function calculatePasswordStrength(password) {
-                let strength = 0;
-                if (password.length >= 8) strength++;
-                if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
-                if (password.match(/\d/)) strength++;
-                if (password.match(/[^a-zA-Z\d]/)) strength++;
-                return strength;
-            }
-
-            function updatePasswordStrengthIndicator(strength) {
-                const colors = ['#ff4d4d', '#ffa64d', '#ffff4d', '#4dff4d'];
-                const widths = ['25%', '50%', '75%', '100%'];
-                passwordStrength.style.width = widths[strength];
-                passwordStrength.style.backgroundColor = colors[strength];
-            }
-        });
-    </script>
-     <script src="login.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="login.js"></script>
 </body>
 
 </html>
