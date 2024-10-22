@@ -7,20 +7,21 @@
     <title>Enhanced Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #c3e3fd, #dcf4ff, #e3fcf7);
-            margin: 0;
-            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
+            padding: 0;
         }
 
         .login-container {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
             padding: 40px;
             width: 100%;
             max-width: 400px;
@@ -28,41 +29,38 @@
         }
 
         .login-container:hover {
-            transform: scale(1.02);
-            /* Slightly enlarge the container on hover */
+            transform: scale(1.03);
         }
 
         h2 {
             text-align: center;
-            color: #023430;
+            color: #ffffff;
             margin-bottom: 30px;
+            font-size: 28px;
+            letter-spacing: 1.5px;
         }
 
         .input-group {
             margin-bottom: 20px;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #606770;
+            position: relative; /* Add this to make positioning easier */
         }
 
         .input-group input {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #dddfe2;
-            border-radius: 4px;
+            padding: 12px;
+            padding-right: 40px; /* Add space for the eye icon */
+            background-color: #f1f3f4;
+            border: none;
+            border-radius: 12px;
+            box-shadow: inset 3px 3px 10px #d1d9e6, inset -3px -3px 10px #ffffff;
             font-size: 16px;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            /* Add transition */
+            outline: none;
+            transition: all 0.3s ease;
         }
 
         .input-group input:focus {
-            border-color: #023430;
-            outline: none;
-            box-shadow: 0 0 5px rgba(2, 52, 48, 0.5);
-            /* Shadow effect on focus */
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.6);
         }
 
         .password-toggle {
@@ -72,84 +70,40 @@
         .password-toggle i {
             position: absolute;
             top: 50%;
-            right: 10px;
+            right: 15px; /* Adjust right position so it stays inside */
             transform: translateY(-50%);
             cursor: pointer;
             color: #606770;
         }
 
-        .password-strength {
-            height: 5px;
-            margin-top: 5px;
-            border-radius: 2px;
-            transition: width 0.3s;
-        }
-
         .login-button {
             width: 100%;
             padding: 12px;
-            background-color: #023430;
+            background: linear-gradient(to right, #f857a6, #ff5858);
             color: #ffffff;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-            /* Add transition */
+            transition: all 0.3s ease;
         }
 
         .login-button:hover {
-            background-color: #011c1a;
-            transform: translateY(-2px);
-            /* Slight lift effect on hover */
-        }
-
-        .login-button:active {
-            transform: translateY(0);
-            /* Reset lift effect on click */
-        }
-
-        .extras {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .remember-me {
-            display: flex;
-            align-items: center;
-        }
-
-        .remember-me input {
-            margin-right: 5px;
-        }
-
-        .forgot-password {
-            color: #023430;
-            text-decoration: none;
-        }
-
-        .social-login {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .social-login p {
-            margin-bottom: 10px;
-            color: #606770;
+            transform: scale(1.05);
         }
 
         .social-buttons {
             display: flex;
             justify-content: space-between;
+            margin-top: 20px;
         }
 
         .social-btn {
             flex: 1;
             padding: 10px;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
             font-size: 14px;
             font-weight: bold;
             cursor: pointer;
@@ -157,17 +111,12 @@
             align-items: center;
             justify-content: center;
             transition: background-color 0.3s, transform 0.3s;
-            /* Add transition */
         }
 
-        .social-btn:hover {
-            transform: translateY(-2px);
-            /* Lift effect on hover */
-        }
-
-        .social-btn:active {
-            transform: translateY(0);
-            /* Reset lift effect on click */
+        .social-btn img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
         }
 
         .google-btn {
@@ -182,37 +131,18 @@
             color: #ffffff;
         }
 
-        .social-btn img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-
-        .signup-link {
+        .forgot-password, .signup-link {
+            color: #ffffff;
             text-align: center;
-            margin-top: 20px;
-            color: #606770;
         }
 
         .signup-link a {
-            color: #023430;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .home-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: #023430;
-            font-size: 24px;
-            text-decoration: none;
+            color: #ff85a1;
         }
     </style>
 </head>
 
 <body>
-    <a href="./index.html" class="home-icon"><i class="fas fa-house"></i></a>
     <div class="login-container">
         <h2>Welcome Back!</h2>
         <form id="loginForm">
@@ -220,92 +150,37 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" placeholder="example@gmail.com" required>
             </div>
-            <div class="input-group">
+            <div class="input-group password-toggle">
                 <label for="password">Password</label>
-                <div class="password-toggle">
-                    <input type="password" id="password" placeholder="Enter your password" required>
-
-                </div>
-                <div class="password-strength" id="passwordStrength"></div>
-            </div>
-            <div class="extras">
-                <label class="remember-me">
-                    <input type="checkbox"> Remember Me
-                </label>
-                <a href="#" class="forgot-password">Forgot Password?</a>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <i class="fas fa-eye" id="togglePassword"></i>
             </div>
             <button type="submit" class="login-button">Login</button>
         </form>
-        <div class="social-login">
-            <p>Or login with</p>
-            <div class="social-buttons">
-                <button type="button" class="social-btn google-btn" id="googleSignInBtn">
-                    <img src="./assets/images/google.png" alt="Google Logo"> Google
-                </button>
-                <button type="button" class="social-btn facebook-btn">
-                    <img src="./assets/images/facebook.png" alt="Facebook Logo"> Facebook
-                </button>
-            </div>
+
+        <div class="social-buttons">
+            <button type="button" class="social-btn google-btn">
+                <img src="./assets/images/google.png" alt="Google Logo"> Google
+            </button>
+            <button type="button" class="social-btn facebook-btn">
+                <img src="./assets/images/facebook.png" alt="Facebook Logo"> Facebook
+            </button>
         </div>
+
+        <p class="forgot-password">Forgot Password?</p>
         <p class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const togglePassword = document.getElementById('togglePassword');
-            const password = document.getElementById('password');
-            const passwordStrength = document.getElementById('passwordStrength');
-            const email = document.getElementById('email');
-            const loginForm = document.getElementById('loginForm');
-
-            togglePassword.addEventListener('click', function () {
-                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                password.setAttribute('type', type);
-                this.classList.toggle('fa-eye');
-                this.classList.toggle('fa-eye-slash');
-            });
-
-            password.addEventListener('input', function () {
-                const strength = calculatePasswordStrength(this.value);
-                updatePasswordStrengthIndicator(strength);
-            });
-
-            email.addEventListener('input', function () {
-                this.setCustomValidity('');
-                if (this.validity.typeMismatch) {
-                    this.setCustomValidity('Please enter a valid email address');
-                }
-            });
-
-            loginForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                if (this.checkValidity()) {
-                    alert('Login successful!');
-                    // Here you would typically send the form data to your server
-                } else {
-                    alert('Please fill out all fields correctly.');
-                }
-            });
-
-            function calculatePasswordStrength(password) {
-                let strength = 0;
-                if (password.length >= 8) strength++;
-                if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
-                if (password.match(/\d/)) strength++;
-                if (password.match(/[^a-zA-Z\d]/)) strength++;
-                return strength;
-            }
-
-            function updatePasswordStrengthIndicator(strength) {
-                const colors = ['#ff4d4d', '#ffa64d', '#ffff4d', '#4dff4d'];
-                const widths = ['25%', '50%', '75%', '100%'];
-                passwordStrength.style.width = widths[strength];
-                passwordStrength.style.backgroundColor = colors[strength];
-            }
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
         });
     </script>
-     <script src="login.js"></script>
 </body>
 
 </html>
