@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wildlife Conservation Events</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
     <style>
         :root {
             --primary-color: #91BE55; /* Forest Green */
@@ -186,6 +187,146 @@
             <div id="pastEvents" class="events-container"></div>
         </main>
     </div>
+    <!--calendar of events -->
+    <style>
+        /* Button Styling */
+        #calendar-btn {
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-top: 20px;
+        }
+    
+        /* Modal Styling */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+        }
+    
+        .modal-content {
+          position: relative;
+          text-align: center;
+        }
+    
+        #close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          font-size: 20px;
+        }
+    
+        /* Calendar Styling */
+        #event-calendar {
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          gap: 10px;
+          margin-top: 20px;
+        }
+    
+        .day {
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          text-align: center;
+          background-color: white;
+        }
+    
+        .event-day {
+          background-color: #4CAF50;
+          color: white;
+          font-weight: bold;
+        }
+      </style>
+    </head>
+    <body>
+    
+    <section id="event-section">
+      <button id="calendar-btn">Show Events Calendar 📅</button>
+    
+      <!-- Calendar Modal -->
+      <div id="calendar-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-btn">&times;</span>
+          <h2>Animal-Saving Events Calendar</h2>
+          <div id="event-calendar"></div>
+        </div>
+      </div>
+    </section>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const calendarBtn = document.getElementById('calendar-btn');
+        const calendarModal = document.getElementById('calendar-modal');
+        const closeBtn = document.getElementById('close-btn');
+    
+        const events = [
+          { date: "2024-10-25", name: "Wildlife Awareness Drive" },
+          { date: "2024-11-05", name: "Animal Rescue Campaign" },
+          { date: "2024-11-12", name: "Stray Animal Adoption Event" }
+        ];
+    
+        // Open Modal on Button Click
+        calendarBtn.addEventListener('click', () => {
+          calendarModal.style.display = 'block';
+          generateEventCalendar();
+        });
+    
+        // Close Modal on Close Button Click
+        closeBtn.addEventListener('click', () => {
+          calendarModal.style.display = 'none';
+        });
+    
+        // Generate Calendar for the Current Month
+        function generateEventCalendar() {
+          const calendar = document.getElementById('event-calendar');
+          calendar.innerHTML = ''; // Clear previous content
+    
+          const today = new Date();
+          const year = today.getFullYear();
+          const month = today.getMonth();
+    
+          const firstDay = new Date(year, month, 1).getDay();
+          const daysInMonth = new Date(year, month + 1, 0).getDate();
+    
+          // Add empty cells before the 1st day
+          for (let i = 0; i < firstDay; i++) {
+            calendar.appendChild(document.createElement('div'));
+          }
+    
+          // Add days with events
+          for (let day = 1; day <= daysInMonth; day++) {
+            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const dayElement = document.createElement('div');
+            dayElement.classList.add('day');
+            dayElement.textContent = day;
+    
+            // Highlight if this day has an event
+            const event = events.find(e => e.date === dateStr);
+            if (event) {
+              dayElement.classList.add('event-day');
+              dayElement.textContent += ` - ${event.name}`;
+            }
+    
+            calendar.appendChild(dayElement);
+          }
+        }
+      });
+    </script>
+      
+      
+      
 
     <script>
         const events = [
@@ -287,10 +428,12 @@
         function getTickets(eventName) {
             if (eventName === "Clean Our Oceans") {
                 window.location.href = "cleanocean.html";
+            } else if (eventName === "Plant a Tree Campaign") {
+                window.location.href = "treeCampaign.html";
             } else {
                 alert('Redirecting to event registration...');
             }
-        }
+        }   
     
         function viewDetails() {
             alert('Viewing event details...');
@@ -303,7 +446,7 @@
     
         displayEvents();
     </script>
-    
+  
 </body>
 
 <!-- rebooted -->
