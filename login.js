@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const email = document.getElementById('email');
     const loginForm = document.getElementById('loginForm');
     const googleSignInBtn = document.getElementById('googleSignInBtn');
+    const facebookLoginButton = document.getElementById('facebookSignInBtn'); // Fixed
 
     // Handle Google Sign-In Button Click
     googleSignInBtn.addEventListener('click', function () {
@@ -52,4 +53,38 @@ document.addEventListener('DOMContentLoaded', function () {
         passwordStrength.style.width = widths[strength];
         passwordStrength.style.backgroundColor = colors[strength];
     }
+
+    // Facebook SDK Initialization
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: 'YOUR_FACEBOOK_APP_ID',  // Replace with your Facebook App ID
+            cookie: true,
+            xfbml: true,
+            version: 'v16.0' // Ensure you use the latest Facebook SDK version
+        });
+    };
+
+    // Load Facebook SDK
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Handle Facebook Login
+    facebookLoginButton.addEventListener('click', function () {
+        FB.login(function (response) {
+            if (response.authResponse) {
+                // Successful login
+                FB.api('/me', { fields: 'name, email' }, function (profileResponse) {
+                    alert('Logged in as: ' + profileResponse.name);
+                    console.log('User email: ' + profileResponse.email);
+                });
+            } else {
+                alert('User cancelled login or did not fully authorize.');
+            }
+        }, { scope: 'email' });
+    });
 });
