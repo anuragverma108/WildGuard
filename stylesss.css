@@ -61,6 +61,7 @@
         transition: background-color 0.2s, box-shadow 0.2s;
         position: relative; /* Required for ::before pseudo-element */
         cursor: pointer;
+        margin-top:10px;
     }
     
     .donate-button::before {
@@ -74,16 +75,19 @@
         border-radius: 15px; /* Matches the button's roundness */
         transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
         transform: scale(0.9); /* Shrinks initially */
+        margin-top:10px;
     }
     
     .donate-button:hover::before {
         border-color: #0078d4; /* Blue border on hover */
         transform: scale(1); /* Full size on hover */
+        margin-top:10px;
     }
     
     .donate-button:hover {
         background-color: #7fa844; /* Slight color change */
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+        margin-top:10px;
     }
     
     .donate-button svg {
@@ -91,6 +95,7 @@
         width: 10px;
         height: 10px;
         margin-left: 5px;
+        margin-top:10px;
     }
     
 
@@ -111,10 +116,12 @@
         transition: background-color 0.2s, box-shadow 0.2s, border-color 0.3s; /* Smooth transitions */
         position: relative; /* Required for ::before pseudo-element */
         cursor: pointer; /* Show pointer on hover */
+        margin-top:10px;
     }
     
     .donate-button2 ion-icon {
         margin-left: 6px;
+        margin-top:10px;
     }
     
     .donate-button2::before {
@@ -128,11 +135,13 @@
         border-radius: 15px; /* Matches the button's roundness */
         transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
         transform: scale(0.9); /* Shrinks initially */
+        margin-top:10px;
     }
     
     .donate-button2:hover::before {
         border-color: #0078d4; /* Blue border on hover */
         transform: scale(1); /* Full size on hover */
+        margin-top:10px;
     }
     
     .donate-button2:hover {
@@ -145,6 +154,7 @@
         width: 10px; /* Set icon size */
         height: 10px;
         margin-left: 5px; /* Space between text and icon */
+        margin-top:10px;
     }
     
 
@@ -165,6 +175,7 @@
         transition: background-color 0.2s, box-shadow 0.2s;
         position: relative; /* Required for ::before pseudo-element */
         cursor: pointer;
+        margin-top:10px;
     }
     
     .submit-button::before {
@@ -178,6 +189,7 @@
         border-radius: 15px; /* Matches the button's roundness */
         transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
         transform: scale(0.9); /* Shrinks initially */
+        margin-top:10px;
     }
     
     .submit-button:hover::before {
@@ -195,4 +207,5 @@
         width: 10px;
         height: 10px;
         margin-left: 5px;
+        margin-top:10px;
     }
