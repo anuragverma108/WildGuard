@@ -204,6 +204,7 @@
         padding: 10px;
         margin: 5px;
         border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for pop effect */
       }
 
       .mini-card img {
@@ -216,6 +217,12 @@
       .mini-card p {
         font-size: 12px;
         color: #333;
+      }
+
+      /* Pop effect on hover */
+      .mini-card:hover {
+        transform: scale(1.1); /* Slightly increase the size of the card */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Make the shadow stronger when hovered */
       }
 
       .activity-feed {
@@ -244,6 +251,84 @@
         color: #555;
       }
 
+      /* New styles for badges */
+      .badges {
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      .badges h2 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .badge {
+        background-color: #f0f0f0;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 15px;
+        display: inline-block;
+        margin: 5px;
+        font-size: 12px;
+      }
+
+      /* New styles for the progress bar */
+      .progress-container {
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .progress-bar {
+        width: 100%;
+        background-color: #e0e0e0;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .progress {
+        width: 75%;
+        height: 20px;
+        background-color: #4caf50;
+        text-align: center;
+        line-height: 20px;
+        color: white;
+      }
+
+      /* New styles for the tabbed content */
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        border-radius: 5px 5px 0 0;
+      }
+
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 14px;
+      }
+
+      .tab button:hover {
+        background-color: #ddd;
+      }
+
+      .tab button.active {
+        background-color: #ccc;
+      }
+
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+      }
       @media (max-width: 600px) {
         .user-container {
           padding: 15px;
@@ -308,25 +393,75 @@
       <!-- Contact Button -->
       <button class="btn-logout">view more</button>
 
-      <!-- Bio Section -->
-      <div class="bio">
-        <h2>About Arman</h2>
-        <p>
-          Arman Bhadoriya is a tech enthusiast and entrepreneur with a passion
-          for creating innovative solutions. With a background in software
-          engineering, he has built a number of successful projects and startups
-          in the tech industry.
-        </p>
+      <!-- New: Progress bar -->
+      <div class="progress-container">
+        <h3>Profile Completion</h3>
+        <div class="progress-bar">
+          <div class="progress">75%</div>
+        </div>
       </div>
 
-      <!-- Skills Section -->
-      <div class="badges">
-        <h2>Badges</h2>
-        <div class="badge">First Animal Adopted</div>
-        <div class="badge">Top Contributor 2024</div>
-        <div class="badge">Community Builder</div>
-        <div class="badge">100 Days of Code</div>
-        <div class="badge">Beta Tester</div>
+      <!-- New: Tabbed content -->
+      <div class="tab">
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'About')"
+          id="defaultOpen"
+        >
+          About
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'Badges')">
+          Badges
+        </button>
+        <button class="tablinks" onclick="openTab(event, 'Activity')">
+          Activity
+        </button>
+      </div>
+
+      <div id="About" class="tabcontent">
+        <!-- Bio Section -->
+        <div class="bio">
+          <h2>About Arman</h2>
+          <p>
+            Arman Bhadoriya is a tech enthusiast and entrepreneur with a passion
+            for creating innovative solutions. With a background in software
+            engineering, he has built a number of successful projects and
+            startups in the tech industry.
+          </p>
+        </div>
+      </div>
+      <div id="Badges" class="tabcontent">
+        <!-- Skills Section -->
+        <div class="badges">
+          <h2>Badges</h2>
+          <div class="badge">First Animal Adopted</div>
+          <div class="badge">Top Contributor 2024</div>
+          <div class="badge">Community Builder</div>
+          <div class="badge">100 Days of Code</div>
+          <div class="badge">Beta Tester</div>
+        </div>
+      </div>
+      <div id="Activity" class="tabcontent">
+        <!-- Activity Feed Section -->
+        <div class="activity-feed">
+          <h2>Recent Activity</h2>
+          <ul>
+            <li>Arman shared a post about AI and its future in tech.</li>
+            <li>
+              Started following
+              <strong>Sara</strong>
+              and
+              <strong>John</strong>
+              .
+            </li>
+            <li>Updated profile picture.</li>
+            <li>
+              Commented on
+              <strong>Chris's</strong>
+              post.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -372,25 +507,24 @@
       </div>
     </div>
 
-    <!-- Activity Feed Section -->
-    <div class="activity-feed">
-      <h2>Recent Activity</h2>
-      <ul>
-        <li>Arman shared a post about AI and its future in tech.</li>
-        <li>
-          Started following
-          <strong>Sara</strong>
-          and
-          <strong>John</strong>
-          .
-        </li>
-        <li>Updated profile picture.</li>
-        <li>
-          Commented on
-          <strong>Chris's</strong>
-          post.
-        </li>
-      </ul>
-    </div>
+    <!-- New: JavaScript for tabbed content -->
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName('tabcontent');
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = 'none';
+        }
+        tablinks = document.getElementsByClassName('tablinks');
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(' active', '');
+        }
+        document.getElementById(tabName).style.display = 'block';
+        evt.currentTarget.className += ' active';
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById('defaultOpen').click();
+    </script>
   </body>
 </html>

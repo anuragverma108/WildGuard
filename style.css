@@ -1,29 +1,107 @@
+
+
 /* Forum branch styles */
-.section-subtitle {
-    display: flex;
-    margin-left: 35px;
-}
+
 
 .secDon {
     padding-bottom: 0;
 }
 
-.formContainer {
-    margin-bottom: 100px;
-}
+/* CSS for Plant Green Themed Forum */
 
-.formContainer .container_1 h2 {
-    padding-bottom: 20px;
-}
-
-.formContainer .container_1 .submit-button {
-    margin-top: 16px;
-}
-
-.formContainer .container_1 .posts h2 {
-    font-weight: 500;
-    font-style: italic;
-}
+body {
+    background-color: #f3f7f2;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #forumTitle {
+    color: #2c6e49;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  #formTitle, #discussionTitle {
+    color: #2c6e49;
+    font-size: 24px;
+  }
+  
+  #mainContainer {
+    background-color: #ffffff;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    border: 2px solid #e1e5e2;
+  }
+  
+  #postFormSection {
+    background-color: #effaf1;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d3e4d6;
+    margin-bottom: 30px;
+  }
+  
+  #postContent {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    border: 1px solid #bcd3b8;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #2c6e49;
+    background-color: #f5faf6;
+    resize: none;
+    outline: none;
+    margin-bottom: 10px;
+  }
+  
+  #postContent::placeholder {
+    color: #8fae90;
+  }
+  
+  #submitButton {
+    background-color: #2c6e49;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #submitButton:hover {
+    background-color: #1f5136;
+  }
+  
+  #discussionSection {
+    background-color: #effaf1;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d3e4d6;
+  }
+  
+  #postsContainer {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #e1e5e2;
+  }
+  
+  #mainContainer, #postFormSection, #discussionSection {
+    animation: fadeIn ease 1s;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 
 .testi {
     width: 91%;
@@ -56,8 +134,10 @@
     position: fixed;
     right: 30px;
     top: 100px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-content: center;
     border-radius: 50%;
     background: #0c7124;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -143,7 +223,8 @@
 }
 
 .donate-button:hover {
-    background-color: #2980b9;
+    color: red;
+    background-color: rgb(242, 242, 242);
 }
 
 .boxx {
@@ -160,9 +241,10 @@
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 10px;
+    min-width: 100px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    left: -50px; 
+    top: 100%; 
 }
 
 .dropdown-content a {
@@ -179,6 +261,11 @@
 .user-icon:hover .dropdown-content {
     display: block;
 }
+
+.partner-logo {
+    margin: 20px 20px;
+  }
+  
 
 @media only screen and (max-width: 600px) {
     .gallery {
@@ -227,3 +314,5 @@
         transition: transform 0.3s ease-in-out;
     }
 }
+
+
