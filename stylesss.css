@@ -77,7 +77,7 @@
     }
     
     .donate-button:hover::before {
-        border-color: #0078d4; /* Blue border on hover */
+        /* border-color: #0078d4; Blue border on hover */
         transform: scale(1); /* Full size on hover */
     }
     

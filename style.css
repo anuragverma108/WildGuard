@@ -224,7 +224,8 @@ body {
 }
 
 .donate-button:hover {
-    background-color: #2980b9;
+    color: red;
+    background-color: rgb(242, 242, 242);
 }
 
 .boxx {
