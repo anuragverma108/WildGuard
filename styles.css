@@ -52,19 +52,24 @@ nav ul li a:hover {
 .learn-more-section {
     padding: 60px 20px;
     text-align: center;
-    background-color: #fff;
+    background: url('forest_blur.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
 
 }
 
 .learn-more-section h2 {
     font-size: 32px;
     margin-bottom: 20px;
-    color: #333;
+    color: #ffffff;
+    
 }
 
 .learn-more-section p {
     font-size: 18px;
-    color: #555;
+    color: #ffffff;
     max-width: 600px;
     margin: 0 auto 40px;
     line-height: 1.6;
@@ -119,7 +124,7 @@ footer {
     padding: 20px;
     background-color: #333;
     color: #fff;
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 footer p {
