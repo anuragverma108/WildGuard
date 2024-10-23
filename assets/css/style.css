@@ -484,6 +484,29 @@ html {
   width: 100%;
 }
 
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-h1{
+  margin-top: 100px;
+  padding-top: 100px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.about-text-body {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.658);
+  border-radius: 15px;
+  width: 100%;
+  padding: 50px;
+}
+
 .logo {
   color: var(--green);
   font-family: var(--ff-oswald);
@@ -2469,6 +2492,15 @@ data {
     background-size: cover;
     background-position: left;
     min-height: 780px;
+  }
+
+  .about-hero {
+    margin-top: 90px;
+    background-image: url('https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    min-height: 811px;
   }
 
   /**
