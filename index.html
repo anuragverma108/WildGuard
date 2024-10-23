@@ -1843,7 +1843,14 @@ Our mission is to provide outstanding care and dedicated support for animals in 
         </div>
         <div class="subscribe-form">
           <form action="#">
-            <input type="email" class="email-input" placeholder="Your email address">
+            <input 
+            type="email" 
+            class="email-input" 
+            placeholder="Your email address" 
+            required
+            pattern="[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}"
+            title="Please enter a valid email address"
+          >
             <button type="submit">Subscribe</button>
           </form>
         </div>
