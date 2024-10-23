@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Baloo+Bhai+2:wght@400..800&display=swap');
+
 :root {
   /**
    * colors
@@ -305,15 +307,6 @@ html {
   padding-inline: 15px;
 }
 
-.section-subtitle {
-  color: var(--color, var(--pistachio));
-  font-size: var(--fs, var(--fs-8));
-  font-family: var(--ff, var(--ff-roboto));
-  font-weight: var(--fw-600);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
 .section-subtitle span {
   color: #0f0f0f;
@@ -491,6 +484,29 @@ html {
   width: 100%;
 }
 
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-h1{
+  margin-top: 100px;
+  padding-top: 100px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.about-text-body {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.658);
+  border-radius: 15px;
+  width: 100%;
+  padding: 50px;
+}
+
 .logo {
   color: var(--green);
   font-family: var(--ff-oswald);
@@ -594,6 +610,7 @@ html {
   font-size: 15px;
   font-weight: bold;
   left: 1px;
+  font-family: "Arima";
 }
 .new_size:hover {
   transform: scale(1.2);
@@ -837,7 +854,12 @@ html {
 }
 
 .section-subtitle {
-  margin-left: 35%;
+  font-family: var(--ff, var(--ff-roboto));
+  font-weight: var(--fw-600);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
   font-size: 32px;
   color: green;
 }
@@ -857,11 +879,13 @@ html {
 }
 
 .button-container {
+  margin-top: 15px;
   display: flex;
   /* Use flexbox */
   justify-content: center;
   /* Center horizontally */
   align-items: center;
+  margin-top: 30px;
 }
 
 /*-----------------------------------*\ 
@@ -883,7 +907,8 @@ html {
 
 .features-item {
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
   /*left align */
   text-align: left;
@@ -894,7 +919,7 @@ html {
 .features-item:hover {
   transform: translateY(-10px);
   /* Move the feature item upwards */
-  box-shadow: 0 10px 20px rgba(0, 255, 0, 0.6);
+  box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.6);
   /* Glowing effect */
 }
 
@@ -2469,6 +2494,15 @@ data {
     min-height: 780px;
   }
 
+  .about-hero {
+    margin-top: 90px;
+    background-image: url('https://images.pexels.com/photos/1062249/pexels-photo-1062249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    min-height: 811px;
+  }
+
   /**
    * FEATURES
    */
@@ -2948,7 +2982,8 @@ data {
 }
 
 .btn-link:hover {
-  background-color: #45a049; /* Darker shade on hover */
+  background-color: #2c7a1a; /* Darker shade on hover */
+  color: white;
 }
 
 /* Styles for the flip card effect */

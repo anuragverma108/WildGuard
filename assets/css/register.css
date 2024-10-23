@@ -209,6 +209,32 @@ button:hover {
     width: 25px;
 }
 
+.github-btn {
+    background-color: #333;
+}
+
+.github-btn i {
+    color: white;
+    font-size: 24px;
+}
+
+.github-btn:hover {
+    background-color: #24292e;
+}
+
+.instagram-btn {
+    background-color: #E1306C;
+}
+
+.instagram-btn i {
+    color: white;
+    font-size: 24px;
+}
+
+.instagram-btn:hover {
+    background-color: #C13584;
+}
+
 .signup-link {
     text-align: center;
     font-size: 14px;

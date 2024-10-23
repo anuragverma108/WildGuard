@@ -125,7 +125,7 @@
    document.head.appendChild(style);
 </script>
 
-<div class="scroll-to-bottom">
+<div class="scroll-to-bottom" style="position: fixed; z-index: 900;">
   <button id="scrollBOTTOM">
     <i class="material-icons">arrow_downward</i>
   </button>
@@ -781,6 +781,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                           <p class="card-text">
                               Your support helps us make a difference!
                           </p>
+                          <a href="SaveNature.html" class="btn-link">
+                            <span>Read More</span>
+                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                          </a>
                       </div>
                       
                   </div>
@@ -812,6 +816,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Your contribution helps protect our planet's ecology!
                         </p>
+                        <a href="SaveEcology.html" class="btn-link">
+                          <span>Read More</span>
+                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
                     </div>
                 </div>
                 <a href="SaveEcology.html" class="btn-link">
@@ -843,6 +851,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Together, we can create a greener future!
                         </p>
+                        <a href="TreePlantation.html" class="btn-link">
+                          <span>Read More</span>
+                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
                     </div>
                 </div>
                 <a href="TreePlantation.html" class="btn-link">
@@ -873,6 +885,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Your support is vital for ocean conservation!
                         </p>
+                        <a href="SaveOcean.html" class="btn-link">
+                          <span>Read More</span>
+                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
                     </div>
                 </div>
                 <a href="SaveOcean.html" class="btn-link">
@@ -1515,6 +1531,26 @@ Our mission is to provide outstanding care and dedicated support for animals in 
           <!-- 
         -# ACCORDION
        -->
+       <div class="impact-gallery" id="impact">
+        <div id="fontt"><b>
+            <h2>Impact of Your Donations</h2>
+          </b> </div>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="rehabilitated-animal.jpg" alt="Rehabilitated Animal">
+            <p>Rehabilitated Animals</p>
+          </div>
+          <div class="gallery-item">
+            <img src="habitat-restoration.jpg" alt="Habitat Restoration">
+            <p>Habitat Restoration</p>
+          </div>
+          <div class="gallery-item">
+            <img src="community-education.jpg" alt="Community Education">
+            <p>Community Education Programs</p>
+          </div>
+        </div>
+      </div>
+
           <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36" id="faq">
             <div class="text-center mb-6">
               <p class="text-5xl font-bold text-gray-800 uppercase">Frequently Asked Questions</p>
@@ -1526,26 +1562,6 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                 <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
                   onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">What We Do?</h3>
                 <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
-              </div>
-
-              <div class="impact-gallery" id="impact">
-                <div id="fontt"><b>
-                    <h2>Impact of Your Donations</h2>
-                  </b> </div>
-                <div class="gallery">
-                  <div class="gallery-item">
-                    <img src="rehabilitated-animal.jpg" alt="Rehabilitated Animal">
-                    <p>Rehabilitated Animals</p>
-                  </div>
-                  <div class="gallery-item">
-                    <img src="habitat-restoration.jpg" alt="Habitat Restoration">
-                    <p>Habitat Restoration</p>
-                  </div>
-                  <div class="gallery-item">
-                    <img src="community-education.jpg" alt="Community Education">
-                    <p>Community Education Programs</p>
-                  </div>
-                </div>
               </div>
 
 
@@ -1827,7 +1843,14 @@ Our mission is to provide outstanding care and dedicated support for animals in 
         </div>
         <div class="subscribe-form">
           <form action="#">
-            <input type="email" class="email-input" placeholder="Your email address">
+            <input 
+            type="email" 
+            class="email-input" 
+            placeholder="Your email address" 
+            required
+            pattern="[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}"
+            title="Please enter a valid email address"
+          >
             <button type="submit">Subscribe</button>
           </form>
         </div>

@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/register.css">
     <title>Register</title>
@@ -62,13 +65,12 @@
 </head>
 
 <body>
-
     <div class="login-page">
         <div class="content">
             <a href="./index.html" class="home-icon"><i class="fa-solid fa-house"></i></a>
             <h2>Create an account</h2>
 
-            <form class="data">
+            <form class="data" onsubmit="return validateForm()">
 
                 <!-- Email Field -->
                 <div class="entry">
@@ -107,7 +109,7 @@
                     </div>
                 </div>
 
-                <!-- Remember Me Checkbox & Forgot Password Link -->
+                <!-- Remember Me & Forgot Password -->
                 <div class="extras">
                     <label class="remember-me">
                         <input type="checkbox" style="margin-left: 30px;"> Remember Me
@@ -121,21 +123,27 @@
                 </div>
 
                 <!-- Social Media Buttons -->
-                <div class="social-login">
-                    <p>Or Sign up with</p>
-                    <div class="social-buttons">
-                        <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo">
-                        </button>
-                        <button type="button" class="social-btn google-btn">
-                            <img src="./assets/images/facebook.png" alt="FaceBook Logo" class="google-logo">
-                        </button>
-                    </div>
-                </div>
+<div class="social-login">
+    <p>Or Sign up with</p>
+    <div class="social-buttons">
+        <button type="button" class="social-btn google-btn">
+            <img src="./assets/images/google.png" alt="Google Logo" class="google-logo">
+        </button>
+        <button type="button" class="social-btn google-btn">
+            <img src="./assets/images/facebook.png" alt="Facebook Logo" class="google-logo">
+        </button>
+        <button type="button" class="social-btn github-btn">
+            <i class="fab fa-github"></i>
+        </button>
+        <button type="button" class="social-btn instagram-btn">
+            <i class="fab fa-instagram"></i>
+        </button>
+    </div>
+</div>
+
 
                 <!-- Login Link -->
                 <p class="signup-link">Already have an account? <a href="login.html">Login</a></p>
-
             </form>
         </div>
     </div>
