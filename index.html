@@ -1918,8 +1918,8 @@ Our mission is to provide outstanding care and dedicated support for animals in 
   <!-- 
     - ionicon link
   -->
-  <script>
-      document.addEventListener('DOMContentLoaded', function () {
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar-link');
 
@@ -1969,40 +1969,39 @@ Our mission is to provide outstanding care and dedicated support for animals in 
       });
     });
 
-// Initial call to set active link on page load
+    // Initial call to set active link on page load
     updateActiveLink();
 
     // Mobile toggle menu
-    document.addEventListener("DOMContentLoaded", function() {
-      const navOpenBtn = document.querySelector("[data-nav-open-btn]");
-      const navCloseBtn = document.querySelector("[data-nav-close-btn]");
-      const navbar = document.querySelector("[data-navbar]");
+    const navOpenBtn = document.querySelector("[data-nav-open-btn]");
+    const navCloseBtn = document.querySelector("[data-nav-close-btn]");
+    const navbar = document.querySelector("[data-navbar]");
 
-      navOpenBtn.addEventListener("click", () => {
-        navbar.classList.add("active"); // Add a class to show the menu
-      });
-
-      navCloseBtn.addEventListener("click", () => {
-        navbar.classList.remove("active"); // Remove the class to hide the menu
-      });
+    navOpenBtn.addEventListener("click", () => {
+      navbar.classList.add("active"); // Add a class to show the menu
     });
-    window.onload = function() {
-        let countEl = document.getElementById('partnerCount');
-    let count = 0;
-    let target = 324;
-    let speed = 40; // Reduce the speed for faster increment
 
-    const counter = setInterval(function() {
-      if (count < target) {
-        count++;
-        countEl.textContent = count + "+ Trusted Global Partners";
-      } else {
-        clearInterval(counter);
-      }
-    }, speed);
-  };
+    navCloseBtn.addEventListener("click", () => {
+      navbar.classList.remove("active"); // Remove the class to hide the menu
+    });
+
+    window.onload = function() {
+      let countEl = document.getElementById('partnerCount');
+      let count = 0;
+      let target = 324;
+      let speed = 40; // Reduce the speed for faster increment
+
+      const counter = setInterval(function() {
+        if (count < target) {
+          count++;
+          countEl.textContent = count + "+ Trusted Global Partners";
+        } else {
+          clearInterval(counter);
+        }
+      }, speed);
+    };
   });
-  </script>
+</script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
