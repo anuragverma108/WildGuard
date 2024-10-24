@@ -243,6 +243,7 @@
     margin-bottom: 8px;
     display: block;
     text-align: left;
+    
 }
 
 /* Form Inputs and Textarea */
@@ -316,10 +317,38 @@
       margin-top: 40px;
     }
 
+  /* tooltip - styling */
+  .tooltip-container {
+  align-items: center;
+  position: relative;
+}
 
-
-
-    
+ /* Tooltip text  */
+.tooltip-container .tooltip-text {
+  visibility: hidden;
+  width: 190px;
+  background-color:  #88c17d;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 2px;
+  position: absolute;
+  left: 60%;
+  margin-left: -100px; 
+  top: 69%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+}
+  
+/* Show the tooltip on hover */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+   
   </style>
 </head>
 
@@ -363,22 +392,33 @@
     <!-- Right side: Contact Form -->
     <div class="form-container">
       <h2>Contact Us</h2>
-      <form id="contactForm">
+     <form id="contactForm">
+      <div class="tooltip-container">
         <label for="name">Enter Your Name</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required>
-
+        <div class="tooltip-text">Please enter your full name here.</div>
+      </div>
+    
+      <div class="tooltip-container">
         <label for="email">Enter Your Email</label>
         <input type="email" id="email" name="email" placeholder="Your Email" required>
-
+        <div class="tooltip-text">please enter a valid email like name@example.com.</div>
+      </div>
+    
+      <div class="tooltip-container">
         <label for="phone">Enter Your Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
-
+        <div class="tooltip-text">Please enter your phone number(10 digits).</div>
+      </div>
+    
+      <div class="tooltip-container">
         <label for="message">Write Your Message</label>
         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-
-        <input type="submit" value="Submit">
-      </form>
-
+        <div class="tooltip-text">Feel free to describe your message in detail.</div>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+     
       <!-- This is where the success message will be displayed -->
       <div id="formMessage" style="display:none; margin-top: 20px; color: green;">
         Thank you for reaching out to us! We will get back to you shortly.
