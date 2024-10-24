@@ -13,7 +13,6 @@
 
     <!-- Custom Styles -->
     <style>
-        /* General styling for body */
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f3f4f6;
@@ -22,7 +21,6 @@
             margin: 0;
         }
 
-        /* Navbar Styling */
         .navbar {
             background-color: #28a745;
             padding: 10px 20px;
@@ -44,7 +42,6 @@
             color: #f1f1f1;
         }
 
-        /* Shop Title */
         .shop-title {
             text-align: center;
             margin-top: 20px;
@@ -53,7 +50,6 @@
             color: #333;
         }
 
-        /* Product Grid Styling */
         .product-container {
             display: flex;
             justify-content: center;
@@ -106,7 +102,6 @@
             background-color: #218838;
         }
 
-        /* Cart Section Styling */
         .cart-section {
             text-align: center;
             margin: 50px 0;
@@ -148,7 +143,58 @@
             background-color: #218838;
         }
 
-        /* Footer Styling */
+        .faq-section {
+            margin: 50px auto;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .faq-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+        }
+
+        .faq-item h4 {
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+        }
+
+        .faq-item h4:hover {
+            color: #28a745;
+        }
+
+        .faq-answer {
+            font-size: 1.2rem;
+            color: #555;
+            display: none;
+            margin-top: 10px;
+        }
+
+        .why-eco-section {
+            background-color: #e9f7ef;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .why-eco-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .why-eco-description {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
         footer {
             background-color: #28a745;
             color: white;
@@ -156,7 +202,6 @@
             text-align: center;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .product-container {
                 flex-direction: column;
@@ -196,6 +241,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#cart">Cart</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -203,7 +251,7 @@
 
     <!-- Shop Section -->
     <div class="shop-title">Eco-Friendly Products</div>
-    <div class="product-container">
+    <div class="product-container" id="shop">
         <div class="product-card">
             <img src="https://www.ecomena.org/wp-content/uploads/2018/07/reusuable-shopping-bags.jpg" alt="Reusable Bag">
             <h3>Reusable Bag</h3>
@@ -231,60 +279,106 @@
         <p><strong>Total Price: $<span id="total-price">0</span></strong></p>
     </section>
 
+    <!-- Why Eco-Friendly Products Section -->
+    <section class="why-eco-section">
+        <h2 class="why-eco-title">Why Use Eco-Friendly Products?</h2>
+        <p class="why-eco-description">
+            Choosing eco-friendly products helps to reduce your carbon footprint, conserve natural resources, and protect the environment. By using sustainable and reusable items like bags and water bottles, you're contributing to a healthier planet for future generations.
+        </p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h4 onclick="toggleFAQ(this)">What is the purpose of eco-friendly products?</h4>
+            <p class="faq-answer">
+                Eco-friendly products are designed to reduce waste, conserve resources, and minimize environmental impact. They help promote sustainability and are often reusable or made from sustainable materials.
+            </p>
+        </div>
+        <div class="faq-item">
+            <h4 onclick="toggleFAQ(this)">How are the profits used?</h4>
+            <p class="faq-answer">
+                The profits from our eco-friendly shop go towards supporting environmental conservation efforts, including donations to green organizations and funding for ecological campaigns.
+            </p>
+        </div>
+        <div class="faq-item">
+            <h4 onclick="toggleFAQ(this)">Can I return or exchange a product?</h4>
+            <p class="faq-answer">
+                Yes, we offer returns or exchanges on products within 30 days of purchase, as long as they are in unused condition. Please contact our support team for further assistance.
+            </p>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Save Ecology. All rights reserved.</p>
+        <p>&copy; 2024 Eco-Friendly Shop. All rights reserved.</p>
     </footer>
 
-    <!-- JS for Cart -->
+    <!-- Script for adding to cart and FAQ toggle -->
     <script>
         let cartItems = [];
         let totalPrice = 0;
 
-        function addToCart(productName, productPrice) {
-            const existingItem = cartItems.find(item => item.name === productName);
-            if (existingItem) {
-                existingItem.quantity++;
-                existingItem.totalPrice += productPrice;
+        function addToCart(item, price) {
+            const cartItem = cartItems.find(i => i.name === item);
+            if (cartItem) {
+                cartItem.quantity++;
             } else {
-                cartItems.push({ name: productName, price: productPrice, quantity: 1, totalPrice: productPrice });
+                cartItems.push({ name: item, price, quantity: 1 });
             }
-            totalPrice += productPrice;
-            updateCartDisplay();
+            updateCart();
         }
 
-        function removeFromCart(productName, productPrice) {
-            const existingItem = cartItems.find(item => item.name === productName);
-            if (existingItem && existingItem.quantity > 0) {
-                existingItem.quantity--;
-                existingItem.totalPrice -= productPrice;
-                totalPrice -= productPrice;
-                if (existingItem.quantity === 0) {
-                    cartItems = cartItems.filter(item => item.name !== productName);
-                }
-            }
-            updateCartDisplay();
+        function updateCart() {
+            document.querySelector('.cart-items').innerHTML = cartItems.map((cartItem, index) => `
+                <li>
+                    ${cartItem.name} - $${cartItem.price} x ${cartItem.quantity}
+                    <span class="cart-controls">
+                        <button onclick="decreaseQuantity(${index})">-</button>
+                        <button onclick="increaseQuantity(${index})">+</button>
+                        <button onclick="removeFromCart(${index})">Remove</button>
+                    </span>
+                </li>
+            `).join('');
+            calculateTotal();
         }
 
-        function updateCartDisplay() {
-            const cartItemsList = document.querySelector('.cart-items');
-            cartItemsList.innerHTML = ''; // Clear previous cart items
-            cartItems.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.innerHTML = `
-                    ${item.name} - $${item.price} x ${item.quantity} = $${item.totalPrice.toFixed(2)}
-                    <div class="cart-controls">
-                        <button onclick="addToCart('${item.name}', ${item.price})">+</button>
-                        <button onclick="removeFromCart('${item.name}', ${item.price})">-</button>
-                    </div>`;
-                cartItemsList.appendChild(listItem);
-            });
-            document.getElementById('total-price').textContent = totalPrice.toFixed(2);
+        function increaseQuantity(index) {
+            cartItems[index].quantity++;
+            updateCart();
+        }
+
+        function decreaseQuantity(index) {
+            if (cartItems[index].quantity > 1) {
+                cartItems[index].quantity--;
+            } else {
+                cartItems.splice(index, 1);
+            }
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cartItems.splice(index, 1);
+            updateCart();
+        }
+
+        function calculateTotal() {
+            totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+            document.getElementById('total-price').innerText = totalPrice;
+        }
+
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
         }
     </script>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
