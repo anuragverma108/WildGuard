@@ -1929,7 +1929,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
   <!-- 
     - ionicon link
   -->
-  <script>
+  <!-- <script>
       document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar-link');
@@ -2013,7 +2013,63 @@ Our mission is to provide outstanding care and dedicated support for animals in 
     }, speed);
   };
   });
-  </script>
+  </script> -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.navbar-link');
+  
+    // Function to remove active class from all links
+    function removeActiveClass() {
+      navLinks.forEach(link => link.classList.remove('active'));
+    }
+  
+    // Function to handle smooth scroll and add active class on click
+    navLinks.forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+  
+        // Remove active class from all links
+        removeActiveClass();
+  
+        // Add active class to the clicked link
+        this.classList.add('active');
+  
+        // Get the target section using the href attribute of the clicked link
+        const targetId = this.getAttribute('href'); // Gets the href (e.g., "#home")
+        const targetElement = document.querySelector(targetId); // Selects the target element using href
+  
+        if (targetElement) {
+          // Scroll smoothly to the target element
+          window.scrollTo({
+            top: targetElement.offsetTop - 50, // Adjust for navbar height if needed
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  
+    // Function to handle scroll event and update active link
+    window.addEventListener('scroll', () => {
+      let scrollY = window.pageYOffset;
+  
+      navLinks.forEach(link => {
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+  
+        if (targetElement) {
+          const sectionTop = targetElement.offsetTop - 50; // Adjust for navbar height if needed
+          const sectionHeight = targetElement.offsetHeight;
+  
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            removeActiveClass();
+            link.classList.add('active');
+          }
+        }
+      });
+    });
+  });
+  
+</script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
