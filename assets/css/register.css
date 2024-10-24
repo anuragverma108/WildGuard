@@ -250,3 +250,6 @@ button:hover {
 .signup-link a:hover {
     text-decoration: underline;
 }
+#loginBTN{
+    cursor: pointer;
+}
