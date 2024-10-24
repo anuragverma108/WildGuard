@@ -2737,3 +2737,8 @@ data{
 .email-input {
   color: rgb(208, 208, 208);
 }
+
+.hover-color:hover{
+  background-color:white;
+  color: #218838;
+}
