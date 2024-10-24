@@ -2487,7 +2487,7 @@ data {
    */
 
   .hero {
-    background-image: url('../images/hero.jpg');
+    background-video: url('wildlife.mp4');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;

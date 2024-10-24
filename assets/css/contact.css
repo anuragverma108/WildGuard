@@ -45,7 +45,7 @@ header .navbar-nav .nav-item .nav-link.active {
 }
 
 .contact-section {
-    background: url('../images/hero.jpg') no-repeat center center/cover;
+    background: url('wildlife.mp4') no-repeat center center/cover;
     padding: 3rem;
     display: flex;
     align-items: center;
