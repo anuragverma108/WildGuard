@@ -722,11 +722,56 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                 <ion-icon name="heart-outline"></ion-icon>
               </button>
             </div>
-      
-            <!-- Single Image on the right side -->
-            <figure class="cta-image">
-              <img src="./assets/images/cta-banner.jpg" alt="Fox Image" class="img-cover">
-            </figure>
+      <!--Displaying card on right side -->
+          <!-- Link to Tailwind CSS and Chart.js -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Card for Animal Rescue Stats -->
+<div class="bg-white shadow-lg rounded-lg p-10 w-3/4 max-w-2xl"> <!-- Increased padding and width -->
+  <h2 class="text-3xl font-bold text-green-700 mb-4">Animals Saved This Year</h2> <!-- Increased text size -->
+  <p id="total-saved" class="text-7xl font-extrabold text-green-900 mb-8">0</p> <!-- Increased text size -->
+  <canvas id="monthly-chart" class="mt-4"></canvas>
+</div> 
+
+<script>
+  // Example data (you can replace this with dynamic data)
+  const monthlyData = [5, 10, 8, 15, 20, 12, 18, 9, 7, 11, 16, 22];
+
+  // Calculate the total number of animals saved this year
+  const totalSaved = monthlyData.reduce((sum, value) => sum + value, 0);
+
+  // Display the total in the card
+  document.getElementById('total-saved').textContent = totalSaved;
+
+  // Chart.js configuration
+  const ctx = document.getElementById('monthly-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [{
+        label: 'Animals Saved',
+        data: monthlyData,
+        backgroundColor: 'rgba(34, 197, 94, 0.6)',  // Soft green
+        borderColor: 'rgba(34, 197, 94, 1)',  // Darker green
+        borderWidth: 1,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+      },
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+
+
+            
       
           </div>
         </div>
@@ -781,7 +826,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                           <p class="card-text">
                               Your support helps us make a difference!
                           </p>
-                         
+                          <a href="SaveNature.html" class="btn-link">
+                            <span>Read More</span>
+                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                          </a>
                       </div>
                       
                   </div>
@@ -813,7 +861,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Your contribution helps protect our planet's ecology!
                         </p>
-                       
+                        <a href="SaveEcology.html" class="btn-link">
+                          <span>Read More</span>
+                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
                     </div>
                 </div>
                 <a href="SaveEcology.html" class="btn-link">
@@ -845,7 +896,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Together, we can create a greener future!
                         </p>
-                      
+                        <a href="TreePlantation.html" class="btn-link">
+                          <span>Read More</span>
+                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
                     </div>
                 </div>
                 <a href="TreePlantation.html" class="btn-link">
@@ -876,7 +930,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Your support is vital for ocean conservation!
                         </p>
-                       
+                        <a href="SaveOcean.html" class="btn-link">
+                          <span>Read More</span>
+                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
                     </div>
                 </div>
                 <a href="SaveOcean.html" class="btn-link">
@@ -913,7 +970,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
               <a href="EcoFriendlyShop.html" class="btn-link">
                 <span>Shop Now</span>
                 <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-              </a>
+            </a>
           </div>
         </div>
       </div>
