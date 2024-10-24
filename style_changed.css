@@ -634,7 +634,7 @@ body {
 .service-card {
   background-color: var(--white);
   text-align: center;
-  padding: 45px 40px;
+  padding: 40px 40px;
   border-radius: 2px;
   outline: 3px solid transparent;
   box-shadow: var(--card-shadow);
