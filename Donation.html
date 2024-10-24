@@ -171,8 +171,15 @@ footer {
 
                 <input type="number" id="customAmount" placeholder="Enter custom amount" style="display: none;">
 
-                <button type="submit">Donate Now</button>
+                <button type="submit" onclick="btnAlertBox()">Donate Now</button>
+
             </form>
+
+            <script>
+                function btnAlertBox() {
+                  alert("Thank you for your donation!");
+                }
+                </script>
 
             <div id="thankYouMessage" style="display:none;">
                 <h3>Thank you for your generosity!</h3>
