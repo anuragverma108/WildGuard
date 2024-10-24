@@ -1,50 +1,4 @@
-/* .donate-button {
-    background-color: #91be55;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    padding: 10px 20px;
-    font-size: 15px;
-    transition: background-color 0.3s;
-}
-
-/* .donate-button:hover {
-    background-color: #7fa844; /* Add a hover effect for a better UI  */
-
-
-/* .donate-button {
-    display: inline-flex;               
-    align-items: center;                
-    justify-content: center;            
-    padding: 6px 12px;                   
-    background-color: #91be55;           
-    color: white;                       
-    text-transform: uppercase;           
-    font-weight: bold;                  
-    font-size: 12px;                    
-    text-decoration: none;            
-    border: 1px solid #0078d4;           
-    border-radius: 10px;                 
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s, box-shadow 0.2s; 
-    cursor: pointer;                    
-}
-
-.donate-button:hover {
-    background-color: #7fa844;          
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15); 
-}
-
-.donate-button svg {
-    fill: white;                        
-    width: 10px;                         
-    height: 10px;                       
-    margin-left: 5px;                    
-} 
-    */
-
-    .donate-button {
+.donate-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -61,6 +15,7 @@
         transition: background-color 0.2s, box-shadow 0.2s;
         position: relative; /* Required for ::before pseudo-element */
         cursor: pointer;
+        margin-top: 10px;
     }
     
     .donate-button::before {
@@ -77,7 +32,7 @@
     }
     
     .donate-button:hover::before {
-        /* border-color: #0078d4; Blue border on hover */
+        border-color: #0078d4; /* Blue border on hover */
         transform: scale(1); /* Full size on hover */
     }
     

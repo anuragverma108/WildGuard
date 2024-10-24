@@ -44,6 +44,7 @@ body {
     background: #f0f8ff;
     color:black;
     line-height: 1.6;
+    overflow: hidden;
 }
 
 header {
@@ -62,19 +63,25 @@ header p {
 }
 
 .donation-form {
-    background: white;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
     max-width: 400px;
-    margin: 30px auto;
-    padding: 20px;
+    margin: 40px auto; 
+    padding: 40px; 
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgb(59, 59, 59);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); 
     text-align: center;
+    color: white; 
+    transition: background 0.3s ease; 
 }
+
 
 .donation-form h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color:rgb(0, 113, 19);
+    color: #228B22; 
 }
 
 .donation-form p {
@@ -99,18 +106,23 @@ input, select {
 }
 
 button {
-    padding: 10px;
-    background-color:rgb(145, 86, 62);
+    padding: 12px 20px; 
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; 
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-weight: bold; 
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 button:hover {
-    background-color: #417788;
+    background-color: #45a049; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
 }
+
 
 #thankYouMessage {
     text-align: center;
