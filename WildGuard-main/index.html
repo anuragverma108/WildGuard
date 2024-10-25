@@ -98,7 +98,6 @@
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
-
           <li>
             <a href="#about" class="navbar-link" data-nav-link>
               <span class="new_size">About</span>
@@ -1760,6 +1759,83 @@
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  <!-- Toggle navbar when clicking any navbar link - updated -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.navbar-link');
+    
+      // Flag to prevent scroll event interference when clicking a link
+      let isManualClick = false;
+    
+      // Function to remove active class from all links
+      function removeActiveClass() {
+        navLinks.forEach(link => link.classList.remove('active'));
+      }
+    
+      // Function to handle smooth scroll and add active class on click
+      navLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+    
+          // Set the flag to indicate a manual click is happening
+          isManualClick = true;
+    
+          // Immediately remove active class from all links and set the clicked one
+          removeActiveClass();
+          this.classList.add('active');
+    
+          // Get the target section and its offset
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+    
+          if (targetElement) {
+            // After applying the active class, execute the smooth scroll
+            window.scrollTo({
+              top: targetElement.offsetTop - 50, // Adjust offset for navbar height
+              behavior: 'smooth'
+            });
+          }
+    
+          // Reset the manual click flag after the smooth scroll finishes
+          setTimeout(() => {
+            isManualClick = false;
+          }, 1000); // Adjust timing if needed to match smooth scroll duration
+        });
+      });
+    
+      // Function to handle scroll event and update active link
+      function updateActiveLink() {
+        if (isManualClick) return; // Prevent interference during manual click
+    
+        let scrollY = window.pageYOffset;
+    
+        sections.forEach(current => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop - 50; // Adjust for navbar height
+          const sectionId = current.getAttribute('id');
+    
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href').substring(1) === sectionId) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+    
+      // Listen to scroll events to update active link
+      window.addEventListener('scroll', updateActiveLink);
+    
+      // Initial call to set active link on page load
+      updateActiveLink();
+    });
+    
+  </script>
+  
 </body>
 
 </html>
