@@ -51,7 +51,7 @@
       .card h2 {
         color: #333;
         font-size: 24px;
-        margin-bottom: 20px;
+        margin-bottom: 0;
       }
 
       .fa-house {
@@ -73,6 +73,16 @@
         color: #f76c6c;
       }
 
+      .stars i{
+        color: #e6e6e6;
+        display: inline-flex;
+        font-size: 32px;
+        cursor: pointer;
+        align-items: center;
+      }
+      .stars i.active{
+        color: #f76c6c;
+      }
       #output {
         font-size: 18px;
         color: #333;
@@ -212,12 +222,20 @@
         <a href="./index.html"><i class="fa-solid fa-house"></i></a>
         <h2>Rate Us</h2>
         <br />
-        <span onclick="gfg(1)" class="star">★</span>
+        <!--<span onclick="gfg(1)" class="star">★</span>
         <span onclick="gfg(2)" class="star">★</span>
         <span onclick="gfg(3)" class="star">★</span>
         <span onclick="gfg(4)" class="star">★</span>
         <span onclick="gfg(5)" class="star">★</span>
-        <h5 id="output">Rating is: 0/5</h5>
+        <h5 id="output">Rating is: 0/5</h5>-->
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <h5 id="output">Rating is: 0/5</h5>
+        </div>
 
         <form id="ratingForm">
           <textarea
