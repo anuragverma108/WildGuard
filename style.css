@@ -130,7 +130,8 @@ body {
     transition: transform 0.3s;
 }
 
-#scrollBOTTOM{
+ #scrollBOTTOM{
+   
     position: fixed;
     right: 30px;
     top: 100px;
@@ -146,6 +147,7 @@ body {
     outline: none;
     cursor: pointer;
 }
+
 #scrollBOTTOM:active{
     background-color: #35c91e;
 }
@@ -313,6 +315,17 @@ body {
     .zoom-effect img {
         transition: transform 0.3s ease-in-out;
     }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 2000px; /* Increase height to create scrolling content */
+    }
+
+    /* Scroll to Top Button CSS */
+   
+    
 }
 
 
