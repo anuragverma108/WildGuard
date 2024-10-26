@@ -1,114 +1,278 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WildGuard - Terms of Use</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>WildGuard - Copyright Policy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #27ae60;
+            --secondary-color: #2c3e50;
+            --text-color: #333;
+            --light-green: rgba(39, 174, 96, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
             background-image: url('assets/images/bg\ form.jpg');
             background-size: cover;
             background-position: center;
-            font-family: Arial, sans-serif;
-            padding-top: 50px;
+            background-attachment: fixed;
+            min-height: 100vh;
         }
-        /* {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        } */
-        h1 {
-            text-align: center;
-            color: var(--pistachio);
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        .container {
-            max-width: 800px;
+
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        h2 {
-            color: #27ae60;
+
+        .logo {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
         }
-        p {
-            line-height: 1.6;
+
+        .main-container {
+            max-width: 1000px;
+            margin: 120px auto 40px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
         }
-        footer {
+
+        .policy-header {
             text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .policy-title {
+            font-family: 'Raleway', sans-serif;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-subtitle {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(39, 174, 96, 0.1);
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+        }
+
+        .section-content {
+            padding-left: 1rem;
+        }
+
+        .list-styled {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .list-styled li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .list-styled li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: -1rem;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: rgba(39, 174, 96, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(39, 174, 96, 0.2);
+        }
+
+        .footer {
+            background: var(--secondary-color);
             color: white;
-            margin-top: 20px;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                margin: 100px 1rem 2rem;
+                padding: 1.5rem;
+            }
+
+            .policy-title {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">WildGuard</a>
+        </div>
+    </header>
 
-    <div class="container">
-        <h1>WildGuard - Copyright Policy</h1>
+    <div class="main-container">
+        <div class="policy-header">
+            <h1 class="policy-title">Copyright Policy</h1>
+            <p class="policy-subtitle">
+                At WildGuard, we respect intellectual property rights and are committed to protecting the creative works of our community.
+            </p>
+        </div>
 
-        <p>
-            At WildGuard, we respect the intellectual property rights of others and expect our users to do the same. 
-            This Copyright Policy outlines our practices in relation to the use of copyrighted material on our website 
-            and platforms.
-        </p>
+        <div class="section">
+            <h2 class="section-title">Ownership of Content</h2>
+            <div class="section-content">
+                <p>
+                    All content on this website, including but not limited to text, graphics, logos, images, audio clips, and 
+                    software, is the property of WildGuard or its content suppliers and is protected by international copyright 
+                    laws.
+                </p>
+                <div class="highlight-box">
+                    Unauthorized use of the content may violate copyright, trademark, and other laws.
+                </div>
+            </div>
+        </div>
 
-        <h2>Ownership of Content</h2>
-        <p>
-            All content on this website, including but not limited to text, graphics, logos, images, audio clips, and 
-            software, is the property of WildGuard or its content suppliers and is protected by international copyright 
-            laws. Unauthorized use of the content may violate copyright, trademark, and other laws.
-        </p>
+        <div class="section">
+            <h2 class="section-title">Use of Content</h2>
+            <div class="section-content">
+                <p>
+                    Users of the WildGuard website are granted a limited, non-exclusive, and non-transferable license to access 
+                    and view the content for personal, non-commercial use. Any copying, distribution, transmission, or 
+                    modification of the content for commercial purposes is strictly prohibited without prior written consent 
+                    from WildGuard.
+                </p>
+            </div>
+        </div>
 
-        <h2>Use of Content</h2>
-        <p>
-            Users of the WildGuard website are granted a limited, non-exclusive, and non-transferable license to access 
-            and view the content for personal, non-commercial use. Any copying, distribution, transmission, or 
-            modification of the content for commercial purposes is strictly prohibited without prior written consent 
-            from WildGuard.
-        </p>
+        <div class="section">
+            <h2 class="section-title">DMCA Compliance</h2>
+            <div class="section-content">
+                <p>
+                    If you believe that any content on our website infringes your copyright, you may submit a notification 
+                    under the Digital Millennium Copyright Act (DMCA) by providing the following information:
+                </p>
+                <ul class="list-styled">
+                    <li>A description of the copyrighted work you claim has been infringed.</li>
+                    <li>The exact location on our website of the material you claim is infringing.</li>
+                    <li>Your contact details, including email address and phone number.</li>
+                    <li>A statement that you have a good faith belief that the use of the material is not authorized.</li>
+                    <li>A statement that the information provided is accurate, and you are authorized to act on behalf of the copyright owner.</li>
+                </ul>
+            </div>
+        </div>
 
-        <h2>DMCA Compliance</h2>
-        <p>
-            If you believe that any content on our website infringes your copyright, you may submit a notification 
-            under the Digital Millennium Copyright Act (DMCA) by providing the following information:
-        </p>
-        <ul>
-            <li>A description of the copyrighted work you claim has been infringed.</li>
-            <li>The exact location on our website of the material you claim is infringing.</li>
-            <li>Your contact details, including email address and phone number.</li>
-            <li>A statement that you have a good faith belief that the use of the material is not authorized by the 
-                copyright owner.</li>
-            <li>A statement that the information provided in the notification is accurate, and you are authorized to 
-                act on behalf of the copyright owner.</li>
-        </ul>
+        <div class="section">
+            <h2 class="section-title">Third-Party Content</h2>
+            <div class="section-content">
+                <p>
+                    WildGuard may include links to third-party websites, display third-party content, or incorporate services 
+                    provided by third-party entities. We provide these links and content for your convenience and information.
+                </p>
+                <div class="highlight-box">
+                    We do not endorse, control, or assume any responsibility for the content, accuracy, privacy policies, 
+                    copyright policies, terms of service, or practices of these third-party sites or services.
+                </div>
+            </div>
+        </div>
 
-        <h2>Third-Party Content</h2>
-        <p>
-            WildGuard may include links to third-party websites, display third-party content, or incorporate services 
-            provided by third-party entities. We provide these links and content for your convenience and information. 
-            However, we do not endorse, control, or assume any responsibility for the content, accuracy, privacy policies, 
-            copyright policies, terms of service, or practices of these third-party sites or services.
-        </p>
-
-        <h2>Changes to This Policy</h2>
-        <p>
-            WildGuard reserves the right to modify this Copyright Policy at any time. Any changes will be posted on 
-            this page and will take effect immediately.
-        </p>
+        <div class="section">
+            <h2 class="section-title">Changes to This Policy</h2>
+            <div class="section-content">
+                <p>
+                    WildGuard reserves the right to modify this Copyright Policy at any time. Any changes will be posted on 
+                    this page and will take effect immediately.
+                </p>
+            </div>
+        </div>
     </div>
 
-    <footer>
-        &copy; 2024 WildGuard. All Rights Reserved.
+    <footer class="footer">
+        <div class="footer-content">
+            &copy; 2024 WildGuard. All Rights Reserved.
+        </div>
     </footer>
-
-
 </body>
 </html>

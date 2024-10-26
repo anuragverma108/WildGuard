@@ -89,8 +89,9 @@
     transition: background-color 0.3s;
 }
 .donate-button:hover {
-    background-color: #2980b9;
-
+    background-color: #ffffff;
+    color: #91be55;
+    font-weight: 600;
 }
 
 .boxx {
