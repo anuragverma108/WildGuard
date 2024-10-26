@@ -11,8 +11,28 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+            width: 24px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #6eff92; /* Background of the scrollbar track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(0, 113, 19); /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounding edges */
+            /* Adds padding around the thumb */
+        }
+
+        /* Firefox Scrollbar */
+        html {
+            scrollbar-color: rgb(0, 113, 19) #f0f8ff; /* Thumb color | Track color */
+            scrollbar-width: thin; /* Makes the scrollbar thinner */
+        }
+
 .backimg {
-    background-image: url("assets/images/animals.jpg");
+    background-image: url("assets/images/community-hero-bg.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
@@ -24,11 +44,12 @@ body {
     background: #f0f8ff;
     color:black;
     line-height: 1.6;
+    overflow: hidden;
 }
 
 header {
     text-align: center;
-    padding: 20px;
+    padding: 10px;
     background-color:rgba(255, 253, 253, 0.721);
     color: rgb(0, 113, 19);
 }
@@ -42,19 +63,25 @@ header p {
 }
 
 .donation-form {
-    background: white;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
     max-width: 400px;
-    margin: 30px auto;
-    padding: 20px;
+    margin: 40px auto; 
+    padding: 40px; 
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgb(0, 113, 19);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); 
     text-align: center;
+    color: white; 
+    transition: background 0.3s ease; 
 }
+
 
 .donation-form h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color:rgb(0, 113, 19);
+    color: #228B22; 
 }
 
 .donation-form p {
@@ -79,18 +106,23 @@ input, select {
 }
 
 button {
-    padding: 10px;
-    background-color:rgb(0, 113, 19);
+    padding: 12px 20px; 
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px; 
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-weight: bold; 
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 button:hover {
-    background-color: #417788;
+    background-color: #45a049; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
 }
+
 
 #thankYouMessage {
     text-align: center;
@@ -139,8 +171,15 @@ footer {
 
                 <input type="number" id="customAmount" placeholder="Enter custom amount" style="display: none;">
 
-                <button type="submit">Donate Now</button>
+                <button type="submit" onclick="btnAlertBox()">Donate Now</button>
+
             </form>
+
+            <script>
+                function btnAlertBox() {
+                  alert("Thank you for your donation!");
+                }
+                </script>
 
             <div id="thankYouMessage" style="display:none;">
                 <h3>Thank you for your generosity!</h3>
@@ -177,7 +216,11 @@ footer {
         const name = document.getElementById('donorName').value;
         const email = document.getElementById('email').value;
         let amount = amountSelect.value === 'custom' ? customAmountInput.value : amountSelect.value;
-
+         // Validating the name field
+         if(!name.match('^[a-zA-Z\s]+$')){
+            alert("Invalid Name Format");
+            return
+        }
         if (amount && name && email) {
             // Display thank you message
             donationForm.style.display = 'none';

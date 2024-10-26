@@ -3,243 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WildGuard Donations</title>
+    <title>Support Wildguard - Donate Today!</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .backimg {
-            background-image: url("assets/images/animals.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: left;
-            min-height: 780px;
-        }
-
         body {
-            font-family: 'Arial', sans-serif;
-            background: #f0f8ff;
-            color: black;
-            line-height: 1.6;
-        }
+    font-family: Arial, sans-serif;
+    background-image: url('https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/642018/kcBMPvdjUQlpEDKz.png?Expires=1730831082&Signature=IU22k9JEQKsMkKhWRi37VPNpy3RbBTwSYmtiMUgytpjCgqCAHbAvTpXwX0uu0p~O73Rvbjf9M6CM-LXSOSuP1Jfz2jIm7o10vcFHqpKKAdrerzovDwz4QqXbls9o50LIwHPLo5yxB9Cg4dzLLRdLEe6jmUAe71kVolu8OgfpIqP6Rqdaj5p5xNvcxhtfnO9IosQPBD-eHWpUl2Bkn8QAiEccj0fNiOdw5zFrlelcSh1AzD-DRNxLeAA5gbxOL1eaL1gdxNxCWSYOePXPk8WQGZvQ3bY5-OX2YxuiK7EDsc91yUNgQIKl9gIcDlGCkv~5~oQjesU3bBEghzUxc4hRKQ__&Key-Pair-Id=K3USGZIKWMDCSX');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(255, 253, 253, 0.721);
-            color: rgb(0, 113, 19);
-        }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        header h1 {
-            font-size: 3em;
-        }
+.form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 300px;
+}
 
-        header p {
-            font-size: 1.2em;
-        }
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        .donation-form {
-            background: white;
-            max-width: 400px;
-            margin: 30px auto;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgb(0, 113, 19);
-            text-align: center;
-        }
+label {
+    margin: 10px 0 5px;
+    display: block;
+}
 
-        .donation-form h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: rgb(0, 113, 19);
-        }
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
-        .donation-form p {
-            margin-bottom: 20px;
-        }
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
 
-        form {
-            display: flex;
-            flex-direction: column;
-        }
+button:hover {
+    background-color: #218838;
+}
 
-        label {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input, select {
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            padding: 10px;
-            background-color: rgb(0, 113, 19);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #417788;
-        }
-
-        #thankYouMessage {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        footer {
-            background-color: rgb(0, 113, 19);
-            padding: 10px;
-            text-align: center;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        .card-details {
-            display: none;
-            background: white;
-            max-width: 400px;
-            margin: 30px auto;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgb(0, 113, 19);
-            text-align: center;
-        }
-
-        .card-details h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: rgb(0, 113, 19);
-        }
     </style>
 </head>
 <body>
-    <div class="backimg">
-        <header>
-            <h1>WildGuard</h1>
-            <p>Help protect wildlife. Donate today to save the animals!</p>
-        </header>
+    <div class="container">
+        <div class="form-container">
+            <h1>🌿 Support Wildguard - Donate Today! 🌍</h1>
+            <form>
+                <label for="donation-type">Donation Type:</label>
+                <select id="donation-type" name="donation-type">
+                    <option value="one-time">💵 One-Time Donation</option>
+                    <option value="recurring">🔄 Recurring Donation</option>
+                </select>
 
-        <main>
-            <section class="donation-form">
-                <h2>Make a Donation</h2>
-                <p>Your donation will help protect endangered species and wildlife habitats.</p>
+                <label for="donation-amount">Donation Amount (USD):</label>
+                <input type="number" id="donation-amount" name="donation-amount" placeholder="Enter amount" required>
 
-                <form id="donationForm">
-                    <label for="donorName">Full Name</label>
-                    <input type="text" id="donorName" placeholder="Your Name" required>
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="credit-card">💳 Credit Card</option>
+                    <option value="paypal">🅿️ PayPal</option>
+                </select>
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Your Email" required>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
 
-                    <label for="amount">Donation Amount</label>
-                    <select id="amount" required>
-                        <option value="10">$10</option>
-                        <option value="25">$25</option>
-                        <option value="50">$50</option>
-                        <option value="100">$100</option>
-                        <option value="custom">Custom</option>
-                    </select>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-                    <input type="number" id="customAmount" placeholder="Enter custom amount" style="display: none;">
+                <label>
+                    <input type="checkbox" name="anonymous" value="yes"> 🤫 Donate anonymously
+                </label>
 
-                    <button type="submit">Donate Now</button>
-                </form>
-
-                <div id="thankYouMessage" style="display:none;">
-                    <h3>Thank you for your generosity!</h3>
-                    <p>Your donation will make a huge difference in protecting animals.</p>
-                    <button id="proceedToPayment">Proceed to Payment</button>
-                </div>
-            </section>
-
-            <section class="card-details" id="cardDetails">
-                <h2>Enter Card Details</h2>
-                <form id="cardForm">
-                    <label for="cardNumber">Card Number</label>
-                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
-
-                    <label for="cardHolderName">Card Holder Name</label>
-                    <input type="text" id="cardHolderName" placeholder="Your Name" required>
-
-                    <label for="expiryDate">Expiry Date (MM/YY)</label>
-                    <input type="text" id="expiryDate" placeholder="MM/YY" required>
-
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" placeholder="123" required>
-
-                    <button type="submit">Submit Payment</button>
-                </form>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2024 WildGuard Organization. All rights reserved.</p>
-        </footer>
+                <button type="submit">✅ Submit Donation</button>
+            </form>
+        </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const donationForm = document.getElementById('donationForm');
-            const amountSelect = document.getElementById('amount');
-            const customAmountInput = document.getElementById('customAmount');
-            const thankYouMessage = document.getElementById('thankYouMessage');
-            const cardDetails = document.getElementById('cardDetails');
-            const proceedToPaymentButton = document.getElementById('proceedToPayment');
-
-            // Show custom amount input if 'Custom' is selected
-            amountSelect.addEventListener('change', function () {
-                customAmountInput.style.display = amountSelect.value === 'custom' ? 'block' : 'none';
-            });
-
-            // Handle form submission
-            donationForm.addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                const name = document.getElementById('donorName').value;
-                const email = document.getElementById('email').value;
-                let amount = amountSelect.value === 'custom' ? customAmountInput.value : amountSelect.value;
-
-                if (amount && name && email) {
-                    // Display thank you message
-                    donationForm.style.display = 'none';
-                    thankYouMessage.style.display = 'block';
-                }
-            });
-
-            // Handle payment button click
-            proceedToPaymentButton.addEventListener('click', function () {
-                thankYouMessage.style.display = 'none';
-                cardDetails.style.display = 'block';
-            });
-
-            // Handle card form submission
-            document.getElementById('cardForm').addEventListener('submit', function (event) {
-                event.preventDefault();
-
-                const cardNumber = document.getElementById('cardNumber').value;
-                const cardHolderName = document.getElementById('cardHolderName').value;
-                const expiryDate = document.getElementById('expiryDate').value;
-                const cvv = document.getElementById('cvv').value;
-
-                if (cardNumber && cardHolderName && expiryDate && cvv) {
-                    alert('Payment successful! Thank you for your donation.');
-                    // Reset the form or redirect to a thank you page
-                }
-            });
-        });
-    </script>
 </body>
 </html>
