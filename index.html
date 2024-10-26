@@ -531,6 +531,49 @@
         </div>
       </section>
 
+      <style>
+        .donation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 250px; /* adjust width as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-height: 300px; /* fixed height to align buttons */
+}
+
+.benefits {
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+.donate-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+      </style>
+
 
       <div class="donation-section">
         <div class="boxx"><b>
@@ -606,9 +649,6 @@
       </section>
 
 
-
-
-
       <!-- 
         - #SERVICE
       -->
@@ -626,6 +666,9 @@
             We Work Differently to <strong>keep The World Safe</strong>
           </h2>
 
+          <style>
+            
+          </style>
           <ul class="service-list">
 
             <li>
@@ -1725,7 +1768,7 @@
 
   <script>
     
-        <script>
+ 
             document.getElementById('registerLink').addEventListener('click', function (e) {
               e.preventDefault();
               window.location.href = 'register.html';
@@ -1734,7 +1777,7 @@
               e.preventDefault();
               window.location.href = 'login.html';
             });
-          </script>
+      
 
     
       document.addEventListener('DOMContentLoaded', function () {

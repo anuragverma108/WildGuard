@@ -612,71 +612,6 @@ body {
   #SERVICE
 \*-----------------------------------*/
 
-.service {
-  background-color: var(--baby-powder);
-  background-repeat: no-repeat;
-  background-position: center top;
-  margin-block-start: -200px;
-  padding-block-start: 200px;
-}
-
-.service .section-title {
-  margin-block: 10px 40px;
-}
-
-.service-list {
-  display: grid;
-  gap: 30px;
-}
-
-.service-card {
-  background-color: var(--white);
-  text-align: center;
-  padding: 45px 40px;
-  border-radius: 2px;
-  outline: 3px solid transparent;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition-2);
-}
-
-.service-card:is(:hover, :focus-within) {
-  outline-color: var(--pistachio);
-}
-
-.service-card .card-icon {
-  color: var(--pistachio);
-  font-size: 7rem;
-  max-width: max-content;
-  margin-inline: auto;
-}
-
-.service-card .card-icon ion-icon {
-  --ionicon-stroke-width: 20px;
-}
-
-.service-card .card-title {
-  letter-spacing: -1px;
-  margin-block: 10px;
-}
-
-.service-card .card-text {
-  font-family: var(--ff-inter);
-}
-
-.btn-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  color: var(--silver-chalice);
-  font-size: var(--fs-8);
-  font-weight: var(--fw-600);
-  margin-block-start: 15px;
-}
-
-.btn-link span {
-  text-decoration: underline;
-}
 
 /*-----------------------------------*\
   #DONATE
@@ -741,7 +676,6 @@ body {
   font-weight: var(--fw-500);
 }
 
-@media (min-width: 1200px) {
 
 
 
