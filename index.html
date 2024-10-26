@@ -5,18 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 
-  
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="stylesss.css">
-  <link rel="stylesheet" href="./assets/css/searchbar.css">
 
   <title>WildGuard - Give Love for Saving World Animals</title>
 
@@ -56,155 +51,29 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
-  
 
-  <style>
-    body {
-       /* font-family: Arial, sans-serif;*/
-        margin: 0;
-        padding: 0;
-        height: 2000px; /* Increase height to create scrolling content */
-    }
-
-    /* Scroll to Top Button CSS */
-    #scrollToTopBtn {
-        position: fixed;
-        left: 30px;
-        bottom: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: #0c7124; /* Green background */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-        border: none;
-        outline: none;
-        cursor: pointer;
-        display: none; /* Hidden by default */
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.3s;
-    }
-
-    #scrollToTopBtn i {
-        font-size: 20px; /* Size of the arrow icon */
-        color: white;
-    }
-</style>
 
 </head>
 
 <body>
-<!-- Intro Landing Section with Image and Quote -->
-<div id="intro-landing" style="
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   z-index: 1000;
-   background: black;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   overflow: hidden;
- ">
-   <img src="https://cdn.pixabay.com/photo/2024/09/04/19/09/blackbird-9022655_1280.jpg" alt="Nature Image" class="intro-image" style="
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     z-index: -1;
-   ">
-   <div class="intro-quote" style="
-     position: absolute;
-     color: white;
-     font-size: 2rem;
-     font-weight: bold;
-     text-align: center;
-     z-index: 10;
-   ">
-     "Save Nature, Save Wildlife"
-   </div>
-</div>
-
-<script>
-   window.addEventListener('load', function () {
-     const introLanding = document.getElementById('intro-landing');
-     const mainContent = document.querySelector('.main-content');
-     
-     // Start the slide-away animation
-     introLanding.style.animation = 'slideAway 2s ease-out forwards';
  
-     // After the animation, hide the intro and show the main content
-     setTimeout(() => {
-       introLanding.style.display = 'none';
-       mainContent.style.display = 'block'; // Show the main content
-       document.body.style.overflow = 'auto'; // Restore scrolling
-     }, 5000); // Match the animation duration (5 seconds)
-   });
+<!-- progress bar  -->
+  <div class="progress-bar" id="progressBar"></div>
+  <script>
+    window.onscroll = function () {
+      updateProgressBar();
+    };
 
-   // Inline keyframe animation
-   const style = document.createElement('style');
-   style.innerHTML = `
-     @keyframes slideAway {
-       0% {
-         transform: translateY(0);
-         opacity: 1;
-       }
-       100% {
-         transform: translateY(-100%);
-         opacity: 0;
-       }
-     }
-   `;
-   document.head.appendChild(style);
-</script>
+    function updateProgressBar() {
+      const progressBar = document.getElementById('progressBar');
+      const totalHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPosition = window.scrollY;
 
-<div class="scroll-to-bottom" style="position: fixed; z-index: 100;">
-  <button id="scrollBOTTOM">
-    <i class="material-icons">arrow_downward</i>
-  </button>
-</div>
+      const progressWidth = (scrollPosition / totalHeight) * 100;
 
-<script>
-  const scrollBOTTOM = document.querySelector('#scrollBOTTOM');
-  scrollBOTTOM.addEventListener('click', function() {
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        left: 0,
-        behavior:'smooth'
-      });
-  });
-
-
-</script>
-
-<!-- Progress Bar -->
-<div class="progress-bar" id="progressBar" style="
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  background-color: green;
-  width: 0;
-  z-index: 2000;
-"></div>
-
-<script>
-   window.onscroll = function () {
-     updateProgressBar();
-   };
-
-   function updateProgressBar() {
-     const progressBar = document.getElementById('progressBar');
-     const totalHeight = document.body.scrollHeight - window.innerHeight;
-     const scrollPosition = window.scrollY;
-
-     const progressWidth = (scrollPosition / totalHeight) * 100;
-
-     progressBar.style.width = progressWidth + '%';
-   }
-</script>
-
+      progressBar.style.width = progressWidth + '%';
+    }
+  </script>
 
   <!--
     - #HEADER
@@ -292,59 +161,34 @@
 
            <li>
                 <a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>
-                      <span class="new_size">Login</span>
+                      <span>Login</span>
                       <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
             </li>
           <li>
             <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
-              <span class="new_size">Register</span>
+              <span>Register</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
-
-
-          <script>
-            document.getElementById('registerLink').addEventListener('click', function (e) {
-              e.preventDefault();
-              window.location.href = 'register.html';
-            });
-            document.getElementById('loginLink').addEventListener('click', function (e) {
-              e.preventDefault();
-              window.location.href = 'login.html';
-            });
-          </script>
-
-
+  
 
         </ul>
 
       </nav>
-      <div class="search-container">
-        <form id="search-form">
-            <div class="search-input-wrapper">
-                <!-- <i class="fas fa-search search-icon"></i> -->
-                <input type="text" id="search-input" placeholder="Search..." aria-label="Search">
-            </div>
-            <button type="submit" id="search-button">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
-        <div id="search-results"></div>
-    </div>
 
       <div class="header-action">
 
-        <!-- <div class="input-group">
+        <div class="input-group">
           <input type="text" style="font-size: medium;" class="form-control" id="search-input" placeholder="Search" aria-label="Search" autocomplete="off" oninput="handleInput()">
           <button class="btn btn-primary search-btn" aria-label="Search" onclick="performSearch()">
             <ion-icon name="search-outline"></ion-icon>
           </button>
           <div class="result-box" id="result-box">
-            Suggestions will be displayed here
+            <!-- Suggestions will be displayed here -->
           </div>
 
-        </div> -->
+        </div>
     
         <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 
@@ -376,16 +220,10 @@
 </div> -->
 
 
-<!-- <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-  <span>Donation</span>
-  <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-</button> -->
-
-<button type="button"  class="donate-button" onclick="location.href='Donation.html';">
+<button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
   <span>Donation</span>
   <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
 </button>
-
 <!-- Login -->
 <div id="openPopup" class="user-icon">
   <a href="user.html"><i class="fas fa-user"></i></a> 
@@ -444,7 +282,8 @@
     <i class="fa-solid fa-leaf"></i>
   </button> -->
 
-
+  <a href="#"><img src="./assets/images/upward-arrow.png" alt="" style="right: 1.33%; top: 88.88%; width: 70px;"
+      class="scroll-to-top"></a>
 
   <main>
     <article>
@@ -470,16 +309,8 @@
             <center>Defending Wildlife, One Paw at a Time</center>
           </p>
 
-          <!-- <div class="button-container">
-            <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-              <span>Donation</span>
-
-              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-            </button>
-          </div> -->
-
           <div class="button-container">
-            <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+            <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
               <span>Donation</span>
 
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -507,37 +338,34 @@
                 <ion-icon name="shield-checkmark-outline"></ion-icon>
               </div>
 
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
-                <div>
-                  <h3 class="h4 item-title">Safe Shelter</h3>
-                  <p class="item-text">
-                    Providing secure habitats ensures the survival of wildlife.
-                  </p>
-                </div>
-              </a>
+              <div>
+                <h3 class="h4 item-title">Safe Shelter</h3>
+
+                <p class="item-text">
+                  Providing secure habitats ensures the survival of wildlife.
+                </p>
+              </div>
             </li>
-            
+
             <li class="features-item">
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
               <div class="item-icon">
                 <ion-icon name="water-outline"></ion-icon>
               </div>
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
+
               <div>
-                <h3 class="h4 item-title">Save Water</h3>
+                <h3 class="h4 item-title">Safe Water</h3>
 
                 <p class="item-text">
                   Conserving water is key to sustaining life and ecosystems.
                 </p>
               </div>
-              </a>
             </li>
 
             <li class="features-item">
               <div class="item-icon">
                 <ion-icon name="leaf-outline"></ion-icon>
               </div>
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
+
               <div>
                 <h3 class="h4 item-title">Ecology Save</h3>
 
@@ -545,14 +373,13 @@
                   Protecting ecological balance preserves biodiversity for future generations.
                 </p>
               </div>
-              </a>
             </li>
 
             <li class="features-item">
               <div class="item-icon">
                 <ion-icon name="snow-outline"></ion-icon>
               </div>
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
+
               <div>
                 <h3 class="h4 item-title">Environment</h3>
 
@@ -560,7 +387,6 @@
                   A healthy environment supports both wildlife and human well-being.
                 </p>
               </div>
-              </a>
             </li>
 
           </ul>
@@ -590,21 +416,21 @@
               <!-- Previous button -->
               <button class="prev-btn">&#10094;</button>
 
-              <div class="banner-img-container banner-carousel-frame banner-img-cont-1 zoom-effect" index=1>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-1" index=1>
                 <img src="./assets/images/about-banner-1.jpg" width="315" height="380" loading="lazy" alt="Tiger"
                   class="about-img w-100" />
               </div>
-              <div class="banner-img-container banner-carousel-frame banner-img-cont-2 zoom-effect" index=2>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-2" index=2>
                 <img src="./assets/images/about-banner-3.jpg" width="250" height="277" loading="lazy" alt="Elephant"
                   class="about-img w-100" />
               </div>
 
-              <div class="banner-img-container banner-carousel-frame banner-img-cont-3 zoom-effect" index=3>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-3" index=3>
                 <img src="./assets/images/about-banner-2.jpg" width="386" height="250" loading="lazy" alt="Panda"
                   class="about-img w-100" />
               </div>
 
-              <div class="banner-img-container banner-carousel-frame banner-img-cont-4 zoom-effect" index=4>
+              <div class="banner-img-container banner-carousel-frame banner-img-cont-4" index=4>
                 <img src="./assets/images/about-banner-4.jpg" width="315" height="380" loading="lazy" alt="Deer"
                   class="about-img w-100" />
               </div>
@@ -641,11 +467,21 @@
               </li>
 
               <li>
-                <button class="tab-btn active" onclick="setActiveTab(this, 'vision')">Our Vision</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'vision')">Our Vision</button>
               </li>
 
               <li>
-                <button class="tab-btn active" onclick="setActiveTab(this, 'plan')">Next Plan</button>
+                <button class="tab-btn" onclick="setActiveTab(this, 'plan')">Next Plan</button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="window.location.href='./Maps/map.html'"> Maps</button>
+
+                
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="window.location.href='./rescue.html'"> Rescue</button>
               </li>
 
             </ul>
@@ -659,8 +495,8 @@
               </p> -->
 
               <p class="section-text">
-                
-Our mission is to provide outstanding care and dedicated support for animals in need, safeguarding their health, safety, and overall well-being. We strive to create a nurturing environment where every animal feels valued, protected, and given the opportunity to thrive.
+                Our mission is to provide the best care and support for animals in need, ensuring their safety and
+                well-being.
               </p>
 
               <ul class="tab-list">
@@ -685,7 +521,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             </div>
 
 
-            <button class="btn btn-secondary" id="learn-btn" onclick="location.href='about.html';">
+            <button class="btn btn-secondary" onclick="location.href='about.html';">
               <span style="padding : 20px; font-size : 17px;">Learn More About Us</span>
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
             </button>
@@ -694,6 +530,49 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
         </div>
       </section>
+
+      <style>
+        .donation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 250px; /* adjust width as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  min-height: 300px; /* fixed height to align buttons */
+}
+
+.benefits {
+  margin-top: 10px;
+  flex-grow: 1;
+}
+
+.donate-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+      </style>
 
 
       <div class="donation-section">
@@ -706,9 +585,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
               <h2>Basic Tier</h2>
             </b>
             <p class="amount">$10/month</p>
-
-            <p class="benefits">Contribute to wildlife care <br> receive digital badges and <br>monthly newsletters.
-
+            <p class = "benefits">Access to monthly newsletter<br>
+            Exclusive content <br>Early access to new features
+          </p>
+            
             <p onclick="location.href='Donation.html';" class="donate-button">Donate Now</p>
 
           </div>
@@ -717,7 +597,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
               <h2>Supporter Tier</h2>
             </b>
             <p class="amount">$25/month</p>
-            <p class="benefits">Aid wildlife recovery, get <br> exclusive videos and <br>behind-the-scenes insights.</p>
+            <p class="benefits">All Basic Tier benefits<br>Personalised thank-you message</p>
             <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
           </div>
           <div class="card">
@@ -725,7 +605,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
               <h2>Champion Tier</h2>
             </b>
             <p class="amount">$50/month</p>
-            <p class="benefits">Sponsor critical projects,  <br> enjoy special merchandise and <br>priority event access.</p>
+            <p class="benefits">All Suppoeter Tier benefits<br>Quarterly report on our impact</p>
             <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
           </div>
 
@@ -734,7 +614,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
               <h2>Leader Tier</h2>
             </b>
             <p class="amount">$100/month</p>
-            <p class="benefits">Lead wildlife conservation,<br> receive personalized tours and <br>lifetime  honorary membership.</p>
+            <p class="benefits">All Champion Tier benefits<br>Invitation to exclusive events</p>
             <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
           </div>
         </div>
@@ -749,75 +629,24 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
       <section class="section cta">
         <div class="container">
-          <div class="cta-wrapper">
-      
-            <!-- Central Content: Trusted Partners -->
-            <div class="cta-content">
-              <h2 id="partnerCount">0+ Trusted Global Partners</h2>
-              <button id="partnerButton">
-                <span>Become a Partner</span>
-                <ion-icon name="heart-outline"></ion-icon>
-              </button>
-            </div>
-      <!--Displaying card on right side -->
-          <!-- Link to Tailwind CSS and Chart.js -->
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- Card for Animal Rescue Stats -->
-<div class="bg-white shadow-lg rounded-lg p-10 w-3/4 max-w-2xl"> <!-- Increased padding and width -->
-  <h2 class="text-3xl font-bold text-green-700 mb-4">Animals Saved This Year</h2> <!-- Increased text size -->
-  <p id="total-saved" class="text-7xl font-extrabold text-green-900 mb-8">0</p> <!-- Increased text size -->
-  <canvas id="monthly-chart" class="mt-4"></canvas>
-</div> 
+          <div class="cta-content">
+            <h2 class="h2 section-title">324+ Trusted Global Partners</h2>
 
-<script>
-  // Example data (you can replace this with dynamic data)
-  const monthlyData = [5, 10, 8, 15, 20, 12, 18, 9, 7, 11, 16, 22];
+            <button class="btn btn-outline" id="partnerButton">
+              <span style="padding : 20px; font-size : 17px;">Become a Partner</span>
 
-  // Calculate the total number of animals saved this year
-  const totalSaved = monthlyData.reduce((sum, value) => sum + value, 0);
-
-  // Display the total in the card
-  document.getElementById('total-saved').textContent = totalSaved;
-
-  // Chart.js configuration
-  const ctx = document.getElementById('monthly-chart').getContext('2d');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      datasets: [{
-        label: 'Animals Saved',
-        data: monthlyData,
-        backgroundColor: 'rgba(34, 197, 94, 0.6)',  // Soft green
-        borderColor: 'rgba(34, 197, 94, 1)',  // Darker green
-        borderWidth: 1,
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-      },
-      scales: {
-        y: { beginAtZero: true }
-      }
-    }
-  });
-</script>
-
-
-            
-      
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            </button>
           </div>
+
+          <figure class="cta-banner" style="box-shadow: 70px 70px 70px rgba(50,50,50,10);">
+            <img src="./assets/images/cta-banner.jpg" width="520" height="228" loading="lazy" alt="Fox"
+              class="img-cover">
+          </figure>
+
         </div>
       </section>
-      
-      
-
-
-
 
 
       <!-- 
@@ -837,14 +666,14 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             We Work Differently to <strong>keep The World Safe</strong>
           </h2>
 
-          <div class="service-list">
+          <style>
+            
+          </style>
+          <ul class="service-list">
 
-            <div>
+            <li>
               <div class="service-card" id="service-card1">
-                
-                
                   <div class="card-inner">
-                    
                       <div class="card-front">
                           <div class="card-icon">
                               <ion-icon name="leaf-outline"></ion-icon>
@@ -853,7 +682,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                           <p class="card-text">
                               Conserve nature to preserve our diverse and thriving ecosystem.
                           </p>
-                          
+                          <a href="SaveNature.html" class="btn-link">
+                              <span>Read More</span>
+                              <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                          </a>
                       </div>
                       <div class="card-back">
                           <div class="card-icon">
@@ -863,18 +695,12 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                           <p class="card-text">
                               Your support helps us make a difference!
                           </p>
-                          <a href="SaveNature.html" class="btn-link">
-                            <span>Read More</span>
-                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                          </a>
                       </div>
-                      
                   </div>
-                  
               </div>
-            </div>
+          </li>
 
-          <div>
+          <li>
             <div class="service-card" id="service-card2">
                 <div class="card-inner">
                     <div class="card-front">
@@ -885,7 +711,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Advancing solutions to protect endangered species & maintain the health of ecosystems.
                         </p>
-                        
+                        <a href="SaveEcology.html" class="btn-link">
+                            <span>Read More</span>
+                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
                     </div>
                     <div class="card-back">
                         <div class="card-icon">
@@ -895,17 +724,12 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Your contribution helps protect our planet's ecology!
                         </p>
-                        <a href="SaveEcology.html" class="btn-link">
-                          <span>Read More</span>
-                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                        </a>
                     </div>
                 </div>
             </div>
-            
-          </div>
+        </li>
     
-        <div>
+        <li>
             <div class="service-card" id="service-card3">
                 <div class="card-inner">
                     <div class="card-front">
@@ -916,7 +740,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Growing green spaces for a healthier environment and sustainable future.
                         </p>
-                        
+                        <a href="TreePlantation.html" class="btn-link">
+                            <span>Read More</span>
+                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
                     </div>
                     <div class="card-back">
                         <div class="card-icon">
@@ -926,17 +753,12 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Together, we can create a greener future!
                         </p>
-                        <a href="TreePlantation.html" class="btn-link">
-                          <span>Read More</span>
-                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                        </a>
                     </div>
                 </div>
-                
             </div>
-          </div>
+        </li>
     
-        <div>
+        <li>
             <div class="service-card" id="service-card4">
                 <div class="card-inner">
                     <div class="card-front">
@@ -947,7 +769,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Tackling ocean pollution to ensure cleaner seas for future generations.
                         </p>
-                        
+                        <a href="SaveOcean.html" class="btn-link">
+                            <span>Read More</span>
+                            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                        </a>
                     </div>
                     <div class="card-back">
                         <div class="card-icon">
@@ -957,58 +782,21 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                         <p class="card-text">
                             Your support is vital for ocean conservation!
                         </p>
-                        <a href="SaveOcean.html" class="btn-link">
-                          <span>Read More</span>
-                          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                        </a>
                     </div>
                 </div>
-                
             </div>
-          </div>
+        </li>
 
-       
-<!-- Eco-Friendly Shop Card -->
-        <div>
-          <div class="service-card" id="service-card3">
-              <div class="card-inner">
-                  <div class="card-front">
-                      <div class="card-icon">
-                          <ion-icon name="earth-outline"></ion-icon>
-                      </div>
-                      <h3 class="h3 card-title">Eco-Friendly Shop</h3>
-                      <p class="card-text">
-                        Discover sustainable products for a greener lifestyle.
-                      </p>
-                  </div>
-                  <div class="card-back">
-                      <div class="card-icon">
-                          <ion-icon name="earth-outline"></ion-icon>
-                      </div>
-                      <h3 class="h3 card-title">Thank You!</h3>
-                      <p class="card-text">
-                        Your contribution helps protect our planet's ecology!
-                      </p>
-                  </div>
-              </div>
-              <a href="EcoFriendlyShop.html" class="btn-link">
-                <span>Shop Now</span>
-                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-            </a>
-          </div>
+          </ul>
+
         </div>
-      </div>
-
-    </div>
- 
       </section>
-
 
       <!-- 
         - #DONATE
       -->
       
-          <section class="section donate secDon" id="donate">
+          <section class="section donate" id="donate">
             <div class="container">
               <ul class="donate-list">
 
@@ -1065,12 +853,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
                         </div>
 
-                        <!-- <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
-                          <span>Donation</span>
-                          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                        </button> -->
-
-                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1138,7 +921,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
                         </div>
 
-                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1205,7 +988,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
                         </div>
 
-                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1273,7 +1056,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
                         </div>
 
-                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+                        <button type="button" class="btn btn-primary" onclick="location.href='donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1291,32 +1074,34 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
           <!-- opinion form -->
            <div class="formContainer">
-            <div id="mainContainer">
-              <h1 id="forumTitle">Wildlife Conservation Forum</h1>
-              <div id="postFormSection">
-                <h2 id="formTitle">Share Your Thoughts</h2>
+            <div class="container_1">
+              <h1>Wildlife Conservation Forum</h1>
+              <div class="post-form">
+                <h2>Share Your Thoughts</h2>
                 <textarea id="postContent" placeholder="Write your message..."></textarea>
-                <button id="submitButton" onclick="GiveAlert()">Submit</button>
+                <button onclick="GiveAlert()" id="submitPost">Submit</button>
               </div>
-             
-                
-              </div>
-            </div>
-            <script src="script.js"></script>
-          </div>
+              <div class="posts">
+                 <h2>Discussions</h2>
+                 <div id="postsContainer"></div>
+               </div>
+             </div>
+             <script src="script.js"></script>
+           </div>
           
+
           <!-- 
         - #TESTIMONIALS
         -->
 
-          <section class="testi" id="testi">
+          <section class="testi">
 
             <div class="testi-content">
 
               <p class="section-subtitle">
                 <img src="./assets/images/subtitle-img-green.png" width="32" height="7" alt="Wavy line">
 
-                <span style="color:azure">Our Testimonials</span>
+                <span>Our Testimonials</span>
               </p>
 
               <h2 class="h2 section-title">
@@ -1364,7 +1149,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
         - #PARTNER
       -->
 
-          <section class="section partner" id="partners">
+          <section class="section partner">
             <div class="container">
 
               <a href="#" class="partner-logo">
@@ -1415,7 +1200,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
 
       <!-- Trigger Button for Modal -->
-      <button id="openModalBtn" class="donate-button" onclick="location.href='learnmore.html';" style="display: block; margin: 0 auto;">Learn More</button>
+      <button id="openModalBtn" class="btn" onclick="location.href='learnmore.html';" style="display: block; margin: 0 auto;">Learn More</button>
 
       <!-- Modal Structure -->
       <div id="myModal" class="modal">
@@ -1471,7 +1256,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
 
                       <button class="btn btn-white view-event-btn" id="viewEvent1">
-                        <span class="donate-button2">View Events</span>
+                        <span>View Events</span>
 
 
                         <!-- <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
@@ -1496,17 +1281,18 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                       <div class="card-content">
                         <p class="card-subtitle">Animal Shelter Fundraiser</p>
 
-                        <h3 class="card-title">Rivereside park, New York </h3>
+                        <h3 class="card-title">Rivereside park, New york </h3>
 
                         <p class="card-text">
-                          This hot summer has been a nightmare for roadside animals. To help them, we are raising shelter funds.
+                          This hot summer have been a nightmare for roadside animals to help the roadside animals we are
+                          raising shelter funds.
                         </p>
                       </div>
 
 
 
                       <button class="btn btn-white view-event-btn" id="viewEvent2">
-                        <span class="donate-button2">View Events</span>
+                        <span>View Events</span>
 
 
 
@@ -1542,7 +1328,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                       <button class="btn btn-white view-event-btn" id="viewEvent3">
 
 
-                        <span class="donate-button2">View Events</span>
+                        <span>View Events</span>
 
                         <!-- </button> -->
 
@@ -1552,10 +1338,10 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
               </ul>
 
-              <button class="donate-button2" onclick="location.href='moreevents.html';">
-                <span >More Events</span>
+              <button class="btn btn-secondary" onclick="location.href='moreevents.html';">
+                <span>More Events</span>
 
-                <ion-icon  name="heart-outline" aria-hidden="true"></ion-icon>
+                <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
               </button>
 
             </div>
@@ -1599,27 +1385,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
           <!-- 
         -# ACCORDION
        -->
-       <div class="impact-gallery" id="impact">
-        <div id="fontt"><b>
-            <h2>Impact of Your Donations</h2>
-          </b> </div>
-        <div class="gallery">
-          <div class="gallery-item">
-            <img src="rehabilitated-animal.jpg" alt="Rehabilitated Animal">
-            <p>Rehabilitated Animals</p>
-          </div>
-          <div class="gallery-item">
-            <img src="habitat-restoration.jpg" alt="Habitat Restoration">
-            <p>Habitat Restoration</p>
-          </div>
-          <div class="gallery-item">
-            <img src="community-education.jpg" alt="Community Education">
-            <p>Community Education Programs</p>
-          </div>
-        </div>
-      </div>
-
-          <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36" id="faq">
+          <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36">
             <div class="text-center mb-6">
               <p class="text-5xl font-bold text-gray-800 uppercase">Frequently Asked Questions</p>
             </div>
@@ -1630,6 +1396,26 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                 <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
                   onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">What We Do?</h3>
                 <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
+              </div>
+
+              <div class="impact-gallery">
+                <div id="fontt"><b>
+                    <h2>Impact of Your Donations</h2>
+                  </b> </div>
+                <div class="gallery">
+                  <div class="gallery-item">
+                    <img src="rehabilitated-animal.jpg" alt="Rehabilitated Animal">
+                    <p>Rehabilitated Animals</p>
+                  </div>
+                  <div class="gallery-item">
+                    <img src="habitat-restoration.jpg" alt="Habitat Restoration">
+                    <p>Habitat Restoration</p>
+                  </div>
+                  <div class="gallery-item">
+                    <img src="community-education.jpg" alt="Community Education">
+                    <p>Community Education Programs</p>
+                  </div>
+                </div>
               </div>
 
 
@@ -1702,30 +1488,6 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                 </p>
               </div>
             </div>
-
-            <div class="faq mt-5">
-              <div
-                class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between"
-                onclick="toggleAnswer(this)">
-                <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
-                  onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">How to verify your Payment ?</h3>
-                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
-              </div>
-              <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
-                <p>You can verify your Payment by following of the methods :
-                  <br>
-                  <strong>Check Bank Account :</strong> 1st check your Bank App or website if the payment is debit or not and credit to right account or not.
-                  <br>
-                  <strong>Check Payment App</strong> 2nd check the application you used to proceed the payment. Their you will get the transextion id. Copy that id and come to aur website.
-                  <br>
-                  <strong>Share Your Thought</strong> Come to this section and paste the transextion id with your name and bank name. We will verify the details and let you know in few days.
-
-                  We care about every animal and human are no less than any animal. So, you can trust on us.
-                </p>
-              </div>
-            </div>
-
-
           </section>
 
 
@@ -1905,20 +1667,13 @@ Our mission is to provide outstanding care and dedicated support for animals in 
       <div class="footer-right">
         <div class="">
           <a href="review.html">
-            <button type="submit">Rate Us</button>
+            <button type="submit">🌟Rating/Review🌟</button>
           </a>
 
         </div>
         <div class="subscribe-form">
           <form action="#">
-            <input 
-            type="email" 
-            class="email-input" 
-            placeholder="Your email address" 
-            required
-            pattern="[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}"
-            title="Please enter a valid email address"
-          >
+            <input type="email" class="email-input" placeholder="Your email address">
             <button type="submit">Subscribe</button>
           </form>
         </div>
@@ -2009,7 +1764,22 @@ Our mission is to provide outstanding care and dedicated support for animals in 
   <!-- 
     - ionicon link
   -->
-  <!-- <script>
+
+
+  <script>
+    
+ 
+            document.getElementById('registerLink').addEventListener('click', function (e) {
+              e.preventDefault();
+              window.location.href = 'register.html';
+            });
+            document.getElementById('loginLink').addEventListener('click', function (e) {
+              e.preventDefault();
+              window.location.href = 'login.html';
+            });
+      
+
+    
       document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar-link');
@@ -2077,112 +1847,13 @@ Our mission is to provide outstanding care and dedicated support for animals in 
         navbar.classList.remove("active"); // Remove the class to hide the menu
       });
     });
-    window.onload = function() {
-        let countEl = document.getElementById('partnerCount');
-    let count = 0;
-    let target = 324;
-    let speed = 40; // Reduce the speed for faster increment
 
-    const counter = setInterval(function() {
-      if (count < target) {
-        count++;
-        countEl.textContent = count + "+ Trusted Global Partners";
-      } else {
-        clearInterval(counter);
-      }
-    }, speed);
-  };
   });
-  </script> -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const navLinks = document.querySelectorAll('.navbar-link');
-  
-    // Function to remove active class from all links
-    function removeActiveClass() {
-      navLinks.forEach(link => link.classList.remove('active'));
-    }
-  
-    // Function to handle smooth scroll and add active class on click
-    navLinks.forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-  
-        // Remove active class from all links
-        removeActiveClass();
-  
-        // Add active class to the clicked link
-        this.classList.add('active');
-  
-        // Get the target section using the href attribute of the clicked link
-        const targetId = this.getAttribute('href'); // Gets the href (e.g., "#home")
-        const targetElement = document.querySelector(targetId); // Selects the target element using href
-  
-        if (targetElement) {
-          // Scroll smoothly to the target element
-          window.scrollTo({
-            top: targetElement.offsetTop - 50, // Adjust for navbar height if needed
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  
-    // Function to handle scroll event and update active link
-    window.addEventListener('scroll', () => {
-      let scrollY = window.pageYOffset;
-  
-      navLinks.forEach(link => {
-        const targetId = link.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-  
-        if (targetElement) {
-          const sectionTop = targetElement.offsetTop - 50; // Adjust for navbar height if needed
-          const sectionHeight = targetElement.offsetHeight;
-  
-          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            removeActiveClass();
-            link.classList.add('active');
-          }
-        }
-      });
-    });
-  });
-  
-</script>
+  </script>
 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="./assets/js/script.js"></script>
-  <script src="//code.tidio.co/wtslouasr8yln5hjnm7ytob3kl8mkylx.js" async></script>
-  <script src="./assets/js/search-index.js"></script>
-  <script src="./assets/js/search.js"></script>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" onclick="scrollToTop()">
-      <i class="fas fa-arrow-up"></i> <!-- Up Arrow Icon -->
-  </button>
-
-  <script>
-      // Show the button when the user scrolls down 20px from the top of the document
-      window.onscroll = function() {
-          scrollFunction();
-      };
-
-      function scrollFunction() {
-          var button = document.getElementById("scrollToTopBtn");
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-              button.style.display = "flex"; // Show the button
-          } else {
-              button.style.display = "none";  // Hide the button
-          }
-      }
-
-      // Scroll to the top of the document when the button is clicked
-      function scrollToTop() {
-          document.body.scrollTop = 0; // For Safari
-          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-      }
-  </script>
 
 </body>
 

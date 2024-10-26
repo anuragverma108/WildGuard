@@ -1292,78 +1292,113 @@ html {
 /*-----------------------------------*\
   #SERVICE
 \*-----------------------------------*/
-
-.service {
-  background-color: var(--baby-powder);
-  background-repeat: no-repeat;
-  background-position: center top;
-  margin-block-start: -200px;
-  padding-block-start: 200px;
-}
-
-.service .section-title {
-  margin-block: 10px 40px;
-}
-
+/* Service list layout: horizontal row */
 .service-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  /* gap: 30px; */
+  display: flex; /* Arrange items horizontally */
+  justify-content: center; /* Center cards horizontally */
+  gap: 30px; /* Space between cards */
 }
 
+/* Service card styling */
 .service-card {
-  height: 100%;
+  position: relative;
   background-color: var(--white);
   text-align: center;
-  padding-top: 25px;
-  padding-bottom: 70px;
-  padding-right: 30px;
-  padding-left: 30px;
-  border-radius: 2px;
+  padding: 0; /* Remove padding for precise centering */
+  border-radius: 8px;
   outline: 3px solid transparent;
   box-shadow: var(--card-shadow);
   transition: var(--transition-2);
-  position: relative; 
-  overflow:visible;
+  overflow: hidden;
+  width: 300px;
+  height: 400px; /* Consistent height for all cards */
+  display: flex;
+  align-items: center; /* Center inner card vertically */
+  justify-content: center; /* Center inner card horizontally */
 }
 
-.service-card:is(:hover, :focus-within) {
-  outline-color: var(--pistachio);
+/* Inner card styling for flipping effect */
+.card-inner {
+  position: relative;
+  width: 90%; /* Slightly smaller to fit well inside */
+  height: 90%; /* Slightly smaller to fit well inside */
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
+/* Card flipping front and back faces */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  padding: 20px; /* Adjust padding as needed */
+  box-sizing: border-box;
+}
+
+/* Front of the card */
+.card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Back of the card */
+.card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Flipping effect on hover */
+.service-card:hover .card-inner,
+.service-card:focus-within .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card icon styling */
 .service-card .card-icon {
   color: var(--pistachio);
-  font-size: 7rem;
-  max-width: max-content;
-  margin-inline: auto;
+  font-size: 4rem;
+  margin-bottom: 15px;
 }
 
 .service-card .card-icon ion-icon {
   --ionicon-stroke-width: 20px;
 }
 
+/* Card title and text */
+/* Enlarged card title */
 .service-card .card-title {
-  letter-spacing: -1px;
-  margin-block: 10px;
+  font-size: 2rem; /* Increase to a larger size */
+  font-weight: bold; /* Makes the title bold */
+  letter-spacing: -0.5px;
+  margin-block: 10px 15px; /* Adjust margins for better spacing */
+  color: var(--black); /* Optional: make sure the color contrasts well */
 }
+
 
 .service-card .card-text {
   font-family: var(--ff-inter);
+  font-size: 1rem;
+  margin-block: 10px;
 }
 
+/* Button styling */
 .btn-link {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 5px;
   color: var(--silver-chalice);
-  font-size: var(--fs-9);
+  font-size: 0.9rem;
   font-weight: var(--fw-600);
-  
+  margin-block-start: 15px;
+  text-decoration: none;
 }
 
 .btn-link span {
@@ -1375,35 +1410,12 @@ html {
   cursor: pointer;
 }
 
-#service-card1 {
+/* Individual card hover effect */
+#service-card1, #service-card2, #service-card3, #service-card4 {
   transition: transform 0.3s ease;
 }
 
-#service-card1:hover {
-  transform: scale(1.025);
-}
-
-#service-card2 {
-  transition: transform 0.3s ease;
-}
-
-#service-card2:hover {
-  transform: scale(1.025);
-}
-
-#service-card3 {
-  transition: transform 0.3s ease;
-}
-
-#service-card3:hover {
-  transform: scale(1.025);
-}
-
-#service-card4 {
-  transition: transform 0.3s ease;
-}
-
-#service-card4:hover {
+#service-card1:hover, #service-card2:hover, #service-card3:hover, #service-card4:hover {
   transform: scale(1.025);
 }
 
@@ -1724,7 +1736,9 @@ data {
 .event-card .card-text {
   font-family: var(--ff-inter);
   margin-block: 5px 30px;
+  font-size: 1.5rem; /* Makes the text larger */
 }
+
 
 .event .btn-secondary {
   margin-inline: auto;
@@ -3046,8 +3060,8 @@ data {
 /* Styles for the flip card effect */
 .card-inner {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 250px;
+  height: 320px;
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
@@ -3073,18 +3087,17 @@ data {
 }
 
 .service-card:hover .card-inner {
-  /*animation: rotateCard 2s forwards;*/
-  transform: rotateY(180deg);
+  animation: rotateCard 3.5s forwards;
 }
 
 @keyframes rotateCard {
   0% {
-    transform: rotateY(0deg);
+      transform: rotateY(0deg);
   }
   50% {
-    transform: rotateY(180deg);
+      transform: rotateY(180deg);
   }
   100% {
-    transform: rotateY(0deg);
+      transform: rotateY(0deg);
   }
 }
