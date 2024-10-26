@@ -303,6 +303,10 @@ body {
     }
 }
 
+.footer-container {
+    margin: 40px 0;
+}
+
 .zoom-effect {
     overflow: hidden;
     display: inline-block;
