@@ -1368,7 +1368,7 @@ html {
 
 .btn-link span {
   
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .btn-link span:hover {
