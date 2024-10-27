@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animal Organization Ratings</title>
     <link rel="stylesheet" href="./assets/css/review.css" />
-    <script src="./assets/js/review.js" defer></script>
+    <script src="./assets/js/review.js" defer>
+    </script>
 
     <!-- font Awsome cdn  -->
     <link
@@ -59,18 +60,6 @@
         font-size: 24px;
         text-decoration: none;
         margin-bottom: 10px;
-      }
-
-      .star {
-        font-size: 40px;
-        color: #e0e0e0;
-        cursor: pointer;
-        transition: color 0.2s;
-      }
-
-      .star:hover,
-      .star.active {
-        color: #f76c6c;
       }
 
       #output {
@@ -202,6 +191,32 @@
       .indicator .btn:hover {
         background-color: #e05b5b;
       }
+      
+      .star {
+        font-size: 10vh;
+        cursor: pointer;
+      }
+ 
+      .one {
+        color: rgb(255, 0, 0);
+      }
+ 
+      .two {
+        color: rgb(255, 106, 0);
+      }
+ 
+      .three {
+        color: rgb(251, 255, 120);
+      }
+ 
+      .four {
+        color: rgb(255, 255, 0);
+      }
+ 
+      .five {
+        color: rgb(24, 159, 14);
+      }
+
     </style>
   </head>
 
@@ -212,11 +227,13 @@
         <a href="./index.html"><i class="fa-solid fa-house"></i></a>
         <h2>Rate Us</h2>
         <br />
-        <span onclick="gfg(1)" class="star">★</span>
-        <span onclick="gfg(2)" class="star">★</span>
-        <span onclick="gfg(3)" class="star">★</span>
-        <span onclick="gfg(4)" class="star">★</span>
-        <span onclick="gfg(5)" class="star">★</span>
+        <div class="star-rating">
+          <span onclick="gfg(1)"class="star">★</span>
+          <span onclick="gfg(2)"class="star">★</span>
+          <span onclick="gfg(3)"class="star">★</span>
+          <span onclick="gfg(4)"class="star">★</span>
+          <span onclick="gfg(5)"class="star">★</span>
+        </div>
         <h5 id="output">Rating is: 0/5</h5>
 
         <form id="ratingForm">
