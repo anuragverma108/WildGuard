@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Wildguard - Donate Today!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://d41chssnpqdne.cloudfront.net/user_upload_by_module/chat_bot/files/642018/kcBMPvdjUQlpEDKz.png?Expires=1730831082&Signature=IU22k9JEQKsMkKhWRi37VPNpy3RbBTwSYmtiMUgytpjCgqCAHbAvTpXwX0uu0p~O73Rvbjf9M6CM-LXSOSuP1Jfz2jIm7o10vcFHqpKKAdrerzovDwz4QqXbls9o50LIwHPLo5yxB9Cg4dzLLRdLEe6jmUAe71kVolu8OgfpIqP6Rqdaj5p5xNvcxhtfnO9IosQPBD-eHWpUl2Bkn8QAiEccj0fNiOdw5zFrlelcSh1AzD-DRNxLeAA5gbxOL1eaL1gdxNxCWSYOePXPk8WQGZvQ3bY5-OX2YxuiK7EDsc91yUNgQIKl9gIcDlGCkv~5~oQjesU3bBEghzUxc4hRKQ__&Key-Pair-Id=K3USGZIKWMDCSX');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin: 10px 0 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>🌿 Support Wildguard - Donate Today! 🌍</h1>
+            <form>
+                <label for="donation-type">Donation Type:</label>
+                <select id="donation-type" name="donation-type">
+                    <option value="one-time">💵 One-Time Donation</option>
+                    <option value="recurring">🔄 Recurring Donation</option>
+                </select>
+
+                <label for="donation-amount">Donation Amount (USD):</label>
+                <input type="number" id="donation-amount" name="donation-amount" placeholder="Enter amount" required>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="credit-card">💳 Credit Card</option>
+                    <option value="paypal">🅿️ PayPal</option>
+                </select>
+
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label>
+                    <input type="checkbox" name="anonymous" value="yes"> 🤫 Donate anonymously
+                </label>
+
+                <button type="submit">✅ Submit Donation</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

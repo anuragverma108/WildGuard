@@ -31,8 +31,8 @@ body {
     font-size: 19px;
     color: white;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 28px;
+    right: 23px;
 }
 
 .home-icon:hover {
@@ -209,6 +209,32 @@ button:hover {
     width: 25px;
 }
 
+.github-btn {
+    background-color: #333;
+}
+
+.github-btn i {
+    color: white;
+    font-size: 24px;
+}
+
+.github-btn:hover {
+    background-color: #24292e;
+}
+
+.instagram-btn {
+    background-color: #E1306C;
+}
+
+.instagram-btn i {
+    color: white;
+    font-size: 24px;
+}
+
+.instagram-btn:hover {
+    background-color: #C13584;
+}
+
 .signup-link {
     text-align: center;
     font-size: 14px;
@@ -223,4 +249,7 @@ button:hover {
 
 .signup-link a:hover {
     text-decoration: underline;
+}
+#loginBTN{
+    cursor: pointer;
 }

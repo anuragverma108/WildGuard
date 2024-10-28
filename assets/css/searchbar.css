@@ -1,0 +1,111 @@
+.search-container {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Adjusted to a more reasonable width */
+}
+
+#search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    height: 40px;
+}
+
+#search-input::placeholder {
+    color: #888;
+}
+
+#search-button {
+    padding: 0 15px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background-color: #333;
+    color: #888;
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#search-input:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: #444;
+}
+
+#search-results {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* Make it full width of the search container */
+    background-color: #1c1c1c;
+    border: 1px solid #4CAF50;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#search-results h2 {
+    color: #4CAF50;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+#search-results ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#search-results li {
+    padding: 5px 0;
+    border-bottom: 1px solid #333;
+}
+
+#search-results li:last-child {
+    border-bottom: none;
+}
+
+#search-results a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+#search-results a:hover {
+    background-color: #333;
+}

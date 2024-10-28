@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="stylesss.css">
+        <link rel="stylesheet" href="./assets/css/searchbar.css">
+        <link rel="stylesheet" href="aboutus.css">
+
+        <title>WildGuard - Give Love for Saving World Animals</title>
+
+        <!-- Google Translate script -->
+        <script type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <!-- 
+            - favicon
+        -->
+        <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+        <!-- 
+            - fontawesome icon link
+        -->
+        <script src="https://kit.fontawesome.com/418b80718b.js" crossorigin="anonymous"></script>
+
+        <!-- 
+            - google font link
+        -->
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
+            rel="stylesheet" />
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <link rel="stylesheet" href="./Events-Data/modal.css">
+
+        <!-- 
+            - custom css link
+        -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+    </head>
+    <body>
+      <header class="header" data-header>
+
+        <div class="progress-bar">
+          <div class="filled"></div>
+        </div>
+        <div class="container">
+    
+          <h1>
+            <a href="#home" class="logo">WildGuard</a>
+          </h1>
+    
+          <div id="google_translate_element"></div> <!-- Google Translate widget -->
+    
+    
+          <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+    
+          <nav class="navbar" data-navbar>
+    
+            <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+    
+            <a href="#" class="logo">WildGuard</a>
+    
+            <ul class="navbar-list">
+    
+              <li>
+                <a href="index.html" class="navbar-link" data-nav-link>
+                  <span class="new_size">Home</span>
+    
+                  <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </li>
+    
+              <li>
+                <a href="#about" class="navbar-link active" data-nav-link>
+                  <span class="new_size">AboutUs</span>
+    
+                  <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </li>
+    
+              <li>
+                <a href="#service" class="navbar-link" data-nav-link>
+                  <span class="new_size">Service</span>
+    
+                  <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </li>
+    
+              <li>
+                <a href="#donate" class="navbar-link" data-nav-link>
+                  <span class="new_size">Donate</span>
+    
+                  <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </li>
+    
+              <li>
+                <a href="#event" class="navbar-link" data-nav-link>
+                  <span class="new_size">Event</span>
+    
+                  <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </li>
+    
+              <li>
+                <a href="#footer" class="navbar-link" data-nav-link>
+                  <span class="new_size">Contact</span>
+    
+                  <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </li>
+    
+              <li>
+    
+               <li>
+                    <a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>
+                          <span class="new_size">Login</span>
+                          <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </li>
+              <li>
+                <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
+                  <span class="new_size">Register</span>
+                  <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+              </li>
+    
+    
+              <script>
+                document.getElementById('registerLink').addEventListener('click', function (e) {
+                  e.preventDefault();
+                  window.location.href = 'register.html';
+                });
+                document.getElementById('loginLink').addEventListener('click', function (e) {
+                  e.preventDefault();
+                  window.location.href = 'login.html';
+                });
+              </script>
+    
+    
+    
+            </ul>
+    
+          </nav>
+          <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search..." aria-label="Search" autocomplete="off"
+              oninput="handleInput()">
+            <button id="search-button" aria-label="Search" onclick="performSearch()">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+    
+          <div class="header-action">
+    
+            
+        
+            <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    
+    </div>
+    
+    
+   
+    
+    <button type="button"  class="donate-button" onclick="location.href='Donation.html';">
+      <span>Donation</span>
+      <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+    </button>
+    
+    <!-- Login -->
+    <div id="openPopup" class="user-icon">
+      <a href="user.html"><i class="fas fa-user"></i></a> 
+      <div class="dropdown-content" id="profileDropdown">
+        <a href="user.html">Profile</a>
+        <a href="/">Logout</a>
+      </div> 
+      </div>
+    
+            <!-- Popup -->
+            <div id="popup" class="popup">
+              <div class="popup-content">
+                <span class="close-button" id="closePopup">&times;</span>
+                <div class="tabs">
+                  <button class="tab-button active" id="loginTab">Login</button>
+                  <button class="tab-button" id="signupTab">Signup</button>
+                </div>
+                <div class="form-container">
+                  <form id="loginForm">
+                    <div class="form_wrapper">
+                      <div class="form-fields--login">
+                        <input class="form-input" type="email" placeholder="Email" required />
+                        <input class="form-input" type="password" placeholder="Password" required />
+                        <button type="submit">Login</button>
+                      </div>
+                      <div class="form-img">
+                        <img src="./assets/images/animals.jpg" alt="" srcset="">
+                      </div>
+                    </div>
+                  </form>
+                  <form id="signupForm" style="display: none;">
+                    <div class="form_wrapper">
+                      <div class="form-fields--signup">
+                        <input class="form-input" type="text" placeholder="Username" required />
+                        <input class="form-input" type="email" placeholder="Email" required />
+                        <input class="form-input" type="password" placeholder="Password" required />
+                        <button type="submit">Signup</button>
+                      </div>
+                      <div class="form-img">
+                        <img src="./assets/images/cta-banner.jpg" alt="" srcset="">
+                      </div>
+                    </div>
+    
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+      </header>
+      <main>
+        <article>
+          <section class="about-hero" id="home">
+            <div class="container about-container">
+              <h2 class="h1 hero-title about-h1"><strong>About Us</strong></h2>
+              <p class="hero-text about-text-body">At WildGuard, we are passionate about protecting and preserving the world’s wildlife. Our mission is simple: to conserve natural habitats, protect endangered species, and promote a sustainable coexistence with nature.
+                <br><br>
+                By supporting communities, engaging in conservation initiatives, and advocating for environmental responsibility, we aim to create a future where nature and humanity thrive together.</p>
+            </div>
+          </section>
+        </article>
+      </main>
+    </body>
+
+</html>

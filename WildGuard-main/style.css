@@ -1,0 +1,100 @@
+.impact-gallery {
+    text-align: center;
+    margin: 40px 0;
+
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.gallery-item {
+    width: 30%;
+    margin: 10px;
+    transition: transform 0.3s;
+
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 16/9;  /* Maintain a 16:9 aspect ratio */
+    object-fit: cover;  /* Ensure the image covers the container without distortion */
+    border-radius: 8px;
+}
+
+#fontt {
+    font-size: 30px;
+    font-style: normal;
+}
+
+.donation-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    
+    box-shadow: 0 1px 10px #91be55;
+    margin: 20px;
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.3s;
+
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card h2 {
+    color: #5a5a5a;
+
+}
+.amount {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #2c3e50;
+
+}
+.benefits {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin: 15px 0;
+
+}
+
+.donate-button {
+    background-color: #91be55;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+.donate-button:hover {
+    background-color: #ffffff;
+    color: #91be55;
+    font-weight: 600;
+}
+
+.boxx {
+    font-size: 27px;
+
+}

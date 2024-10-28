@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,159 +50,118 @@
 
   <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /* box-sizing: border-box; */
     }
 
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-        color: #333;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
     }
 
-    header {
-        background-color: #9bc98b;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 30px;
+  .header {
+      background-color: #9bc98b;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      height: auto;
     }
 
-    header h1 {
-        font-size: 36px;
-        color: white;
+    .header h1 {
+      font-size: 36px;
+      color: white;
+      letter-spacing: 2px;
+      font-weight: 700;
     }
 
     nav {
-        display: flex;
-        gap: 20px;
+      display: flex;
+      gap: 25px;
     }
 
     nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        padding: 8px 15px;
-        transition: color 0.3s ease;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-radius: 6px;
     }
 
     nav a:hover {
-        color: #333;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-radius: 8px;
+      color: #333;
+      background-color: rgba(255, 255, 255, 0.5);
     }
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 40px;
-        max-width: 1200px;
-        margin: auto;
+    /* Dropdown button for mobile view */
+    .dropdown-btn {
+      display: none;
+      background-color: transparent;
+      border: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
     }
 
-
-    .form-container {
-    width: 45%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
-    margin-right: -180px;
-    border: 3px solid #ccc; /* Initial border color */
-    transition: border-color 0.3s ease; /* Smooth transition */
-}
-
-.form-container:hover {
-    border-color: #99d28a; /* Border color on hover */
-}
-
-
-    .form-container h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: #99d28a;
-        text-align: left;
-    }
-
-    .form-container label {
-        font-size: 16px;
-        margin-bottom: 8px;
-        display: block;
-        /* margin-left: -250px; */
-        text-align: left;
-    }
-
-    .form-container input[type="text"], 
-    .form-container input[type="email"], 
-    .form-container input[type="tel"], 
-    .form-container textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 2px solid #ccc;
-        border-radius: 8px;
-        font-size: 14px;
-      
-    }
-
-    .form-container input[type="submit"] {
-        background-color: #99d28a;
-        border: none;
-        color: white;
-        padding: 1px 10px;
-        border-radius: 20px;
-        width: 95px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        text-align: center;
-    }
-
-    .form-container input[type="submit"]:hover {
-        background-color: #88c17d;
-    }
-
-    .form-container:hover {
-    transform: scale(1.02); /* Slightly enlarge the form */
-    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-    footer {
-        background-color: #99d28a;
-        text-align: center;
-        padding: 15px;
-        color: white;
-        margin-top: 40px;
-    }
-
-    /* Responsive styling */
+    /* Media query for mobile view */
     @media (max-width: 768px) {
-        .container {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+      .header {
+        flex-direction: column;
+        text-align: center;
+        height: 130px;
+      }
 
-        .container img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
+      nav {
+        display: none;
+        /* Hide nav links by default */
+        border-radius: 10px;
+        background-color: #9bc98b;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+      }
 
-        .form-container {
-            width: 100%;
-        }
+      .show-nav {
+        display: flex;
+        /* Show nav links when dropdown is clicked */
+      }
+
+      .dropdown-btn {
+        display: block;
+        /* Show the dropdown button on mobile */
+      }
+
+      .header h1 {
+        font-size: 28px;
+      }
     }
 
 
 
-    .flip-container {
+    /* Container for both flip card and form */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+    padding-top: 145px;
+}
+
+/* Flip Container */
+.flip-container {
     perspective: 1000px;
-    width: 70%;
-    height: 600px;
-    margin-left: -120px;
+    width: 45%;
+    height: 500px;
+    margin-right: 20px;
 }
 
 .flipper {
@@ -209,11 +169,10 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 0.6s;
+    transition: transform 0.6s ease;
 }
 
-.front,
-.back {
+.front, .back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -239,86 +198,237 @@
     transform: rotateY(180deg);
     text-align: center;
     color: #333;
+    border: 2px solid #99d28a;
 }
 
 .flip-container.hover .flipper {
     transform: rotateY(180deg);
 }
 
-/* Optional: Hover or click border effect on flip */
-.flip-container:hover .front,
-.flip-container:hover .back {
-    border: 2px solid #99d28a;
-}
-
-
+/* Hover effect */
 .flip-container:hover .flipper {
     transform: rotateY(180deg);
+    
 }
 
+/* Form Container */
+.form-container {
+    width: 45%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid #ccc;
+}
 
-</style>
+/* Hover Effect for Form */
+.form-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2);
+    border-color: #99d28a;
+}
+
+/* Form Heading */
+.form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #99d28a;
+    text-align: left;
+}
+
+/* Form Labels */
+.form-container label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+    text-align: left;
+    
+}
+
+/* Form Inputs and Textarea */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.form-container input[type="submit"] {
+    background-color: #99d28a;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 120px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #88c17d;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px;
+        padding-top: 175px;
+    }
+
+    .flip-container {
+        width: 100%;
+        height: 400px;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        width: 100%;
+        padding: 20px;
+        margin-right: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-container {
+        height: 300px;
+    }
+
+    .form-container input[type="submit"] {
+        width: 100%;
+    }
+}
+
+    footer {
+      background-color: #99d28a;
+      text-align: center;
+      padding: 15px;
+      color: white;
+      margin-top: 40px;
+    }
+
+  /* tooltip - styling */
+  .tooltip-container {
+  align-items: center;
+  position: relative;
+}
+
+ /* Tooltip text  */
+.tooltip-container .tooltip-text {
+  visibility: hidden;
+  width: 190px;
+  background-color:  #88c17d;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 2px;
+  position: absolute;
+  left: 60%;
+  margin-left: -100px; 
+  top: 69%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+}
+  
+/* Show the tooltip on hover */
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+   
+  </style>
 </head>
-<body>
-<header>
-<h1>WildGuard</h1>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="#">Service</a>
-    <a href="Contact.html">Contact Us</a>
-    <a href="donate.html">Donate</a>
-    <a href="login.html">Login</a>
-</nav>
-</header>
 
-<div class="container">
-<div class="flip-container" id="flip-container">
-  <div class="flipper">
-      <!-- Front: Image -->
-      <div class="front">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReHDIAZtYGPU6V1mgi0NgGklFupj5RDAIGTnr6Bj8fskpbCDy3wiqZCDx5kmMXqFUrDuo&usqp=CAU" alt="Wild Animal">
-      </div>
-      <!-- Back: Contact Information -->
-      <div class="back">
+<body>
+  <div class="header">
+    <h1>WildGuard</h1>
+    <button class="dropdown-btn" onclick="toggleMenu()">☰</button> <!-- Dropdown button -->
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="#">Service</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="donate.html">Donate</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </div>
+
+  </div>
+
+
+  <div class="container">
+    <div class="flip-container" id="flip-container">
+      <div class="flipper">
+        <!-- Front: Image -->
+        <div class="front">
+          <img
+            src="https://i.pinimg.com/736x/53/f5/53/53f553136c1dc13c3fcc0dfcc9dcfb9a.jpg"
+            alt="Wild Animal">
+        </div>
+        <!-- Back: Contact Information -->
+        <div class="back">
           <h3>Contact Us</h3>
           <p>If you have any queries, please reach out to us at:</p>
           <p>Email: support@wildguard.org</p>
           <p>Phone: +1234567890</p>
+        </div>
       </div>
-  </div>
-</div>
+    </div>
 
 
-<!-- Right side: Contact Form -->
-<div class="form-container">
-    <h2>Contact Us</h2>
-    <form id="contactForm">
+    <!-- Right side: Contact Form -->
+    <div class="form-container">
+      <h2>Contact Us</h2>
+     <form id="contactForm">
+      <div class="tooltip-container">
         <label for="name">Enter Your Name</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required>
-
+        <div class="tooltip-text">Please enter your full name here.</div>
+      </div>
+    
+      <div class="tooltip-container">
         <label for="email">Enter Your Email</label>
         <input type="email" id="email" name="email" placeholder="Your Email" required>
-
+        <div class="tooltip-text">please enter a valid email like name@example.com.</div>
+      </div>
+    
+      <div class="tooltip-container">
         <label for="phone">Enter Your Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
-
+        <div class="tooltip-text">Please enter your phone number(10 digits).</div>
+      </div>
+    
+      <div class="tooltip-container">
         <label for="message">Write Your Message</label>
         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-
-        <input type="submit" value="Submit">
+        <div class="tooltip-text">Feel free to describe your message in detail.</div>
+      </div>
+      <input type="submit" value="Submit">
     </form>
+     
+      <!-- This is where the success message will be displayed -->
+      <div id="formMessage" style="display:none; margin-top: 20px; color: green;">
+        Thank you for reaching out to us! We will get back to you shortly.
+      </div>
 
-<!-- This is where the success message will be displayed -->
-<div id="formMessage" style="display:none; margin-top: 20px; color: green;">
-  Thank you for reaching out to us! We will get back to you shortly.
-</div>
 
+    </div>
+  </div>
 
-</div>
-</div>
-
-   <!-- 
+  <!-- 
     - #FOOTER
   -->
 
@@ -328,7 +438,7 @@
         <h3>
           <a href="#" class="logo">WildGuard</a>
         </h3>
-        <p >WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our
+        <p>WildGuard is dedicated to preserving wildlife and protecting endangered species worldwide. Join us in our
           mission to create a sustainable future for the planet's most vulnerable creatures.</p>
       </div>
       <div class="footer-middle">
@@ -345,26 +455,26 @@
       </div>
       <div class="footer-right">
         <div class="">
-            <a href="review.html">
-              <button type="submit">🌟Rating/Review🌟</button>
-            </a>
-            
+          <a href="review.html">
+            <button type="submit">🌟Rating/Review🌟</button>
+          </a>
+
         </div>
         <div class="subscribe-form">
-        <form action="#">
-          <input type="email" class="email-input" placeholder="Your email address">
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
+          <form action="#">
+            <input type="email" class="email-input" placeholder="Your email address">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
         <div class="footer-social-icons">
           <div class="social-links">
-          <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
-          <a href="https://x.com/"><ion-icon name="logo-twitter"></ion-icon></a>
-          <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
-          <a href="https://www.linkedin.com/"><ion-icon name="logo-linkedin"></ion-icon></a>
-          <a href="https://www.youtube.com/"><ion-icon name="logo-youtube"></ion-icon></a>
-        </div>
-        <div class="message">Stay Connected</div>
+            <a href="https://www.facebook.com/"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="https://x.com/"><ion-icon name="logo-twitter"></ion-icon></a>
+            <a href="https://www.instagram.com/"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a href="https://www.linkedin.com/"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="https://www.youtube.com/"><ion-icon name="logo-youtube"></ion-icon></a>
+          </div>
+          <div class="message">Stay Connected</div>
         </div>
       </div>
     </div>
@@ -376,11 +486,11 @@
         <a href="./privacy-policy.html" class="footer-link" style="display: inline;">Privacy Policy</a>
       </p>
     </div>
- </footer>
+  </footer>
 
 
-  
-<!-- JavaScript for form submission alert
+
+  <!-- JavaScript for form submission alert
 <script>
   document.getElementById('contactForm').addEventListener('submit', function(event) {
       event.preventDefault();
@@ -388,8 +498,8 @@
   });
 </script> -->
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
       event.preventDefault(); // Prevent form submission
 
       // Show the success message
@@ -398,7 +508,13 @@
 
       // Optional: Clear the form fields after submission
       document.getElementById('contactForm').reset();
-  });
-</script>
+    });
+    function toggleMenu() {
+    const navbar = document.getElementById('navbar');
+    navbar.classList.toggle('show-nav'); // Toggle the class to show/hide the nav
+}
+
+  </script>
 </body>
+
 </html>
