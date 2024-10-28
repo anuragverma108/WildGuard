@@ -1315,6 +1315,11 @@ html {
 .card-wrapper-text .cyan {
   color: var(--medium-turquoise);
 }
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  transform: translateY(-5px); /* Slight upward movement */
+  transition: all 0.3s ease;   /* Smooth transition */
+}
 
 /*-----------------------------------*\
   #TESTIMONIALS

@@ -28,12 +28,14 @@
     <!-- Custom CSS -->
     <style>
       body {
+        margin: 0;
+        padding: 0;
         background-image: url('assets/images/bg\ form.jpg');
         background-size: cover;
         background-position: center;
         font-family: Arial, sans-serif;
-        padding-top: 150px;
-        padding-right: 150px;
+        padding-top: 100px;
+        /* padding-right: 150px; */
       }
       #name-error {
         display: none;
@@ -57,6 +59,8 @@
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.8);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        margin-top: 100px;
+        margin-bottom: 20px;
       }
 
       h2 {
@@ -105,10 +109,62 @@
       #print {
         border: 1px solid black;
       }
+
+header {
+    background-color: #9bc98b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    width: 100%;
+margin-top: -100px;
+
+}
+
+header h1 {
+    font-size: 36px;
+    color: white;
+    margin: 0;
+
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+}
     </style>
   </head>
 
   <body>
+
+
+    <header>
+      <h1>WildGuard</h1>
+      <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="#">Service</a>
+          <a href="Contact.html">Contact Us</a>
+          <a href="donate.html">Donate</a>
+          <a href="login.html">Login</a>
+      </nav>
+  </header>
+
     <div class="container form-container">
       <h2>Support Wildguard - Donate Today!</h2>
       <form id="donationForm">
