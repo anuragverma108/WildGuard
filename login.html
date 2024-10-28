@@ -103,18 +103,23 @@
         }
 
         .password-toggle i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #a0a0a0;
-            transition: color 0.3s ease;
-        }
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #a0a0a0;
+    transition: color 0.3s ease;
+}
 
-        .password-toggle i:hover {
-            color: #8b5cf6;
-        }
+.password-toggle i:hover {
+    color: #8b5cf6;
+}
+
+.password-toggle i.fa-eye-slash {
+    color: #8b5cf6; /* Change color when password is visible */
+}
+
 
         .password-strength {
             height: 4px;
