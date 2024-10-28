@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Login</title>
+    <title>Enhanced Login - Dark Theme</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -17,32 +17,33 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #1be23d 0%, #26df79 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            color: #e0e0e0;
         }
 
         .login-container {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(40, 40, 40, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 40px;
             width: 100%;
             max-width: 450px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             transform: translateY(0);
             transition: all 0.3s ease;
         }
 
         .login-container:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
         h2 {
-            color: #1a237e;
+            color: #e0e0e0;
             font-size: 2.2em;
             text-align: center;
             margin-bottom: 30px;
@@ -59,7 +60,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(to right, #667eea, #764ba2);
+            background: linear-gradient(to right, #8b5cf6, #6366f1);
             border-radius: 2px;
         }
 
@@ -72,9 +73,9 @@
             position: absolute;
             top: -10px;
             left: 10px;
-            background: white;
+            background: #282828;
             padding: 0 5px;
-            color: #666;
+            color: #a0a0a0;
             font-size: 0.9em;
             transition: all 0.3s ease;
         }
@@ -82,26 +83,23 @@
         .input-group input {
             width: 100%;
             padding: 15px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #404040;
             border-radius: 12px;
             font-size: 1em;
             transition: all 0.3s ease;
-            background: white;
+            background: #333333;
+            color: #e0e0e0;
         }
 
         .input-group input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
             outline: none;
         }
 
         .input-group input:focus+label {
-            color: #667eea;
+            color: #8b5cf6;
             font-weight: 500;
-        }
-
-        .password-toggle {
-            position: relative;
         }
 
         .password-toggle i {
@@ -110,12 +108,12 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            color: #666;
+            color: #a0a0a0;
             transition: color 0.3s ease;
         }
 
         .password-toggle i:hover {
-            color: #667eea;
+            color: #8b5cf6;
         }
 
         .password-strength {
@@ -123,7 +121,7 @@
             margin-top: 8px;
             border-radius: 2px;
             transition: all 0.3s ease;
-            background: #e0e0e0;
+            background: #404040;
         }
 
         .extras {
@@ -137,28 +135,30 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            color: #a0a0a0;
         }
 
         .remember-me input[type="checkbox"] {
             appearance: none;
             width: 18px;
             height: 18px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #404040;
             border-radius: 4px;
             cursor: pointer;
             position: relative;
             transition: all 0.3s ease;
+            background: #333333;
         }
 
         .remember-me input[type="checkbox"]:checked {
-            background: #667eea;
-            border-color: #667eea;
+            background: #8b5cf6;
+            border-color: #8b5cf6;
         }
 
         .remember-me input[type="checkbox"]:checked::after {
             content: '✓';
             position: absolute;
-            color: white;
+            color: #e0e0e0;
             font-size: 12px;
             left: 50%;
             top: 50%;
@@ -166,22 +166,22 @@
         }
 
         .forgot-password {
-            color: #667eea;
+            color: #8b5cf6;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .forgot-password:hover {
-            color: #764ba2;
+            color: #6366f1;
             text-decoration: underline;
         }
 
         .login-button {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            color: #ffffff;
             border: none;
             border-radius: 12px;
             font-size: 1.1em;
@@ -192,26 +192,9 @@
             overflow: hidden;
         }
 
-        .login-button::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%) scale(0);
-            border-radius: 50%;
-            transition: transform 0.5s ease;
-        }
-
         .login-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .login-button:active::after {
-            transform: translate(-50%, -50%) scale(2);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
         }
 
         .social-login {
@@ -220,7 +203,7 @@
         }
 
         .social-login p {
-            color: #666;
+            color: #a0a0a0;
             margin-bottom: 15px;
             position: relative;
         }
@@ -232,7 +215,7 @@
             top: 50%;
             width: 35%;
             height: 1px;
-            background: #e0e0e0;
+            background: #404040;
         }
 
         .social-login p::before {
@@ -263,14 +246,14 @@
         }
 
         .google-btn {
-            background: white;
-            color: #666;
-            border: 2px solid #e0e0e0;
+            background: #333333;
+            color: #e0e0e0;
+            border: 2px solid #404040;
         }
 
         .google-btn:hover {
-            background: #f5f5f5;
-            border-color: #666;
+            background: #404040;
+            border-color: #505050;
         }
 
         .facebook-btn {
@@ -282,7 +265,6 @@
         .facebook-btn:hover {
             background: #1664d9;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
         }
 
         .social-btn img {
@@ -294,35 +276,28 @@
         .signup-link {
             text-align: center;
             margin-top: 25px;
-            color: #666;
+            color: #a0a0a0;
         }
 
         .signup-link a {
-            color: #667eea;
+            color: #8b5cf6;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .signup-link a:hover {
-            color: #764ba2;
+            color: #6366f1;
             text-decoration: underline;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .login-container {
-            animation: fadeIn 0.6s ease-out;
+        .home-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #e0e0e0;
+            font-size: 24px;
+            text-decoration: none;
         }
 
         @media (max-width: 480px) {
@@ -337,14 +312,6 @@
             .social-buttons {
                 flex-direction: column;
             }
-        }
-        .home-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: #023430;
-            font-size: 24px;
-            text-decoration: none;
         }
     </style>
 </head>
