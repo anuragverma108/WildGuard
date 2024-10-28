@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Login</title>
+    <title>Login</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -16,24 +16,27 @@
         }
 
         body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1be23d 0%, #26df79 100%);
+            background-image: url('./assets/images/hero.jpg'); 
+            background-size: cover;
+            background-position: center;
+            margin: auto;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            height: 100vh;
+            width: 70%;
         }
 
         .login-container {
-            background: rgba(255, 255, 255, 0.9);
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.185); 
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            width: 100%;
-            max-width: 450px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            transform: translateY(0);
-            transition: all 0.3s ease;
+            height: 630px;
         }
 
         .login-container:hover {
@@ -42,8 +45,8 @@
         }
 
         h2 {
-            color: #1a237e;
-            font-size: 2.2em;
+            color: rgb(227 239 211);
+            font-size: 1.8em;
             text-align: center;
             margin-bottom: 30px;
             font-weight: 600;
@@ -59,68 +62,74 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(to right, #667eea, #764ba2);
+            background: linear-gradient(to right, rgb(227 239 211), #795939);
             border-radius: 2px;
         }
 
+
         .input-group {
             margin-bottom: 25px;
+            margin-top: 40px;
             position: relative;
         }
 
         .input-group label {
             position: absolute;
-            top: -10px;
-            left: 10px;
-            background: white;
+            top: -25px;
+            left: 20px;
+            background: transparent;
             padding: 0 5px;
-            color: #666;
-            font-size: 0.9em;
+            color: rgb(227 239 211);
+            font-size: 0.8em;
             transition: all 0.3s ease;
         }
 
         .input-group input {
-            width: 100%;
+            width: 90%;
+            height: 50px;
             padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 1em;
+            margin-left: 20px;
+            border: 1px solid grey;
+            border-radius: 7px;
+            font-size: 0.75em;
             transition: all 0.3s ease;
             background: white;
         }
 
         .input-group input:focus {
-            border-color: #667eea;
+            border-color: #a3cba5;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
             outline: none;
         }
 
         .input-group input:focus+label {
-            color: #667eea;
-            font-weight: 500;
+            color: #a3cba5;
+            font-weight: 600;
         }
 
         .password-toggle {
             position: relative;
         }
 
-        .password-toggle i {
+        #togglePassword {
             position: absolute;
-            right: 15px;
+            margin-left: 5px;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            color: #666;
+            color: #454040;
             transition: color 0.3s ease;
         }
 
-        .password-toggle i:hover {
-            color: #667eea;
+        #togglePassword:hover {
+            color: #535c54;
         }
 
         .password-strength {
             height: 4px;
-            margin-top: 8px;
+            margin-top: 10px;
+            width: 90%;
+            margin-left: 20px;
             border-radius: 2px;
             transition: all 0.3s ease;
             background: #e0e0e0;
@@ -137,13 +146,14 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            color: rgb(227 239 211);
         }
 
         .remember-me input[type="checkbox"] {
             appearance: none;
             width: 18px;
             height: 18px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #defae0;
             border-radius: 4px;
             cursor: pointer;
             position: relative;
@@ -151,14 +161,14 @@
         }
 
         .remember-me input[type="checkbox"]:checked {
-            background: #667eea;
-            border-color: #667eea;
+            background: #a3cba5;
+            border-color: #a3cba5;
         }
 
         .remember-me input[type="checkbox"]:checked::after {
             content: '✓';
             position: absolute;
-            color: white;
+            color: rgb(0, 0, 0);
             font-size: 12px;
             left: 50%;
             top: 50%;
@@ -166,22 +176,22 @@
         }
 
         .forgot-password {
-            color: #667eea;
+            color: rgb(226, 243, 204);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
         .forgot-password:hover {
-            color: #764ba2;
+            color: #aeedb1;
             text-decoration: underline;
         }
 
         .login-button {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(to right, rgb(227 239 211), #a3cba5);
+            color: rgb(64, 60, 60);
             border: none;
             border-radius: 12px;
             font-size: 1.1em;
@@ -220,7 +230,7 @@
         }
 
         .social-login p {
-            color: #666;
+            color: #daf7dc;
             margin-bottom: 15px;
             position: relative;
         }
@@ -230,7 +240,7 @@
             content: '';
             position: absolute;
             top: 50%;
-            width: 35%;
+            width: 32%;
             height: 1px;
             background: #e0e0e0;
         }
@@ -263,7 +273,7 @@
         }
 
         .google-btn {
-            background: white;
+            background: rgb(255, 255, 255);
             color: #666;
             border: 2px solid #e0e0e0;
         }
@@ -294,18 +304,18 @@
         .signup-link {
             text-align: center;
             margin-top: 25px;
-            color: #666;
+            color: #c6e7c8;
         }
 
         .signup-link a {
-            color: #667eea;
+            color: #a3cba5;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .signup-link a:hover {
-            color: #764ba2;
+            color: #aeedb1;
             text-decoration: underline;
         }
 
