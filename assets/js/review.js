@@ -1,56 +1,45 @@
-// To access the stars
-let stars =
-    document.getElementsByClassName("star");
-let output =
-    document.getElementById("output");
+let selectedStarIndex = -1;
+const stars = document.querySelectorAll(".stars i");
+let output = document.getElementById("output");
 
-// Funtion to update rating
-function gfg(n) {
-    remove();
-    for (let i = 0; i < n; i++) {
-        if (n == 1) cls = "one";
-        else if (n == 2) cls = "two";
-        else if (n == 3) cls = "three";
-        else if (n == 4) cls = "four";
-        else if (n == 5) cls = "five";
-        stars[i].className = "star " + cls;
-    }
-    output.innerText = "Rating is: " + n + "/5";
+// Add click event listener to each star
+stars.forEach((star, index1) => {
+    star.addEventListener("click", () => {
+        selectedStarIndex = index1;
+        // Update star styling based on the selected index
+        stars.forEach((star, index2) => {
+            index1 >= index2 ? star.classList.add('active') : star.classList.remove('active');
+        });
+        updateRating(); // Update the rating output
+    });
+});
+
+// Function to update rating display
+function updateRating() {
+    output.innerText = "Rating is: " + (selectedStarIndex + 1) + "/5";
 }
 
-// To remove the pre-applied styling
-function remove() {
-    let i = 0;
-    while (i < 5) {
-        stars[i].className = "star";
-        i++;
-    }
-}
-
-
-// Make 1 star compulsory
+// Make sure at least 1 star is selected on form submission
 function validateRating() {
-    let rating = parseInt(output.innerText.split("/")[0].split(": ")[1]);
-    if (rating < 1) {
-        gfg(1); // Select 1 star if no rating is selected
+    if (selectedStarIndex < 0) {
+        stars[0].click(); // Set at least one star as selected
     }
-    return rating >= 1; // Return true if rating is valid
+    return selectedStarIndex >= 0;
 }
 
 // Add event listener to the submit button
 document.getElementById("ratingForm").addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent the form from submitting
+    e.preventDefault(); // Prevent form submission
     if (validateRating()) {
-        // Show a "Done" popup for 3 seconds
         let popup = document.getElementById("popup");
         popup.style.display = "block";
         setTimeout(() => {
             popup.style.display = "none";
-            // Clear stars
-            remove();
-            output.innerText = "";
-            // Clear the text area
-            document.getElementById("reviewInput").value = "";
+            // Reset stars and clear output
+            stars.forEach(star => star.classList.remove("active"));
+            selectedStarIndex = -1;
+            output.innerText = "Rating is: 0/5";
+            document.getElementById("reviewInput").value = ""; // Clear review text
         }, 2000);
     }
 });
