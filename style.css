@@ -58,7 +58,7 @@
 }
 
 .card:hover {
-    transform: scale(1, 0.5);
+    transform: scale(1.02);
 }
 
 .card h2 {
@@ -97,3 +97,6 @@
     font-size: 27px;
 
 }
+
+
+
