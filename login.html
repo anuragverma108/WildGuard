@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Login</title>
+    <title> Login</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -17,7 +17,9 @@
 
         body {
             min-height: 100vh;
-            background: linear-gradient(135deg, #1be23d 0%, #26df79 100%);
+            background-image: url('login1.jpg'); /* Background image set to login1.jpg */
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -25,30 +27,22 @@
         }
 
         .login-container {
-            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 40px;
             width: 100%;
             max-width: 450px;
+            background-color: rgba(255, 255, 255, 0.8);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            transform: translateY(0);
-            transition: all 0.3s ease;
-        }
-
-        .login-container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
-            color: #1a237e;
+            color: #2e7d32;
             font-size: 2.2em;
             text-align: center;
             margin-bottom: 30px;
             font-weight: 600;
             position: relative;
-            padding-bottom: 10px;
         }
 
         h2::after {
@@ -59,7 +53,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: linear-gradient(to right, #667eea, #764ba2);
+            background: #66bb6a;
             border-radius: 2px;
         }
 
@@ -70,38 +64,28 @@
 
         .input-group label {
             position: absolute;
-            top: -10px;
+            top: -25px;
             left: 10px;
-            background: white;
+            /* background: rgba(255, 255, 255, 0.8); */
             padding: 0 5px;
-            color: #666;
+            color: #2e7d32;
             font-size: 0.9em;
-            transition: all 0.3s ease;
         }
 
         .input-group input {
             width: 100%;
             padding: 15px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #c8e6c9;
             border-radius: 12px;
             font-size: 1em;
-            transition: all 0.3s ease;
             background: white;
+            color: #2e7d32;
         }
 
         .input-group input:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+            border-color: #66bb6a;
+            box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.2);
             outline: none;
-        }
-
-        .input-group input:focus+label {
-            color: #667eea;
-            font-weight: 500;
-        }
-
-        .password-toggle {
-            position: relative;
         }
 
         .password-toggle i {
@@ -110,20 +94,15 @@
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            color: #666;
-            transition: color 0.3s ease;
-        }
-
-        .password-toggle i:hover {
-            color: #667eea;
+            color: #2e7d32;
+            font-size: 1.2em; /* Adjusted icon size */
         }
 
         .password-strength {
             height: 4px;
             margin-top: 8px;
             border-radius: 2px;
-            transition: all 0.3s ease;
-            background: #e0e0e0;
+            background: #17621a;
         }
 
         .extras {
@@ -133,114 +112,45 @@
             margin-bottom: 25px;
         }
 
-        .remember-me {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
         .remember-me input[type="checkbox"] {
             appearance: none;
             width: 18px;
             height: 18px;
-            border: 2px solid #e0e0e0;
-            border-radius: 4px;
-            cursor: pointer;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .remember-me input[type="checkbox"]:checked {
-            background: #667eea;
-            border-color: #667eea;
+            border: 2px solid #c8e6c9;
+            background: #81c784;
         }
 
         .remember-me input[type="checkbox"]:checked::after {
             content: '✓';
-            position: absolute;
             color: white;
-            font-size: 12px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+        
         }
 
         .forgot-password {
-            color: #667eea;
+            color: #388e3c;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .forgot-password:hover {
-            color: #764ba2;
-            text-decoration: underline;
         }
 
         .login-button {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #66bb6a 0%, #388e3c 100%);
             color: white;
             border: none;
             border-radius: 12px;
             font-size: 1.1em;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .login-button::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%) scale(0);
-            border-radius: 50%;
-            transition: transform 0.5s ease;
-        }
-
         .login-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .login-button:active::after {
-            transform: translate(-50%, -50%) scale(2);
-        }
-
-        .social-login {
-            margin-top: 30px;
-            text-align: center;
+            box-shadow: 0 5px 15px rgba(56, 142, 60, 0.4);
         }
 
         .social-login p {
-            color: #666;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .social-login p::before,
-        .social-login p::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 35%;
-            height: 1px;
-            background: #e0e0e0;
-        }
-
-        .social-login p::before {
-            left: 0;
-        }
-
-        .social-login p::after {
-            right: 0;
+            color: #2e7d32;
         }
 
         .social-buttons {
@@ -259,92 +169,28 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            transition: all 0.3s ease;
         }
 
         .google-btn {
-            background: white;
-            color: #666;
-            border: 2px solid #e0e0e0;
-        }
-
-        .google-btn:hover {
-            background: #f5f5f5;
-            border-color: #666;
+            background: #e0f2f1;
+            color: #388e3c;
         }
 
         .facebook-btn {
-            background: #1877f2;
+            background: #2e7d32;
             color: white;
-            border: none;
-        }
-
-        .facebook-btn:hover {
-            background: #1664d9;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
-        }
-
-        .social-btn img {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-        }
-
-        .signup-link {
-            text-align: center;
-            margin-top: 25px;
-            color: #666;
         }
 
         .signup-link a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            color: #388e3c;
         }
 
-        .signup-link a:hover {
-            color: #764ba2;
-            text-decoration: underline;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .login-container {
-            animation: fadeIn 0.6s ease-out;
-        }
-
-        @media (max-width: 480px) {
-            .login-container {
-                padding: 30px 20px;
-            }
-
-            h2 {
-                font-size: 1.8em;
-            }
-
-            .social-buttons {
-                flex-direction: column;
-            }
-        }
         .home-icon {
             position: absolute;
             top: 20px;
             left: 20px;
-            color: #023430;
-            font-size: 24px;
-            text-decoration: none;
+            color: #2e7d32;
+            font-size: 1.5em; /* Adjusted icon size */
         }
     </style>
 </head>
@@ -362,9 +208,9 @@
                 <div class="password-toggle">
                     <input type="password" id="password" required>
                     <label for="password">Password</label>
-                    <i class="fas fa-eye" id="togglePassword"></i>
+                    <!-- <i class="fas fa-eye" id="togglePassword"></i> -->
                 </div>
-                <div class="password-strength" id="passwordStrength"></div>
+                <!-- <div class="password-strength" id="passwordStrength"></div> -->
             </div>
             <div class="extras">
                 <label class="remember-me">
@@ -376,19 +222,19 @@
             <button type="submit" class="login-button">Sign In</button>
         </form>
         <div class="social-login">
-            <p>Or continue with</p>
+            <p style="text-align: center; color: black;">Or continue with</p>
             <div class="social-buttons">
-                <button type="button" class="social-btn google-btn" id="googleSignInBtn">
-                    <img src="./assets/images/google.png" alt="Google">
+                <button type="button" class="social-btn google-btn">
+                    <img src="./assets/images/google.png" alt="Google" width="20" height="20">
                     Google
                 </button>
-                <button type="button" class="social-btn facebook-btn" id="facebookSignInBtn">
-                    <img src="./assets/images/facebook.png" alt="Facebook">
+                <button type="button" class="social-btn facebook-btn">
+                    <img src="./assets/images/facebook.png" alt="Facebook" width="20" height="20">
                     Facebook
                 </button>
             </div>
         </div>
-        <p class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
+        <p  style="text-align: center ;margin-top: 5px;" class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
