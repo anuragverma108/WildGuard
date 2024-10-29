@@ -329,6 +329,9 @@
       $('#donationForm').on('submit', function (event) {
         event.preventDefault();
 
+      // Display a simple alert message
+      alert('Thank you for your donation! Pleace check receipt below.');
+
         // Get form values
         const donationType = $('#donationType').val();
         const amount = $('#amount').val();
