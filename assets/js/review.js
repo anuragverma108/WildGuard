@@ -1,3 +1,58 @@
+let rating = 0;
+
+// Function to handle hover effect
+function hover(starIndex) {
+  const stars = document.querySelectorAll('.star');
+  stars.forEach((star, index) => {
+    if (index < starIndex) {
+      star.classList.add('hovered');
+    } else {
+      star.classList.remove('hovered');
+    }
+  });
+}
+
+// Function to reset hover effect when mouse leaves
+function reset() {
+  const stars = document.querySelectorAll('.star');
+  stars.forEach((star, index) => {
+    if (index < rating) {
+      star.classList.add('active');
+    } else {
+      star.classList.remove('hovered');
+    }
+  });
+}
+
+// Function to handle click and set the rating
+function rate(starIndex) {
+  rating = starIndex;
+  const stars = document.querySelectorAll('.star');
+  stars.forEach((star, index) => {
+    if (index < rating) {
+      star.classList.add('active');
+    } else {
+      star.classList.remove('active');
+    }
+  });
+  document.getElementById('output').innerText = `Rating is: ${rating}/5`;
+}
+
+
+function feedback() {
+  let reviewInput = document.getElementById("reviewInput");
+
+  if (reviewInput.value.trim() !== "") {
+      alert("Thank you for your feedback!");
+  } else {
+      alert("Review field is required");
+  }
+}
+
+
+
+
+
 // To access the stars
 let stars =
     document.getElementsByClassName("star");
