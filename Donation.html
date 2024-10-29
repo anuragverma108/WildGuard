@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WildGuard Donations</title>
@@ -81,6 +83,8 @@
             margin-right: -10%;
             margin-bottom: 15px;
             color: rgb(16, 16, 16);
+            padding: 10px;
+           
         }
 
         form {
@@ -158,6 +162,64 @@
             width: 100%;
             bottom: 0;
         }
+    
+        .custom-dropdown {
+        position: relative;
+        display: inline-block;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .dropdown-selected {
+        padding: 1px ; /* Smaller padding for a compact button */
+        padding-left: 10px;
+        padding-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        font-size: 14px; /* Smaller font size */
+        color: white;
+        background-color: rgba(0, 0, 0, 0.499);
+        border: none;
+        outline: none;
+    }
+
+    .dropdown-options {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+
+    .dropdown-option {
+        padding: 8px; /* Smaller padding for options */
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .dropdown-option:hover {
+        background-color: #e0e0e0;
+    }
+
+    .dropdown-option i {
+        margin-right: 6px;
+        color: #007bff;
+    }
+
+    /* Show dropdown options */
+    .show {
+        display: block;
+    }
+
+
     </style>
 </head>
 <body>
@@ -172,9 +234,34 @@
                 <h2>Your contribution will make a significant impact on the conservation of endangered wildlife and their ecosystems</h2>
 
                 <form id="donationForm">
-                    <div class="form-row">
+                    <div class="form-row" style="margin: 10px;">
+                       
                         <input type="text" id="donorName" placeholder="Your Name" required>
+                    
+                        
                         <input type="number" placeholder="Amount" required>
+                     
+                        <div class="custom-dropdown">
+                            
+                            <button id="selectedPayment" class="dropdown-selected" onclick="toggleDropdown()">
+                                Choose Payment Method
+                            </button>
+                        
+                            <div id="dropdownOptions" class="dropdown-options">
+                                <div class="dropdown-option" onclick="selectOption('Gpay', 'fab fa-google-pay')">
+                                    <i class="fab fa-google-pay"></i> Gpay
+                                </div>
+                                <div class="dropdown-option" onclick="selectOption('Phone pay', 'fas fa-mobile-alt')">
+                                    <i class="fas fa-mobile-alt"></i> Phone pay
+                                </div>
+                                <div class="dropdown-option" onclick="selectOption('Add credit card', 'fas fa-credit-card')">
+                                    <i class="fas fa-credit-card"></i> Add credit card
+                                </div>
+                                <div class="dropdown-option" onclick="selectOption('Add debit card', 'far fa-credit-card')">
+                                    <i class="far fa-credit-card"></i> Add debit card
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <input type="email" id="email" placeholder="Your Email" required>
                     <button type="submit">DONATE</button>
@@ -214,6 +301,27 @@
                 }
             });
         });
+        
+     function toggleDropdown() {
+        document.getElementById("dropdownOptions").classList.toggle("show");
+    }
+
+    // Select an option and display the icon with text
+    function selectOption(text, iconClass) {
+        const selectedPayment = document.getElementById("selectedPayment");
+        selectedPayment.innerHTML = `<i class="${iconClass}"></i> ${text}`;
+        toggleDropdown(); // Close the dropdown after selection
+    }
+
+    // Close the dropdown if clicked outside
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-selected') && !event.target.matches('.dropdown-option')) {
+            document.getElementById("dropdownOptions").classList.remove("show");
+        }
+    }
+        
+
+
     </script>
 </body>
 </html>
