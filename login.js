@@ -88,3 +88,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }, { scope: 'email' });
     });
 });
+
+const password=document.querySelector("#password");
+const eye = document.querySelector("#eye");
+
+eye.addEventListener("click", () => {
+  if (password.type === "password") {
+    password.type = "text";
+    eye.src = "eye-open.png"; // Optionally change the icon to an open eye
+  } else {
+    password.type = "password";
+    eye.src = "eye-close.png"; // Optionally change the icon to a closed eye
+  }
+});
