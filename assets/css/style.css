@@ -1972,6 +1972,7 @@ data {
   background-color: #1a1a1a;
   color: #ffffff;
   padding: 0;
+  margin-top: 1rem;
   /* Reduced padding */
   font-family: 'Roboto', sans-serif;
 }
