@@ -174,7 +174,9 @@ p.line {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
-  padding: 20px 10px;
+  padding: 9px 10px;
+  font-size: 15px;
+
 }
 
 .footer-content h3 {
@@ -192,11 +194,12 @@ p.line {
 
 .social-links li {
   display: inline;
-  margin-right: 10px;
 }
 
 .social-links a {
   color: #00b3ff;
+  text-decoration: none;
+  display: flex;  
 }
 
 .footer-bottom {
