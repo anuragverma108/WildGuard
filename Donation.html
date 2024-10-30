@@ -1,219 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WildGuard Donations</title>
+
+    <!-- 
+    - fontawesome icon link
+    -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- 
+    - google font link
+  -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="./Events-Data/modal.css" />
+
+    <link rel="stylesheet" href="./assets/css/navbar.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        ::-webkit-scrollbar {
-            width: 1px;
-        }
+      ::-webkit-scrollbar {
+        width: 1px;
+      }
 
-        ::-webkit-scrollbar-track {
-            background: #00000000;
-        }
+      ::-webkit-scrollbar-track {
+        background: #00000000;
+      }
 
-        ::-webkit-scrollbar-thumb {
-            background-color: rgb(0, 0, 0);
-            border-radius: 1px;
-        }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgb(0, 0, 0);
+        border-radius: 1px;
+      }
 
-        html {
-            scrollbar-width: 1px;
-        }
+      html {
+        scrollbar-width: 1px;
+      }
 
-        .backimg {
-            background-image: url("assets/images/community-hero-bg.jpeg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: left;
-            min-height: 100vh;
-        }
+      .backimg {
+        background-image: url('assets/images/community-hero-bg.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left;
+        min-height: 100vh;
+      }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #000000;
-            color: black;
-            font-family: Cinzel;
-            line-height: 1.3;
-        }
+      body {
+        font-family: 'Arial', sans-serif;
+        background: #000000;
+        color: black;
+        font-family: Cinzel;
+        line-height: 1.3;
+      }
 
-        header {
-            text-align: center;
-            padding: 4vh 0;
-            background: linear-gradient( #000,#00000000);
-            color: rgb(166, 168, 167);
-        }
+      header {
+        text-align: center;
+        padding: 4vh 0;
+        background: linear-gradient(#000, #00000000);
+        color: rgb(166, 168, 167);
+      }
 
-        header h1 {
-            font-size: 3em;
-            letter-spacing: 2px;
-        }
+      header h1 {
+        font-size: 3em;
+        letter-spacing: 2px;
+      }
 
-        header p {
-            font-size: 1.5em;
-        }
+      header p {
+        font-size: 1.5em;
+      }
 
-        .donation-form {
-            background: rgba(72, 72, 72, 0.258);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            max-width: 50%; 
-            margin: 1vh auto; 
-            padding: 1vh 10%; 
-            border-radius: 20px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            color: rgb(0, 0, 0);
-        }
+      .donation-form {
+        background: rgba(72, 72, 72, 0.258);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        max-width: 50%;
+        margin: 1vh auto;
+        padding: 1vh 10%;
+        border-radius: 20px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        color: rgb(0, 0, 0);
+      }
 
-        .donation-form h2 {
-            margin-top: 5%;
-            font-size: 1.4em;
-            letter-spacing: 0.5px;
-            margin-left: -10%;
-            margin-right: -10%;
-            margin-bottom: 15px;
-            color: rgb(16, 16, 16);
-        }
+      .donation-form h2 {
+        margin-top: 5%;
+        font-size: 1.4em;
+        letter-spacing: 0.5px;
+        margin-left: -10%;
+        margin-right: -10%;
+        margin-bottom: 15px;
+        color: rgb(16, 16, 16);
+      }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            height: 35vh;
-        }
+      form {
+        display: flex;
+        flex-direction: column;
+        height: 35vh;
+      }
 
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0px;
-        }
+      .form-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0px;
+      }
 
-        #donorName{
-            width: 48%;
-        }
+      #donorName {
+        width: 48%;
+      }
 
-        #amount {
-            width: 50%;
-        }
+      #amount {
+        width: 50%;
+      }
 
-        #email {
-            width: 100%;
-        }
+      #email {
+        width: 100%;
+      }
 
-        input, select {
-            padding: 2vh; 
-            margin-bottom: 10px;
-            border-radius: 5px;
-            background: rgba(0, 0, 0, 0.499);
-            border: 1px solid #00000000;
-        }
-       
-        input:focus, select:focus {
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid #cccccc00;
-            outline: none;
-        }
+      input,
+      select {
+        padding: 2vh;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.499);
+        border: 1px solid #00000000;
+      }
 
-        button {
-            margin-top: 20px;
-            letter-spacing: 1.5px;
-            font-family: Cinzel;
-            padding: 2.5vh 0vw;
-            background: rgba(0, 0, 0, 0.499);
-            margin-left: 50%;
-            translate: -50%;
-            width: 120px;
-            color: rgb(201, 201, 201);
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: bold;
-        }
+      input:focus,
+      select:focus {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid #cccccc00;
+        outline: none;
+      }
 
-        button:hover {
-            background-color: rgba(255, 255, 255, 0.7);
-            color: #000;
-        }
+      button {
+        margin-top: 20px;
+        letter-spacing: 1.5px;
+        font-family: Cinzel;
+        padding: 2.5vh 0vw;
+        background: rgba(0, 0, 0, 0.499);
+        margin-left: 50%;
+        translate: -50%;
+        width: 120px;
+        color: rgb(201, 201, 201);
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+      }
 
-        #thankYouMessage {
-            margin-top: 45px;
-            height: 30vh;
-            text-align: center;
-        }
+      button:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: #000;
+      }
 
-        footer {
-            background-color: rgba(15, 15, 15, 0);
-            padding: 1vh; 
-            text-align: center;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+      #thankYouMessage {
+        margin-top: 45px;
+        height: 30vh;
+        text-align: center;
+      }
+
+      footer {
+        background-color: rgba(15, 15, 15, 0);
+        padding: 1vh;
+        text-align: center;
+        color: white;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+      }
     </style>
-</head>
-<body>
-    <div class="backimg">
-        <header>
+  </head>
+  <body>
+    <div class="navbar-container">
+      <nav>
+        <!-- Logo and Hamburger Menu -->
+        <div class="left-section">
+          <div class="logo">
             <h1>WildGuard</h1>
-            <p>Help protect wildlife. Donate today to save the animals!</p>
-        </header>
+          </div>
+          <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
 
-        <main>
-            <section class="donation-form">
-                <h2>Your contribution will make a significant impact on the conservation of endangered wildlife and their ecosystems</h2>
+        <!-- Search bar -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search..." />
+          <span class="search-icon">&#128269;</span>
+        </div>
 
-                <form id="donationForm">
-                    <div class="form-row">
-                        <input type="text" id="donorName" placeholder="Your Name" required>
-                        <input type="number" placeholder="Amount" required>
-                    </div>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <button type="submit">DONATE</button>
-                </form>
+        <!-- Right section:  Profile icon -->
+        <div class="right-section">
+          <div class="profile">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+      </nav>
+    </div>
 
-                <div id="thankYouMessage" style="display:none;">
-                    <h3>Thank you for donating to WildGuard!</h3>
-                    <p>Your donation will make a huge difference in protecting animals.</p>
-                </div>
-            </section>
-        </main>
+    <!-- Dropdown Menu -->
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Service</a>
+      <a href="#">Donate</a>
+      <a href="#">Event</a>
+      <a href="#">Contact</a>
+      <a href="#">Login</a>
+      <a href="#">Register</a>
+    </div>
 
-        <footer>
-            <p>&copy; 2024 WildGuard Organization. All rights reserved.</p>
-        </footer>
+    <div class="backimg">
+      <header>
+        <h1>WildGuard</h1>
+        <p>Help protect wildlife. Donate today to save the animals!</p>
+      </header>
+
+      <main>
+        <section class="donation-form">
+          <h2>
+            Your contribution will make a significant impact on the conservation
+            of endangered wildlife and their ecosystems
+          </h2>
+
+          <form id="donationForm">
+            <div class="form-row">
+              <input
+                type="text"
+                id="donorName"
+                placeholder="Your Name"
+                required
+              />
+              <input type="number" placeholder="Amount" required />
+            </div>
+            <input type="email" id="email" placeholder="Your Email" required />
+            <button type="submit">DONATE</button>
+          </form>
+
+          <div id="thankYouMessage" style="display: none">
+            <h3>Thank you for donating to WildGuard!</h3>
+            <p>
+              Your donation will make a huge difference in protecting animals.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 WildGuard Organization. All rights reserved.</p>
+      </footer>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const donationForm = document.getElementById('donationForm');
-            const thankYouMessage = document.getElementById('thankYouMessage');
+      document.addEventListener('DOMContentLoaded', function () {
+        const donationForm = document.getElementById('donationForm');
+        const thankYouMessage = document.getElementById('thankYouMessage');
 
-            donationForm.addEventListener('submit', function (event) {
-                event.preventDefault();
+        donationForm.addEventListener('submit', function (event) {
+          event.preventDefault();
 
-                const name = document.getElementById('donorName').value;
-                const email = document.getElementById('email').value;
+          const name = document.getElementById('donorName').value;
+          const email = document.getElementById('email').value;
 
-                if (!name.match('^[a-zA-Z\\s]+$')) {
-                    alert("Invalid Name Format");
-                    return;
-                }
+          if (!name.match('^[a-zA-Z\\s]+$')) {
+            alert('Invalid Name Format');
+            return;
+          }
 
-                if (name && email) {
-                    donationForm.style.display = 'none';
-                    thankYouMessage.style.display = 'block';
-                }
-            });
+          if (name && email) {
+            donationForm.style.display = 'none';
+            thankYouMessage.style.display = 'block';
+          }
         });
+      });
     </script>
-</body>
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: 'en' },
+          'google_translate_element'
+        );
+      }
+    </script>
+
+    <script>
+      function toggleMenu() {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        dropdownMenu.style.display =
+          dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
 </html>
