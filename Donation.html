@@ -158,6 +158,12 @@
             width: 100%;
             bottom: 0;
         }
+
+        .home{
+            display: flex;
+            justify-content: center;
+        }
+       
         
     </style>
 </head>
@@ -185,11 +191,13 @@
                         <option>Mobile Wallet</option>
                         <option>Pay using any UPI app</option>
                     </select>
-                 
-
                     <input type="email" id="email" placeholder="Your Email" required>
                     <button type="submit">DONATE</button>
                 </form>
+
+                <div class="home btn">
+                <a href="index.html"><button type="button">Home</button></a>
+            </div>
 
                 <div id="thankYouMessage" style="display:none;">
                     <h3>Thank you for donating to WildGuard!</h3>
