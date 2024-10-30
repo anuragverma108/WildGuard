@@ -11,242 +11,199 @@ html {
     scroll-behavior: smooth;
 }
 
-/* star section css */
-.background-blur {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('path-to-your-background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    filter: blur(8px); /* Adjust the blur level */
-    z-index: 1;
-}
-
-body{
-    background-image: url('wildlife.mp4');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    min-height: 780px;
-    
-  }
-
-.bodys {
-    min-height: 50vh;
+ /* Improved CSS for Rate Us Page */
+ body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: .9
-}
-
-.card {
-    background-color: #fff;
-    max-width: 28rem;
-    margin-top: 50px;
-    padding: 1rem;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    border-radius: 0.5rem;
-    position: relative;
-
-}
-
-.card a {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: rgb(122, 120, 120);
-    font-size: 20px;
-}
-
-.star {
-    font-size: 6vh;
-    cursor: pointer;
-}
-
-.one {
-    color: rgb(255, 0, 0);
-}
-
-.two {
-    color: rgb(255, 106, 0);
-}
-
-.three {
-    color: rgb(232, 232, 65);
-}
-
-.four {
-    color: rgb(232, 232, 50);
-}
-
-.five {
-    color: rgb(232, 232, 50);
-}
-
-
-#ratingForm #reviewInput {
-    width: 380px;
-    height: 155px;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 5px;
-}
-
-button {
-    width: 40%;
-    height: 43px;
-    background-color: rgb(0 179 4);
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: rgb(125, 165, 75);
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-#popup {
-    display: none;
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-
-/* review section css */
-
-body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    width: 100%;
-    background-color: #ffffff;
-}
+  }
 
-main {
-    width: 800px;
-}
-
-main h1 {
-    text-align: center;
-    font-size: clamp(2rem, 4vw, 2.6rem);
-    color: #01761c;
-    margin-bottom: 20px;
-    margin-top: 20px;
-}
-
-.fa-house {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.slide-row {
-    display: flex;
-    width: 3200px;
-    transition: 0.5s;
-}
-
-.slide-col {
-    position: relative;
-    width: 800px;
-    height: 400px;
-}
-
-.hero {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-}
-
-.hero img {
-    height: 100%;
-    border-radius: 10px;
-    width: 320px;
-    object-fit: cover;
-    pointer-events: none;
-    user-select: none;
-}
-
-.content {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 520px;
-    height: 270px;
-    color: #4d4352;
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4.5px);
-    -webkit-backdrop-filter: blur(4.5px);
-    border-radius: 10px;
-    padding: 45px;
-    z-index: 2;
-    user-select: none;
-}
-
-.content p {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.content h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 35px;
-    color: #4d4352;
-}
-
-.indicator {
+  .bodys {
     display: flex;
     justify-content: center;
-    margin-top: 4rem;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80vh;
 }
 
-.indicator .btn {
-    display: inline-block;
-    height: 15px;
-    width: 15px;
-    margin: 4px;
-    border-radius: 15px;
+.card {
     background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    width: 100vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .fa-house {
+    color: #f76c6c;
+    font-size: 24px;
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+
+  .star {
+    font-size: 40px;
+    color: #e0e0e0;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
-}
+    transition: color 0.2s;
+  }
 
-.btn.active {
-    width: 30px;
-}
+  .star {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc; /* Default color for unselected stars */
+  }
 
-.slider {
+  .star.hovered,
+  .star.active {
+    color: #f76c6c; /* Color for hovered or active stars */
+  }
+
+
+  #output {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+  }
+
+  #ratingForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  #reviewInput {
     width: 100%;
-    overflow: hidden;
-}
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    min-height: 100px;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+  }
 
+ .submit-btn[type="submit"] {
+    background-color: #f76c6c;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .submit-btn[type="submit"]:hover {
+    background-color: #e05b5b;
+  }
+
+  #popup {
+    display: none;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 40px auto;
+  }
+
+  main h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .slider {
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .slide-row {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .slide-col {
+    flex: 1;
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .slide-col .content {
+    max-width: 60%;
+  }
+
+  .slide-col h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .slide-col p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .hero img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+  }
+
+  .indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .indicator .btn {
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .indicator .btn.active {
+    background-color: #f76c6c;
+  }
+
+  .indicator .btn:hover {
+    background-color: #e05b5b;
+  }
 
 @media (max-width: 850px) {
     main {
