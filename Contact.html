@@ -395,7 +395,9 @@
      <form id="contactForm">
       <div class="tooltip-container">
         <label for="name">Enter Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="text" id="name" name="name" placeholder="Your Name" required pattern="[a-zA-Z ]+" 
+                oninvalid="this.setCustomValidity('Please enter your name  without using numbers or special characters.')" 
+                oninput="this.setCustomValidity('')">
         <div class="tooltip-text">Please enter your full name here.</div>
       </div>
     
@@ -407,7 +409,8 @@
     
       <div class="tooltip-container">
         <label for="phone">Enter Your Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required pattern="[0-9]{10}" 
+          maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
         <div class="tooltip-text">Please enter your phone number(10 digits).</div>
       </div>
     
