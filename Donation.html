@@ -158,6 +158,7 @@
             width: 100%;
             bottom: 0;
         }
+        
     </style>
 </head>
 <body>
@@ -176,6 +177,16 @@
                         <input type="text" id="donorName" placeholder="Your Name" required>
                         <input type="number" placeholder="Amount" required>
                     </div>
+
+                    <select id="amount" class="new" required>
+                        <option value="" disabled selected>Select Payment Method</option>
+                        <option>Credit Card/Debit Card</option>
+                        <option>Net Banking</option>
+                        <option>Mobile Wallet</option>
+                        <option>Pay using any UPI app</option>
+                    </select>
+                 
+
                     <input type="email" id="email" placeholder="Your Email" required>
                     <button type="submit">DONATE</button>
                 </form>
