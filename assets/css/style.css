@@ -2673,7 +2673,7 @@ video {
   .insta-post-item {
     min-width: 24%;
   }
-}
+
 
 /**
  * responsive for larger than 1200px screen
@@ -3125,4 +3125,28 @@ video {
   100% {
     transform: rotateY(0deg);
   }
+}
+
+.container{
+  color: white;
+}
+
+.h2{
+  color: white;
+}
+
+.tab-text{
+  color: white;
+}
+
+.boxx{
+  color: white;
+}
+
+.wrapper{
+  color: white;
+}
+
+h3{
+  color: white;
 }
