@@ -48,7 +48,7 @@
             text-align: center;
             padding: 4vh 0;
             background: linear-gradient( #000,#00000000);
-            color: rgb(166, 168, 167);
+            color: white;
         }
 
         header h1 {
@@ -61,7 +61,7 @@
         }
 
         .donation-form {
-            background: rgba(72, 72, 72, 0.258);
+            background: rgba(46, 10, 10, 0.258);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             max-width: 50%; 
@@ -91,7 +91,7 @@
 
         .form-row {
             display: flex;
-            justify-content: space-between;
+            justify-content:space-between;
             margin-bottom: 0px;
         }
 
@@ -101,6 +101,7 @@
 
         #amount {
             width: 50%;
+            
         }
 
         #email {
@@ -113,12 +114,14 @@
             border-radius: 5px;
             background: rgba(0, 0, 0, 0.499);
             border: 1px solid #00000000;
+          
         }
        
         input:focus, select:focus {
             background: rgba(255, 255, 255, 0.7);
             border: 1px solid #cccccc00;
             outline: none;
+        
         }
 
         button {
@@ -158,6 +161,10 @@
             width: 100%;
             bottom: 0;
         }
+        
+        
+
+
     </style>
 </head>
 <body>
@@ -174,7 +181,7 @@
                 <form id="donationForm">
                     <div class="form-row">
                         <input type="text" id="donorName" placeholder="Your Name" required>
-                        <input type="number" placeholder="Amount" required>
+                        <input type="number" id="amount" placeholder="Amount" required>
                     </div>
                     <input type="email" id="email" placeholder="Your Email" required>
                     <button type="submit">DONATE</button>
