@@ -325,20 +325,7 @@
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
           </li>
-
-
-          <script>
-            document.getElementById('registerLink').addEventListener('click', function (e) {
-              e.preventDefault();
-              window.location.href = 'register.html';
-            });
-            document.getElementById('loginLink').addEventListener('click', function (e) {
-              e.preventDefault();
-              window.location.href = 'login.html';
-            });
-          </script>
-
-
+  
 
         </ul>
 
@@ -678,6 +665,16 @@
 
               <li>
                 <button class="tab-btn active" onclick="setActiveTab(this, 'plan')">Next Plan</button>
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="window.location.href='./Maps/map.html'"> Maps</button>
+
+                
+              </li>
+
+              <li>
+                <button class="tab-btn" onclick="window.location.href='./rescue.html'"> Rescue</button>
               </li>
 
             </ul>
@@ -2222,91 +2219,25 @@ Our mission is to provide outstanding care and dedicated support for animals in 
   <!-- 
     - ionicon link
   -->
-  <!-- <script>
-      document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.navbar-link');
 
-    function updateActiveLink() {
-      let scrollY = window.pageYOffset;
 
-      sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 50;
-        const sectionId = current.getAttribute('id');
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === sectionId) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-
-    window.addEventListener('scroll', updateActiveLink);
-
-    // Smooth scrolling for navbar links
-    navLinks.forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-
-        // Only prevent default if the link is an internal section reference
-        if (href.startsWith('#')) {
-          e.preventDefault();
-          const targetId = href.substring(1);
-          const targetElement = document.getElementById(targetId);
-
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 50,
-              behavior: 'smooth'
+  <script>
+    
+        <script>
+            document.getElementById('registerLink').addEventListener('click', function (e) {
+              e.preventDefault();
+              window.location.href = 'register.html';
             });
-          }
-        } 
-        // Else, allow normal page navigation for external links
-        else {
-          window.location.href = href;
-        }
-      });
-    });
+            document.getElementById('loginLink').addEventListener('click', function (e) {
+              e.preventDefault();
+              window.location.href = 'login.html';
+            });
+          </script>
 
-// Initial call to set active link on page load
-    updateActiveLink();
+    
 
-    // Mobile toggle menu
-    document.addEventListener("DOMContentLoaded", function() {
-      const navOpenBtn = document.querySelector("[data-nav-open-btn]");
-      const navCloseBtn = document.querySelector("[data-nav-close-btn]");
-      const navbar = document.querySelector("[data-navbar]");
-
-      navOpenBtn.addEventListener("click", () => {
-        navbar.classList.add("active"); // Add a class to show the menu
-      });
-
-      navCloseBtn.addEventListener("click", () => {
-        navbar.classList.remove("active"); // Remove the class to hide the menu
-      });
-    });
-    window.onload = function() {
-        let countEl = document.getElementById('partnerCount');
-    let count = 0;
-    let target = 324;
-    let speed = 40; // Reduce the speed for faster increment
-
-    const counter = setInterval(function() {
-      if (count < target) {
-        count++;
-        countEl.textContent = count + "+ Trusted Global Partners";
-      } else {
-        clearInterval(counter);
-      }
-    }, speed);
-  };
-  });
-  </script> -->
+ 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.navbar-link');
