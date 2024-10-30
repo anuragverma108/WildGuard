@@ -66,6 +66,32 @@
         height: 2000px; /* Increase height to create scrolling content */
     }
 
+
+    /* Scroll to Top Button CSS */
+    #scrollToTopBtn {
+        position: fixed;
+        left: 30px;
+        bottom: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #0c7124; /* Green background */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s;
+    }
+
+    #scrollToTopBtn i {
+        font-size: 20px; /* Size of the arrow icon */
+        color: white;
+    }
+</style>
+
     /* Scroll to Top Button CSS */
     #scrollToTopBtn {
         position: fixed;
@@ -454,6 +480,15 @@
       -->
 
       <section class="hero" id="home">
+        <div class="video-background">
+          <video autoplay muted loop>
+              <!-- Replace this video source with your live waterfall video or another hosted video -->
+              <source src="wildlife.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+          <div class="overlay"></div>
+      </div>
+  
         <div class="container">
 
           <p class="section-subtitle">
@@ -1289,19 +1324,20 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             </div>
           </section>
 
+
+
+
+
           <!-- opinion form -->
-           <div class="formContainer">
-            <div id="mainContainer">
-              <h1 id="forumTitle">Wildlife Conservation Forum</h1>
-              <div id="postFormSection">
-                <h2 id="formTitle">Share Your Thoughts</h2>
-                <textarea id="postContent" placeholder="Write your message..."></textarea>
-                <button id="submitButton" onclick="GiveAlert()">Submit</button>
-              </div>
-             
-                
-              </div>
+
             </div>
+        </div>
+
+
+
+
+
+
             <script src="script.js"></script>
           </div>
           
@@ -1619,7 +1655,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
         </div>
       </div>
 
-          <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36" id="faq">
+          <!-- <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36" id="faq">
             <div class="text-center mb-6">
               <p class="text-5xl font-bold text-gray-800 uppercase">Frequently Asked Questions</p>
             </div>
@@ -1726,8 +1762,132 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             </div>
 
 
-          </section>
+          </section> -->
 
+
+          <section class="w-3/4 mx-auto p-6 rounded-lg shadow-lg mb-36" id="faq">
+            <div class="text-center mb-6">
+              <p class="text-5xl font-bold text-gray-800 uppercase">Frequently Asked Questions</p>
+            </div>
+          
+            <div class="faq">
+              <div
+                class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between"
+                onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
+                  onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">What We Do?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
+              </div>
+              <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
+                <p>At WildGuard, we believe in creating a sustainable and thriving environment for every living creature on Earth. Our initiatives are geared towards:
+                  <br>
+                  <strong>Save Nature:</strong> We focus on preserving natural habitats and supporting wildlife populations to ensure a balanced ecosystem.
+                  <br>
+                  <strong>Save Ecology:</strong> Our efforts are aimed at maintaining natural relationships between organisms, promoting biodiversity, and minimizing harmful impacts on the environment.
+                  <br>
+                  <strong>Tree Plantation:</strong> Trees are the foundation of our planet. We organize tree plantation drives to combat deforestation and provide safe environments for animals.
+                  <br>
+                  <strong>Clear Oceans:</strong> We support ocean cleanup initiatives, helping to remove plastic and other pollutants from our seas to protect marine life.
+                </p>
+              </div>
+            </div>
+          
+            <div class="faq mt-5">
+              <div
+                class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between"
+                onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
+                  onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">How You Can Help?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
+              </div>
+              <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
+                <p>WildGuard provides several ways for individuals, groups, and organizations to get involved:
+                  <br>
+                  <strong>🐘 Donate:</strong> Your generous donations allow us to provide animals with access to food, medical care, and other essential resources they need to thrive. Every contribution counts!
+                  <br>
+                  <strong>🌳 Volunteer:</strong> Join us for tree planting, clean-up activities, and other hands-on projects to make an impact. Your time and effort helps make a significant difference.
+                  <br>
+                  <strong>🌊 Spread the Word:</strong> Raise awareness about the importance of animal welfare and ecological conservation by sharing WildGuard's mission with your friends and community. The more people know, the more we can accomplish together!
+                </p>
+              </div>
+            </div>
+          
+            <div class="faq mt-5">
+              <div
+                class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between"
+                onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
+                  onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">Why WildGuard?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
+              </div>
+              <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
+                <p>We believe that every small step counts when it comes to saving our planet. WildGuard connects passionate people from around the world to protect, nurture, and support life on Earth. Together, we can:
+                  <br>
+                  <strong>Provide better living conditions for animals.</strong>
+                  <br>
+                  <strong>Protect endangered species from extinction.</strong>
+                  <br>
+                  <strong>Combat environmental damage and restore natural habitats.</strong>
+                  <br>
+                  By working together, we can create a future where animals and nature are safe, healthy, and thriving.
+                </p>
+              </div>
+            </div>
+          
+            <div class="faq mt-5">
+              <div
+                class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between"
+                onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
+                  onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">How to verify your Payment?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
+              </div>
+              <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
+                <p>You can verify your Payment by following these methods:
+                  <br>
+                  <strong>Check Bank Account:</strong> First, check your bank app or website to confirm the payment was debited and credited to the correct account.
+                  <br>
+                  <strong>Check Payment App:</strong> Then, check the app you used to make the payment. Locate the transaction ID, copy it, and come to our website.
+                  <br>
+                  <strong>Share Your Details:</strong> In this section, paste the transaction ID along with your name and bank name. We will verify the details and get back to you within a few days.
+                </p>
+              </div>
+            </div>
+          
+            <div class="faq mt-5">
+              <div
+                class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between"
+                onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
+                  onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">What are the Ways to Donate?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
+              </div>
+              <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
+                <p>We offer multiple donation options to suit every donor:
+                  <br>
+                  <strong>One-Time Donation:</strong> Make a single contribution to support ongoing projects.
+                  <br>
+                  <strong>Monthly Support:</strong> Become a regular supporter and help sustain our efforts.
+                  <br>
+                  <strong>Corporate Sponsorship:</strong> Businesses can sponsor specific initiatives or contribute towards general conservation efforts.
+                </p>
+              </div>
+            </div>
+    
+            <div class="faq mt-5">
+              <div
+                class="question cursor-pointer bg-zinc-500 text-zinc-900 rounded-lg p-4 mb-2 shadow transition duration-300 hover:bg-zinc-700 flex justify-between"
+                onclick="toggleAnswer(this)">
+                <h3 class="text-3xl inline" style="color: black; transition: color 0.3s;"
+                  onmouseover="this.style.color='green';" onmouseout="this.style.color='black'">Is My Donation Tax Deductible?</h3>
+                <span class="toggle-sign text-3xl ml-2 pr-2">+</span>
+              </div>
+              <div class="answer hidden bg-gray-200 rounded-lg p-4 mb-2">
+                <p>Yes, WildGuard is a registered non-profit organization, so your donation may be tax-deductible. We recommend consulting a tax professional to confirm the benefits applicable to your situation.</p>
+              </div>
+            </div>
+          </section>
+          
 
       <script>
         // Accordion | Frequently Asked Questions

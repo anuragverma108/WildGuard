@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login</title>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -17,27 +17,22 @@
 
         body {
             min-height: 100vh;
-            background-image: url('login1.jpg'); /* Background image set to login1.jpg */
-            background-size: cover;
-            background-position: center;
+
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            color: #e0e0e0;
         }
 
         .login-container {
+
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 40px;
             width: 100%;
             max-width: 450px;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
 
-        h2 {
-            color: #2e7d32;
             font-size: 2.2em;
             text-align: center;
             margin-bottom: 30px;
@@ -53,7 +48,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: #66bb6a;
+
             border-radius: 2px;
         }
 
@@ -66,43 +61,20 @@
             position: absolute;
             top: -25px;
             left: 10px;
-            /* background: rgba(255, 255, 255, 0.8); */
-            padding: 0 5px;
-            color: #2e7d32;
+
             font-size: 0.9em;
         }
 
         .input-group input {
             width: 100%;
             padding: 15px;
-            border: 2px solid #c8e6c9;
-            border-radius: 12px;
-            font-size: 1em;
-            background: white;
-            color: #2e7d32;
-        }
 
-        .input-group input:focus {
-            border-color: #66bb6a;
-            box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.2);
-            outline: none;
-        }
-
-        .password-toggle i {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #2e7d32;
-            font-size: 1.2em; /* Adjusted icon size */
-        }
 
         .password-strength {
             height: 4px;
             margin-top: 8px;
             border-radius: 2px;
-            background: #17621a;
+
         }
 
         .extras {
@@ -116,26 +88,18 @@
             appearance: none;
             width: 18px;
             height: 18px;
-            border: 2px solid #c8e6c9;
-            background: #81c784;
+
         }
 
         .remember-me input[type="checkbox"]:checked::after {
             content: '✓';
-            color: white;
-        
-        }
 
-        .forgot-password {
-            color: #388e3c;
-            text-decoration: none;
         }
 
         .login-button {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #66bb6a 0%, #388e3c 100%);
-            color: white;
+
             border: none;
             border-radius: 12px;
             font-size: 1.1em;
@@ -146,11 +110,7 @@
         }
 
         .login-button:hover {
-            box-shadow: 0 5px 15px rgba(56, 142, 60, 0.4);
-        }
 
-        .social-login p {
-            color: #2e7d32;
         }
 
         .social-buttons {
@@ -172,73 +132,10 @@
         }
 
         .google-btn {
-            background: #e0f2f1;
-            color: #388e3c;
+
         }
 
         .facebook-btn {
             background: #2e7d32;
             color: white;
-        }
 
-        .signup-link a {
-            color: #388e3c;
-        }
-
-        .home-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: #2e7d32;
-            font-size: 1.5em; /* Adjusted icon size */
-        }
-    </style>
-</head>
-
-<body>
-    <a href="./index.html" class="home-icon"><i class="fas fa-house"></i></a>
-    <div class="login-container">
-        <h2>Welcome Back!</h2>
-        <form id="loginForm">
-            <div class="input-group">
-                <input type="email" id="email" required>
-                <label for="email">Email Address</label>
-            </div>
-            <div class="input-group">
-                <div class="password-toggle">
-                    <input type="password" id="password" required>
-                    <label for="password">Password</label>
-                    <!-- <i class="fas fa-eye" id="togglePassword"></i> -->
-                </div>
-                <!-- <div class="password-strength" id="passwordStrength"></div> -->
-            </div>
-            <div class="extras">
-                <label class="remember-me">
-                    <input type="checkbox">
-                    <span>Remember Me</span>
-                </label>
-                <a href="#" class="forgot-password">Forgot Password?</a>
-            </div>
-            <button type="submit" class="login-button">Sign In</button>
-        </form>
-        <div class="social-login">
-            <p style="text-align: center; color: black;">Or continue with</p>
-            <div class="social-buttons">
-                <button type="button" class="social-btn google-btn">
-                    <img src="./assets/images/google.png" alt="Google" width="20" height="20">
-                    Google
-                </button>
-                <button type="button" class="social-btn facebook-btn">
-                    <img src="./assets/images/facebook.png" alt="Facebook" width="20" height="20">
-                    Facebook
-                </button>
-            </div>
-        </div>
-        <p  style="text-align: center ;margin-top: 5px;" class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
-    <script src="login.js"></script>
-</body>
-
-</html>
