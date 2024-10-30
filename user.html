@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
 
     <style>
       * {
@@ -51,7 +52,7 @@
       }
 
       .home-btn:hover {
-        background-color: #45a049;
+        background-color: #f7f7f7;
       }
 
       .user-container {
@@ -88,8 +89,11 @@
 
       .user-info {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        /* gap:auto; */
+        align-items: center;
         margin-bottom: 20px;
+        margin-top: 10px;
       }
 
       .user-info div {
@@ -139,7 +143,7 @@
 
       .bio {
         text-align: left;
-        margin-top: 20px;
+        margin-top: 15px;
       }
 
       .bio h2 {
@@ -154,7 +158,7 @@
       }
 
       .skills {
-        margin-top: 30px;
+        margin-top: 15px;
         text-align: left;
       }
 
@@ -226,7 +230,7 @@
       }
 
       .activity-feed {
-        margin-top: 30px;
+        margin-top: 15px;
         text-align: left;
       }
 
@@ -253,7 +257,7 @@
 
       /* New styles for badges */
       .badges {
-        margin-top: 30px;
+        margin-top: 15px;
         text-align: left;
       }
 
@@ -276,6 +280,7 @@
       /* New styles for the progress bar */
       .progress-container {
         margin-top: 20px;
+        margin-bottom: 5px;
         text-align: left;
       }
 
@@ -352,11 +357,16 @@
           font-size: 10px;
         }
       }
+
+      .institution{
+        font-weight: 600;
+        color:#666
+      }
     </style>
   </head>
   <body>
     <!-- Home Button -->
-    <a href="index.html" class="home-btn">Home</a>
+    <a href="index.html" class="home-btn "><span class="material-symbols-outlined">home</span></a>
 
     <div class="user-container">
       <img
@@ -365,7 +375,7 @@
       />
       <h1>Arman Bhadoriya</h1>
       <p class="title">CEO & Founder, Example</p>
-      <p>Harvard University</p>
+      <div class="institution">Harvard University</div>
 
       <div class="user-info">
         <div>
@@ -386,7 +396,7 @@
       <div class="social-links">
         <a href="#"><i class="fa fa-dribbble"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
         <a href="#"><i class="fa fa-facebook"></i></a>
       </div>
 
