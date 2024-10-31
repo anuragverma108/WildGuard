@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animal Organization Ratings</title>
     <link rel="stylesheet" href="./assets/css/review.css" />
     <script src="./assets/js/review.js" defer></script>
 
-    <!-- font Awsome cdn  -->
+    <!-- Font Awesome CDN -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -15,305 +15,115 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    
     <style>
-      /* Improved CSS for Rate Us Page */
-      body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f4f4f9;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
+      /* Background video styling */
+      #backgroundVideo {
+          position: fixed; 
+          right: 0;
+          bottom: 0;
+          min-width: 100%; 
+          min-height: 100%; 
+          z-index: -1; 
+          overflow: hidden; 
       }
-
-      .bodys {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #fff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        border-radius: 10px;
-      }
-
+      
+      /* Card styling */
       .card {
-        background: #fff;
-        border-radius: 12px;
-        padding: 30px;
-        text-align: center;
-        max-width: 400px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          background-color: rgba(0, 123, 255, 0.7); 
+          border-radius: 10px; 
+          padding: 20px; 
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+          max-width: 400px; 
+          margin: auto; 
+          position: relative; 
+          z-index: 1; 
+          color: #ffffff; 
+      }
+      
+      .stars {
+          cursor: pointer; 
+      }
+      
+      .star:hover {
+          color: gold; 
       }
 
-      .card h2 {
-        color: #333;
-        font-size: 24px;
-        margin-bottom: 20px;
+      /* Additional styles for body and alignment */
+      body {
+          margin: 0; 
+          font-family: Arial, sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh; 
+          background-color: transparent; 
+          color: #ffffff; 
       }
 
-      .fa-house {
-        color: #f76c6c;
-        font-size: 24px;
-        text-decoration: none;
-        margin-bottom: 10px;
+      textarea {
+          width: 100%; 
+          height: 100px; 
+          margin-top: 10px; 
+          border-radius: 5px; 
+          border: 1px solid #ccc; 
+          background-color: rgba(0, 123, 255, 0.7);  
+          color: #ffffff;  
       }
 
-      .star {
-        font-size: 40px;
-        color: #e0e0e0;
-        cursor: pointer;
-        transition: color 0.2s;
+      .submit-btn {
+          margin-top: 10px; 
+          padding: 10px 15px; 
+          border-radius: 5px; 
+          background-color: #007bff; 
+          color: white;  
+          border: none; 
+          cursor: pointer; 
       }
 
-      .star:hover,
-      .star.active {
-        color: #f76c6c;
+      .submit-btn:hover {
+          background-color: #0056b3; 
       }
 
-      #output {
-        font-size: 18px;
-        color: #333;
-        margin-top: 10px;
-      }
-
-      #ratingForm {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-      }
-
-      #reviewInput {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        resize: none;
-        min-height: 100px;
-        margin-bottom: 15px;
-        font-family: 'Arial', sans-serif;
-        font-size: 16px;
-      }
-
-      button[type="submit"] {
-        background-color: #f76c6c;
-        border: none;
-        padding: 10px 20px;
-        color: #fff;
-        font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.2s;
-      }
-
-      button[type="submit"]:hover {
-        background-color: #e05b5b;
-      }
-
-      #popup {
-        display: none;
-        background-color: #4caf50;
-        color: #fff;
-        padding: 10px;
-        border-radius: 5px;
-        margin-top: 15px;
-      }
-
-      main {
-        max-width: 1000px;
-        margin: 40px auto;
-      }
-
-      main h1 {
-        text-align: center;
-        font-size: 28px;
-        color: #333;
-        margin-bottom: 20px;
-      }
-
-      .slider {
-        overflow: hidden;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0 10px;
-      }
-
-      .slide-row {
-        display: flex;
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .slide-col {
-        flex: 1;
-        margin-right: 20px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .slide-col .content {
-        max-width: 60%;
-      }
-
-      .slide-col h2 {
-        color: #333;
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-
-      .slide-col p {
-        font-size: 14px;
-        color: #555;
-      }
-
-      .hero img {
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-      }
-
-      .indicator {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      .indicator .btn {
-        width: 10px;
-        height: 10px;
-        background-color: #ddd;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: background-color 0.2s;
-      }
-
-      .indicator .btn.active {
-        background-color: #f76c6c;
-      }
-
-      .indicator .btn:hover {
-        background-color: #e05b5b;
+      textarea::placeholder { 
+          color: #ffffff; 
+          opacity: 1;  
       }
     </style>
-  </head>
+</head>
 
 <body>
 
-    <div class="bodys">
-      <div class="card">
+    <!-- Background Video -->
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="sea.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="card">
         <a href="./index.html"><i class="fa-solid fa-house"></i></a>
-        <h2>Rate Us</h2>
+        <h2 style="color:#ffffff;">Rate Us</h2> 
         <br />
-        <span onclick="gfg(1)" class="star">★</span>
-        <span onclick="gfg(2)" class="star">★</span>
-        <span onclick="gfg(3)" class="star">★</span>
-        <span onclick="gfg(4)" class="star">★</span>
-        <span onclick="gfg(5)" class="star">★</span>
-        <h5 id="output">Rating is: 0/5</h5>
-
+        <div class="stars">
+            <span onclick="rate(1)" onmouseover="hover(1)" onmouseout="reset()" class="star">★</span>
+            <span onclick="rate(2)" onmouseover="hover(2)" onmouseout="reset()" class="star">★</span>
+            <span onclick="rate(3)" onmouseover="hover(3)" onmouseout="reset()" class="star">★</span>
+            <span onclick="rate(4)" onmouseover="hover(4)" onmouseout="reset()" class="star">★</span>
+            <span onclick="rate(5)" onmouseover="hover(5)" onmouseout="reset()" class="star">★</span>
+        </div>
+        <h5 id="output" style="color:#ffffff;">Rating is: 0/5</h5> 
+        
         <form id="ratingForm">
-          <textarea
-            id="reviewInput"
-            placeholder="Write your Review"
-            required
-          ></textarea>
-          <button type="submit">Submit</button>
+            <textarea
+                id="reviewInput"
+                placeholder="Write your Review"
+                required
+            ></textarea>
+            <div>
+                <button type="submit" class="submit-btn" onclick="feedback()">Submit</button> 
+            </div>
         </form>
-
-        <div id="popup">Review Submitted !</div>
-      </div>
     </div>
 
-    <main>
-      <h1>Reviews</h1>
-
-      <div class="slider">
-        <div class="slide-row" id="slide-row">
-          <div class="slide-col">
-            <div class="content">
-              <p>
-                Zen Doan is a business analyst, entrepreneur and media
-                proprietor, and investor. She also known as the best selling
-                book author.
-              </p>
-              <h2>Zen</h2>
-              <p>Author</p>
-            </div>
-            <div class="hero">
-              <img
-                src="https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg"
-                alt="avatar"
-              />
-            </div>
-          </div>
-
-          <div class="slide-col">
-            <div class="content">
-              <p>
-                Jonathan Koletic is an American internet entrepreneur and media
-                proprietor, and investor. He is the founder of the
-                multi-national technology company Treymont.
-              </p>
-              <h2>Jonathan</h2>
-              <p>Treymont Inc.</p>
-            </div>
-            <div class="hero">
-              <img
-                src="https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg"
-                alt="avatar"
-              />
-            </div>
-          </div>
-
-          <div class="slide-col">
-            <div class="content">
-              <p>
-                Charlie Green is an European entrepreneur and media consultant,
-                and investor. He is the founder of the Hallmark Inc.
-              </p>
-              <h2>Charlie</h2>
-              <p>Hallmark Inc.</p>
-            </div>
-            <div class="hero">
-              <img
-                src="https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg"
-                alt="avatar"
-              />
-            </div>
-          </div>
-
-          <div class="slide-col">
-            <div class="content">
-              <p>
-                Sarah Dam is an American internet entrepreneur and media
-                consultant. She is the co-founder and CEO of Treymont.
-              </p>
-              <h2>Sarah</h2>
-              <p>Treymont Inc.</p>
-            </div>
-            <div class="hero">
-              <img
-                src="https://user-images.githubusercontent.com/13468728/234031654-f891d60e-53c6-420b-b57f-0c4c898e5b78.jpg"
-                alt="avatar"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="indicator">
-        <span class="btn active" onclick="slide(0)"></span>
-        <span class="btn" onclick="slide(1)"></span>
-        <span class="btn" onclick="slide(2)"></span>
-      </div>
-    </main>
-  </body>
+</body>
 </html>
