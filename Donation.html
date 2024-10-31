@@ -93,18 +93,32 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 0px;
+            gap: 5px;
         }
 
-        #donorName{
-            width: 48%;
-        }
-
+        #donorName,
         #amount {
-            width: 50%;
+            flex: 1;
+            min-width: 45%;
         }
 
         #email {
             width: 100%;
+        }
+
+        @media (max-width: 992px) and (min-width: 600px) {
+            #donorName,
+            #amount {
+                width: 45%; 
+            }
+        }
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+            }
+            #donorName, #amount {
+                width: 100%;
+            }
         }
 
         input, select {
