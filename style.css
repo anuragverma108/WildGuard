@@ -215,7 +215,7 @@ body {
     min-height: 8rem;
 }
 
-.donate-button {
+/*.donate-button {
     background-color: #91be55;
     border: none;
     border-radius: 5px;
@@ -233,7 +233,31 @@ body {
     color: red;
     background-color: rgb(242, 242, 242);
 }
+*/
 
+.donate-button{
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.donate-button:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
 .boxx {
     font-size: 27px;
 }
@@ -333,4 +357,61 @@ body {
     
 }
 
-
+/* Code to improve visual appearance of the 'Learn More' Button which is having id = openModalBtn*/
+#openModalBtn {
+    align-items: center;
+    background-color: #90EE90;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  #openModalBtn:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: "";
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform .2s ease-out;
+    z-index: -1;
+  }
+  
+  #openModalBtn:hover:after {
+    transform: translate(0, 0);
+  }
+  
+  #openModalBtn:active {
+    background-color: #90EE90;
+    outline: 0;
+  }
+  
+  #openModalBtn:hover {
+    outline: 0;
+  }
+  
+  @media (min-width: 768px) {
+    #openModalBtn {
+      padding: 0 40px;
+    }
+  }
