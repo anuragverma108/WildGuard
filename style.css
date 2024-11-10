@@ -334,3 +334,13 @@ body {
 }
 
 
+/* tab-content font color */
+.about-content h2{
+    color: wheat;
+}
+.tab-content{
+    color: wheat;
+}
+.tab-content .tab-list .tab-text{
+    color: wheat;
+}
