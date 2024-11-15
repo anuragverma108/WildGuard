@@ -17,6 +17,24 @@ document.addEventListener('DOMContentLoaded', function () {
         updatePasswordStrengthIndicator(strength);
     });
 
+    // show password implementation 
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the password input and the toggle icon
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+    
+        // Add click event listener to the toggle icon
+        togglePassword.addEventListener('click', function () {
+            // Toggle the type attribute
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+    
+            // Toggle the eye icon class
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+    });
+
     // Email Validation
     email.addEventListener('input', function () {
         this.setCustomValidity('');

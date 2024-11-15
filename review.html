@@ -91,6 +91,8 @@
       }
     </style>
 </head>
+=======
+  </head>
 
 <body>
 
@@ -126,4 +128,113 @@
     </div>
 
 </body>
+          <span onclick="rate(1)" onmouseover="hover(1)" onmouseout="reset()" class="star">★</span>
+          <span onclick="rate(2)" onmouseover="hover(2)" onmouseout="reset()" class="star">★</span>
+          <span onclick="rate(3)" onmouseover="hover(3)" onmouseout="reset()" class="star">★</span>
+          <span onclick="rate(4)" onmouseover="hover(4)" onmouseout="reset()" class="star">★</span>
+          <span onclick="rate(5)" onmouseover="hover(5)" onmouseout="reset()" class="star">★</span>
+        </div>
+        <h5 id="output">Rating is: 0/5</h5>
+        
+
+        <form id="ratingForm">
+          <textarea
+            id="reviewInput"
+            placeholder="Write your Review"
+            required
+          ></textarea>
+          <div>
+
+            <a href="index.html">
+              <button type="submit" class="submit-btn" onclick="feedback()">Submit</button>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- <main>
+      <h1>Reviews</h1>
+
+      <div class="slider">
+        <div class="slide-row" id="slide-row">
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Zen Doan is a business analyst, entrepreneur and media
+                proprietor, and investor. She also known as the best selling
+                book author.
+              </p>
+              <h2>Zen</h2>
+              <p>Author</p>
+            </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031693-6bbaba7d-632c-4d7d-965f-75a76a549ce2.jpg"
+                alt="avatar"
+              />
+            </div>
+          </div>
+
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Jonathan Koletic is an American internet entrepreneur and media
+                proprietor, and investor. He is the founder of the
+                multi-national technology company Treymont.
+              </p>
+              <h2>Jonathan</h2>
+              <p>Treymont Inc.</p>
+            </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031617-2dfb19ea-01d0-4370-b63b-bb6bdfb4f78e.jpg"
+                alt="avatar"
+              />
+            </div>
+          </div>
+
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Charlie Green is an European entrepreneur and media consultant,
+                and investor. He is the founder of the Hallmark Inc.
+              </p>
+              <h2>Charlie</h2>
+              <p>Hallmark Inc.</p>
+            </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031646-10533999-39e5-4c7b-ab54-d0299b13ce74.jpg"
+                alt="avatar"
+              />
+            </div>
+          </div>
+
+          <div class="slide-col">
+            <div class="content">
+              <p>
+                Sarah Dam is an American internet entrepreneur and media
+                consultant. She is the co-founder and CEO of Treymont.
+              </p>
+              <h2>Sarah</h2>
+              <p>Treymont Inc.</p>
+            </div>
+            <div class="hero">
+              <img
+                src="https://user-images.githubusercontent.com/13468728/234031654-f891d60e-53c6-420b-b57f-0c4c898e5b78.jpg"
+                alt="avatar"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="indicator">
+        <span class="btn active" onclick="slide(0)"></span>
+        <span class="btn" onclick="slide(1)"></span>
+        <span class="btn" onclick="slide(2)"></span>
+      </div>
+    </main> -->
+  </body>
 </html>
