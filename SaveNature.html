@@ -1,633 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Save Nature</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Save Nature</title>
+  <link rel="stylesheet" href="./assets/css/SaveNature.css" />
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-    <link rel="stylesheet" href="./assets/css/SaveNature.css" />
-  </head>
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-  <body>
-    <!-- #HEADER -->
-    <header class="header">
+    a:hover {
+      color: #2e7d32;
+    }
+
+    /* Header */
+    .header {
+      background: #2e7d32;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 2em;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    .nav ul li {
+      margin: 0 15px;
+    }
+
+    .nav a {
+      color: #fff;
+      font-size: 1.2em;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: #c7e2c1;
+    }
+
+    /* Sections */
+    .section {
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      font-size: 2.5em;
+      color: #2e7d32;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .line {
+      font-size: 1.2em;
+      color: #555;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Button Styling */
+    .btn {
+      padding: 12px 25px;
+      background-color: #2e7d32;
+      color: #fff;
+      border-radius: 5px;
+      font-size: 1em;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.3s;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    /* About and Other Sections */
+    .about img,
+    .image-sustain img {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Contact Form */
+    .contact-form input, .contact-form textarea {
+      padding: 15px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+
+    .contact-form button {
+      padding: 15px;
+      font-size: 1em;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    .footer {
+      background: #2e7d32;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-content div {
+      flex: 1;
+      min-width: 200px;
+      margin: 10px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-links a {
+      font-size: 1.5em;
+      color: #c7e2c1;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Save Nature</h1>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">WildGuard</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#ecosystems">Ecosystems</a></li>
+          <li><a href="#sustainability">Sustainability</a></li>
+          <li><a href="#statistics">Statistics</a></li>
+          <li><a href="#how-to-help">How to Help</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- WELCOME SECTION -->
+    <section class="section" id="home">
       <div class="container">
-        <h1 class="logo">Save Nature</h1>
-        <nav class="nav">
-          <ul>
-            <li><a href="index.html">WildGuard</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#ecosystems">Ecosystems</a></li>
-            <li><a href="#sustainability">Sustainability</a></li>
-            <li><a href="#statistics">Statistics</a></li>
-            <li><a href="#how-to-help">How to Help</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- #MAIN -->
-    <main>
-      <article>
-        <!-- #HOME -->
-        <div class="section">
-        
-          <div
-            class="container"
-            style="
-              max-width: 1200px;
-              width: 90%;
-              margin: 0 auto;
-              padding: 0 20px;
-            "
-          >
-            <h2
-              class="section-title"
-              style="
-                font-size: 2.5em;
-                color: #2e7d32;
-                text-align: center;
-                margin-bottom: 20px;
-              "
-            >
-              Welcome to Save Nature
-            </h2>
-            <p
-              class="line"
-              style="
-                font-size: 1.2em;
-                color: #555;
-                text-align: center;
-                margin-bottom: 30px;
-              "
-            >
-              Join us in our mission to protect our planet's ecosystems and
-              promote sustainable practices for a better future.
-            </p>
-            <div
-              style="
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding-left: 50%;
-              "
-            >
-              <a
-                href="#get-involved"
-                class="btn"
-                style="
-                  padding: 10px 20px;
-                  background-color: #2e7d32;
-                  color: white;
-                  text-decoration: none;
-                  border-radius: 5px;
-                  transition: background-color 0.3s;
-                "
-                onmouseover="this.style.backgroundColor='#45a049'"
-                onmouseout="this.style.backgroundColor='#4caf50'"
-              >
-                Get Involved
-              </a>
-            </div>
-          </div>
-      </div>
-
-        <!-- #ABOUT -->
-
-        <section
-          class="section about"
-          id="about"
-          style="padding: 10px 0; margin: 20px 0"
-        >
-          <div
-            class="container"
-            style="
-              max-width: 1200px;
-              width: 90%;
-              margin: 0 auto;
-              display: flex; /* Use flexbox for layout */
-              flex-direction: column; /* Arrange items in a column */
-              align-items: center; /* Center items vertically */
-              padding: 0 20px;
-            "
-          >
-            <div style="text-align: left">
-              <h2
-                class="section-title"
-                style="font-size: 2.5em; color: #2e7d32; margin-bottom: 20px"
-              >
-                About Save Nature
-              </h2>
-              <p style="font-size: 1.2em; margin-bottom: 15px">
-                At Save Nature, we are dedicated to protecting biodiversity and
-                promoting sustainable practices for a healthy environment. Our
-                mission is to raise awareness about environmental issues and
-                encourage global action against climate change and habitat
-                destruction. Biodiversity is the foundation of healthy
-                ecosystems, yet it is declining rapidly. According to the World
-                Wildlife Fund (WWF), wildlife populations have decreased by 68%
-                since 1970, threatening essential ecosystem services like
-                pollination and water purification. An estimated 1 million
-                species are at risk of extinction, largely due to habitat loss
-                and pollution. The Intergovernmental Science-Policy Platform on
-                Biodiversity (IPBES) indicates we are witnessing an
-                unprecedented decline in biodiversity, impacting human health
-                and food security. We believe every individual can contribute to
-                preserving biodiversity by advocating for reforestation, habitat
-                protection, and sustainable practices. By adopting sustainable
-                lifestyle choices and supporting environmental policies, we can
-                create a positive impact. Our initiatives include organizing
-                tree-planting drives, educating the public on sustainable
-                living, collaborating with organizations for biodiversity
-                conservation, promoting renewable energy sources, and advocating
-                for endangered species protection. Our planet's future depends
-                on our actions today. Join us in our efforts to protect nature
-                and promote a sustainable future.
-              </p>
-            </div>
-            <div
-              style="
-                text-align: center; /* Center the image */
-                margin-top: 20px; /* Optional: add spacing between the text and the image */
-              "
-            >
-              <img
-                src="https://st5.depositphotos.com/29995906/65122/i/600/depositphotos_651225578-stock-photo-picture-planet-trees-top.jpg"
-                alt="Save Nature Image"
-                style="
-                  max-width: 100%; /* Responsive image */
-                  height: auto; /* Maintain aspect ratio */
-                  border-radius: 10px; /* Optional: rounded corners */
-                "
-              />
-            </div>
-          </div>
-        </section>
-
-        <!-- #ECOSYSTEMS -->
-        <section
-          class="section ecosystems"
-          id="ecosystems"
-          style="
-            padding: 40px 0;
-            margin: 40px 0;
-            background-image: url(https://helpsavenature.com/wp-content/uploads/2020/01/cropped-helpsavenature.jpg);
-            background-size: cover;
-            background-position: center;
-            color: white;
-          "
-        >
-          <div
-            class="container"
-            style="
-              max-width: 1200px;
-              width: 90%;
-              margin: 0 auto;
-              padding: 40px;
-              background-color: rgba(0, 0, 0, 0.7);
-              border-radius: 10px;
-            "
-          >
-            <h2
-              class="section-title"
-              style="
-                font-size: 2.5em;
-                color: #ffffff;
-                text-align: center;
-                margin-bottom: 20px;
-              "
-            >
-              Ecosystems
-            </h2>
-            <p style="font-size: 1.2em; line-height: 1.5; margin-bottom: 15px">
-              Ecosystems are vital for our survival, providing clean air, water,
-              and habitat for wildlife. They regulate climate, cycle nutrients,
-              and supply resources for agriculture and clean drinking water.
-            </p>
-            <p style="font-size: 1.2em; line-height: 1.5; margin-bottom: 15px">
-              Preserving ecosystems maintains biodiversity, crucial for
-              resilience. Each species plays a role; the loss of one can disrupt
-              the entire system. Forests, wetlands, and coral reefs serve as
-              buffers against natural disasters.
-            </p>
-            <p style="font-size: 1.2em; line-height: 1.5; margin-bottom: 15px">
-              Unfortunately, ecosystems face threats from climate change and
-              pollution. Deforestation and urbanization have led to habitat
-              destruction. The United Nations Environment Programme (UNEP)
-              reports that over 75% of land-based ecosystems are significantly
-              altered by human activity.
-            </p>
-            <p style="font-size: 1.2em; line-height: 1.5; margin-bottom: 15px">
-              By raising awareness and advocating for ecosystem protection, we
-              can safeguard our planet's health. Conservation efforts, such as
-              restoring ecosystems and promoting sustainable land use, are
-              essential for reversing environmental degradation.
-            </p>
-          </div>
-        </section>
-
-        <!-- #SUSTAINABILITY -->
-        <section class="section sustainability" id="sustainability">
-          <div class="container" id="section-sustain">
-            <div
-              class="sustainability-content"
-              style="display: flex; align-items: center"
-            >
-              <div style="border-radius: 50%; padding-left: 0px">
-                <h2 class="section-title">Sustainability</h2>
-                <p>
-                  Sustainability means meeting our needs without compromising
-                  future generations. It involves responsible management of
-                  resources and minimizing our ecological footprint.
-                </p>
-                <p>
-                  By adopting sustainable practices like reducing waste and
-                  conserving energy, we can positively impact the environment.
-                  Transitioning to renewable sources such as solar and wind can
-                  significantly reduce carbon emissions.
-                </p>
-                <p>
-                  Sustainable agriculture and responsible consumption are also
-                  key. Reducing food waste and choosing eco-friendly products
-                  can lower our ecological footprint. The Food and Agriculture
-                  Organization (FAO) estimates that one-third of global food is
-                  wasted, indicating a need for efficiency.
-                </p>
-                <p>
-                  Join us in promoting sustainability and protecting our planet.
-                  Every small change counts, and together we can make a
-                  difference through mindful choices and supporting green
-                  initiatives.
-                </p>
-              </div>
-
-              <div
-                class="image-sustain"
-                style="
-                  height: 100px;
-                  width: 100%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  padding-left: 80px;
-                "
-              >
-                <img
-                  src="https://static.vecteezy.com/system/resources/previews/022/448/284/large_2x/save-earth-day-poster-environment-day-nature-green-ai-generative-glossy-background-images-tree-and-water-free-photo.jpg"
-                  alt="nature"
-                  height="10vw"
-                  style="max-width: 100%; height: auto; border-radius: 50%"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- #STATISTICS -->
-        <section class="section statistics" id="statistics">
-          <div class="container">
-            <h2 class="section-title">Environmental Statistics</h2>
-            <p class="line">
-              Explore the key facts and statistics about the current state of
-              our environment:
-            </p>
-
-            <div class="stats-grid">
-              <!-- Deforestation Statistic -->
-              <div class="stat-item">
-                <div class="icon">
-                  <img src="assets/images/tree-icon.png.png" alt="Tree Icon" />
-                </div>
-                <div class="stat-info">
-                  <h3 class="stat-number">10M</h3>
-                  <p class="stat-description">
-                    Hectares of forests lost annually, contributing to
-                    biodiversity loss.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Ocean Pollution Statistic -->
-              <div class="stat-item">
-                <div class="icon">
-                  <img src="assets/images/ocean-icon.png" alt="Ocean Icon" />
-                </div>
-                <div class="stat-info">
-                  <h3 class="stat-number">8M</h3>
-                  <p class="stat-description">
-                    Tons of plastic dumped into our oceans every year.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Carbon Emissions Statistic -->
-              <div class="stat-item">
-                <div class="icon">
-                  <img src="assets/images/carbon-icon.png" alt="Carbon Icon" />
-                </div>
-                <div class="stat-info">
-                  <h3 class="stat-number">50%</h3>
-                  <p class="stat-description">
-                    Increase in carbon dioxide levels since the Industrial
-                    Revolution.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Species Extinction Statistic -->
-              <div class="stat-item">
-                <div class="icon">
-                  <img
-                    src="assets/images/species-icon.png"
-                    alt="Species Icon"
-                  />
-                </div>
-                <div class="stat-info">
-                  <h3 class="stat-number">1M+</h3>
-                  <p class="stat-description">
-                    Species are at risk of extinction due to human activity.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Water Scarcity Statistic -->
-              <div class="stat-item">
-                <div class="icon">
-                  <img src="assets/images/water-icon.png" alt="Water Icon" />
-                </div>
-                <div class="stat-info">
-                  <h3 class="stat-number">2.2B</h3>
-                  <p class="stat-description">
-                    People lack access to safe drinking water globally.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- #HOW-TO-HELP -->
-        <section class="section how-to-help" id="how-to-help">
-          <div class="container">
-            <h2 class="section-title">How You Can Help Save Nature</h2>
-            <p class="line">
-              Saving our planet starts with individual actions. Here are some
-              ways you can make a difference:
-            </p>
-
-            <div class="help-grid">
-              <!-- Reduce, Reuse, Recycle -->
-              <div class="help-item">
-                <div class="help-icon">
-                  <img
-                    src="assets/images/recycle-icon.png"
-                    alt="Recycle Icon"
-                  />
-                </div>
-                <div class="help-info">
-                  <h3>Reduce, Reuse, Recycle</h3>
-                  <p>
-                    Minimize waste by using fewer disposable products, recycling
-                    materials, and reusing items.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Conserve Water -->
-              <div class="help-item">
-                <div class="help-icon">
-                  <img src="assets/images/water-icon.png" alt="Water Icon" />
-                </div>
-                <div class="help-info">
-                  <h3>Conserve Water</h3>
-                  <p>
-                    Take shorter showers, fix leaks, and use water-saving
-                    devices to reduce water consumption.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Plant Trees -->
-              <div class="help-item">
-                <div class="help-icon">
-                  <img src="assets/images/tree-icon.png.png" alt="Tree Icon" />
-                </div>
-                <div class="help-info">
-                  <h3>Plant Trees</h3>
-                  <p>
-                    Trees absorb carbon dioxide, improve air quality, and
-                    provide habitat for wildlife. Join tree-planting
-                    initiatives.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Support Clean Energy -->
-              <div class="help-item">
-                <div class="help-icon">
-                  <img src="assets/images/energy-icon.png" alt="Energy Icon" />
-                </div>
-                <div class="help-info">
-                  <h3>Support Clean Energy</h3>
-                  <p>
-                    Switch to renewable energy sources such as solar and wind,
-                    and reduce energy consumption at home.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Cut Down on Plastic -->
-              <div class="help-item">
-                <div class="help-icon">
-                  <img
-                    src="assets/images/plastic-icon.png"
-                    alt="Plastic Icon"
-                  />
-                </div>
-                <div class="help-info">
-                  <h3>Cut Down on Plastic</h3>
-                  <p>
-                    Avoid single-use plastics by opting for reusable bags,
-                    bottles, and containers.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Get Involved -->
-              <div class="help-item">
-                <div class="help-icon">
-                  <img
-                    src="assets/images/community-icon.png"
-                    alt="Community Icon"
-                  />
-                </div>
-                <div class="help-info">
-                  <h3>Get Involved</h3>
-                  <p>
-                    Participate in local environmental groups or global
-                    movements focused on conservation and sustainability.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Spread Awareness -->
-              <div class="help-item">
-                <div class="help-icon">
-                  <img
-                    src="assets/images/awareness-icon.png"
-                    alt="Awareness Icon"
-                  />
-                </div>
-                <div class="help-info">
-                  <h3>Spread Awareness</h3>
-                  <p>
-                    Educate others about the importance of protecting nature
-                    through social media, events, or volunteering.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <p class="help-call-to-action">
-              Every small action adds up, and together we can make a big impact
-              on the future of our planet.
-            </p>
-          </div>
-        </section>
-
-        <!-- #CONTACT -->
-
-        <section
-          class="section contact"
-          id="contact"
-          style="
-            padding: 40px 0;
-            margin: 40px 0;
-            background-image: url(https://e1.pxfuel.com/desktop-wallpaper/165/739/desktop-wallpaper-bird-sparrow-nature-save-nature.jpg);
-            background-size: cover;
-            background-position: center;
-            color: white;
-          "
-        >
-          <div
-            class="container"
-            style="
-              max-width: 800px;
-              width: 90%;
-              margin: 0 auto;
-              padding: 40px;
-              background-color: rgba(0, 0, 0, 0.7);
-              border-radius: 10px;
-            "
-          >
-            <h2
-              class="section-title"
-              style="
-                font-size: 2.5em;
-                color: #ffffff;
-                text-align: center;
-                margin-bottom: 20px;
-              "
-            >
-              Get in Touch
-            </h2>
-            <p
-              style="font-size: 1.2em; text-align: center; margin-bottom: 30px"
-            >
-              Have any questions or want to learn more about our initiatives?
-              Reach out to us!
-            </p>
-
-            <form
-              class="contact-form"
-              style="display: flex; flex-direction: column; gap: 15px"
-            >
-              <input
-                type="text"
-                placeholder="Your Name"
-                required
-                style="
-                  padding: 15px;
-                  font-size: 1em;
-                  border: none;
-                  border-radius: 5px;
-                "
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                required
-                style="
-                  padding: 15px;
-                  font-size: 1em;
-                  border: none;
-                  border-radius: 5px;
-                "
-              />
-              <textarea
-                placeholder="Your Message"
-                required
-                style="
-                  padding: 15px;
-                  font-size: 1em;
-                  border: none;
-                  border-radius: 5px;
-                  resize: vertical;
-                "
-              ></textarea>
-              <button
-                class="btn"
-                type="submit"
-                style="
-                  padding: 15px;
-                  font-size: 1em;
-                  background-color: #28a745;
-                  color: white;
-                  border: none;
-                  border-radius: 5px;
-                  cursor: pointer;
-                  transition: background-color 0.3s;
-                "
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </section>
-      </article>
-    </main>
-
-    <!-- #FOOTER -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div>
-            <h3>About Us</h3>
-            <p>
-              We are dedicated to protecting nature and educating the public
-              about environmental issues.
-            </p>
-          </div>
-          <div>
-            <h3>Contact Us</h3>
-            <p>Email: info@savenature.org</p>
-            <p>Phone: +123 456 7890</p>
-          </div>
-          <div>
-            <h3>Follow Us</h3>
-            <ul class="social-links">
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">LinkedIn</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2024 Save Nature. All rights reserved.</p>
+        <h2 class="section-title">Welcome to Save Nature</h2>
+        <p class="line">
+          Join us in our mission to protect our planet's ecosystems and promote sustainable practices for a better future.
+        </p>
+        <div style="text-align: center;">
+          <a href="#get-involved" class="btn">Get Involved</a>
         </div>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about" id="about">
+      <div class="container">
+        <h2 class="section-title">About Save Nature</h2>
+        <p class="line">
+          We are dedicated to protecting biodiversity and promoting sustainable practices for a healthy environment.
+        </p>
+        <img src="https://st5.depositphotos.com/29995906/65122/i/600/depositphotos_651225578-stock-photo-picture-planet-trees-top.jpg" alt="Save Nature Image">
+      </div>
+    </section>
+
+    <!-- ECOSYSTEMS SECTION -->
+    <section class="section ecosystems" id="ecosystems" style="background-image: url(https://helpsavenature.com/wp-content/uploads/2020/01/cropped-helpsavenature.jpg); background-size: cover; color: #fff;">
+      <div class="container">
+        <h2 class="section-title">Ecosystems</h2>
+        <p class="line">
+          Ecosystems are vital for our survival, providing clean air, water, and habitat for wildlife.
+        </p>
+      </div>
+    </section>
+
+    <!-- SUSTAINABILITY SECTION -->
+    <section class="section sustainability" id="sustainability">
+      <div class="container">
+        <h2 class="section-title">Sustainability</h2>
+        <p class="line">Adopt sustainable practices for a healthier planet and future generations.</p>
+        <img src="https://static.vecteezy.com/system/resources/previews/022/448/284/large_2x/save-earth-day-poster-environment-day-nature-green-ai-generative-glossy-background-images-tree-and-water-free-photo.jpg" alt="Nature">
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact" id="contact" style="background-image: url(https://e1.pxfuel.com/desktop-wallpaper/165/739/desktop-wallpaper-bird-sparrow-nature-save-nature.jpg); background-size: cover; color: #fff;">
+      <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="line">Have any questions or want to learn more about our initiatives? Reach out to us!</p>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Save Nature. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
 </html>
