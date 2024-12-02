@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+    overflow-x: visible scroll;
+}
+
+nav .header {
+    width: 100%;
+    display: flex;
+    padding-top: 20px;
+    position: relative;
+}
+
+#logo {
+    display: flex;
+    margin-right: 20px;
+    padding: 3.5px;
+}
+
+#logo img {
+    height: 27px;
+    margin-left: 40px;
+
+}
+
+.left li:hover {
+    color: rgb(255, 255, 255);
+    list-style: none;
+    display: flex;
+    padding: .5px;
+}
+
+.left ul {
+    color: rgba(255, 255, 255, 0.715);
+    list-style: none;
+    display: flex;
+    margin-left: 18px;
+}
+
+.left li {
+    margin-left: 20px;
+    font-size: 15px;
+}
+
+.right {
+    margin-left: 440px;
+    display: flex;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.753);
+    margin-top: 7px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: 550;
+}
+
+.right img {
+    height: 33px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+#content {
+    margin-top: -350px;
+}
+
+#banner {
+    object-fit: contain;
+    height: 733px;
+    width: 108.19%;
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    color: whitesmoke;
+    opacity: 80%;
+    font-size: 3.2rem;
+    font-weight: 800;
+    padding: 1rem 3.4rem;
+    position: relative;
+}
+
+.buttns {
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 3.6rem;
+}
+
+#play {
+    height: 45px;
+    color: black;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: .5rem 2rem;
+    margin-right: .2rem;
+    background-color: white;
+}
+
+#play:hover {
+    opacity: 60%;
+}
+
+#info {
+    height: 45px;
+    color: black;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    border-radius: 4px;
+    padding: .5rem 2rem;
+    margin-right: .2rem;
+    background-color: gray;
+    opacity: 80%;
+}
+
+#info:hover {
+    opacity: 60%;
+}
+.rows{
+    margin-top: 100px;
+}
+.rowsposters2 {
+    display: flex;
+    margin-bottom: 55px;
+    margin-left: 20px;
+    transition: transform 450ms;
+}
+
+.rowsposters2 img {
+    object-fit: contain;
+    border-radius: 3.4px;
+    height: 120px;
+    transition: transform 450ms;
+    margin: 0 3.5px;
+}
+
+.rowsposters2 img:hover {
+    transform: scale(1.3);
+}
+
+.rowsposters {
+    display: flex;
+    object-fit: contain;
+    border-radius: 3.4px;
+    height: 120px;
+    margin-bottom: 55px;
+    margin-left: 55px;
+    transition: transform 450ms;
+}
+
+.rowsposters img {
+    object-fit: contain;
+    border-radius: 3.4px;
+    height: 120px;
+    transition: transform 450ms;
+    margin: 0 3.5px;
+}
+
+.rowsposters img:hover {
+    transform: scale(1.4);
+    transition-delay: .5s;
+    z-index: 1;
+}
+
+h2 {
+    color: aliceblue;
+    margin: 10px 0;
+    font-size: 20px;
+    margin-left: 65px;
+}
+
+footer {
+    background-color: #111;
+    color: grey;
+    height: 280px;
+}
+
+.foots {
+    padding: 0 20%;
+
+}
+
+.social {
+    margin-left: 30px;
+}
+
+.social img {
+    margin-top: 0px;
+    padding: 9px;
+    height: 55px;
+    background: none;
+}
+
+.element {
+    display: flex;
+    justify-content: center;
+}
+
+.element ul li {
+    display: flex;
+    color: gray;
+    font-size: 12.5px;
+    margin: 0 59.6px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.element ul li:hover {
+    text-decoration: underline;
+}
+
+#service {
+    height: 30px;
+    width: 100px;
+    color: gray;
+    border: 1px solid gray;
+    background-color: transparent;
+    margin-left: 60px;
+    background: none;
+}
+
+#service:hover {
+    color: white;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-left: 58px;
+    margin-top: 20px;
+}
