@@ -18,7 +18,7 @@ body {
 .about-section {
     position: relative;
     height: 100vh;
-    background: url('https://images.pexels.com/photos/1098886/pexels-photo-1098886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+    background: url('https://images.pexels.com/photos/709552/pexels-photo-709552.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;
     /* Example: URL from Unsplash */
     color: #fff;
     display: flex;
@@ -35,21 +35,18 @@ body {
 
 }
 
-
 h2 {
     font-size: 3rem;
     margin-bottom: 20px;
     text-transform: uppercase;
     margin-top: 150px;
-    color: #000;
     
 }
 
 p {
-    font-size: 1.1rem;
+    font-size: 1.87rem;
     margin-bottom: 20px;
     font-weight:500;
-    color: #000;
 }
 
 h3 {
@@ -64,7 +61,7 @@ ul {
 }
 
 ul li {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
@@ -178,4 +175,42 @@ body {
     .text-content h2 {
         font-size: 1.5em;
     }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #9bc98b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
 }
