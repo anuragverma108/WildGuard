@@ -135,7 +135,7 @@ body {
     transition: transform 0.3s;
 }
 
- #scrollBOTTOM{
+#scrollBOTTOM{
    
     position: fixed;
     right: 30px;
