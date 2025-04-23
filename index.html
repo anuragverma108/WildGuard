@@ -67,27 +67,30 @@
     }
 
 
-    /* forum section styling  */
-    @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+    /* Scroll to Top Button CSS */
+    #scrollToTopBtn {
+        position: fixed;
+        left: 30px;
+        bottom: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #0c7124; /* Green background */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s;
+    }
 
+    #scrollToTopBtn i {
+        font-size: 20px; /* Size of the arrow icon */
+        color: white;
+    }
+</style>
 
     /* Scroll to Top Button CSS */
     #scrollToTopBtn {
@@ -1326,63 +1329,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
 
           <!-- opinion form -->
-          <div class="formContainer" style="max-width: 150rem; margin: 40px auto; background: white; border-radius: 15px; box-shadow: 0 8px 30px rgba(0,100,0,0.1); overflow: hidden; animation: slideDown 0.5s ease-out;">
-            <div id="mainContainer" style="padding: 30px;">
-                <h1 id="forumTitle" style="
-                    color: #006400;
-                    text-align: center;
-                    margin: 0 0 30px 0;
-                    font-size: 2.5em;
-                    font-weight: 600;
-                    animation: fadeIn 1s ease-out;
-                    text-shadow: 2px 2px 4px rgba(0,100,0,0.1);
-                ">Wildlife Conservation Forum</h1>
-                
-                <div id="postFormSection" style="
-                    background: #f8fff8;
-                    padding: 25px;
-                    border-radius: 12px;
-                    animation: fadeIn 1.5s ease-out;
-                ">
-                    <h2 id="formTitle" style="
-                        color: #008000;
-                        margin: 0 0 20px 0;
-                        font-size: 1.5em;
-                        font-weight: 500;
-                    ">Share Your Thoughts</h2>
-                    
-                    <textarea id="postContent" placeholder="Write your message..." style="
-                        width: 100%;
-                        min-height: 150px;
-                        padding: 15px;
-                        border: 2px solid #e0f0e0;
-                        border-radius: 8px;
-                        font-size: 16px;
-                        margin-bottom: 20px;
-                        box-sizing: border-box;
-                        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-                        resize: vertical;
-                        outline: none;
-                    " onFocus="this.style.borderColor='#008000'; this.style.boxShadow='0 0 10px rgba(0,128,0,0.1)';"
-                      onBlur="this.style.borderColor='#e0f0e0'; this.style.boxShadow='none';"
-                    ></textarea>
-                    
-                    <button id="submitButton" onclick="GiveAlert()" style="
-                        background-color: #006400;
-                        color: white;
-                        padding: 12px 30px;
-                        border: none;
-                        border-radius: 6px;
-                        font-size: 16px;
-                        cursor: pointer;
-                        transition: transform 0.2s ease, background-color 0.3s ease;
-                        display: block;
-                        margin: 0 auto;
-                        box-shadow: 0 4px 15px rgba(0,100,0,0.2);
-                    " onmouseover="this.style.backgroundColor='#008000'; this.style.transform='scale(1.05)';"
-                      onmouseout="this.style.backgroundColor='#006400'; this.style.transform='scale(1)';"
-                    >Submit</button>
-                </div>
+
             </div>
         </div>
 
