@@ -1,0 +1,141 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar-container {
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile {
+  margin-left: 10px;
+}
+
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Left section: Logo and Hamburger menu */
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo h1 {
+  color: #00a13e;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase; /* Capitalize the letters */
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Search bar */
+.search-bar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-icon {
+  margin-left: 5px;
+  color: white;
+}
+
+/* Right section: Donation button and Profile icon */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.donation-button {
+  background-color: #7ed957;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.profile {
+  background-color: #333;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  width: 150px;
+  z-index: 10;
+}
+
+.dropdown-menu a {
+  color: #ffa500;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 0;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  color: #fff;
+}
