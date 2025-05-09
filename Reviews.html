@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildguard - Reviews</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-image: url('assets/images/bg\ form.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Arial', sans-serif;
+      padding-top: 100px;
+      color: #333;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    h2 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: bold;
+      color: #1f8c3a;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: 600;
+      color: #495057;
+    }
+    .review-summary {
+      background-color: #ffffff;
+      border: 1px solid #c3e6cb;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+    .review-summary h4 {
+      color: #1f8c3a;
+    }
+    button[type='submit'] {
+      background-color: #1f8c3a;
+      border-color: #1f8c3a;
+    }
+    button[type='submit']:hover {
+      background-color: #09c031;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container form-container">
+    <h2>Wildguard - Share Your Review</h2>
+    <form id="reviewForm">
+      <!-- Reviewer's Name -->
+      <div class="form-group">
+        <label for="reviewerName">Your Name:</label>
+        <input type="text" class="form-control" id="reviewerName" name="reviewerName" required>
+      </div>
+
+      <!-- Reviewer's Rating -->
+      <div class="form-group">
+        <label for="reviewerRating">Rating:</label>
+        <select class="form-control" id="reviewerRating" name="reviewerRating" required>
+          <option value="5">5 - Excellent</option>
+          <option value="4">4 - Good</option>
+          <option value="3">3 - Average</option>
+          <option value="2">2 - Poor</option>
+          <option value="1">1 - Terrible</option>
+        </select>
+      </div>
+
+      <!-- Review Text -->
+      <div class="form-group">
+        <label for="reviewText">Your Review:</label>
+        <textarea class="form-control" id="reviewText" name="reviewText" rows="4" required></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary btn-block">Submit Review</button>
+    </form>
+
+    <!-- Reviews Display -->
+    <div id="reviewsDisplay" class="mt-5">
+      <h4>What Others Are Saying:</h4>
+      <div id="reviewsList"></div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <script>
+    // Handle form submission and display reviews
+    $('#reviewForm').on('submit', function(event) {
+      event.preventDefault();
+
+      // Get form values
+      const reviewerName = $('#reviewerName').val();
+      const reviewerRating = $('#reviewerRating').val();
+      const reviewText = $('#reviewText').val();
+
+      // Create a review entry
+      const reviewHtml = `
+        <div class="review-summary">
+          <h4>${reviewerName}</h4>
+          <p><strong>Rating:</strong> ${reviewerRating} / 5</p>
+          <p>${reviewText}</p>
+        </div>
+      `;
+
+      // Append the review to the list
+      $('#reviewsList').append(reviewHtml);
+
+      // Clear form fields
+      $('#reviewForm')[0].reset();
+    });
+  </script>
+</body>
+</html>
