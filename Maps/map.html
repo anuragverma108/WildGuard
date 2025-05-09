@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National parks in India:</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./public/js/script.js" defer></script>
+
+    <style>
+        /* Ensure html and body take up the full height and width */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Set the map to take up the entire screen */
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Optional: Centering the heading on top of the map */
+        h1 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>National parks in India</h1>
+    <div id="map"></div>
+</body>
+</html>

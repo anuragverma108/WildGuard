@@ -49,7 +49,7 @@ window.addEventListener('click', (event) => {
         popup.style.display = 'none'; // Hide the popup
     }
 });
-
+    
 // Optional: Switch between login and signup forms
 const loginTab = document.getElementById('loginTab');
 const signupTab = document.getElementById('signupTab');
