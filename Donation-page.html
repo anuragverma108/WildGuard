@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildGuard Donations</title>
+    <!-- Add Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Existing styles remain unchanged */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 24px; /* Width of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #6eff92; /* Background of the scrollbar track */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgb(0, 113, 19); /* Color of the scrollbar thumb */
+            border-radius: 10px; /* Rounding edges */
+        }
+
+        html {
+            scrollbar-color: rgb(0, 113, 19) #f0f8ff; /* Thumb color | Track color */
+            scrollbar-width: thin; /* Makes the scrollbar thinner */
+        }
+
+        .backimg {
+            background-image: url("assets/images/community-hero-bg.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: left;
+            min-height: 780px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f8ff;
+            color:black;
+            line-height: 1.6;
+            /*overflow: hidden;*/
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Arrange children in a column */
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+
+        header {
+            text-align: center;
+            /*padding: 10px;*/
+            background-color:rgba(255, 253, 253, 0.721);
+            color: rgb(0, 113, 19);
+        }
+
+        header h1 {
+            font-size: 3em;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        .donation-form {
+            background: rgba(255, 255, 255, 0.2); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px); 
+            max-width: 400px;
+            margin: 40px auto; 
+            padding: 40px; 
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3); 
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); 
+            text-align: center;
+            color: white; 
+            margin-bottom: 20px;
+            transition: background 0.3s ease; 
+            
+            position: relative;  /*Added for positioning the icon */
+        }
+
+        .home-icon {
+           position: absolute; /* Positioning it absolutely within the card */
+           top: 10px; /* Distance from the top */
+           right: 10px; /* Distance from the right */
+           font-size: 24px; /* Icon size */
+           color: white; /* Icon color */
+           cursor:pointer; /* Pointer cursor on hover */
+           transition: color 0.3s ease; /* Transition for hover effect */
+       }
+       
+       .home-icon:hover {
+           color:#4CAF50; /* Change color on hover */
+       }
+
+        .donation-form h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #228B22; 
+        }
+
+        .donation-form p {
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 12px 20px; 
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px; 
+            cursor: pointer;
+            font-weight: bold; 
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        }
+
+        button:hover {
+           background-color: #45a049; 
+           transform: translateY(-2px); 
+           box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+       }
+
+       #thankYouMessage {
+           text-align: center;
+           margin-top: 20px;
+       }
+
+       main {
+            flex: 1; /* Allow main content to grow and push footer down */
+        }
+
+       footer {
+           background-color:rgb(0, 113, 19);
+           padding :10px ;
+           text-align:center ;
+           color:white ;
+           position : fixed ;
+           width :100% ;
+           bottom :0 ;
+           margin-top: 20px;
+           position: relative;
+       }
+    </style>
+</head>
+<body>
+    <div class="backimg">
+    <header>
+        <h1>WildGuard</h1>
+        <p>Help protect wildlife. Donate today to save the animals!</p>
+    </header>
+
+    <main>
+        <section class="donation-form">
+             <!-- Home Icon -->
+             <i class="fa fa-home home-icon" aria-hidden="true" onclick="window.location.href='index.html'"></i> <!-- Redirects to home page -->
+             
+             <h2>Make a Donation</h2>
+             <p>Your donation will help protect endangered species and wildlife habitats.</p>
+
+             <form id="donationForm">
+                 <label for="donorName">Full Name</label>
+                 <input type="text" id="donorName" placeholder="Your Name" required>
+
+                 <label for="email">Email</label>
+                 <input type="email" id="email" placeholder="Your Email" required>
+
+                 <label for="amount">Donation Amount</label>
+                 <select id="amount" required>
+                     <option value="10">$10</option>
+                     <option value="25">$25</option>
+                     <option value="50">$50</option>
+                     <option value="100">$100</option>
+                     <option value="custom">Custom</option>
+                 </select>
+
+                 <input type="number" id="customAmount" placeholder="Enter custom amount" style="display:none;">
+
+                 <button type="submit" onclick="btnAlertBox()">Donate Now</button>
+
+             </form>
+
+             <script>
+                function btnAlertBox() {
+                  alert("Thank you for your donation!");
+                }
+             </script>
+
+             <div id="thankYouMessage" style="display:none;">
+                 <h3>Thank you for your generosity!</h3>
+                 <p>Your donation will make a huge difference in protecting animals.</p>
+             </div>
+         </section>
+     </main>
+
+     <footer>
+         <p>&copy; 2024 WildGuard Organization. All rights reserved.</p>
+     </footer>
+    </div>
+
+    <script>
+         document.addEventListener("DOMContentLoaded", function () {
+         const donationForm = document.getElementById('donationForm');
+         const amountSelect = document.getElementById('amount');
+         const customAmountInput = document.getElementById('customAmount');
+         const thankYouMessage = document.getElementById('thankYouMessage');
+
+         // Show custom amount input if 'Custom' is selected
+         amountSelect.addEventListener('change', function () {
+             if (amountSelect.value === 'custom') {
+                 customAmountInput.style.display = 'block';
+             } else {
+                 customAmountInput.style.display = 'none';
+             }
+         });
+
+         // Handle form submission
+         donationForm.addEventListener('submit', function (event) {
+             event.preventDefault();
+
+             const name = document.getElementById('donorName').value;
+             const email = document.getElementById('email').value;
+             let amount = amountSelect.value === 'custom' ? customAmountInput.value : amountSelect.value;
+
+             // Validating the name field
+             if(!name.match('^[a-zA-Z\s]+$')){
+                alert("Invalid Name Format");
+                return
+             }
+             
+             if (amount && name && email) {
+                 // Display thank you message
+                 donationForm.style.display = 'none';
+                 thankYouMessage.style.display = 'block';
+             }
+         });
+     });
+    </script>
+</body>
+</html>
+

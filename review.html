@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animal Organization Ratings</title>
     <link rel="stylesheet" href="./assets/css/review.css" />
     <script src="./assets/js/review.js" defer></script>
 
-    <!-- font Awsome cdn  -->
+    <!-- Font Awesome CDN -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -15,16 +15,119 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    
+    <style>
+      /* Background video styling */
+      #backgroundVideo {
+          position: fixed; 
+          right: 0;
+          bottom: 0;
+          min-width: 100%; 
+          min-height: 100%; 
+          z-index: -1; 
+          overflow: hidden; 
+      }
+      
+      /* Card styling */
+      .card {
+          background-color: rgba(0, 123, 255, 0.7); 
+          border-radius: 10px; 
+          padding: 20px; 
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+          max-width: 400px; 
+          margin: auto; 
+          position: relative; 
+          z-index: 1; 
+          color: #ffffff; 
+      }
+      
+      .stars {
+          cursor: pointer; 
+      }
+      
+      .star:hover {
+          color: gold; 
+      }
+
+      /* Additional styles for body and alignment */
+      body {
+          margin: 0; 
+          font-family: Arial, sans-serif;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh; 
+          background-color: transparent; 
+          color: #ffffff; 
+      }
+
+      textarea {
+          width: 100%; 
+          height: 100px; 
+          margin-top: 10px; 
+          border-radius: 5px; 
+          border: 1px solid #ccc; 
+          background-color: rgba(0, 123, 255, 0.7);  
+          color: #ffffff;  
+      }
+
+      .submit-btn {
+          margin-top: 10px; 
+          padding: 10px 15px; 
+          border-radius: 5px; 
+          background-color: #007bff; 
+          color: white;  
+          border: none; 
+          cursor: pointer; 
+      }
+
+      .submit-btn:hover {
+          background-color: #0056b3; 
+      }
+
+      textarea::placeholder { 
+          color: #ffffff; 
+          opacity: 1;  
+      }
+    </style>
+</head>
+=======
   </head>
 
 <body>
 
-    <div class="bodys">
-      <div class="card">
+    <!-- Background Video -->
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="sea.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="card">
         <a href="./index.html"><i class="fa-solid fa-house"></i></a>
-        <h2>Rate Us</h2>
+        <h2 style="color:#ffffff;">Rate Us</h2> 
         <br />
         <div class="stars">
+            <span onclick="rate(1)" onmouseover="hover(1)" onmouseout="reset()" class="star">★</span>
+            <span onclick="rate(2)" onmouseover="hover(2)" onmouseout="reset()" class="star">★</span>
+            <span onclick="rate(3)" onmouseover="hover(3)" onmouseout="reset()" class="star">★</span>
+            <span onclick="rate(4)" onmouseover="hover(4)" onmouseout="reset()" class="star">★</span>
+            <span onclick="rate(5)" onmouseover="hover(5)" onmouseout="reset()" class="star">★</span>
+        </div>
+        <h5 id="output" style="color:#ffffff;">Rating is: 0/5</h5> 
+        
+        <form id="ratingForm">
+            <textarea
+                id="reviewInput"
+                placeholder="Write your Review"
+                required
+            ></textarea>
+            <div>
+                <button type="submit" class="submit-btn" onclick="feedback()">Submit</button> 
+            </div>
+        </form>
+    </div>
+
+</body>
           <span onclick="rate(1)" onmouseover="hover(1)" onmouseout="reset()" class="star">★</span>
           <span onclick="rate(2)" onmouseover="hover(2)" onmouseout="reset()" class="star">★</span>
           <span onclick="rate(3)" onmouseover="hover(3)" onmouseout="reset()" class="star">★</span>
