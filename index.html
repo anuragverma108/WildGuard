@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="stylesss.css">
+  <link rel="stylesheet" href="./assets/css/buttons.css">
   <link rel="stylesheet" href="./assets/css/searchbar.css">
 
   <title>WildGuard - Give Love for Saving World Animals</title>
@@ -49,7 +49,7 @@
     rel="stylesheet" />
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="./Events-Data/modal.css">
+  <link rel="stylesheet" href="./data/modal.css">
 
   <!-- 
     - custom css link
@@ -272,7 +272,7 @@
           </li>
 
           <li>
-            <a href="#about" class="navbar-link" data-nav-link>
+            <a href="pages/about.html" class="navbar-link" data-nav-link>
               <span class="new_size">About</span>
 
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
@@ -314,13 +314,13 @@
           <li>
 
            <li>
-                <a id="loginLink" class="navbar-link login-nav" href="login.html" data-nav-link>
+                <a id="loginLink" class="navbar-link login-nav" href="pages/login.html" data-nav-link>
                       <span class="new_size">Login</span>
                       <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
                 </a>
             </li>
           <li>
-            <a id="registerLink" class="navbar-link login-nav" href="register.html" data-nav-link>
+            <a id="registerLink" class="navbar-link login-nav" href="pages/register.html" data-nav-link>
               <span class="new_size">Register</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -330,11 +330,11 @@
           <script>
             document.getElementById('registerLink').addEventListener('click', function (e) {
               e.preventDefault();
-              window.location.href = 'register.html';
+              window.location.href = 'pages/register.html';
             });
             document.getElementById('loginLink').addEventListener('click', function (e) {
               e.preventDefault();
-              window.location.href = 'login.html';
+              window.location.href = 'pages/login.html';
             });
           </script>
 
@@ -404,16 +404,16 @@
   <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
 </button> -->
 
-<button type="button"  class="donate-button" onclick="location.href='Donation.html';">
+<button type="button"  class="donate-button" onclick="location.href='pages/donate.html';">
   <span>Donation</span>
   <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
 </button>
 
 <!-- Login -->
 <div id="openPopup" class="user-icon">
-  <a href="user.html"><i class="fas fa-user"></i></a> 
+  <a href="pages/user.html"><i class="fas fa-user"></i></a> 
   <div class="dropdown-content" id="profileDropdown">
-    <a href="user.html">Profile</a>
+    <a href="pages/user.html">Profile</a>
     <a href="/">Logout</a>
   </div> 
   </div>
@@ -511,7 +511,7 @@
           </div> -->
 
           <div class="button-container">
-            <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+            <button type="button" class="donate-button" onclick="location.href='pages/donate.html';">
               <span>Donation</span>
 
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
@@ -539,7 +539,7 @@
                 <ion-icon name="shield-checkmark-outline"></ion-icon>
               </div>
 
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
+              <a href="pages/SaveNature.html" style="text-decoration: none; color: inherit;">
                 <div>
                   <h3 class="h4 item-title">Safe Shelter</h3>
                   <p class="item-text">
@@ -550,11 +550,10 @@
             </li>
             
             <li class="features-item">
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
+              <a href="pages/SaveNature.html" style="text-decoration: none; color: inherit;">
               <div class="item-icon">
                 <ion-icon name="water-outline"></ion-icon>
               </div>
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
               <div>
                 <h3 class="h4 item-title">Save Water</h3>
 
@@ -566,10 +565,10 @@
             </li>
 
             <li class="features-item">
+              <a href="pages/SaveNature.html" style="text-decoration: none; color: inherit;">
               <div class="item-icon">
                 <ion-icon name="leaf-outline"></ion-icon>
               </div>
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
               <div>
                 <h3 class="h4 item-title">Ecology Save</h3>
 
@@ -581,10 +580,10 @@
             </li>
 
             <li class="features-item">
+              <a href="pages/SaveNature.html" style="text-decoration: none; color: inherit;">
               <div class="item-icon">
                 <ion-icon name="snow-outline"></ion-icon>
               </div>
-              <a href="SaveNature.html" style="text-decoration: none; color: inherit;">
               <div>
                 <h3 class="h4 item-title">Environment</h3>
 
@@ -717,7 +716,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             </div>
 
 
-            <button class="btn btn-secondary" id="learn-btn" onclick="location.href='about.html';">
+            <button class="btn btn-secondary" id="learn-btn" onclick="location.href='pages/about.html';">
               <span style="padding : 20px; font-size : 17px;">Learn More About Us</span>
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
             </button>
@@ -741,7 +740,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
             <p class="benefits">Contribute to wildlife care <br> receive digital badges and <br>monthly newsletters.
 
-            <p onclick="location.href='Donation.html';" class="donate-button">Donate Now</p>
+            <p onclick="location.href='pages/donate.html';" class="donate-button">Donate Now</p>
 
           </div>
           <div class="card">
@@ -750,7 +749,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             </b>
             <p class="amount">$25/month</p>
             <p class="benefits">Aid wildlife recovery, get <br> exclusive videos and <br>behind-the-scenes insights.</p>
-            <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
+            <button onclick="location.href='pages/donate.html';" class="donate-button">Donate Now</button>
           </div>
           <div class="card">
             <b>
@@ -758,7 +757,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             </b>
             <p class="amount">$50/month</p>
             <p class="benefits">Sponsor critical projects,  <br> enjoy special merchandise and <br>priority event access.</p>
-            <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
+            <button onclick="location.href='pages/donate.html';" class="donate-button">Donate Now</button>
           </div>
 
           <div class="card">
@@ -767,7 +766,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             </b>
             <p class="amount">$100/month</p>
             <p class="benefits">Lead wildlife conservation,<br> receive personalized tours and <br>lifetime  honorary membership.</p>
-            <button onclick="location.href='Donation.html';" class="donate-button">Donate Now</button>
+            <button onclick="location.href='pages/donate.html';" class="donate-button">Donate Now</button>
           </div>
         </div>
       </div>
@@ -895,7 +894,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                           <p class="card-text">
                               Your support helps us make a difference!
                           </p>
-                          <a href="SaveNature.html" class="btn-link">
+                          <a href="pages/SaveNature.html" class="btn-link">
                             <span>Read More</span>
                             <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                           </a>
@@ -1102,7 +1101,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button> -->
 
-                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+                        <button type="button" class="donate-button" onclick="location.href='pages/donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1170,7 +1169,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
                         </div>
 
-                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+                        <button type="button" class="donate-button" onclick="location.href='pages/donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1237,7 +1236,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
                         </div>
 
-                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+                        <button type="button" class="donate-button" onclick="location.href='pages/donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1305,7 +1304,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
                         </div>
 
-                        <button type="button" class="donate-button" onclick="location.href='Donation.html';">
+                        <button type="button" class="donate-button" onclick="location.href='pages/donate.html';">
                           <span>Donation</span>
                           <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
                         </button>
@@ -1367,7 +1366,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
                       onBlur="this.style.borderColor='#e0f0e0'; this.style.boxShadow='none';"
                     ></textarea>
                     
-                    <button id="submitButton" onclick="GiveAlert()" style="
+                    <button id="submitButton" onclick="submitForumPost()" style="
                         background-color: #006400;
                         color: white;
                         padding: 12px 30px;
@@ -1386,12 +1385,17 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             </div>
         </div>
 
-
-
-
-
-
-            <script src="script.js"></script>
+            <script>
+              function submitForumPost() {
+                const content = document.getElementById('postContent').value;
+                if (content.trim()) {
+                  alert('Thank you for your contribution to wildlife conservation!');
+                  document.getElementById('postContent').value = '';
+                } else {
+                  alert('Please write something before submitting.');
+                }
+              }
+            </script>
           </div>
           
           <!-- 
@@ -1504,7 +1508,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
 
       <!-- Trigger Button for Modal -->
-      <button id="openModalBtn" class="donate-button" onclick="location.href='learnmore.html';" style="display: block; margin: 0 auto;">Learn More</button>
+      <button id="openModalBtn" class="donate-button" onclick="location.href='pages/learnmore.html';" style="display: block; margin: 0 auto;">Learn More</button>
 
       <!-- Modal Structure -->
       <div id="myModal" class="modal">
@@ -1641,7 +1645,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
 
               </ul>
 
-              <button class="donate-button2" onclick="location.href='moreevents.html';">
+              <button class="donate-button2" onclick="location.href='pages/moreevents.html';">
                 <span >More Events</span>
 
                 <ion-icon  name="heart-outline" aria-hidden="true"></ion-icon>
@@ -2111,13 +2115,13 @@ Our mission is to provide outstanding care and dedicated support for animals in 
             <li><a href="#about">About</a></li>
             <li><a href="#service">Service</a></li>
             <li><a href="#donate">Donate</a></li>
-            <li><a href="./Contact.html">Contact Us</a></li>
+            <li><a href="./pages/Contact.html">Contact Us</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-right">
         <div class="">
-          <a href="review.html">
+          <a href="pages/review.html">
             <button type="submit">Rate Us</button>
           </a>
 
@@ -2149,7 +2153,7 @@ Our mission is to provide outstanding care and dedicated support for animals in 
     </div>
 
     <div class="footer-bottom" style="display: inline;">
-      <p>© 2024 <a href="copyright.html" style="display: inline;">WildGuard</a> All Rights Reserved</p>
+      <p>© 2024 <a href="pages/copyright.html" style="display: inline;">WildGuard</a> All Rights Reserved</p>
       <p>
         <a href="./terms-of-use.html" class="footer-link" style="display: inline;">Terms of Service</a> |
         <a href="./privacy-policy.html" class="footer-link" style="display: inline;">Privacy Policy</a>
@@ -2167,9 +2171,9 @@ Our mission is to provide outstanding care and dedicated support for animals in 
   <!-- 
     - custom js link
   -->
-  <script src="sounds.js"></script>
+  <script src="./assets/js/sounds.js"></script>
   <script src="./Become-a-Partner/script.js"></script>
-  <script src="./Events-Data/modal-scripts.js"></script>
+  <script src="./data/modal-scripts.js"></script>
   
 
   <script src="./assets/js/carousel.js"></script>
