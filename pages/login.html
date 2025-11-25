@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Login - Dark Theme</title>
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body>
+    <a href="../index.html" class="home-icon"><i class="fas fa-house"></i></a>
+    <div class="login-container">
+        <h2>Welcome Back!</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="email" id="email" required>
+                <label for="email">Email Address</label>
+            </div>
+            <div class="input-group">
+                <div class="password-toggle">
+                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                    <i class="fas fa-eye" id="togglePassword"></i>
+                </div>
+                <div class="password-strength" id="passwordStrength"></div>
+            </div>
+            <div class="extras">
+                <label class="remember-me">
+                    <input type="checkbox">
+                    <span>Remember Me</span>
+                </label>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+            </div>
+            <button type="submit" class="login-button">Sign In</button>
+        </form>
+        <div class="social-login">
+            <p>Or continue with</p>
+            <div class="social-buttons">
+                <button type="button" class="social-btn google-btn" id="googleSignInBtn">
+                    <img src="../assets/images/google.png" alt="Google">
+                    Google
+                </button>
+                <button type="button" class="social-btn facebook-btn" id="facebookSignInBtn">
+                    <img src="../assets/images/facebook.png" alt="Facebook">
+                    Facebook
+                </button>
+            </div>
+        </div>
+        <p class="signup-link">Don't have an account? <a href="register.html">Sign up</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <script src="../assets/js/login.js"></script>
+</body>
+</html>

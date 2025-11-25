@@ -1,0 +1,151 @@
+.donate-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    background-color: #91be55;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    border: 1px solid #0078d4;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, box-shadow 0.2s;
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.donate-button::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    transform: scale(0.9);
+}
+
+.donate-button:hover::before {
+    border-color: #0078d4;
+    transform: scale(1);
+}
+
+.donate-button:hover {
+    background-color: #7fa844;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.donate-button svg {
+    fill: white;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+}
+
+.donate-button2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    background-color: #333;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: none;
+    border: 1px solid #555;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, box-shadow 0.2s, border-color 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.donate-button2 ion-icon {
+    margin-left: 6px;
+}
+
+.donate-button2::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    transform: scale(0.9);
+}
+
+.donate-button2:hover::before {
+    border-color: #0078d4;
+    transform: scale(1);
+}
+
+.donate-button2:hover {
+    background-color: #444;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+.donate-button2 svg {
+    fill: white;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+}
+
+.submit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    background-color: #91be55;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid #0078d4;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, box-shadow 0.2s;
+    position: relative;
+    cursor: pointer;
+}
+
+.submit-button::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    transform: scale(0.9);
+}
+
+.submit-button:hover::before {
+    border-color: #0078d4;
+    transform: scale(1);
+}
+
+.submit-button:hover {
+    background-color: #7fa844;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.submit-button svg {
+    fill: white;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+}
