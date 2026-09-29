@@ -1660,6 +1660,7 @@ data {
 
 .event {
   padding-block-end: 120px;
+  background-color: var(--white);
 }
 
 .event .section-subtitle {
@@ -1733,6 +1734,10 @@ data {
 /*-----------------------------------*\
   #FREQUENTLY ASKED QUESTION
 \*-----------------------------------*/
+
+#faq {
+  background-color: var(--white);
+}
 
 
 /*-----------------------------------*\
