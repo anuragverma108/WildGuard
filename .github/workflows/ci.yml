@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Check required files exist
+        run: |
+          for f in index.html style.css README.md LICENSE; do
+            test -f "$f" || { echo "::error::Missing required file: $f"; exit 1; }
+          done
+
+      - name: Check HTML files parse
+        run: |
+          python - <<'PY'
+          import glob, sys
+          from html.parser import HTMLParser
+
+          failed = False
+          for path in sorted(glob.glob("*.html")):
+              try:
+                  with open(path, encoding="utf-8", errors="replace") as fh:
+                      HTMLParser().feed(fh.read())
+              except Exception as exc:
+                  print(f"::error file={path}::Could not parse: {exc}")
+                  failed = True
+          sys.exit(1 if failed else 0)
+          PY
+
+      - name: Report broken local links (warning only)
+        run: |
+          python - <<'PY'
+          import glob, os, re
+
+          skip = re.compile(r"^(https?:|//|mailto:|tel:|data:|javascript:|\{)")
+          missing = 0
+          for path in sorted(glob.glob("*.html")):
+              with open(path, encoding="utf-8", errors="replace") as fh:
+                  html = fh.read()
+              for m in re.finditer(r"""(?:href|src)=["']([^"'#?]+)""", html):
+                  ref = m.group(1)
+                  if skip.match(ref) or os.path.exists(ref):
+                      continue
+                  missing += 1
+                  print(f"::warning file={path}::Broken local reference: {ref}")
+          print(f"{missing} broken local reference(s) found")
+          PY
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: validate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
